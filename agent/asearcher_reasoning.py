@@ -522,7 +522,7 @@ class AsearcherReasoningAgent:
                 # Split page into chunks
                 while len(page) > 0 and len(process["page_cache"]) < 10:
                     _len = min(10000, len(page))
-                    process["page_cache"].append(f">>>> Page {len(process["page_cache"]) + 1} >>>>\n\n" + page[:_len])
+                    process["page_cache"].append(f">>>> Page {len(process['page_cache']) + 1} >>>>\n\n" + page[:_len])
                     page = page[_len:]
                 
                 print("[DEBUG] add page", process["id"], len(res.get("page", "")), len(process["page_cache"]), flush=True)
