@@ -8,6 +8,7 @@ import argparse
 import json
 import os
 import time
+from datetime import datetime
 import random
 import numpy as np
 from tqdm import tqdm
@@ -328,12 +329,13 @@ async def process_single_work_item(semaphore, agent_type, llm, tokenizer, search
                 tool_calls = convert_agent_tool_calls_to_dict(tool_calls_raw)
 
                 if agent.is_finished:
-                    # Add final assistant message
-                    message_history.append({
-                        "role": "assistant",
-                        "content": completion_text
-                    })
-                    final_response = completion_text
+                    # Add final assistant message (only if non-empty)
+                    if completion_text and completion_text.strip():
+                        message_history.append({
+                            "role": "assistant",
+                            "content": completion_text
+                        })
+                        final_response = completion_text
                     process["running"] = False
                     break
 
@@ -341,11 +343,12 @@ async def process_single_work_item(semaphore, agent_type, llm, tokenizer, search
                 if tool_calls:
                     print(f"Process {process['id']}: {', '.join([tc['type'] for tc in tool_calls])}")
 
-                # Add assistant message to history
-                message_history.append({
-                    "role": "assistant",
-                    "content": completion_text
-                })
+                # Add assistant message to history (only if non-empty)
+                if completion_text and completion_text.strip():
+                    message_history.append({
+                        "role": "assistant",
+                        "content": completion_text
+                    })
 
                 # Add to internal history
                 process["history"].append({
@@ -492,9 +495,10 @@ async def eval_widesearch(semaphore, llm, args):
     processes = prepare_widesearch_data(args)
 
     # Create output directory
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_dir = os.path.join(
         args.output_dir,
-        f"{args.output_prefix}_{args.agent_type}_{args.prompt_type}_seed{args.seed}"
+        f"{args.output_prefix}_{args.agent_type}_{args.prompt_type}_seed{args.seed}_{timestamp}"
     )
     os.makedirs(out_dir, exist_ok=True)
 

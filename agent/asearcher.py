@@ -185,8 +185,29 @@ class AsearcherAgent:
         if not self.memory:
             return None
         text, _ = self.prepare_llm_query()
+
+        # First try to find explicit <answer> tags
         pattern = r'<answer>(.*?)</answer>'
         matches = re.findall(pattern, text, re.DOTALL)
         if matches:
             return matches[-1].strip()
+
+        # Fallback: only if terminated due to consecutive empty responses
+        # Check if the last N responses are empty (indicating forced termination)
+        all_llm_records = [r for r in self.memory.memory if r.type == "llm_gen"]
+        if len(all_llm_records) >= 16:
+            # Check if last 16 responses are all empty
+            last_records = all_llm_records[-16:]
+            all_empty = all(not r.text.strip() for r in last_records)
+            if all_empty:
+                # Find the last non-empty response as answer
+                non_empty_records = [r for r in all_llm_records if r.text.strip()]
+                if non_empty_records:
+                    content = non_empty_records[-1].text.strip()
+                    # Extract content after </think> if present
+                    if "</think>" in content:
+                        content = content.split("</think>")[-1].strip()
+                    if content:
+                        return content
+
         return None
