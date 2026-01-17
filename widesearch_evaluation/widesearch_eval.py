@@ -45,16 +45,7 @@ class CompatibleLLMResponse:
 
 
 PROMPT_TYPES = {
-    "asearcher-reasoning": "{question}",
     "asearcher": """A conversation between User and Assistant. The user asks a question, and the Assistant answers it. The Assistant analyzes the given question and information in the mind, retains important relevant information, calls a search engine to find necessary information, accesses web pages with certain urls, and provides the user with the answer. The Assistant conducts search by <search> query </search>, access certain url by <access> url </access>, and the top search results and url page will be returned between <information> and </information>.  The reasoning processes are enclosed within <think> </think>. Finally, the Assistant provides answer inside <answer> and </answer>, i.e. <answer> answer here </answer>. If there are multiple queries, ensure all answers are enclosed within <answer> </answer>, seperated with comma. \n\nNote: the question is a valid question and you should try to find a correct answer. \n\nUser: {question}\n\nAssistant: \n<think>""",
-    "local-rag": """<|im_start|>system
-You are a helpful assistant.<|im_end|>
-<|im_start|>user
-Answer the given question. You must conduct reasoning inside <think> and </think> first every time you get new information. After reasoning, if you find you lack some knowledge, you can call a search engine by <search> query </search> and it will return the top searched results between <information> and </information>. You can search as many times as your want. If you find no further external knowledge needed, you can directly provide the answer inside <answer> and </answer>, without detailed illustrations. For example, <answer> Beijing </answer>. Question: {question}
-<|im_end|>
-<|im_start|>assistant""",
-    "search-r1": """Answer the given question. You must conduct reasoning inside <think> and </think> first every time you get new information. After reasoning, if you find you lack some knowledge, you can call a search engine by <search> query </search> and it will return the top searched results between <information> and </information>. You can search as many times as your want. If you find no further external knowledge needed, you can directly provide the answer inside <answer> and </answer>, without detailed illustrations. For example, <answer> Beijing </answer>. Question: {question}?
-""",
 }
 
 
