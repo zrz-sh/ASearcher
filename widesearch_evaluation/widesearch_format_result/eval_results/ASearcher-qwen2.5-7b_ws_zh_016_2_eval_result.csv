@@ -1,0 +1,2226 @@
+exist_flag_gt,exist_flag_response,景区名称,景区名称_before_map,所属地区_llm_judge,所属地区_llm_judge_eval_msg,所属地区_query,所属地区_response,景区名称_exact_match,景区名称_exact_match_eval_msg,评定年份_llm_judge,评定年份_llm_judge_eval_msg,评定年份_query,评定年份_response,门票价格_llm_judge,门票价格_llm_judge_eval_msg,门票价格_query,门票价格_response
+,,北京（通州）大运河文化旅游景区,北京市北京（通州）大运河文化旅游景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",北京市,北京市通州区,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2024年,2024,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",入园免费,180元
+,,唐山市南湖·开滦旅游景区,河北省唐山市南湖·开滦旅游景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",河北省,河北省唐山市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2024年,2024,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",免费入园；开滦国家矿山公园：138元/人,160元
+,,黄河壶口瀑布旅游区(陕西省延安市·山西省临汾市),黄河壶口瀑布旅游区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",山西省、陕西省,陕西省延安市·山西省临汾市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2022年,2022,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",全票：100元/人,150元
+,,呼伦贝尔市呼伦贝尔大草原·莫尔格勒河景区,内蒙古自治区呼伦贝尔市呼伦贝尔大草原·莫尔格勒河景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",内蒙古自治区,内蒙古自治区呼伦贝尔市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2024年,2024,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",免费,120元
+,,本溪市五女山景区,辽宁省本溪市五女山景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",辽宁省,辽宁省本溪市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2024年,2024,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",门票：70元/人/次,140元
+,,台州市台州府城文化旅游区,浙江省台州市台州府城文化旅游区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",浙江省,浙江省台州市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2022年,2022,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",联票（台州府城墙+东湖）成人票70元,120元
+,,赣州市三百山景区,江西省赣州市三百山景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",江西省,江西省赣州市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2022年,2022,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",三百山景区门票150元/张,130元
+,,济宁市微山湖旅游区,山东省济宁市微山湖旅游区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",山东省,山东省济宁市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2022年,2022,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",微山岛套票160.00元；微山岛门票130.00元,180元
+,,淄博市周村古商城景区,山东省淄博市周村古商城景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",山东省,山东省淄博市,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2024年,2024,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",通票:成人票50人民币,130元
+,,阿克苏地区天山托木尔景区,新疆维吾尔自治区阿克苏地区天山托木尔景区,1.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+即：回答中所提及的地名只要属于目标的省/自治区对应的行政区域就视为正确。
+
+逐项分析：
+
+idx_0  
+response: 北京市通州区  
+target: 北京市  
+分析：通州区是北京市下属的区，属于北京市。答案指向实体一致。  
+判定：符合标准，得1分。
+
+idx_1  
+response: 河北省唐山市  
+target: 河北省  
+分析：唐山市是河北省的地级市，属于河北省。指向实体一致。  
+判定：得1分。
+
+idx_2  
+response: 陕西省延安市·山西省临汾市  
+target: 山西省、陕西省  
+分析：回答中包含“陕西省延安市”和“山西省临汾市”，这两个分别属于陕西省和山西省。对应目标中的两个省份。指向实体一致。  
+判定：得1分。
+
+idx_3  
+response: 内蒙古自治区呼伦贝尔市  
+target: 内蒙古自治区  
+分析：呼伦贝尔市是内蒙古自治区的一个地级市，属于目标。  
+判定：得1分。
+
+idx_4  
+response: 辽宁省本溪市  
+target: 辽宁省  
+分析：本溪市是辽宁省下属城市。  
+判定：得1分。
+
+idx_5  
+response: 浙江省台州市  
+target: 浙江省  
+分析：台州市属于浙江省。  
+判定：得1分。
+
+idx_6  
+response: 江西省赣州市  
+target: 江西省  
+分析：赣州市属于江西省。  
+判定：得1分。
+
+idx_7  
+response: 山东省济宁市  
+target: 山东省  
+分析：济宁市属于山东省。  
+判定：得1分。
+
+idx_8  
+response: 山东省淄博市  
+target: 山东省  
+分析：淄博市属于山东省。  
+判定：得1分。
+
+idx_9  
+response: 新疆维吾尔自治区阿克苏地区  
+target: 新疆维吾尔自治区  
+分析：阿克苏地区属于新疆维吾尔自治区。  
+判定：得1分。
+
+综上，各项回答均与目标地名语义一致或实体对应一致，符合评分标准，均得1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",新疆维吾尔自治区,新疆维吾尔自治区阿克苏地区,1.0,key_match,1.0,"First, analyze each pair according to the criterion:
+
+Criterion: The response is correct if it has roughly the same meaning as the target or points to the same entity. No need for exact wording.
+
+Check each idx:
+
+- idx_0: response '2024' vs target '2024年'  
+  Same meaning (2024 is understood as the year 2024). Score = 1
+
+- idx_1: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_2: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_3: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_4: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_5: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_6: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_7: response '2022' vs target '2022年'  
+  Same meaning. Score = 1
+
+- idx_8: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+- idx_9: response '2024' vs target '2024年'  
+  Same meaning. Score = 1
+
+All responses correctly indicate the year consistent with the target.
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2024年,2024,0.0,"首先，依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+因此，只要回答与参考答案指向的实体或内容匹配，即可给出1分，否则0分。
+
+逐条分析如下：
+
+- idx_0: 
+  - response: ""180元""
+  - target: ""入园免费""
+  - 免费与价格“180元”完全不符，意义不一致。
+  - 评分：0
+
+- idx_1:
+  - response: ""160元""
+  - target: ""免费入园；开滦国家矿山公园：138元/人""
+  - target中有两个部分：“免费入园”和“开滦国家矿山公园：138元/人”
+  - response是160元，不等于138元，也不等于免费（0元），价格不一致，实体指向是门票价格。
+  - 与参考答案“免费入园”或者“138元/人”都不匹配。
+  - 评分：0
+
+- idx_2:
+  - response: ""150元""
+  - target: ""全票：100元/人""
+  - 指向实体均为票价，价格不同。
+  - 150元 ≠ 100元，语义不相同。
+  - 评分：0
+
+- idx_3:
+  - response: ""120元""
+  - target: ""免费""
+  - 免费和120元不符。
+  - 评分：0
+
+- idx_4:
+  - response: ""140元""
+  - target: ""门票：70元/人/次""
+  - 价格不同，且指向同为门票价格。
+  - 评分：0
+
+- idx_5:
+  - response: ""120元""
+  - target: ""联票（台州府城墙+东湖）成人票70元""
+  - 价格不同，且实体均为门票价格。
+  - 评分：0
+
+- idx_6:
+  - response: ""130元""
+  - target: ""三百山景区门票150元/张""
+  - 价格不同。
+  - 评分：0
+
+- idx_7:
+  - response: ""180元""
+  - target: ""微山岛套票160.00元；微山岛门票130.00元""
+  - 参考答案中“套票160元”“门票130元”，回答“180元”，价格不符。
+  - 评分：0
+
+- idx_8:
+  - response: ""130元""
+  - target: ""通票:成人票50人民币""
+  - 价格差异较大。
+  - 评分：0
+
+- idx_9:
+  - response: ""150元""
+  - target: ""36元/人""
+  - 价格不一致。
+  - 评分：0
+
+总结：所有条目中，回答的价格均与参考价格不匹配，且没有体现相同含义。均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",36元/人,150元
+1.0,,三亚市天涯海角游览区,,,,海南省,,,,,,2024年,,,,免费,
+1.0,,上饶市篁岭景区,,,,江西省,,,,,,2024年,,,,篁岭门票+往返索道套餐促销价145元/人,
+1.0,,丽水市云和梯田景区,,,,浙江省,,,,,,2024年,,,,80元/人,
+,1.0,云南省丽江市丽江古城景区,云南省丽江市丽江古城景区,,,,云南省丽江市,,,,,,2024,,,,120元
+1.0,,信阳市鸡公山景区,,,,河南省,,,,,,2022年,,,,鸡公山景区全价票（自营）￥60.00,
+1.0,,厦门市厦门园林植物园景区,,,,福建省,,,,,,2024年,,,,30元/人·次,
+1.0,,吴忠市青铜峡黄河大峡谷旅游区,,,,宁夏回族自治区,,,,,,2024年,,,,40元/人,
+1.0,,周口市太昊伏羲陵文化旅游区,,,,河南省,,,,,,2024年,,,,成人票：40元,
+1.0,,呼和浩特市老牛湾黄河大峡谷旅游区,,,,内蒙古自治区,,,,,,2024年,,,,成人票：40元/人,
+1.0,,咸阳市乾陵景区,,,,陕西省,,,,,,2024年,,,,门票100元,
+,1.0,四川省成都市都江堰景区,四川省成都市都江堰景区,,,,四川省成都市,,,,,,2022,,,,150元
+1.0,,固原市六盘山红军长征旅游区,,,,宁夏回族自治区,,,,,,2024年,,,,50元/人,
+1.0,,太原市晋祠天龙山景区,,,,山西省,,,,,,2024年,,,,"晋祠天⻰⼭景区⸺晋祠博物馆：全价票80元
+晋祠天⻰⼭景区⸺天⻰⼭⽯窟博物馆；全价票50元",
+,1.0,安徽省黄山市徽州古城景区,安徽省黄山市徽州古城景区,,,,安徽省黄山市,,,,,,2024,,,,150元
+1.0,,宜昌市三峡大瀑布景区,,,,湖北省,,,,,,2022年,,,,三峡大瀑布景区成人票115元/人次,
+1.0,,崇左市花山岩画景区,,,,广西壮族自治区,,,,,,2024年,,,,成人票90元,
+1.0,,延安市延川黄河乾坤湾景区,,,,陕西省,,,,,,2024年,,,,80元/人,
+1.0,,成都市天台山景区,,,,四川省,,,,,,2024年,,,,成人票58,
+1.0,,成都市安仁古镇景区,,,,四川省,,,,,,2022年,,,,免费入园,
+1.0,,新乡市宝泉旅游区,,,,河南省,,,,,,2024年,,,,大峡谷成人票：108；崖天下成人票：190,
+1.0,,昌吉回族自治州江布拉克景区,,,,新疆维吾尔自治区,,,,,,2022年,,,,55元/人,
+1.0,,晋中市乔家大院景区,,,,山西省,,,,,,2014/2024年,,,,115元/人,
+1.0,,松原市前郭查干湖景区,,,,吉林省,,,,,,2024年,,,,25元,
+1.0,,柳州市程阳八寨景区,,,,广西壮族自治区,,,,,,2024年,,,,80元/人·次,
+1.0,,武陵山大裂谷景区,,,,重庆市,,,,,,2024年,,,,成人票145元,
+1.0,,毕节市织金洞景区,,,,贵州省,,,,,,2022年,,,,110元/人,
+,1.0,江苏省扬州市瘦西湖景区,江苏省扬州市瘦西湖景区,,,,江苏省扬州市,,,,,,2024,,,,160元
+,1.0,河北省承德市避暑山庄及周围寺庙景区,河北省承德市避暑山庄及周围寺庙景区,,,,河北省承德市,,,,,,2022,,,,170元
+,1.0,河南省焦作市神农山景区,河南省焦作市神农山景区,,,,河南省焦作市,,,,,,2022,,,,160元
+1.0,,河源市万绿湖风景区,,,,广东省,,,,,,2024年,,,,175元,
+,1.0,湖南省长沙市岳麓山-橘子洲旅游区,湖南省长沙市岳麓山-橘子洲旅游区,,,,湖南省长沙市,,,,,,2022,,,,140元
+1.0,,湘西州凤凰古城旅游区,,,,湖南省,,,,,,2024年,,,,免费入园,
+1.0,,滁州市琅琊山景区,,,,安徽省,,,,,,2024年,,,,免费入园,
+1.0,,甘南州冶力关旅游区,,,,甘肃省,,,,,,2024年,,,,60元/人,
+,1.0,甘肃省张掖市张掖丹霞国家地质公园,甘肃省张掖市张掖丹霞国家地质公园,,,,甘肃省张掖市,,,,,,2022,,,,120元
+1.0,,白城市大安嫩江湾旅游区,,,,吉林省,,,,,,2024年,,,,免费入园,
+1.0,,白帝城•瞿塘峡景区,,,,重庆市,,,,,,2022年,,,,100元/人,
+,1.0,福建省福州市三坊七巷历史文化街区,福建省福州市三坊七巷历史文化街区,,,,福建省福州市,,,,,,2024,,,,120元
+1.0,,腾冲市和顺古镇景区,,,,云南省,,,,,,2024年,,,,全价票：55元/人次,
+1.0,,荆门市明显陵文化旅游景区,,,,湖北省,,,,,,2024年,,,,全价票65元/人次,
+1.0,,衡水市衡水湖旅游景区,,,,河北省,,,,,,2024年,,,,成人票100元/人,
+1.0,,西沙明珠湖景区,,,,上海市,,,,,,2024年,,,,免费,
+1.0,,贺州市黄姚古镇景区,,,,广西壮族自治区,,,,,,2022年,,,,88元/人,
+1.0,,连云港市连岛景区,,,,江苏省,,,,,,2024年,,,,成人旺季票：50元/人,
+1.0,,金华市双龙风景旅游区,,,,浙江省,,,,,,2024年,,,,景区全票80元/人。,
+1.0,,阿坝州四姑娘山景区,,,,四川省,,,,,,2024年,,,,双钩桥成人套票150元；海子沟成人套票60元；长坪沟成人套票90元,
+1.0,,陇南市官鹅沟景区,,,,甘肃省,,,,,,2022年,,,,普通套票150元,
+,1.0,陕西省宝鸡市法门寺文化旅游区,陕西省宝鸡市法门寺文化旅游区,,,,陕西省宝鸡市,,,,,,2022,,,,120元
+1.0,,青岛市奥帆海洋文化旅游区,,,,山东省,,,,,,2024年,,,,免费入园,
+1.0,,黄冈市麻城龟峰山景区,,,,湖北省,,,,,,2024年,,,,花期(4月1日-5月31日)门票价格：90元/人次,
+1.0,,黔西南州万峰林景区,,,,贵州省,,,,,,2024年,,,,门票70元/人,
+1.0,,齐齐哈尔市扎龙生态旅游区,,,,黑龙江省,,,,,,2024年,,,,65元。,
+1.0,,龙岩市冠豸山景区,,,,福建省,,,,,,2024年,,,,"a线：冠豸山景区（含石门湖船票、景交车票）120/张
+b线：冠豸山景区+竹安寨、九龙湖景区（含石门湖船票、索道缆车、景交车票）180.00/张",

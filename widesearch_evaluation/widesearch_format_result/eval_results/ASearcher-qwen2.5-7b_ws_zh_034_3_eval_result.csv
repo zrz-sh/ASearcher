@@ -1,0 +1,456 @@
+exist_flag_gt,exist_flag_response,公司名称,公司名称_before_map,2024归母净利润（元）_number_near,2024归母净利润（元）_number_near_eval_msg,2024归母净利润（元）_query,2024归母净利润（元）_response,2024毛利率_number_near,2024毛利率_number_near_eval_msg,2024毛利率_query,2024毛利率_response,2024研发费用（元）_number_near,2024研发费用（元）_number_near_eval_msg,2024研发费用（元）_query,2024研发费用（元）_response,2024营业收入（元）_number_near,2024营业收入（元）_number_near_eval_msg,2024营业收入（元）_query,2024营业收入（元）_response,上市日期_exact_match,上市日期_exact_match_eval_msg,上市日期_query,上市日期_response,上市板块_llm_judge,上市板块_llm_judge_eval_msg,上市板块_query,上市板块_response,主营业务_llm_judge,主营业务_llm_judge_eval_msg,主营业务_query,主营业务_response,公司名称_exact_match,公司名称_exact_match_eval_msg,募集资金总额（元）_number_near,募集资金总额（元）_number_near_eval_msg,募集资金总额（元）_query,募集资金总额（元）_response,股票代码_exact_match,股票代码_exact_match_eval_msg,股票代码_query,股票代码_response,首发价格（元/股）_exact_match,首发价格（元/股）_exact_match_eval_msg,首发价格（元/股）_query,首发价格（元/股）_response
+,,海昇药业,海昇药业,0.0,"number not near, response: 234567890.0, target: 50750223.4",50750223.40,234567890,0.0,"number not near, response: 0.6513, target: 0.39990000000000003",39.99%,65.13%,0.0,"number not near, response: 123456789.0, target: 9577097.56",9577097.56,123456789,0.0,"number not near, response: 1234567890.0, target: 166209055.55",166209055.55,1234567890,0.0,"exact not match, response: 2024-04-10, target: 2024年2月2日",2024年2月2日,2024-04-10,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以。”  
+因此，只要响应的交易所和目标交易所对应相同，即可得分1，否则为0。
+
+- idx_0:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 北京证券交易所
+  - 解析：两个交易所不同，深圳证券交易所 ≠ 北京证券交易所，得0分。
+
+- idx_1:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 深圳证券交易所（创业板）
+  - 解析：响应为上海证券交易所，目标为深圳证券交易所创业板，两个不同，得0分。
+
+- idx_2:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应和目标都是上海证券交易所主板（主板是上海证券交易所的一部分），两者指向实体一致，得1分。
+
+- idx_3:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所科创板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所科创板，不同实体，得0分。
+
+- idx_4:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所主板，两个不是同一个交易所，得0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",北京证券交易所,shenzhenstockexchange,0.0,"分析过程：
+
+- idx_0：
+  - 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+  - 回答：chemicalactivepharmaceuticalingredientandfoodadditives
+  - 语义比较：英文回答暗示“chemical active pharmaceutical ingredient and food additives”，其中“food additives”部分没有出现在参考答案中，且参考答案包括“兽药原料药”和“医药原料药及中间体的研发、生产和销售”，英文回答没有明确涉及“兽药”成分，也没有涉及具体“研发、生产和销售”的流程表达，语义差异较大。
+  - 判定：不符合语义一致或者指向同一实体
+
+- idx_1：
+  - 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+  - 回答：dentalprostheticsandrelatedservices（牙科修复体及相关服务）
+  - 语义比较：回应该项含义与参考答案相似，都涉及口腔修复材料（prosthetics）和相关服务，不过参考答案中还有“口腔数字化设备的设计和销售”，略为细化。但整体指向一致，且业务范围基本涵盖。
+  - 判定：符合语义一致或指向一致
+
+- idx_2：
+  - 参考答案：外用药的研发、生产和销售
+  - 回答：pharmaceuticalproductsandservices（医药产品和服务）
+  - 语义比较：回答较为宽泛，包含医药产品和服务，但未特指“外用药”。参考答案较具体，仅限“外用药”，回答没有明确遮盖这一具体范围。
+  - 根据标准，需大致语义相同或指向实体一致，该回答范围比参考答案宽泛但涵盖参考答案指向，符合标准。
+  - 判定：符合语义一致或指向一致
+
+- idx_3：
+  - 参考答案：生物医药非临床研究服务为主的综合研发服务（cro）
+  - 回答：biopharmaceuticalresearchanddevelopment（生物医药研发）
+  - 语义比较：参考答案突出“非临床研究服务为主”，而回答仅表达“一般生物医药研发”，范畴有差异但指向的实体仍然是生物医药领域的研发服务，大致一致。
+  - 判定：符合语义一致或指向一致
+
+- idx_4：
+  - 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+  - 回答：medicaldevicemanufacturingandsales（医疗设备制造和销售）
+  - 语义比较：参考答案涵盖“一次性医疗器械及消毒卫生用品”，回答较为宽泛，仅指医疗设备制造和销售，未特别指明“消毒卫生用品”和“医用敷料”等，
+  - 但“medical device manufacturing and sales”大致覆盖“医疗器械研发、生产和销售”，语义大致相近。
+  - 判定：符合语义一致或指向一致
+
+总结：
+
+- idx_0: 0
+- idx_1: 1
+- idx_2: 1
+- idx_3: 1
+- idx_4: 1
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",兽药原料药、医药原料药及中间体的研发、生产和销售,chemicalactivepharmaceuticalingredientandfoodadditives,1.0,key_match,0.0,"number not near, response: 995113300.0, target: 398000000.0",398000000.00,995113300,0.0,"exact not match, response: 001367.sz, target: 870656",870656,001367.sz,0.0,"exact not match, response: 44.48, target: 19.9",19.9,44.48
+,,爱迪特,爱迪特,0.0,"number not near, response: 345678900.0, target: 150491664.18",150491664.18,345678900,0.0,"number not near, response: 0.6513, target: 0.5294",52.94%,65.13%,0.0,"number not near, response: 234567890.0, target: 47361902.27",47361902.27,234567890,0.0,"number not near, response: 2345678900.0, target: 888165246.91",888165246.91,2345678900,0.0,"exact not match, response: 2024-03-15, target: 2024年6月26日",2024年6月26日,2024-03-15,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以。”  
+因此，只要响应的交易所和目标交易所对应相同，即可得分1，否则为0。
+
+- idx_0:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 北京证券交易所
+  - 解析：两个交易所不同，深圳证券交易所 ≠ 北京证券交易所，得0分。
+
+- idx_1:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 深圳证券交易所（创业板）
+  - 解析：响应为上海证券交易所，目标为深圳证券交易所创业板，两个不同，得0分。
+
+- idx_2:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应和目标都是上海证券交易所主板（主板是上海证券交易所的一部分），两者指向实体一致，得1分。
+
+- idx_3:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所科创板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所科创板，不同实体，得0分。
+
+- idx_4:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所主板，两个不是同一个交易所，得0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",深圳证券交易所（创业板）,shanghaistockexchange,1.0,"分析过程：
+
+- idx_0：
+  - 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+  - 回答：chemicalactivepharmaceuticalingredientandfoodadditives
+  - 语义比较：英文回答暗示“chemical active pharmaceutical ingredient and food additives”，其中“food additives”部分没有出现在参考答案中，且参考答案包括“兽药原料药”和“医药原料药及中间体的研发、生产和销售”，英文回答没有明确涉及“兽药”成分，也没有涉及具体“研发、生产和销售”的流程表达，语义差异较大。
+  - 判定：不符合语义一致或者指向同一实体
+
+- idx_1：
+  - 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+  - 回答：dentalprostheticsandrelatedservices（牙科修复体及相关服务）
+  - 语义比较：回应该项含义与参考答案相似，都涉及口腔修复材料（prosthetics）和相关服务，不过参考答案中还有“口腔数字化设备的设计和销售”，略为细化。但整体指向一致，且业务范围基本涵盖。
+  - 判定：符合语义一致或指向一致
+
+- idx_2：
+  - 参考答案：外用药的研发、生产和销售
+  - 回答：pharmaceuticalproductsandservices（医药产品和服务）
+  - 语义比较：回答较为宽泛，包含医药产品和服务，但未特指“外用药”。参考答案较具体，仅限“外用药”，回答没有明确遮盖这一具体范围。
+  - 根据标准，需大致语义相同或指向实体一致，该回答范围比参考答案宽泛但涵盖参考答案指向，符合标准。
+  - 判定：符合语义一致或指向一致
+
+- idx_3：
+  - 参考答案：生物医药非临床研究服务为主的综合研发服务（cro）
+  - 回答：biopharmaceuticalresearchanddevelopment（生物医药研发）
+  - 语义比较：参考答案突出“非临床研究服务为主”，而回答仅表达“一般生物医药研发”，范畴有差异但指向的实体仍然是生物医药领域的研发服务，大致一致。
+  - 判定：符合语义一致或指向一致
+
+- idx_4：
+  - 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+  - 回答：medicaldevicemanufacturingandsales（医疗设备制造和销售）
+  - 语义比较：参考答案涵盖“一次性医疗器械及消毒卫生用品”，回答较为宽泛，仅指医疗设备制造和销售，未特别指明“消毒卫生用品”和“医用敷料”等，
+  - 但“medical device manufacturing and sales”大致覆盖“医疗器械研发、生产和销售”，语义大致相近。
+  - 判定：符合语义一致或指向一致
+
+总结：
+
+- idx_0: 0
+- idx_1: 1
+- idx_2: 1
+- idx_3: 1
+- idx_4: 1
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售,dentalprostheticsandrelatedservices,1.0,key_match,0.0,"number not near, response: 300000000.0, target: 855370700.0",855370700.00,300000000,0.0,"exact not match, response: 603508.sh, target: 301580",301580,603508.sh,0.0,"exact not match, response: 10.0, target: 44.95",44.95,10.0
+,,小方制药,小方制药,1.0,"number near in range 5.0%, response: 213500000.0, target: 205271095.5",205271095.50,213500000,1.0,"number near in range 5.0%, response: 0.6513, target: 0.6559",65.59%,65.13%,0.0,"number not near, response: 85104790.0, target: 15105418.01",15105418.01,85104790,1.0,"number near in range 5.0%, response: 482584620.0, target: 474228256.26",474228256.26,482584620,0.0,"exact not match, response: 2024-08-26, target: 2024年8月26日",2024年8月26日,2024-08-26,1.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以。”  
+因此，只要响应的交易所和目标交易所对应相同，即可得分1，否则为0。
+
+- idx_0:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 北京证券交易所
+  - 解析：两个交易所不同，深圳证券交易所 ≠ 北京证券交易所，得0分。
+
+- idx_1:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 深圳证券交易所（创业板）
+  - 解析：响应为上海证券交易所，目标为深圳证券交易所创业板，两个不同，得0分。
+
+- idx_2:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应和目标都是上海证券交易所主板（主板是上海证券交易所的一部分），两者指向实体一致，得1分。
+
+- idx_3:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所科创板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所科创板，不同实体，得0分。
+
+- idx_4:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所主板，两个不是同一个交易所，得0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",上海证券交易所主板,shanghaistockexchange,1.0,"分析过程：
+
+- idx_0：
+  - 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+  - 回答：chemicalactivepharmaceuticalingredientandfoodadditives
+  - 语义比较：英文回答暗示“chemical active pharmaceutical ingredient and food additives”，其中“food additives”部分没有出现在参考答案中，且参考答案包括“兽药原料药”和“医药原料药及中间体的研发、生产和销售”，英文回答没有明确涉及“兽药”成分，也没有涉及具体“研发、生产和销售”的流程表达，语义差异较大。
+  - 判定：不符合语义一致或者指向同一实体
+
+- idx_1：
+  - 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+  - 回答：dentalprostheticsandrelatedservices（牙科修复体及相关服务）
+  - 语义比较：回应该项含义与参考答案相似，都涉及口腔修复材料（prosthetics）和相关服务，不过参考答案中还有“口腔数字化设备的设计和销售”，略为细化。但整体指向一致，且业务范围基本涵盖。
+  - 判定：符合语义一致或指向一致
+
+- idx_2：
+  - 参考答案：外用药的研发、生产和销售
+  - 回答：pharmaceuticalproductsandservices（医药产品和服务）
+  - 语义比较：回答较为宽泛，包含医药产品和服务，但未特指“外用药”。参考答案较具体，仅限“外用药”，回答没有明确遮盖这一具体范围。
+  - 根据标准，需大致语义相同或指向实体一致，该回答范围比参考答案宽泛但涵盖参考答案指向，符合标准。
+  - 判定：符合语义一致或指向一致
+
+- idx_3：
+  - 参考答案：生物医药非临床研究服务为主的综合研发服务（cro）
+  - 回答：biopharmaceuticalresearchanddevelopment（生物医药研发）
+  - 语义比较：参考答案突出“非临床研究服务为主”，而回答仅表达“一般生物医药研发”，范畴有差异但指向的实体仍然是生物医药领域的研发服务，大致一致。
+  - 判定：符合语义一致或指向一致
+
+- idx_4：
+  - 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+  - 回答：medicaldevicemanufacturingandsales（医疗设备制造和销售）
+  - 语义比较：参考答案涵盖“一次性医疗器械及消毒卫生用品”，回答较为宽泛，仅指医疗设备制造和销售，未特别指明“消毒卫生用品”和“医用敷料”等，
+  - 但“medical device manufacturing and sales”大致覆盖“医疗器械研发、生产和销售”，语义大致相近。
+  - 判定：符合语义一致或指向一致
+
+总结：
+
+- idx_0: 0
+- idx_1: 1
+- idx_2: 1
+- idx_3: 1
+- idx_4: 1
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",外用药的研发、生产和销售,pharmaceuticalproductsandservices,1.0,key_match,0.0,"number not near, response: 400000000.0, target: 498800000.0",498800000.00,400000000,0.0,"exact not match, response: 603207.ss, target: 603207",603207,603207.ss,1.0,"exact match, response: 12.47, target: 12.47",12.47,12.47
+,,益诺思,益诺思,0.0,"number not near, response: 234567890.0, target: 147775836.46",147775836.46,234567890,0.0,"number not near, response: 0.6513, target: 0.3357",33.57%,65.13%,0.0,"number not near, response: 123456789.0, target: 60532495.25",60532495.25,123456789,0.0,"number not near, response: 1234567890.0, target: 1141669402.29",1141669402.29,1234567890,0.0,"exact not match, response: 2024-04-10, target: 2024年9月3日",2024年9月3日,2024-04-10,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以。”  
+因此，只要响应的交易所和目标交易所对应相同，即可得分1，否则为0。
+
+- idx_0:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 北京证券交易所
+  - 解析：两个交易所不同，深圳证券交易所 ≠ 北京证券交易所，得0分。
+
+- idx_1:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 深圳证券交易所（创业板）
+  - 解析：响应为上海证券交易所，目标为深圳证券交易所创业板，两个不同，得0分。
+
+- idx_2:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应和目标都是上海证券交易所主板（主板是上海证券交易所的一部分），两者指向实体一致，得1分。
+
+- idx_3:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所科创板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所科创板，不同实体，得0分。
+
+- idx_4:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所主板，两个不是同一个交易所，得0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",上海证券交易所科创板,shenzhenstockexchange,1.0,"分析过程：
+
+- idx_0：
+  - 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+  - 回答：chemicalactivepharmaceuticalingredientandfoodadditives
+  - 语义比较：英文回答暗示“chemical active pharmaceutical ingredient and food additives”，其中“food additives”部分没有出现在参考答案中，且参考答案包括“兽药原料药”和“医药原料药及中间体的研发、生产和销售”，英文回答没有明确涉及“兽药”成分，也没有涉及具体“研发、生产和销售”的流程表达，语义差异较大。
+  - 判定：不符合语义一致或者指向同一实体
+
+- idx_1：
+  - 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+  - 回答：dentalprostheticsandrelatedservices（牙科修复体及相关服务）
+  - 语义比较：回应该项含义与参考答案相似，都涉及口腔修复材料（prosthetics）和相关服务，不过参考答案中还有“口腔数字化设备的设计和销售”，略为细化。但整体指向一致，且业务范围基本涵盖。
+  - 判定：符合语义一致或指向一致
+
+- idx_2：
+  - 参考答案：外用药的研发、生产和销售
+  - 回答：pharmaceuticalproductsandservices（医药产品和服务）
+  - 语义比较：回答较为宽泛，包含医药产品和服务，但未特指“外用药”。参考答案较具体，仅限“外用药”，回答没有明确遮盖这一具体范围。
+  - 根据标准，需大致语义相同或指向实体一致，该回答范围比参考答案宽泛但涵盖参考答案指向，符合标准。
+  - 判定：符合语义一致或指向一致
+
+- idx_3：
+  - 参考答案：生物医药非临床研究服务为主的综合研发服务（cro）
+  - 回答：biopharmaceuticalresearchanddevelopment（生物医药研发）
+  - 语义比较：参考答案突出“非临床研究服务为主”，而回答仅表达“一般生物医药研发”，范畴有差异但指向的实体仍然是生物医药领域的研发服务，大致一致。
+  - 判定：符合语义一致或指向一致
+
+- idx_4：
+  - 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+  - 回答：medicaldevicemanufacturingandsales（医疗设备制造和销售）
+  - 语义比较：参考答案涵盖“一次性医疗器械及消毒卫生用品”，回答较为宽泛，仅指医疗设备制造和销售，未特别指明“消毒卫生用品”和“医用敷料”等，
+  - 但“medical device manufacturing and sales”大致覆盖“医疗器械研发、生产和销售”，语义大致相近。
+  - 判定：符合语义一致或指向一致
+
+总结：
+
+- idx_0: 0
+- idx_1: 1
+- idx_2: 1
+- idx_3: 1
+- idx_4: 1
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",生物医药非临床研究服务为主的综合研发服务（cro）,biopharmaceuticalresearchanddevelopment,1.0,key_match,0.0,"number not near, response: 995113300.0, target: 671767900.0",671767900.00,995113300,0.0,"exact not match, response: 001367.sz, target: 688710",688710,001367.sz,0.0,"exact not match, response: 44.48, target: 19.06",19.06,44.48
+,,健尔康,健尔康,0.0,"number not near, response: 234567890.0, target: 120218925.03",120218925.03,234567890,0.0,"number not near, response: 0.6513, target: 0.23070000000000002",23.07%,65.13%,0.0,"number not near, response: 123456789.0, target: 40720470.3",40720470.30,123456789,0.0,"number not near, response: 1234567890.0, target: 1045764120.28",1045764120.28,1234567890,0.0,"exact not match, response: 2024-04-10, target: 2024年11月7日",2024年11月7日,2024-04-10,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。简称和全称都可以。”  
+因此，只要响应的交易所和目标交易所对应相同，即可得分1，否则为0。
+
+- idx_0:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 北京证券交易所
+  - 解析：两个交易所不同，深圳证券交易所 ≠ 北京证券交易所，得0分。
+
+- idx_1:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 深圳证券交易所（创业板）
+  - 解析：响应为上海证券交易所，目标为深圳证券交易所创业板，两个不同，得0分。
+
+- idx_2:
+  - 响应: shanghaistockexchange（上海证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应和目标都是上海证券交易所主板（主板是上海证券交易所的一部分），两者指向实体一致，得1分。
+
+- idx_3:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所科创板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所科创板，不同实体，得0分。
+
+- idx_4:
+  - 响应: shenzhenstockexchange（深圳证券交易所）
+  - 目标: 上海证券交易所主板
+  - 解析：响应为深圳证券交易所，目标为上海证券交易所主板，两个不是同一个交易所，得0分。
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",上海证券交易所主板,shenzhenstockexchange,1.0,"分析过程：
+
+- idx_0：
+  - 参考答案：兽药原料药、医药原料药及中间体的研发、生产和销售
+  - 回答：chemicalactivepharmaceuticalingredientandfoodadditives
+  - 语义比较：英文回答暗示“chemical active pharmaceutical ingredient and food additives”，其中“food additives”部分没有出现在参考答案中，且参考答案包括“兽药原料药”和“医药原料药及中间体的研发、生产和销售”，英文回答没有明确涉及“兽药”成分，也没有涉及具体“研发、生产和销售”的流程表达，语义差异较大。
+  - 判定：不符合语义一致或者指向同一实体
+
+- idx_1：
+  - 参考答案：口腔修复材料的研发、生产和销售;口腔数字化设备的设计和销售
+  - 回答：dentalprostheticsandrelatedservices（牙科修复体及相关服务）
+  - 语义比较：回应该项含义与参考答案相似，都涉及口腔修复材料（prosthetics）和相关服务，不过参考答案中还有“口腔数字化设备的设计和销售”，略为细化。但整体指向一致，且业务范围基本涵盖。
+  - 判定：符合语义一致或指向一致
+
+- idx_2：
+  - 参考答案：外用药的研发、生产和销售
+  - 回答：pharmaceuticalproductsandservices（医药产品和服务）
+  - 语义比较：回答较为宽泛，包含医药产品和服务，但未特指“外用药”。参考答案较具体，仅限“外用药”，回答没有明确遮盖这一具体范围。
+  - 根据标准，需大致语义相同或指向实体一致，该回答范围比参考答案宽泛但涵盖参考答案指向，符合标准。
+  - 判定：符合语义一致或指向一致
+
+- idx_3：
+  - 参考答案：生物医药非临床研究服务为主的综合研发服务（cro）
+  - 回答：biopharmaceuticalresearchanddevelopment（生物医药研发）
+  - 语义比较：参考答案突出“非临床研究服务为主”，而回答仅表达“一般生物医药研发”，范畴有差异但指向的实体仍然是生物医药领域的研发服务，大致一致。
+  - 判定：符合语义一致或指向一致
+
+- idx_4：
+  - 参考答案：医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售
+  - 回答：medicaldevicemanufacturingandsales（医疗设备制造和销售）
+  - 语义比较：参考答案涵盖“一次性医疗器械及消毒卫生用品”，回答较为宽泛，仅指医疗设备制造和销售，未特别指明“消毒卫生用品”和“医用敷料”等，
+  - 但“medical device manufacturing and sales”大致覆盖“医疗器械研发、生产和销售”，语义大致相近。
+  - 判定：符合语义一致或指向一致
+
+总结：
+
+- idx_0: 0
+- idx_1: 1
+- idx_2: 1
+- idx_3: 1
+- idx_4: 1
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",医用敷料等一次性医疗器械及消毒卫生用品研发、生产和销售,medicaldevicemanufacturingandsales,1.0,key_match,0.0,"number not near, response: 995113300.0, target: 439500000.0",439500000.00,995113300,0.0,"exact not match, response: 001367.sz, target: 603205",603205,001367.sz,0.0,"exact not match, response: 44.48, target: 14.65",14.65,44.48

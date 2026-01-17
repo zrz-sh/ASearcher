@@ -1,0 +1,503 @@
+exist_flag_gt,exist_flag_response,name,name_before_map,position,position_before_map,enddate_date_near,enddate_date_near_eval_msg,enddate_query,enddate_response,name_exact_match,name_exact_match_eval_msg,position_exact_match,position_exact_match_eval_msg,startdate_date_near,startdate_date_near_eval_msg,startdate_query,startdate_response,successor_llm_judge,successor_llm_judge_eval_msg,successor_query,successor_response
+,,johnfkelly,John Kelly,secretaryofhomelandsecurity,Secretary of Homeland Security,0.0,"date not near, response: 2018-05-01 00:00:00, target: 2017-07-31 00:00:00",2017-07-31,2018-05-01,1.0,key_match,1.0,key_match,1.0,"date near, response: 2017-01-20 00:00:00, target: 2017-01-20 00:00:00",2017-01-20,2017-01-20,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",kristennielsen,kirstjennielsen
+,,reincepriebus,Reince Priebus,whitehousechiefofstaff,Chief of Staff,0.0,"date not near, response: 2017-05-01 00:00:00, target: 2017-07-31 00:00:00",2017-07-31,2017-05-01,1.0,key_match,1.0,key_match,1.0,"date near, response: 2017-01-20 00:00:00, target: 2017-01-20 00:00:00",2017-01-20,2017-01-20,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",johnfkelly,johnkelly
+,,rextillerson,Rex Tillerson,secretaryofstate,Secretary of State,1.0,"date near, response: 2018-02-13 00:00:00, target: 2018-03-13 00:00:00",2018-03-13,2018-02-13,1.0,key_match,1.0,key_match,1.0,"date near, response: 2017-01-20 00:00:00, target: 2017-02-01 00:00:00",2017-02-01,2017-01-20,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",mikepompeo,mikepompeo
+,,betsydevos,Betsy DeVos,secretaryofeducation,Secretary of Education,1.0,"date near, response: 2021-01-20 00:00:00, target: 2021-01-07 00:00:00",2021-01-07,2021-01-20,1.0,key_match,1.0,key_match,1.0,"date near, response: 2017-01-20 00:00:00, target: 2017-02-07 00:00:00",2017-02-07,2017-01-20,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",-,miguelcardona(acting)→betsydevos
+,,jeffsessions,Jeff Sessions,attorneygeneral,Attorney General,1.0,"date near, response: 2018-11-07 00:00:00, target: 2018-11-07 00:00:00",2018-11-07,2018-11-07,1.0,key_match,1.0,key_match,1.0,"date near, response: 2017-01-20 00:00:00, target: 2017-02-09 00:00:00",2017-02-09,2017-01-20,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",williambaar,williambarr
+,,tomprice,Tom Price,secretaryofhealthandhumanservices,Secretary of Health and Human Services,0.0,"date not near, response: 2018-06-05 00:00:00, target: 2017-09-29 00:00:00",2017-09-29,2018-06-05,1.0,key_match,1.0,key_match,1.0,"date near, response: 2017-01-20 00:00:00, target: 2017-02-10 00:00:00",2017-02-10,2017-01-20,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",alexazar,alexazar
+,,rickperry,Rick Perry,secretaryofenergy,Secretary of Energy,0.0,"date not near, response: 2018-01-20 00:00:00, target: 2019-12-01 00:00:00",2019-12-01,2018-01-20,1.0,key_match,1.0,key_match,0.0,"date not near, response: 2017-01-20 00:00:00, target: 2017-03-02 00:00:00",2017-03-02,2017-01-20,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- There is no need for a word-for-word correspondence.
+
+---
+
+### idx_0  
+- Response: ""kirstjennielsen""  
+- Target: ""kristennielsen""  
+- Analysis: The response has a typo in ""kirstjen"" vs ""kristen"". However, the intent is clearly the same name/entity (""Kristen Nielsen""). According to the criterion (""semantics approximately the same or same entity""), this is acceptable.  
+- Score: 1
+
+### idx_1  
+- Response: ""johnkelly""  
+- Target: ""johnfkelly""  
+- Analysis: Response is missing the middle initial ""f"". Still points to the same person ""John Kelly"". According to the criterion, this is acceptable.  
+- Score: 1
+
+### idx_2  
+- Response: ""mikepompeo""  
+- Target: ""mikepompeo""  
+- Exact match.  
+- Score: 1
+
+### idx_3  
+- Response: ""miguelcardona(acting)→betsydevos""  
+- Target: ""-"" (empty)  
+- Target is empty, so nothing to compare to.  
+- According to the criterion, the response needs to match the target (which is empty). Since the target is ""-"", presumably meaning no valid answer or no requirement, the response providing any name is not correct.  
+- Score: 0
+
+### idx_4  
+- Response: ""williambarr""  
+- Target: ""williambaar""  
+- Analysis: Response has ""barr"" whereas target ends with ""baar"". The last character spelling is different. But it appears to be the name ""William Barr"" vs ""William Baar"". These are two different surnames.  
+- The criterion: semantics approximately the same or same entity. If these are different people, then score should be 0.  
+- Need to determine if ""williambaar"" is a typo or a different person: ""William Barr"" is a known figure, ""William Baar"" is uncommon. Assuming ""williambaar"" is a typo target, or ""williambarr"" is correct. But since the target ""williambaar"" does not correspond to a known person and the response matches a known well-known figure (William Barr), this is ambiguous.  
+- Given the criterion that the same entity suffices, if we cannot confirm they are referring to the same, then must be strict. Since the spelling differs, probably different entities.  
+- Score: 0
+
+### idx_5  
+- Response: ""alexazar""  
+- Target: ""alexazar""  
+- Exact match.  
+- Score: 1
+
+### idx_6  
+- Response: ""rickperry(acting)→danbrouillette""  
+- Target: ""danbrouillette""  
+- Target name is ""danbrouillette"", response mentions two names ""rickperry(acting)"" and then ""danbrouillette"". The response includes the correct entity, though with an extra entity and the notation ""→"" that might mean transition.  
+- According to the criterion, approximate or same entity suffices. Since the response includes ""danbrouillette"", the intended entity is there. Additional information should not cause deduction.  
+- Score: 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",danbrouillette,rickperry(acting)→danbrouillette
+1.0,,alexacosta,,secretaryoflabor,,,,2019-07-12,,,,,,,,2017-04-28,,,,eugenescalia,
+,1.0,bencarson,Ben Carson,secretaryofhousingandurbandevelopment,Secretary of Housing and Urban Development,,,,2021-01-20,,,,,,,,2017-01-20,,,,marciafudge(acting)→bencarson
+1.0,,dancoats,,directorofnationalintelligence,,,,2019-08-15,,,,,,,,2017-03-16,,,,johnratcliffe,
+1.0,,davidshaulkin,,secretaryofveteransaffairs,,,,2018-03-28,,,,,,,,2017-02-14,,,,robertwilkie,
+1.0,,elainechao,,secretaryoftransportation,,,,2021-01-11,,,,,,,,2017-01-31,,,,-,
+1.0,,jimmattis,,secretaryofdefense,,,,2018-12-20,,,,,,,,2017-01-20,,,,markesper,
+1.0,,johnfkelly,,whitehousechiefofstaff,,,,2019-01-02,,,,,,,,2017-07-31,,,,markmeadows,
+,1.0,johnrothschild,John Rothschild,secretaryoflabor,Secretary of Labor,,,,2018-02-02,,,,,,,,2017-01-20,,,,alexanderacosta
+1.0,,kristennielsen,,secretaryofhomelandsecurity,,,,2019-04-07,,,,,,,,2017-12-06,,,,-,
+1.0,,lindamcmahon,,administratorofthesmallbusinessadministration,,,,2019-04-12,,,,,,,,2017-02-14,,,,jovitacarranza,
+1.0,,markesper,,secretaryofdefense,,,,2020-11-09,,,,,,,,2019-06-24,,,,-,
+,1.0,michaelflynn,Michael Flynn,nationalsecurityadvisor,National Security Advisor,,,,2017-02-13,,,,,,,,2017-01-20,,,,hrmcmaster
+1.0,,michealmulvaney,,directoroftheofficeofmanagementandbudget,,,,2020-03-31,,,,,,,,2017-02-16,,,,russellvought,
+1.0,,mikepompeo,,directorofthecentralintelligenceagency,,,,2018-04-26,,,,,,,,2017-01-23,,,,ginahaspel,
+1.0,,nikkihaley,,unitedstatesambassadortotheunitednations,,,,2018-12-31,,,,,,,,2017-01-27,,,,kellycraft,
+1.0,,ryanzinke,,secretaryoftheinterior,,,,2018-12-25,,,,,,,,2017-03-01,,,,davidbernhardt,
+1.0,,scottpruitt,,administratoroftheenvironmentalprotectionagency,,,,2018-07-06,,,,,,,,2017-02-17,,,,andrewwheeler,
+,1.0,seanspicer,Sean Spicer,presssecretary,Press Secretary,,,,2017-05-11,,,,,,,,2017-01-20,,,,sarahsanders
+1.0,,williambarr,,unitedstatesattorneygeneral,,,,2020-12-23,,,,,,,,2019-02-14,,,,-,

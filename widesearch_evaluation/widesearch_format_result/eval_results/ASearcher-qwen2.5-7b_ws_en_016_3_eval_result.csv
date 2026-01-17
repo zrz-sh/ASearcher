@@ -1,0 +1,844 @@
+exist_flag_gt,exist_flag_response,time,time_before_map,bronze_llm_judge,bronze_llm_judge_eval_msg,bronze_query,bronze_response,date_llm_judge,date_llm_judge_eval_msg,date_query,date_response,event_llm_judge,event_llm_judge_eval_msg,event_query,event_response,gold_llm_judge,gold_llm_judge_eval_msg,gold_query,gold_response,location_exact_match,location_exact_match_eval_msg,location_query,location_response,meet_llm_judge,meet_llm_judge_eval_msg,meet_query,meet_response,silver_llm_judge,silver_llm_judge_eval_msg,silver_query,silver_response,standing_exact_match,standing_exact_match_eval_msg,standing_query,standing_response,time_exact_match,time_exact_match_eval_msg
+,,4:03.84,4:03.84,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+**Criterion:**  
+- Semantics must be approximately the same or point to the same entity; exact wording is not necessary.  
+- The scoring is binary: 0 or 1.
+
+---
+
+**idx_0:**  
+- Response: '-'  
+- Target: 'ryanlochte'  
+Analysis: The response is a dash ('-'), which obviously does not match or point to 'ryanlochte' or anything semantically related.  
+Score: 0
+
+---
+
+**idx_1:**  
+- Response: '-'  
+- Target: 'takeshimatsuda'  
+Analysis: Same as above, the response is '-' which does not refer to 'takeshimatsuda' or anything alike.  
+Score: 0
+
+---
+
+**idx_2:**  
+- Response: '-'  
+- Target: 'lászlócseh'  
+Analysis: Response is again '-', which does not correspond or relate to 'lászlócseh' in any way.  
+Score: 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",ryanlochte,-,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- The date can differ by one day before or after.
+
+---
+
+### Pair idx_0:
+- Target: 08-10-2008 (August 10, 2008)
+- Response: 2004-08-09 (August 9, 2004)
+
+Analysis:
+- The response date is August 9, **2004**, while the target is August 10, **2008**.
+- Year difference is 4 years; the criterion allows fluctuation by one day only, not by year.
+- So this is considered incorrect.
+
+Score: 0
+
+---
+
+### Pair idx_1:
+- Target: 08-13-2008 (August 13, 2008)
+- Response: 2008-08-15 (August 15, 2008)
+
+Analysis:
+- Assume both dates are in YYYY-MM-DD and MM-DD-YYYY format respectively:
+  - Target: August 13, 2008
+  - Response: August 15, 2008
+- The difference is 2 days after the target date.
+- Criterion allows ±1 day only.
+- So incorrect.
+
+Score: 0
+
+---
+
+### Pair idx_2:
+- Target: 03-29-2007 (March 29, 2007)
+- Response: 2000-08-05 (August 5, 2000)
+
+Analysis:
+- Response date is August 5, 2000, target is March 29, 2007.
+- Year difference is 7 years, very far away.
+- Not acceptable.
+
+Score: 0
+
+---
+
+### Final result in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",08-10-2008,2004-08-09,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The semantics need to be approximately the same as the target; pointing to the same entity is sufficient. No need for exact wording.
+
+---
+
+**idx_0**
+
+- Response: ""400mindividualmedley""
+- Target: ""400mindividualmedley""
+
+Analysis: Identical. They match exactly and semantically.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""200mindividualmedley""
+- Target: ""200mbutterfly""
+
+Analysis: Response says ""200m individual medley"" (IM), Target says ""200m butterfly.""
+
+These are two different swimming events, not semantically equivalent or referring to the same entity.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""200mbutterfly""
+- Target: ""200mindividualmedley""
+
+Analysis: Response says ""200m butterfly,"" Target says ""200m individual medley.""
+
+Again, two different events, so not semantically equivalent.
+
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",400mindividualmedley,400mindividualmedley,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion key points: The answer should be approximately semantically the same or point to the same entity. The target answers for all three are ""michaelphelps"". The responses are all ""-"" which means no answer or an answer that does not match ""michaelphelps"".
+
+Item by item analysis:
+
+- idx_0: response is ""-"", target is ""michaelphelps"".
+  ""-"" is not semantically the same nor points to the same entity.
+  Score: 0
+
+- idx_1: response is ""-"", target is ""michaelphelps"".
+  Same as above.
+  Score: 0
+
+- idx_2: response is ""-"", target is ""michaelphelps"".
+  Same as above.
+  Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",michaelphelps,-,0.0,"exact not match, response: athens,greece, target: beijing,china","beijing,china","athens,greece",0.0,"Let's analyze each pair according to the criterion:
+
+Criterion states:  
+- It is sufficient if the semantics are approximately the same or point to the same entity.  
+- No need for exact wording.
+
+---
+
+**Pair idx_0:**  
+- response: ""2004summerolympics""  
+- target: ""2008beijingsummerolympics""  
+
+Analysis:  
+- Events are both Summer Olympics but held in different years and locations.  
+- 2004 Summer Olympics is different from 2008 Beijing Summer Olympics.  
+- They do not point to the ""same entity"" or have ""approximately the same semantics"" because the year and location are critical identifiers here.  
+Result: 0
+
+---
+
+**Pair idx_1:**  
+- response: ""2008summerolympics""  
+- target: ""2008beijingsummerolympics""  
+
+Analysis:  
+- Both refer to the 2008 Summer Olympics event.  
+- The standard answer specifies location (Beijing), while the response just says the year + Summer Olympics.  
+- Semantically very close—there was only one 2008 Summer Olympics, which was in Beijing.  
+- According to the criterion, approximate semantic sameness or pointing to the same entity is sufficient.  
+Result: 1
+
+---
+
+**Pair idx_2:**  
+- response: ""2000summerolympics""  
+- target: ""worldaquaticschampionships""  
+
+Analysis:  
+- These are two completely different events.  
+- 2000 Summer Olympics is a multi-sport event, World Aquatics Championships focus on aquatic sports only.  
+- Different entities; no semantic match.  
+Result: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0
+}
+```",2008beijingsummerolympics,2004summerolympics,0.0,"Let's analyze each pair according to the provided criterion:
+
+Criterion:  
+- The response is sufficient if its semantics are approximately the same as the target or if they point to the same entity.  
+- No word-for-word correspondence is necessary.
+
+---
+
+**idx_0:**  
+- Response: '-'  
+- Target: 'lászlócseh'  
+- Analysis: The response is a dash ('-') and does not match or approximate the semantics of 'lászlócseh' or refer to the same entity in any way. Therefore, score = 0.
+
+**idx_1:**  
+- Response: '-'  
+- Target: 'laszlocseh,jr.'  
+- Analysis: Same reasoning as idx_0. The response does not approximate or point to the same entity as the target. Score = 0.
+
+**idx_2:**  
+- Response: '-'  
+- Target: 'ryanlochte'  
+- Analysis: Same reasoning. Score = 0.
+
+---
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",lászlócseh,-,1.0,"exact match, response: 1, target: 1",1,1,1.0,key_match
+,,1:52.03,1:52.03,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+**Criterion:**  
+- Semantics must be approximately the same or point to the same entity; exact wording is not necessary.  
+- The scoring is binary: 0 or 1.
+
+---
+
+**idx_0:**  
+- Response: '-'  
+- Target: 'ryanlochte'  
+Analysis: The response is a dash ('-'), which obviously does not match or point to 'ryanlochte' or anything semantically related.  
+Score: 0
+
+---
+
+**idx_1:**  
+- Response: '-'  
+- Target: 'takeshimatsuda'  
+Analysis: Same as above, the response is '-' which does not refer to 'takeshimatsuda' or anything alike.  
+Score: 0
+
+---
+
+**idx_2:**  
+- Response: '-'  
+- Target: 'lászlócseh'  
+Analysis: Response is again '-', which does not correspond or relate to 'lászlócseh' in any way.  
+Score: 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",takeshimatsuda,-,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- The date can differ by one day before or after.
+
+---
+
+### Pair idx_0:
+- Target: 08-10-2008 (August 10, 2008)
+- Response: 2004-08-09 (August 9, 2004)
+
+Analysis:
+- The response date is August 9, **2004**, while the target is August 10, **2008**.
+- Year difference is 4 years; the criterion allows fluctuation by one day only, not by year.
+- So this is considered incorrect.
+
+Score: 0
+
+---
+
+### Pair idx_1:
+- Target: 08-13-2008 (August 13, 2008)
+- Response: 2008-08-15 (August 15, 2008)
+
+Analysis:
+- Assume both dates are in YYYY-MM-DD and MM-DD-YYYY format respectively:
+  - Target: August 13, 2008
+  - Response: August 15, 2008
+- The difference is 2 days after the target date.
+- Criterion allows ±1 day only.
+- So incorrect.
+
+Score: 0
+
+---
+
+### Pair idx_2:
+- Target: 03-29-2007 (March 29, 2007)
+- Response: 2000-08-05 (August 5, 2000)
+
+Analysis:
+- Response date is August 5, 2000, target is March 29, 2007.
+- Year difference is 7 years, very far away.
+- Not acceptable.
+
+Score: 0
+
+---
+
+### Final result in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",08-13-2008,2008-08-15,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The semantics need to be approximately the same as the target; pointing to the same entity is sufficient. No need for exact wording.
+
+---
+
+**idx_0**
+
+- Response: ""400mindividualmedley""
+- Target: ""400mindividualmedley""
+
+Analysis: Identical. They match exactly and semantically.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""200mindividualmedley""
+- Target: ""200mbutterfly""
+
+Analysis: Response says ""200m individual medley"" (IM), Target says ""200m butterfly.""
+
+These are two different swimming events, not semantically equivalent or referring to the same entity.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""200mbutterfly""
+- Target: ""200mindividualmedley""
+
+Analysis: Response says ""200m butterfly,"" Target says ""200m individual medley.""
+
+Again, two different events, so not semantically equivalent.
+
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",200mbutterfly,200mindividualmedley,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion key points: The answer should be approximately semantically the same or point to the same entity. The target answers for all three are ""michaelphelps"". The responses are all ""-"" which means no answer or an answer that does not match ""michaelphelps"".
+
+Item by item analysis:
+
+- idx_0: response is ""-"", target is ""michaelphelps"".
+  ""-"" is not semantically the same nor points to the same entity.
+  Score: 0
+
+- idx_1: response is ""-"", target is ""michaelphelps"".
+  Same as above.
+  Score: 0
+
+- idx_2: response is ""-"", target is ""michaelphelps"".
+  Same as above.
+  Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",michaelphelps,-,1.0,"exact match, response: beijing,china, target: beijing,china","beijing,china","beijing,china",1.0,"Let's analyze each pair according to the criterion:
+
+Criterion states:  
+- It is sufficient if the semantics are approximately the same or point to the same entity.  
+- No need for exact wording.
+
+---
+
+**Pair idx_0:**  
+- response: ""2004summerolympics""  
+- target: ""2008beijingsummerolympics""  
+
+Analysis:  
+- Events are both Summer Olympics but held in different years and locations.  
+- 2004 Summer Olympics is different from 2008 Beijing Summer Olympics.  
+- They do not point to the ""same entity"" or have ""approximately the same semantics"" because the year and location are critical identifiers here.  
+Result: 0
+
+---
+
+**Pair idx_1:**  
+- response: ""2008summerolympics""  
+- target: ""2008beijingsummerolympics""  
+
+Analysis:  
+- Both refer to the 2008 Summer Olympics event.  
+- The standard answer specifies location (Beijing), while the response just says the year + Summer Olympics.  
+- Semantically very close—there was only one 2008 Summer Olympics, which was in Beijing.  
+- According to the criterion, approximate semantic sameness or pointing to the same entity is sufficient.  
+Result: 1
+
+---
+
+**Pair idx_2:**  
+- response: ""2000summerolympics""  
+- target: ""worldaquaticschampionships""  
+
+Analysis:  
+- These are two completely different events.  
+- 2000 Summer Olympics is a multi-sport event, World Aquatics Championships focus on aquatic sports only.  
+- Different entities; no semantic match.  
+Result: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0
+}
+```",2008beijingsummerolympics,2008summerolympics,0.0,"Let's analyze each pair according to the provided criterion:
+
+Criterion:  
+- The response is sufficient if its semantics are approximately the same as the target or if they point to the same entity.  
+- No word-for-word correspondence is necessary.
+
+---
+
+**idx_0:**  
+- Response: '-'  
+- Target: 'lászlócseh'  
+- Analysis: The response is a dash ('-') and does not match or approximate the semantics of 'lászlócseh' or refer to the same entity in any way. Therefore, score = 0.
+
+**idx_1:**  
+- Response: '-'  
+- Target: 'laszlocseh,jr.'  
+- Analysis: Same reasoning as idx_0. The response does not approximate or point to the same entity as the target. Score = 0.
+
+**idx_2:**  
+- Response: '-'  
+- Target: 'ryanlochte'  
+- Analysis: Same reasoning. Score = 0.
+
+---
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```","laszlocseh,jr.",-,1.0,"exact match, response: 1, target: 1",1,1,1.0,key_match
+,,1:54.98,1:54.98,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+**Criterion:**  
+- Semantics must be approximately the same or point to the same entity; exact wording is not necessary.  
+- The scoring is binary: 0 or 1.
+
+---
+
+**idx_0:**  
+- Response: '-'  
+- Target: 'ryanlochte'  
+Analysis: The response is a dash ('-'), which obviously does not match or point to 'ryanlochte' or anything semantically related.  
+Score: 0
+
+---
+
+**idx_1:**  
+- Response: '-'  
+- Target: 'takeshimatsuda'  
+Analysis: Same as above, the response is '-' which does not refer to 'takeshimatsuda' or anything alike.  
+Score: 0
+
+---
+
+**idx_2:**  
+- Response: '-'  
+- Target: 'lászlócseh'  
+Analysis: Response is again '-', which does not correspond or relate to 'lászlócseh' in any way.  
+Score: 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",lászlócseh,-,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- The date can differ by one day before or after.
+
+---
+
+### Pair idx_0:
+- Target: 08-10-2008 (August 10, 2008)
+- Response: 2004-08-09 (August 9, 2004)
+
+Analysis:
+- The response date is August 9, **2004**, while the target is August 10, **2008**.
+- Year difference is 4 years; the criterion allows fluctuation by one day only, not by year.
+- So this is considered incorrect.
+
+Score: 0
+
+---
+
+### Pair idx_1:
+- Target: 08-13-2008 (August 13, 2008)
+- Response: 2008-08-15 (August 15, 2008)
+
+Analysis:
+- Assume both dates are in YYYY-MM-DD and MM-DD-YYYY format respectively:
+  - Target: August 13, 2008
+  - Response: August 15, 2008
+- The difference is 2 days after the target date.
+- Criterion allows ±1 day only.
+- So incorrect.
+
+Score: 0
+
+---
+
+### Pair idx_2:
+- Target: 03-29-2007 (March 29, 2007)
+- Response: 2000-08-05 (August 5, 2000)
+
+Analysis:
+- Response date is August 5, 2000, target is March 29, 2007.
+- Year difference is 7 years, very far away.
+- Not acceptable.
+
+Score: 0
+
+---
+
+### Final result in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",03-29-2007,2000-08-05,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The semantics need to be approximately the same as the target; pointing to the same entity is sufficient. No need for exact wording.
+
+---
+
+**idx_0**
+
+- Response: ""400mindividualmedley""
+- Target: ""400mindividualmedley""
+
+Analysis: Identical. They match exactly and semantically.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""200mindividualmedley""
+- Target: ""200mbutterfly""
+
+Analysis: Response says ""200m individual medley"" (IM), Target says ""200m butterfly.""
+
+These are two different swimming events, not semantically equivalent or referring to the same entity.
+
+Score: 0
+
+---
+
+**idx_2**
+
+- Response: ""200mbutterfly""
+- Target: ""200mindividualmedley""
+
+Analysis: Response says ""200m butterfly,"" Target says ""200m individual medley.""
+
+Again, two different events, so not semantically equivalent.
+
+Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",200mindividualmedley,200mbutterfly,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion key points: The answer should be approximately semantically the same or point to the same entity. The target answers for all three are ""michaelphelps"". The responses are all ""-"" which means no answer or an answer that does not match ""michaelphelps"".
+
+Item by item analysis:
+
+- idx_0: response is ""-"", target is ""michaelphelps"".
+  ""-"" is not semantically the same nor points to the same entity.
+  Score: 0
+
+- idx_1: response is ""-"", target is ""michaelphelps"".
+  Same as above.
+  Score: 0
+
+- idx_2: response is ""-"", target is ""michaelphelps"".
+  Same as above.
+  Score: 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",michaelphelps,-,0.0,"exact not match, response: sydney,australia, target: melbourne,australia","melbourne,australia","sydney,australia",0.0,"Let's analyze each pair according to the criterion:
+
+Criterion states:  
+- It is sufficient if the semantics are approximately the same or point to the same entity.  
+- No need for exact wording.
+
+---
+
+**Pair idx_0:**  
+- response: ""2004summerolympics""  
+- target: ""2008beijingsummerolympics""  
+
+Analysis:  
+- Events are both Summer Olympics but held in different years and locations.  
+- 2004 Summer Olympics is different from 2008 Beijing Summer Olympics.  
+- They do not point to the ""same entity"" or have ""approximately the same semantics"" because the year and location are critical identifiers here.  
+Result: 0
+
+---
+
+**Pair idx_1:**  
+- response: ""2008summerolympics""  
+- target: ""2008beijingsummerolympics""  
+
+Analysis:  
+- Both refer to the 2008 Summer Olympics event.  
+- The standard answer specifies location (Beijing), while the response just says the year + Summer Olympics.  
+- Semantically very close—there was only one 2008 Summer Olympics, which was in Beijing.  
+- According to the criterion, approximate semantic sameness or pointing to the same entity is sufficient.  
+Result: 1
+
+---
+
+**Pair idx_2:**  
+- response: ""2000summerolympics""  
+- target: ""worldaquaticschampionships""  
+
+Analysis:  
+- These are two completely different events.  
+- 2000 Summer Olympics is a multi-sport event, World Aquatics Championships focus on aquatic sports only.  
+- Different entities; no semantic match.  
+Result: 0
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0
+}
+```",worldaquaticschampionships,2000summerolympics,0.0,"Let's analyze each pair according to the provided criterion:
+
+Criterion:  
+- The response is sufficient if its semantics are approximately the same as the target or if they point to the same entity.  
+- No word-for-word correspondence is necessary.
+
+---
+
+**idx_0:**  
+- Response: '-'  
+- Target: 'lászlócseh'  
+- Analysis: The response is a dash ('-') and does not match or approximate the semantics of 'lászlócseh' or refer to the same entity in any way. Therefore, score = 0.
+
+**idx_1:**  
+- Response: '-'  
+- Target: 'laszlocseh,jr.'  
+- Analysis: Same reasoning as idx_0. The response does not approximate or point to the same entity as the target. Score = 0.
+
+**idx_2:**  
+- Response: '-'  
+- Target: 'ryanlochte'  
+- Analysis: Same reasoning. Score = 0.
+
+---
+
+Final scoring results in JSON format:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0
+}
+```",ryanlochte,-,1.0,"exact match, response: 1, target: 1",1,1,1.0,key_match
+1.0,,0:49.82,,,,rafaelmuñoz,,,,08-01-2009,,,,100mbutterfly,,,,michaelphelps,,,,"rome,italy",,,,worldaquaticschampionships,,,,miloradčavić,,,,1,,,
+1.0,,0:50.58,,,,andrewlauterstein,,,,08-16-2008,,,,100mbutterfly,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,miloradčavić,,,,1,,,
+1.0,,0:50.71,,,,evgenykorotyshkin,,,,07-30-2011,,,,100mbutterfly,,,,michaelphelps,,,,"shanghai,china",,,,worldaquaticschampionships,,,,konradczerniak,,,,1,,,
+1.0,,0:50.77,,,,albertsubirats,,,,03-31-2007,,,,100mbutterfly,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,iancrocker,,,,1,,,
+1.0,,0:51.10,,,,andriyserdinov,,,,07-26-2003,,,,100mbutterfly,,,,iancrocker,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,0:51.14,,,,-,,,,08-12-2016,,,,100mbutterfly,,,,josephschooling,,,,"riodejaneiro,brazil",,,,olympicgamesrio2016,,,,"michaelphelps,chadleclos,laszlocseh",,,,2,,,
+1.0,,0:51.21,,,,-,,,,08-03-2012,,,,100mbutterfly,,,,michaelphelps,,,,"london,uk",,,,2012londonsummerolympics,,,,"chadleclos,yevgenykorotyshkin",,,,1,,,
+1.0,,0:51.25,,,,andriyserdinov,,,,08-20-2004,,,,100mbutterfly,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,iancrocker,,,,1,,,
+1.0,,0:51.65,,,,andriiserdinov,,,,07-30-2005,,,,100mbutterfly,,,,iancrocker,,,,"montreal,canada",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:42.96,,,,petervanderkaay,,,,08-12-2008,,,,200mfreestyle,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,tae-hwanpark,,,,1,,,
+1.0,,1:43.22,,,,danilaizotov,,,,07-28-2009,,,,200mfreestyle,,,,paulbiedermann,,,,"rome,italy",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:43.86,,,,parktae-hwan,,,,03-27-2007,,,,200mfreestyle,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,pieterv.d.hoogenband,,,,1,,,
+1.0,,1:44.79,,,,paulbiedermanni,,,,07-26-2011,,,,200mfreestyle,,,,ryanlochte,,,,"shanghai,china",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+1.0,,1:45.20,,,,rykneethling,,,,07-25-2005,,,,200mfreestyle,,,,michaelphelps,,,,"montreal,canada",,,,worldaquaticschampionships,,,,granthackett,,,,1,,,
+1.0,,1:45.32,,,,michaelphelps,,,,08-16-2004,,,,200mfreestyle,,,,lanthorpe,,,,"athens,greece",,,,athensolympicgames,,,,pietervandenhoogenband,,,,3,,,
+1.0,,1:51.51,,,,takeshimatsuda,,,,07-29-2009,,,,200mbutterfly,,,,michaelphelps,,,,"rome,italy",,,,worldaquaticschampionships,,,,pawelkorzeniowski,,,,1,,,
+,1.0,1:51.86,1:51.86,,,,-,,,,2016-08-07,,,,200mindividualmedley,,,,-,,,,"riodejaneiro,brazil",,,,2016summerolympics,,,,-,,,,1,,
+1.0,,1:52.09,,,,nikolayskvortsov,,,,03-29-2007,,,,200mbutterfly,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,wupeng,,,,1,,,
+,1.0,1:52.96,1:52.96,,,,-,,,,2004-08-08,,,,200mindividualmedley,,,,-,,,,"athens,greece",,,,2004summerolympics,,,,-,,,,1,,
+1.0,,1:53.01,,,,takeshimatsuda,,,,07-31-2012,,,,200mbutterfly,,,,chadleclos,,,,"london,uk",,,,2012londonsummerolympics,,,,michaelphelps,,,,2,,,
+,1.0,1:53.28,1:53.28,,,,-,,,,2008-08-14,,,,200mbutterfly,,,,-,,,,"beijing,china",,,,2008summerolympics,,,,-,,,,1,,
+,1.0,1:53.30,1:53.30,,,,-,,,,2003-07-20,,,,200mbutterfly,,,,-,,,,"barcelona,spain",,,,2003worldaquaticschampionships,,,,-,,,,1,,
+1.0,,1:53.34,,,,wupeng,,,,07-27-2011,,,,200mbutterfly,,,,michaelphelps,,,,"shanghai,china",,,,worldaquaticschampionships,,,,takeshimatsuda,,,,1,,,
+1.0,,1:53.36,,,,tamáskenderesi,,,,08-09-2016,,,,200mbutterfly,,,,michaelphelps,,,,"riodejaneiro,brazil",,,,olympicgamesrio2016,,,,masatosakai,,,,1,,,
+,1.0,1:53.82,1:53.82,,,,-,,,,2001-07-24,,,,200mbutterfly,,,,-,,,,"fukuoka,japan",,,,2001worldaquaticschampionships,,,,-,,,,1,,
+1.0,,1:54.04,,,,steveparry,,,,08-17-2004,,,,200mbutterfly,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,takashiyamamoto,,,,1,,,
+1.0,,1:54.16,,,,laszlocseh,,,,07-28-2011,,,,200mindividualmedley,,,,ryanlochte,,,,"shanghai,china",,,,worldaquaticschampionships,,,,michaelphelps,,,,2,,,
+,1.0,1:54.18,1:54.18,,,,-,,,,2004-08-07,,,,200mbutterfly,,,,-,,,,"athens,greece",,,,2004summerolympics,,,,-,,,,1,,
+1.0,,1:54.23,,,,ryanlochte,,,,08-15-2008,,,,200mindividualmedley,,,,michaelphelps,,,,"beijing,china",,,,2008beijingsummerolympics,,,,"laszlocseh,jr.",,,,1,,,
+1.0,,1:54.27,,,,"laszlocseh,jr.",,,,08-02-2012,,,,200mindividualmedley,,,,michaelphelps,,,,"london,uk",,,,2012londonsummerolympics,,,,ryanlochte,,,,1,,,
+1.0,,1:54.35,,,,tommalchow,,,,07-23-2003,,,,200mbutterfly,,,,michaelphelps,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,takashiyamamoto,,,,1,,,
+1.0,,1:54.58,,,,anatolypolyakov,,,,07-24-2001,,,,200mbutterfly,,,,michaelphelps,,,,"fukuoka,japan",,,,worldaquaticschampionships,,,,tommalchow,,,,1,,,
+,1.0,1:54.65,1:54.65,,,,-,,,,2012-07-31,,,,200mindividualmedley,,,,-,,,,"london,unitedkingdom",,,,2012summerolympics,,,,-,,,,1,,
+1.0,,1:54.66,,,,shunwang,,,,08-11-2016,,,,200mindividualmedley,,,,michaelphelps,,,,"riodejaneiro,brazil",,,,olympicgamesrio2016,,,,kosukehagino,,,,1,,,
+,1.0,1:54.68,1:54.68,,,,-,,,,2000-08-06,,,,200mindividualmedley,,,,-,,,,"sydney,australia",,,,2000summerolympics,,,,-,,,,1,,
+1.0,,1:56.04,,,,massimilianorosolino,,,,07-23-2003,,,,200mindividualmedley,,,,michaelphelps,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,ianthorpe,,,,1,,,
+1.0,,1:56.68,,,,ryanlochte,,,,07-28-2005,,,,200mindividualmedley,,,,michaelphelps,,,,"montreal,canada",,,,worldaquaticschampionships,,,,lászlócseh,,,,1,,,
+1.0,,1:57.14,,,,georgebovell,,,,08-19-2004,,,,200mindividualmedley,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,ryanlochte,,,,1,,,
+,1.0,3:03.03,3:03.03,,,,-,,,,2012-08-03,,,,4x100mfreestylerelay,,,,-,,,,"london,unitedkingdom",,,,2012summerolympics,,,,-,,,,1,,
+,1.0,3:13.04,3:13.04,,,,-,,,,2008-08-18,,,,4x100mfreestylerelay,,,,-,,,,"beijing,china",,,,2008summerolympics,,,,-,,,,1,,
+,1.0,3:14.12,3:14.12,,,,-,,,,2004-08-11,,,,4x100mfreestylerelay,,,,-,,,,"athens,greece",,,,2004summerolympics,,,,-,,,,1,,
+,1.0,3:16.99,3:16.99,,,,-,,,,2000-08-08,,,,4x100mfreestylerelay,,,,-,,,,"sydney,australia",,,,2000summerolympics,,,,-,,,,1,,
+,1.0,4:01.07,4:01.07,,,,-,,,,2012-08-01,,,,400mindividualmedley,,,,-,,,,"london,unitedkingdom",,,,2012summerolympics,,,,-,,,,1,,
+,1.0,4:03.43,4:03.43,,,,-,,,,2008-08-16,,,,400mindividualmedley,,,,-,,,,"beijing,china",,,,2008summerolympics,,,,-,,,,1,,
+,1.0,4:04.36,4:04.36,,,,-,,,,2003-07-21,,,,400mindividualmedley,,,,-,,,,"barcelona,spain",,,,2003worldaquaticschampionships,,,,-,,,,1,,
+1.0,,4:06.22,,,,lucamarin,,,,04-01-2007,,,,400mindividualmedley,,,,michaelphelps,,,,"melbourne,australia",,,,worldaquaticschampionships,,,,ryanlochte,,,,1,,,
+,1.0,4:06.82,4:06.82,,,,-,,,,2016-08-08,,,,400mindividualmedley,,,,-,,,,"riodejaneiro,brazil",,,,2016summerolympics,,,,-,,,,1,,
+,1.0,4:07.21,4:07.21,,,,-,,,,2000-08-07,,,,400mindividualmedley,,,,-,,,,"sydney,australia",,,,2000summerolympics,,,,-,,,,1,,
+1.0,,4:08.26,,,,"laszlocseh,jr.",,,,08-14-2004,,,,400mindividualmedley,,,,michaelphelps,,,,"athens,greece",,,,athensolympicgames,,,,erikvendt,,,,1,,,
+1.0,,4:09.09,,,,oussamamellouli,,,,07-27-2003,,,,400mindividualmedley,,,,michaelphelps,,,,"barcelona,spain",,,,worldaquaticschampionships,,,,laszlocseh,,,,1,,,
+,1.0,50.58,50.58,,,,-,,,,2012-07-29,,,,100mbutterfly,,,,-,,,,"london,unitedkingdom",,,,2012summerolympics,,,,-,,,,1,,
+,1.0,52.78,52.78,,,,-,,,,2000-07-29,,,,100mbutterfly,,,,-,,,,"sydney,australia",,,,2000summerolympics,,,,-,,,,1,,
+,1.0,6:58.46,6:58.46,,,,-,,,,2016-08-09,,,,4x200mfreestylerelay,,,,-,,,,"riodejaneiro,brazil",,,,2016summerolympics,,,,-,,,,1,,
+,1.0,7:00.64,7:00.64,,,,-,,,,2008-08-17,,,,4x200mfreestylerelay,,,,-,,,,"beijing,china",,,,2008summerolympics,,,,-,,,,1,,
+,1.0,7:01.52,7:01.52,,,,-,,,,2012-08-02,,,,4x200mfreestylerelay,,,,-,,,,"london,unitedkingdom",,,,2012summerolympics,,,,-,,,,1,,
+,1.0,7:01.73,7:01.73,,,,-,,,,2004-08-10,,,,4x200mfreestylerelay,,,,-,,,,"athens,greece",,,,2004summerolympics,,,,-,,,,1,,
+,1.0,7:16.19,7:16.19,,,,-,,,,2000-08-09,,,,4x200mfreestylerelay,,,,-,,,,"sydney,australia",,,,2000summerolympics,,,,-,,,,1,,

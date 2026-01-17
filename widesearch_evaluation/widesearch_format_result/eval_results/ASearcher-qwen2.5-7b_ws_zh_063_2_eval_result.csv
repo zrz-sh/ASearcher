@@ -1,0 +1,1280 @@
+exist_flag_gt,exist_flag_response,团体英文名,团体英文名_before_map,公司名称_llm_judge,公司名称_llm_judge_eval_msg,公司名称_query,公司名称_response,出道年份_exact_match,出道年份_exact_match_eval_msg,出道年份_query,出道年份_response,初一位时间_llm_judge,初一位时间_llm_judge_eval_msg,初一位时间_query,初一位时间_response,初一位歌曲名称_llm_judge,初一位歌曲名称_llm_judge_eval_msg,初一位歌曲名称_query,初一位歌曲名称_response,团体英文名_exact_match,团体英文名_exact_match_eval_msg
+,,superjunior,Super Junior,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",sm,sm,0.0,"exact not match, response: 2008, target: 2005",2005,2008,0.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2006,2008,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",u,yesoryes,1.0,key_match
+,,girls'generation,Girls' Generation,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",sm,sm,0.0,"exact not match, response: 2000, target: 2007",2007,2000,0.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2007,2009,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",intothenewworld,checkeredflag,1.0,key_match
+,,girls'generation,SNSD,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",sm,sm,0.0,"exact not match, response: 2006, target: 2007",2007,2006,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2007,2007,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",intothenewworld,girlslikeyou,1.0,key_match
+,,exo,EXO,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",sm,sm,0.0,"exact not match, response: 2010, target: 2012",2012,2010,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2013,2013,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",wolf,growl,1.0,key_match
+,,redvelvet,Red Velvet,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",sm,sm,1.0,"exact match, response: 2014, target: 2014",2014,2014,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2015,2014,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",icecreamcake,redflavor,1.0,key_match
+,,noel,Noel,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",jyp,jyp,1.0,"exact match, response: 2002, target: 2002",2002,2002,0.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2020,2002,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",latenight,-,1.0,key_match
+,,2am,2AM,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",jyp,jyp,0.0,"exact not match, response: 2009, target: 2008",2008,2009,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2010,2009,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",can'tletyougoevenifidie,-,1.0,key_match
+,,2pm,2PM,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",jyp,jyp,0.0,"exact not match, response: 2010, target: 2008",2008,2010,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2009,2010,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",again&again,-,1.0,key_match
+,,got7,GOT7,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",jyp,jyp,1.0,"exact match, response: 2014, target: 2014",2014,2014,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2015,2014,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",ifyoudo,-,1.0,key_match
+,,straykids,Stray Kids,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response's semantics should be roughly the same as the standard answer or point to the same entity. Exact word-for-word matching is not necessary.
+
+- idx_0: response = ""sm"", target = ""sm"" → exactly the same entity → score = 1  
+- idx_1: response = ""sm"", target = ""sm"" → same → 1  
+- idx_2: response = ""sm"", target = ""sm"" → same → 1  
+- idx_3: response = ""sm"", target = ""sm"" → same → 1  
+- idx_4: response = ""sm"", target = ""sm"" → same → 1  
+- idx_5: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_6: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_7: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_8: response = ""jyp"", target = ""jyp"" → same → 1  
+- idx_9: response = ""jyp"", target = ""jyp"" → same → 1  
+
+All responses match the target entities exactly, so all should receive a score of 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",jyp,jyp,0.0,"exact not match, response: 2021, target: 2018",2018,2021,1.0,"Let's analyze each pair of response and target according to the grading criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means the answer should be semantically the same or refer to the same entity. Here, the question concerns years, so the answer year should be the same as the target year or close enough to refer to the same entity. Since the criterion is somewhat loose (""大致相同"" means approximately the same or pointing to the same entity), we need to consider if the answer is close or clearly the same as the target. However, years usually are specific, so presumably the exact year or very close year may count as correct. But the criterion says ""approximate"" or ""same entity"". Since these are specific years, it's most reasonable that only exact matches are accepted as correct (score 1). Otherwise, this would be ambiguous and subjective. The criterion states it does NOT require exact matching but approximately the same or pointing to the same entity - but since these are years, ""approximate"" might allow a difference of only 1 year? Let's check each pair carefully.  
+
+If the target is 2007, answer 2007 => obviously correct (1).  
+If target 2013, answer 2013 => 1.  
+
+For others, e.g., target 2006, answer 2008: two years differ by 2 years. Is that still considered the ""same entity"" for years? Probably not, because years are specific markers. The difference between 2006 and 2008 is not ""approximately the same"" for a specific year, unless the context states a range or approximate year is acceptable. But the criterion only says approximate semantic or same entity. Since the entities are years, difference by 1 year might be accepted? Let's decide:
+
+- Difference 1 year: probably 1 (approximate).  
+- Difference more than 1 year: probably 0.
+
+Let's apply that logic.
+
+Now item by item:
+
+idx_0: response=2008, target=2006 → difference 2 years → score 0  
+idx_1: response=2009, target=2007 → difference 2 years → score 0  
+idx_2: response=2007, target=2007 → exact → score 1  
+idx_3: response=2013, target=2013 → exact → score 1  
+idx_4: response=2014, target=2015 → difference 1 year → score 1  
+idx_5: response=2002, target=2020 → difference 18 years → score 0  
+idx_6: response=2009, target=2010 → difference 1 year → score 1  
+idx_7: response=2010, target=2009 → difference 1 year → score 1  
+idx_8: response=2014, target=2015 → difference 1 year → score 1  
+idx_9: response=2021, target=2020 → difference 1 year → score 1  
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",2020,2021,0.0,"首先，根据评分类准：
+- 答案和参考答案“语义相同大致或者指向的实体一致”即可得1分。
+- 否则得0分。
+
+对每条进行逐条分析：
+
+idx_0:
+- response: yesoryes
+- target: u
+- 两者明显不同歌曲名或实体，语义不符，不一致，给0分。
+
+idx_1:
+- response: checkeredflag
+- target: intothenewworld
+- 两者不同，语义和指向实体不一致，给0分。
+
+idx_2:
+- response: girlslikeyou
+- target: intothenewworld
+- 不一致，给0分。
+
+idx_3:
+- response: growl
+- target: wolf
+- “growl”和“wolf”都是EXO的歌曲，且“growl” 是“wolf”这张专辑的同名曲 “Growl”(咆哮)，但target是“wolf”，而response是“growl”，两者虽相关，但歌曲名称不同，不能认为是同一实体，给0分。
+
+idx_4:
+- response: redflavor
+- target: icecreamcake
+- 两者都是Red Velvet的歌曲，但分别是不同的歌曲，语义不符，0分。
+
+idx_5 到 idx_9都是response为'-'，而target均不相同：
+- 根据评分类准，response和target不相符，给0分。
+
+综上，全部为0分。
+
+最终输出：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",backdoor,-,1.0,key_match
+1.0,,15&,,,,jyp,,,,2012,,,,-,,,,-,,,
+1.0,,aespa,,,,sm,,,,2020,,,,2021,,,,blackmamba,,,
+1.0,,blackbeat,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,boystory,,,,jyp,,,,2018,,,,-,,,,-,,,
+1.0,,day6,,,,jyp,,,,2015,,,,2019,,,,timeofourlife,,,
+1.0,,f(x),,,,sm,,,,2009,,,,2011,,,,danger,,,
+,1.0,g.o.d,g.o.d,,,,jyp,,,,2004,,,,2004,,,,-,,
+1.0,,gotthebeat,,,,sm,,,,2022,,,,2020,,,,stepback,,,
+1.0,,isaknjiyeon,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,itzy,,,,jyp,,,,2019,,,,2019,,,,dalladalla,,,
+1.0,,jjproject,,,,jyp,,,,2012,,,,-,,,,-,,,
+1.0,,m.i.l.k,,,,sm,,,,2001,,,,-,,,,-,,,
+1.0,,missa,,,,jyp,,,,2010,,,,2010,,,,badgirlgoodgirl,,,
+,1.0,nct,NCT,,,,sm,,,,2021,,,,2016,,,,chainedtotherhythm,,
+1.0,,nexz,,,,jyp,,,,2024,,,,-,,,,-,,,
+1.0,,niziu,,,,jyp,,,,2020,,,,2023,,,,heartris,,,
+1.0,,nmixx,,,,jyp,,,,2022,,,,2023,,,,lovemelikethis,,,
+1.0,,riize,,,,sm,,,,2023,,,,2024,,,,love119,,,
+1.0,,shinee,,,,sm,,,,2008,,,,2008,,,,lovelikeoxygen,,,
+1.0,,shinvi,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,sugar,,,,sm,,,,2001,,,,-,,,,-,,,
+1.0,,superm,,,,sm,,,,2019,,,,-,,,,-,,,
+1.0,,thegrace,,,,sm,,,,2005,,,,2007,,,,"onemoretime,ok?",,,
+1.0,,trax,,,,sm,,,,2004,,,,-,,,,-,,,
+1.0,,tvxq,,,,sm,,,,2003,,,,2004,,,,hug,,,
+1.0,,twice,,,,jyp,,,,2015,,,,2016,,,,cheerup,,,
+1.0,,vcha(girlset),,,,jyp,,,,2024,,,,-,,,,-,,,
+1.0,,wondergirls,,,,jyp,,,,2007,,,,2007,,,,tellme,,,
+1.0,,xdinaryheroes,,,,jyp,,,,2021,,,,-,,,,-,,,

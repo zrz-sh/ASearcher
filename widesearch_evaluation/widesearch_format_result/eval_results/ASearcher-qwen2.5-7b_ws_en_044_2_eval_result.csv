@@ -1,0 +1,348 @@
+exist_flag_gt,exist_flag_response,museum,museum_before_map,address_llm_judge,address_llm_judge_eval_msg,address_query,address_response,admissionfeestatus(freeorcharged)_llm_judge,admissionfeestatus(freeorcharged)_llm_judge_eval_msg,admissionfeestatus(freeorcharged)_query,admissionfeestatus(freeorcharged)_response,businesshours_llm_judge,businesshours_llm_judge_eval_msg,businesshours_query,businesshours_response,museum_exact_match,museum_exact_match_eval_msg
+,,nationalmuseumofmodernandcontemporaryart(nmca),National Museum of Modern and Contemporary Art,0.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+### Pair idx_0  
+- Response: ""37samcheong-ro,jongno-gu,seoul""  
+- Target:   ""30samcheong-ro,jongnodistrict,seoul""
+
+Analysis:  
+- The street name is the same (""samcheong-ro"").  
+- The street number differs: ""37"" vs. ""30"" → This indicates a different specific location.  
+- ""jongno-gu"" vs. ""jongnodistrict"" means the same district (different naming but same semantics).  
+- ""seoul"" matches.
+
+Since the actual street number differs (30 vs 37), this likely points to a different address and thus different entity/location. The criterion says semantics should point to the same entity or be approximately the same.
+
+Conclusion: The difference in number is significant; these are different addresses.
+
+Score: 0
+
+---
+
+### Pair idx_1  
+- Response: ""3seolleung-ro158-gil,gangnam-gu,seoul""  
+- Target:   ""3seolleung-ro158-gil,gangnamdistrict,seoul""
+
+Analysis:  
+- The entire street part is identical (""3seolleung-ro158-gil"").  
+- ""gangnam-gu"" vs. ""gangnamdistrict"" = same location, just different naming conventions.  
+- ""seoul"" matches.
+
+The response and the target clearly refer to the same place with minor naming variations.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```","30samcheong-ro,jongnodistrict,seoul","37samcheong-ro,jongno-gu,seoul",1.0,"Let's analyze each item according to the criterion:
+
+Criterion: The response is sufficient if the semantics are approximately the same or if they point to the same entity as the reference.
+
+---
+
+**idx_0**
+
+- Target: ""charged""
+- Response: ""freeonwednesdayandsaturdayevenings;regularfeeappliesotherwise.""
+
+Analysis:  
+The response specifies that the service is free only on Wednesday and Saturday evenings, and otherwise the regular fee applies. This implies that in general the service is charged except on those specific times.
+
+The target answer is simply ""charged"", which is a broad statement meaning payment is required.
+
+Since the response indicates partial free access but otherwise charged, it essentially points to the same entity that a fee is required in general.
+
+Therefore, the semantics are approximately the same: the concept of being ""charged"" or paying a fee is present, though the response adds more detail.
+
+**Verdict:** Matches the reference sufficiently ⇒ score 1
+
+---
+
+**idx_1**
+
+- Target: ""charged""
+- Response: ""admissionfeeapplies""
+
+Analysis:  
+The response ""admission fee applies"" clearly implies the need to pay a fee, i.e., being charged.
+
+Thus, it points to the same concept/entity as ""charged"".
+
+**Verdict:** Matches the reference ⇒ score 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```
+",charged,freeonwednesdayandsaturdayevenings;regularfeeappliesotherwise.,1.0,"Let's analyze each pair:
+
+---
+
+**Pair idx_0**
+
+- **Target:**  
+  mon/tue/thu/fri/sun 10:00-18:00; wed/sat 10:00-21:00
+
+- **Response:**  
+  monday,tuesday,thursday,friday,sunday 10:00–18:00. wednesday,saturday 10:00–21:00.
+
+- **Analysis:**  
+  The response conveys the exact same opening times on the same days as the target answer.  
+  The criterion states that semantic equivalence is sufficient and that exact word match is not needed. This response matches the target exactly in meaning.  
+  Closure dates are not mentioned, which is acceptable.
+
+- **Judgment:**  
+  Fully correct — score 1
+
+---
+
+**Pair idx_1**
+
+- **Target:**  
+  tuesday to friday: 13:00-17:00  
+  saturday to sunday: 11:00-18:00
+
+- **Response:**  
+  11:00–19:00
+
+- **Analysis:**  
+  The response provides a single time range (11:00-19:00) without days specified. The target dates and hours do not correspond exactly.  
+  The times in the response do not match the target times at all. Response time ends at 19:00, but the target max is 18:00.  
+  The days are missing and the time ranges differ significantly.  
+  The criterion says semantics should approximate the target or point to the same entity; these times are different enough that they do not approximate or match.  
+  Therefore, the response does not satisfy the criterion.
+
+- **Judgment:**  
+  Incorrect — score 0
+
+---
+
+**Final scores:**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```
+",mon/tue/thu/fri/sun10:00-18:00;wed/sat10:00-21:00,"monday,tuesday,thursday,friday,sunday10:00–18:00.wednesday,saturday10:00–21:00.",1.0,key_match
+,,figuremuseumw,Figure Museum W,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+### Pair idx_0  
+- Response: ""37samcheong-ro,jongno-gu,seoul""  
+- Target:   ""30samcheong-ro,jongnodistrict,seoul""
+
+Analysis:  
+- The street name is the same (""samcheong-ro"").  
+- The street number differs: ""37"" vs. ""30"" → This indicates a different specific location.  
+- ""jongno-gu"" vs. ""jongnodistrict"" means the same district (different naming but same semantics).  
+- ""seoul"" matches.
+
+Since the actual street number differs (30 vs 37), this likely points to a different address and thus different entity/location. The criterion says semantics should point to the same entity or be approximately the same.
+
+Conclusion: The difference in number is significant; these are different addresses.
+
+Score: 0
+
+---
+
+### Pair idx_1  
+- Response: ""3seolleung-ro158-gil,gangnam-gu,seoul""  
+- Target:   ""3seolleung-ro158-gil,gangnamdistrict,seoul""
+
+Analysis:  
+- The entire street part is identical (""3seolleung-ro158-gil"").  
+- ""gangnam-gu"" vs. ""gangnamdistrict"" = same location, just different naming conventions.  
+- ""seoul"" matches.
+
+The response and the target clearly refer to the same place with minor naming variations.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1
+}
+```","3seolleung-ro158-gil,gangnamdistrict,seoul","3seolleung-ro158-gil,gangnam-gu,seoul",1.0,"Let's analyze each item according to the criterion:
+
+Criterion: The response is sufficient if the semantics are approximately the same or if they point to the same entity as the reference.
+
+---
+
+**idx_0**
+
+- Target: ""charged""
+- Response: ""freeonwednesdayandsaturdayevenings;regularfeeappliesotherwise.""
+
+Analysis:  
+The response specifies that the service is free only on Wednesday and Saturday evenings, and otherwise the regular fee applies. This implies that in general the service is charged except on those specific times.
+
+The target answer is simply ""charged"", which is a broad statement meaning payment is required.
+
+Since the response indicates partial free access but otherwise charged, it essentially points to the same entity that a fee is required in general.
+
+Therefore, the semantics are approximately the same: the concept of being ""charged"" or paying a fee is present, though the response adds more detail.
+
+**Verdict:** Matches the reference sufficiently ⇒ score 1
+
+---
+
+**idx_1**
+
+- Target: ""charged""
+- Response: ""admissionfeeapplies""
+
+Analysis:  
+The response ""admission fee applies"" clearly implies the need to pay a fee, i.e., being charged.
+
+Thus, it points to the same concept/entity as ""charged"".
+
+**Verdict:** Matches the reference ⇒ score 1
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```
+",charged,admissionfeeapplies,0.0,"Let's analyze each pair:
+
+---
+
+**Pair idx_0**
+
+- **Target:**  
+  mon/tue/thu/fri/sun 10:00-18:00; wed/sat 10:00-21:00
+
+- **Response:**  
+  monday,tuesday,thursday,friday,sunday 10:00–18:00. wednesday,saturday 10:00–21:00.
+
+- **Analysis:**  
+  The response conveys the exact same opening times on the same days as the target answer.  
+  The criterion states that semantic equivalence is sufficient and that exact word match is not needed. This response matches the target exactly in meaning.  
+  Closure dates are not mentioned, which is acceptable.
+
+- **Judgment:**  
+  Fully correct — score 1
+
+---
+
+**Pair idx_1**
+
+- **Target:**  
+  tuesday to friday: 13:00-17:00  
+  saturday to sunday: 11:00-18:00
+
+- **Response:**  
+  11:00–19:00
+
+- **Analysis:**  
+  The response provides a single time range (11:00-19:00) without days specified. The target dates and hours do not correspond exactly.  
+  The times in the response do not match the target times at all. Response time ends at 19:00, but the target max is 18:00.  
+  The days are missing and the time ranges differ significantly.  
+  The criterion says semantics should approximate the target or point to the same entity; these times are different enough that they do not approximate or match.  
+  Therefore, the response does not satisfy the criterion.
+
+- **Judgment:**  
+  Incorrect — score 0
+
+---
+
+**Final scores:**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```
+","tuesdaytofriday:13:00-17:00
+saturdaytosunday:11:00-18:00",11:00–19:00,1.0,key_match
+1.0,,arariomuseuminspace,,,,"83yulgok-ro,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,arkoartcenter,,,,"3dongsung-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:11:00–19:00,,,
+1.0,,artsonjecenter,,,,"87yulgok-ro3-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,bkplasticsurgery,,,,"1-2nonhyeon-dong,gangnamdistrict,seoul",,,,free,,,,"mondaytofriday:10:00-19:00
+saturday:10:00-17:00",,,
+1.0,,cheongwadae(bluehouse)sarangchae,,,,"45hyoja-ro13-gil,jongnodistrict,seoul",,,,free,,,,"tuesday：closed
+wednesdaytomonday:09:00-18:00",,,
+1.0,,coreanamuseumofart,,,,"827eonju-ro,gangnamdistrict,seoul",,,,charged,,,,"tue-fri:11:00-18:30
+sat:12:00-18:30
+sun/mon:closed",,,
+1.0,,daelimmuseum,,,,"21jahamun-ro4-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytothursday:11:00–19:00
+friday&saturday:11:00-20:00
+sunday:11:00–19:00",,,
+1.0,,donuimunmuseumvillage,,,,"14-3songwol-gil,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,gahoefolkpaintingmuseum,,,,"17,bukchon-ro12-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00-18:00,,,
+1.0,,horimmuseumsinsabranch,,,,"317dosan-daero,gangnamdistrict,seoul",,,,charged,,,,mondaytofriday:10:30-18:00,,,
+1.0,,ilminmuseumofart,,,,"152sejong-daero,jongnodistrict,seoul",,,,charged,,,,tue-sun11:00-19:00,,,
+1.0,,kmuseumofcontemporaryart,,,,"807seolleung-ro,gangnamdistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–19:00,,,
+1.0,,koreaalpinemuseum,,,,"740-10,yeoksam-dong,gangnam-gu,seoul,southkorea",,,,free,,,,9:00-18:00,,,
+1.0,,koreacustomsmuseum,,,,"721eonju-ro,gangnamdistrict,seoul",,,,free,,,,"mondaytofriday,10:00-17:00",,,
+1.0,,kumhomuseumofart,,,,"18samcheong-ro,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:00–18:00,,,
+1.0,,kyungwoonmuseum,,,,"0632429samseong-ro,gangnamdistrict,seoul",,,,free,,,,"mondaytosaturday:10:00-16:00(
+duringexhibitions)
+mon-fri10:00-17:00(regular)",,,
+1.0,,literarymuseumofpoetyundong-ju,,,,"119changuimun-ro,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:10:00–18:00,,,
+1.0,,lockmuseum,,,,"100ihwajang-gil,ihwa-dong,jongnodistrict,seoul",,,,charged,,,,"from10amto6pm,tuesthroughsat;closedmondaysandsundays.",,,
+1.0,,mokinmuseum,,,,"46-1changuimun-ro5-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:10:30-18:00,,,
+1.0,,museumkimchikan,,,,"35-4insadong-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytosunday,10:00-18:00",,,
+1.0,,museumofkoreastrawandplantshandicraft,,,,"45sungkyunkwan-ro4-gil,jongnodistrict,seoul",,,,charged,,,,"tuesdaytosaturday,10:00-17:00",,,
+1.0,,nationalfolkmuseumofkorea,,,,"37samcheong-ro,jongnodistrict,seoul",,,,free,,,,"marchtooctober:09:00-18:00
+※saturday:09:00-20:00",,,
+1.0,,nationalmuseumofkoreancontemporaryhistory,,,,"198sejong-daero,jongnodistrict,seoul",,,,free,,,,10:00-18:00(until21:00onwednesdaysandsaturdays),,,
+1.0,,nationalpalacemuseumofkorea,,,,"12hyoja-ro,jongnodistrict,seoul",,,,free,,,,"weekdays&sundays:10:00–18:00
+wednesdays&saturdays:10:00–21:00",,,
+1.0,,owlmuseum,,,,"143bukchon-ro,jongnodistrict,seoul,southkorea",,,,charged,,,,thursdaytosunday:10:00-19:00,,,
+1.0,,presseumnewspapermuseum,,,,"5th&6thfloors,ilminmuseumofart,152sejongno,jongno-gu,seoul",,,,charged,,,,tuesdaytosunday:10:00to18:30,,,
+1.0,,samseongmuseumofpublishing,,,,"2-2bibong-gil,jongnodistrict,seoul",,,,charged,,,,"mondaytofriday,10:00-17:00",,,
+1.0,,sangwonmuseumofart,,,,"27pyeongchang31-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosaturday:10:30–17:30,,,
+1.0,,seoulcitywallmuseum,,,,"283yulgok-ro,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:09:00-18:00,,,
+1.0,,seoulmuseumofcraftart,,,,"4yulgok-ro3-gil,jongnodistrict,seoul",,,,free,,,,"thursdaytothursday:10:00-18:00
+friday:10:00-21:00
+saturdaytosunday:10:00-18:00",,,
+1.0,,seoulmuseumofhistory,,,,"55saemunan-ro,jongnodistrict,seoul",,,,free,,,,"weekdays/weekends:09:00–18:00
+(admissionstopsat17:30)
+everyfriday:extendedhoursfrom18:00to21:00
+restdays:january1standeverymonday",,,
+1.0,,seoulnationaluniversityhospitalmuseumofmedicine,,,,"101daehak-ro,jongnodistrict,seoul",,,,free,,,,"mondaytofriday,09:00-18:00
+saturday,10:00-15:00",,,
+1.0,,tanheomemorialbuddhistmuseum,,,,"13-51bamgogae-ro14-gil,gangnamdistrict,seoul",,,,free,,,,tuesdaytosunday:10:00~17:00,,,
+1.0,,thechildren’smuseumofthenationalfolkmuseumofkorea,,,,"37samcheong-ro,jongnodistrict,seoul",,,,free,,,,daily:10:00–18:00,,,
+1.0,,thekoreannationalpolicemuseum,,,,"162songwol-gil,jongnodistrict,seoul",,,,free,,,,tuesdaytosunday:09:30–17:30,,,
+1.0,,tteokmuseum,,,,"71donhwamun-ro,jongnodistrict,seoul",,,,charged,,,,mondaytosaturday:10:00–18:00,,,
+1.0,,whankimuseum,,,,"63jahamun-ro40-gil,jongnodistrict,seoul",,,,charged,,,,tuesdaytosunday:11:00–18:00,,,
+1.0,,worldjewelrymuseum,,,,"75-3hwa-dong,jongnodistrict,seoul",,,,charged,,,,daily:10:00–17:00,,,

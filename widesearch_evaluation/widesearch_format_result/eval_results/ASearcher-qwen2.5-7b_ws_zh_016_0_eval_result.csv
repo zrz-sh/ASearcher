@@ -1,0 +1,1181 @@
+exist_flag_gt,exist_flag_response,景区名称,景区名称_before_map,所属地区_llm_judge,所属地区_llm_judge_eval_msg,所属地区_query,所属地区_response,景区名称_exact_match,景区名称_exact_match_eval_msg,评定年份_llm_judge,评定年份_llm_judge_eval_msg,评定年份_query,评定年份_response,门票价格_llm_judge,门票价格_llm_judge_eval_msg,门票价格_query,门票价格_response
+,,北京（通州）大运河文化旅游景区,北京（通州）大运河文化旅游景区,1.0,"分析过程：
+
+根据评分标准，只要回答与参考答案的语义大致相同或指向实体一致，就可以得满分1分，不要求逐字对应。
+
+逐项分析：
+
+- idx_0：  
+  响应：“北京市通州区”  
+  目标：“北京市”  
+  “通州区”是北京市的一个区，响应给出了更具体的地理位置，指向仍旧是北京市范围内，语义一致。  
+  评分：1
+
+- idx_1：  
+  响应：“河北省唐山市”  
+  目标：“河北省”  
+  “唐山市”是河北省下辖的地级市，响应具体到市，语义是河北省的一部分，指向实体一致。  
+  评分：1
+
+- idx_2：  
+  响应：“陕西省、山西省”  
+  目标：“山西省、陕西省”  
+  两个省的顺序颠倒，但语义和实体完全一致。  
+  评分：1
+
+- idx_3：  
+  响应：“内蒙古自治区呼伦贝尔市”  
+  目标：“内蒙古自治区”  
+  响应给出了更具体的市，指向实体在内蒙古自治区内，语义一致。  
+  评分：1
+
+- idx_4：  
+  响应：“辽宁省本溪市”  
+  目标：“辽宁省”  
+  响应给出的是辽宁省下辖的市，语义与实体一致。  
+  评分：1
+
+- idx_5：  
+  响应：“新疆维吾尔自治区阿克苏地区”  
+  目标：“新疆维吾尔自治区”  
+  响应中包含的“阿克苏地区”是新疆的辖区，语义和实体一致。  
+  评分：1
+
+综上所有回答与目标均语义相符或者指向实体一致，均评分为1分。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",北京市,北京市通州区,1.0,key_match,1.0,"分析过程：
+
+- 评分依据是语义是否相同或指向的实体一致，不需要完全字面对应。
+- 目标答案均为“2024年”或“2022年”。
+- 响应中数字部分与目标答案的数字完全对应，虽然没有“年”字，但根据评分标准，指向实体相同即可。
+
+逐项分析：
+
+- idx_0: 响应“2024”，目标“2024年”：指向同一年份，符合标准，得1分。
+- idx_1: 同上，响应“2024”，目标“2024年”，得1分。
+- idx_2: 响应“2022”，目标“2022年”，指向实体一致，得1分。
+- idx_3: 响应“2024”，目标“2024年”，得1分。
+- idx_4: 响应“2024”，目标“2024年”，得1分。
+- idx_5: 响应“2024”，目标“2024年”，得1分。
+
+最终得分均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2024年,2024,0.0,"First, let's analyze each pair according to the provided criterion:
+
+Criterion summary:  
+- The response and the target must have the same or very similar meaning, or they must refer to the same entity.  
+- Exact wording match is not necessary.
+
+---
+
+### idx_0  
+- Response: ""60元"" (60 yuan)  
+- Target: ""入园免费"" (Free admission)  
+
+Analysis:  
+- ""60元"" vs ""free admission"" clearly do not have the same meaning or refer to the same entity.  
+- This is a mismatch.
+
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""130元"" (130 yuan)  
+- Target: ""免费入园；开滦国家矿山公园：138元/人"" (Free admission; Kailuan National Mine Park: 138 yuan per person)  
+
+Analysis:  
+- Target indicates ""free admission"" in one part, and ""138元/人"" for a specific park.  
+- Response says ""130元"" without any indication of which part it refers to.  
+- The response is close to 138, but the target mentions free admission plus 138, so the context is composite.  
+- Since the criterion allows targeting the same entity generally, ""130元"" and ""138元/人"" are close but different numeric values. Not exact match but close prices with the same entity. However, the target also mentions ""free admission"" separately which response does not.  
+- Because ""130元"" is close to ""138元/人"" and this likely targets the ticket price for the park, this can be accepted as referring to the ticket price. Overall, response and target refer mostly to the same entity but with slight numeric discrepancy.
+
+The criterion is lenient on wording but is strict on semantic entity.
+
+Given the response and target both provide a ticket price for entry, this counts as same entity despite slight numeric difference.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""免费"" (Free)  
+- Target: ""全票：100元/人"" (Regular ticket: 100 yuan per person)  
+
+Analysis:  
+- ""Free"" vs ""100元"" are different meaning entities.  
+- Response says free admission, target says paid admission.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""180元""  
+- Target: ""免费"" (Free)  
+
+Analysis:  
+- 180 yuan vs free admission are opposite concepts.
+
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""100元""  
+- Target: ""门票：70元/人/次"" (Ticket price: 70 yuan per person per time)  
+
+Analysis:  
+- Response and target both provide numeric ticket prices, but prices differ: 100 vs 70.
+
+- Since the criterion allows same entity, but numeric difference is notable. Response is 30 yuan off.
+
+- However, since response and target both refer to ticket price, and exact numbers are not mandatory to match, but response and target should be consistent in meaning.
+
+- It is arguable whether 100 yuan vs 70 yuan matches ""大致相同"" meaning in this context.
+
+- The criterion says ""approximately"" or ""entity matches"". Since 100 and 70 are different ticket prices, if the ticket price listed is factually different, then this should be scored as zero.
+
+- Since this is numeric and important information, difference here would count as mismatch.
+
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""250元""  
+- Target: ""36元/人""  
+
+Analysis:  
+- Response 250 yuan, target 36 yuan, both are ticket prices but differ substantially.
+
+- Same logic as above, mismatch.
+
+Score: 0
+
+---
+
+### Final scoring summary
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```
+",入园免费,60元
+,,唐山市南湖·开滦旅游景区,唐山市南湖·开滦旅游景区,1.0,"分析过程：
+
+根据评分标准，只要回答与参考答案的语义大致相同或指向实体一致，就可以得满分1分，不要求逐字对应。
+
+逐项分析：
+
+- idx_0：  
+  响应：“北京市通州区”  
+  目标：“北京市”  
+  “通州区”是北京市的一个区，响应给出了更具体的地理位置，指向仍旧是北京市范围内，语义一致。  
+  评分：1
+
+- idx_1：  
+  响应：“河北省唐山市”  
+  目标：“河北省”  
+  “唐山市”是河北省下辖的地级市，响应具体到市，语义是河北省的一部分，指向实体一致。  
+  评分：1
+
+- idx_2：  
+  响应：“陕西省、山西省”  
+  目标：“山西省、陕西省”  
+  两个省的顺序颠倒，但语义和实体完全一致。  
+  评分：1
+
+- idx_3：  
+  响应：“内蒙古自治区呼伦贝尔市”  
+  目标：“内蒙古自治区”  
+  响应给出了更具体的市，指向实体在内蒙古自治区内，语义一致。  
+  评分：1
+
+- idx_4：  
+  响应：“辽宁省本溪市”  
+  目标：“辽宁省”  
+  响应给出的是辽宁省下辖的市，语义与实体一致。  
+  评分：1
+
+- idx_5：  
+  响应：“新疆维吾尔自治区阿克苏地区”  
+  目标：“新疆维吾尔自治区”  
+  响应中包含的“阿克苏地区”是新疆的辖区，语义和实体一致。  
+  评分：1
+
+综上所有回答与目标均语义相符或者指向实体一致，均评分为1分。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",河北省,河北省唐山市,1.0,key_match,1.0,"分析过程：
+
+- 评分依据是语义是否相同或指向的实体一致，不需要完全字面对应。
+- 目标答案均为“2024年”或“2022年”。
+- 响应中数字部分与目标答案的数字完全对应，虽然没有“年”字，但根据评分标准，指向实体相同即可。
+
+逐项分析：
+
+- idx_0: 响应“2024”，目标“2024年”：指向同一年份，符合标准，得1分。
+- idx_1: 同上，响应“2024”，目标“2024年”，得1分。
+- idx_2: 响应“2022”，目标“2022年”，指向实体一致，得1分。
+- idx_3: 响应“2024”，目标“2024年”，得1分。
+- idx_4: 响应“2024”，目标“2024年”，得1分。
+- idx_5: 响应“2024”，目标“2024年”，得1分。
+
+最终得分均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2024年,2024,1.0,"First, let's analyze each pair according to the provided criterion:
+
+Criterion summary:  
+- The response and the target must have the same or very similar meaning, or they must refer to the same entity.  
+- Exact wording match is not necessary.
+
+---
+
+### idx_0  
+- Response: ""60元"" (60 yuan)  
+- Target: ""入园免费"" (Free admission)  
+
+Analysis:  
+- ""60元"" vs ""free admission"" clearly do not have the same meaning or refer to the same entity.  
+- This is a mismatch.
+
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""130元"" (130 yuan)  
+- Target: ""免费入园；开滦国家矿山公园：138元/人"" (Free admission; Kailuan National Mine Park: 138 yuan per person)  
+
+Analysis:  
+- Target indicates ""free admission"" in one part, and ""138元/人"" for a specific park.  
+- Response says ""130元"" without any indication of which part it refers to.  
+- The response is close to 138, but the target mentions free admission plus 138, so the context is composite.  
+- Since the criterion allows targeting the same entity generally, ""130元"" and ""138元/人"" are close but different numeric values. Not exact match but close prices with the same entity. However, the target also mentions ""free admission"" separately which response does not.  
+- Because ""130元"" is close to ""138元/人"" and this likely targets the ticket price for the park, this can be accepted as referring to the ticket price. Overall, response and target refer mostly to the same entity but with slight numeric discrepancy.
+
+The criterion is lenient on wording but is strict on semantic entity.
+
+Given the response and target both provide a ticket price for entry, this counts as same entity despite slight numeric difference.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""免费"" (Free)  
+- Target: ""全票：100元/人"" (Regular ticket: 100 yuan per person)  
+
+Analysis:  
+- ""Free"" vs ""100元"" are different meaning entities.  
+- Response says free admission, target says paid admission.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""180元""  
+- Target: ""免费"" (Free)  
+
+Analysis:  
+- 180 yuan vs free admission are opposite concepts.
+
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""100元""  
+- Target: ""门票：70元/人/次"" (Ticket price: 70 yuan per person per time)  
+
+Analysis:  
+- Response and target both provide numeric ticket prices, but prices differ: 100 vs 70.
+
+- Since the criterion allows same entity, but numeric difference is notable. Response is 30 yuan off.
+
+- However, since response and target both refer to ticket price, and exact numbers are not mandatory to match, but response and target should be consistent in meaning.
+
+- It is arguable whether 100 yuan vs 70 yuan matches ""大致相同"" meaning in this context.
+
+- The criterion says ""approximately"" or ""entity matches"". Since 100 and 70 are different ticket prices, if the ticket price listed is factually different, then this should be scored as zero.
+
+- Since this is numeric and important information, difference here would count as mismatch.
+
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""250元""  
+- Target: ""36元/人""  
+
+Analysis:  
+- Response 250 yuan, target 36 yuan, both are ticket prices but differ substantially.
+
+- Same logic as above, mismatch.
+
+Score: 0
+
+---
+
+### Final scoring summary
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```
+",免费入园；开滦国家矿山公园：138元/人,130元
+,,黄河壶口瀑布旅游区(陕西省延安市·山西省临汾市),黄河壶口瀑布旅游区(陕西省延安市·山西省临汾市),1.0,"分析过程：
+
+根据评分标准，只要回答与参考答案的语义大致相同或指向实体一致，就可以得满分1分，不要求逐字对应。
+
+逐项分析：
+
+- idx_0：  
+  响应：“北京市通州区”  
+  目标：“北京市”  
+  “通州区”是北京市的一个区，响应给出了更具体的地理位置，指向仍旧是北京市范围内，语义一致。  
+  评分：1
+
+- idx_1：  
+  响应：“河北省唐山市”  
+  目标：“河北省”  
+  “唐山市”是河北省下辖的地级市，响应具体到市，语义是河北省的一部分，指向实体一致。  
+  评分：1
+
+- idx_2：  
+  响应：“陕西省、山西省”  
+  目标：“山西省、陕西省”  
+  两个省的顺序颠倒，但语义和实体完全一致。  
+  评分：1
+
+- idx_3：  
+  响应：“内蒙古自治区呼伦贝尔市”  
+  目标：“内蒙古自治区”  
+  响应给出了更具体的市，指向实体在内蒙古自治区内，语义一致。  
+  评分：1
+
+- idx_4：  
+  响应：“辽宁省本溪市”  
+  目标：“辽宁省”  
+  响应给出的是辽宁省下辖的市，语义与实体一致。  
+  评分：1
+
+- idx_5：  
+  响应：“新疆维吾尔自治区阿克苏地区”  
+  目标：“新疆维吾尔自治区”  
+  响应中包含的“阿克苏地区”是新疆的辖区，语义和实体一致。  
+  评分：1
+
+综上所有回答与目标均语义相符或者指向实体一致，均评分为1分。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",山西省、陕西省,陕西省、山西省,1.0,key_match,1.0,"分析过程：
+
+- 评分依据是语义是否相同或指向的实体一致，不需要完全字面对应。
+- 目标答案均为“2024年”或“2022年”。
+- 响应中数字部分与目标答案的数字完全对应，虽然没有“年”字，但根据评分标准，指向实体相同即可。
+
+逐项分析：
+
+- idx_0: 响应“2024”，目标“2024年”：指向同一年份，符合标准，得1分。
+- idx_1: 同上，响应“2024”，目标“2024年”，得1分。
+- idx_2: 响应“2022”，目标“2022年”，指向实体一致，得1分。
+- idx_3: 响应“2024”，目标“2024年”，得1分。
+- idx_4: 响应“2024”，目标“2024年”，得1分。
+- idx_5: 响应“2024”，目标“2024年”，得1分。
+
+最终得分均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2022年,2022,0.0,"First, let's analyze each pair according to the provided criterion:
+
+Criterion summary:  
+- The response and the target must have the same or very similar meaning, or they must refer to the same entity.  
+- Exact wording match is not necessary.
+
+---
+
+### idx_0  
+- Response: ""60元"" (60 yuan)  
+- Target: ""入园免费"" (Free admission)  
+
+Analysis:  
+- ""60元"" vs ""free admission"" clearly do not have the same meaning or refer to the same entity.  
+- This is a mismatch.
+
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""130元"" (130 yuan)  
+- Target: ""免费入园；开滦国家矿山公园：138元/人"" (Free admission; Kailuan National Mine Park: 138 yuan per person)  
+
+Analysis:  
+- Target indicates ""free admission"" in one part, and ""138元/人"" for a specific park.  
+- Response says ""130元"" without any indication of which part it refers to.  
+- The response is close to 138, but the target mentions free admission plus 138, so the context is composite.  
+- Since the criterion allows targeting the same entity generally, ""130元"" and ""138元/人"" are close but different numeric values. Not exact match but close prices with the same entity. However, the target also mentions ""free admission"" separately which response does not.  
+- Because ""130元"" is close to ""138元/人"" and this likely targets the ticket price for the park, this can be accepted as referring to the ticket price. Overall, response and target refer mostly to the same entity but with slight numeric discrepancy.
+
+The criterion is lenient on wording but is strict on semantic entity.
+
+Given the response and target both provide a ticket price for entry, this counts as same entity despite slight numeric difference.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""免费"" (Free)  
+- Target: ""全票：100元/人"" (Regular ticket: 100 yuan per person)  
+
+Analysis:  
+- ""Free"" vs ""100元"" are different meaning entities.  
+- Response says free admission, target says paid admission.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""180元""  
+- Target: ""免费"" (Free)  
+
+Analysis:  
+- 180 yuan vs free admission are opposite concepts.
+
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""100元""  
+- Target: ""门票：70元/人/次"" (Ticket price: 70 yuan per person per time)  
+
+Analysis:  
+- Response and target both provide numeric ticket prices, but prices differ: 100 vs 70.
+
+- Since the criterion allows same entity, but numeric difference is notable. Response is 30 yuan off.
+
+- However, since response and target both refer to ticket price, and exact numbers are not mandatory to match, but response and target should be consistent in meaning.
+
+- It is arguable whether 100 yuan vs 70 yuan matches ""大致相同"" meaning in this context.
+
+- The criterion says ""approximately"" or ""entity matches"". Since 100 and 70 are different ticket prices, if the ticket price listed is factually different, then this should be scored as zero.
+
+- Since this is numeric and important information, difference here would count as mismatch.
+
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""250元""  
+- Target: ""36元/人""  
+
+Analysis:  
+- Response 250 yuan, target 36 yuan, both are ticket prices but differ substantially.
+
+- Same logic as above, mismatch.
+
+Score: 0
+
+---
+
+### Final scoring summary
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```
+",全票：100元/人,免费
+,,呼伦贝尔市呼伦贝尔大草原·莫尔格勒河景区,呼伦贝尔市呼伦贝尔大草原·莫尔格勒河景区,1.0,"分析过程：
+
+根据评分标准，只要回答与参考答案的语义大致相同或指向实体一致，就可以得满分1分，不要求逐字对应。
+
+逐项分析：
+
+- idx_0：  
+  响应：“北京市通州区”  
+  目标：“北京市”  
+  “通州区”是北京市的一个区，响应给出了更具体的地理位置，指向仍旧是北京市范围内，语义一致。  
+  评分：1
+
+- idx_1：  
+  响应：“河北省唐山市”  
+  目标：“河北省”  
+  “唐山市”是河北省下辖的地级市，响应具体到市，语义是河北省的一部分，指向实体一致。  
+  评分：1
+
+- idx_2：  
+  响应：“陕西省、山西省”  
+  目标：“山西省、陕西省”  
+  两个省的顺序颠倒，但语义和实体完全一致。  
+  评分：1
+
+- idx_3：  
+  响应：“内蒙古自治区呼伦贝尔市”  
+  目标：“内蒙古自治区”  
+  响应给出了更具体的市，指向实体在内蒙古自治区内，语义一致。  
+  评分：1
+
+- idx_4：  
+  响应：“辽宁省本溪市”  
+  目标：“辽宁省”  
+  响应给出的是辽宁省下辖的市，语义与实体一致。  
+  评分：1
+
+- idx_5：  
+  响应：“新疆维吾尔自治区阿克苏地区”  
+  目标：“新疆维吾尔自治区”  
+  响应中包含的“阿克苏地区”是新疆的辖区，语义和实体一致。  
+  评分：1
+
+综上所有回答与目标均语义相符或者指向实体一致，均评分为1分。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",内蒙古自治区,内蒙古自治区呼伦贝尔市,1.0,key_match,1.0,"分析过程：
+
+- 评分依据是语义是否相同或指向的实体一致，不需要完全字面对应。
+- 目标答案均为“2024年”或“2022年”。
+- 响应中数字部分与目标答案的数字完全对应，虽然没有“年”字，但根据评分标准，指向实体相同即可。
+
+逐项分析：
+
+- idx_0: 响应“2024”，目标“2024年”：指向同一年份，符合标准，得1分。
+- idx_1: 同上，响应“2024”，目标“2024年”，得1分。
+- idx_2: 响应“2022”，目标“2022年”，指向实体一致，得1分。
+- idx_3: 响应“2024”，目标“2024年”，得1分。
+- idx_4: 响应“2024”，目标“2024年”，得1分。
+- idx_5: 响应“2024”，目标“2024年”，得1分。
+
+最终得分均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2024年,2024,0.0,"First, let's analyze each pair according to the provided criterion:
+
+Criterion summary:  
+- The response and the target must have the same or very similar meaning, or they must refer to the same entity.  
+- Exact wording match is not necessary.
+
+---
+
+### idx_0  
+- Response: ""60元"" (60 yuan)  
+- Target: ""入园免费"" (Free admission)  
+
+Analysis:  
+- ""60元"" vs ""free admission"" clearly do not have the same meaning or refer to the same entity.  
+- This is a mismatch.
+
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""130元"" (130 yuan)  
+- Target: ""免费入园；开滦国家矿山公园：138元/人"" (Free admission; Kailuan National Mine Park: 138 yuan per person)  
+
+Analysis:  
+- Target indicates ""free admission"" in one part, and ""138元/人"" for a specific park.  
+- Response says ""130元"" without any indication of which part it refers to.  
+- The response is close to 138, but the target mentions free admission plus 138, so the context is composite.  
+- Since the criterion allows targeting the same entity generally, ""130元"" and ""138元/人"" are close but different numeric values. Not exact match but close prices with the same entity. However, the target also mentions ""free admission"" separately which response does not.  
+- Because ""130元"" is close to ""138元/人"" and this likely targets the ticket price for the park, this can be accepted as referring to the ticket price. Overall, response and target refer mostly to the same entity but with slight numeric discrepancy.
+
+The criterion is lenient on wording but is strict on semantic entity.
+
+Given the response and target both provide a ticket price for entry, this counts as same entity despite slight numeric difference.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""免费"" (Free)  
+- Target: ""全票：100元/人"" (Regular ticket: 100 yuan per person)  
+
+Analysis:  
+- ""Free"" vs ""100元"" are different meaning entities.  
+- Response says free admission, target says paid admission.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""180元""  
+- Target: ""免费"" (Free)  
+
+Analysis:  
+- 180 yuan vs free admission are opposite concepts.
+
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""100元""  
+- Target: ""门票：70元/人/次"" (Ticket price: 70 yuan per person per time)  
+
+Analysis:  
+- Response and target both provide numeric ticket prices, but prices differ: 100 vs 70.
+
+- Since the criterion allows same entity, but numeric difference is notable. Response is 30 yuan off.
+
+- However, since response and target both refer to ticket price, and exact numbers are not mandatory to match, but response and target should be consistent in meaning.
+
+- It is arguable whether 100 yuan vs 70 yuan matches ""大致相同"" meaning in this context.
+
+- The criterion says ""approximately"" or ""entity matches"". Since 100 and 70 are different ticket prices, if the ticket price listed is factually different, then this should be scored as zero.
+
+- Since this is numeric and important information, difference here would count as mismatch.
+
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""250元""  
+- Target: ""36元/人""  
+
+Analysis:  
+- Response 250 yuan, target 36 yuan, both are ticket prices but differ substantially.
+
+- Same logic as above, mismatch.
+
+Score: 0
+
+---
+
+### Final scoring summary
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```
+",免费,180元
+,,本溪市五女山景区,本溪市五女山景区,1.0,"分析过程：
+
+根据评分标准，只要回答与参考答案的语义大致相同或指向实体一致，就可以得满分1分，不要求逐字对应。
+
+逐项分析：
+
+- idx_0：  
+  响应：“北京市通州区”  
+  目标：“北京市”  
+  “通州区”是北京市的一个区，响应给出了更具体的地理位置，指向仍旧是北京市范围内，语义一致。  
+  评分：1
+
+- idx_1：  
+  响应：“河北省唐山市”  
+  目标：“河北省”  
+  “唐山市”是河北省下辖的地级市，响应具体到市，语义是河北省的一部分，指向实体一致。  
+  评分：1
+
+- idx_2：  
+  响应：“陕西省、山西省”  
+  目标：“山西省、陕西省”  
+  两个省的顺序颠倒，但语义和实体完全一致。  
+  评分：1
+
+- idx_3：  
+  响应：“内蒙古自治区呼伦贝尔市”  
+  目标：“内蒙古自治区”  
+  响应给出了更具体的市，指向实体在内蒙古自治区内，语义一致。  
+  评分：1
+
+- idx_4：  
+  响应：“辽宁省本溪市”  
+  目标：“辽宁省”  
+  响应给出的是辽宁省下辖的市，语义与实体一致。  
+  评分：1
+
+- idx_5：  
+  响应：“新疆维吾尔自治区阿克苏地区”  
+  目标：“新疆维吾尔自治区”  
+  响应中包含的“阿克苏地区”是新疆的辖区，语义和实体一致。  
+  评分：1
+
+综上所有回答与目标均语义相符或者指向实体一致，均评分为1分。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",辽宁省,辽宁省本溪市,1.0,key_match,1.0,"分析过程：
+
+- 评分依据是语义是否相同或指向的实体一致，不需要完全字面对应。
+- 目标答案均为“2024年”或“2022年”。
+- 响应中数字部分与目标答案的数字完全对应，虽然没有“年”字，但根据评分标准，指向实体相同即可。
+
+逐项分析：
+
+- idx_0: 响应“2024”，目标“2024年”：指向同一年份，符合标准，得1分。
+- idx_1: 同上，响应“2024”，目标“2024年”，得1分。
+- idx_2: 响应“2022”，目标“2022年”，指向实体一致，得1分。
+- idx_3: 响应“2024”，目标“2024年”，得1分。
+- idx_4: 响应“2024”，目标“2024年”，得1分。
+- idx_5: 响应“2024”，目标“2024年”，得1分。
+
+最终得分均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2024年,2024,0.0,"First, let's analyze each pair according to the provided criterion:
+
+Criterion summary:  
+- The response and the target must have the same or very similar meaning, or they must refer to the same entity.  
+- Exact wording match is not necessary.
+
+---
+
+### idx_0  
+- Response: ""60元"" (60 yuan)  
+- Target: ""入园免费"" (Free admission)  
+
+Analysis:  
+- ""60元"" vs ""free admission"" clearly do not have the same meaning or refer to the same entity.  
+- This is a mismatch.
+
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""130元"" (130 yuan)  
+- Target: ""免费入园；开滦国家矿山公园：138元/人"" (Free admission; Kailuan National Mine Park: 138 yuan per person)  
+
+Analysis:  
+- Target indicates ""free admission"" in one part, and ""138元/人"" for a specific park.  
+- Response says ""130元"" without any indication of which part it refers to.  
+- The response is close to 138, but the target mentions free admission plus 138, so the context is composite.  
+- Since the criterion allows targeting the same entity generally, ""130元"" and ""138元/人"" are close but different numeric values. Not exact match but close prices with the same entity. However, the target also mentions ""free admission"" separately which response does not.  
+- Because ""130元"" is close to ""138元/人"" and this likely targets the ticket price for the park, this can be accepted as referring to the ticket price. Overall, response and target refer mostly to the same entity but with slight numeric discrepancy.
+
+The criterion is lenient on wording but is strict on semantic entity.
+
+Given the response and target both provide a ticket price for entry, this counts as same entity despite slight numeric difference.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""免费"" (Free)  
+- Target: ""全票：100元/人"" (Regular ticket: 100 yuan per person)  
+
+Analysis:  
+- ""Free"" vs ""100元"" are different meaning entities.  
+- Response says free admission, target says paid admission.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""180元""  
+- Target: ""免费"" (Free)  
+
+Analysis:  
+- 180 yuan vs free admission are opposite concepts.
+
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""100元""  
+- Target: ""门票：70元/人/次"" (Ticket price: 70 yuan per person per time)  
+
+Analysis:  
+- Response and target both provide numeric ticket prices, but prices differ: 100 vs 70.
+
+- Since the criterion allows same entity, but numeric difference is notable. Response is 30 yuan off.
+
+- However, since response and target both refer to ticket price, and exact numbers are not mandatory to match, but response and target should be consistent in meaning.
+
+- It is arguable whether 100 yuan vs 70 yuan matches ""大致相同"" meaning in this context.
+
+- The criterion says ""approximately"" or ""entity matches"". Since 100 and 70 are different ticket prices, if the ticket price listed is factually different, then this should be scored as zero.
+
+- Since this is numeric and important information, difference here would count as mismatch.
+
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""250元""  
+- Target: ""36元/人""  
+
+Analysis:  
+- Response 250 yuan, target 36 yuan, both are ticket prices but differ substantially.
+
+- Same logic as above, mismatch.
+
+Score: 0
+
+---
+
+### Final scoring summary
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```
+",门票：70元/人/次,100元
+,,阿克苏地区天山托木尔景区,天山托木尔景区,1.0,"分析过程：
+
+根据评分标准，只要回答与参考答案的语义大致相同或指向实体一致，就可以得满分1分，不要求逐字对应。
+
+逐项分析：
+
+- idx_0：  
+  响应：“北京市通州区”  
+  目标：“北京市”  
+  “通州区”是北京市的一个区，响应给出了更具体的地理位置，指向仍旧是北京市范围内，语义一致。  
+  评分：1
+
+- idx_1：  
+  响应：“河北省唐山市”  
+  目标：“河北省”  
+  “唐山市”是河北省下辖的地级市，响应具体到市，语义是河北省的一部分，指向实体一致。  
+  评分：1
+
+- idx_2：  
+  响应：“陕西省、山西省”  
+  目标：“山西省、陕西省”  
+  两个省的顺序颠倒，但语义和实体完全一致。  
+  评分：1
+
+- idx_3：  
+  响应：“内蒙古自治区呼伦贝尔市”  
+  目标：“内蒙古自治区”  
+  响应给出了更具体的市，指向实体在内蒙古自治区内，语义一致。  
+  评分：1
+
+- idx_4：  
+  响应：“辽宁省本溪市”  
+  目标：“辽宁省”  
+  响应给出的是辽宁省下辖的市，语义与实体一致。  
+  评分：1
+
+- idx_5：  
+  响应：“新疆维吾尔自治区阿克苏地区”  
+  目标：“新疆维吾尔自治区”  
+  响应中包含的“阿克苏地区”是新疆的辖区，语义和实体一致。  
+  评分：1
+
+综上所有回答与目标均语义相符或者指向实体一致，均评分为1分。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",新疆维吾尔自治区,新疆维吾尔自治区阿克苏地区,1.0,key_match,1.0,"分析过程：
+
+- 评分依据是语义是否相同或指向的实体一致，不需要完全字面对应。
+- 目标答案均为“2024年”或“2022年”。
+- 响应中数字部分与目标答案的数字完全对应，虽然没有“年”字，但根据评分标准，指向实体相同即可。
+
+逐项分析：
+
+- idx_0: 响应“2024”，目标“2024年”：指向同一年份，符合标准，得1分。
+- idx_1: 同上，响应“2024”，目标“2024年”，得1分。
+- idx_2: 响应“2022”，目标“2022年”，指向实体一致，得1分。
+- idx_3: 响应“2024”，目标“2024年”，得1分。
+- idx_4: 响应“2024”，目标“2024年”，得1分。
+- idx_5: 响应“2024”，目标“2024年”，得1分。
+
+最终得分均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```",2024年,2024,0.0,"First, let's analyze each pair according to the provided criterion:
+
+Criterion summary:  
+- The response and the target must have the same or very similar meaning, or they must refer to the same entity.  
+- Exact wording match is not necessary.
+
+---
+
+### idx_0  
+- Response: ""60元"" (60 yuan)  
+- Target: ""入园免费"" (Free admission)  
+
+Analysis:  
+- ""60元"" vs ""free admission"" clearly do not have the same meaning or refer to the same entity.  
+- This is a mismatch.
+
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""130元"" (130 yuan)  
+- Target: ""免费入园；开滦国家矿山公园：138元/人"" (Free admission; Kailuan National Mine Park: 138 yuan per person)  
+
+Analysis:  
+- Target indicates ""free admission"" in one part, and ""138元/人"" for a specific park.  
+- Response says ""130元"" without any indication of which part it refers to.  
+- The response is close to 138, but the target mentions free admission plus 138, so the context is composite.  
+- Since the criterion allows targeting the same entity generally, ""130元"" and ""138元/人"" are close but different numeric values. Not exact match but close prices with the same entity. However, the target also mentions ""free admission"" separately which response does not.  
+- Because ""130元"" is close to ""138元/人"" and this likely targets the ticket price for the park, this can be accepted as referring to the ticket price. Overall, response and target refer mostly to the same entity but with slight numeric discrepancy.
+
+The criterion is lenient on wording but is strict on semantic entity.
+
+Given the response and target both provide a ticket price for entry, this counts as same entity despite slight numeric difference.
+
+Score: 1
+
+---
+
+### idx_2  
+- Response: ""免费"" (Free)  
+- Target: ""全票：100元/人"" (Regular ticket: 100 yuan per person)  
+
+Analysis:  
+- ""Free"" vs ""100元"" are different meaning entities.  
+- Response says free admission, target says paid admission.
+
+Score: 0
+
+---
+
+### idx_3  
+- Response: ""180元""  
+- Target: ""免费"" (Free)  
+
+Analysis:  
+- 180 yuan vs free admission are opposite concepts.
+
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""100元""  
+- Target: ""门票：70元/人/次"" (Ticket price: 70 yuan per person per time)  
+
+Analysis:  
+- Response and target both provide numeric ticket prices, but prices differ: 100 vs 70.
+
+- Since the criterion allows same entity, but numeric difference is notable. Response is 30 yuan off.
+
+- However, since response and target both refer to ticket price, and exact numbers are not mandatory to match, but response and target should be consistent in meaning.
+
+- It is arguable whether 100 yuan vs 70 yuan matches ""大致相同"" meaning in this context.
+
+- The criterion says ""approximately"" or ""entity matches"". Since 100 and 70 are different ticket prices, if the ticket price listed is factually different, then this should be scored as zero.
+
+- Since this is numeric and important information, difference here would count as mismatch.
+
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""250元""  
+- Target: ""36元/人""  
+
+Analysis:  
+- Response 250 yuan, target 36 yuan, both are ticket prices but differ substantially.
+
+- Same logic as above, mismatch.
+
+Score: 0
+
+---
+
+### Final scoring summary
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```
+",36元/人,250元
+1.0,,三亚市天涯海角游览区,,,,海南省,,,,,,2024年,,,,免费,
+1.0,,上饶市篁岭景区,,,,江西省,,,,,,2024年,,,,篁岭门票+往返索道套餐促销价145元/人,
+,1.0,临汾市云丘山景区,临汾市云丘山景区,,,,山西省临汾市,,,,,,2020,,,,120元
+,1.0,临汾市洪洞大槐树寻根祭祖园旅游景区,临汾市洪洞大槐树寻根祭祖园旅游景区,,,,山西省临汾市,,,,,,2018,,,,110元
+1.0,,丽水市云和梯田景区,,,,浙江省,,,,,,2024年,,,,80元/人,
+1.0,,信阳市鸡公山景区,,,,河南省,,,,,,2022年,,,,鸡公山景区全价票（自营）￥60.00,
+1.0,,厦门市厦门园林植物园景区,,,,福建省,,,,,,2024年,,,,30元/人·次,
+1.0,,台州市台州府城文化旅游区,,,,浙江省,,,,,,2022年,,,,联票（台州府城墙+东湖）成人票70元,
+1.0,,吴忠市青铜峡黄河大峡谷旅游区,,,,宁夏回族自治区,,,,,,2024年,,,,40元/人,
+1.0,,周口市太昊伏羲陵文化旅游区,,,,河南省,,,,,,2024年,,,,成人票：40元,
+1.0,,呼和浩特市老牛湾黄河大峡谷旅游区,,,,内蒙古自治区,,,,,,2024年,,,,成人票：40元/人,
+1.0,,咸阳市乾陵景区,,,,陕西省,,,,,,2024年,,,,门票100元,
+1.0,,固原市六盘山红军长征旅游区,,,,宁夏回族自治区,,,,,,2024年,,,,50元/人,
+1.0,,太原市晋祠天龙山景区,,,,山西省,,,,,,2024年,,,,"晋祠天⻰⼭景区⸺晋祠博物馆：全价票80元
+晋祠天⻰⼭景区⸺天⻰⼭⽯窟博物馆；全价票50元",
+1.0,,宜昌市三峡大瀑布景区,,,,湖北省,,,,,,2022年,,,,三峡大瀑布景区成人票115元/人次,
+1.0,,崇左市花山岩画景区,,,,广西壮族自治区,,,,,,2024年,,,,成人票90元,
+1.0,,延安市延川黄河乾坤湾景区,,,,陕西省,,,,,,2024年,,,,80元/人,
+1.0,,成都市天台山景区,,,,四川省,,,,,,2024年,,,,成人票58,
+1.0,,成都市安仁古镇景区,,,,四川省,,,,,,2022年,,,,免费入园,
+1.0,,新乡市宝泉旅游区,,,,河南省,,,,,,2024年,,,,大峡谷成人票：108；崖天下成人票：190,
+1.0,,昌吉回族自治州江布拉克景区,,,,新疆维吾尔自治区,,,,,,2022年,,,,55元/人,
+1.0,,晋中市乔家大院景区,,,,山西省,,,,,,2014/2024年,,,,115元/人,
+1.0,,松原市前郭查干湖景区,,,,吉林省,,,,,,2024年,,,,25元,
+1.0,,柳州市程阳八寨景区,,,,广西壮族自治区,,,,,,2024年,,,,80元/人·次,
+1.0,,武陵山大裂谷景区,,,,重庆市,,,,,,2024年,,,,成人票145元,
+1.0,,毕节市织金洞景区,,,,贵州省,,,,,,2022年,,,,110元/人,
+1.0,,河源市万绿湖风景区,,,,广东省,,,,,,2024年,,,,175元,
+1.0,,济宁市微山湖旅游区,,,,山东省,,,,,,2022年,,,,微山岛套票160.00元；微山岛门票130.00元,
+1.0,,淄博市周村古商城景区,,,,山东省,,,,,,2024年,,,,通票:成人票50人民币,
+1.0,,湘西州凤凰古城旅游区,,,,湖南省,,,,,,2024年,,,,免费入园,
+1.0,,滁州市琅琊山景区,,,,安徽省,,,,,,2024年,,,,免费入园,
+1.0,,甘南州冶力关旅游区,,,,甘肃省,,,,,,2024年,,,,60元/人,
+1.0,,白城市大安嫩江湾旅游区,,,,吉林省,,,,,,2024年,,,,免费入园,
+1.0,,白帝城•瞿塘峡景区,,,,重庆市,,,,,,2022年,,,,100元/人,
+1.0,,腾冲市和顺古镇景区,,,,云南省,,,,,,2024年,,,,全价票：55元/人次,
+1.0,,荆门市明显陵文化旅游景区,,,,湖北省,,,,,,2024年,,,,全价票65元/人次,
+1.0,,衡水市衡水湖旅游景区,,,,河北省,,,,,,2024年,,,,成人票100元/人,
+1.0,,西沙明珠湖景区,,,,上海市,,,,,,2024年,,,,免费,
+1.0,,贺州市黄姚古镇景区,,,,广西壮族自治区,,,,,,2022年,,,,88元/人,
+1.0,,赣州市三百山景区,,,,江西省,,,,,,2022年,,,,三百山景区门票150元/张,
+1.0,,连云港市连岛景区,,,,江苏省,,,,,,2024年,,,,成人旺季票：50元/人,
+1.0,,金华市双龙风景旅游区,,,,浙江省,,,,,,2024年,,,,景区全票80元/人。,
+,1.0,长治市太行山大峡谷八泉峡景区,长治市太行山大峡谷八泉峡景区,,,,山西省长治市,,,,,,2019,,,,120元
+1.0,,阿坝州四姑娘山景区,,,,四川省,,,,,,2024年,,,,双钩桥成人套票150元；海子沟成人套票60元；长坪沟成人套票90元,
+1.0,,陇南市官鹅沟景区,,,,甘肃省,,,,,,2022年,,,,普通套票150元,
+1.0,,青岛市奥帆海洋文化旅游区,,,,山东省,,,,,,2024年,,,,免费入园,
+1.0,,黄冈市麻城龟峰山景区,,,,湖北省,,,,,,2024年,,,,花期(4月1日-5月31日)门票价格：90元/人次,
+1.0,,黔西南州万峰林景区,,,,贵州省,,,,,,2024年,,,,门票70元/人,
+1.0,,齐齐哈尔市扎龙生态旅游区,,,,黑龙江省,,,,,,2024年,,,,65元。,
+1.0,,龙岩市冠豸山景区,,,,福建省,,,,,,2024年,,,,"a线：冠豸山景区（含石门湖船票、景交车票）120/张
+b线：冠豸山景区+竹安寨、九龙湖景区（含石门湖船票、索道缆车、景交车票）180.00/张",

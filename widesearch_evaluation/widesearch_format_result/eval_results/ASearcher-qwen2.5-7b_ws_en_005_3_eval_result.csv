@@ -1,0 +1,2191 @@
+exist_flag_gt,exist_flag_response,university,university_before_map,alliance_llm_judge,alliance_llm_judge_eval_msg,alliance_query,alliance_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,minimumgparequirement_llm_judge,minimumgparequirement_llm_judge_eval_msg,minimumgparequirement_query,minimumgparequirement_response,university_exact_match,university_exact_match_eval_msg
+,,columbiauniversity,Columbia University,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",us,unitedstates,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",gpa≥2.5/4.0,3.8orhigher,1.0,key_match
+,,harvarduniversity,Harvard University,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",us,unitedstates,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",nominimumgpaspecified,3.8orhigher,1.0,key_match
+,,universityofpennsylvania,University of Pennsylvania,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",us,unitedstates,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",nominimumgpaspecified,3.8orhigher,1.0,key_match
+,,princetonuniversity,Princeton University,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",us,unitedstates,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",nominimumgpaspecified,3.8orhigher,1.0,key_match
+,,yaleuniversity,Yale University,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",us,unitedstates,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",nominimumgpaspecified,3.8orhigher,1.0,key_match
+,,australiannationaluniversity,Australian National University,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",gpa≥5.0/7.0,3.0orhigher,1.0,key_match
+,,universityofmelbourne,University of Melbourne,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",wam≥65%,3.0orhigher,1.0,key_match
+,,universityofsydney,University of Sydney,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",wam≥65%,3.0orhigher,1.0,key_match
+,,universityofnewsouthwales,University of New South Wales,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",wam≥65%,3.0orhigher,1.0,key_match
+,,universityofqueensland,University of Queensland,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",gpa≥5.0/7.0,3.0orhigher,1.0,key_match
+,,monashuniversity,Monash University,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",creditaverage≥65%,3.0orhigher,1.0,key_match
+,,universityofwesternaustralia,The University of Western Australia,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",wam≥65%,3.0orhigher,1.0,key_match
+,,universityofadelaide,University of Adelaide,1.0,"Let's analyze each item by comparing the response against the target according to the criterion:
+
+Criterion: The semantics need to be approximately the same or point to the same entity. No need for exact word-for-word match.
+
+---
+
+**Items idx_0 to idx_4**  
+- Response: ""ivyleague""  
+- Target: ""ivyleague""  
+- The responses exactly match the targets. Semantics perfectly coincide.  
+- Score: 1 for each
+
+**Items idx_5 to idx_12**  
+- Response: ""groupofeight""  
+- Target: ""groupofeight""  
+- Responses exactly match targets. Perfect semantic alignment.  
+- Score: 1 for each
+
+---
+
+All pairs are exact matches, satisfying the criterion fully.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each idx one by one with respect to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact word match.
+
+- idx_0 to idx_4:  
+  - response: ""unitedstates""  
+  - target: ""us""  
+  - Semantically, ""unitedstates"" and ""us"" refer to the same entity (United States). So these count as correct.
+
+- idx_5 to idx_12:  
+  - response: ""australia""  
+  - target: ""australia""  
+  - Exact match, clearly correct.
+
+Scores per idx:  
+- idx_0 : 1  
+- idx_1 : 1  
+- idx_2 : 1  
+- idx_3 : 1  
+- idx_4 : 1  
+- idx_5 : 1  
+- idx_6 : 1  
+- idx_7 : 1  
+- idx_8 : 1  
+- idx_9 : 1  
+- idx_10 : 1  
+- idx_11 : 1  
+- idx_12 : 1
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1
+}
+```",australia,australia,0.0,"Let's evaluate each pair according to the grading criteria: semantics should be approximately the same or refer to the same entity.
+
+---
+
+### idx_0  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""gpa≥2.5/4.0""  
+- Analysis: The response indicates a GPA threshold of 3.8 or higher, while the target sets the minimum GPA at 2.5/4.0. These are different thresholds. The response is not consistent with the standard answer.  
+- Score: 0  
+
+### idx_1  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Analysis: The target indicates no minimum GPA, but the response provides a specific minimum GPA (3.8 or higher). Thus, semantics differ.  
+- Score: 0  
+
+### idx_2  
+- **Response:** ""3.8orhigher""  
+- **Target:** ""no minimum gpa specified""  
+- Same as idx_1, score: 0  
+
+### idx_3  
+- Same as idx_1 and idx_2, score: 0  
+
+### idx_4  
+- Same as above, score: 0  
+
+### idx_5  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥5.0/7.0""  
+- Analysis: The response gives 3.0+, target gives 5.0/7.0. To compare, convert 3.0/4.0 scale to 7.0 scale or vice versa, but no explicit scale is provided for response. The response ""3.0 or higher"" could be interpreted as 3.0 on 4.0 scale or otherwise, but target specifies 5/7 (~3.57/4). Given no indication of scale in response, and values differ substantially, these do not match.  
+- Score: 0  
+
+### idx_6  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""wam≥65%""  
+- Analysis: WAM (Weighted Average Mark) ≥ 65% is a percentage. Response specifies ""3.0 or higher"" (likely GPA?). Different metrics, not approximately the same.  
+- Score: 0  
+
+### idx_7  
+- Same as idx_6, score: 0  
+
+### idx_8  
+- Same as idx_6, score: 0  
+
+### idx_9  
+- Same as idx_5, score: 0  
+
+### idx_10  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""credit average≥65%""  
+- Analysis: Response shows GPA scale, target gives credit average percentage. Different forms, do not match.  
+- Score: 0  
+
+### idx_11  
+- Same as idx_6, score: 0  
+
+### idx_12  
+- **Response:** ""3.0orhigher""  
+- **Target:** ""gpa≥4.5/7.0""  
+- Analysis: Response is 3.0 or higher, target is 4.5 on 7.0 scale. Unless response means 3.0 on 7.0 scale (which is less than 4.5), not matching. Different thresholds.  
+- Score: 0  
+
+---
+
+### Summary:  
+No response semantically matches the target answer or points to the same entity within these pairs.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0
+}
+```",gpa≥4.5/7.0,3.0orhigher,1.0,key_match
+1.0,,brownuniversity,,,,ivyleague,,,,us,,,,"nominimumgpaspecified
+（butapplicantsbelow3.0mustsupplyextraevidence）",,,
+1.0,,cornelluniversity,,,,ivyleague,,,,us,,,,gpa≥2.7/4.0,,,
+1.0,,dartmouthcollege,,,,ivyleague,,,,us,,,,nominimumgpaspecified,,,
+,1.0,mit,MIT,,,,noalliance,,,,unitedstates,,,,3.8orhigher,,
+,1.0,stanforduniversity,Stanford University,,,,noalliance,,,,unitedstates,,,,3.8orhigher,,

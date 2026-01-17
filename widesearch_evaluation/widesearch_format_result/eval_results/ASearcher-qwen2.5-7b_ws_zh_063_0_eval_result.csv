@@ -1,0 +1,982 @@
+exist_flag_gt,exist_flag_response,团体英文名,团体英文名_before_map,公司名称_llm_judge,公司名称_llm_judge_eval_msg,公司名称_query,公司名称_response,出道年份_exact_match,出道年份_exact_match_eval_msg,出道年份_query,出道年份_response,初一位时间_llm_judge,初一位时间_llm_judge_eval_msg,初一位时间_query,初一位时间_response,初一位歌曲名称_llm_judge,初一位歌曲名称_llm_judge_eval_msg,初一位歌曲名称_query,初一位歌曲名称_response,团体英文名_exact_match,团体英文名_exact_match_eval_msg
+,,superjunior,Super Junior,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",sm,smentertainment,0.0,"exact not match, response: 2003, target: 2005",2005,2003,0.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2006,2005,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",u,i'mtheone,1.0,key_match
+,,girls'generation,Girls' Generation,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",sm,smentertainment,0.0,"exact not match, response: 2000, target: 2007",2007,2000,1.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2007,2007,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",intothenewworld,igotaboy,1.0,key_match
+,,exo,EXO,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",sm,smentertainment,0.0,"exact not match, response: 2010, target: 2012",2012,2010,0.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2013,2014,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",wolf,mama,1.0,key_match
+,,2pm,2PM,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",jyp,jypentertainment,0.0,"exact not match, response: 2012, target: 2008",2008,2012,0.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2009,2010,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",again&again,i'llbethere,1.0,key_match
+,,missa,Miss A,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",jyp,jypentertainment,1.0,"exact match, response: 2010, target: 2010",2010,2010,1.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2010,2010,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",badgirlgoodgirl,badboy,1.0,key_match
+,,got7,GOT7,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",jyp,jypentertainment,1.0,"exact match, response: 2014, target: 2014",2014,2014,0.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2015,2014,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",ifyoudo,777,1.0,key_match
+,,straykids,Stray Kids,1.0,"Let's analyze each response against its target according to the given criterion:
+
+Criterion summary:  
+- The response should have roughly the same meaning or point to the same entity as the target.  
+- It is not necessary for the response to match the target exactly word-for-word.
+
+---
+
+### Item-by-item analysis:
+
+- **idx_0**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - The response clearly refers to ""SM Entertainment,"" an entity related to ""sm."" The target is the abbreviation ""sm,"" but the response extended it to the full company name. Since they point to the same entity, this meets the criterion.  
+  - Score: 1
+
+- **idx_1**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0, same judgment.  
+  - Score: 1
+
+- **idx_2**:  
+  - Target: ""sm""  
+  - Response: ""smentertainment""  
+  - Same as idx_0 and idx_1, score 1.  
+  - Score: 1
+
+- **idx_3**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - ""jypentertainment"" corresponds to ""JYP,"" the entertainment company. The response expands the abbreviation to full name pointing to the same entity as the target.  
+  - Score: 1
+
+- **idx_4**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3, score 1.  
+  - Score: 1
+
+- **idx_5**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as idx_3 and idx_4, score 1.  
+  - Score: 1
+
+- **idx_6**:  
+  - Target: ""jyp""  
+  - Response: ""jypentertainment""  
+  - Same as above, score 1.  
+  - Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1
+}
+```",jyp,jypentertainment,0.0,"exact not match, response: 2016, target: 2018",2018,2016,0.0,"分析步骤：
+
+1. 评分范围0或1，1分表示答案与参考答案“语义相同大致或者指向的实体一致”。
+2. 每个idx评估response和target的对应关系：
+   - idx_0: response=2005，target=2006。年份相差1年，语义不完全一致，但也非常接近。题目标准是“大致相同或者指向实体一致”。两个都是年份，年份相差1年，语义不算完全一致，但也可以理解为相关时间点不同。看题意，这里判断语义是否相同大致？因为年份只是1年，含义接近，但题目没有说明多大的偏差可以认可。这里“2005”与“2006”是不同年份，若严格理解，应该是0分。但题目依据是不需要字字对应，只需要大致语义相同，年份1年差距相当大，所以不算完全正确。按照保守原则给0分。
+   - idx_1: response=2007，target=2007。完全一致。得1分。
+   - idx_2: response=2014，target=2013。年份相差1年，同理idx_0情况。得0分。
+   - idx_3: response=2010，target=2009。相差1年，得0分。
+   - idx_4: response=2010，target=2010。完全一致，得1分。
+   - idx_5: response=2014，target=2015。相差1年，得0分。
+   - idx_6: response=2019，target=2020。相差1年，得0分。
+
+总结得分原则：
+只要response和target完全一致则得1分，否则得0分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",2020,2019,0.0,"Let's analyze each pair by comparing the response and target to see if they are semantically the same or point to the same entity (song title in this case, it seems):
+
+- idx_0: response = ""i'mtheone"" vs target = ""u""  
+  These are different titles. ""I'm The One"" and ""U"" are different entities. Not semantically same.  
+  Score: 0
+
+- idx_1: response = ""igotaboy"" vs target = ""intothenewworld""  
+  ""I Got A Boy"" and ""Into The New World"" are different songs with different meanings/entities.  
+  Score: 0
+
+- idx_2: response = ""mama"" vs target = ""wolf""  
+  These do not match semantically, different song entities.  
+  Score: 0
+
+- idx_3: response = ""i'llbethere"" vs target = ""again&again""  
+  Different titles, thus different songs/entities.  
+  Score: 0
+
+- idx_4: response = ""badboy"" vs target = ""badgirlgoodgirl""  
+  Though ""badboy"" and ""badgirlgoodgirl"" both have ""bad"" and gender reference, these are different songs/entities. So not semantically the same.  
+  Score: 0
+
+- idx_5: response = ""777"" vs target = ""ifyoudo""  
+  Different titles. Score: 0
+
+- idx_6: response = ""2019"" vs target = ""backdoor""  
+  Different titles. Score: 0
+
+All pairs do not match semantically or refer to the same entity.
+
+Final Scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",backdoor,2019,1.0,key_match
+1.0,,15&,,,,jyp,,,,2012,,,,-,,,,-,,,
+1.0,,2am,,,,jyp,,,,2008,,,,2010,,,,can'tletyougoevenifidie,,,
+1.0,,aespa,,,,sm,,,,2020,,,,2021,,,,blackmamba,,,
+1.0,,blackbeat,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,boystory,,,,jyp,,,,2018,,,,-,,,,-,,,
+1.0,,day6,,,,jyp,,,,2015,,,,2019,,,,timeofourlife,,,
+1.0,,f(x),,,,sm,,,,2009,,,,2011,,,,danger,,,
+1.0,,gotthebeat,,,,sm,,,,2022,,,,2020,,,,stepback,,,
+1.0,,isaknjiyeon,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,itzy,,,,jyp,,,,2019,,,,2019,,,,dalladalla,,,
+1.0,,jjproject,,,,jyp,,,,2012,,,,-,,,,-,,,
+1.0,,m.i.l.k,,,,sm,,,,2001,,,,-,,,,-,,,
+1.0,,nexz,,,,jyp,,,,2024,,,,-,,,,-,,,
+1.0,,niziu,,,,jyp,,,,2020,,,,2023,,,,heartris,,,
+1.0,,nmixx,,,,jyp,,,,2022,,,,2023,,,,lovemelikethis,,,
+1.0,,noel,,,,jyp,,,,2002,,,,2020,,,,latenight,,,
+1.0,,redvelvet,,,,sm,,,,2014,,,,2015,,,,icecreamcake,,,
+1.0,,riize,,,,sm,,,,2023,,,,2024,,,,love119,,,
+1.0,,shinee,,,,sm,,,,2008,,,,2008,,,,lovelikeoxygen,,,
+1.0,,shinvi,,,,sm,,,,2002,,,,-,,,,-,,,
+1.0,,sugar,,,,sm,,,,2001,,,,-,,,,-,,,
+1.0,,superm,,,,sm,,,,2019,,,,-,,,,-,,,
+1.0,,thegrace,,,,sm,,,,2005,,,,2007,,,,"onemoretime,ok?",,,
+1.0,,trax,,,,sm,,,,2004,,,,-,,,,-,,,
+1.0,,tvxq,,,,sm,,,,2003,,,,2004,,,,hug,,,
+1.0,,twice,,,,jyp,,,,2015,,,,2016,,,,cheerup,,,
+1.0,,vcha(girlset),,,,jyp,,,,2024,,,,-,,,,-,,,
+1.0,,wondergirls,,,,jyp,,,,2007,,,,2007,,,,tellme,,,
+1.0,,xdinaryheroes,,,,jyp,,,,2021,,,,-,,,,-,,,

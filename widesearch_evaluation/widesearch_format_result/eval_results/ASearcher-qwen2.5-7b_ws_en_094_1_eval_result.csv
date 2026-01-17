@@ -1,0 +1,4368 @@
+exist_flag_gt,exist_flag_response,title,title_before_map,director_llm_judge,director_llm_judge_eval_msg,director_query,director_response,genre_llm_judge,genre_llm_judge_eval_msg,genre_query,genre_response,leadactor/actress_llm_judge,leadactor/actress_llm_judge_eval_msg,leadactor/actress_query,leadactor/actress_response,releaseyear_exact_match,releaseyear_exact_match_eval_msg,releaseyear_query,releaseyear_response,title_exact_match,title_exact_match_eval_msg,totaladmissions_number_near,totaladmissions_number_near_eval_msg,totaladmissions_query,totaladmissions_response,totalboxoffice(billionsofkrw)_number_near,totalboxoffice(billionsofkrw)_number_near_eval_msg,totalboxoffice(billionsofkrw)_query,totalboxoffice(billionsofkrw)_response
+,,themanfromnowhere,The Man from Nowhere,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,1.0,"exact match, response: 2010.0, target: 2010.0",2010.0,2010.0,1.0,key_match,1.0,"number near in range 5.0%, response: 6178248.0, target: 6282774.0",6282774,6178248,0.0,"number not near, response: 6.2, target: 47.0",47.0,6.2
+,,themanfromnowhere,The Man from Nowhere 2,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: 2015.0, target: 2010.0",2010.0,2015.0,1.0,key_match,0.0,"number not near, response: 3500000.0, target: 6282774.0",6282774,3500000,0.0,"number not near, response: 3.5, target: 47.0",47.0,3.5
+,,themanfromnowhere,The Man from Nowhere 3,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 2700000.0, target: 6282774.0",6282774,2700000,0.0,"number not near, response: 2.7, target: 47.0",47.0,2.7
+,,themanfromnowhere,The Man from Nowhere 4,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 2400000.0, target: 6282774.0",6282774,2400000,0.0,"number not near, response: 2.4, target: 47.0",47.0,2.4
+,,themanfromnowhere,The Man from Nowhere 5,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 2200000.0, target: 6282774.0",6282774,2200000,0.0,"number not near, response: 2.2, target: 47.0",47.0,2.2
+,,themanfromnowhere,The Man from Nowhere 6,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 2000000.0, target: 6282774.0",6282774,2000000,0.0,"number not near, response: 2.0, target: 47.0",47.0,2.0
+,,themanfromnowhere,The Man from Nowhere 7,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: 2019.0, target: 2010.0",2010.0,2019.0,1.0,key_match,0.0,"number not near, response: 1800000.0, target: 6282774.0",6282774,1800000,0.0,"number not near, response: 1.8, target: 47.0",47.0,1.8
+,,themanfromnowhere,The Man from Nowhere 8,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 1400000.0, target: 6282774.0",6282774,1400000,0.0,"number not near, response: 1.4, target: 47.0",47.0,1.4
+,,themanfromnowhere,The Man from Nowhere 9,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 1100000.0, target: 6282774.0",6282774,1100000,0.0,"number not near, response: 1.1, target: 47.0",47.0,1.1
+,,themanfromnowhere,The Man from Nowhere 10,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 800000.0, target: 6282774.0",6282774,800000,0.0,"number not near, response: 0.8, target: 47.0",47.0,0.8
+,,themanfromnowhere,The Man from Nowhere 11,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 500000.0, target: 6282774.0",6282774,500000,0.0,"number not near, response: 0.5, target: 47.0",47.0,0.5
+,,themanfromnowhere,The Man from Nowhere 12,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",leejeong-beom,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","wonbin,kimsae-ron",songkang-ho,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,0.0,"number not near, response: 200000.0, target: 6282774.0",6282774,200000,0.0,"number not near, response: 0.2, target: 47.0",47.0,0.2
+,,secretreunion,Secret Reunion,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",janghoon,kangje-gyu,0.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",action,romance,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","kangdong-won,songkang-ho",hanhyo-joo,0.0,"exact not match, response: nan, target: 2010.0",2010.0,nan,1.0,key_match,1.0,"number near in range 5.0%, response: 5416812.0, target: 5507106.0",5507106,5416812,0.0,"number not near, response: 5.4, target: 40.0",40.0,5.4
+,,warofthearrows,War of the Arrows,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",kimhan-min,kangje-gyu,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",historicalaction,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","parkhae-il,moonchae-won,ryuseung-ryong",parksi-hoo,1.0,"exact match, response: 2011.0, target: 2011.0",2011.0,2011.0,1.0,key_match,0.0,"number not near, response: 4962178.0, target: 7459974.0",7459974,4962178,0.0,"number not near, response: 5.1, target: 55.0",55.0,5.1
+,,sunny,Sunny,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",kanghyeong-cheol,kimjee-woon,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",comedy,comedy,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin",kimyoon-jin,0.0,"exact not match, response: nan, target: 2011.0",2011.0,nan,1.0,key_match,0.0,"number not near, response: 4434504.0, target: 7375110.0",7375110,4434504,0.0,"number not near, response: 4.6, target: 54.0",54.0,4.6
+,,thethieves,The Thieves,0.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",choidong-hoon,bongjoon-ho,1.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",crimeaction,action,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang",songkang-ho,1.0,"exact match, response: 2012.0, target: 2012.0",2012.0,2012.0,1.0,key_match,0.0,"number not near, response: 5225286.0, target: 12984701.0",12984701,5225286,0.0,"number not near, response: 5.2, target: 93.0",93.0,5.2
+,,traintobusan,Train to Busan,1.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",yeonsang-ho,yeonsang-ho,0.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",disasterthriller,horror,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik",songkang-ho,1.0,"exact match, response: 2016.0, target: 2016.0",2016.0,2016.0,1.0,key_match,0.0,"number not near, response: 3600000.0, target: 11565479.0",11565479,3600000,0.0,"number not near, response: 3.6, target: 93.0",93.0,3.6
+,,peninsula,Train to Busan 2: Peninsula,1.0,"Let's analyze each pair response vs. target according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word match.  
+- Score only 0 or 1.  
+- If response and target are the same entity, score 1; if not same entity, score 0.
+
+---
+
+**idx_0 - idx_11:**  
+Response: ""kimjee-woon""  
+Target: ""leejeong-beom""  
+Different entities. Although both are Korean names, they do not represent the same person. No semantic equivalence or entity match.  
+Score: 0 for each.
+
+**idx_12:**  
+Response: ""kangje-gyu""  
+Target: ""janghoon""  
+Different entities. ""kangje-gyu"" (likely ""Kang Je-gyu"") is a name, ""janghoon"" is another. Not equivalent.  
+Score: 0
+
+**idx_13:**  
+Response: ""kangje-gyu""  
+Target: ""kimhan-min""  
+Different entities. No match.  
+Score: 0
+
+**idx_14:**  
+Response: ""kimjee-woon""  
+Target: ""kanghyeong-cheol""  
+Different entities.  
+Score: 0
+
+**idx_15:**  
+Response: ""bongjoon-ho""  
+Target: ""choidong-hoon""  
+Different entities.  
+Score: 0
+
+**idx_16:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+**idx_17:**  
+Response: ""yeonsang-ho""  
+Target: ""yeonsang-ho""  
+Same entity.  
+Score: 1
+
+---
+
+# Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1
+}
+```",yeonsang-ho,yeonsang-ho,0.0,"Let's analyze each idx one by one against the grading criterion:
+
+Criterion summary: The semantics need to be approximately the same as the reference answer or point to the same entity. Word-for-word matching is not required.
+
+---
+
+**idx_0 to idx_11:**
+
+- Response: ""action""  
+- Target: ""action""  
+Exact match; clearly points to the same entity, so score = 1.
+
+---
+
+**idx_12:**
+
+- Response: ""romance""  
+- Target: ""action""  
+Different genres; ""romance"" and ""action"" are distinct semantic categories so do not point to the same entity. Score = 0.
+
+---
+
+**idx_13:**
+
+- Response: ""action""  
+- Target: ""historicalaction""  
+
+""historicalaction"" can be interpreted as a subgenre or compound genre involving action elements plus historical. Response ""action"" covers a broader or parent category (action) that includes ""historicalaction"" as a subcategory.  
+Since the response (""action"") is a broader category that semantically includes ""historical action,"" this can be considered approximately the same or refer to the same entity on the genre level. Score = 1.
+
+---
+
+**idx_14:**
+
+- Response: ""comedy""  
+- Target: ""comedy""  
+Exact match; score = 1.
+
+---
+
+**idx_15:**
+
+- Response: ""action""  
+- Target: ""crimeaction""
+
+Similar logic as idx_13: ""crimeaction"" is a compound involving crime and action. Response ""action"" covers part of the compound genre; it points broadly to the same entity (action-based genre).  
+Following criterion, approximate semantics or pointing to same entity is sufficient. Score = 1.
+
+---
+
+**idx_16:**
+
+- Response: ""horror""  
+- Target: ""disasterthriller""
+
+""horror"" and ""disasterthriller"" are distinct genres.  
+""Horror"" relates to fear and supernatural or psychological themes.  
+""Disasterthriller"" relates to suspense and catastrophic events. Not approximately the same nor pointing to the same entity. Score = 0.
+
+---
+
+**idx_17:**
+
+- Response: ""horror""  
+- Target: ""actionthriller""
+
+""horror"" and ""actionthriller"" are distinct genres.  
+No semantic equivalence. Score = 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```",actionthriller,horror,0.0,"Let's analyze each pair according to the criterion: the response should have approximately the same semantics or point to the same entity as the target. Since the targets list one or multiple names (actors), responding with a different name that is not among those listed should be scored 0. Only if the response matches or is approximately the same as any of the target names is the answer scored 1.
+
+---
+
+### Analysis:
+
+- idx_0 to idx_11:  
+  Response: ""songkang-ho""  
+  Target: ""wonbin,kimsae-ron""  
+  ""songkang-ho"" is a distinct person from ""wonbin"" and ""kimsae-ron."" No overlap, so score 0.
+
+- idx_12:  
+  Response: ""hanhyo-joo""  
+  Target: ""kangdong-won,songkang-ho""  
+  ""hanhyo-joo"" is not in the target set. Different entity. Score 0.
+
+- idx_13:  
+  Response: ""parksi-hoo""  
+  Target: ""parkhae-il,moonchae-won,ryuseung-ryong""  
+  ""parksi-hoo"" is not any of ""parkhae-il,"" ""moonchae-won,"" or ""ryuseung-ryong."" Different entities, score 0.
+
+- idx_14:  
+  Response: ""kimyoon-jin""  
+  Target: ""shimeun-kyung,kangso-ra,kimmin-young,minhyo-rin""  
+  ""kimyoon-jin"" is different from all target names. Score 0.
+
+- idx_15:  
+  Response: ""songkang-ho""  
+  Target: ""kimyoon-seok,kimhye-soo,leejung-jae,junji-hyun,simonyam,kimhae-sook,ohdal-su,kimsoo-hyun,derektsang""  
+  ""songkang-ho"" is not in target list. Score 0.
+
+- idx_16:  
+  Response: ""songkang-ho""  
+  Target: ""gongyoo,jungyu-mi,kimsu-an,kimeui-sung,madong-seok,choiwoo-shik""  
+  No matches. Score 0.
+
+- idx_17:  
+  Response: ""songkang-ho""  
+  Target: ""kangdong-won,leejung-hyun""  
+  No match. Score 0.
+
+---
+
+### Final scores:
+
+All responses are different from the target names and do not point to the same entity. Hence, all are scored 0.
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0
+}
+```","kangdong-won,leejung-hyun",songkang-ho,0.0,"exact not match, response: 2017.0, target: 2020.0",2020.0,2017.0,1.0,key_match,0.0,"number not near, response: 3500000.0, target: 3812954.0",3812954,3500000,0.0,"number not near, response: 3.5, target: 33.0",33.0,3.5
+1.0,,12.12:theday,,,,kimseong-su,,,,drama,,,,"hwangjung-min,jungwoo-sung,leesung-min",,,,2023.0,,,,,,13128419,,,,118.0,
+1.0,,alongwiththegods:thelast49days,,,,kimyong-hwa,,,,fantasy,,,,"hajung-woo,juji-hoon,kimhyang-gi,madong-seok,kimdong-wook,leejung-jae",,,,2018.0,,,,,,12274996,,,,102.0,
+1.0,,alongwiththegods:thetwoworlds,,,,kimyong-hwa,,,,fantasy,,,,"hajung-woo,chatae-hyun,juji-hoon,kimhyang-gi",,,,2017.0,,,,,,8539495,,,,68.0,
+1.0,,assassination,,,,choidong-hoon,,,,action,,,,"junji-hyun,leejung-jae,hajung-woo",,,,2015.0,,,,,,12705700,,,,98.0,
+1.0,,ataxidriver,,,,janghoon,,,,drama,,,,"songkang-ho,thomaskretschmann,yoohae-jin,ryujun-yeol",,,,2017.0,,,,,,12186327,,,,95.0,
+1.0,,avatar:thewayofwater,,,,jamescameron,,,,sci-fi,,,,"samworthington,zoesaldana,sigourneyweaver",,,,2022.0,,,,,,10805065,,,,90.0,
+1.0,,avengers:ageofultron,,,,josswhedon,,,,sci-fiadventure,,,,"robertdowneyjr.,chrishemsworth,markruffalo,chrisevans,scarlettjohansson,jeremyrenner",,,,2015.0,,,,,,10494499,,,,88.0,
+1.0,,avengers:endgame,,,,anthonyrusso&joerusso,,,,sci-fi,,,,"robertdowneyjr.,chrisevans,chrishemsworth,markruffalo,scarlettjohansson,jeremyrenner,paulrudd,brielarson,doncheadle,karengillan,joshbrolin",,,,2019.0,,,,,,13934592,,,,122.0,
+1.0,,avengers:infinitywar,,,,"anthonyrusso,joerusso",,,,sci-fiaction,,,,"robertdowneyjr.,joshbrolin,chrisevans",,,,2018.0,,,,,,11211880,,,,99.0,
+1.0,,aviolentprosecutor,,,,leeil-hyung,,,,crimecomedy,,,,"hwangjung-min,kangdong-won",,,,2016.0,,,,,,9707158,,,,77.0,
+1.0,,bohemianrhapsody,,,,bryansinger,,,,musicbiography,,,,"ramimalek,lucyboynton,gwilymlee,benhardy",,,,2018.0,,,,,,9224582,,,,80.0,
+1.0,,captainamerica:civilwar,,,,"anthonyrusso,joerusso",,,,sci-fiaction,,,,"chrisevans,robertdowneyjr.,scarlettjohansson,sebastianstan,anthonymackie",,,,2016.0,,,,,,8677249,,,,72.0,
+1.0,,confidentialassignment,,,,kimsung-hoon,,,,action,,,,"hyunbin,yoohae-jin,kimjoo-hyuk,imyoon-ah,leedong-hwi",,,,2017.0,,,,,,7817446,,,,63.0,
+1.0,,deliverusfromevil,,,,hongwon-chan,,,,action,,,,"hwangjung-min,leejung-jae,parkjung-min,parkso-yi,choihee-seo",,,,2020.0,,,,,,4357873,,,,38.0,
+1.0,,elemental,,,,petersohn,,,,animation,,,,"leahlewis,mamoudouathie",,,,2023.0,,,,,,7241486,,,,69.0,
+1.0,,escapefrommogadishu,,,,ryooseung-wan,,,,action,,,,"kimyoon-seok,join-sung",,,,2021.0,,,,,,3613984,,,,34.0,
+1.0,,eternals,,,,chloézhao,,,,actionfantasy,,,,"gemmachan,richardmadden,angelinajolie,salmahayek,kitharington,kumailnanjiani,liamchugh,briantyreehenry,laurenridloff,barrykeoghan,madong-seok",,,,2021.0,,,,,,3050132,,,,31.0,
+1.0,,exhuma,,,,jangjae-hyun,,,,thriller,,,,"choimin-sik,kimgo-eun,leedo-hyun,yoohae-jin,seo-joonhong",,,,2024.0,,,,,,11914784,,,,119.0,
+1.0,,extremejob,,,,leebyung-hun,,,,comedy,,,,"ryuseung-ryong,leedong-hwi,leehani,seon-kyujin,gongmyung",,,,2019.0,,,,,,16265618,,,,139.0,
+1.0,,frozen,,,,"chrisbuck,jenniferlee",,,,animation,,,,"kristenbell,idinamenzel,jonathangroff,joshgad,santinofontana",,,,2014.0,,,,,,10296101,,,,82.0,
+1.0,,frozen2,,,,"chrisbuck,jenniferlee",,,,animation,,,,"kristenbell,idinamenzel,jonathangroff,joshgad",,,,2019.0,,,,,,13369064,,,,111.0,
+1.0,,inception,,,,christophernolan,,,,sci-fiaction,,,,"leonardodicaprio,marioncotillard,josephgordon-levitt,elliotpage,tomhardy",,,,2010.0,,,,,,5872548,,,,43.0,
+1.0,,insideout2,,,,kelseymann,,,,fantasyanimation,,,,"amypoehler,dianelane,phyllissmith,lewisblack",,,,2024.0,,,,,,8799611,,,,77.0,
+1.0,,interstellar,,,,christophernolan,,,,sci-fi,,,,"matthewmcconaughey,annehathaway,jessicachastain",,,,2014.0,,,,,,10105249,,,,80.0,
+1.0,,masquerade,,,,chochang-min,,,,historical,,,,"leebyung-hun,yooseung-ryong,hanhyo-joo",,,,2012.0,,,,,,12.128419,,,,87.0,
+1.0,,miracleincellno.7,,,,leehwan-kyung,,,,comedy,,,,"ryuseung-ryong,kalso-won,jungjin-young,parkshin-hye",,,,2013.0,,,,,,12812186,,,,91.0,
+,1.0,moss,Moss,,,,kangwoo-suk,,,,action,,,,kimha-neul,,,,nan,,,,,,3478422,,,,3.3
+,1.0,punch,Punch,,,,kimjee-woon,,,,action,,,,kimyoon-jin,,,,nan,,,,,,4302463,,,,4.5
+1.0,,snowpiercer,,,,bongjoon-ho,,,,actionsci-fi,,,,"chrisevans,songkang-ho,tchrisevansn,jamiebell,edharris",,,,2013.0,,,,,,9341572,,,,67.0,
+1.0,,spider-man:nowayhome,,,,jonwatts,,,,actionsci-fi,,,,"tomholland,zendayacoleman,benedictcumberbatch",,,,2021.0,,,,,,5560940,,,,55.0,
+1.0,,theadmiral:roaringcurrents,,,,kimhan-min,,,,historicalwar,,,,"choimin-sik,ryuseung-ryong,chojin-woong,jingoo,leejung-hyun",,,,2014.0,,,,,,17616461,,,,135.0,
+,1.0,theageofshadows,The Age of Shadows,,,,bongjoon-ho,,,,historical,,,,songkang-ho,,,,2014.0,,,,,,3700000,,,,3.7
+1.0,,theavengers,,,,josswhedon,,,,sci-fi,,,,"robertdowneyjr.,chrisevans,markruffalo,chrishemsworth,scarlettjohansson,jeremyrenner,tomhiddleston,samuell.jackson,clarkgregg,cobiesmulders",,,,2012.0,,,,,,7087184,,,,59.0,
+,1.0,thebattlefield,The Battlefield,,,,kimyoung-ha,,,,action,,,,songkang-ho,,,,2013.0,,,,,,4500000,,,,4.5
+,1.0,theclassic,The Classic,,,,kimjee-woon,,,,romance,,,,kimyoon-jin,,,,nan,,,,,,3600000,,,,3.6
+1.0,,thefacereader,,,,hanjae-rim,,,,historicaldrama,,,,"songkang-ho,kimhye-soo,leejung-jae",,,,2013.0,,,,,,9134586,,,,66.0,
+,1.0,"thegood,thebadandtheweird","The Good, the Bad and the Weird",,,,imsang-soo,,,,action,,,,kimkang-woo,,,,nan,,,,,,3800000,,,,3.8
+,1.0,thehandmaiden,The Handmaiden,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,2300000,,,,2.3
+,1.0,thehandmaiden2,The Handmaiden 2,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,1900000,,,,1.9
+,1.0,thehandmaiden3,The Handmaiden 3,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,1700000,,,,1.7
+,1.0,thehandmaiden4,The Handmaiden 4,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,1300000,,,,1.3
+,1.0,thehandmaiden5,The Handmaiden 5,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,1000000,,,,1.0
+,1.0,thehandmaiden6,The Handmaiden 6,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,700000,,,,0.7
+,1.0,thehandmaiden7,The Handmaiden 7,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,400000,,,,0.4
+,1.0,thehandmaiden8,The Handmaiden 8,,,,parkchan-wook,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,100000,,,,0.1
+1.0,,themanstandingnext,,,,woomin-ho,,,,drama,,,,"leebyung-hun,leesung-min,kwakdo-won,leeheejun",,,,2020.0,,,,,,4750917,,,,41.0,
+,1.0,themanwiththehighcastle,The Man with the High Castle,,,,kimjee-woon,,,,action,,,,songkang-ho,,,,nan,,,,,,3400000,,,,3.4
+1.0,,theroundup,,,,leesang-yong,,,,crimeaction,,,,"madong-seok,sonsuk-ku",,,,2022.0,,,,,,12693415,,,,131.0,
+1.0,,theroundup:nowayout,,,,leesang-yong,,,,crimeaction,,,,"madong-seok,leejoon-hyuk,takahiroaoki",,,,2023.0,,,,,,10682813,,,,106.0,
+1.0,,theroundup:punishment,,,,heomyung-haeng,,,,crime,,,,"madong-seok,kimmoo-yeol,leedong-hwi,parkji-hwan",,,,2024.0,,,,,,11502928,,,,115.0,
+,1.0,thethieves2,The Thieves 2,,,,bongjoon-ho,,,,action,,,,songkang-ho,,,,nan,,,,,,3300000,,,,3.3
+,1.0,thewailing,The Wailing,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,nan,,,,,,3500000,,,,3.5
+,1.0,thewailing,The Wailing 2,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,nan,,,,,,2800000,,,,2.8
+,1.0,thewailing,The Wailing 4,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,2018.0,,,,,,2100000,,,,2.1
+,1.0,thewailing,The Wailing 5,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,nan,,,,,,1600000,,,,1.6
+,1.0,thewailing,The Wailing 6,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,2020.0,,,,,,1500000,,,,1.5
+,1.0,thewailing,The Wailing 7,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,2021.0,,,,,,1200000,,,,1.2
+,1.0,thewailing,The Wailing 8,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,2022.0,,,,,,900000,,,,0.9
+,1.0,thewailing,The Wailing 9,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,2023.0,,,,,,600000,,,,0.6
+,1.0,thewailing,The Wailing 10,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,2024.0,,,,,,300000,,,,0.3
+,1.0,thewailing3,The Wailing 3,,,,kimjee-woon,,,,horror,,,,kimyoon-jin,,,,nan,,,,,,2500000,,,,2.5
+,1.0,thewayhome,The Way Home,,,,leechang-dong,,,,drama,,,,kimyoon-jin,,,,nan,,,,,,2900000,,,,2.9
+1.0,,topgun:maverick,,,,josephkosinski,,,,action,,,,"tomcruise,jenniferconnelly,milesteller,jonhamm,valkilmer",,,,2022.0,,,,,,8239497,,,,87.0,
+1.0,,transformers:darkofthemoon,,,,michaelbay,,,,sci-fiaction,,,,"shialabeouf,joshduhamel,johnturturro,tyresegibson,rosiehuntington-whiteley",,,,2011.0,,,,,,7790434,,,,74.0,
+1.0,,veteran,,,,ryooseung-wan,,,,action,,,,"hwangjung-min,yooah-in,yoohae-jin,ohdal-su",,,,2015.0,,,,,,13414009,,,,105.0,

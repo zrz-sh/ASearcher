@@ -1,0 +1,1461 @@
+category,category_before_map,exist_flag_gt,exist_flag_response,rank,rank_before_map,category_exact_match,category_exact_match_eval_msg,language_exact_match,language_exact_match_eval_msg,language_query,language_response,producer(s)_llm_judge,producer(s)_llm_judge_eval_msg,producer(s)_query,producer(s)_response,rank_exact_match,rank_exact_match_eval_msg,releasedate_date_near,releasedate_date_near_eval_msg,releasedate_query,releasedate_response,singer_llm_judge,singer_llm_judge_eval_msg,singer_query,singer_response,songwriter(s)_llm_judge,songwriter(s)_llm_judge_eval_msg,songwriter(s)_query,songwriter(s)_response,title_llm_judge,title_llm_judge_eval_msg,title_query,title_response
+top10spotify'smost-streamedsongsglobally,Global,,,1,1,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Response semantics must be approximately the same as the reference answer or point to the same entity.  
+- Matching one or more from the reference answer is sufficient.  
+- Some additional names outside the reference answer are allowed (no penalty).
+
+We have these pairs with response vs target:  
+
+1. idx_0: response = ""billieeilish"", target = ""julianbunetta""  
+- Response mentions ""billieeilish"", target is ""julianbunetta"". These are clearly different entities. Not approximately the same semantic entity. No overlap.  
+- Score = 0
+
+2. idx_1: response = ""brunomars,omerfedi"", target = ""evanblair""  
+- Response mentions ""brunomars"" and ""omerfedi"", target is ""evanblair""  
+- None match or point to the same entity  
+- Score = 0
+
+3. idx_2: response = ""billieeilish"", target = ""finneas""  
+- Response: billieeilish vs finneas  
+- Nor same entity or approximate semantics  
+- Score = 0
+
+4. idx_3: response = ""billieeilish"", target = ""julianbunetta""  
+- Same as idx_0, no match  
+- Score = 0
+
+5. idx_4: response = ""brunomars,omerfedi"", target = ""mustard""  
+- Neither ""brunomars"" nor ""omerfedi"" is ""mustard"" or approximate same entity  
+- Score = 0
+
+6. idx_5: response = ""billieeilish"", target = ""seancook,nevinsastry""  
+- Response has ""billieeilish"", target has ""seancook,nevinsastry"" (two separate names)  
+- No overlap or approximate same entity  
+- Score = 0
+
+Conclusion: None of the responses match their respective targets either exactly or semantically approximately.
+
+Final scores all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",julianbunetta,billieeilish,1.0,key_match,0.0,"date not near, response: 2024-01-01 00:00:00, target: 2024-04-11 00:00:00",2024-04-11,2024-01-01,0.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion summary:  
+- The response must be approximately semantically the same as the target or point to the same entity (i.e., the same artist).  
+- No strict word-for-word matching is required, but the entity referenced must be the same or equivalent.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different artists. These are two distinct entities, so response does not match the target.  
+- Score: 0
+
+### idx_1  
+- Response: ""ladygaga&brunomars""  
+- Target: ""bensonboone""  
+- Analysis: Different artists/entities. No semantic equivalence or same entity.  
+- Score: 0
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""billieeilish""  
+- Analysis: Exact same entity; matches.  
+- Score: 1
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different entities, no equivalence.  
+- Score: 0
+
+### idx_4  
+- Response: ""ladygaga&brunomars""  
+- Target: ""kendricklamar""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""shaboozey""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",sabrinacarpenter,billieeilish,0.0,"Let's analyze each pair item by item according to the provided criterion:
+
+Criterion summary:
+- The semantics must be approximately the same or point to the same entity.
+- It is sufficient to match one or more from the reference answer.
+- A few outside the reference answer are allowed.
+- Exact word-for-word match not required.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+The response ""billieeilish"" and the target names are completely different entities. None of the target names appear in the response, and ""billieeilish"" is not mentioned in the target. No semantic match.  
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""ladygaga,brunomars""  
+- Target: ""evanblair,jacklafrantz,bensonboone""  
+Analysis:  
+None of the response names are in the target list. Different sets of people/artists. No semantic or entity overlap.  
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""finneaso'connell,billieeilisho'connell""  
+Analysis:  
+The target contains ""billieeilisho'connell"" which contains ""billieeilish"" as substring, likely referring to the same entity ""Billie Eilish O'Connell"". The response ""billieeilish"" clearly points to the same entity as in the target. This qualifies as a match in entity.  
+Score: 1
+
+---
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+Same situation as idx_0. Different sets of names. No overlap or semantic similarity.  
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""ladygaga,brunomars""  
+- Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+Analysis:  
+No match between response names and target names. Different artists entirely.  
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+Analysis:  
+No overlap between ""billieeilish"" and the target names. No semantic or entity similarity.  
+Score: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","amyallen,julianbunetta,stephjones,sabrinacarpenter",billieeilish,0.0,"Let's analyze each pair according to the criteria:
+
+**Criterion:**  
+- Semantics should be approximately the same or point to the same entity.  
+- Main body consistency is key, ""feat xx"" or ""with xx"" are optional extras and can be ignored.
+
+---
+
+### Analysis
+
+**idx_0**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- These are two different titles/entities. Not the same semantics or entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""diewithasmile""  
+- Target: ""beautifulthings""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""wildflower""  
+- Target: ""birdsofafeather""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- Same as idx_0, different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: ""diewithasmile""  
+- Target: ""notlikeus""  
+- Different entities, no match.  
+- Score: 0
+
+**idx_5**  
+- Response: ""wildflower""  
+- Target: ""abarsong(tipsy)""  
+- Different entities, do not match. Parentheses and extras irrelevant as main body mismatch.  
+- Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",espresso,birdsofafeather
+top10spotify'smost-streamedsongsglobally,Global,,,2,2,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Response semantics must be approximately the same as the reference answer or point to the same entity.  
+- Matching one or more from the reference answer is sufficient.  
+- Some additional names outside the reference answer are allowed (no penalty).
+
+We have these pairs with response vs target:  
+
+1. idx_0: response = ""billieeilish"", target = ""julianbunetta""  
+- Response mentions ""billieeilish"", target is ""julianbunetta"". These are clearly different entities. Not approximately the same semantic entity. No overlap.  
+- Score = 0
+
+2. idx_1: response = ""brunomars,omerfedi"", target = ""evanblair""  
+- Response mentions ""brunomars"" and ""omerfedi"", target is ""evanblair""  
+- None match or point to the same entity  
+- Score = 0
+
+3. idx_2: response = ""billieeilish"", target = ""finneas""  
+- Response: billieeilish vs finneas  
+- Nor same entity or approximate semantics  
+- Score = 0
+
+4. idx_3: response = ""billieeilish"", target = ""julianbunetta""  
+- Same as idx_0, no match  
+- Score = 0
+
+5. idx_4: response = ""brunomars,omerfedi"", target = ""mustard""  
+- Neither ""brunomars"" nor ""omerfedi"" is ""mustard"" or approximate same entity  
+- Score = 0
+
+6. idx_5: response = ""billieeilish"", target = ""seancook,nevinsastry""  
+- Response has ""billieeilish"", target has ""seancook,nevinsastry"" (two separate names)  
+- No overlap or approximate same entity  
+- Score = 0
+
+Conclusion: None of the responses match their respective targets either exactly or semantically approximately.
+
+Final scores all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",evanblair,"brunomars,omerfedi",1.0,key_match,1.0,"date near, response: 2024-02-01 00:00:00, target: 2024-01-19 00:00:00",2024-01-19,2024-02-01,0.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion summary:  
+- The response must be approximately semantically the same as the target or point to the same entity (i.e., the same artist).  
+- No strict word-for-word matching is required, but the entity referenced must be the same or equivalent.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different artists. These are two distinct entities, so response does not match the target.  
+- Score: 0
+
+### idx_1  
+- Response: ""ladygaga&brunomars""  
+- Target: ""bensonboone""  
+- Analysis: Different artists/entities. No semantic equivalence or same entity.  
+- Score: 0
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""billieeilish""  
+- Analysis: Exact same entity; matches.  
+- Score: 1
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different entities, no equivalence.  
+- Score: 0
+
+### idx_4  
+- Response: ""ladygaga&brunomars""  
+- Target: ""kendricklamar""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""shaboozey""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",bensonboone,ladygaga&brunomars,0.0,"Let's analyze each pair item by item according to the provided criterion:
+
+Criterion summary:
+- The semantics must be approximately the same or point to the same entity.
+- It is sufficient to match one or more from the reference answer.
+- A few outside the reference answer are allowed.
+- Exact word-for-word match not required.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+The response ""billieeilish"" and the target names are completely different entities. None of the target names appear in the response, and ""billieeilish"" is not mentioned in the target. No semantic match.  
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""ladygaga,brunomars""  
+- Target: ""evanblair,jacklafrantz,bensonboone""  
+Analysis:  
+None of the response names are in the target list. Different sets of people/artists. No semantic or entity overlap.  
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""finneaso'connell,billieeilisho'connell""  
+Analysis:  
+The target contains ""billieeilisho'connell"" which contains ""billieeilish"" as substring, likely referring to the same entity ""Billie Eilish O'Connell"". The response ""billieeilish"" clearly points to the same entity as in the target. This qualifies as a match in entity.  
+Score: 1
+
+---
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+Same situation as idx_0. Different sets of names. No overlap or semantic similarity.  
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""ladygaga,brunomars""  
+- Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+Analysis:  
+No match between response names and target names. Different artists entirely.  
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+Analysis:  
+No overlap between ""billieeilish"" and the target names. No semantic or entity similarity.  
+Score: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","evanblair,jacklafrantz,bensonboone","ladygaga,brunomars",0.0,"Let's analyze each pair according to the criteria:
+
+**Criterion:**  
+- Semantics should be approximately the same or point to the same entity.  
+- Main body consistency is key, ""feat xx"" or ""with xx"" are optional extras and can be ignored.
+
+---
+
+### Analysis
+
+**idx_0**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- These are two different titles/entities. Not the same semantics or entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""diewithasmile""  
+- Target: ""beautifulthings""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""wildflower""  
+- Target: ""birdsofafeather""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- Same as idx_0, different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: ""diewithasmile""  
+- Target: ""notlikeus""  
+- Different entities, no match.  
+- Score: 0
+
+**idx_5**  
+- Response: ""wildflower""  
+- Target: ""abarsong(tipsy)""  
+- Different entities, do not match. Parentheses and extras irrelevant as main body mismatch.  
+- Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",beautifulthings,diewithasmile
+top10spotify'smost-streamedsongsglobally,Global,,,3,3,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Response semantics must be approximately the same as the reference answer or point to the same entity.  
+- Matching one or more from the reference answer is sufficient.  
+- Some additional names outside the reference answer are allowed (no penalty).
+
+We have these pairs with response vs target:  
+
+1. idx_0: response = ""billieeilish"", target = ""julianbunetta""  
+- Response mentions ""billieeilish"", target is ""julianbunetta"". These are clearly different entities. Not approximately the same semantic entity. No overlap.  
+- Score = 0
+
+2. idx_1: response = ""brunomars,omerfedi"", target = ""evanblair""  
+- Response mentions ""brunomars"" and ""omerfedi"", target is ""evanblair""  
+- None match or point to the same entity  
+- Score = 0
+
+3. idx_2: response = ""billieeilish"", target = ""finneas""  
+- Response: billieeilish vs finneas  
+- Nor same entity or approximate semantics  
+- Score = 0
+
+4. idx_3: response = ""billieeilish"", target = ""julianbunetta""  
+- Same as idx_0, no match  
+- Score = 0
+
+5. idx_4: response = ""brunomars,omerfedi"", target = ""mustard""  
+- Neither ""brunomars"" nor ""omerfedi"" is ""mustard"" or approximate same entity  
+- Score = 0
+
+6. idx_5: response = ""billieeilish"", target = ""seancook,nevinsastry""  
+- Response has ""billieeilish"", target has ""seancook,nevinsastry"" (two separate names)  
+- No overlap or approximate same entity  
+- Score = 0
+
+Conclusion: None of the responses match their respective targets either exactly or semantically approximately.
+
+Final scores all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",finneas,billieeilish,1.0,key_match,0.0,"date not near, response: 2024-03-01 00:00:00, target: 2024-05-17 00:00:00",2024-05-17,2024-03-01,1.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion summary:  
+- The response must be approximately semantically the same as the target or point to the same entity (i.e., the same artist).  
+- No strict word-for-word matching is required, but the entity referenced must be the same or equivalent.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different artists. These are two distinct entities, so response does not match the target.  
+- Score: 0
+
+### idx_1  
+- Response: ""ladygaga&brunomars""  
+- Target: ""bensonboone""  
+- Analysis: Different artists/entities. No semantic equivalence or same entity.  
+- Score: 0
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""billieeilish""  
+- Analysis: Exact same entity; matches.  
+- Score: 1
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different entities, no equivalence.  
+- Score: 0
+
+### idx_4  
+- Response: ""ladygaga&brunomars""  
+- Target: ""kendricklamar""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""shaboozey""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",billieeilish,billieeilish,1.0,"Let's analyze each pair item by item according to the provided criterion:
+
+Criterion summary:
+- The semantics must be approximately the same or point to the same entity.
+- It is sufficient to match one or more from the reference answer.
+- A few outside the reference answer are allowed.
+- Exact word-for-word match not required.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+The response ""billieeilish"" and the target names are completely different entities. None of the target names appear in the response, and ""billieeilish"" is not mentioned in the target. No semantic match.  
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""ladygaga,brunomars""  
+- Target: ""evanblair,jacklafrantz,bensonboone""  
+Analysis:  
+None of the response names are in the target list. Different sets of people/artists. No semantic or entity overlap.  
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""finneaso'connell,billieeilisho'connell""  
+Analysis:  
+The target contains ""billieeilisho'connell"" which contains ""billieeilish"" as substring, likely referring to the same entity ""Billie Eilish O'Connell"". The response ""billieeilish"" clearly points to the same entity as in the target. This qualifies as a match in entity.  
+Score: 1
+
+---
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+Same situation as idx_0. Different sets of names. No overlap or semantic similarity.  
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""ladygaga,brunomars""  
+- Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+Analysis:  
+No match between response names and target names. Different artists entirely.  
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+Analysis:  
+No overlap between ""billieeilish"" and the target names. No semantic or entity similarity.  
+Score: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","finneaso'connell,billieeilisho'connell",billieeilish,0.0,"Let's analyze each pair according to the criteria:
+
+**Criterion:**  
+- Semantics should be approximately the same or point to the same entity.  
+- Main body consistency is key, ""feat xx"" or ""with xx"" are optional extras and can be ignored.
+
+---
+
+### Analysis
+
+**idx_0**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- These are two different titles/entities. Not the same semantics or entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""diewithasmile""  
+- Target: ""beautifulthings""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""wildflower""  
+- Target: ""birdsofafeather""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- Same as idx_0, different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: ""diewithasmile""  
+- Target: ""notlikeus""  
+- Different entities, no match.  
+- Score: 0
+
+**idx_5**  
+- Response: ""wildflower""  
+- Target: ""abarsong(tipsy)""  
+- Different entities, do not match. Parentheses and extras irrelevant as main body mismatch.  
+- Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",birdsofafeather,wildflower
+top10u.s.most-streamedsongs,US,,,1,1,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Response semantics must be approximately the same as the reference answer or point to the same entity.  
+- Matching one or more from the reference answer is sufficient.  
+- Some additional names outside the reference answer are allowed (no penalty).
+
+We have these pairs with response vs target:  
+
+1. idx_0: response = ""billieeilish"", target = ""julianbunetta""  
+- Response mentions ""billieeilish"", target is ""julianbunetta"". These are clearly different entities. Not approximately the same semantic entity. No overlap.  
+- Score = 0
+
+2. idx_1: response = ""brunomars,omerfedi"", target = ""evanblair""  
+- Response mentions ""brunomars"" and ""omerfedi"", target is ""evanblair""  
+- None match or point to the same entity  
+- Score = 0
+
+3. idx_2: response = ""billieeilish"", target = ""finneas""  
+- Response: billieeilish vs finneas  
+- Nor same entity or approximate semantics  
+- Score = 0
+
+4. idx_3: response = ""billieeilish"", target = ""julianbunetta""  
+- Same as idx_0, no match  
+- Score = 0
+
+5. idx_4: response = ""brunomars,omerfedi"", target = ""mustard""  
+- Neither ""brunomars"" nor ""omerfedi"" is ""mustard"" or approximate same entity  
+- Score = 0
+
+6. idx_5: response = ""billieeilish"", target = ""seancook,nevinsastry""  
+- Response has ""billieeilish"", target has ""seancook,nevinsastry"" (two separate names)  
+- No overlap or approximate same entity  
+- Score = 0
+
+Conclusion: None of the responses match their respective targets either exactly or semantically approximately.
+
+Final scores all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",julianbunetta,billieeilish,1.0,key_match,0.0,"date not near, response: 2024-01-01 00:00:00, target: 2024-04-11 00:00:00",2024-04-11,2024-01-01,0.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion summary:  
+- The response must be approximately semantically the same as the target or point to the same entity (i.e., the same artist).  
+- No strict word-for-word matching is required, but the entity referenced must be the same or equivalent.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different artists. These are two distinct entities, so response does not match the target.  
+- Score: 0
+
+### idx_1  
+- Response: ""ladygaga&brunomars""  
+- Target: ""bensonboone""  
+- Analysis: Different artists/entities. No semantic equivalence or same entity.  
+- Score: 0
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""billieeilish""  
+- Analysis: Exact same entity; matches.  
+- Score: 1
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different entities, no equivalence.  
+- Score: 0
+
+### idx_4  
+- Response: ""ladygaga&brunomars""  
+- Target: ""kendricklamar""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""shaboozey""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",sabrinacarpenter,billieeilish,0.0,"Let's analyze each pair item by item according to the provided criterion:
+
+Criterion summary:
+- The semantics must be approximately the same or point to the same entity.
+- It is sufficient to match one or more from the reference answer.
+- A few outside the reference answer are allowed.
+- Exact word-for-word match not required.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+The response ""billieeilish"" and the target names are completely different entities. None of the target names appear in the response, and ""billieeilish"" is not mentioned in the target. No semantic match.  
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""ladygaga,brunomars""  
+- Target: ""evanblair,jacklafrantz,bensonboone""  
+Analysis:  
+None of the response names are in the target list. Different sets of people/artists. No semantic or entity overlap.  
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""finneaso'connell,billieeilisho'connell""  
+Analysis:  
+The target contains ""billieeilisho'connell"" which contains ""billieeilish"" as substring, likely referring to the same entity ""Billie Eilish O'Connell"". The response ""billieeilish"" clearly points to the same entity as in the target. This qualifies as a match in entity.  
+Score: 1
+
+---
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+Same situation as idx_0. Different sets of names. No overlap or semantic similarity.  
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""ladygaga,brunomars""  
+- Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+Analysis:  
+No match between response names and target names. Different artists entirely.  
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+Analysis:  
+No overlap between ""billieeilish"" and the target names. No semantic or entity similarity.  
+Score: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","amyallen,julianbunetta,stephjones,sabrinacarpenter",billieeilish,0.0,"Let's analyze each pair according to the criteria:
+
+**Criterion:**  
+- Semantics should be approximately the same or point to the same entity.  
+- Main body consistency is key, ""feat xx"" or ""with xx"" are optional extras and can be ignored.
+
+---
+
+### Analysis
+
+**idx_0**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- These are two different titles/entities. Not the same semantics or entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""diewithasmile""  
+- Target: ""beautifulthings""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""wildflower""  
+- Target: ""birdsofafeather""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- Same as idx_0, different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: ""diewithasmile""  
+- Target: ""notlikeus""  
+- Different entities, no match.  
+- Score: 0
+
+**idx_5**  
+- Response: ""wildflower""  
+- Target: ""abarsong(tipsy)""  
+- Different entities, do not match. Parentheses and extras irrelevant as main body mismatch.  
+- Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",espresso,birdsofafeather
+top10u.s.most-streamedsongs,US,,,2,2,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Response semantics must be approximately the same as the reference answer or point to the same entity.  
+- Matching one or more from the reference answer is sufficient.  
+- Some additional names outside the reference answer are allowed (no penalty).
+
+We have these pairs with response vs target:  
+
+1. idx_0: response = ""billieeilish"", target = ""julianbunetta""  
+- Response mentions ""billieeilish"", target is ""julianbunetta"". These are clearly different entities. Not approximately the same semantic entity. No overlap.  
+- Score = 0
+
+2. idx_1: response = ""brunomars,omerfedi"", target = ""evanblair""  
+- Response mentions ""brunomars"" and ""omerfedi"", target is ""evanblair""  
+- None match or point to the same entity  
+- Score = 0
+
+3. idx_2: response = ""billieeilish"", target = ""finneas""  
+- Response: billieeilish vs finneas  
+- Nor same entity or approximate semantics  
+- Score = 0
+
+4. idx_3: response = ""billieeilish"", target = ""julianbunetta""  
+- Same as idx_0, no match  
+- Score = 0
+
+5. idx_4: response = ""brunomars,omerfedi"", target = ""mustard""  
+- Neither ""brunomars"" nor ""omerfedi"" is ""mustard"" or approximate same entity  
+- Score = 0
+
+6. idx_5: response = ""billieeilish"", target = ""seancook,nevinsastry""  
+- Response has ""billieeilish"", target has ""seancook,nevinsastry"" (two separate names)  
+- No overlap or approximate same entity  
+- Score = 0
+
+Conclusion: None of the responses match their respective targets either exactly or semantically approximately.
+
+Final scores all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",mustard,"brunomars,omerfedi",1.0,key_match,0.0,"date not near, response: 2024-02-01 00:00:00, target: 2024-05-04 00:00:00",2024-05-04,2024-02-01,0.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion summary:  
+- The response must be approximately semantically the same as the target or point to the same entity (i.e., the same artist).  
+- No strict word-for-word matching is required, but the entity referenced must be the same or equivalent.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different artists. These are two distinct entities, so response does not match the target.  
+- Score: 0
+
+### idx_1  
+- Response: ""ladygaga&brunomars""  
+- Target: ""bensonboone""  
+- Analysis: Different artists/entities. No semantic equivalence or same entity.  
+- Score: 0
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""billieeilish""  
+- Analysis: Exact same entity; matches.  
+- Score: 1
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different entities, no equivalence.  
+- Score: 0
+
+### idx_4  
+- Response: ""ladygaga&brunomars""  
+- Target: ""kendricklamar""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""shaboozey""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",kendricklamar,ladygaga&brunomars,0.0,"Let's analyze each pair item by item according to the provided criterion:
+
+Criterion summary:
+- The semantics must be approximately the same or point to the same entity.
+- It is sufficient to match one or more from the reference answer.
+- A few outside the reference answer are allowed.
+- Exact word-for-word match not required.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+The response ""billieeilish"" and the target names are completely different entities. None of the target names appear in the response, and ""billieeilish"" is not mentioned in the target. No semantic match.  
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""ladygaga,brunomars""  
+- Target: ""evanblair,jacklafrantz,bensonboone""  
+Analysis:  
+None of the response names are in the target list. Different sets of people/artists. No semantic or entity overlap.  
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""finneaso'connell,billieeilisho'connell""  
+Analysis:  
+The target contains ""billieeilisho'connell"" which contains ""billieeilish"" as substring, likely referring to the same entity ""Billie Eilish O'Connell"". The response ""billieeilish"" clearly points to the same entity as in the target. This qualifies as a match in entity.  
+Score: 1
+
+---
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+Same situation as idx_0. Different sets of names. No overlap or semantic similarity.  
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""ladygaga,brunomars""  
+- Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+Analysis:  
+No match between response names and target names. Different artists entirely.  
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+Analysis:  
+No overlap between ""billieeilish"" and the target names. No semantic or entity similarity.  
+Score: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger","ladygaga,brunomars",0.0,"Let's analyze each pair according to the criteria:
+
+**Criterion:**  
+- Semantics should be approximately the same or point to the same entity.  
+- Main body consistency is key, ""feat xx"" or ""with xx"" are optional extras and can be ignored.
+
+---
+
+### Analysis
+
+**idx_0**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- These are two different titles/entities. Not the same semantics or entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""diewithasmile""  
+- Target: ""beautifulthings""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""wildflower""  
+- Target: ""birdsofafeather""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- Same as idx_0, different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: ""diewithasmile""  
+- Target: ""notlikeus""  
+- Different entities, no match.  
+- Score: 0
+
+**idx_5**  
+- Response: ""wildflower""  
+- Target: ""abarsong(tipsy)""  
+- Different entities, do not match. Parentheses and extras irrelevant as main body mismatch.  
+- Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",notlikeus,diewithasmile
+top10u.s.most-streamedsongs,US,,,3,3,1.0,key_match,1.0,"exact match, response: english, target: english",english,english,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- Response semantics must be approximately the same as the reference answer or point to the same entity.  
+- Matching one or more from the reference answer is sufficient.  
+- Some additional names outside the reference answer are allowed (no penalty).
+
+We have these pairs with response vs target:  
+
+1. idx_0: response = ""billieeilish"", target = ""julianbunetta""  
+- Response mentions ""billieeilish"", target is ""julianbunetta"". These are clearly different entities. Not approximately the same semantic entity. No overlap.  
+- Score = 0
+
+2. idx_1: response = ""brunomars,omerfedi"", target = ""evanblair""  
+- Response mentions ""brunomars"" and ""omerfedi"", target is ""evanblair""  
+- None match or point to the same entity  
+- Score = 0
+
+3. idx_2: response = ""billieeilish"", target = ""finneas""  
+- Response: billieeilish vs finneas  
+- Nor same entity or approximate semantics  
+- Score = 0
+
+4. idx_3: response = ""billieeilish"", target = ""julianbunetta""  
+- Same as idx_0, no match  
+- Score = 0
+
+5. idx_4: response = ""brunomars,omerfedi"", target = ""mustard""  
+- Neither ""brunomars"" nor ""omerfedi"" is ""mustard"" or approximate same entity  
+- Score = 0
+
+6. idx_5: response = ""billieeilish"", target = ""seancook,nevinsastry""  
+- Response has ""billieeilish"", target has ""seancook,nevinsastry"" (two separate names)  
+- No overlap or approximate same entity  
+- Score = 0
+
+Conclusion: None of the responses match their respective targets either exactly or semantically approximately.
+
+Final scores all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","seancook,nevinsastry",billieeilish,1.0,key_match,0.0,"date not near, response: 2024-03-01 00:00:00, target: 2024-04-12 00:00:00",2024-04-12,2024-03-01,0.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion summary:  
+- The response must be approximately semantically the same as the target or point to the same entity (i.e., the same artist).  
+- No strict word-for-word matching is required, but the entity referenced must be the same or equivalent.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different artists. These are two distinct entities, so response does not match the target.  
+- Score: 0
+
+### idx_1  
+- Response: ""ladygaga&brunomars""  
+- Target: ""bensonboone""  
+- Analysis: Different artists/entities. No semantic equivalence or same entity.  
+- Score: 0
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""billieeilish""  
+- Analysis: Exact same entity; matches.  
+- Score: 1
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""sabrinacarpenter""  
+- Analysis: Different entities, no equivalence.  
+- Score: 0
+
+### idx_4  
+- Response: ""ladygaga&brunomars""  
+- Target: ""kendricklamar""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""shaboozey""  
+- Analysis: Different artists, no equivalence.  
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",shaboozey,billieeilish,0.0,"Let's analyze each pair item by item according to the provided criterion:
+
+Criterion summary:
+- The semantics must be approximately the same or point to the same entity.
+- It is sufficient to match one or more from the reference answer.
+- A few outside the reference answer are allowed.
+- Exact word-for-word match not required.
+
+---
+
+### idx_0  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+The response ""billieeilish"" and the target names are completely different entities. None of the target names appear in the response, and ""billieeilish"" is not mentioned in the target. No semantic match.  
+Score: 0
+
+---
+
+### idx_1  
+- Response: ""ladygaga,brunomars""  
+- Target: ""evanblair,jacklafrantz,bensonboone""  
+Analysis:  
+None of the response names are in the target list. Different sets of people/artists. No semantic or entity overlap.  
+Score: 0
+
+---
+
+### idx_2  
+- Response: ""billieeilish""  
+- Target: ""finneaso'connell,billieeilisho'connell""  
+Analysis:  
+The target contains ""billieeilisho'connell"" which contains ""billieeilish"" as substring, likely referring to the same entity ""Billie Eilish O'Connell"". The response ""billieeilish"" clearly points to the same entity as in the target. This qualifies as a match in entity.  
+Score: 1
+
+---
+
+### idx_3  
+- Response: ""billieeilish""  
+- Target: ""amyallen,julianbunetta,stephjones,sabrinacarpenter""  
+Analysis:  
+Same situation as idx_0. Different sets of names. No overlap or semantic similarity.  
+Score: 0
+
+---
+
+### idx_4  
+- Response: ""ladygaga,brunomars""  
+- Target: ""dijonmcfarlane,kendricklamar,markanthonyspears,raycharles,seanmomberger""  
+Analysis:  
+No match between response names and target names. Different artists entirely.  
+Score: 0
+
+---
+
+### idx_5  
+- Response: ""billieeilish""  
+- Target: ""collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook""  
+Analysis:  
+No overlap between ""billieeilish"" and the target names. No semantic or entity similarity.  
+Score: 0
+
+---
+
+### Final scoring results in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","collinsobinnachibueze,jerreljones,joekent,markwilliams,nevinsastry,seancook",billieeilish,0.0,"Let's analyze each pair according to the criteria:
+
+**Criterion:**  
+- Semantics should be approximately the same or point to the same entity.  
+- Main body consistency is key, ""feat xx"" or ""with xx"" are optional extras and can be ignored.
+
+---
+
+### Analysis
+
+**idx_0**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- These are two different titles/entities. Not the same semantics or entity.  
+- Score: 0
+
+**idx_1**  
+- Response: ""diewithasmile""  
+- Target: ""beautifulthings""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_2**  
+- Response: ""wildflower""  
+- Target: ""birdsofafeather""  
+- Different titles/entities, no semantic match.  
+- Score: 0
+
+**idx_3**  
+- Response: ""birdsofafeather""  
+- Target: ""espresso""  
+- Same as idx_0, different entities.  
+- Score: 0
+
+**idx_4**  
+- Response: ""diewithasmile""  
+- Target: ""notlikeus""  
+- Different entities, no match.  
+- Score: 0
+
+**idx_5**  
+- Response: ""wildflower""  
+- Target: ""abarsong(tipsy)""  
+- Different entities, do not match. Parentheses and extras irrelevant as main body mismatch.  
+- Score: 0
+
+---
+
+### Final Scores
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",abarsong(tipsy),wildflower
+top10spotify'smost-streamedsongsglobally,,1.0,,10,,,,,,english,,,,"brunomars,dernst""d'mile""emileii,ladygaga,andrewwatt",,,,,,2024-08-16,,,,brunomars，ladygaga,,,,"andrewwatt,dernst""d'mile""emileii,brunomars,jamesfauntleroy,ladygaga",,,,diewithasmile,
+top10spotify'smost-streamedsongsglobally,,1.0,,4,,,,,,spanish,,,,bigcvyu,,,,,,2024-02-02,,,,"crismj,floyymenor",,,,"crismj,floyymenor",,,,gataonly,
+top10spotify'smost-streamedsongsglobally,,1.0,,5,,,,,,english,,,,"ammo,julianbunetta",,,,,,2023-06-23,,,,teddyswims,,,,"julianbunetta,jatendimsdale,joshuacoleman,marco“infamous”rodriguez,mikkyekko",,,,losecontrol,
+top10spotify'smost-streamedsongsglobally,,1.0,,6,,,,,,english,,,,"joekeery,adamthein",,,,,,2024-03-01,,,,djo,,,,joekeery,,,,endofbeginning,
+top10spotify'smost-streamedsongsglobally,,1.0,,7,,,,,,english,,,,"bekon,peteg,chakra,andrewhozier-byrne",,,,,,2024-03-22,,,,hozier,,,,"danielkrieger,danieltannenbaum,sergiugherman,tylermehlenbacher,andrewhozier-byrne,petergonzales,stuartjohnson",,,,toosweet,
+top10spotify'smost-streamedsongsglobally,,1.0,,8,,,,,,english,,,,"theweeknd,mikedean",,,,,,2023-12-08,,,,"jennie,lily-rosedepp,theweeknd",,,,"mikedean,abeltesfaye,lily-rosedepp,ramsey,samlevinson",,,,"oneofthegirls(withjennie,lilyrosedepp)",
+top10spotify'smost-streamedsongsglobally,,1.0,,9,,,,,,english,,,,"jackantonoff,taylorswift",,,,,,2019-08-23,,,,taylorswift,,,,"annieclark,jackantonoff,taylorswift",,,,cruelsummer,
+top10u.s.most-streamedsongs,,1.0,,10,,,,,,english,,,,"gabesimon,noahkahan",,,,,,2022-10-14,,,,stickseason,,,,noahkahan,,,,stickseason,
+top10u.s.most-streamedsongs,,1.0,,4,,,,,,english,,,,"louisbell,charliehandsome,hoskins",,,,,,2024-05-10,,,,"morganwallen,postmalone",,,,"ashleygorley,chandlerpaulwalters,ernestkeithsmith,hoskins,louisbell,morganwallen,ryanvojtesak,austinpost",,,,ihadsomehelp(feat.morganwallen),
+top10u.s.most-streamedsongs,,1.0,,5,,,,,,english,,,,"maxvossberg,jonahroy,mannyvelli,sparkheem,kavi,gidi",,,,,,2024-04-26,,,,tommyrichman,,,,"avala'rae,tommyrichman",,,,milliondollarbaby,
+top10u.s.most-streamedsongs,,1.0,,6,,,,,,english,,,,dannigro,,,,,,2024-04-05,,,,chappellroan,,,,"danielnigro,justintranter,kayleighroseamstutz",,,,"goodluck,babe!",
+top10u.s.most-streamedsongs,,1.0,,7,,,,,,english,,,,evanblair,,,,,,2024-01-18,,,,bensonboone,,,,"evanblair,jacklafrantz,bensonboone",,,,beautifulthings,
+top10u.s.most-streamedsongs,,1.0,,8,,,,,,english,,,,finneas,,,,,,2024-05-17,,,,billieeilish,,,,"finneaso'connell,billieeilisho'connell",,,,birdsofafeather,
+top10u.s.most-streamedsongs,,1.0,,9,,,,,,english,,,,zachbryan,,,,,,2023-08-25,,,,"kaceymusgraves,zachbryan",,,,"kaceymusgraves,zachbryan",,,,iremembereverything(feat.kaceymusgraves),

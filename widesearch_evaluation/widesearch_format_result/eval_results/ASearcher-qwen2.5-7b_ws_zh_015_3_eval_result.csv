@@ -1,0 +1,4747 @@
+exist_flag_gt,exist_flag_response,任务名称,任务名称_before_map,任务名称_exact_match,任务名称_exact_match_eval_msg,任务时长_llm_judge,任务时长_llm_judge_eval_msg,任务时长_query,任务时长_response,发射地点_llm_judge,发射地点_llm_judge_eval_msg,发射地点_query,发射地点_response,发射时间_llm_judge,发射时间_llm_judge_eval_msg,发射时间_query,发射时间_response,着陆地点_llm_judge,着陆地点_llm_judge_eval_msg,着陆地点_query,着陆地点_response,着陆时间_llm_judge,着陆时间_llm_judge_eval_msg,着陆时间_query,着陆时间_response,航天员姓名_llm_judge,航天员姓名_llm_judge_eval_msg,航天员姓名_query,航天员姓名_response
+,,神舟五号,Shenzhou 5,1.0,key_match,1.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",21小时22分钟45秒,21小时22分45秒,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2003年10月15日09时00分03.497秒,2003-10-1509:00:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",四子王旗着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2003年10月16日06时22分48秒,2003-10-1616:23:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",杨利伟,杨利伟
+,,神舟六号,Shenzhou 6,1.0,key_match,1.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",4天19小时32分钟46秒钟,115小时32分,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2005年10月12日09时00分03.583秒,2005-10-1209:00:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",四子王旗着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2005年10月17日04时33分,2005-10-1715:57:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",费俊龙、聂海胜,费俊龙、聂海胜
+,,神舟七号,Shenzhou 7,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",2天20小时27分,19小时35分,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2008年9月25日21时10分04.988秒,2008-09-2521:10:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",四子王旗着陆场,内蒙古四子王旗,1.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2008年9月28日17时38分,2008-09-2817:37:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",翟志刚、刘伯明、景海鹏,翟志刚、刘伯明、景海鹏
+,,神舟九号,Shenzhou 9,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",12天15小时25分钟24秒钟,13天13小时33分,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2012年6月16日18时37分24.558秒,2012-06-1618:37:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",四子王旗着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2012年6月29日10时03分,2012-06-2416:00:00,0.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",景海鹏、刘旺、刘洋,翟志刚、刘洋、刘旺
+,,神舟十号,Shenzhou 10,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",14天14小时又29分,12天5小时48分,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2013年6月11日17时38分02.666秒,2013-06-1117:38:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",四子王旗着陆场,内蒙古四子王旗,1.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2013年6月26日08时07分,2013-06-268:07:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",聂海胜、张晓光、王亚平,聂海胜、张晓光、王亚平
+,,神舟十一号,Shenzhou 11,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",32天6小时又29分,33天3小时,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2016年10月17日07时30分31.409秒,2016-10-177:30:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",四子王旗着陆场,内蒙古四子王旗,1.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2016年11月18日13时59分,2016-11-1813:59:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",景海鹏、陈冬,景海鹏、陈冬
+,,神舟十二号,Shenzhou 12,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",92天4小时又11分,90天,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2021年6月17日09时22分31.693秒,2021-06-179:22:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",东风着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2021年9月17日13时34分,2021-9-171:34:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",聂海胜、刘伯明、汤洪波,聂海胜、刘伯明、汤洪波
+,,神舟十三号,Shenzhou 13,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",182天9小时又32分,183天,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2021年10月16日00时23分56.469秒,2021-10-1600:23:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",东风着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2022年4月16日09时56分,2022-4-1601:44:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",翟志刚、王亚平、叶光富,翟志刚、王亚平、叶光富
+,,神舟十四号,Shenzhou 14,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",182天9小时又24分,183天,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2022年6月5日10时44分10.460秒,2022-6-510:44:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",东风着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2022年12月4日20时09分,2022-12-401:56:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",陈冬、刘洋、蔡旭哲,陈冬、刘洋、蔡旭哲
+,,神舟十五号,Shenzhou 15,1.0,key_match,0.0,"Let's analyze each idx one by one against the criterion:
+
+Criterion summary:  
+- Semantic equivalence or pointing to the same entity is enough, no need for word-by-word match.  
+- Time duration error within one minute is acceptable.
+
+---
+
+**idx_0**  
+- Response: 21小时22分45秒  
+- Target: 21小时22分钟45秒  
+- Analysis: Both represent the exact same duration. “分钟” and “分” same meaning.  
+- Time matches exactly, no discrepancy.  
+- Verdict: 1
+
+---
+
+**idx_1**  
+- Response: 115小时32分  
+- Target: 4天19小时32分钟46秒钟
+
+Convert target to hours:  
+4 days = 4×24 = 96 hours  
+96 + 19 = 115 hours, 32 minutes 46 seconds
+
+Response is: 115 hours 32 minutes  
+Difference with target: 46 seconds less — well within 1 minute allowance.  
+Response lacks seconds info, but acceptable within criterion.  
+
+Verdict: 1
+
+---
+
+**idx_2**  
+- Response: 19小时35分  
+- Target: 2天20小时27分
+
+Convert target to hours:  
+2 days = 48 hours  
+48 + 20 = 68 hours 27 minutes
+
+Response: 19 hours 35 minutes
+
+Response is far less than target duration, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_3**  
+- Response: 13天13小时33分  
+- Target: 12天15小时25分钟24秒钟
+
+Convert both to hours:  
+Target:  
+12 days = 288 h + 15 h + 25 min + 24 sec  
+15 h 25 min 24 s ~ 15.423 h
+
+Total target hours = 288 + 15.423 = 303.423 hours
+
+Response:  
+13 days = 312 h + 13 h + 33 min = 312 + 13 + 0.55 = 325.55 hours
+
+Difference: 325.55 - 303.423 = about 22 hours (almost 1 day difference).  
+
+That is a significant difference, not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_4**  
+- Response: 12天5小时48分  
+- Target: 14天14小时又29分
+
+Convert to hours:  
+Target: 14 days = 336 h +14 h +29 min = 336 +14 + 0.483 = 350.48 h  
+Response: 12 days = 288 h + 5 h + 48 min = 288 + 5 + 0.8 = 293.8 h  
+Difference: 350.48 - 293.8 = about 56.7 h (more than 2 days difference)  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_5**  
+- Response: 33天3小时  
+- Target: 32天6小时又29分
+
+Convert to hours:  
+Target: 32 days = 768 h + 6 h + 29 min = 774.48 h  
+Response: 33 days = 792 h + 3 h = 795 h  
+Difference: response is 20.5 hours more. This is nearly a day's difference. Not within one minute, not close enough.  
+
+Verdict: 0
+
+---
+
+**idx_6**  
+- Response: 90天  
+- Target: 92天4小时又11分
+
+Convert to hours:  
+Target: 92 days = 2208 h + 4 h + 11 min = 2212.18 h  
+Response: 90 days = 2160 h  
+Difference: about 52 hours (more than 2 days).  
+
+Not semantically equivalent.
+
+Verdict: 0
+
+---
+
+**idx_7**  
+- Response: 183天  
+- Target: 182天9小时又32分
+
+Convert to hours:  
+Target: 182 days = 4368 h + 9 h + 32 min = 4377.53 h  
+Response: 183 days = 4392 h  
+Difference: about 14.5 hours difference, less than a day.  
+
+Is this ""semantically equivalent""? The response rounds up more than half a day. Given the criterion - it says duration error within one minute is allowed as correct. 14.5 hours is much more than 1 minute, so it's not within allowable error. But question is - does ""semantic equivalence"" here require near exact value? Probably yes, since the difference is large, it should be 0.
+
+Verdict: 0
+
+---
+
+**idx_8**  
+- Response: 183天  
+- Target: 182天9小时又24分
+
+Same as idx_7 but difference is again about 14.4 hours. Not within one minute.
+
+Verdict: 0
+
+---
+
+**idx_9**  
+- Response: 183天  
+- Target: 186天7小时又24分
+
+Convert target to hours:  
+186 days = 4464 + 7 + 0.4 = approx 4471.4 h  
+Response: 183 days = 4392 h  
+Difference: about 79.4 h (more than 3 days). Not equivalent.
+
+Verdict: 0
+
+---
+
+**Summary:** Only idx_0 and idx_1 meet the criteria for being correct; all others deviate too much.
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```
+",186天7小时又24分,183天,1.0,"根据给定的评分标准：
+
+1. 评分范围0-1，1表示完全正确答案。
+2. 标准答案和回答只需语义相同大致或指向相同实体即可，不必字字对应。
+3. 回答与目标答案均为“酒泉卫星发射中心”，完全一致。
+4. 因此每个回答与标准答案完全匹配，均符合评分标准。
+
+具体逐项分析如下：
+
+- idx_0：回答“酒泉卫星发射中心”，标准答案“酒泉卫星发射中心”，语义相同，得1分。
+- idx_1：同上，得1分。
+- idx_2：同上，得1分。
+- idx_3：同上，得1分。
+- idx_4：同上，得1分。
+- idx_5：同上，得1分。
+- idx_6：同上，得1分。
+- idx_7：同上，得1分。
+- idx_8：同上，得1分。
+- idx_9：同上，得1分。
+
+最终所有回答均得满分1分。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",酒泉卫星发射中心,酒泉卫星发射中心,1.0,"分析过程：
+
+根据给定的评分标准，判断依据是“和参考答案语义相同大致，或者指向的实体一致即可，不需要字字对应”，且评分范围为0或1。
+
+每条对比要点：
+- 是否准确表达了年、月、日、时、分信息（秒可以忽略，因为参考答案均包含秒，响应答案均省略秒，符合“不需要字字对应”且“语义大致一致”）。
+- 格式细节：部分响应中格式错误（如第0条月日连写的“10-1509:00:00”，第5条小时写成“7:30:00”而非“07:30:00”）。但题目并无对格式准确性的限制，只要语义指向一致即可。
+
+逐条分析：
+
+idx_0:
+- 响应“2003-10-1509:00:00”，参考“2003年10月15日09时00分03.497秒”
+- 响应时间与参考时间完全一致（年月日时分均匹配，只是秒未显示，允许）
+- 格式稍有问题，但语义一致
+- 评分=1
+
+idx_1:
+- 响应“2005-10-1209:00:00”，参考“2005年10月12日09时00分03.583秒”
+- 时间匹配，语义完全一致
+- 评分=1
+
+idx_2:
+- 响应“2008-09-2521:10:00”，参考“2008年9月25日21时10分04.988秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_3:
+- 响应“2012-06-1618:37:00”，参考“2012年6月16日18时37分24.558秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_4:
+- 响应“2013-06-1117:38:00”，参考“2013年6月11日17时38分02.666秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_5:
+- 响应“2016-10-177:30:00”，参考“2016年10月17日07时30分31.409秒”
+- 小时部分“7:30:00”没有补0为“07:30:00”，但语义时间一致
+- 评分=1
+
+idx_6:
+- 响应“2021-06-179:22:00”，参考“2021年6月17日09时22分31.693秒”
+- 同第5条，小时无补0，语义时间一致
+- 评分=1
+
+idx_7:
+- 响应“2021-10-1600:23:00”，参考“2021年10月16日00时23分56.469秒”
+- 时间匹配，语义一致
+- 评分=1
+
+idx_8:
+- 响应“2022-6-510:44:00”，参考“2022年6月5日10时44分10.460秒”
+- 月份“6”只用一位数，日“5”也一位，格式问题无关，语义一致
+- 评分=1
+
+idx_9:
+- 响应“2022-11-2923:08:00”，参考“2022年11月29日23时08分17.457秒”
+- 时间匹配，语义一致
+- 评分=1
+
+总结：所有响应的时间数据都与参考答案指向相符，秒的缺失在要求中允许，格式上的细节错误不影响评分。
+
+最终评分全部为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",2022年11月29日23时08分17.457秒,2022-11-2923:08:00,0.0,"分析过程：
+
+题目中参考答案是关于“着陆场”的名称，如“四子王旗着陆场”和“东风着陆场”。  
+评分标准中明确说明：答案与参考答案语义相同大致或者指向的实体一致即可，不要求字字对应。
+
+具体分析如下：
+
+- idx_0-idx_5：response为“内蒙古四子王旗”，target为“四子王旗着陆场”。  
+  “内蒙古四子王旗”仅指地名四子王旗下的地区，而参考答案是明确的地物“着陆场”。虽然“内蒙古四子王旗”是“四子王旗着陆场”的大致地理位置，但缺失了“着陆场”这一具体实体身份，因此语义不完全匹配，指向实体不一致。  
+  按评分标准应得0分。
+
+- idx_6-idx_9：response依然是“内蒙古四子王旗”，target是“东风着陆场”。  
+  同理，“内蒙古四子王旗”是区域名，与“东风着陆场”不是同一具体实体，指向实体不一致。  
+  应得0分。
+
+结论：
+
+所有项响应均不完全指向参考答案的着陆场实体，分值均为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",东风着陆场,内蒙古四子王旗,0.0,"分析和判断过程：
+
+依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+本题中“指向的实体”即为对应的特定时间点（年月日时分秒），只要响应时间和目标时间日期时间信息完全一致或基本一致（秒允许误差，分和秒最好一致），即可给1分，否则0分。
+
+逐项分析：
+
+idx_0：  
+response: 2003-10-1616:23:00  
+target: 2003年10月16日06时22分48秒  
+对比时间：响应时间16:23，目标时间06:22，时和分均不一致，时差10小时，日期相同。  
+结论：时分不一致，指向实体不一致。得分0。
+
+idx_1：  
+response: 2005-10-1715:57:00  
+target: 2005年10月17日04时33分  
+时间: 响应15:57，目标04:33，时和分均不一致。  
+结论：不一致，得分0。
+
+idx_2：  
+response: 2008-09-2817:37:00  
+target: 2008年9月28日17时38分  
+分秒只差1分钟，日期和小时一致。基本一致，符合“语义相同大致”的要求。  
+得分1。
+
+idx_3：  
+response: 2012-06-2416:00:00  
+target: 2012年6月29日10时03分  
+日期6月24号 vs 6月29号不一致，时间16:00 vs 10:03也不一致。指向实体不一致。  
+得分0。
+
+idx_4：  
+response: 2013-06-268:07:00  
+target: 2013年6月26日08时07分  
+时刻格式上时差一个小时，响应为8:07 写成了""8:07"" （缺少前置0但不影响时间表达含义），日期一致，小时分钟也一致（8:07 vs 08:07），语义一致。  
+得分1。
+
+idx_5：  
+response: 2016-11-1813:59:00  
+target: 2016年11月18日13时59分  
+完全一致，得分1。
+
+idx_6：  
+response: 2021-9-171:34:00  
+target: 2021年9月17日13时34分  
+响应时间1:34，应为13:34。时不一致，得分0。
+
+idx_7：  
+response: 2022-4-1601:44:00  
+target: 2022年4月16日09时56分  
+响应时间01:44 vs 09:56，时间和分均不一致，得分0。
+
+idx_8：  
+response: 2022-12-401:56:00  
+target: 2022年12月4日20时09分  
+响应时间01:56 vs 20:09，时间不一致，得分0。
+
+idx_9：  
+response: 2023-5-67:03:00  
+target: 2023年6月4日06时33分  
+日期不一致：响应5月6日vs目标6月4日  
+且响应时间7:03 vs 6:33也不一致  
+得分0。
+
+综合评分如下：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",2023年6月4日06时33分,2023-5-67:03:00,1.0,"分析过程：
+
+- 评分标准：语义相同大致、或者指向的实体一致即可，得1分，否则0分。
+
+逐项分析：
+
+idx_0：
+- response: 杨利伟
+- target: 杨利伟
+完全相同，得1分。
+
+idx_1：
+- response: 费俊龙、聂海胜
+- target: 费俊龙、聂海胜
+完全相同，得1分。
+
+idx_2：
+- response: 翟志刚、刘伯明、景海鹏
+- target: 翟志刚、刘伯明、景海鹏
+完全相同，得1分。
+
+idx_3：
+- response: 翟志刚、刘洋、刘旺
+- target: 景海鹏、刘旺、刘洋
+三个名字有两个相同（刘洋、刘旺），一个不同（response有翟志刚，target有景海鹏）。
+语义是否一致或指向实体一致？
+这两个名单比例高，但不同成员数量1人，且角色有出入，按照“语义大致相同或指向实体一致”此处存在重要差异，应该扣0。
+不过依据标准，只需“语义相同大致、或者指向实体一致即可”，这里两个名单三人都是3人，其中两人完全相同，一个不同。
+考虑到逻辑推断，这应当视为不同答案（因为组成人员顺序、构成不同。
+按照严格标准不是完全一致，人员顺序虽然不必一致，但人员组成不符，应该0分。
+
+idx_4：
+- response: 聂海胜、张晓光、王亚平
+- target: 聂海胜、张晓光、王亚平
+完全相同，得1分。
+
+idx_5：
+- response: 景海鹏、陈冬
+- target: 景海鹏、陈冬
+完全相同，得1分。
+
+idx_6：
+- response: 聂海胜、刘伯明、汤洪波
+- target: 聂海胜、刘伯明、汤洪波
+完全相同，得1分。
+
+idx_7：
+- response: 翟志刚、王亚平、叶光富
+- target: 翟志刚、王亚平、叶光富
+完全相同，得1分。
+
+idx_8：
+- response: 陈冬、刘洋、蔡旭哲
+- target: 陈冬、刘洋、蔡旭哲
+完全相同，得1分。
+
+idx_9：
+- response: 邓清明、张陆、费俊龙
+- target: 费俊龙、邓清明、张陆
+三人完全相同，顺序不同。
+评分标准不要求顺序一致，得1分。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",费俊龙、邓清明、张陆,邓清明、张陆、费俊龙
+1.0,,神舟二十号,,,,,,--,,,,酒泉卫星发射中心,,,,2025年4月24日17时17分31.441秒,,,,东风着陆场,,,,2025年10月,,,,陈冬、陈中瑞、王杰,
+,1.0,神舟八号,Shenzhou 8,,,,,,12小时40分,,,,酒泉卫星发射中心,,,,2011-11-0111:00:00,,,,内蒙古四子王旗,,,,2011-11-0201:42:00,,,,无人
+1.0,,神舟十七号,,,,,,187天6小时又32分,,,,酒泉卫星发射中心,,,,2023年10月26日11时14分02.491秒,,,,东风着陆场,,,,2024年4月30日17时46分,,,,汤洪波、唐胜杰、江新林,
+1.0,,神舟十九号,,,,,,182天8小时又41分,,,,酒泉卫星发射中心,,,,2024年10月30日04时27分34.469秒,,,,东风着陆场,,,,2025年4月30日13时08分,,,,蔡旭哲、宋令东、王浩泽,
+1.0,,神舟十八号,,,,,,192天4小时25分,,,,酒泉卫星发射中心,,,,2024年4月25日20时59分00.079秒,,,,东风着陆场,,,,2024年11月4日01时24分,,,,叶光富、李聪、李广苏,
+1.0,,神舟十六号,,,,,,153天22小时又40分,,,,酒泉卫星发射中心,,,,2023年5月30日09时31分13.480秒,,,,东风着陆场,,,,2023年10月31日08时11分,,,,景海鹏、朱杨柱、桂海潮,

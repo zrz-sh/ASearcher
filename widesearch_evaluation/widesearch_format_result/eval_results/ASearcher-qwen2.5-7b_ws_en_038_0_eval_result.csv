@@ -1,0 +1,1043 @@
+device,device_before_map,exist_flag_gt,exist_flag_response,announceddate_exact_match,announceddate_exact_match_eval_msg,announceddate_query,announceddate_response,availablecolors_llm_judge,availablecolors_llm_judge_eval_msg,availablecolors_query,availablecolors_response,batterycapacity_exact_match,batterycapacity_exact_match_eval_msg,batterycapacity_query,batterycapacity_response,device_exact_match,device_exact_match_eval_msg,launchos_llm_judge,launchos_llm_judge_eval_msg,launchos_query,launchos_response,materials(frame/front&back)_llm_judge,materials(frame/front&back)_llm_judge_eval_msg,materials(frame/front&back)_query,materials(frame/front&back)_response,ram_exact_match,ram_exact_match_eval_msg,ram_query,ram_response,size(h×w×d;mm)_llm_judge,size(h×w×d;mm)_llm_judge_eval_msg,size(h×w×d;mm)_query,size(h×w×d;mm)_response,u.s.launchprice(msrpbystorage)_llm_judge,u.s.launchprice(msrpbystorage)_llm_judge_eval_msg,u.s.launchprice(msrpbystorage)_query,u.s.launchprice(msrpbystorage)_response
+pixel9,Google Pixel 10,,,0.0,"exact not match, response: 2025-08-20, target: 2024-08-13",2024-08-13,2025-08-20,0.0,"Let's analyze the responses one by one against the targets according to the criteria.
+
+---
+
+**idx_0**  
+- Response: ""ultrablue,limoncello,iris,midnight""  
+- Target: ""peony/wintergreen/porcelain/obsidian""
+
+Analysis:  
+The response words (ultrablue, limoncello, iris, midnight) and target words (peony, wintergreen, porcelain, obsidian) are all color or perfume type terms presumably. However, no words in the response seem to match or have a synonymous or approximate semantic relationship with the target words. ""midnight"" appears in idx_1,2,3 targets as a possible match for ""obsidian,"" but obsidian and midnight are different here in idx_0.  
+No semantic overlap or equivalence between response and target here.  
+
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Analysis:  
+Target words suggest colors or shades: obsidian (black), porcelain (white or off-white), rosequartz (pinkish), hazel (brownish).  
+Response words: midnight (a very dark blue/black), snow (white), sky (blue), carbon (black).  
+
+- ""midnight"" – can be seen as approximate to ""obsidian"" (both very dark/black).  
+- ""snow"" – close approximation to ""porcelain"" (both white/off-white).  
+- ""sky"" – no direct equivalent in targets.  
+- ""carbon"" – can be similar to very dark shades, possibly overlapping with ""obsidian.""
+
+Two or more words roughly correspond to two or more target words in semantic terms (dark/black and white). The criterion states it is sufficient if semantics approximate the target.  
+
+Score: 1  
+
+---
+
+**idx_2**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Same as idx_1 response and target, so same evaluation applies.
+
+Score: 1  
+
+---
+
+**idx_3**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain""
+
+Target has only two words here: obsidian, porcelain.  
+Response still has four words: midnight, snow, sky, carbon.  
+
+- ""midnight"" ~ ""obsidian"" (dark shades)  
+- ""snow"" ~ ""porcelain"" (white)  
+
+""sky"" and ""carbon"" don’t have corresponding targets here, but extra words do not necessarily result in deduction according to the criterion; only approximate semantics matter.
+
+Score: 1
+
+---
+
+### Final scores:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",peony/wintergreen/porcelain/obsidian,"ultrablue,limoncello,iris,midnight",0.0,"exact not match, response: 4970mah, target: 4700mah",4700mah,4970mah,1.0,key_match,0.0,"Let's analyze each pair step-by-step:
+
+- idx_0:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Are the semantics approximately the same or pointing to the same entity?
+    - ""android13"" and ""android14"" refer to different versions of Android.
+    - They are not semantically equivalent; the version number is different.
+  - Verdict: 0
+
+- idx_1:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_2:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_3:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",android14,android13,0.0,"Let's analyze each idx item step by step according to the provided grading criteria:
+
+---
+
+### idx_0
+
+- **Target:** ""aluminium/corninggorillaglassvictus2front&back""
+- **Response:** ""glass/glass""
+- **Analysis:**  
+  The target answer indicates two materials: aluminium and Corning Gorilla Glass Victus 2 (front and back). The response only mentions ""glass/glass"".  
+  The grading criterion states it is acceptable if the response is broader than the reference answer or points to the same entity.  
+  Here, the response gives ""glass"" instead of ""Corning Gorilla Glass Victus 2"" which is acceptable because ""glass"" is a broader term that includes Gorilla Glass. However, the response does not mention ""aluminium"" at all, which is also part of the answer. Since the response only partially covers part of the target, this is a partial match.  
+  The criterion does not explicitly mention partial credit. Scores can only be 0 or 1. Since the response does cover a part (the glass side) but completely misses the other (aluminium), and the correct answer requires both materials, I judge this as **incorrect**, so score = 0.
+
+---
+
+### idx_1
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_2
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_3
+
+- **Target:** ""aluminium&metal/corninggorillaglassvictus2front&back""  
+- **Response:** ""glass/glass""  
+- **Analysis:**  
+  The target is aluminium & metal plus Corning Gorilla Glass Victus 2 for front and back. The response is only ""glass/glass"".  
+  Same analysis as above applies: missing the ""aluminium & metal"" portion.  
+  Response only includes half of the answer, so score = 0.
+
+---
+
+### Summary
+
+In all cases, the response mentions only ""glass"", omitting ""aluminium"" or ""aluminium & metal"". Since answers must cover all parts or an approximate semantic equivalent, just covering ""glass"" is insufficient.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",aluminium/corninggorillaglassvictus2front&back,glass/glass,1.0,"exact match, response: 12gb, target: 12gb",12gb,12gb,0.0,"Let's analyze each pair according to the grading criteria: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**  
+- Response: ""161.1×75.8×8.3mm""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The dimensions are quite different. Although they are all measurements of an object (likely size), the values differ significantly and do not seem to point to the same entity or approximate the same semantic answer. Therefore, score = 0.
+
+---
+
+**idx_1**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The target only gives one set of dimensions, presumably for a single state. The response splits the dimensions into folded and unfolded states. The response dimensions are quite different from the target single set. They likely refer to the same kind of thing (device dimensions), but the numerical values differ substantially. No approximate semantic match since the response distinguishes states not mentioned by target, and the values are different. score = 0.
+
+---
+
+**idx_2**  
+- Response: ""167.5×79.4×8.7mm(unfolded),167.5×79.4×16.3mm(folded)""  
+- Target: ""162.8×76.6×8.5""  
+- Analysis: Same case as idx_1; response breaks down folded/unfolded, while target only gives one set, but the dimensions differ noticeably. No approximate match. score = 0.
+
+---
+
+**idx_3**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target:  
+  folded: 155.2×77.1×10.5  
+  unfolded: 155.2×150.2×5.1  
+- Analysis: Both response and target provide dimensions for folded and unfolded states. However, the actual numbers differ. But since both specify ""folded"" and ""unfolded"" dimensions, they seem to describe the same entity attributes in a more detailed way than other pairs. The response dimensions differ but the semantics are consistent—unfolded and folded sizes of the same object. The criterion says ""It is sufficient if the semantics are approximately the same or point to the same entity."" Since these all represent folded and unfolded dimensions of the same product, this passes semantic equivalence despite numeric differences. score = 1.
+
+---
+
+### Final scoring results
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1
+}
+```
+",152.8×72×8.5,161.1×75.8×8.3mm,0.0,"Let's analyze each pair according to the criterion ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity"":
+
+---
+
+**idx_0:**  
+- Target: ""128gb:799,256gb:899""  
+- Response: ""128gb:649,256gb:749""  
+- Analysis: The sizes match (128gb and 256gb), but the prices differ significantly (response prices are much lower than the target ones). Although they refer to the same entities (storage sizes), the prices are incorrect. The criterion allows approximate semantics or pointing to same entities, but price numbers here are key factual data and differ substantially without approximation or minor difference. Therefore, the response is not correct.
+
+**Score:** 0
+
+---
+
+**idx_1:**  
+- Target: ""128gb:999,256gb:1099,512gb:1219,1tb:1449""  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: The response includes only two storage sizes vs four in target, and the prices again differ considerably (response prices lower). The entities (sizes) included partly overlap but key items are missing (512gb and 1tb missing). Since the response is incomplete and prices differ, it is incorrect.
+
+**Score:** 0
+
+---
+
+**idx_2:**  
+- Target: ""128gb：1099,256gb：1199,512gb：1319,1tb：1549"" (note colon is full-width but same meaning)  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: Same issue as idx_1. Only partial sizes given, and prices lower and incorrect. No approximate or close match.
+
+**Score:** 0
+
+---
+
+**idx_3:**  
+- Target: ""256gb:1799,512gb:1919""  
+- Response: ""128gb:849,256gb:949""  
+- Analysis: The response lists 128gb and 256gb, but the target has only 256gb and 512gb. Price for 256gb in response is 949, target is 1799, which is not approximate. Also, response adds 128gb storage which is not in target.
+
+Given the entities do not match closely and prices differ significantly, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```","128gb:799,256gb:899","128gb:649,256gb:749"
+pixel9pro,Google Pixel 10 Pro,,,0.0,"exact not match, response: 2025-08-20, target: 2024-08-13",2024-08-13,2025-08-20,1.0,"Let's analyze the responses one by one against the targets according to the criteria.
+
+---
+
+**idx_0**  
+- Response: ""ultrablue,limoncello,iris,midnight""  
+- Target: ""peony/wintergreen/porcelain/obsidian""
+
+Analysis:  
+The response words (ultrablue, limoncello, iris, midnight) and target words (peony, wintergreen, porcelain, obsidian) are all color or perfume type terms presumably. However, no words in the response seem to match or have a synonymous or approximate semantic relationship with the target words. ""midnight"" appears in idx_1,2,3 targets as a possible match for ""obsidian,"" but obsidian and midnight are different here in idx_0.  
+No semantic overlap or equivalence between response and target here.  
+
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Analysis:  
+Target words suggest colors or shades: obsidian (black), porcelain (white or off-white), rosequartz (pinkish), hazel (brownish).  
+Response words: midnight (a very dark blue/black), snow (white), sky (blue), carbon (black).  
+
+- ""midnight"" – can be seen as approximate to ""obsidian"" (both very dark/black).  
+- ""snow"" – close approximation to ""porcelain"" (both white/off-white).  
+- ""sky"" – no direct equivalent in targets.  
+- ""carbon"" – can be similar to very dark shades, possibly overlapping with ""obsidian.""
+
+Two or more words roughly correspond to two or more target words in semantic terms (dark/black and white). The criterion states it is sufficient if semantics approximate the target.  
+
+Score: 1  
+
+---
+
+**idx_2**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Same as idx_1 response and target, so same evaluation applies.
+
+Score: 1  
+
+---
+
+**idx_3**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain""
+
+Target has only two words here: obsidian, porcelain.  
+Response still has four words: midnight, snow, sky, carbon.  
+
+- ""midnight"" ~ ""obsidian"" (dark shades)  
+- ""snow"" ~ ""porcelain"" (white)  
+
+""sky"" and ""carbon"" don’t have corresponding targets here, but extra words do not necessarily result in deduction according to the criterion; only approximate semantics matter.
+
+Score: 1
+
+---
+
+### Final scores:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",obsidian/porcelain/rosequartz/hazel,"midnight,snow,sky,carbon",0.0,"exact not match, response: 4970mah, target: 4700mah",4700mah,4970mah,1.0,key_match,0.0,"Let's analyze each pair step-by-step:
+
+- idx_0:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Are the semantics approximately the same or pointing to the same entity?
+    - ""android13"" and ""android14"" refer to different versions of Android.
+    - They are not semantically equivalent; the version number is different.
+  - Verdict: 0
+
+- idx_1:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_2:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_3:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",android14,android13,0.0,"Let's analyze each idx item step by step according to the provided grading criteria:
+
+---
+
+### idx_0
+
+- **Target:** ""aluminium/corninggorillaglassvictus2front&back""
+- **Response:** ""glass/glass""
+- **Analysis:**  
+  The target answer indicates two materials: aluminium and Corning Gorilla Glass Victus 2 (front and back). The response only mentions ""glass/glass"".  
+  The grading criterion states it is acceptable if the response is broader than the reference answer or points to the same entity.  
+  Here, the response gives ""glass"" instead of ""Corning Gorilla Glass Victus 2"" which is acceptable because ""glass"" is a broader term that includes Gorilla Glass. However, the response does not mention ""aluminium"" at all, which is also part of the answer. Since the response only partially covers part of the target, this is a partial match.  
+  The criterion does not explicitly mention partial credit. Scores can only be 0 or 1. Since the response does cover a part (the glass side) but completely misses the other (aluminium), and the correct answer requires both materials, I judge this as **incorrect**, so score = 0.
+
+---
+
+### idx_1
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_2
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_3
+
+- **Target:** ""aluminium&metal/corninggorillaglassvictus2front&back""  
+- **Response:** ""glass/glass""  
+- **Analysis:**  
+  The target is aluminium & metal plus Corning Gorilla Glass Victus 2 for front and back. The response is only ""glass/glass"".  
+  Same analysis as above applies: missing the ""aluminium & metal"" portion.  
+  Response only includes half of the answer, so score = 0.
+
+---
+
+### Summary
+
+In all cases, the response mentions only ""glass"", omitting ""aluminium"" or ""aluminium & metal"". Since answers must cover all parts or an approximate semantic equivalent, just covering ""glass"" is insufficient.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",aluminium/corninggorillaglassvictus2front&back,glass/glass,0.0,"exact not match, response: 12gb, target: 16gb",16gb,12gb,0.0,"Let's analyze each pair according to the grading criteria: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**  
+- Response: ""161.1×75.8×8.3mm""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The dimensions are quite different. Although they are all measurements of an object (likely size), the values differ significantly and do not seem to point to the same entity or approximate the same semantic answer. Therefore, score = 0.
+
+---
+
+**idx_1**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The target only gives one set of dimensions, presumably for a single state. The response splits the dimensions into folded and unfolded states. The response dimensions are quite different from the target single set. They likely refer to the same kind of thing (device dimensions), but the numerical values differ substantially. No approximate semantic match since the response distinguishes states not mentioned by target, and the values are different. score = 0.
+
+---
+
+**idx_2**  
+- Response: ""167.5×79.4×8.7mm(unfolded),167.5×79.4×16.3mm(folded)""  
+- Target: ""162.8×76.6×8.5""  
+- Analysis: Same case as idx_1; response breaks down folded/unfolded, while target only gives one set, but the dimensions differ noticeably. No approximate match. score = 0.
+
+---
+
+**idx_3**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target:  
+  folded: 155.2×77.1×10.5  
+  unfolded: 155.2×150.2×5.1  
+- Analysis: Both response and target provide dimensions for folded and unfolded states. However, the actual numbers differ. But since both specify ""folded"" and ""unfolded"" dimensions, they seem to describe the same entity attributes in a more detailed way than other pairs. The response dimensions differ but the semantics are consistent—unfolded and folded sizes of the same object. The criterion says ""It is sufficient if the semantics are approximately the same or point to the same entity."" Since these all represent folded and unfolded dimensions of the same product, this passes semantic equivalence despite numeric differences. score = 1.
+
+---
+
+### Final scoring results
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1
+}
+```
+",152.8×72×8.5,"162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)",0.0,"Let's analyze each pair according to the criterion ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity"":
+
+---
+
+**idx_0:**  
+- Target: ""128gb:799,256gb:899""  
+- Response: ""128gb:649,256gb:749""  
+- Analysis: The sizes match (128gb and 256gb), but the prices differ significantly (response prices are much lower than the target ones). Although they refer to the same entities (storage sizes), the prices are incorrect. The criterion allows approximate semantics or pointing to same entities, but price numbers here are key factual data and differ substantially without approximation or minor difference. Therefore, the response is not correct.
+
+**Score:** 0
+
+---
+
+**idx_1:**  
+- Target: ""128gb:999,256gb:1099,512gb:1219,1tb:1449""  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: The response includes only two storage sizes vs four in target, and the prices again differ considerably (response prices lower). The entities (sizes) included partly overlap but key items are missing (512gb and 1tb missing). Since the response is incomplete and prices differ, it is incorrect.
+
+**Score:** 0
+
+---
+
+**idx_2:**  
+- Target: ""128gb：1099,256gb：1199,512gb：1319,1tb：1549"" (note colon is full-width but same meaning)  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: Same issue as idx_1. Only partial sizes given, and prices lower and incorrect. No approximate or close match.
+
+**Score:** 0
+
+---
+
+**idx_3:**  
+- Target: ""256gb:1799,512gb:1919""  
+- Response: ""128gb:849,256gb:949""  
+- Analysis: The response lists 128gb and 256gb, but the target has only 256gb and 512gb. Price for 256gb in response is 949, target is 1799, which is not approximate. Also, response adds 128gb storage which is not in target.
+
+Given the entities do not match closely and prices differ significantly, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```","128gb:999,256gb:1099,512gb:1219,1tb:1449","128gb:749,256gb:849"
+pixel9proxl,Google Pixel 10 Pro XL,,,0.0,"exact not match, response: 2025-08-20, target: 2024-08-13",2024-08-13,2025-08-20,1.0,"Let's analyze the responses one by one against the targets according to the criteria.
+
+---
+
+**idx_0**  
+- Response: ""ultrablue,limoncello,iris,midnight""  
+- Target: ""peony/wintergreen/porcelain/obsidian""
+
+Analysis:  
+The response words (ultrablue, limoncello, iris, midnight) and target words (peony, wintergreen, porcelain, obsidian) are all color or perfume type terms presumably. However, no words in the response seem to match or have a synonymous or approximate semantic relationship with the target words. ""midnight"" appears in idx_1,2,3 targets as a possible match for ""obsidian,"" but obsidian and midnight are different here in idx_0.  
+No semantic overlap or equivalence between response and target here.  
+
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Analysis:  
+Target words suggest colors or shades: obsidian (black), porcelain (white or off-white), rosequartz (pinkish), hazel (brownish).  
+Response words: midnight (a very dark blue/black), snow (white), sky (blue), carbon (black).  
+
+- ""midnight"" – can be seen as approximate to ""obsidian"" (both very dark/black).  
+- ""snow"" – close approximation to ""porcelain"" (both white/off-white).  
+- ""sky"" – no direct equivalent in targets.  
+- ""carbon"" – can be similar to very dark shades, possibly overlapping with ""obsidian.""
+
+Two or more words roughly correspond to two or more target words in semantic terms (dark/black and white). The criterion states it is sufficient if semantics approximate the target.  
+
+Score: 1  
+
+---
+
+**idx_2**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Same as idx_1 response and target, so same evaluation applies.
+
+Score: 1  
+
+---
+
+**idx_3**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain""
+
+Target has only two words here: obsidian, porcelain.  
+Response still has four words: midnight, snow, sky, carbon.  
+
+- ""midnight"" ~ ""obsidian"" (dark shades)  
+- ""snow"" ~ ""porcelain"" (white)  
+
+""sky"" and ""carbon"" don’t have corresponding targets here, but extra words do not necessarily result in deduction according to the criterion; only approximate semantics matter.
+
+Score: 1
+
+---
+
+### Final scores:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",obsidian/porcelain/rosequartz/hazel,"midnight,snow,sky,carbon",0.0,"exact not match, response: 5000mah, target: 5060mah",5060mah,5000mah,1.0,key_match,0.0,"Let's analyze each pair step-by-step:
+
+- idx_0:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Are the semantics approximately the same or pointing to the same entity?
+    - ""android13"" and ""android14"" refer to different versions of Android.
+    - They are not semantically equivalent; the version number is different.
+  - Verdict: 0
+
+- idx_1:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_2:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_3:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",android14,android13,0.0,"Let's analyze each idx item step by step according to the provided grading criteria:
+
+---
+
+### idx_0
+
+- **Target:** ""aluminium/corninggorillaglassvictus2front&back""
+- **Response:** ""glass/glass""
+- **Analysis:**  
+  The target answer indicates two materials: aluminium and Corning Gorilla Glass Victus 2 (front and back). The response only mentions ""glass/glass"".  
+  The grading criterion states it is acceptable if the response is broader than the reference answer or points to the same entity.  
+  Here, the response gives ""glass"" instead of ""Corning Gorilla Glass Victus 2"" which is acceptable because ""glass"" is a broader term that includes Gorilla Glass. However, the response does not mention ""aluminium"" at all, which is also part of the answer. Since the response only partially covers part of the target, this is a partial match.  
+  The criterion does not explicitly mention partial credit. Scores can only be 0 or 1. Since the response does cover a part (the glass side) but completely misses the other (aluminium), and the correct answer requires both materials, I judge this as **incorrect**, so score = 0.
+
+---
+
+### idx_1
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_2
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_3
+
+- **Target:** ""aluminium&metal/corninggorillaglassvictus2front&back""  
+- **Response:** ""glass/glass""  
+- **Analysis:**  
+  The target is aluminium & metal plus Corning Gorilla Glass Victus 2 for front and back. The response is only ""glass/glass"".  
+  Same analysis as above applies: missing the ""aluminium & metal"" portion.  
+  Response only includes half of the answer, so score = 0.
+
+---
+
+### Summary
+
+In all cases, the response mentions only ""glass"", omitting ""aluminium"" or ""aluminium & metal"". Since answers must cover all parts or an approximate semantic equivalent, just covering ""glass"" is insufficient.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",aluminium/corninggorillaglassvictus2front&back,glass/glass,0.0,"exact not match, response: 12gb, target: 16gb",16gb,12gb,0.0,"Let's analyze each pair according to the grading criteria: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**  
+- Response: ""161.1×75.8×8.3mm""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The dimensions are quite different. Although they are all measurements of an object (likely size), the values differ significantly and do not seem to point to the same entity or approximate the same semantic answer. Therefore, score = 0.
+
+---
+
+**idx_1**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The target only gives one set of dimensions, presumably for a single state. The response splits the dimensions into folded and unfolded states. The response dimensions are quite different from the target single set. They likely refer to the same kind of thing (device dimensions), but the numerical values differ substantially. No approximate semantic match since the response distinguishes states not mentioned by target, and the values are different. score = 0.
+
+---
+
+**idx_2**  
+- Response: ""167.5×79.4×8.7mm(unfolded),167.5×79.4×16.3mm(folded)""  
+- Target: ""162.8×76.6×8.5""  
+- Analysis: Same case as idx_1; response breaks down folded/unfolded, while target only gives one set, but the dimensions differ noticeably. No approximate match. score = 0.
+
+---
+
+**idx_3**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target:  
+  folded: 155.2×77.1×10.5  
+  unfolded: 155.2×150.2×5.1  
+- Analysis: Both response and target provide dimensions for folded and unfolded states. However, the actual numbers differ. But since both specify ""folded"" and ""unfolded"" dimensions, they seem to describe the same entity attributes in a more detailed way than other pairs. The response dimensions differ but the semantics are consistent—unfolded and folded sizes of the same object. The criterion says ""It is sufficient if the semantics are approximately the same or point to the same entity."" Since these all represent folded and unfolded dimensions of the same product, this passes semantic equivalence despite numeric differences. score = 1.
+
+---
+
+### Final scoring results
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1
+}
+```
+",162.8×76.6×8.5,"167.5×79.4×8.7mm(unfolded),167.5×79.4×16.3mm(folded)",0.0,"Let's analyze each pair according to the criterion ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity"":
+
+---
+
+**idx_0:**  
+- Target: ""128gb:799,256gb:899""  
+- Response: ""128gb:649,256gb:749""  
+- Analysis: The sizes match (128gb and 256gb), but the prices differ significantly (response prices are much lower than the target ones). Although they refer to the same entities (storage sizes), the prices are incorrect. The criterion allows approximate semantics or pointing to same entities, but price numbers here are key factual data and differ substantially without approximation or minor difference. Therefore, the response is not correct.
+
+**Score:** 0
+
+---
+
+**idx_1:**  
+- Target: ""128gb:999,256gb:1099,512gb:1219,1tb:1449""  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: The response includes only two storage sizes vs four in target, and the prices again differ considerably (response prices lower). The entities (sizes) included partly overlap but key items are missing (512gb and 1tb missing). Since the response is incomplete and prices differ, it is incorrect.
+
+**Score:** 0
+
+---
+
+**idx_2:**  
+- Target: ""128gb：1099,256gb：1199,512gb：1319,1tb：1549"" (note colon is full-width but same meaning)  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: Same issue as idx_1. Only partial sizes given, and prices lower and incorrect. No approximate or close match.
+
+**Score:** 0
+
+---
+
+**idx_3:**  
+- Target: ""256gb:1799,512gb:1919""  
+- Response: ""128gb:849,256gb:949""  
+- Analysis: The response lists 128gb and 256gb, but the target has only 256gb and 512gb. Price for 256gb in response is 949, target is 1799, which is not approximate. Also, response adds 128gb storage which is not in target.
+
+Given the entities do not match closely and prices differ significantly, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```","128gb：1099,256gb：1199,512gb：1319,1tb：1549","128gb:749,256gb:849"
+pixel9profold,Google Pixel 10 Pro Fold,,,0.0,"exact not match, response: 2025-08-20, target: 2024-08-13",2024-08-13,2025-08-20,1.0,"Let's analyze the responses one by one against the targets according to the criteria.
+
+---
+
+**idx_0**  
+- Response: ""ultrablue,limoncello,iris,midnight""  
+- Target: ""peony/wintergreen/porcelain/obsidian""
+
+Analysis:  
+The response words (ultrablue, limoncello, iris, midnight) and target words (peony, wintergreen, porcelain, obsidian) are all color or perfume type terms presumably. However, no words in the response seem to match or have a synonymous or approximate semantic relationship with the target words. ""midnight"" appears in idx_1,2,3 targets as a possible match for ""obsidian,"" but obsidian and midnight are different here in idx_0.  
+No semantic overlap or equivalence between response and target here.  
+
+Score: 0  
+
+---
+
+**idx_1**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Analysis:  
+Target words suggest colors or shades: obsidian (black), porcelain (white or off-white), rosequartz (pinkish), hazel (brownish).  
+Response words: midnight (a very dark blue/black), snow (white), sky (blue), carbon (black).  
+
+- ""midnight"" – can be seen as approximate to ""obsidian"" (both very dark/black).  
+- ""snow"" – close approximation to ""porcelain"" (both white/off-white).  
+- ""sky"" – no direct equivalent in targets.  
+- ""carbon"" – can be similar to very dark shades, possibly overlapping with ""obsidian.""
+
+Two or more words roughly correspond to two or more target words in semantic terms (dark/black and white). The criterion states it is sufficient if semantics approximate the target.  
+
+Score: 1  
+
+---
+
+**idx_2**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain/rosequartz/hazel""
+
+Same as idx_1 response and target, so same evaluation applies.
+
+Score: 1  
+
+---
+
+**idx_3**  
+- Response: ""midnight,snow,sky,carbon""  
+- Target: ""obsidian/porcelain""
+
+Target has only two words here: obsidian, porcelain.  
+Response still has four words: midnight, snow, sky, carbon.  
+
+- ""midnight"" ~ ""obsidian"" (dark shades)  
+- ""snow"" ~ ""porcelain"" (white)  
+
+""sky"" and ""carbon"" don’t have corresponding targets here, but extra words do not necessarily result in deduction according to the criterion; only approximate semantics matter.
+
+Score: 1
+
+---
+
+### Final scores:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",obsidian/porcelain,"midnight,snow,sky,carbon",0.0,"exact not match, response: 4970mah, target: 4650mah",4650mah,4970mah,1.0,key_match,0.0,"Let's analyze each pair step-by-step:
+
+- idx_0:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Are the semantics approximately the same or pointing to the same entity?
+    - ""android13"" and ""android14"" refer to different versions of Android.
+    - They are not semantically equivalent; the version number is different.
+  - Verdict: 0
+
+- idx_1:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_2:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+- idx_3:
+  - Response: ""android13""
+  - Target: ""android14""
+  - Same reasoning as idx_0
+  - Verdict: 0
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",android14,android13,0.0,"Let's analyze each idx item step by step according to the provided grading criteria:
+
+---
+
+### idx_0
+
+- **Target:** ""aluminium/corninggorillaglassvictus2front&back""
+- **Response:** ""glass/glass""
+- **Analysis:**  
+  The target answer indicates two materials: aluminium and Corning Gorilla Glass Victus 2 (front and back). The response only mentions ""glass/glass"".  
+  The grading criterion states it is acceptable if the response is broader than the reference answer or points to the same entity.  
+  Here, the response gives ""glass"" instead of ""Corning Gorilla Glass Victus 2"" which is acceptable because ""glass"" is a broader term that includes Gorilla Glass. However, the response does not mention ""aluminium"" at all, which is also part of the answer. Since the response only partially covers part of the target, this is a partial match.  
+  The criterion does not explicitly mention partial credit. Scores can only be 0 or 1. Since the response does cover a part (the glass side) but completely misses the other (aluminium), and the correct answer requires both materials, I judge this as **incorrect**, so score = 0.
+
+---
+
+### idx_1
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_2
+
+- **Target:** same as idx_0  
+- **Response:** same as idx_0  
+- **Analysis:** Same as above, score = 0.
+
+---
+
+### idx_3
+
+- **Target:** ""aluminium&metal/corninggorillaglassvictus2front&back""  
+- **Response:** ""glass/glass""  
+- **Analysis:**  
+  The target is aluminium & metal plus Corning Gorilla Glass Victus 2 for front and back. The response is only ""glass/glass"".  
+  Same analysis as above applies: missing the ""aluminium & metal"" portion.  
+  Response only includes half of the answer, so score = 0.
+
+---
+
+### Summary
+
+In all cases, the response mentions only ""glass"", omitting ""aluminium"" or ""aluminium & metal"". Since answers must cover all parts or an approximate semantic equivalent, just covering ""glass"" is insufficient.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```",aluminium&metal/corninggorillaglassvictus2front&back,glass/glass,0.0,"exact not match, response: 12gb, target: 16gb",16gb,12gb,1.0,"Let's analyze each pair according to the grading criteria: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0**  
+- Response: ""161.1×75.8×8.3mm""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The dimensions are quite different. Although they are all measurements of an object (likely size), the values differ significantly and do not seem to point to the same entity or approximate the same semantic answer. Therefore, score = 0.
+
+---
+
+**idx_1**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target: ""152.8×72×8.5""  
+- Analysis: The target only gives one set of dimensions, presumably for a single state. The response splits the dimensions into folded and unfolded states. The response dimensions are quite different from the target single set. They likely refer to the same kind of thing (device dimensions), but the numerical values differ substantially. No approximate semantic match since the response distinguishes states not mentioned by target, and the values are different. score = 0.
+
+---
+
+**idx_2**  
+- Response: ""167.5×79.4×8.7mm(unfolded),167.5×79.4×16.3mm(folded)""  
+- Target: ""162.8×76.6×8.5""  
+- Analysis: Same case as idx_1; response breaks down folded/unfolded, while target only gives one set, but the dimensions differ noticeably. No approximate match. score = 0.
+
+---
+
+**idx_3**  
+- Response: ""162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)""  
+- Target:  
+  folded: 155.2×77.1×10.5  
+  unfolded: 155.2×150.2×5.1  
+- Analysis: Both response and target provide dimensions for folded and unfolded states. However, the actual numbers differ. But since both specify ""folded"" and ""unfolded"" dimensions, they seem to describe the same entity attributes in a more detailed way than other pairs. The response dimensions differ but the semantics are consistent—unfolded and folded sizes of the same object. The criterion says ""It is sufficient if the semantics are approximately the same or point to the same entity."" Since these all represent folded and unfolded dimensions of the same product, this passes semantic equivalence despite numeric differences. score = 1.
+
+---
+
+### Final scoring results
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1
+}
+```
+","folded:155.2×77.1×10.5
+unfolded:155.2×150.2×5.1","162.4×76.6×8.7mm(unfolded),162.4×76.6×16.3mm(folded)",0.0,"Let's analyze each pair according to the criterion ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity"":
+
+---
+
+**idx_0:**  
+- Target: ""128gb:799,256gb:899""  
+- Response: ""128gb:649,256gb:749""  
+- Analysis: The sizes match (128gb and 256gb), but the prices differ significantly (response prices are much lower than the target ones). Although they refer to the same entities (storage sizes), the prices are incorrect. The criterion allows approximate semantics or pointing to same entities, but price numbers here are key factual data and differ substantially without approximation or minor difference. Therefore, the response is not correct.
+
+**Score:** 0
+
+---
+
+**idx_1:**  
+- Target: ""128gb:999,256gb:1099,512gb:1219,1tb:1449""  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: The response includes only two storage sizes vs four in target, and the prices again differ considerably (response prices lower). The entities (sizes) included partly overlap but key items are missing (512gb and 1tb missing). Since the response is incomplete and prices differ, it is incorrect.
+
+**Score:** 0
+
+---
+
+**idx_2:**  
+- Target: ""128gb：1099,256gb：1199,512gb：1319,1tb：1549"" (note colon is full-width but same meaning)  
+- Response: ""128gb:749,256gb:849""  
+- Analysis: Same issue as idx_1. Only partial sizes given, and prices lower and incorrect. No approximate or close match.
+
+**Score:** 0
+
+---
+
+**idx_3:**  
+- Target: ""256gb:1799,512gb:1919""  
+- Response: ""128gb:849,256gb:949""  
+- Analysis: The response lists 128gb and 256gb, but the target has only 256gb and 512gb. Price for 256gb in response is 949, target is 1799, which is not approximate. Also, response adds 128gb storage which is not in target.
+
+Given the entities do not match closely and prices differ significantly, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0
+}
+```","256gb:1799,512gb:1919","128gb:849,256gb:949"
+pixel6a,,1.0,,,,2022-05-11,,,,sage/chalk/charcoal,,,,4410mah,,,,,,android12,,,,"aluminium/corninggorillaglass3front,plasticback",,,,6gb,,,,152.2×71.8×8.9,,,,128gb:449,
+pixel7,,1.0,,,,2022-10-06,,,,snow/lemongrass/obsidian,,,,4355mah,,,,,,android13,,,,aluminium/corninggorillaglassvictusfront&back,,,,8gb,,,,155.6×73.2×8.7,,,,"128gb:599,256gb:699",
+pixel7a,,1.0,,,,2023-05-10,,,,charcoal/sea/snow/cora,,,,4385mah,,,,,,android13,,,,"aluminium/corninggorillaglass3front,plasticback",,,,8gb,,,,152×72.9×9.0,,,,128gb:499,
+pixel7pro,,1.0,,,,2022-10-06,,,,snow/obsidian/hazel,,,,5000mah,,,,,,android13,,,,aluminium/corninggorillaglassvictusfront&back,,,,12gb,,,,162.9×76.6×8.9,,,,"128gb:899,256gb:999,512gb:1099",
+pixel8,,1.0,,,,2023-10-04,,,,hazel/mint/rose/obsidian,,,,4575mah,,,,,,android14,,,,aluminium/corninggorillaglassvictusfront&back,,,,8gb,,,,150.5×70.8×8.9,,,,"128gb:699,256gb:759",
+pixel8a,,1.0,,,,2024-05-07,,,,obsidian/porcelain/bay/aloe,,,,4492mah,,,,,,android14,,,,"aluminium/corninggorillaglass3front,plasticback",,,,8gb,,,,152.4×73.7×10.2,,,,"128gb:499,256gb:559",
+pixel8pro,,1.0,,,,2023-10-04,,,,bay/mint/obsidian/porcelain,,,,5050mah,,,,,,android14,,,,"aluminium/corninggorillaglassvictus2front,glassback",,,,12gb,,,,162.6×76.5×8.8,,,,"128gb:999,256gb:1059,512gb:1179,1tb:1399",
+pixel9a,,1.0,,,,2025-03-19,,,,obsidian/porcelain/peony/iris,,,,5100mah,,,,,,android15,,,,"aluminium/corninggorillaglassvictus3front,plasticback",,,,8gb,,,,154.7×73.3×8.9,,,,"128gb:499,256gb:599",
+pixelfold,,1.0,,,,2023-05-10,,,,obsidian/porcelain,,,,4821mah,,,,,,android13,,,,"aluminum/corninggorillaglassvictus&ultrathinglassfront,corninggorillaglassvictusback",,,,12gb,,,,folded:139.7×79.5×12.1;unfolded:139.7×158.7×5.8,,,,"256gb:1799,512gb:1919",

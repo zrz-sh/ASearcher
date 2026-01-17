@@ -1,0 +1,1081 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,花样年华,In the Mood for Love,1.0,"First, let's analyze each pair of response and target based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+(Translation: The semantics should be roughly the same, or the entity they refer to should be consistent. Exact word-for-word matching is not required.)
+
+---
+
+**idx_0:**  
+Response: ""2000""  
+Target: ""2000年""  
+Analysis: ""2000"" and ""2000年"" clearly refer to the same entity (the year 2000). The omission of ""年"" (year) is acceptable as per the criterion.  
+Score: 1
+
+**idx_1:**  
+Response: ""2002""  
+Target: ""2002年""  
+Analysis: Same as above, they refer to the same entity.  
+Score: 1
+
+**idx_2:**  
+Response: ""2004""  
+Target: ""2004年""  
+Analysis: Same argument, they match in entity.  
+Score: 1
+
+**idx_3:**  
+Response: ""2007""  
+Target: ""2007年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_4:**  
+Response: ""2013""  
+Target: ""2013年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_5:**  
+Response: ""2015""  
+Target: ""2013年""  
+Analysis: Here the response refers to 2015, while the target is 2013年. Different years, so they are different entities, thus inconsistent.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",2000年,2000,1.0,"Let's analyze each response against the target (standard answer) according to the criterion:
+
+**Criterion:**  
+""If the semantics are basically the same, or the two point to the same entity, it can be considered correct. No need for exact word-to-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""wongkar-wai""
+- Target: ""王家卫"" (Wong Kar Wai)
+- Analysis: ""wongkar-wai"" is the Romanized form of ""王家卫"", referring to the same person.
+- Verdict: Correct → score = 1
+
+### idx_1
+- Response: ""alanmak""
+- Target: ""刘伟强、麦兆辉"" (Andrew Lau, Alan Mak)
+- Analysis: The standard answer lists both Liu Weiqiang and Mak Chiu-h Wai, i.e., Andrew Lau and Alan Mak. The response mentions only ""alanmak"". The criterion says semantic equivalence or pointing to the same entity suffices, and partial answer is acceptable? The prompt does not clarify partial credit. Since the response lists only one director, but the target has two, we judge whether it still counts as correct.
+
+In many QA evaluations, unless partial credit is allowed, partial names are considered incorrect; but here, the criterion does not specify partial credit, only that semantic equivalence or same entities suffice.
+
+Because ""alanmak"" is part of the target (one of the two persons). Is that enough? Probably not, since the expected answer is two people, the response only specifies one, so it is incomplete.
+
+Based on the criterion: ""指向的实体一致即可"" — pointing to the same entity is fine, but the target is plural, answer is singular.
+
+Given no mention of partial credit and that the response only mentions one person when two are asked, I consider this incorrect.
+
+- Verdict: Incorrect → score = 0
+
+### idx_2
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0
+- Verdict: Correct → score = 1
+
+### idx_3
+- Response: ""anglee""
+- Target: ""李安"" (Ang Lee)
+- Analysis: ""anglee"" is Romanized form of ""李安""
+- Verdict: Correct → score = 1
+
+### idx_4
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0 and idx_2
+- Verdict: Correct → score = 1
+
+### idx_5
+- Response: ""yuenwoo-ping""
+- Target: ""王家卫""
+- Analysis: ""yuenwoo-ping"" refers to Yuen Woo-ping, a different person than Wong Kar Wai.
+- Verdict: Incorrect → score = 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",王家卫,wongkar-wai,1.0,"首先，参考判定标准：
+- 只要语义相同大致，或者指向实体一致即可，得1分。
+- 否则得0分。
+
+逐条分析：
+
+idx_0：  
+- Response: “最佳男主角”  
+- Target: “第53届戛纳国际电影节最佳男演员”、“第20届香港电影金像奖最佳男主角”、“第1届华语电影传媒大奖最佳男主角”  
+- 分析：Response中“最佳男主角”和Target所描述奖项的得主称谓（最佳男演员/最佳男主角）语义一致且指向同类实体（最佳男主角奖项），虽然没有具体奖项名称，但符合“语义大致相符”原则。  
+- 评分：1  
+
+idx_1：  
+- Response：“最佳男主角”  
+- Target：“第22届香港电影金像奖最佳男主角”、“第40届台湾电影金马奖最佳男主角奖”  
+- 分析：同上，Response表述涵盖了Target的核心内容（均为最佳男主角奖），符合评分标准。  
+- 评分：1  
+
+idx_2：  
+- Response：“-” （无回答）  
+- Target：“第24届香港电影金像奖最佳男主角”  
+- 分析：无回答，因此不能匹配目标答案。  
+- 评分：0  
+
+idx_3：  
+- Response：“最佳男主角”  
+- Target：“第44届台湾电影金马奖最佳男演员”、“第2届亚洲电影大奖最佳男演员”  
+- 分析：“最佳男主角”和“最佳男演员”语义大体一致，符合“语义相同大致”要求。  
+- 评分：1  
+
+idx_4：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：无回答，不匹配。  
+- 评分：0  
+
+idx_5：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：同上，无回答，0分。  
+- 评分：0  
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",最佳男主角,1.0,key_match
+,,无间道,Infernal Affairs,1.0,"First, let's analyze each pair of response and target based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+(Translation: The semantics should be roughly the same, or the entity they refer to should be consistent. Exact word-for-word matching is not required.)
+
+---
+
+**idx_0:**  
+Response: ""2000""  
+Target: ""2000年""  
+Analysis: ""2000"" and ""2000年"" clearly refer to the same entity (the year 2000). The omission of ""年"" (year) is acceptable as per the criterion.  
+Score: 1
+
+**idx_1:**  
+Response: ""2002""  
+Target: ""2002年""  
+Analysis: Same as above, they refer to the same entity.  
+Score: 1
+
+**idx_2:**  
+Response: ""2004""  
+Target: ""2004年""  
+Analysis: Same argument, they match in entity.  
+Score: 1
+
+**idx_3:**  
+Response: ""2007""  
+Target: ""2007年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_4:**  
+Response: ""2013""  
+Target: ""2013年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_5:**  
+Response: ""2015""  
+Target: ""2013年""  
+Analysis: Here the response refers to 2015, while the target is 2013年. Different years, so they are different entities, thus inconsistent.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",2002年,2002,0.0,"Let's analyze each response against the target (standard answer) according to the criterion:
+
+**Criterion:**  
+""If the semantics are basically the same, or the two point to the same entity, it can be considered correct. No need for exact word-to-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""wongkar-wai""
+- Target: ""王家卫"" (Wong Kar Wai)
+- Analysis: ""wongkar-wai"" is the Romanized form of ""王家卫"", referring to the same person.
+- Verdict: Correct → score = 1
+
+### idx_1
+- Response: ""alanmak""
+- Target: ""刘伟强、麦兆辉"" (Andrew Lau, Alan Mak)
+- Analysis: The standard answer lists both Liu Weiqiang and Mak Chiu-h Wai, i.e., Andrew Lau and Alan Mak. The response mentions only ""alanmak"". The criterion says semantic equivalence or pointing to the same entity suffices, and partial answer is acceptable? The prompt does not clarify partial credit. Since the response lists only one director, but the target has two, we judge whether it still counts as correct.
+
+In many QA evaluations, unless partial credit is allowed, partial names are considered incorrect; but here, the criterion does not specify partial credit, only that semantic equivalence or same entities suffice.
+
+Because ""alanmak"" is part of the target (one of the two persons). Is that enough? Probably not, since the expected answer is two people, the response only specifies one, so it is incomplete.
+
+Based on the criterion: ""指向的实体一致即可"" — pointing to the same entity is fine, but the target is plural, answer is singular.
+
+Given no mention of partial credit and that the response only mentions one person when two are asked, I consider this incorrect.
+
+- Verdict: Incorrect → score = 0
+
+### idx_2
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0
+- Verdict: Correct → score = 1
+
+### idx_3
+- Response: ""anglee""
+- Target: ""李安"" (Ang Lee)
+- Analysis: ""anglee"" is Romanized form of ""李安""
+- Verdict: Correct → score = 1
+
+### idx_4
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0 and idx_2
+- Verdict: Correct → score = 1
+
+### idx_5
+- Response: ""yuenwoo-ping""
+- Target: ""王家卫""
+- Analysis: ""yuenwoo-ping"" refers to Yuen Woo-ping, a different person than Wong Kar Wai.
+- Verdict: Incorrect → score = 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",刘伟强、麦兆辉,alanmak,1.0,"首先，参考判定标准：
+- 只要语义相同大致，或者指向实体一致即可，得1分。
+- 否则得0分。
+
+逐条分析：
+
+idx_0：  
+- Response: “最佳男主角”  
+- Target: “第53届戛纳国际电影节最佳男演员”、“第20届香港电影金像奖最佳男主角”、“第1届华语电影传媒大奖最佳男主角”  
+- 分析：Response中“最佳男主角”和Target所描述奖项的得主称谓（最佳男演员/最佳男主角）语义一致且指向同类实体（最佳男主角奖项），虽然没有具体奖项名称，但符合“语义大致相符”原则。  
+- 评分：1  
+
+idx_1：  
+- Response：“最佳男主角”  
+- Target：“第22届香港电影金像奖最佳男主角”、“第40届台湾电影金马奖最佳男主角奖”  
+- 分析：同上，Response表述涵盖了Target的核心内容（均为最佳男主角奖），符合评分标准。  
+- 评分：1  
+
+idx_2：  
+- Response：“-” （无回答）  
+- Target：“第24届香港电影金像奖最佳男主角”  
+- 分析：无回答，因此不能匹配目标答案。  
+- 评分：0  
+
+idx_3：  
+- Response：“最佳男主角”  
+- Target：“第44届台湾电影金马奖最佳男演员”、“第2届亚洲电影大奖最佳男演员”  
+- 分析：“最佳男主角”和“最佳男演员”语义大体一致，符合“语义相同大致”要求。  
+- 评分：1  
+
+idx_4：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：无回答，不匹配。  
+- 评分：0  
+
+idx_5：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：同上，无回答，0分。  
+- 评分：0  
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",最佳男主角,1.0,key_match
+,,2046,2046,1.0,"First, let's analyze each pair of response and target based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+(Translation: The semantics should be roughly the same, or the entity they refer to should be consistent. Exact word-for-word matching is not required.)
+
+---
+
+**idx_0:**  
+Response: ""2000""  
+Target: ""2000年""  
+Analysis: ""2000"" and ""2000年"" clearly refer to the same entity (the year 2000). The omission of ""年"" (year) is acceptable as per the criterion.  
+Score: 1
+
+**idx_1:**  
+Response: ""2002""  
+Target: ""2002年""  
+Analysis: Same as above, they refer to the same entity.  
+Score: 1
+
+**idx_2:**  
+Response: ""2004""  
+Target: ""2004年""  
+Analysis: Same argument, they match in entity.  
+Score: 1
+
+**idx_3:**  
+Response: ""2007""  
+Target: ""2007年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_4:**  
+Response: ""2013""  
+Target: ""2013年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_5:**  
+Response: ""2015""  
+Target: ""2013年""  
+Analysis: Here the response refers to 2015, while the target is 2013年. Different years, so they are different entities, thus inconsistent.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",2004年,2004,1.0,"Let's analyze each response against the target (standard answer) according to the criterion:
+
+**Criterion:**  
+""If the semantics are basically the same, or the two point to the same entity, it can be considered correct. No need for exact word-to-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""wongkar-wai""
+- Target: ""王家卫"" (Wong Kar Wai)
+- Analysis: ""wongkar-wai"" is the Romanized form of ""王家卫"", referring to the same person.
+- Verdict: Correct → score = 1
+
+### idx_1
+- Response: ""alanmak""
+- Target: ""刘伟强、麦兆辉"" (Andrew Lau, Alan Mak)
+- Analysis: The standard answer lists both Liu Weiqiang and Mak Chiu-h Wai, i.e., Andrew Lau and Alan Mak. The response mentions only ""alanmak"". The criterion says semantic equivalence or pointing to the same entity suffices, and partial answer is acceptable? The prompt does not clarify partial credit. Since the response lists only one director, but the target has two, we judge whether it still counts as correct.
+
+In many QA evaluations, unless partial credit is allowed, partial names are considered incorrect; but here, the criterion does not specify partial credit, only that semantic equivalence or same entities suffice.
+
+Because ""alanmak"" is part of the target (one of the two persons). Is that enough? Probably not, since the expected answer is two people, the response only specifies one, so it is incomplete.
+
+Based on the criterion: ""指向的实体一致即可"" — pointing to the same entity is fine, but the target is plural, answer is singular.
+
+Given no mention of partial credit and that the response only mentions one person when two are asked, I consider this incorrect.
+
+- Verdict: Incorrect → score = 0
+
+### idx_2
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0
+- Verdict: Correct → score = 1
+
+### idx_3
+- Response: ""anglee""
+- Target: ""李安"" (Ang Lee)
+- Analysis: ""anglee"" is Romanized form of ""李安""
+- Verdict: Correct → score = 1
+
+### idx_4
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0 and idx_2
+- Verdict: Correct → score = 1
+
+### idx_5
+- Response: ""yuenwoo-ping""
+- Target: ""王家卫""
+- Analysis: ""yuenwoo-ping"" refers to Yuen Woo-ping, a different person than Wong Kar Wai.
+- Verdict: Incorrect → score = 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",王家卫,wongkar-wai,0.0,"首先，参考判定标准：
+- 只要语义相同大致，或者指向实体一致即可，得1分。
+- 否则得0分。
+
+逐条分析：
+
+idx_0：  
+- Response: “最佳男主角”  
+- Target: “第53届戛纳国际电影节最佳男演员”、“第20届香港电影金像奖最佳男主角”、“第1届华语电影传媒大奖最佳男主角”  
+- 分析：Response中“最佳男主角”和Target所描述奖项的得主称谓（最佳男演员/最佳男主角）语义一致且指向同类实体（最佳男主角奖项），虽然没有具体奖项名称，但符合“语义大致相符”原则。  
+- 评分：1  
+
+idx_1：  
+- Response：“最佳男主角”  
+- Target：“第22届香港电影金像奖最佳男主角”、“第40届台湾电影金马奖最佳男主角奖”  
+- 分析：同上，Response表述涵盖了Target的核心内容（均为最佳男主角奖），符合评分标准。  
+- 评分：1  
+
+idx_2：  
+- Response：“-” （无回答）  
+- Target：“第24届香港电影金像奖最佳男主角”  
+- 分析：无回答，因此不能匹配目标答案。  
+- 评分：0  
+
+idx_3：  
+- Response：“最佳男主角”  
+- Target：“第44届台湾电影金马奖最佳男演员”、“第2届亚洲电影大奖最佳男演员”  
+- 分析：“最佳男主角”和“最佳男演员”语义大体一致，符合“语义相同大致”要求。  
+- 评分：1  
+
+idx_4：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：无回答，不匹配。  
+- 评分：0  
+
+idx_5：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：同上，无回答，0分。  
+- 评分：0  
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",第24届香港电影金像奖最佳男主角,-,1.0,key_match
+,,色·戒,"Lust, Caution",1.0,"First, let's analyze each pair of response and target based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+(Translation: The semantics should be roughly the same, or the entity they refer to should be consistent. Exact word-for-word matching is not required.)
+
+---
+
+**idx_0:**  
+Response: ""2000""  
+Target: ""2000年""  
+Analysis: ""2000"" and ""2000年"" clearly refer to the same entity (the year 2000). The omission of ""年"" (year) is acceptable as per the criterion.  
+Score: 1
+
+**idx_1:**  
+Response: ""2002""  
+Target: ""2002年""  
+Analysis: Same as above, they refer to the same entity.  
+Score: 1
+
+**idx_2:**  
+Response: ""2004""  
+Target: ""2004年""  
+Analysis: Same argument, they match in entity.  
+Score: 1
+
+**idx_3:**  
+Response: ""2007""  
+Target: ""2007年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_4:**  
+Response: ""2013""  
+Target: ""2013年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_5:**  
+Response: ""2015""  
+Target: ""2013年""  
+Analysis: Here the response refers to 2015, while the target is 2013年. Different years, so they are different entities, thus inconsistent.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",2007年,2007,1.0,"Let's analyze each response against the target (standard answer) according to the criterion:
+
+**Criterion:**  
+""If the semantics are basically the same, or the two point to the same entity, it can be considered correct. No need for exact word-to-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""wongkar-wai""
+- Target: ""王家卫"" (Wong Kar Wai)
+- Analysis: ""wongkar-wai"" is the Romanized form of ""王家卫"", referring to the same person.
+- Verdict: Correct → score = 1
+
+### idx_1
+- Response: ""alanmak""
+- Target: ""刘伟强、麦兆辉"" (Andrew Lau, Alan Mak)
+- Analysis: The standard answer lists both Liu Weiqiang and Mak Chiu-h Wai, i.e., Andrew Lau and Alan Mak. The response mentions only ""alanmak"". The criterion says semantic equivalence or pointing to the same entity suffices, and partial answer is acceptable? The prompt does not clarify partial credit. Since the response lists only one director, but the target has two, we judge whether it still counts as correct.
+
+In many QA evaluations, unless partial credit is allowed, partial names are considered incorrect; but here, the criterion does not specify partial credit, only that semantic equivalence or same entities suffice.
+
+Because ""alanmak"" is part of the target (one of the two persons). Is that enough? Probably not, since the expected answer is two people, the response only specifies one, so it is incomplete.
+
+Based on the criterion: ""指向的实体一致即可"" — pointing to the same entity is fine, but the target is plural, answer is singular.
+
+Given no mention of partial credit and that the response only mentions one person when two are asked, I consider this incorrect.
+
+- Verdict: Incorrect → score = 0
+
+### idx_2
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0
+- Verdict: Correct → score = 1
+
+### idx_3
+- Response: ""anglee""
+- Target: ""李安"" (Ang Lee)
+- Analysis: ""anglee"" is Romanized form of ""李安""
+- Verdict: Correct → score = 1
+
+### idx_4
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0 and idx_2
+- Verdict: Correct → score = 1
+
+### idx_5
+- Response: ""yuenwoo-ping""
+- Target: ""王家卫""
+- Analysis: ""yuenwoo-ping"" refers to Yuen Woo-ping, a different person than Wong Kar Wai.
+- Verdict: Incorrect → score = 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",李安,anglee,1.0,"首先，参考判定标准：
+- 只要语义相同大致，或者指向实体一致即可，得1分。
+- 否则得0分。
+
+逐条分析：
+
+idx_0：  
+- Response: “最佳男主角”  
+- Target: “第53届戛纳国际电影节最佳男演员”、“第20届香港电影金像奖最佳男主角”、“第1届华语电影传媒大奖最佳男主角”  
+- 分析：Response中“最佳男主角”和Target所描述奖项的得主称谓（最佳男演员/最佳男主角）语义一致且指向同类实体（最佳男主角奖项），虽然没有具体奖项名称，但符合“语义大致相符”原则。  
+- 评分：1  
+
+idx_1：  
+- Response：“最佳男主角”  
+- Target：“第22届香港电影金像奖最佳男主角”、“第40届台湾电影金马奖最佳男主角奖”  
+- 分析：同上，Response表述涵盖了Target的核心内容（均为最佳男主角奖），符合评分标准。  
+- 评分：1  
+
+idx_2：  
+- Response：“-” （无回答）  
+- Target：“第24届香港电影金像奖最佳男主角”  
+- 分析：无回答，因此不能匹配目标答案。  
+- 评分：0  
+
+idx_3：  
+- Response：“最佳男主角”  
+- Target：“第44届台湾电影金马奖最佳男演员”、“第2届亚洲电影大奖最佳男演员”  
+- 分析：“最佳男主角”和“最佳男演员”语义大体一致，符合“语义相同大致”要求。  
+- 评分：1  
+
+idx_4：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：无回答，不匹配。  
+- 评分：0  
+
+idx_5：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：同上，无回答，0分。  
+- 评分：0  
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```","第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",最佳男主角,1.0,key_match
+,,一代宗师,The Grandmaster,1.0,"First, let's analyze each pair of response and target based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+(Translation: The semantics should be roughly the same, or the entity they refer to should be consistent. Exact word-for-word matching is not required.)
+
+---
+
+**idx_0:**  
+Response: ""2000""  
+Target: ""2000年""  
+Analysis: ""2000"" and ""2000年"" clearly refer to the same entity (the year 2000). The omission of ""年"" (year) is acceptable as per the criterion.  
+Score: 1
+
+**idx_1:**  
+Response: ""2002""  
+Target: ""2002年""  
+Analysis: Same as above, they refer to the same entity.  
+Score: 1
+
+**idx_2:**  
+Response: ""2004""  
+Target: ""2004年""  
+Analysis: Same argument, they match in entity.  
+Score: 1
+
+**idx_3:**  
+Response: ""2007""  
+Target: ""2007年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_4:**  
+Response: ""2013""  
+Target: ""2013年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_5:**  
+Response: ""2015""  
+Target: ""2013年""  
+Analysis: Here the response refers to 2015, while the target is 2013年. Different years, so they are different entities, thus inconsistent.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",2013年,2013,1.0,"Let's analyze each response against the target (standard answer) according to the criterion:
+
+**Criterion:**  
+""If the semantics are basically the same, or the two point to the same entity, it can be considered correct. No need for exact word-to-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""wongkar-wai""
+- Target: ""王家卫"" (Wong Kar Wai)
+- Analysis: ""wongkar-wai"" is the Romanized form of ""王家卫"", referring to the same person.
+- Verdict: Correct → score = 1
+
+### idx_1
+- Response: ""alanmak""
+- Target: ""刘伟强、麦兆辉"" (Andrew Lau, Alan Mak)
+- Analysis: The standard answer lists both Liu Weiqiang and Mak Chiu-h Wai, i.e., Andrew Lau and Alan Mak. The response mentions only ""alanmak"". The criterion says semantic equivalence or pointing to the same entity suffices, and partial answer is acceptable? The prompt does not clarify partial credit. Since the response lists only one director, but the target has two, we judge whether it still counts as correct.
+
+In many QA evaluations, unless partial credit is allowed, partial names are considered incorrect; but here, the criterion does not specify partial credit, only that semantic equivalence or same entities suffice.
+
+Because ""alanmak"" is part of the target (one of the two persons). Is that enough? Probably not, since the expected answer is two people, the response only specifies one, so it is incomplete.
+
+Based on the criterion: ""指向的实体一致即可"" — pointing to the same entity is fine, but the target is plural, answer is singular.
+
+Given no mention of partial credit and that the response only mentions one person when two are asked, I consider this incorrect.
+
+- Verdict: Incorrect → score = 0
+
+### idx_2
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0
+- Verdict: Correct → score = 1
+
+### idx_3
+- Response: ""anglee""
+- Target: ""李安"" (Ang Lee)
+- Analysis: ""anglee"" is Romanized form of ""李安""
+- Verdict: Correct → score = 1
+
+### idx_4
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0 and idx_2
+- Verdict: Correct → score = 1
+
+### idx_5
+- Response: ""yuenwoo-ping""
+- Target: ""王家卫""
+- Analysis: ""yuenwoo-ping"" refers to Yuen Woo-ping, a different person than Wong Kar Wai.
+- Verdict: Incorrect → score = 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",王家卫,wongkar-wai,0.0,"首先，参考判定标准：
+- 只要语义相同大致，或者指向实体一致即可，得1分。
+- 否则得0分。
+
+逐条分析：
+
+idx_0：  
+- Response: “最佳男主角”  
+- Target: “第53届戛纳国际电影节最佳男演员”、“第20届香港电影金像奖最佳男主角”、“第1届华语电影传媒大奖最佳男主角”  
+- 分析：Response中“最佳男主角”和Target所描述奖项的得主称谓（最佳男演员/最佳男主角）语义一致且指向同类实体（最佳男主角奖项），虽然没有具体奖项名称，但符合“语义大致相符”原则。  
+- 评分：1  
+
+idx_1：  
+- Response：“最佳男主角”  
+- Target：“第22届香港电影金像奖最佳男主角”、“第40届台湾电影金马奖最佳男主角奖”  
+- 分析：同上，Response表述涵盖了Target的核心内容（均为最佳男主角奖），符合评分标准。  
+- 评分：1  
+
+idx_2：  
+- Response：“-” （无回答）  
+- Target：“第24届香港电影金像奖最佳男主角”  
+- 分析：无回答，因此不能匹配目标答案。  
+- 评分：0  
+
+idx_3：  
+- Response：“最佳男主角”  
+- Target：“第44届台湾电影金马奖最佳男演员”、“第2届亚洲电影大奖最佳男演员”  
+- 分析：“最佳男主角”和“最佳男演员”语义大体一致，符合“语义相同大致”要求。  
+- 评分：1  
+
+idx_4：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：无回答，不匹配。  
+- 评分：0  
+
+idx_5：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：同上，无回答，0分。  
+- 评分：0  
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+,,一代宗师,一代宗师,0.0,"First, let's analyze each pair of response and target based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+(Translation: The semantics should be roughly the same, or the entity they refer to should be consistent. Exact word-for-word matching is not required.)
+
+---
+
+**idx_0:**  
+Response: ""2000""  
+Target: ""2000年""  
+Analysis: ""2000"" and ""2000年"" clearly refer to the same entity (the year 2000). The omission of ""年"" (year) is acceptable as per the criterion.  
+Score: 1
+
+**idx_1:**  
+Response: ""2002""  
+Target: ""2002年""  
+Analysis: Same as above, they refer to the same entity.  
+Score: 1
+
+**idx_2:**  
+Response: ""2004""  
+Target: ""2004年""  
+Analysis: Same argument, they match in entity.  
+Score: 1
+
+**idx_3:**  
+Response: ""2007""  
+Target: ""2007年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_4:**  
+Response: ""2013""  
+Target: ""2013年""  
+Analysis: Same argument.  
+Score: 1
+
+**idx_5:**  
+Response: ""2015""  
+Target: ""2013年""  
+Analysis: Here the response refers to 2015, while the target is 2013年. Different years, so they are different entities, thus inconsistent.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",2013年,2015,0.0,"Let's analyze each response against the target (standard answer) according to the criterion:
+
+**Criterion:**  
+""If the semantics are basically the same, or the two point to the same entity, it can be considered correct. No need for exact word-to-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""wongkar-wai""
+- Target: ""王家卫"" (Wong Kar Wai)
+- Analysis: ""wongkar-wai"" is the Romanized form of ""王家卫"", referring to the same person.
+- Verdict: Correct → score = 1
+
+### idx_1
+- Response: ""alanmak""
+- Target: ""刘伟强、麦兆辉"" (Andrew Lau, Alan Mak)
+- Analysis: The standard answer lists both Liu Weiqiang and Mak Chiu-h Wai, i.e., Andrew Lau and Alan Mak. The response mentions only ""alanmak"". The criterion says semantic equivalence or pointing to the same entity suffices, and partial answer is acceptable? The prompt does not clarify partial credit. Since the response lists only one director, but the target has two, we judge whether it still counts as correct.
+
+In many QA evaluations, unless partial credit is allowed, partial names are considered incorrect; but here, the criterion does not specify partial credit, only that semantic equivalence or same entities suffice.
+
+Because ""alanmak"" is part of the target (one of the two persons). Is that enough? Probably not, since the expected answer is two people, the response only specifies one, so it is incomplete.
+
+Based on the criterion: ""指向的实体一致即可"" — pointing to the same entity is fine, but the target is plural, answer is singular.
+
+Given no mention of partial credit and that the response only mentions one person when two are asked, I consider this incorrect.
+
+- Verdict: Incorrect → score = 0
+
+### idx_2
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0
+- Verdict: Correct → score = 1
+
+### idx_3
+- Response: ""anglee""
+- Target: ""李安"" (Ang Lee)
+- Analysis: ""anglee"" is Romanized form of ""李安""
+- Verdict: Correct → score = 1
+
+### idx_4
+- Response: ""wongkar-wai""
+- Target: ""王家卫""
+- Same as idx_0 and idx_2
+- Verdict: Correct → score = 1
+
+### idx_5
+- Response: ""yuenwoo-ping""
+- Target: ""王家卫""
+- Analysis: ""yuenwoo-ping"" refers to Yuen Woo-ping, a different person than Wong Kar Wai.
+- Verdict: Incorrect → score = 0
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",王家卫,yuenwoo-ping,0.0,"首先，参考判定标准：
+- 只要语义相同大致，或者指向实体一致即可，得1分。
+- 否则得0分。
+
+逐条分析：
+
+idx_0：  
+- Response: “最佳男主角”  
+- Target: “第53届戛纳国际电影节最佳男演员”、“第20届香港电影金像奖最佳男主角”、“第1届华语电影传媒大奖最佳男主角”  
+- 分析：Response中“最佳男主角”和Target所描述奖项的得主称谓（最佳男演员/最佳男主角）语义一致且指向同类实体（最佳男主角奖项），虽然没有具体奖项名称，但符合“语义大致相符”原则。  
+- 评分：1  
+
+idx_1：  
+- Response：“最佳男主角”  
+- Target：“第22届香港电影金像奖最佳男主角”、“第40届台湾电影金马奖最佳男主角奖”  
+- 分析：同上，Response表述涵盖了Target的核心内容（均为最佳男主角奖），符合评分标准。  
+- 评分：1  
+
+idx_2：  
+- Response：“-” （无回答）  
+- Target：“第24届香港电影金像奖最佳男主角”  
+- 分析：无回答，因此不能匹配目标答案。  
+- 评分：0  
+
+idx_3：  
+- Response：“最佳男主角”  
+- Target：“第44届台湾电影金马奖最佳男演员”、“第2届亚洲电影大奖最佳男演员”  
+- 分析：“最佳男主角”和“最佳男演员”语义大体一致，符合“语义相同大致”要求。  
+- 评分：1  
+
+idx_4：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：无回答，不匹配。  
+- 评分：0  
+
+idx_5：  
+- Response：“-”  
+- Target：“香港导演协会奖最佳男主角”  
+- 分析：同上，无回答，0分。  
+- 评分：0  
+
+最终评分结果如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+,1.0,fullcircle,Full Circle,,,,2007,,,,peterchan,,,,-,,
+,1.0,theflowersofwar,The Flowers of War,,,,2011,,,,zhangyimou,,,,-,,
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,伤城,,,,2006年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,侠骨仁心,,,,2000年,,,,邓特希,,,,-,,,
+1.0,,同居蜜友,,,,2001年,,,,马伟豪,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,地下铁,,,,2003年,,,,马伟豪,,,,第4届华语电影传媒大奖港台最佳男演员银奖,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,天下无双,,,,2002年,,,,刘镇伟,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,摆渡人,,,,2016年,,,,张嘉佳,,,,-,,,
+1.0,,无名,,,,2023年,,,,程耳,,,,第36届中国电影金鸡奖最佳男主角,,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,有情饮水饱,,,,2001年,,,,王晶,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,英雄,,,,2002年,,,,张艺谋,,,,-,,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（上）,,,,2008年,,,,吴宇森,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+1.0,,金手指,,,,2023年,,,,庄文强,,,,第42届香港电影金像奖最佳男主角,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,
+1.0,,风再起时,,,,2023年,,,,翁子光,,,,第16届亚洲电影大奖最佳男主角,,,

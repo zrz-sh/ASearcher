@@ -1,0 +1,63 @@
+clinic,clinic_before_map,exist_flag_gt,exist_flag_response,clinic_exact_match,clinic_exact_match_eval_msg,county_exact_match,county_exact_match_eval_msg,county_query,county_response,fulladdress_llm_judge,fulladdress_llm_judge_eval_msg,fulladdress_query,fulladdress_response,phonenumber_exact_match,phonenumber_exact_match_eval_msg,phonenumber_query,phonenumber_response,saturdayoperationhours_llm_judge,saturdayoperationhours_llm_judge_eval_msg,saturdayoperationhours_query,saturdayoperationhours_response
+fpawomen'shealth-fresno,FPA Women's Health,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,1.0,"Let's analyze the given pair step by step according to the criterion:
+
+**Criterion:**  
+- Semantic equivalence is sufficient.  
+- No need for exact word-for-word match.  
+- If semantics are approximately the same or pointing to the same entity, score = 1.  
+
+---
+
+**Given:**  
+- Target: ""165northclarkstreet,fresno,ca93701""  
+- Response: ""165nclarkst,fresno,ca93701""
+
+---
+
+**Step 1: Compare the address number**  
+- Both have ""165"" → match.
+
+**Step 2: Compare street name.**  
+- Target: ""northclarkstreet""  
+- Response: ""nclarkst""  
+- ""nclarkst"" is an abbreviation for ""north clark street."" ""n"" → north, ""clarkst"" → Clark Street. This is semantically equivalent to ""northclarkstreet.""
+
+**Step 3: Compare city**  
+- Both have ""fresno"" → match.
+
+**Step 4: Compare state and zip**  
+- Both have ""ca93701"" → match.
+
+---
+
+Since the response is a valid abbreviation of the address, and all entities match, the semantics are approximately the same and refer to the same entity.
+
+**Result:** Score = 1
+
+---
+
+```json
+{
+    ""idx_0"": 1
+}
+```","165northclarkstreet,fresno,ca93701","165nclarkst,fresno,ca93701",1.0,"exact match, response: (559)233-8657, target: (559)233-8657",(559)233-8657,(559)233-8657,1.0,"Let's analyze the given pair step-by-step:
+
+- Standard answer (target): ""closed""
+- Response: ""closed""
+
+According to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+Since both the response and the target are exactly the same word ""closed"", the response fully meets the criterion.
+
+Therefore, the score for this pair is **1**.
+
+```json
+{
+    ""idx_0"": 1
+}
+```",closed,closed
+fpawomen'shealth-tulare,,1.0,,,,,,tulare,,,,"1068ncherrystreet,tulare,ca93274",,,,(559)233-0990,,,,closed,
+plannedparenthood-familyfirsthealthcenter,,1.0,,,,,,fresno,,,,"6095n.1ststreet,fresno,ca93710",,,,(559)446-1515,,,,closed,
+plannedparenthood-fultonstreethealthcenter,,1.0,,,,,,fresno,,,,"650n.fultonstreet,fresno,ca93728",,,,(559)488-4900,,,,8am-4:30pm,
+plannedparenthood-maderahealthcenter,,1.0,,,,,,madera,,,,"500e.almondave,#1,madera,ca93637",,,,(559)675-1133,,,,closed,
+plannedparenthood-mercedhealthcenter,,1.0,,,,,,merced,,,,"3166collinsdrive,merced,ca95348",,,,(209)723-7751,,,,closed,

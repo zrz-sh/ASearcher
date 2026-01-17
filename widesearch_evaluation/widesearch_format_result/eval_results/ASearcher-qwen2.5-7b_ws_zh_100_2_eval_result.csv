@@ -1,0 +1,574 @@
+exist_flag_gt,exist_flag_response,手机型号,手机型号_before_map,内存种类（rom）_llm_judge,内存种类（rom）_llm_judge_eval_msg,内存种类（rom）_query,内存种类（rom）_response,开售日期_exact_match,开售日期_exact_match_eval_msg,开售日期_query,开售日期_response,手机品牌_llm_judge,手机品牌_llm_judge_eval_msg,手机品牌_query,手机品牌_response,手机型号_exact_match,手机型号_exact_match_eval_msg,打开后最大屏幕尺寸_llm_judge,打开后最大屏幕尺寸_llm_judge_eval_msg,打开后最大屏幕尺寸_query,打开后最大屏幕尺寸_response,折叠后最小屏幕尺寸_llm_judge,折叠后最小屏幕尺寸_llm_judge_eval_msg,折叠后最小屏幕尺寸_query,折叠后最小屏幕尺寸_response,电池大小_llm_judge,电池大小_llm_judge_eval_msg,电池大小_query,电池大小_response
+,,huaweipurax,Pura X,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if they are semantically largely the same or point to the same entities; exact word-by-word matching is not required.
+
+---
+
+**idx_0**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512gb、1tb""  
+- Analysis: The response includes ""256gb"" and ""512gb"", both present in the target. The target also includes ""1tb"", which is missing in the response. However, the criterion does not require a complete list if the response captures part of the target's entities that are significant and semantically consistent. Since ""256gb"" and ""512gb"" are indeed a subset of the target options and mention the same entities, it should get full credit (1).
+
+---
+
+**idx_1**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512g""  
+- Analysis: The target states ""512g"", which is likely a typo or variant of ""512gb"". The response states ""512gb"". Since ""512gb"" and ""512g"" indicate the same entity (""512 gigabytes""), this is semantically consistent. ""256gb"" is also present in both. Therefore, this response correctly points to the entities in the target and should score 1.
+
+---
+
+**idx_2**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512g""  
+- Same as idx_1, the reasoning applies. Score 1.
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+",256gb、512gb、1tb,256gb/512gb,0.0,"exact not match, response: 2025-06-15, target: 2025-03-30",2025-03-30,2025-06-15,1.0,"Analysis:
+
+- idx_0: Response is ""华为"", target is ""华为"". They are exactly the same, so score = 1.
+- idx_1: Response is ""小米"", target is ""小米"". They are exactly the same, so score = 1.
+- idx_2: Response is ""oppo"", target is ""oppo"". Although the response is lowercase, it refers to the same entity ""Oppo"". The criterion states semantics or entity match is sufficient, so score = 1.
+
+Final scores: all 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",华为,华为,1.0,key_match,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary:
+- The answer and response should be semantically roughly the same or refer to the same entity.
+- Exact wording is not required.
+- The score can only be 0 or 1.
+
+---
+
+### idx_0
+- Response: ""10英寸"" (10 inches)
+- Target: ""6.3英寸"" (6.3 inches)
+- Analysis: 10 inches is significantly different from 6.3 inches. They do not refer to the same size or closely approximate values.
+- Therefore, the response is not semantically the same or pointing to the same entity as the target.
+
+Score: 0
+
+---
+
+### idx_1
+- Response: ""10英寸"" (10 inches)
+- Target: ""8.01英寸"" (8.01 inches)
+- Analysis: 10 inches is again quite different from 8.01 inches.
+- Not roughly the same, nor closely approximate.
+
+Score: 0
+
+---
+
+### idx_2
+- Response: ""8英寸"" (8 inches)
+- Target: ""6.80英寸"" (6.8 inches)
+- Analysis: 8 inches is closer to 6.8 inches than the previous cases, but still a difference.
+- However, according to the criterion, ""approximately same"" or pointing to the same entity is acceptable.
+- 8 vs 6.8 inches is a difference of 1.2 inches, which is about 15% difference.
+- This might be borderline.
+- However, since the question is about size and 8 inches and 6.8 inches are different enough that they are not effectively the same size, especially if the exact size matters.
+- Given the criterion is loose and says ""大致相同,"" 8 inches being close to 6.8 might be acceptable.
+- Since 8 and 6.8 are quite close, treat it as approximately the same entity.
+
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",6.3英寸,10英寸,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: It only needs to be roughly semantically equivalent or refer to the same entity as the reference answer; word-for-word correspondence is not necessary.
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '3.5英寸' (3.5 inches)  
+Analysis: Response is just '/', which is not semantically equivalent or refers to the same entity as ""3.5英寸"", so it should score 0.
+
+---
+
+**idx_1**  
+- Response: '/'  
+- Target: '6.52英寸' (6.52 inches)  
+Analysis: Same as above, '/' is not equivalent or referring to the entity '6.52英寸', so score 0.
+
+---
+
+**idx_2**  
+- Response: '/'  
+- Target: '3.26英寸' (3.26 inches)  
+Analysis: Same as above, '/' is not equivalent to the target, so score 0.
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",3.5英寸,/,0.0,"Let's analyze each response against its target answer according to the criterion:
+
+Criterion:  
+- The response should be semantically roughly the same or refer to the same entity.  
+- Exact word-by-word match is not required.
+
+---
+
+**idx_0:**  
+- response: '/'  
+- target: '4610mah'  
+- Analysis: The response is a slash '/' which doesn't represent the target value '4610mah' or an equivalent meaning/entity. It does not satisfy the criterion.  
+- Score: 0
+
+**idx_1:**  
+- response: '/'  
+- target: '5020mah'  
+- Analysis: Same as above, response '/' does not correspond to '5020mah' or a similar entity.  
+- Score: 0
+
+**idx_2:**  
+- response: '/'  
+- target: '4300mah'  
+- Analysis: Same reasoning, response is '/' and does not match the intended target entity.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",4610mah,/
+,,xiaomimixfold,MIX Trifold,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if they are semantically largely the same or point to the same entities; exact word-by-word matching is not required.
+
+---
+
+**idx_0**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512gb、1tb""  
+- Analysis: The response includes ""256gb"" and ""512gb"", both present in the target. The target also includes ""1tb"", which is missing in the response. However, the criterion does not require a complete list if the response captures part of the target's entities that are significant and semantically consistent. Since ""256gb"" and ""512gb"" are indeed a subset of the target options and mention the same entities, it should get full credit (1).
+
+---
+
+**idx_1**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512g""  
+- Analysis: The target states ""512g"", which is likely a typo or variant of ""512gb"". The response states ""512gb"". Since ""512gb"" and ""512g"" indicate the same entity (""512 gigabytes""), this is semantically consistent. ""256gb"" is also present in both. Therefore, this response correctly points to the entities in the target and should score 1.
+
+---
+
+**idx_2**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512g""  
+- Same as idx_1, the reasoning applies. Score 1.
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+",256gb、512g,256gb/512gb,0.0,"exact not match, response: 2025-06-15, target: 2021-04-16",2021-04-16,2025-06-15,1.0,"Analysis:
+
+- idx_0: Response is ""华为"", target is ""华为"". They are exactly the same, so score = 1.
+- idx_1: Response is ""小米"", target is ""小米"". They are exactly the same, so score = 1.
+- idx_2: Response is ""oppo"", target is ""oppo"". Although the response is lowercase, it refers to the same entity ""Oppo"". The criterion states semantics or entity match is sufficient, so score = 1.
+
+Final scores: all 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",小米,小米,1.0,key_match,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary:
+- The answer and response should be semantically roughly the same or refer to the same entity.
+- Exact wording is not required.
+- The score can only be 0 or 1.
+
+---
+
+### idx_0
+- Response: ""10英寸"" (10 inches)
+- Target: ""6.3英寸"" (6.3 inches)
+- Analysis: 10 inches is significantly different from 6.3 inches. They do not refer to the same size or closely approximate values.
+- Therefore, the response is not semantically the same or pointing to the same entity as the target.
+
+Score: 0
+
+---
+
+### idx_1
+- Response: ""10英寸"" (10 inches)
+- Target: ""8.01英寸"" (8.01 inches)
+- Analysis: 10 inches is again quite different from 8.01 inches.
+- Not roughly the same, nor closely approximate.
+
+Score: 0
+
+---
+
+### idx_2
+- Response: ""8英寸"" (8 inches)
+- Target: ""6.80英寸"" (6.8 inches)
+- Analysis: 8 inches is closer to 6.8 inches than the previous cases, but still a difference.
+- However, according to the criterion, ""approximately same"" or pointing to the same entity is acceptable.
+- 8 vs 6.8 inches is a difference of 1.2 inches, which is about 15% difference.
+- This might be borderline.
+- However, since the question is about size and 8 inches and 6.8 inches are different enough that they are not effectively the same size, especially if the exact size matters.
+- Given the criterion is loose and says ""大致相同,"" 8 inches being close to 6.8 might be acceptable.
+- Since 8 and 6.8 are quite close, treat it as approximately the same entity.
+
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",8.01英寸,10英寸,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: It only needs to be roughly semantically equivalent or refer to the same entity as the reference answer; word-for-word correspondence is not necessary.
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '3.5英寸' (3.5 inches)  
+Analysis: Response is just '/', which is not semantically equivalent or refers to the same entity as ""3.5英寸"", so it should score 0.
+
+---
+
+**idx_1**  
+- Response: '/'  
+- Target: '6.52英寸' (6.52 inches)  
+Analysis: Same as above, '/' is not equivalent or referring to the entity '6.52英寸', so score 0.
+
+---
+
+**idx_2**  
+- Response: '/'  
+- Target: '3.26英寸' (3.26 inches)  
+Analysis: Same as above, '/' is not equivalent to the target, so score 0.
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",6.52英寸,/,0.0,"Let's analyze each response against its target answer according to the criterion:
+
+Criterion:  
+- The response should be semantically roughly the same or refer to the same entity.  
+- Exact word-by-word match is not required.
+
+---
+
+**idx_0:**  
+- response: '/'  
+- target: '4610mah'  
+- Analysis: The response is a slash '/' which doesn't represent the target value '4610mah' or an equivalent meaning/entity. It does not satisfy the criterion.  
+- Score: 0
+
+**idx_1:**  
+- response: '/'  
+- target: '5020mah'  
+- Analysis: Same as above, response '/' does not correspond to '5020mah' or a similar entity.  
+- Score: 0
+
+**idx_2:**  
+- response: '/'  
+- target: '4300mah'  
+- Analysis: Same reasoning, response is '/' and does not match the intended target entity.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",5020mah,/
+,,oppofindn2flip,Find N2 Flip,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response and the target are considered correct if they are semantically largely the same or point to the same entities; exact word-by-word matching is not required.
+
+---
+
+**idx_0**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512gb、1tb""  
+- Analysis: The response includes ""256gb"" and ""512gb"", both present in the target. The target also includes ""1tb"", which is missing in the response. However, the criterion does not require a complete list if the response captures part of the target's entities that are significant and semantically consistent. Since ""256gb"" and ""512gb"" are indeed a subset of the target options and mention the same entities, it should get full credit (1).
+
+---
+
+**idx_1**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512g""  
+- Analysis: The target states ""512g"", which is likely a typo or variant of ""512gb"". The response states ""512gb"". Since ""512gb"" and ""512g"" indicate the same entity (""512 gigabytes""), this is semantically consistent. ""256gb"" is also present in both. Therefore, this response correctly points to the entities in the target and should score 1.
+
+---
+
+**idx_2**  
+- Response: ""256gb/512gb""  
+- Target: ""256gb、512g""  
+- Same as idx_1, the reasoning applies. Score 1.
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+",256gb、512g,256gb/512gb,0.0,"exact not match, response: 2025-06-15, target: 2022-12-30",2022-12-30,2025-06-15,1.0,"Analysis:
+
+- idx_0: Response is ""华为"", target is ""华为"". They are exactly the same, so score = 1.
+- idx_1: Response is ""小米"", target is ""小米"". They are exactly the same, so score = 1.
+- idx_2: Response is ""oppo"", target is ""oppo"". Although the response is lowercase, it refers to the same entity ""Oppo"". The criterion states semantics or entity match is sufficient, so score = 1.
+
+Final scores: all 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",oppo,oppo,1.0,key_match,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary:
+- The answer and response should be semantically roughly the same or refer to the same entity.
+- Exact wording is not required.
+- The score can only be 0 or 1.
+
+---
+
+### idx_0
+- Response: ""10英寸"" (10 inches)
+- Target: ""6.3英寸"" (6.3 inches)
+- Analysis: 10 inches is significantly different from 6.3 inches. They do not refer to the same size or closely approximate values.
+- Therefore, the response is not semantically the same or pointing to the same entity as the target.
+
+Score: 0
+
+---
+
+### idx_1
+- Response: ""10英寸"" (10 inches)
+- Target: ""8.01英寸"" (8.01 inches)
+- Analysis: 10 inches is again quite different from 8.01 inches.
+- Not roughly the same, nor closely approximate.
+
+Score: 0
+
+---
+
+### idx_2
+- Response: ""8英寸"" (8 inches)
+- Target: ""6.80英寸"" (6.8 inches)
+- Analysis: 8 inches is closer to 6.8 inches than the previous cases, but still a difference.
+- However, according to the criterion, ""approximately same"" or pointing to the same entity is acceptable.
+- 8 vs 6.8 inches is a difference of 1.2 inches, which is about 15% difference.
+- This might be borderline.
+- However, since the question is about size and 8 inches and 6.8 inches are different enough that they are not effectively the same size, especially if the exact size matters.
+- Given the criterion is loose and says ""大致相同,"" 8 inches being close to 6.8 might be acceptable.
+- Since 8 and 6.8 are quite close, treat it as approximately the same entity.
+
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",6.80英寸,8英寸,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Translation: It only needs to be roughly semantically equivalent or refer to the same entity as the reference answer; word-for-word correspondence is not necessary.
+
+---
+
+**idx_0**  
+- Response: '/'  
+- Target: '3.5英寸' (3.5 inches)  
+Analysis: Response is just '/', which is not semantically equivalent or refers to the same entity as ""3.5英寸"", so it should score 0.
+
+---
+
+**idx_1**  
+- Response: '/'  
+- Target: '6.52英寸' (6.52 inches)  
+Analysis: Same as above, '/' is not equivalent or referring to the entity '6.52英寸', so score 0.
+
+---
+
+**idx_2**  
+- Response: '/'  
+- Target: '3.26英寸' (3.26 inches)  
+Analysis: Same as above, '/' is not equivalent to the target, so score 0.
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",3.26英寸,/,0.0,"Let's analyze each response against its target answer according to the criterion:
+
+Criterion:  
+- The response should be semantically roughly the same or refer to the same entity.  
+- Exact word-by-word match is not required.
+
+---
+
+**idx_0:**  
+- response: '/'  
+- target: '4610mah'  
+- Analysis: The response is a slash '/' which doesn't represent the target value '4610mah' or an equivalent meaning/entity. It does not satisfy the criterion.  
+- Score: 0
+
+**idx_1:**  
+- response: '/'  
+- target: '5020mah'  
+- Analysis: Same as above, response '/' does not correspond to '5020mah' or a similar entity.  
+- Score: 0
+
+**idx_2:**  
+- response: '/'  
+- target: '4300mah'  
+- Analysis: Same reasoning, response is '/' and does not match the intended target entity.  
+- Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0
+}
+```",4300mah,/
+,1.0,galaxyztrifold,Galaxy Z TriFold,,,,256gb/512gb,,,,2025-06-15,,,,三星,,,,,,10英寸,,,,/,,,,/
+1.0,,huaweimatex,,,,512gb,,,,2019-11-15,,,,华为,,,,,,8英寸,,,,6.6英寸,,,,4500mah,
+1.0,,huaweimatex2,,,,256gb、512gb,,,,2021-02-25,,,,华为,,,,,,8英寸,,,,6.45英寸,,,,4500mah,
+1.0,,huaweimatex3,,,,256gb、512gb、1tb,,,,2023-04-07,,,,华为,,,,,,7.85英寸,,,,6.4英寸,,,,4700mah,
+1.0,,huaweimatex5,,,,256gb、512gb、1t,,,,2023-09-14,,,,华为,,,,,,7.85英寸,,,,6.4英寸,,,,5060mah,
+1.0,,huaweimatex6,,,,256gb、512gb、1tb,,,,2024-12-06,,,,华为,,,,,,7.93英寸,,,,6.45英寸,,,,"典藏版：5080mah
+其他版本：4990mah",
+1.0,,huaweimatexs,,,,512gb,,,,2020-03-05,,,,华为,,,,,,8英寸,,,,正面：6.6英寸；背面：6.38英寸,,,,4500mah,
+1.0,,huaweimatexs2,,,,256gb、512gb,,,,2022-05-06,,,,华为,,,,,,7.8英寸,,,,6.5英寸,,,,4600mah,
+1.0,,huaweimatext非凡大师,,,,256gb、512gb、1tb,,,,2024-09-20,,,,华为,,,,,,10.2英寸,,,,6.4英寸,,,,5500mah,
+1.0,,huaweip50pocket,,,,256gb、512gb,,,,2021-12-23,,,,华为,,,,,,6.9英寸,,,,1.04英寸,,,,4000mah,
+1.0,,huaweipocket2,,,,256gb、512gb、1tb,,,,2024-03-01,,,,华为,,,,,,6.94英寸,,,,1.15英寸,,,,4420mah,
+1.0,,huaweipockets,,,,128gb/256gb/512gb,,,,2022-11-10,,,,华为,,,,,,6.9英寸,,,,1.04英寸,,,,4000mah,
+1.0,,liberoflip,,,,128gb,,,,2024-02-29,,,,中兴,,,,,,6.9英寸,,,,1.43英寸,,,,4180mah,
+1.0,,motorazr60,,,,512gb,,,,2025-05-08,,,,联想,,,,,,6.9英寸,,,,3.63英寸,,,,3880mah,
+1.0,,onepluesopen,,,,512gb,,,,2023-10-19,,,,一加,,,,,,7.82英寸,,,,6.31英寸,,,,4805mah,
+1.0,,oppofindn,,,,256gb、512g,,,,2021-12-23,,,,oppo,,,,,,7.10英寸,,,,5.49英寸,,,,4500mah,
+1.0,,oppofindn2,,,,256gb、512g,,,,2022-12-23,,,,oppo,,,,,,7.10英寸,,,,5.54英寸,,,,4520mah,
+1.0,,oppofindn3,,,,512gb、1tb,,,,2023-10-27,,,,oppo,,,,,,7.82英寸,,,,6.31英寸,,,,4680mah,
+1.0,,oppofindn3flip,,,,256gb、512g,,,,2023-09-08,,,,oppo,,,,,,6.8英寸,,,,3.26英寸,,,,4300mah,
+1.0,,oppofindn5,,,,256gb、512gb、1tb,,,,2025-02-26,,,,oppo,,,,,,8.12英寸,,,,6.62英寸,,,,5475mah,
+1.0,,tclflexv,,,,128gb,,,,/,,,,tcl,,,,,,6.64英寸,,,,1.1英寸,,,,nan,
+1.0,,vivoxflip,,,,256gb、512g,,,,2023-04-28,,,,vivo,,,,,,6.74英寸,,,,3.0英寸,,,,4400mah,
+1.0,,vivoxfold,,,,256gb、512g,,,,2022-04-22,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4600mah,
+1.0,,vivoxfold+,,,,256gb、512g,,,,2022-09-29,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4730mah,
+1.0,,vivoxfold2,,,,256gb、512g,,,,2023-04-28,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4800mah,
+1.0,,vivoxfold3,,,,256gb、512gb、1tb,,,,2024-04-03,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,5500mah,
+1.0,,vivoxfold3pro,,,,512gb、1tb,,,,2024-04-03,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,5700mah,
+1.0,,vivoxfolds,,,,256/512gb,,,,2022-09,,,,vivo,,,,,,8.03英寸,,,,6.53英寸,,,,4700mah,
+1.0,,xiaomimixflip,,,,256gb、512gb、1tb,,,,2024-07-23,,,,小米,,,,,,6.86英寸,,,,4.01英寸,,,,4665mah,
+1.0,,xiaomimixfold2,,,,256gb、512gb、1tb,,,,2022-08-16,,,,小米,,,,,,8.02英寸,,,,6.56英寸,,,,4500mah,
+1.0,,xiaomimixfold3,,,,256gb、512gb、1tb,,,,2023-08-16,,,,小米,,,,,,8.03英寸,,,,6.56英寸,,,,4800mah,
+1.0,,xiaomimixfold4,,,,256gb、512gb、1tb,,,,2024-07-23,,,,小米,,,,,,7.98英寸,,,,6.56英寸,,,,4780mah,
+1.0,,中兴天机axonm,,,,64gb、128gb,,,,2018-01-20,,,,中兴,,,,,,6.75英寸,,,,5.2英寸,,,,3180mah,
+1.0,,努比亚flip,,,,256gb、512gb,,,,2024-04-16,,,,努比亚,,,,,,6.9英寸,,,,1.43英寸,,,,4310mah,
+1.0,,努比亚flip2,,,,256gb、512gb,,,,2025-03-04,,,,努比亚,,,,,,6.9英寸,,,,3.0英寸,,,,4325mah,
+1.0,,华为novaflip,,,,256gb、512gb、1tb,,,,2024-08-09,,,,华为,,,,,,6.94英寸,,,,2.14英寸,,,,4295mah,
+1.0,,柔宇flexpai2,,,,256gb、512gb,,,,2020-09-25,,,,柔宇,,,,,,7.8英寸,,,,主屏：5.5英寸，辅屏：5.4英寸,,,,4450mah,
+1.0,,柔宇柔派,,,,128gb、256gb、512gb,,,,2018-11-01,,,,柔宇,,,,,,7.8英寸,,,,/,,,,3970mah,
+1.0,,荣耀magicv,,,,256gb、512gb,,,,2022-01-18,,,,荣耀,,,,,,7.9英寸,,,,6.45英寸,,,,4750mah,
+1.0,,荣耀magicv2,,,,256gb、512gb、1tb,,,,2023-07-20,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5000mah,
+1.0,,荣耀magicv2rsr保时捷设计,,,,1tb,,,,2024-01-12,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,4900mah,
+1.0,,荣耀magicv3,,,,256gb、512gb、1tb,,,,2024-07-19,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5150mah,
+1.0,,荣耀magicvflip,,,,256gb、512gb、1tb,,,,2024-06-21,,,,荣耀,,,,,,6.8英寸,,,,4.0英寸,,,,4800mah,
+1.0,,荣耀magicvs,,,,256gb、512gb,,,,2022-11-30,,,,荣耀,,,,,,7.9英寸,,,,6.45英寸,,,,5000mah,
+1.0,,荣耀magicvs2,,,,256gb、512gb,,,,2023-10-17,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5000mah,
+1.0,,荣耀magicvs3,,,,256gb、512gb、1tb,,,,2024-07-19,,,,荣耀,,,,,,7.92英寸,,,,6.43英寸,,,,5000mah,
+1.0,,荣耀vpurse,,,,256gb、512g,,,,2023-09-26,,,,荣耀,,,,,,7.71英寸,,,,6.45英寸,,,,4500mah,

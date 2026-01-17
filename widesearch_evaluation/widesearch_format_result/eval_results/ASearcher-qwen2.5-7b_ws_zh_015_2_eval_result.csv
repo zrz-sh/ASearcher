@@ -1,0 +1,120 @@
+exist_flag_gt,exist_flag_response,任务名称,任务名称_before_map,任务名称_exact_match,任务名称_exact_match_eval_msg,任务时长_llm_judge,任务时长_llm_judge_eval_msg,任务时长_query,任务时长_response,发射地点_llm_judge,发射地点_llm_judge_eval_msg,发射地点_query,发射地点_response,发射时间_llm_judge,发射时间_llm_judge_eval_msg,发射时间_query,发射时间_response,着陆地点_llm_judge,着陆地点_llm_judge_eval_msg,着陆地点_query,着陆地点_response,着陆时间_llm_judge,着陆时间_llm_judge_eval_msg,着陆时间_query,着陆时间_response,航天员姓名_llm_judge,航天员姓名_llm_judge_eval_msg,航天员姓名_query,航天员姓名_response
+,,神舟二十号,神舟二十号,1.0,key_match,0.0,"标准答案缺失（target为""--""表示无参考答案），无参照评分依据，无法对响应进行评分。依据常规原则：
+
+- 若无参考答案或基准，无法判断响应是否正确；
+- 因此，评分应为0（不自动赋1分）。
+
+综合考虑，idx_0对应响应不能判定为正确，得分为0。
+
+```json
+{
+  ""idx_0"": 0
+}
+```",--,约6个月,1.0,"分析过程：
+
+- 标准答案：酒泉卫星发射中心
+- 回答：酒泉
+
+判定依据：
+- “和参考答案语义相同大致、或者指向的实体一致即可”。
+- “酒泉卫星发射中心”是一个具体地点，较著名的火箭发射中心，位于“酒泉”地区。
+- 回答中的“酒泉”指向了“酒泉卫星发射中心”的所在地点实体，具有明显的关联性和指向一致。
+- 虽然回答没有具体到“卫星发射中心”字样，但指向实体大体一致，符合评分标准。
+
+结论：给分为1。
+
+```json
+{
+  ""idx_0"": 1
+}
+```",酒泉卫星发射中心,酒泉,0.0,"分析过程：
+
+- 参考答案是“2025年4月24日17时17分31.441秒”，即精确到秒和毫秒。
+- 回答是“2025-04-2417:17:00”，格式不同，但语义部分包含了：
+  - 日期：2025年4月24日 与 2025-04-24 对应，日期部分一致。
+  - 时间：17:17:31.441秒 vs 17:17:00，分钟相同（17分）。秒数不匹配，回答的秒是00，而标准答案是31.441秒。
+- 根据标准，语义大致相同或者指向的实体一致即可，不需要字字对应。
+- 这里，时间的分钟相同，但秒数差异较大（31秒和毫秒信息缺失）。
+- 由于时间差异较大，尽管日期正确，语义未能完全指向同一时间点。语义并非大致相同，存在明显的偏差。
+- 因此，评分应为0。
+
+```json
+{
+  ""idx_0"": 0
+}
+```",2025年4月24日17时17分31.441秒,2025-04-2417:17:00,1.0,"Analysis:
+
+- Standard answer (target): ""东风着陆场""
+- Response: ""酒泉""
+
+The criterion states that the response should be roughly semantically the same or refer to the same entity as the standard answer. The response doesn't need to be a verbatim match but should match meaning or reference to the same entity.
+
+""东风着陆场"" refers to the Dongfeng landing site or launch facility, which is known to be located near or in the Jiuquan area.
+
+""酒泉"" (Jiuquan) is a city or region in China. It is well-known that the Dongfeng landing site is associated with Jiuquan.
+
+Thus, ""酒泉"" refers to the geographic region of the ""东风着陆场"" landing site.
+
+So the response is semantically close and points to roughly the same entity (the location of the launch/landing site).
+
+Given the criterion that ""roughly the same semantics or pointing to the same entity suffices,"" this response should be counted as correct (score = 1).
+
+Final scoring:
+```json
+{
+    ""idx_0"": 1
+}
+```",东风着陆场,酒泉,1.0,"Let's analyze the given item step by step.
+
+**Item idx_0**
+
+- Standard answer (target): ""2025年10月""  
+- Response: ""2025-10-3123:44:00""
+
+**Analysis:**
+
+1. The target only specifies the year and month: October 2025.  
+2. The response is a timestamp that includes year, month, day, hour, minute, and second: ""2025-10-31 23:44:00"" (assuming no space due to formatting).  
+3. The response time is more specific, but since the target does not contradict it (the target is less specific but aligns with the date in the response), and the criterion specifies that semantic equivalency or matching of main entity is enough, the response is acceptable.  
+4. The response indicates a valid datetime that includes October 2025, meaning it coincides with the expected time period.
+
+**Judgment:**
+
+- The response points to a more specific datetime falling within October 2025.
+- According to the criterion, this is acceptable and should be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1
+}
+```",2025年10月,2025-10-3123:44:00,1.0,"分析过程：
+
+- 标准答案（target）：陈冬、陈中瑞、王杰
+- 回答（response）：陈冬、陈中瑞、王杰
+- 两者语义完全一致，实体指向也完全一致。
+- 根据评分标准，和参考答案语义相同或者指向实体一致即可，不需要完全字字对应。
+- 本答复与参考答案完全一致，因此得分应为1。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1
+}
+```",陈冬、陈中瑞、王杰,陈冬、陈中瑞、王杰
+1.0,,神舟七号,,,,,,2天20小时27分,,,,酒泉卫星发射中心,,,,2008年9月25日21时10分04.988秒,,,,四子王旗着陆场,,,,2008年9月28日17时38分,,,,翟志刚、刘伯明、景海鹏,
+1.0,,神舟九号,,,,,,12天15小时25分钟24秒钟,,,,酒泉卫星发射中心,,,,2012年6月16日18时37分24.558秒,,,,四子王旗着陆场,,,,2012年6月29日10时03分,,,,景海鹏、刘旺、刘洋,
+1.0,,神舟五号,,,,,,21小时22分钟45秒,,,,酒泉卫星发射中心,,,,2003年10月15日09时00分03.497秒,,,,四子王旗着陆场,,,,2003年10月16日06时22分48秒,,,,杨利伟,
+1.0,,神舟六号,,,,,,4天19小时32分钟46秒钟,,,,酒泉卫星发射中心,,,,2005年10月12日09时00分03.583秒,,,,四子王旗着陆场,,,,2005年10月17日04时33分,,,,费俊龙、聂海胜,
+1.0,,神舟十一号,,,,,,32天6小时又29分,,,,酒泉卫星发射中心,,,,2016年10月17日07时30分31.409秒,,,,四子王旗着陆场,,,,2016年11月18日13时59分,,,,景海鹏、陈冬,
+1.0,,神舟十七号,,,,,,187天6小时又32分,,,,酒泉卫星发射中心,,,,2023年10月26日11时14分02.491秒,,,,东风着陆场,,,,2024年4月30日17时46分,,,,汤洪波、唐胜杰、江新林,
+1.0,,神舟十三号,,,,,,182天9小时又32分,,,,酒泉卫星发射中心,,,,2021年10月16日00时23分56.469秒,,,,东风着陆场,,,,2022年4月16日09时56分,,,,翟志刚、王亚平、叶光富,
+1.0,,神舟十九号,,,,,,182天8小时又41分,,,,酒泉卫星发射中心,,,,2024年10月30日04时27分34.469秒,,,,东风着陆场,,,,2025年4月30日13时08分,,,,蔡旭哲、宋令东、王浩泽,
+1.0,,神舟十二号,,,,,,92天4小时又11分,,,,酒泉卫星发射中心,,,,2021年6月17日09时22分31.693秒,,,,东风着陆场,,,,2021年9月17日13时34分,,,,聂海胜、刘伯明、汤洪波,
+1.0,,神舟十五号,,,,,,186天7小时又24分,,,,酒泉卫星发射中心,,,,2022年11月29日23时08分17.457秒,,,,东风着陆场,,,,2023年6月4日06时33分,,,,费俊龙、邓清明、张陆,
+1.0,,神舟十八号,,,,,,192天4小时25分,,,,酒泉卫星发射中心,,,,2024年4月25日20时59分00.079秒,,,,东风着陆场,,,,2024年11月4日01时24分,,,,叶光富、李聪、李广苏,
+1.0,,神舟十六号,,,,,,153天22小时又40分,,,,酒泉卫星发射中心,,,,2023年5月30日09时31分13.480秒,,,,东风着陆场,,,,2023年10月31日08时11分,,,,景海鹏、朱杨柱、桂海潮,
+1.0,,神舟十号,,,,,,14天14小时又29分,,,,酒泉卫星发射中心,,,,2013年6月11日17时38分02.666秒,,,,四子王旗着陆场,,,,2013年6月26日08时07分,,,,聂海胜、张晓光、王亚平,
+1.0,,神舟十四号,,,,,,182天9小时又24分,,,,酒泉卫星发射中心,,,,2022年6月5日10时44分10.460秒,,,,东风着陆场,,,,2022年12月4日20时09分,,,,陈冬、刘洋、蔡旭哲,

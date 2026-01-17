@@ -1,0 +1,390 @@
+{
+  "instance_id": "ws_zh_046",
+  "response": "",
+  "message_history": [
+    {
+      "role": "user",
+      "content": "A conversation between User and Assistant. The user asks a question, and the Assistant answers it. The Assistant analyzes the given question and information in the mind, retains important relevant information, calls a search engine to find necessary information, accesses web pages with certain urls, and provides the user with the answer. The Assistant conducts search by <search> query </search>, access certain url by <access> url </access>, and the top search results and url page will be returned between <information> and </information>.  The reasoning processes are enclosed within <think> </think>. Finally, the Assistant provides answer inside <answer> and </answer>, i.e. <answer> answer here </answer>. If there are multiple queries, ensure all answers are enclosed within <answer> </answer>, seperated with comma. \n\nNote: the question is a valid question and you should try to find a correct answer. \n\nUser: 我想了解一下中国民族自治地方的发展情况，帮我梳理下我国所有自治州（30个）的基本情况吧，以Markdown表格的格式整理成数据给我，包括自治州名称、设立时间、总面积、下辖地区（具体的市县名）、2024年州长姓名、州长所属民族。注意一下格式，成立日期用yyyy年mm月dd日的形式，总面积单位为平方公里。请以一整个Markdown表格的格式输出整理后的数据，不要拆分成多个markdown表格，每个单元格都需要按列名要求输出，不得无故省略，输出采用中文。\n表格中的列名依次为：\n自治州名称、设立时间、总面积、下辖地区、2024年州长姓名、州长所属民族。不要问我任何问题，只需输出结果，输出格式为```markdown{数据内容}```\n\nAssistant: \n<think>"
+    },
+    {
+      "role": "assistant",
+      "content": " To find the information about the 30 autonomous states in China, I'll search through reliable sources. I need to gather details such as the name of each autonomous state, its establishment date, total area in square kilometers, the regions or counties it oversees, the name of the governor in 2024, and their ethnicity. </think>\n<search> 中国民族自治地方 发展情况 30个自治州</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 中国民族自治地方 发展情况 30个自治州\nResult: [Doc 1](https://www.sara.gov.cn/static/content/ywdt/qtyw/2025-02-06/1337066833828675584.html):\n坚持和完善民族区域自治制度 - 国家宗教事务局 目前，我国已经成立了155个民族自治地方，包括5个自治区、30个自治州、120个自治县（旗）。此外，还成立了近千个民族乡，作为民族区域自治的重要补充。\n\n[Doc 2](http://www.npc.gov.cn/WZWSREL3pncmR3L25wYy94aW53ZW4vcmRsdC9yZGpzLzIwMTAtMTIvMjkvY29udGVudF8xNjEzNTM1Lmh0bQ==):\n我国民族区域自治制度的历史及其发展 - 中国人大网 1994年我国实行分税制财政体制后，民族自治地方财政上仍存在较多困难。全国150多个民族自治地方，除少数几个自治州、自治县财政收支平衡或略有上缴外，其他 ...\n\n[Doc 3](https://baike.baidu.com/item/%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9/10843555):\n民族自治地方_百度百科 1955年至1965年间，新疆维吾尔自治区、广西壮族自治区、宁夏回族自治区和西藏自治区相继成立。截至2020年，全国共设立155个民族自治地方，包含5个自治区、30个自治州和120个 ...\n\n[Doc 4](https://gjaqyjy.muc.edu.cn/info/1032/3830.htm):\n李俊清、向娟| 自治州辖区改革：价值意蕴、行政逻辑与实践路径 目前我国设有5个自治区、30个自治州和120个自治县（旗），共155个民族自治地方。 ... 同时，因为自治州是民族自治地方，所以州政府上述城市发展职能的发挥可能 ...\n\n[Doc 5](https://www.gdtzb.gov.cn/tzsh/content/post_85399.html):\n【统战史话】《民族区域自治法》的颁布和实施 截至1992年底，中国已建立民族自治地方159个，其中5个自治区，30个自治州，124个自治县。共有45个少数民族，7000多万人口实现了民族区域自治。民族自治地方国土面积占 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to focus specifically on the 30 autonomous states and gather information about their establishment dates, total areas, subordinate regions, and governors in 2024 along with their ethnicities. I'll search for detailed information about each one.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to refine my search to get specific details for each autonomous state. I'll search for each one individually to find the required information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称\nResult: [Doc 1](https://zh.wikipedia.org/zh-hans/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 维基百科，自由的百科全书 至2012年末，中国大陆共有30个自治州。民族自治州通常亦简称为“州”，如延边朝鲜族自治州简称“延边州”。 自治州. 又名： ... 自治州自治机关是自治州人民代表大会和自治州 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 至2012年末，中國大陸共有30個自治州。民族自治州通常亦簡稱為「州」，如延邊朝鮮族自治州簡稱「延邊州」。 自治州. 又名： ... 自治州自治機關是自治州人民代表大會和自治州 ...\n\n[Doc 3](https://www.qiuwenbaike.cn/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 自治州 ; 新疆维吾尔自治区 · 昌吉回族自治州 · 回族 ; 新疆维吾尔自治区 · 巴音郭楞蒙古自治州 · 蒙古族 ; 新疆维吾尔自治区 · 伊犁哈萨克自治州 · (阿勒泰地区) （塔城地区） ...\n\n[Doc 4](https://zhuanlan.zhihu.com/p/350957249):\n中国共有30个自治州，只有9个省份才有，第一名拥有8个- 知乎 四川、贵州各有3个自治州，分别为：阿坝藏族羌族自治州、甘孜藏族自治州、凉山彝族自治州、黔东南苗族侗族自治州、黔南布依族苗族自治州、黔西南布依族苗族 ...\n\n[Doc 5](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州. 吉林延边朝鲜族自治州; 湖北恩施土家族苗族自治州; 湖南湘西土家族苗族自治州; 四川阿坝藏族羌族自治州; 四川凉山彝族自治州; 四川甘孜藏族自治州; 贵州黔东南苗族 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I will now search for detailed information about each autonomous state, including their establishment dates, total areas, subordinate regions, and governors in 2024 along with their ethnicities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 吉林延边朝鲜族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 吉林延边朝鲜族自治州 设立时间\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E5%BB%B6%E8%BE%B9%E6%9C%9D%E9%B2%9C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n延邊朝鮮族自治州- 維基百科，自由的百科全書 ... 吉林專區敦化縣被劃入延邊朝鮮族自治州。1965年5月，圖們鎮從延吉鎮分離出來，成立圖們市。1985年，敦化縣升級為敦化市。1988年，琿春和龍井撤銷縣建制，設立琿春市和龍井市。\n\n[Doc 2](https://zh.wikipedia.org/zh-hans/%E5%BB%B6%E8%BE%B9%E6%9C%9D%E9%B2%9C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n延边朝鲜族自治州 - 维基百科 1952年8月29日至9月3日，延边各族各界第一届人民代表会议在延吉市召开。 会议经政委院批准，成立延边朝鲜民族自治区人民政府，管辖延吉、和龙、珲春、汪清、安图5县。\n\n[Doc 3](http://jlrbszb.dajilin.com/pc/paper/att/202209/04/6f8a1fe6-0ad6-4b5e-847e-c35282428741.pdf):\n[PDF] 延边朝鲜族自治州成立70周年庆祝大会隆重举行 - 吉林日报 长白山下硕果满枝，海兰江畔稻花. 飘香。在这个丰收的季节，延边朝鲜族. 自治州迎来成立70周年大庆。带着以. 习近平同志为核心的党中央对延边人.\n\n[Doc 4](https://www.wenxiaobai.com/api/expends/detail?article=79d31a6d-e150-4185-9d11-8c5d8ac7cab8):\n延边朝鲜族民族自治州：中国朝鲜族的自治之路 - 问小白 延边朝鲜族自治州成立于1952年9月3日，是中国东北地区唯一的自治州。70年来，延边州在政治、经济、文化等方面取得了显著成就，走出了一条独具特色的自治 ...\n\n[Doc 5](https://www.mj.org.cn/dfzz/jl/tslm/201911/t20191126_185036.htm):\n民族区域自治 - 中国民主促进会 在党的民族政策的光辉照耀下，1952年9月3日，延边朝鲜自治州成立，现辖6市2县，州府所在地延吉市。总面积42700平方公里，现有人口218.55万人，其中朝鲜族人口占 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Jilin Yanbian Korean Autonomous Prefecture is 1952年9月3日. Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 吉林延边朝鲜族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 吉林延边朝鲜族自治州 总面积 下辖地区\nResult: [Doc 1](https://zh.wikipedia.org/zh-hans/%E5%BB%B6%E8%BE%B9%E6%9C%9D%E9%B2%9C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n延边朝鲜族自治州 - 维基百科 延边朝鲜族自治州地处吉林省东南部，位于北纬41°59′47″-44°30′42″和东经127 ... 全州总面积为42,700平方公里，约占吉林全省总面积的四分之一，边境线长768.5公里 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E5%BB%B6%E8%BE%B9%E6%9C%9D%E9%B2%9C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n延邊朝鮮族自治州- 維基百科，自由的百科全書 延邊朝鮮族自治州地處吉林省東南部，位於北緯41°59′47″-44°30′42″和東經127 ... 全州總面積為42,700平方公里，約占吉林全省總面積的四分之一，邊境線長768.5公里 ...\n\n[Doc 3](https://baike.baidu.com/item/%E5%BB%B6%E8%BE%B9%E6%9C%9D%E9%B2%9C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/1264040):\n延边朝鲜族自治州_百度百科 延边、延边州. 行政区划代码. 222400. 行政区类别. 自治州. 所属地区. 中国吉林省. 地理位置. 东北地区、吉林省东部、长白山区. 面积. 43329.3 km 2. 下辖地区. 6个县级市 ...\n\n[Doc 4](http://w.mzzyk.com/mzwhzyk/674771/682200/682201/721815/624503/index.html):\n吉林延边朝鲜族自治州 - 中国民族文化资源库 延边朝鲜族自治州幅员4.33万平方千米，下辖延吉、图们、敦化、珲春、龙井、和龙6市和汪清、安图2县，首府为延吉市；总人口212万，其中朝鲜族人口75.9万，占全州总人口 ...\n\n[Doc 5](https://liuxue.ybu.edu.cn/xxwz/ybgk.htm):\n延边概况 - 留学生管理科网站 延边朝鲜族自治州位于吉林省东部，幅员4.33万平方公里，约占吉林省的四分之一。总人口207.2万人，其中朝鲜族人口74.2万人，占全州总人口的35.8%，是我国唯一 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Jilin Yanbian Korean Autonomous Prefecture is 43,329.3 km² and it oversees 6 cities (Yanji, Tumen, Dandong, Huichun, Longjing, Hegang) and 2 counties (Wangqing, Antu). Now I'll search for the governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 延边朝鲜族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 延边朝鲜族自治州 2024年州长\nResult: [Doc 1](https://baike.baidu.com/item/%E5%88%98%E6%96%B0%E9%92%A2/20436347):\n刘新钢_百度百科 2024年11月29日，延边朝鲜族自治州第十六届人民代表大会常务委员会第二十次会议通过，决定任命刘新钢为州人民政府副州长。\n\n[Doc 2](http://www.yanbian.gov.cn/zwgk_83/zzfld/fzz/202403/t20240308_452024.html):\n副州长窦庆国 - 延边朝鲜族自治州人民政府 窦庆国，男，汉族，1974年6月出生，1997年7月参加工作，1995年6月加入中国共产党。 现任延边朝鲜族自治州人民政府党组成员、副州长。 分工： 分管：州住建局、州 ...\n\n[Doc 3](https://zh.wikipedia.org/zh-cn/%E9%87%91%E5%AF%BF%E6%B5%A9):\n金寿浩- 维基百科，自由的百科全书 2017年6月，任延边朝鲜族自治州州长。2018年2月24日，当选为第十三届全国人大代表 ... 2024年8月23日，金寿浩涉嫌严重违纪违法，主动投案，接受纪律审查和监察 ...\n\n[Doc 4](https://china.caixin.com/2024-08-24/102229411.html):\n原延边州长金寿浩投案曾为“全国脱贫攻坚先进个人” - 政经 【财新网】8月23日晚，吉林省纪委监委发布消息称，吉林延边朝鲜族自治州（下称“延边州”）原州委副书记、州长金寿浩涉嫌严重违纪违法，主动投案，目前正接受 ...\n\n[Doc 5](https://i.ifeng.com/c/8euZjonShds):\n刘新钢任延边朝鲜族自治州副州长 - 凤凰网 决定任命刘新钢为州人民政府副州长；. 决定免去李秀玉的州科学技术局局长职务。"
+    },
+    {
+      "role": "assistant",
+      "content": "I couldn't find specific information about the governor of Jilin Yanbian Korean Autonomous Prefecture for 2024. I'll note that the current governor is not available for that year. Now I'll continue searching for the remaining 29 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "Since I couldn't find detailed information for all 30 autonomous states in a single search, I'll proceed to search for each one individually to gather the required information. I'll start with the next autonomous state and continue this process until I have information for all 30.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 湖北恩施土家族苗族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 湖北恩施土家族苗族自治州 设立时间\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E6%81%A9%E6%96%BD%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n恩施土家族苗族自治州- 維基百科，自由的百科全書 抗日戰爭爆發後，1938年湖北省政府遷入恩施。 1949年設恩施專區，專署駐恩施縣，轄八縣。 1970年恩施專區改稱恩施地區，地區駐恩施縣。1983年8月19日成立鄂西土家族苗族自治州 ...\n\n[Doc 2](http://www.esrd.gov.cn/lslmyc/eszq/201506/t20150623_768080.shtml):\n历史沿革 - 恩施土家族苗族自治州人民代表大会常务委员会办公室 1949年11月6日恩施县城解放，建立湖北省恩施行政区，置专员公暑。1983年8月19日，国务院批准撤销恩施地区行政公署，成立鄂西土家族苗族自治州。1993年 ...\n\n[Doc 3](http://zt.enshi.cn/2023/es40/jgxsdjgsfq/202308/t20230822_1474267.shtml):\n辉煌跨越报党恩——写在恩施土家族苗族自治州成立40周年之际 1983年8月19日，恩施土家族苗族自治州获批成立，成为共和国最年轻、湖北省唯一的自治州，居住着土家族、苗族、侗族、汉族等29个民族。今天，恩施州迎来40岁 ...\n\n[Doc 4](https://you.ctrip.com/travels/enshi487/4154863.html):\n恩施州市区漫步-恩施土家族苗族自治州游记攻略【携程攻略】 恩施土家族苗族自治州地处武陵山区腹地，是湖北省唯一一个，以及全国最年轻的少数民族自治州。1983年8月19日，国务院批准成立鄂西土家族苗族自治州，1993年更名为恩施土 ...\n\n[Doc 5](https://www.dl1.zh-cn.nina.az/%E6%81%A9%E6%96%BD%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E.html):\n恩施土家族苗族自治州 - 维基百科 1949年设恩施专区，专署驻恩施县，辖八县。1970年恩施专区改称恩施地区，地区驻恩施县。1983年8月19日成立鄂西土家族苗族自治州，1993年4月4日改为恩施土家族苗族自治州。"
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Hubei Enshi Tujia and Miao Autonomous Prefecture is 1983年8月19日. Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 湖北恩施土家族苗族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 湖北恩施土家族苗族自治州 总面积 下辖地区\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E6%81%A9%E6%96%BD%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n恩施土家族苗族自治州- 維基百科，自由的百科全書 長江流經東北部，中部有清江，西部有鬱江。全州總面積24,060平方公里，人口345.61萬，共有29個民族，其中漢族、土家族、苗族人口比例分別約45%、48%、5%，自治州首府駐恩施市。\n\n[Doc 2](https://baike.baidu.com/item/%E6%81%A9%E6%96%BD%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/1941825):\n恩施土家族苗族自治州_百度百科 自治州. 所属地区. 中国湖北省. 地理位置. 湖北省西南部. 面积. 24111 km 2. 下辖地区. 2个市、6个县. 政府驻地. 恩施市舞阳大街一巷21号. 电话区号. 0718.\n\n[Doc 3](https://news.ifeng.com/c/80qkJFro5dl):\n湖北恩施州下辖区数据：面积最大的是利川市 - 凤凰网 恩施州省外和贵州省、重庆市、以及湖南省接壤，省内和神农架林区以及宜昌市接壤，属于湖北的西南大门，地理位置较好，交通便利。 恩施州下辖6个县城2个县级市.\n\n[Doc 4](http://www.xzqh.org/html/show/hb/15261.html):\n恩施土家族苗族自治州历史沿革 - 行政区划网 1996年，全州面积23942平方千米，人口370.2万人，主要以土家族、苗族为主，少数民族占总人口的45.9%。辖恩施、利川2市和建始、咸丰、巴东、宣恩、来凤、鹤峰6县。州政府驻恩施 ...\n\n[Doc 5](https://www.news.cn/politics/20241220/df0bddd403cc469f8668c2a04066e86a/c.html):\n武陵深处逢恩施——巴山楚水与土苗风情的澎湃交响 - 新华网 地处武陵山区深处，又有长江、清江奔流浸润，总面积2.4万平方公里的恩施土家族苗族自治州，辖恩施、利川两市，以及建始、巴东、宣恩、来凤、咸丰、鹤峰六县。"
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Hubei Enshi Tujia and Miao Autonomous Prefecture is 24,060平方公里 and it oversees 2 cities (Enshi, Li"
+    },
+    {
+      "role": "assistant",
+      "content": "angshan) and 6 counties (Jianning, Shennongjia, Badong, Xuanen, Lefeng, Hefeng). Now I'll search for the governor information.\n</think>\n<search> 湖北恩施土家族苗族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 湖北恩施土家族苗族自治州 2024年州长\nResult: [Doc 1](http://fgw.enshi.gov.cn/xxgk/fdzdgknr/zfgzjg/wld/202308/t20230811_1471822.shtml):\n副主任：许席 - 恩施州发展和改革委员会 许席，男，土家族，湖北巴东人，1983年7月出生，省委党校研究生学历 ... 2023年7月任恩施州发展和改革委员会党组成员，2024年10月任恩施州发展和改革委员会副主任 ...\n\n[Doc 2](http://www.sinh.cas.cn/cyhz/cyhzdt/202408/t20240819_7277066.html):\n湖北恩施许强副州长一行来所调研“硒与健康”专项工作进展 8月9日，湖北省恩施土家族苗族自治州人民政府副州长许强，州科技局党组成员、副局长胡斌一行到访中国科学院上海营养与健康研究所，听取由营养与健康所 ...\n\n[Doc 3](https://finance.sina.cn/2025-03-05/detail-inenqpam9018640.d.html?oid=%E8%B6%B3%E7%90%83%E6%8A%95%E6%B3%A8%E7%BD%91%E5%87%BA%E7%A7%9F%E3%80%8E%E5%BE%AE%E4%BF%A1hga1199%E3%80%8FQ2bW&vt=4):\n香港商报专访全国人大代表、恩施州州长夏锡璠 - 新浪财经 夏锡璠：恩施土家族苗族自治州是全国最年轻的少数民族自治州，也是湖北省唯一的少数民族自治州，以前是典型的“老少边山穷”地区，2020年，全州实现了全域脱贫。\n\n[Doc 4](http://www.eszwzzb.gov.cn/):\n中共恩施土家族苗族自治州委组织部 中共恩施州委组织部信息中心公开选聘工作人员公告 · 恩施州2025年度州直机关公开遴选公务员拟试用人员公示 · 恩施州招录定向选调生48名 · 2026年湖北省定向选调生招录公告.\n\n[Doc 5](http://www.esrd.gov.cn/xjrm/202404/t20240401_1564968.shtml):\n恩施土家族苗族自治州第九届人民代表大会常务委员会任命名单 ... 恩施土家族苗族自治州第九届人民代表大会常务委员会任命名单（2024年3月29日州九届人大常委会第十七次会议通过）"
+    },
+    {
+      "role": "assistant",
+      "content": "I couldn't find specific information about the governor of Hubei Enshi Tujia and Miao Autonomous Prefecture for 2024. I'll note that the current governor is not available for that year. Now I'll continue searching for the remaining 28 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to continue my search for the remaining 28 autonomous states to gather the required information. I'll focus on each one individually and find their establishment dates, total areas, subordinate regions, and governor information for 2024.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 湖南湘西土家族苗族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 湖南湘西土家族苗族自治州 设立时间\nResult: [Doc 1](http://zrzyt.hunan.gov.cn/zrzyt/jdbnhnzdsj/202104/t20210409_16463746.html):\n湘西土家族苗族自治州成立 - 湖南省自然资源厅 1952年8月9日，中央人民政府颁布《中华人民共和国民族区域自治实施纲要》。8月1日至6日，湘西苗族自治区首届人民代表会议在所里（今吉首市）召开，宣告 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n湘西土家族苗族自治州- 維基百科 湘西土家族苗族自治州在湖南省的地理 ... 1952年8月，湘西苗族自治區成立，轄吉首、瀘溪、鳳凰、古丈、花垣、保靖6縣 ...\n\n[Doc 3](https://hn.rednet.cn/content/2021/03/31/9141194.html):\n湖湘潮百年颂丨湘西土家族苗族自治州成立：开启各民族繁荣发展的 ... 1952年8月1日至6日，湘西苗族自治区首届人民代表会议在所里(今吉首市)召开，宣告自治区人民政府成立。1955年4月28日，因新颁布的宪法规定区为省级自治单位， ...\n\n[Doc 4](https://www.hunantoday.cn/news/xhn/202509/30492922.html):\n湘西头条微信公众号丨湘西土家族苗族自治州68岁生日快乐！ - 新湖南 ... 湘西苗族自治区改名为湘西苗族自治州。 1957年1月3日，土家族正式确认为一个单一少数民族。 1957年9月20日，湘西土家族苗族自治州宣告成立。 图片. 湘西土 ...\n\n[Doc 5](https://m.voc.com.cn/xhn/news/202109/17228504.html):\n湘西州成立纪念日放假的来龙去脉 - 新湖南 《湘西土家族苗族自治州条例》第五十八条规定：“九月二十日为自治州成立纪念日。”而全国其他29个少数民族自治州条例中都有自治州成立纪念日放假的规定。就 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Hunan Xiangxi Tujia and Miao Autonomous Prefecture is 1957年9月20日. Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 湖南湘西土家族苗族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 湖南湘西土家族苗族自治州 总面积 下辖地区\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n湘西土家族苗族自治州- 維基百科 ... 湖南省下轄的自治州，位於湖南省西北部。州境東北達張家界市，東南鄰懷化市，西南 ... 全州總面積15,470平方公里，人口246.1萬，土家族、苗族分別占約43%、34 ...\n\n[Doc 2](https://baike.baidu.com/item/%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/1999659):\n湘西土家族苗族自治州_百度百科 行政区域总面积1.55万平方千米。 截至2025年6月，湘西土家族苗族自治州辖1个县级市，7个县。 截至2024年末，湘西土家族苗族自治州常住人口为239.2万人。\n\n[Doc 3](http://www.hunan.gov.cn/jxxx/szmp/xxz/szmp_m.html):\n湘西州-湖南省人民政府门户网站 湘西自治州位于湖南省西北部，地处湘鄂渝黔四省市交界处、武陵山区中心腹地，全州国土面积1.55万平方公里，辖7县1市，总人口294万人，其中以土家族、苗族为主的少数民族 ...\n\n[Doc 4](http://www.xzqh.org/show/china/43/433100.html):\n湘西土家族苗族自治州 - 行政区划网 位置面积湘西土家族苗族自治州是湖南省辖自治州。位于省境西北部，与湖北省、贵州省、重庆市接壤。东与张家界市毗连，南与怀化市接壤，西与重庆市和贵州省铜仁市相邻 ...\n\n[Doc 5](http://hunan.sina.com.cn/city/whyq/2013-05-08/131551308.html?from=wap):\n湘西概况简介 - 新浪湖南 全州总面积15486平方公里，现辖吉首、泸溪、凤凰、古丈、花垣、保靖、永顺、龙山8个市县，人口259.30万，其中少数民族人口占68.7%。州府设在吉首市。中华人民 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Hunan Xiangxi Tujia and Miao Autonomous Prefecture is 15,470平方公里 and it oversees 8 cities/counties (Jishou, Luxi, Phoenix, Guzhang, Huayuan, Baoding, Yongshun, Longshan). Now I'll search for the governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 湖南湘西土家族苗族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 湖南湘西土家族苗族自治州 2024年州长\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E%E5%A7%94%E5%91%98%E4%BC%9A):\n中國共產黨湘西土家族苗族自治州委員會 陳華（女，州長） 廖良輝（正廳長級） · 楊彥芳、易長運、楊洪峰、賈珍文、向邦偉、彭延敏、周立志 · 中國共產黨湘西土家族苗族自治州代表大會.\n\n[Doc 2](https://www.ctdsb.net/c1476_202511/2584803.html):\n“80后”周亮，已任湘西州委常委 ,周亮曾任永州市冷水滩区区长等职，2021年任湘西州政府党组成员，后当选副州长。,截至2024年，湘西土家族苗族自治州常住人口239.17万人，其中以土家族、苗族为\n\n[Doc 3](https://m.thepaper.cn/newsDetail_forward_31890421):\n获公示拟进一步使用的湖南援疆干部周亮，已任湘西州委常委 近日，湖南省湘西州政府官网“州政府”栏目更新显示，周亮现任湘西州委常委，州政府党组成员、副州长，工作分工为援疆。 此前，周亮担任湘西自治州副州长， ...\n\n[Doc 4](https://news.qq.com/rain/a/20251104A06E7E00):\n“80后”周亮，已任湘西州委常委 周亮曾任永州市冷水滩区区长等职，2021年任湘西州政府党组成员，后当选副州长。2023年4月，周亮援疆，任湘西州副州长、湖南省第十批援疆工作队副领队、新疆 ...\n\n[Doc 5](https://baike.baidu.com/item/%E6%B9%98%E8%A5%BF%E5%9C%9F%E5%AE%B6%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/1999659):\n湘西土家族苗族自治州 行政区域总面积1.55万平方千米。 截至2025年6月，湘西土家族苗族自治州辖1个县级市，7个县。 截至2024年末，湘西土家族苗族自治州常住人口为239.2万人。"
+    },
+    {
+      "role": "assistant",
+      "content": "I couldn't find specific information about the governor of Hunan Xiangxi Tujia and Miao Autonomous Prefecture for 2024. I'll note that the current governor is not available for that year. Now I'll continue searching for the remaining 27 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to continue my search for the remaining 27 autonomous states to gather the required information. I'll focus on each one individually and find their establishment dates, total areas, subordinate regions, and governor information for 2024.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川阿坝藏族羌族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川阿坝藏族羌族自治州 设立时间\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E9%98%BF%E5%9D%9D%E8%97%8F%E6%97%8F%E7%BE%8C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n阿壩藏族羌族自治州- 維基百科，自由的百科全書 歷史 ; 1953年，撤茂縣專區建立四川省藏族自治區。首任工委書記任明道，人民政府主席天寶。 ; 1955年，更名為阿壩藏族自治州。 ; 1987年，更名為阿壩藏族羌族自治州。\n\n[Doc 2](http://news.12371.cn/2013/09/16/ARTI1379280486016908.shtml):\n一步跨千年——写在四川阿坝藏族羌族自治州成立六十周年之际 金秋时节，迎着明媚的阳光，四川阿坝藏族羌族自治州以崭新的面貌迎来建州60周年。 1953年建州之初，阿坝州没有一条公路，没有一家企业，高原牧民长期靠天 ...\n\n[Doc 3](http://www.scspc.gov.cn/rdyw/201309/t20130917_17783.html):\n阿坝藏族羌族自治州成立60周年庆祝大会隆重举行 - 四川人大 本报讯（记者张宏平胡彦殊）光阴荏苒60年，藏羌儿女喜开颜。具有光荣革命传统的红色土地——阿坝州迎来建州60岁生日。9月16日上午，阿坝藏族羌族自治州成立60 ...\n\n[Doc 4](http://www.scio.gov.cn/xwfb/dfxwfb/gssfbh/sc_13848/202309/t20230907_768054.html):\n四川举行“壮丽辉煌七十年感恩奋进新阿坝 - 国务院新闻办公室 阿坝州素有“川青咽喉”“治藏依托”之称，面积8.42万平方公里，户籍总人口89.7万人，是全国唯一的藏族羌族自治州，是中国工农红军长征爬雪山过草地的主要发生地， ...\n\n[Doc 5](http://sc.people.com.cn/n2/2023/0916/c345167-40573331.html):\n四川阿坝州成立70周年各民族儿女载歌载舞共庆 - 四川频道- 人民网 人民网马尔康9月16日电（记者王洪江、刘海天）9月16日，四川省阿坝藏族羌族自治州成立70周年庆祝大会在马尔康市举行。壮丽辉煌七十年，感恩奋进新阿坝。"
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Sichuan Aba Tibetan and Qiang Autonomous Prefecture is 1953年。Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川阿坝藏族羌族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川阿坝藏族羌族自治州 总面积 下辖地区\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E9%98%BF%E5%9D%9D%E8%97%8F%E6%97%8F%E7%BE%8C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n阿壩藏族羌族自治州- 維基百科，自由的百科全書 全州總面積83,002平方公里，2020年常住人口82.26萬，藏族和羌族人口比例分別約55%和18%，漢族人口比例約25%。州境大部分傳統上屬於安多地區，西部金川縣、小金縣屬於康區， ...\n\n[Doc 2](https://www.neac.gov.cn/seac/c102847/201909/1136661.shtml):\n阿坝藏族羌族自治州：充满希望和发展潜力的热土 - 国家民族事务委员会 阿坝州辖马尔康、金川、小金等13个县市，全自治州总面积84242平方公里，总人口94.4万人，是四川省第二大藏族聚居区和我国羌族主要聚居区。\n\n[Doc 3](https://baike.baidu.com/item/%E9%98%BF%E5%9D%9D%E8%97%8F%E6%97%8F%E7%BE%8C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/1560437):\n阿坝藏族羌族自治州_百度百科 辖12个县，代管1个县级市，总面积84242平方千米。有藏语、普通话和四川方言等，州政府设在马尔康镇。截至2023年末，阿坝藏族羌族自治州常住人口达82.5万。 阿坝藏族羌族自治州 ...\n\n[Doc 4](https://abrd.gov.cn/zrdcwh/c104583/abgk.shtml):\n基本州情_阿坝藏族羌族自治州人民代表大会常务委员会 政区划分 辖马尔康、金川、小金、阿坝、若尔盖、红原、壤塘、汶川、理县、茂县、松潘、九寨沟、黑水等13县，223个乡（镇），1354个行政村。\n\n[Doc 5](https://www.ndrc.gov.cn/fggz/dqzx/dkzyyhz/201611/t20161104_1083643.html):\n【九寨沟县县情简介】-国家发展和改革委员会 九寨沟县隶属四川省阿坝藏族羌族自治州，位于四川省北部，东部和北部与 ... 全县总面积5290平方公里，下辖3镇、14乡。2015年总人口8.06万人，有 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Sichuan Aba Tibetan and Qiang Autonomous Prefecture is 83,002平方公里 and it oversees 13 cities/counties (Makarong, Jinjiang, Xiajin, Aba, Ruogai, Hongyuan, Rangtang, Wenchuan, Li County, Maoping, Songpan, Jiuzhaigou, Hekou). Now I'll search for the governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川阿坝藏族羌族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川阿坝藏族羌族自治州 2024年州长\nResult: [Doc 1](https://www.abrd.gov.cn/zrdcwh/c104558/202511/af45dbba0fad4f958e6087b7d748a5ba.shtml):\n州十三届人大常委会第三十次会议任免名单 阿坝藏族羌族自治州人民代表大会常务委员会公告 · 2024年部门决算公开（事业） ... 杨莉为阿坝州人民政府副州长；. 益西降措为阿坝州财政局局长；. 刘昕为 ...\n\n[Doc 2](http://sc.people.com.cn/BIG5/n2/2025/0116/c345514-41110829.html):\n四川12名干部任新職涉市（州）人大、政協領導班子 人民網成都1月16日電（袁菡苓）日前，四川12名干部任新職，涉市（州）人大、政協領導班子。如下：>>阿壩州賀鬆、唐遠益當選阿壩州人大常委會副主任1月16日， ...\n\n[Doc 3](https://www.sichuanpeace.gov.cn/zt2025gzhychgx/20250122/2941322.html):\n阿坝藏族羌族自治州副州长、州公安局党委书记、局长李东武 阿坝藏族羌族自治州副州长、州公安局党委书记、局长李东武：为建设更高水平平安四川法治四川贡献阿坝公安力量.\n\n[Doc 4](https://www.abazhou.gov.cn/abazhou/js131001/common_list.shtml):\n州委编办_阿坝藏族羌族自治州人民政府 中共阿坝州委机构编制委员会办公室2024年决算公开（单位）. 2025-09-19 · 阿坝州机构编制实名制管理中心2024年决算公开. 2025-09-19 · 中共阿坝州委机构编制委员会办公室2023 ...\n\n[Doc 5](http://www.abrd.gov.cn/zrdcwh/c104555/common_list.shtml):\n领导讲话_阿坝藏族羌族自治州人民代表大会常务委员会 阿坝藏族羌族自治州人民代表大会常务委员会公告 · 2024年部门决算公开（事业） · 2024年部门决算公开（行政） · 主任之窗. 阿坝州人大常委会主任: 李为国 · 会议专题 · 人民 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I couldn't find specific information about the governor of Sichuan Aba Tibetan and Qiang Autonomous Prefecture for 2024. I'll note that the current governor is not available for that year. Now I'll continue searching for the remaining 26 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ...\n\n[Doc 5](https://www.mofcom.gov.cn/dl/gbdqzn/upload/eluosi.pdf):\n俄罗斯 俄罗斯联邦由85个联邦主体组成，其中包括22个共和国、9个边疆区、46个州、3个联邦直. 辖市、1个自治州和4个民族自治区。2022年10月4日，俄罗斯总统普京签署批准接纳顿涅 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to continue my search for the remaining 26 autonomous states to gather the required information. I'll focus on each one individually and find their establishment dates, total areas, subordinate regions, and governor information for 2024.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川凉山彝族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川凉山彝族自治州 设立时间\nResult: [Doc 1](http://sc.people.com.cn/n2/2022/1025/c345509-40169003.html):\n四川省凉山彝族自治州成立70年实现两次历史性跨越 1950年凉山解放后，在党中央、国务院的坚强领导和深切关怀下，1952年10月凉山彝族自治区正式成立。\n\n[Doc 2](http://scdfz.sc.gov.cn/scyx/scfw/content_153036):\n【美丽四川】凉山不凉红红火火‖袁征 这天上午,凉山彝族自治州成立70周年庆祝大会在西昌举行。凉山各族儿女穿着节日盛装、载歌载舞,同来自全国的尊贵客人一起,共庆凉山彝族自治州成立70周年。\n\n[Doc 3](https://www.scspc.gov.cn/hyzt/cwhhy/1334/202203/t20220331_41271.html):\n传承变化顺应护航民族婚姻 - 四川人大网 1950年凉山解放后，1952年成立凉山彝族自治州，1956年实行民主改革，从奴隶社会“一步跨千年”直接进入社会主义社会。至解放后的1956年实行民主改革前夕，凉山仍 ...\n\n[Doc 4](https://zh.wikipedia.org/wiki/%E5%87%89%E5%B1%B1%E5%BD%9D%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n涼山彝族自治州- 維基百科，自由的百科全書 1955年涼山自治區劃歸四川省，改稱自治州；西昌專區越嶲縣劃歸涼山彝族自治州。 1956年1月原樂山專區的雷波縣劃入，4月成立瓦崗縣和洪溪縣。\n\n[Doc 5](http://m.yizuren.com/social/shgc/49247.html):\n凉山彝族自治州成立记_彝族人网（彝人网）- 彝族文化网络博物馆 凉山是我国最大的彝族聚居区，新中国成立前还处在奴隶社会阶段，历史上没有建立过统一的地方政权。 · 凉山彝族自治州在1955年4月前，称为凉山彝族自治区，属原 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Sichuan Liangshan Yi Autonomous Prefecture is 1955年4月。Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川凉山彝族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川凉山彝族自治州 总面积 下辖地区\nResult: [Doc 1](https://zh.wikipedia.org/wiki/%E5%87%89%E5%B1%B1%E5%BD%9D%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n涼山彝族自治州- 維基百科，自由的百科全書 ... 四川省下轄的自治州，位於四川省西南部。州境北鄰甘孜州、雅安市、樂山市，東接宜賓市、雲南省昭通市，西南界攀枝花市，西連雲南省麗江市、迪慶州。全州總面積60,261 ...\n\n[Doc 2](https://www.scsqw.cn/scdqs/sxdq/lsz/content_29602):\n【行政区划】_凉山州_市县地情 截至2018年6月，凉山彝族自治州共辖17个县级行政区，包括1个县级市、15个县、1个自治县，分别是西昌市、盐源县、德昌县、会理县、会东县、宁南县、普格县、布拖县、金阳 ...\n\n[Doc 3](http://tool.huiruisoft.com/district/513400.html):\n中华人民共和国行政区划代码-凉山彝族自治州 凉山全州总面积6.04万平方公里，下辖2个县级市，14个县，1个自治县。截至2021年底，凉山彝族自治州常住人口487.4万人。 ... 2020年9月22日，荣获2019年度四川省粮食生产“丰收杯”。\n\n[Doc 4](https://baike.baidu.com/item/%E5%87%89%E5%B1%B1%E5%BD%9D%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/2721144):\n凉山彝族自治州 凉山州. 行政区划代码. 513400. 行政区类别. 自治州. 所属地区. 四川省. 地理位置. 四川省西南部. 面积. 约60400 km 2. 下辖地区. 2个县级市、15个县. 政府驻地. 西昌市三 ...\n\n[Doc 5](http://m.yizuren.com/tour/yqgl/26600.html):\n凉山历史 凉山彝族自治州位于四川省的西南部，面积6万平方公里，总人口3745万，其中：彝族158万人， ... 凉山州是全国最大的彝族聚居区，辖西昌、木里、盐源、德昌、会 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Sichuan Liangshan Yi Autonomous Prefecture is 60,261平方公里 and it oversees 2 cities (Xichang, Yunnan) and 15 counties (Yan' an, Dechang, Hui' li, Hui' dong, Ningnan, Pughe, Butuo, Jinyang, Xichang, Muli, ...). Now I'll search for the governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川凉山彝族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川凉山彝族自治州 2024年州长\nResult: [Doc 1](https://liangshan.scol.com.cn/sdxw/202501/82878077.html):\n凉山两会好声音｜ 2024年凉山发生了哪些变化，州长原声告诉你 1月8日，凉山彝族自治州第十二届人民代表大会第四次会议在西昌开幕，凉山州人民政府州长阿石拉比代表州人民政府作工作报告。\n\n[Doc 2](https://www.thecover.cn/news/ULsfSwQEUv6H90qSdq8Jkw==):\n张文旺当选凉山州人民政府州长 - 封面新闻 川观新闻记者 李天锐何勤华. 8月12日，凉山彝族自治州第十二届人民代表大会第五次会议第二次全体会议举行。会议选举张文旺为凉山州人民政府州长。\n\n[Doc 3](https://finance.sina.cn/2025-10-30/detail-infvsuti9378120.d.html?vt=4&wm=2824_0024?q$q&cid=76729&node_id=76729):\n王岳、高晶晶任凉山州人民政府副州长 - 新浪财经 根据凉山彝族自治州人民政府州长张文旺的提名，决定任命：. 王岳为凉山彝族自治州人民政府副州长；. 高晶晶为凉山彝族自治州人民政府副州长。\n\n[Doc 4](https://www.toutiao.com/w/1840219975957504/):\n【张文旺当选凉山州人民政府州长】8月12日，凉山彝族自治州第十二 ... 【张文旺当选凉山州人民政府州长】 8月12日，凉山彝族自治州第十二届人民代表大会第五次会议第二次全体会议举行。会议选举张文旺为凉山州人民政府州长。 四川日报全媒体 ...\n\n[Doc 5](https://www.sohu.com/a/757401005_121106884):\n全文发布！2024年凉山州政府工作报告 - 搜狐 政府工作报告. 2024年2月1日在凉山彝族自治州第十二届人民代表大会第三次会议上. 凉山彝族自治州人民政府州长阿石拉比. 各位代表：."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the 2024 governor of Sichuan Liangshan Yi Autonomous Prefecture is 张文旺. Now I'll continue searching for the remaining 25 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to continue my search for the remaining 25 autonomous states to gather the required information. I'll focus on each one individually and find their establishment dates, total areas, subordinate regions, and governor information for 2024.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川甘孜藏族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川甘孜藏族自治州 设立时间\nResult: [Doc 1](http://www.xinhuanet.com/politics/2020-10/17/c_1126622927.htm):\n命运的转折——写在四川甘孜藏族自治州建州70年之际 - 新华网 1950年11月24日，在解放军进军西藏的征途中，新中国第一个专区级少数民族自治州——四川甘孜藏族自治州成立。 建州后，被称为“娃子”的农奴们通过民主改革获得 ...\n\n[Doc 2](https://www.ganzitv.com/cms/a/38652563/content):\n1963年7月26日至8月10日甘孜州第一届人民代表大会在康定召开。 1966年5月“文化大革命”运动开始后，甘孜州政权组织遭受严重冲击，机构瘫痪，人民代表大会制度被废弛。1968年10月11日经四川省革委批准成立甘孜藏族自治州革命 ...\n\n[Doc 3](http://www.scio.gov.cn/xwfb/dfxwfb/gssfbh/sc_13848/202207/t20220715_226593.html):\n四川举行甘孜藏族自治州成立70周年新闻发布会 大家都知道，甘孜州是新中国成立以后建立的第一个专区级的少数民族自治州，在我们四川省21个市（州）当中我们幅员面积是最大的，达到了15.37万平方公里。我们下 ...\n\n[Doc 4](http://www.tibetology.ac.cn/2020-07/20/content_41698556.htm):\n甘孜藏族自治州建州初期，那些值得收藏的珍贵回忆 70年前，新中国第一州成立，康巴大地从此换了人间。 70年后，我们抚今追昔，甘孜70年的历史画卷上，时时闪烁着璀璨的雪域荣光。 70年来，甘孜藏区在党中央和四川 ...\n\n[Doc 5](http://politics.people.com.cn/BIG5/n1/2020/0918/c1001-31865850.html):\n四川甘孜藏族自治州慶祝成立70周年--時政--人民網 甘孜州地處青藏高原東南緣，1950年11月24日成立，是我國第一個專區級少數民族自治州。經過多年發展，甘孜州經濟總量從1950年的3400萬元增長到2019年的388.46 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Sichuan Ganzi Tibetan Autonomous Prefecture is 1950年11月24日. Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川甘孜藏族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川甘孜藏族自治州 总面积 下辖地区\nResult: [Doc 1](https://baike.baidu.com/item/%E7%94%98%E5%AD%9C%E8%97%8F%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E/591673):\n甘孜藏族自治州_百度百科 截至2024年，全州面积14.97万平方千米，下辖18个县（市），常住人口110.74万，其中藏族人口占78.97%。 州内汉语属西南官话，藏族主要使用康方言。 甘孜藏族自治州（简称甘孜州）位 ...\n\n[Doc 2](https://www.scsqw.cn/scdqs/sxdq/gzz/content_9415):\n甘孜州地情 - 四川省情网 甘孜州辖康定市、泸定县、丹巴县、九龙县、雅江县、道孚县、炉霍县、甘孜县、新龙县、德格县、白玉县、石渠县、色达县、理塘县、巴塘县、乡城县、稻城县、得荣县18个县（市） ...\n\n[Doc 3](https://tjgb.hongheiku.com/djs/42571.html):\n(四川省)甘孜藏族自治州2022年国民经济和社会发展统计公报 下辖地区, 巴塘县 · 白玉县 · 丹巴县 · 道孚县 · 稻城县 · 得荣县 · 德格县 · 甘孜县 ... 经省统计局初步核算，2022年全州地区生产总值（GDP）达到471.94亿元 ...\n\n[Doc 4](https://credit.sc.gov.cn/xysc/c100397/202108/7073b7755e4948b8924e49318a601d68.shtml):\n甘孜藏族自治州 - 信用中国（四川） 甘孜藏族自治州隶属于四川省，简称甘孜州，位于四川省西部，康藏高原东南，总面积15.3万平方千米，是一个以藏族为主体民族的地级行政区；全州辖康定1个县级 ...\n\n[Doc 5](https://www.sohu.com/a/423281640_120153926):\n原创四川甘孜下辖的18个行政区域一览 - 搜狐 新龙县隶属四川省甘孜藏族自治州，位于四川甘孜州中部，面积9182.74平方公里。 ... 色达县是四川省甘孜藏族自治州下辖的一个县，位于甘孜州东北部 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Sichuan Ganzi Tibetan Autonomous Prefecture is 153,700平方公里 and it oversees 18 cities/counties (Kangding, Luding, Danba, Jiulong, Yangjiang, Daofu, Luhuo, Ganzi, Xinlong, Dege, Baiyu, Shiqu, Sedada, Liling, Batang, Xiuyan, Ruoergai, Derong). Now I'll search for the governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 四川甘孜藏族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 四川甘孜藏族自治州 2024年州长\nResult: [Doc 1](http://www.gzz.gov.cn/ffg):\n冯发贵- 甘孜藏族自治州人民政府网站 冯发贵，男，藏族，1971年7月生，博士研究生，中共党员，现任四川省甘孜州委副书记，州政府州长、党组书记。 ... 2024-05-10. 十三届州人民政府召开第44次常务会议. 2024-03-04.\n\n[Doc 2](https://www.163.com/dy/article/JFRLGVIB05563WHO.html):\n四川省甘孜藏族自治州人民政府现任领导简介 - 网易 四川省甘孜藏族自治州人民政府现任领导有：. 州长：冯发贵. 冯发贵，男，藏族，1971年7月生，四川金川人，1993年7月参加工作，1991年12月加入中国共产党，西南 ...\n\n[Doc 3](http://scdfz.sc.gov.cn/gzdt/zyhy/content_82379):\n冯发贵当选甘孜藏族自治州人民政府州长 - 四川省情网 1月9日下午，甘孜藏族自治州第十三届人民代表大会第一次会议举行第三次全体会议。大会选举冯发贵为甘孜藏族自治州人民政府州长，邓立军、李强、颜磊、冯俊锋 ...\n\n[Doc 4](https://www.jfdaily.com/wx/detail.do?id=1041610):\n多地党委主要领导调整！前任升副部后，他调任州委书记 川观新闻12月25日消息，四川省委决定：赵波同志任中共甘孜州委委员、常委、书记。四川省委决定：卢军同志任中共乐山市委委员、常委、书记；赵波同志不再担任 ...\n\n[Doc 5](http://sc.people.com.cn/n2/2024/1101/c345514-41027859.html):\n彭永军任甘孜州政府副州长 - 四川频道- 人民网 人民网成都11月1日电（李强强）10月31日，甘孜州第十三届人民代表大会常务委员会第十九次会议通过，决定任命彭永军为甘孜州人民政府副州长；决定免去黎昌盛 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the 2024 governor of Sichuan Ganzi Tibetan Autonomous Prefecture is 冯发贵. Now I'll continue searching for the remaining 24 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to continue my search for the remaining 24 autonomous states to gather the required information. I'll focus on each one individually and find their establishment dates, total areas, subordinate regions, and governor information for 2024.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 贵州黔东南苗族侗族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 贵州黔东南苗族侗族自治州 设立时间\nResult: [Doc 1](http://www.qdnzx.gov.cn/wap/newspage/index/id/1/code/zqjj):\n州情简介- 黔东南州政协公众信息网 黔东南苗族侗族自治州成立于1956年7月23日，州府所在地凯里市。全州辖凯里市和麻 ... 黔东南是贵州东进长三角、南下珠三角的必经之地，是粤港澳大湾区进入贵州的 ...\n\n[Doc 2](https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/7/7621.shtml):\n侗族- 民族宗教 1956年7日23日建立了贵州黔东南苗族侗族自治州。同年12月5日建立了湖南新晃侗族自治县。1984年11月7日建立了贵州省玉屏侗族自治县。民族区域自治政策 ...\n\n[Doc 3](http://www.hx5q.cn/m/info/20150929370588.whtml):\n1956年7月23日贵州黔东南苗族侗族自治州成立 - 古文诗词鉴赏 1956年7月23日，贵州黔东南苗族侗族自治州成立。 黔东南苗族侗族自治州位于贵州省东南部，聚居着苗族、侗族、汉族等47个民族440多万人，其中少数民族人口 ...\n\n[Doc 4](https://zh-classical.wikipedia.org/wiki/%E9%BB%94%E6%9D%B1%E5%8D%97%E8%8B%97%E6%97%8F%E4%BE%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n黔東南苗族侗族自治州 - 維基大典 黔東南苗族侗族自治州，處貴州東南之一隅。北鄰遵義市，西壤黔南布依族苗族自治州，東、南接湖南、廣西。 治於凱里市。口三百四十八萬。苗人四成有二，侗人二成有九，漢人二 ...\n\n[Doc 5](https://www.mct.gov.cn/whzx/zxgz/jqhdgl/201607/t20160721_800852.htm):\n同意备案贵州省黔东南苗族侗族自治州成立60周年庆祝活动 全国清理和规范庆典研讨会论坛活动工作领导小组2016年7月21日印发《关于同意贵州省黔东南苗族侗族自治州成立60周年庆祝活动的通知》（国清组 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the establishment date for Guizhou Qian Dong Nan Miao and Dong Autonomous Prefecture is 1956年7月23日. Now I'll search for the total area, subordinate regions, and governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 贵州黔东南苗族侗族自治州 总面积 下辖地区</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 贵州黔东南苗族侗族自治州 总面积 下辖地区\nResult: [Doc 1](https://zh-classical.wikipedia.org/wiki/%E9%BB%94%E6%9D%B1%E5%8D%97%E8%8B%97%E6%97%8F%E4%BE%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n黔東南苗族侗族自治州 - 維基大典 黔東南苗族侗族自治州，處貴州東南之一隅。北鄰遵義市，西壤黔南布依族苗族自治州，東、南接湖南、廣西。 治於凱里市。口三百四十八萬。苗人四成有二，侗人二成有九，漢人二 ...\n\n[Doc 2](https://zh.wikipedia.org/zh-hans/%E9%BB%94%E4%B8%9C%E5%8D%97%E8%8B%97%E6%97%8F%E4%BE%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n黔东南苗族侗族自治州 - 维基百科 清水江、都柳江、重安江流经境内。 全州总面积30,282平方公里，占全省总面积的17.22%，2018年常住人口353.83万，其中苗族和侗族人口分别占43.2%和30.4%，自治州首府驻凯里市。\n\n[Doc 3](http://gz.people.com.cn/GB/195053/376797/index4.html):\n2016黔东南苗族侗族自治州建州60周年 - 贵州频道- 人民网 黔东南苗族侗族自治州成立于1956年7月23日，总面积3.03万平方公里，辖1个县级市15个县，有17个民族乡。全州有苗、侗、汉等33个民族，2014年户籍人口466.2万人，少数民族人口 ...\n\n[Doc 4](http://www.minzunet.cn/cncr/mzdq2/gk/624358/index.html):\n贵州黔东南苗族侗族自治州 - 中国民族文化资源网 自治州成立于1956年7月23日，州府所在地设于凯里市。全州辖凯里市和麻江、丹寨、黄平、施秉、镇远、岑巩、三穗、天柱、锦屏、黎平、从江、榕江、雷山、台江 ...\n\n[Doc 5](https://cnzsr.com/e/wap/show.php?classid=282&id=690&style=0&bclassid=0&cid=4&cpage=521):\n贵州省黔东南苗族侗族自治州简介 - 助力招商引资工作 黔东南苗族侗族自治州成立于1956年7月23日，州府所在地凯里市。全州辖凯里市和麻江、丹寨、黄平、施秉、镇远、岑巩、三穗、天柱、锦屏、黎平、从江、榕江、雷山、台江、剑河 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I found that the total area of Guizhou Qian Dong Nan Miao and Dong Autonomous Prefecture is 30,282平方公里 and it oversees 16 cities/counties (Kaili, Ma'anshan, Danzhai, Huangping, Shengbi, Zhenyuan, Cengong, Sanshui, Tianzhu, Jinping, Liping, Congjiang, Rongjiang, Leshan, Taijiang, Jianhe). Now I'll search for the governor information.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 贵州黔东南苗族侗族自治州 2024年州长</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 贵州黔东南苗族侗族自治州 2024年州长\nResult: [Doc 1](https://www.gzrd.gov.cn/xwzx/sxrd/202402/t20240204_83674788.html):\n黔东南州第十五届人民代表大会第四次会议选举两名常委会副主任 第一号）. 黔东南苗族侗族自治州第十五届人民代表大会第四次会议于2024年2月2日选举：. 陈正锋（苗族）、侯美嘉（苗族）为黔东南苗族侗族自治州第十五届人民 ...\n\n[Doc 2](http://tjj.qdn.gov.cn/zwgk/xxgkml/czxx/bmczjsjsgjf/202509/t20250928_88660817.html):\n2024年黔东南苗族侗族自治州统计局本级部门决算公开说明 2024年黔东南苗族侗族自治州统计局本级部门决算公开说明. 来源： 黔东南州统计局 发布时间： 2025-09-26 14:30 阅读次数：7次. 黔东南苗族侗族自治州统计 ...\n\n[Doc 3](http://10.443.https.www.qdn.gov.cn---883bffa459fc32e20267653bd0c3dfd1.www.qdn.gov.cn.365cyd.com.cn:11080/):\n黔东南苗族侗族自治州人民政府门户网 黔东南苗族侗族自治州成立于1956年7月23日，州府所在地凯里市。全州辖凯里市和麻江、丹寨、黄平、施秉、镇远、岑巩、三穗、天柱、锦屏、黎平、从江、榕江、雷山、台江、 ...\n\n[Doc 4](https://tjgb.hongheiku.com/djs/59456.html):\n(贵州省)黔东南州2024年国民经济和社会发展统计公报 黔东南苗族侗族自治州2024年国民经济和社会发展统计公报黔东南州统计局2025年4月9日2024年，全州上下深入贯彻党的二十大和二十届二中、三中全会精神， ...\n\n[Doc 5](https://zh.wikipedia.org/wiki/%E9%92%9F%E9%98%B3):\n鍾陽- 維基百科，自由的百科全書 鍾陽（1972年1月—），女，布依族，江西省吉安市人，中華人民共和國政治人物。第十四屆全國人大代表。 鍾陽. 黔南布依族苗族自治州人民政府州長. 任期 2021年3月—2023年4月."
+    },
+    {
+      "role": "assistant",
+      "content": "I couldn't find specific information about the governor of Guizhou Qian Dong Nan Miao and Dong Autonomous Prefecture for 2024. I'll note that the current governor is not available for that year. Now I'll continue searching for the remaining 23 autonomous states.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 30个自治州 名称 设立时间 总面积 下辖地区 2024年州长 姓名 所属民族\nResult: [Doc 1](https://huggingface.co/datasets/ByteDance-Seed/WideSearch/blame/53a968c2d32ae241a29349ea36d9b9e56299000f/widesaerch_gold/ws_046.csv):\nwidesaerch_gold/ws_046.csv · ByteDance-Seed/WideSearch at ... 30 31. ﻿自治州名称,设立时间,总面积,下辖地区,2024年州长姓名,州长所属民族,,,,,,,,,,,,,, 吉林延边朝鲜族自治州,1952年9月3日,\"43,300平方公里\",延吉、图们、敦化 ...\n\n[Doc 2](https://zh.wikipedia.org/wiki/%E8%87%AA%E6%B2%BB%E5%B7%9E):\n自治州- 維基百科，自由的百科全書 自治州，是中華人民共和國行政區劃單位，為民族自治地方，地位介於省級與縣級之間，屬於地級行政區，為第二級地方行政單位。按照《中華人民共和國憲法》的規定，民族自治地方 ...\n\n[Doc 3](https://www.neac.gov.cn/seac/ztzl/mzzzdf/index.shtml):\n民族自治地方 自治州 · 吉林延边朝鲜族自治州 · 湖北恩施土家族苗族自治州 · 湖南湘西土家族苗族自治州 · 四川阿坝藏族羌族自治州 · 四川凉山彝族自治州 · 四川甘孜藏族自治州 · 贵州黔东南苗族 ...\n\n[Doc 4](https://hxl1688.com/unc/202601-16293.html):\n三江瑶族服装/三江瑶族服装介绍 - 一哈号 ... 民族聚居地区，包含了全部56个民族类别。其中，壮、汉、瑶、苗、侗、仫佬、毛南、回、京、彝、水、仡佬这12个民族为世居民族。此外，还有44个其他民族成分。\n\n[Doc 5](https://zh.wikipedia.org/zh-hans/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%B0%91%E6%97%8F%E8%87%AA%E6%B2%BB%E5%9C%B0%E6%96%B9%E5%88%97%E8%A1%A8):\n中华人民共和国民族自治地方列表 - 维基百科 自治州 ; 甘肃省 · 甘南藏族自治州, Gānnán Zàngzú Zìzhìzhōu ; 贵州省 · 黔东南苗族侗族自治州, Qiándōngnán Miáozú Dòngzú Zìzhìzhōu ; 贵州省 · 黔南布依族苗族自治州 ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I need to continue my search for the remaining 23 autonomous states to gather the required information. I'll focus on each one individually and find their establishment dates, total areas, subordinate regions, and governor information for 2024.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 贵州黔南布依族苗族自治州 设立时间</search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 贵州黔南布依族苗族自治州 设立时间\nResult: [Doc 1](https://baike.baidu.com/item/%E9%BB%94%E5%8D%97%E5%B8%83%E4%BE%9D%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E%E6%A6%82%E5%86%B5/5898575):\n黔南布依族苗族自治州概况_百度百科 黔南布依族苗族自治州成立于1956年8月8日，位于贵州省中南部，总面积2.62万平方公里，辖12个县（市），2024年常住人口350.12万人。全书共13章，系统梳理黔南州地理环境 ...\n\n[Doc 2](http://www.news.cn/politics/ksh/zhibo/202012/3733101_m.html?type=mobile):\n【直播】中共黔南州委新闻发布会 - 新华网 【简介】黔南布依族苗族自治州成立于1956年，位于贵州省中南部，是国家“一带一路”和大西南地区连接华南、连接珠三角的重要节点，既是贵州的南大门，又是 ...\n\n[Doc 3](http://www.minwang.com.cn/mzwhzyk/674771/682200/682201/721815/625201/index.html):\n贵州黔西南布依族苗族自治州 - 中国民族文化资源库 1956年4月13日设立黔南布依族苗族自治州，安龙、册亨、望谟、贞丰等4县划归黔南州。1956年7月18日，撤销兴义专署，所辖兴义、兴仁、盘县、普安、关岭、晴隆等6个县划归 ...\n\n[Doc 4](https://zh.wikipedia.org/zh-hans/%E9%BB%94%E5%8D%97%E5%B8%83%E4%BE%9D%E6%97%8F%E8%8B%97%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E):\n黔南布依族苗族自治州 - 维基百科 建置沿革 黔南布依族苗族自治州在1956年8月8日成立，州府驻都匀县，辖原都匀专区都匀、独山、荔波、平塘（原平舟）、三都5县，原兴义专区望谟、册亨、安龙、贞丰4县，原贵定专区 ...\n\n[Doc 5](https://m.itouchtv.cn/article/882e6253e13732898a3bdf07af323c40):\n热烈庆祝黔南布依族苗族自治州成立69周年 1956年8月8日，黔南布依族苗族自治州正式成立。69年来，在党中央、国务院的亲切关怀下，在党的民族政策正确指引下，在省委、省政府的坚强领导下，历届州委、州政府团结带领 ..."
+    }
+  ]
+}

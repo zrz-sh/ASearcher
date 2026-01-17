@@ -1,0 +1,550 @@
+exist_flag_gt,exist_flag_response,电影名称,电影名称_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,梁朝伟通过该电影所获奖项_llm_judge,梁朝伟通过该电影所获奖项_llm_judge_eval_msg,梁朝伟通过该电影所获奖项_query,梁朝伟通过该电影所获奖项_response,电影名称_exact_match,电影名称_exact_match_eval_msg
+,,花样年华,In the Mood for Love,1.0,"First, let's analyze each pair:
+
+- idx_0: response ""2000"" vs target ""2000年""  
+  The response ""2000"" and the target ""2000年"" express the same year, just the ""年"" (year) character is missing. Meaning is identical. According to the criterion, semantic equivalence or pointing to the same entity is sufficient. Score: 1
+
+- idx_1: response ""2002"" vs target ""2002年""  
+  Same as above, only missing ""年"" character but semantic meaning is the same. Score: 1
+
+- idx_2: response ""2004"" vs target ""2004年""  
+  Same reasoning as above. Score: 1
+
+- idx_3: response ""2013"" vs target ""2013年""  
+  Same reasoning. Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",2000年,2000,1.0,"分析过程：
+
+题目中标准答案和回应的对应项如下：
+
+- idx_0：response = ""wongkar-wai""，target = ""王家卫""  
+  分析：response为拼音英文形式的“王家卫”，语义指向一致。符合“和参考答案语义相同大致、或者指向的实体一致即可”的标准。  
+  评分：1
+
+- idx_1：response = ""andrewlau,alanmak""，target = ""刘伟强、麦兆辉""  
+  分析：response用英文名andrewlau和alanmak对应""刘伟强""和""麦兆辉""，实体指向一致。符合标准。  
+  评分：1
+
+- idx_2：response = ""wongkar-wai""，target = ""王家卫""  
+  和idx_0相同，符合标准。  
+  评分：1
+
+- idx_3：response = ""wongkar-wai""，target = ""王家卫""  
+  同上，符合标准。  
+  评分：1
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```
+",王家卫,wongkar-wai,1.0,"Let's analyze each idx based on the criterion:
+
+Criterion summary:  
+The response can have different wording or format, as long as the meaning is generally the same or the entities pointed to are consistent.
+
+---
+
+**idx_0**  
+- Target:  
+  - 第53届戛纳国际电影节最佳男演员 (Best Actor at the 53rd Cannes Film Festival)  
+  - 第20届香港电影金像奖最佳男主角 (Best Actor in a Leading Role at the 20th Hong Kong Film Awards)  
+  - 第1届华语电影传媒大奖最佳男主角 (Best Actor at the 1st Chinese-language Film Media Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response only corresponds to the second item in the target: Hong Kong Film Awards Best Actor in a Leading Role. It ignores the other two awards.  
+- The criterion says roughly matched is OK. The response identifies one correct award from the target. Having partial correctness is allowed if the meaning matches. But the response only mentions one award, missing others.  
+- However, the grading is binary: 0 or 1, and the criterion allows approximate equivalence (not word-by-word). Here, the response is consistent with part of the target but not fully. The question is: is partially correct enough for 1, or does it need to cover all? The criterion says ""semantically similar or pointing to the same entities,"" so partial coverage of entities can still be considered correct if the essential meaning is preserved.
+
+Here, the response mentions ""bestactorinaleadingrole(hongkongfilmawards)"" which corresponds exactly to one of the target awards. The response does not mention the Cannes award or the Chinese-language Film Media Award. But the response is not contradictory or irrelevant, and the entity is among those in the target.
+
+Given that partial mention is consistent and no contradictory info, and since the response points to one of the awards exactly, we can consider it correct.
+
+Score for idx_0: 1
+
+---
+
+**idx_1**  
+- Target:  
+  - 第22届香港电影金像奖最佳男主角 (Best Actor at the 22nd Hong Kong Film Awards)  
+  - 第40届台湾电影金马奖最佳男主角奖 (Best Actor at the 40th Golden Horse Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response corresponds to the Hong Kong Film Awards Best Actor, which matches the first award in the target.  
+- The response does not mention the Golden Horse Award, but again partial overlap to the target is present, so from the criterion, this is acceptable.  
+- Thus, the response is semantically consistent with the target.
+
+Score for idx_1: 1
+
+---
+
+**idx_2**  
+- Target:  
+  - 第24届香港电影金像奖最佳男主角 (Best Actor at the 24th Hong Kong Film Awards)  
+
+- Response: ""-"" (dash) means no answer or no content.
+
+- The response gives no information, but there is a target answer provided.
+
+- The criterion says semantic match is required. No answer is not matching.
+
+Score for idx_2: 0
+
+---
+
+**idx_3**  
+- Target:  
+  - 香港导演协会奖最佳男主角 (Best Actor at the Hong Kong Directors' Association Awards)  
+
+- Response: ""-"" (no answer)
+
+- Same reasoning as idx_2: No response means no match.
+
+Score for idx_3: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```","第53届戛纳国际电影节最佳男演员
+第20届香港电影金像奖最佳男主角
+第1届华语电影传媒大奖最佳男主角",bestactorinaleadingrole(hongkongfilmawards),1.0,key_match
+,,无间道,Infernal Affairs,1.0,"First, let's analyze each pair:
+
+- idx_0: response ""2000"" vs target ""2000年""  
+  The response ""2000"" and the target ""2000年"" express the same year, just the ""年"" (year) character is missing. Meaning is identical. According to the criterion, semantic equivalence or pointing to the same entity is sufficient. Score: 1
+
+- idx_1: response ""2002"" vs target ""2002年""  
+  Same as above, only missing ""年"" character but semantic meaning is the same. Score: 1
+
+- idx_2: response ""2004"" vs target ""2004年""  
+  Same reasoning as above. Score: 1
+
+- idx_3: response ""2013"" vs target ""2013年""  
+  Same reasoning. Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",2002年,2002,1.0,"分析过程：
+
+题目中标准答案和回应的对应项如下：
+
+- idx_0：response = ""wongkar-wai""，target = ""王家卫""  
+  分析：response为拼音英文形式的“王家卫”，语义指向一致。符合“和参考答案语义相同大致、或者指向的实体一致即可”的标准。  
+  评分：1
+
+- idx_1：response = ""andrewlau,alanmak""，target = ""刘伟强、麦兆辉""  
+  分析：response用英文名andrewlau和alanmak对应""刘伟强""和""麦兆辉""，实体指向一致。符合标准。  
+  评分：1
+
+- idx_2：response = ""wongkar-wai""，target = ""王家卫""  
+  和idx_0相同，符合标准。  
+  评分：1
+
+- idx_3：response = ""wongkar-wai""，target = ""王家卫""  
+  同上，符合标准。  
+  评分：1
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```
+",刘伟强、麦兆辉,"andrewlau,alanmak",1.0,"Let's analyze each idx based on the criterion:
+
+Criterion summary:  
+The response can have different wording or format, as long as the meaning is generally the same or the entities pointed to are consistent.
+
+---
+
+**idx_0**  
+- Target:  
+  - 第53届戛纳国际电影节最佳男演员 (Best Actor at the 53rd Cannes Film Festival)  
+  - 第20届香港电影金像奖最佳男主角 (Best Actor in a Leading Role at the 20th Hong Kong Film Awards)  
+  - 第1届华语电影传媒大奖最佳男主角 (Best Actor at the 1st Chinese-language Film Media Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response only corresponds to the second item in the target: Hong Kong Film Awards Best Actor in a Leading Role. It ignores the other two awards.  
+- The criterion says roughly matched is OK. The response identifies one correct award from the target. Having partial correctness is allowed if the meaning matches. But the response only mentions one award, missing others.  
+- However, the grading is binary: 0 or 1, and the criterion allows approximate equivalence (not word-by-word). Here, the response is consistent with part of the target but not fully. The question is: is partially correct enough for 1, or does it need to cover all? The criterion says ""semantically similar or pointing to the same entities,"" so partial coverage of entities can still be considered correct if the essential meaning is preserved.
+
+Here, the response mentions ""bestactorinaleadingrole(hongkongfilmawards)"" which corresponds exactly to one of the target awards. The response does not mention the Cannes award or the Chinese-language Film Media Award. But the response is not contradictory or irrelevant, and the entity is among those in the target.
+
+Given that partial mention is consistent and no contradictory info, and since the response points to one of the awards exactly, we can consider it correct.
+
+Score for idx_0: 1
+
+---
+
+**idx_1**  
+- Target:  
+  - 第22届香港电影金像奖最佳男主角 (Best Actor at the 22nd Hong Kong Film Awards)  
+  - 第40届台湾电影金马奖最佳男主角奖 (Best Actor at the 40th Golden Horse Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response corresponds to the Hong Kong Film Awards Best Actor, which matches the first award in the target.  
+- The response does not mention the Golden Horse Award, but again partial overlap to the target is present, so from the criterion, this is acceptable.  
+- Thus, the response is semantically consistent with the target.
+
+Score for idx_1: 1
+
+---
+
+**idx_2**  
+- Target:  
+  - 第24届香港电影金像奖最佳男主角 (Best Actor at the 24th Hong Kong Film Awards)  
+
+- Response: ""-"" (dash) means no answer or no content.
+
+- The response gives no information, but there is a target answer provided.
+
+- The criterion says semantic match is required. No answer is not matching.
+
+Score for idx_2: 0
+
+---
+
+**idx_3**  
+- Target:  
+  - 香港导演协会奖最佳男主角 (Best Actor at the Hong Kong Directors' Association Awards)  
+
+- Response: ""-"" (no answer)
+
+- Same reasoning as idx_2: No response means no match.
+
+Score for idx_3: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```","第22届香港电影金像奖最佳男主角
+第40届台湾电影金马奖最佳男主角奖",bestactorinaleadingrole(hongkongfilmawards),1.0,key_match
+,,2046,2046,1.0,"First, let's analyze each pair:
+
+- idx_0: response ""2000"" vs target ""2000年""  
+  The response ""2000"" and the target ""2000年"" express the same year, just the ""年"" (year) character is missing. Meaning is identical. According to the criterion, semantic equivalence or pointing to the same entity is sufficient. Score: 1
+
+- idx_1: response ""2002"" vs target ""2002年""  
+  Same as above, only missing ""年"" character but semantic meaning is the same. Score: 1
+
+- idx_2: response ""2004"" vs target ""2004年""  
+  Same reasoning as above. Score: 1
+
+- idx_3: response ""2013"" vs target ""2013年""  
+  Same reasoning. Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",2004年,2004,1.0,"分析过程：
+
+题目中标准答案和回应的对应项如下：
+
+- idx_0：response = ""wongkar-wai""，target = ""王家卫""  
+  分析：response为拼音英文形式的“王家卫”，语义指向一致。符合“和参考答案语义相同大致、或者指向的实体一致即可”的标准。  
+  评分：1
+
+- idx_1：response = ""andrewlau,alanmak""，target = ""刘伟强、麦兆辉""  
+  分析：response用英文名andrewlau和alanmak对应""刘伟强""和""麦兆辉""，实体指向一致。符合标准。  
+  评分：1
+
+- idx_2：response = ""wongkar-wai""，target = ""王家卫""  
+  和idx_0相同，符合标准。  
+  评分：1
+
+- idx_3：response = ""wongkar-wai""，target = ""王家卫""  
+  同上，符合标准。  
+  评分：1
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```
+",王家卫,wongkar-wai,0.0,"Let's analyze each idx based on the criterion:
+
+Criterion summary:  
+The response can have different wording or format, as long as the meaning is generally the same or the entities pointed to are consistent.
+
+---
+
+**idx_0**  
+- Target:  
+  - 第53届戛纳国际电影节最佳男演员 (Best Actor at the 53rd Cannes Film Festival)  
+  - 第20届香港电影金像奖最佳男主角 (Best Actor in a Leading Role at the 20th Hong Kong Film Awards)  
+  - 第1届华语电影传媒大奖最佳男主角 (Best Actor at the 1st Chinese-language Film Media Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response only corresponds to the second item in the target: Hong Kong Film Awards Best Actor in a Leading Role. It ignores the other two awards.  
+- The criterion says roughly matched is OK. The response identifies one correct award from the target. Having partial correctness is allowed if the meaning matches. But the response only mentions one award, missing others.  
+- However, the grading is binary: 0 or 1, and the criterion allows approximate equivalence (not word-by-word). Here, the response is consistent with part of the target but not fully. The question is: is partially correct enough for 1, or does it need to cover all? The criterion says ""semantically similar or pointing to the same entities,"" so partial coverage of entities can still be considered correct if the essential meaning is preserved.
+
+Here, the response mentions ""bestactorinaleadingrole(hongkongfilmawards)"" which corresponds exactly to one of the target awards. The response does not mention the Cannes award or the Chinese-language Film Media Award. But the response is not contradictory or irrelevant, and the entity is among those in the target.
+
+Given that partial mention is consistent and no contradictory info, and since the response points to one of the awards exactly, we can consider it correct.
+
+Score for idx_0: 1
+
+---
+
+**idx_1**  
+- Target:  
+  - 第22届香港电影金像奖最佳男主角 (Best Actor at the 22nd Hong Kong Film Awards)  
+  - 第40届台湾电影金马奖最佳男主角奖 (Best Actor at the 40th Golden Horse Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response corresponds to the Hong Kong Film Awards Best Actor, which matches the first award in the target.  
+- The response does not mention the Golden Horse Award, but again partial overlap to the target is present, so from the criterion, this is acceptable.  
+- Thus, the response is semantically consistent with the target.
+
+Score for idx_1: 1
+
+---
+
+**idx_2**  
+- Target:  
+  - 第24届香港电影金像奖最佳男主角 (Best Actor at the 24th Hong Kong Film Awards)  
+
+- Response: ""-"" (dash) means no answer or no content.
+
+- The response gives no information, but there is a target answer provided.
+
+- The criterion says semantic match is required. No answer is not matching.
+
+Score for idx_2: 0
+
+---
+
+**idx_3**  
+- Target:  
+  - 香港导演协会奖最佳男主角 (Best Actor at the Hong Kong Directors' Association Awards)  
+
+- Response: ""-"" (no answer)
+
+- Same reasoning as idx_2: No response means no match.
+
+Score for idx_3: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",第24届香港电影金像奖最佳男主角,-,1.0,key_match
+,,一代宗师,The Grandmaster,1.0,"First, let's analyze each pair:
+
+- idx_0: response ""2000"" vs target ""2000年""  
+  The response ""2000"" and the target ""2000年"" express the same year, just the ""年"" (year) character is missing. Meaning is identical. According to the criterion, semantic equivalence or pointing to the same entity is sufficient. Score: 1
+
+- idx_1: response ""2002"" vs target ""2002年""  
+  Same as above, only missing ""年"" character but semantic meaning is the same. Score: 1
+
+- idx_2: response ""2004"" vs target ""2004年""  
+  Same reasoning as above. Score: 1
+
+- idx_3: response ""2013"" vs target ""2013年""  
+  Same reasoning. Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1
+}
+```
+",2013年,2013,1.0,"分析过程：
+
+题目中标准答案和回应的对应项如下：
+
+- idx_0：response = ""wongkar-wai""，target = ""王家卫""  
+  分析：response为拼音英文形式的“王家卫”，语义指向一致。符合“和参考答案语义相同大致、或者指向的实体一致即可”的标准。  
+  评分：1
+
+- idx_1：response = ""andrewlau,alanmak""，target = ""刘伟强、麦兆辉""  
+  分析：response用英文名andrewlau和alanmak对应""刘伟强""和""麦兆辉""，实体指向一致。符合标准。  
+  评分：1
+
+- idx_2：response = ""wongkar-wai""，target = ""王家卫""  
+  和idx_0相同，符合标准。  
+  评分：1
+
+- idx_3：response = ""wongkar-wai""，target = ""王家卫""  
+  同上，符合标准。  
+  评分：1
+
+最终评分：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1
+}
+```
+",王家卫,wongkar-wai,0.0,"Let's analyze each idx based on the criterion:
+
+Criterion summary:  
+The response can have different wording or format, as long as the meaning is generally the same or the entities pointed to are consistent.
+
+---
+
+**idx_0**  
+- Target:  
+  - 第53届戛纳国际电影节最佳男演员 (Best Actor at the 53rd Cannes Film Festival)  
+  - 第20届香港电影金像奖最佳男主角 (Best Actor in a Leading Role at the 20th Hong Kong Film Awards)  
+  - 第1届华语电影传媒大奖最佳男主角 (Best Actor at the 1st Chinese-language Film Media Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response only corresponds to the second item in the target: Hong Kong Film Awards Best Actor in a Leading Role. It ignores the other two awards.  
+- The criterion says roughly matched is OK. The response identifies one correct award from the target. Having partial correctness is allowed if the meaning matches. But the response only mentions one award, missing others.  
+- However, the grading is binary: 0 or 1, and the criterion allows approximate equivalence (not word-by-word). Here, the response is consistent with part of the target but not fully. The question is: is partially correct enough for 1, or does it need to cover all? The criterion says ""semantically similar or pointing to the same entities,"" so partial coverage of entities can still be considered correct if the essential meaning is preserved.
+
+Here, the response mentions ""bestactorinaleadingrole(hongkongfilmawards)"" which corresponds exactly to one of the target awards. The response does not mention the Cannes award or the Chinese-language Film Media Award. But the response is not contradictory or irrelevant, and the entity is among those in the target.
+
+Given that partial mention is consistent and no contradictory info, and since the response points to one of the awards exactly, we can consider it correct.
+
+Score for idx_0: 1
+
+---
+
+**idx_1**  
+- Target:  
+  - 第22届香港电影金像奖最佳男主角 (Best Actor at the 22nd Hong Kong Film Awards)  
+  - 第40届台湾电影金马奖最佳男主角奖 (Best Actor at the 40th Golden Horse Awards)  
+
+- Response: ""bestactorinaleadingrole(hongkongfilmawards)""  
+- The response corresponds to the Hong Kong Film Awards Best Actor, which matches the first award in the target.  
+- The response does not mention the Golden Horse Award, but again partial overlap to the target is present, so from the criterion, this is acceptable.  
+- Thus, the response is semantically consistent with the target.
+
+Score for idx_1: 1
+
+---
+
+**idx_2**  
+- Target:  
+  - 第24届香港电影金像奖最佳男主角 (Best Actor at the 24th Hong Kong Film Awards)  
+
+- Response: ""-"" (dash) means no answer or no content.
+
+- The response gives no information, but there is a target answer provided.
+
+- The criterion says semantic match is required. No answer is not matching.
+
+Score for idx_2: 0
+
+---
+
+**idx_3**  
+- Target:  
+  - 香港导演协会奖最佳男主角 (Best Actor at the Hong Kong Directors' Association Awards)  
+
+- Response: ""-"" (no answer)
+
+- Same reasoning as idx_2: No response means no match.
+
+Score for idx_3: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0
+}
+```",香港导演协会奖最佳男主角,-,1.0,key_match
+1.0,,东京攻略,,,,2000年,,,,马楚成,,,,-,,,
+1.0,,伤城,,,,2006年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,侠骨仁心,,,,2000年,,,,邓特希,,,,-,,,
+1.0,,同居蜜友,,,,2001年,,,,马伟豪,,,,-,,,
+1.0,,听风者,,,,2012年,,,,麦兆辉、庄文强,,,,-,,,
+1.0,,嘿玛嘿玛,,,,2016年,,,,宗萨钦哲仁波切,,,,-,,,
+1.0,,地下铁,,,,2003年,,,,马伟豪,,,,第4届华语电影传媒大奖港台最佳男演员银奖,,,
+1.0,,大魔术师,,,,2011年,,,,尔冬升,,,,-,,,
+1.0,,天下无双,,,,2002年,,,,刘镇伟,,,,-,,,
+1.0,,尚气与十环传奇,,,,2021年,,,,德斯汀·克里顿,,,,-,,,
+1.0,,我要做model,,,,2004年,,,,谷德昭,,,,nan,,,
+1.0,,捉妖记2,,,,2018年,,,,许诚毅,,,,-,,,
+1.0,,摆渡人,,,,2016年,,,,张嘉佳,,,,-,,,
+1.0,,无名,,,,2023年,,,,程耳,,,,第36届中国电影金鸡奖最佳男主角,,,
+1.0,,无间道3：终极无间,,,,2003年,,,,刘伟强、麦兆辉,,,,-,,,
+1.0,,有情饮水饱,,,,2001年,,,,王晶,,,,-,,,
+1.0,,欧洲攻略,,,,2018年,,,,马楚成,,,,-,,,
+1.0,,色·戒,,,,2007年,,,,李安,,,,"第44届台湾电影金马奖最佳男演员
+第2届亚洲电影大奖最佳男演员",,,
+1.0,,英雄,,,,2002年,,,,张艺谋,,,,-,,,
+1.0,,行运超人,,,,2003年,,,,谷德昭,,,,-,,,
+1.0,,赤壁（上）,,,,2008年,,,,吴宇森,,,,-,,,
+1.0,,赤壁（下）,,,,2009年,,,,吴宇森,,,,-,,,
+1.0,,金手指,,,,2023年,,,,庄文强,,,,第42届香港电影金像奖最佳男主角,,,
+1.0,,韩城攻略,,,,2005年,,,,马楚成,,,,-,,,
+1.0,,风再起时,,,,2023年,,,,翁子光,,,,第16届亚洲电影大奖最佳男主角,,,

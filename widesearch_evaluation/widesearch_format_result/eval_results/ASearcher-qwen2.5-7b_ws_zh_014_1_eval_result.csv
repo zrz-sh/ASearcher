@@ -1,0 +1,1816 @@
+exist_flag_gt,exist_flag_response,具体日期,具体日期_before_map,举办国家_exact_match,举办国家_exact_match_eval_msg,举办国家_query,举办国家_response,举办场馆_llm_judge,举办场馆_llm_judge_eval_msg,举办场馆_query,举办场馆_response,举办城市_llm_judge,举办城市_llm_judge_eval_msg,举办城市_query,举办城市_response,具体日期_exact_match,具体日期_exact_match_eval_msg,演唱会中文名_llm_judge,演唱会中文名_llm_judge_eval_msg,演唱会中文名_query,演唱会中文名_response,演唱会英文名_llm_judge,演唱会英文名_llm_judge_eval_msg,演唱会英文名_query,演唱会英文名_response
+,,2011年10月15日,2011-10-15,0.0,"exact not match, response: cn, target: 中国",中国,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",广州体育馆,成都体育中心,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",广东省广州市,成都,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",邓紫棋“geteverybodymoving”世界巡回演唱会,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",geteverybodymovingconcert,nan
+,,2011年10月22日,2011-10-22,0.0,"exact not match, response: cn, target: 中国",中国,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",金光综艺馆,鸟巢,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",澳门特别行政区,北京,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",邓紫棋“geteverybodymoving”世界巡回演唱会,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",geteverybodymovingconcert,nan
+,,2015年11月3日,2015-11-03,0.0,"exact not match, response: cn, target: 加拿大",加拿大,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",太平洋体育馆（pacificcoliseum）,上海世博演艺中心,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",温哥华,上海,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```","邓紫棋""x.x.x.""世界巡回演唱会",nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",g.e.m.x.x.x.liveworldtour,nan
+,,2023年12月7日,2023-12-07,0.0,"exact not match, response: cn, target: 中国",中国,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",广东奥林匹克体育中心体育场,成都体育中心,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",广东省广州市,成都,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",邓紫棋“iamgloria”世界巡回演唱会,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",g.e.m.iamgloriaworldtour,nan
+,,2024年10月13日,2024-10-13,0.0,"exact not match, response: cn, target: 中国",中国,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",济南奥林匹克体育中心体育场,成都体育中心,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",山东省济南市,成都,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",邓紫棋“iamgloria”世界巡回演唱会,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",g.e.m.iamgloriaworldtour,nan
+,,2024年10月20日,2024-10-20,0.0,"exact not match, response: cn, target: 中国",中国,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",重庆市奥林匹克体育中心体育场,鸟巢,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",重庆市,北京,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",邓紫棋“iamgloria”世界巡回演唱会,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",g.e.m.iamgloriaworldtour,nan
+,,2024年12月21日,2024-12-21,0.0,"exact not match, response: cn, target: 中国",中国,cn,0.0,"分析过程：
+
+根据判分标准：
+- 和参考答案语义相同大致、或者指向的实体一致即可得分1
+- 字字对应不要求，只要是同一实体或同义实体即可
+
+对各对比项逐条分析：
+
+idx_0：
+- response: ""成都体育中心""
+- target: ""广州体育馆""
+- 两者均为体育馆名，但地理位置及具体场馆不同，指向不同实体，语义不一致
+- 得分0
+
+idx_1：
+- response: ""鸟巢""
+- target: ""金光综艺馆""
+- “鸟巢”指北京国家体育场，纯体育场；“金光综艺馆”在广州，是演艺场馆
+- 地点和场馆完全不一致，语义不等同
+- 得分0
+
+idx_2：
+- response: ""上海世博演艺中心""
+- target: ""太平洋体育馆（pacificcoliseum）""
+- 两者均为场馆，但分别位于上海和温哥华，属于不同实体
+- 不同实体，语义不同
+- 得分0
+
+idx_3：
+- response: ""成都体育中心""
+- target: ""广东奥林匹克体育中心体育场""
+- 两个不同场馆，位于不同城市，非同一实体
+- 得分0
+
+idx_4：
+- response: ""成都体育中心""
+- target: ""济南奥林匹克体育中心体育场""
+- 同样不同城市，不同实体
+- 得分0
+
+idx_5：
+- response: ""鸟巢""
+- target: ""重庆市奥林匹克体育中心体育场""
+- 不同城市和场馆，实体不同
+- 得分0
+
+idx_6：
+- response: ""青岛啤酒城""
+- target: ""厦门奥林匹克体育中心白鹭体育场""
+- 两个不同场馆，不同城市，实体不一致
+- 得分0
+
+综合来看，所有对比均为不同实体，因此全部得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",厦门奥林匹克体育中心白鹭体育场,青岛啤酒城,0.0,"Let's analyze each pair based on the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+That means: If the response meaning is roughly the same or points to the same entity as the target, score 1; otherwise, 0.
+
+---
+
+**idx_0**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou, Guangdong Province)  
+These are different cities in different provinces. Different entities. Not roughly the same meaning.  
+Score: 0
+
+**idx_1**  
+- Response: 北京 (Beijing)  
+- Target: 澳门特别行政区 (Macau Special Administrative Region)  
+Different cities/entities. Not the same meaning.  
+Score: 0
+
+**idx_2**  
+- Response: 上海 (Shanghai)  
+- Target: 温哥华 (Vancouver)  
+Different cities, different countries.  
+Score: 0
+
+**idx_3**  
+- Response: 成都 (Chengdu)  
+- Target: 广东省广州市 (Guangzhou)  
+Same as idx_0, different cities.  
+Score: 0
+
+**idx_4**  
+- Response: 成都 (Chengdu)  
+- Target: 山东省济南市 (Jinan, Shandong Province)  
+Different cities, not the same meaning/entity.  
+Score: 0
+
+**idx_5**  
+- Response: 北京 (Beijing)  
+- Target: 重庆市 (Chongqing)  
+Different cities/provinces.  
+Score: 0
+
+**idx_6**  
+- Response: 青岛 (Qingdao)  
+- Target: 福建省厦门市 (Xiamen, Fujian Province)  
+Different cities/provinces.  
+Score: 0
+
+---
+
+**Overall**, none of the responses match or represent the same entity or roughly the same meaning as the target.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",福建省厦门市,青岛,1.0,key_match,0.0,"分析步骤：
+
+1. 依据评分标准，回答与参考答案语义相同大致或者指向同一实体即可算正确。
+2. 演唱会中文名出现“live”也视为正确。
+3. 对比提供的回应与对应的参考答案，发现所有回应都是“nan”。
+4. “nan”非有效答案，既不与参考答案内容相符，也不指向任何具体的演唱会名称。
+5. 因此每条回应均不符合评分标准，分数应为0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",邓紫棋“iamgloria”世界巡回演唱会,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: Answers should have roughly the same meaning or refer to the same entity as the target. Exact wording is not necessary.
+
+---
+
+For all idx_0 to idx_6:
+
+- Response is 'nan' (not a valid or meaningful answer).
+- Target is a specific concert or tour name (e.g., geteverybodymovingconcert, g.e.m.x.x.x.liveworldtour, g.e.m.iamgloriaworldtour).
+
+Since 'nan' does not convey any information or semantic equivalence to the target, the response fails to match or indicate the same entity as the target.
+
+Therefore, each should receive a score of 0.
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",g.e.m.iamgloriaworldtour,nan
+,1.0,2010-01-01,2010-01-01,,,,nan,,,,nan,,,,nan,,,,,,nan,,,,nan
+,1.0,2010-02-14,2010-02-14,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2010-04-09,2010-04-09,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2010-07-17,2010-07-17,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2010-12-31,2010-12-31,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2011-01-01,2011-01-01,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2011-02-12,2011-02-12,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2011-03-19,2011-03-19,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2011-04-23,2011-04-23,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2011-05-28,2011-05-28,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2011-06-11,2011-06-11,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2011-07-23,2011-07-23,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2011-08-06,2011-08-06,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2011-08-20,2011-08-20,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2011-09-03,2011-09-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2011-09-24,2011-09-24,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2011-11-05,2011-11-05,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2011-11-18,2011-11-18,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2011-12-03,2011-12-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+1.0,,2011年12月16日,,,,加拿大,,,,伊利莎白女王剧院（queenelizabeththeatre）,,,,温哥华,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年12月19日,,,,加拿大,,,,派拉蒙美食中心（hersheycentre）,,,,多伦多,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年5月14日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年5月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年5月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年8月27日,,,,澳大利亚,,,,悉尼娱乐中心（sydneyentertainmentcentre）,,,,悉尼,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年9月10日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2011年9月9日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+,1.0,2012-01-06,2012-01-06,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2012-01-28,2012-01-28,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2012-02-01,2012-02-01,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2012-02-29,2012-02-29,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2012-03-03,2012-03-03,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2012-03-10,2012-03-10,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2012-03-24,2012-03-24,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2012-04-07,2012-04-07,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2012-04-28,2012-04-28,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2012-05-12,2012-05-12,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2012-05-26,2012-05-26,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2012-06-08,2012-06-08,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2012-06-15,2012-06-15,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2012-07-07,2012-07-07,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2012-07-21,2012-07-21,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2012-08-04,2012-08-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2012-08-18,2012-08-18,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2012-09-01,2012-09-01,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2012-09-15,2012-09-15,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2012-09-29,2012-09-29,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2012-10-13,2012-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2012-10-20,2012-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2012-11-03,2012-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2012-11-16,2012-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2012-12-07,2012-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2012-12-22,2012-12-22,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2012年12月2日,,,,中国,,,,中山纪念堂,,,,广东省广州市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2012年4月21日,,,,中国,,,,佛山岭南明珠体育馆,,,,广东省佛山市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2012年4月29日,,,,中国,,,,番禺英东体育馆,,,,广东省广州市,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+1.0,,2012年5月26日,,,,美国,,,,里诺宴会厅（renoballroom）,,,,里诺,,,,,,邓紫棋“geteverybodymoving”世界巡回演唱会,,,,geteverybodymovingconcert,
+,1.0,2013-01-05,2013-01-05,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2013-01-19,2013-01-19,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2013-02-02,2013-02-02,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2013-02-23,2013-02-23,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2013-03-09,2013-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2013-03-23,2013-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2013-04-06,2013-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2013-04-27,2013-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2013-05-11,2013-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2013-05-25,2013-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2013-06-07,2013-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2013-06-14,2013-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2013-07-09,2013-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2013-07-23,2013-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2013-08-06,2013-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2013-08-20,2013-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2013-09-03,2013-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2013-09-17,2013-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2013-09-30,2013-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2013-10-13,2013-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2013-10-20,2013-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2013-11-03,2013-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2013-11-16,2013-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2013-12-07,2013-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2013-12-21,2013-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2013年4月12日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月13日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月14日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年4月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2013年9月21日,,,,中国,,,,广州体育馆,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+,1.0,2014-01-04,2014-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2014-01-18,2014-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2014-02-01,2014-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2014-02-22,2014-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2014-03-09,2014-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2014-03-23,2014-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2014-04-06,2014-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2014-04-27,2014-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2014-05-11,2014-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2014-05-25,2014-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2014-06-07,2014-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2014-06-14,2014-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2014-07-09,2014-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2014-07-23,2014-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2014-08-06,2014-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2014-08-20,2014-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2014-09-03,2014-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2014-09-17,2014-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2014-09-30,2014-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2014-10-13,2014-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2014-10-20,2014-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2014-11-03,2014-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2014-11-16,2014-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2014-12-07,2014-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2014-12-21,2014-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2014年10月10日,,,,中国,,,,沈阳奥林匹克体育中心,,,,沈阳,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月17日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月18日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月19日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年10月25日,,,,中国,,,,成都市体育中心体育场,,,,四川省成都市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月1日,,,,中国,,,,泉州海峡体育中心体育馆,,,,福建省泉州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月22日,,,,中国,,,,广西体育中心体育场,,,,广西壮族自治区南宁市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月29日,,,,中国,,,,南昌国际体育中心体育馆,,,,江西省南昌市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年11月8日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年12月6日,,,,中国,,,,济南奥林匹克体育中心体育馆,,,,山东省济南市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年2月13日,,,,中国,,,,佛山岭南明珠体育馆,,,,广东省佛山市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月10日,,,,中国,,,,福州海峡国际会展中心,,,,福建省福州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月16日,,,,中国,,,,万事达中心（北京凯迪拉克中心）,,,,北京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月17日,,,,中国,,,,万事达中心（北京凯迪拉克中心）,,,,北京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月1日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月24日,,,,中国,,,,武汉体育中心体育馆,,,,湖北省武汉市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月2日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月31日,,,,中国,,,,湖南国际会展中心,,,,湖南省长沙市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年5月3日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年6月28日,,,,中国,,,,深圳湾体育中心,,,,广东省深圳市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月11日,,,,中国,,,,黄龙体育馆,,,,浙江省杭州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月12日,,,,中国,,,,黄龙体育馆,,,,浙江省杭州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月17日,,,,中国,,,,西安曲江国际会展中心b4馆,,,,陕西西安市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月19日,,,,中国,,,,哈尔滨国际会展体育中心体育馆,,,,黑龙江省哈尔滨市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月23日,,,,中国,,,,大连市体育中心体育馆（中升文化中心）,,,,辽宁省大连市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月26日,,,,中国,,,,天津体育馆,,,,天津市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月31日,,,,中国,,,,厦门嘉庚体育馆,,,,福建省厦门市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月4日,,,,中国,,,,上海梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月5日,,,,中国,,,,上海梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年7月6日,,,,中国,,,,上海梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月11日,,,,新西兰,,,,trusts体育馆（trustsstadium）,,,,奥克兰,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月2日,,,,中国,,,,郑州国际会展中心,,,,河南省郑州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月5日,,,,澳大利亚,,,,珀斯皇冠剧院（crownperth）,,,,珀斯,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月7日,,,,澳大利亚,,,,悉尼娱乐中心（sydneyentertainmentcentre）,,,,悉尼,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2014年8月9日,,,,澳大利亚,,,,墨尔本会展中心（melbourneconventionandexhibitioncentre）,,,,墨尔本,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+,1.0,2015-01-04,2015-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2015-01-18,2015-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2015-02-01,2015-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2015-02-22,2015-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2015-03-09,2015-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2015-03-23,2015-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2015-04-06,2015-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2015-04-27,2015-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2015-05-11,2015-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2015-05-25,2015-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2015-06-07,2015-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2015-06-14,2015-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2015-07-09,2015-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2015-07-23,2015-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2015-08-06,2015-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2015-08-20,2015-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2015-09-03,2015-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2015-09-17,2015-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2015-09-30,2015-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2015-10-13,2015-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2015-10-20,2015-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2015-11-16,2015-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2015-12-07,2015-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2015-12-21,2015-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2015年10月23日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年10月24日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月11日,,,,加拿大,,,,加拿大航空中心（aircanadacentre）,,,,多伦多,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月15日,,,,美国,,,,保德信中心（prudentialcenter）,,,,纽约,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月18日,,,,美国,,,,芝加哥剧院（chicagotheatre）,,,,芝加哥,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月22日,,,,英国,,,,温布利体育馆,,,,伦敦,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月6日,,,,美国,,,,思爱普中心（sapcenteratsanjose）,,,,圣何塞,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年11月7日,,,,美国,,,,论坛体育馆,,,,洛杉矶,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月14日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月17日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月18日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月23日,,,,马来西亚,,,,布特拉室内体育馆,,,,吉隆坡,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月24日,,,,马来西亚,,,,布特拉室内体育馆,,,,吉隆坡,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月30日,,,,新加坡,,,,新加坡博览中心,,,,新加坡市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年1月31日,,,,新加坡,,,,新加坡博览中心,,,,新加坡市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年2月1日,,,,新加坡,,,,新加坡博览中心,,,,新加坡市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年2月21日,,,,美国,,,,威尼斯人宴会厅（thevenetianlasvegas）,,,,拉斯维加斯,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年3月12日,,,,中国,,,,台北小巨蛋体育馆,,,,台湾省台北市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年3月1日,,,,美国,,,,金神体育馆（mohegansun）,,,,康涅狄格州,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月16日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月23日,,,,中国,,,,上海体育场,,,,上海市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月2日,,,,中国,,,,高雄巨蛋体育馆,,,,台湾省高雄市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月30日,,,,中国,,,,合肥滨湖国际会展中心体育馆,,,,安徽省合肥市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年5月9日,,,,中国,,,,重庆国际博览中心（重庆国际会议展览中心）,,,,重庆市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年7月10日,,,,中国,,,,长春五环体育馆,,,,吉林省长春市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年7月18日,,,,中国,,,,东莞篮球中心（东莞东风日產文体中心）,,,,广东省东莞市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年7月25日,,,,中国,,,,山西省体育中心体育馆,,,,山西省太原市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+1.0,,2015年8月1日,,,,中国,,,,北京工人体育场,,,,北京市,,,,,,"邓紫棋""x.x.x.""世界巡回演唱会",,,,g.e.m.x.x.x.liveworldtour,
+,1.0,2016-01-04,2016-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2016-01-18,2016-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2016-02-01,2016-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2016-02-22,2016-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2016-03-09,2016-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2016-03-23,2016-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2016-04-06,2016-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2016-04-27,2016-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2016-05-11,2016-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2016-05-25,2016-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2016-06-07,2016-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2016-06-14,2016-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2016-07-09,2016-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2016-07-23,2016-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2016-08-06,2016-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2016-08-20,2016-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2016-09-03,2016-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2016-09-17,2016-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2016-09-30,2016-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2016-10-13,2016-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2016-10-20,2016-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2016-11-03,2016-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2016-11-16,2016-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2016-12-07,2016-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2016-12-21,2016-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2017-01-04,2017-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2017-01-18,2017-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2017-02-01,2017-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2017-02-22,2017-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2017-03-09,2017-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2017-03-23,2017-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2017-04-06,2017-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2017-04-27,2017-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2017-05-11,2017-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2017-05-25,2017-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2017-06-07,2017-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2017-06-14,2017-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2017-07-09,2017-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2017-07-23,2017-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2017-08-06,2017-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2017-08-20,2017-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2017-09-03,2017-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2017-09-17,2017-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2017-09-30,2017-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2017-10-13,2017-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2017-10-20,2017-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2017-11-03,2017-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2017-11-16,2017-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2017-12-07,2017-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2017-12-21,2017-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2017年10月2日,,,,澳大利亚,,,,悉尼国际会议中心,,,,悉尼,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年10月5日,,,,澳大利亚,,,,珀斯皇冠剧院（crownperth）,,,,珀斯,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年11月18日,,,,马来西亚,,,,亚通体育馆（又名：布特拉室内体育馆）,,,,吉隆坡,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年11月25日,,,,中国,,,,郑州国际会展中心,,,,河南省郑州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年12月22日,,,,中国,,,,大连市体育馆（中升文化中心）,,,,辽宁省大连市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年12月2日,,,,中国,,,,深圳湾体育中心体育馆,,,,广东省深圳市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年12月9日,,,,中国,,,,广西体育中心体育馆,,,,广西壮族自治区南宁市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月15日,,,,中国,,,,首都体育馆,,,,北京市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月1日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月29日,,,,中国,,,,洛阳新区体育馆,,,,河南省洛阳市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月2日,,,,中国,,,,广州国际体育演艺中心,,,,广东省广州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年4月8日,,,,中国,,,,南京奥体中心体育馆,,,,江苏省南京市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年5月13日,,,,中国,,,,南昌国际体育中心体育馆,,,,江西省南昌市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年5月20日,,,,中国,,,,长沙国际会展中心,,,,湖南省长沙市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年5月28日,,,,中国,,,,武汉体育中心体育馆,,,,湖北省武汉市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月12日,,,,新加坡,,,,新加坡室内体育馆,,,,新加坡市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月13日,,,,新加坡,,,,新加坡室内体育馆,,,,新加坡市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月26日,,,,中国,,,,合肥滨湖国际会展中心,,,,安徽省合肥市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年8月5日,,,,中国,,,,苏州市体育中心体育馆,,,,江苏省苏州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月15日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月16日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月17日,,,,中国,,,,香港体育馆（红磡体育馆）,,,,香港特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月2日,,,,中国,,,,重庆国际博览中心,,,,重庆市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2017年9月30日,,,,澳大利亚,,,,海信球场（墨尔本综合体育馆）,,,,墨尔本,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+,1.0,2018-01-04,2018-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2018-01-18,2018-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2018-02-01,2018-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2018-02-22,2018-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2018-03-09,2018-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2018-03-23,2018-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2018-04-06,2018-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2018-04-27,2018-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2018-05-11,2018-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2018-05-25,2018-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2018-06-07,2018-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2018-06-14,2018-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2018-07-09,2018-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2018-07-23,2018-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2018-08-06,2018-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2018-08-20,2018-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2018-09-03,2018-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2018-09-17,2018-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2018-09-30,2018-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2018-10-13,2018-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2018-10-20,2018-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2018-11-03,2018-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2018-11-16,2018-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2018-12-07,2018-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2018-12-21,2018-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2018年1月13日,,,,中国,,,,黄龙体育馆,,,,浙江省杭州市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年2月24日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年3月23日,,,,中国,,,,国立体育大学综合体育馆,,,,台湾省台北市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年3月24日,,,,中国,,,,国立体育大学综合体育馆,,,,台湾省台北市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年3月25日,,,,中国,,,,国立体育大学综合体育馆,,,,台湾省台北市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年4月1日,,,,美国,,,,金神体育馆（mohegansun）,,,,康涅狄格州,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年5月26日,,,,中国,,,,东风日产文体中心,,,,广东省东莞市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年6月2日,,,,中国,,,,五粮液·成都演艺中心,,,,四川省成都市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年6月30日,,,,马来西亚,,,,槟城国际体育馆,,,,槟城州,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年7月1日,,,,马来西亚,,,,槟城国际体育馆,,,,槟城州,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年7月28日,,,,中国,,,,济南奥林匹克体育中心体育馆,,,,山东省济南市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年7月7日,,,,中国,,,,佛山岭南明珠体育馆,,,,广东省佛山市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月11日,,,,中国,,,,天津体育馆,,,,天津市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月18日,,,,中国,,,,西安曲江国际会展中心,,,,陕西省西安市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月4日,,,,中国,,,,梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2018年8月5日,,,,中国,,,,梅赛德斯－奔驰文化中心,,,,上海市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+,1.0,2019-01-04,2019-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2019-01-18,2019-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2019-02-01,2019-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2019-02-22,2019-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2019-03-09,2019-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2019-03-23,2019-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2019-04-06,2019-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2019-04-27,2019-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2019-05-11,2019-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2019-05-25,2019-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2019-06-07,2019-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2019-06-14,2019-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2019-07-09,2019-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2019-07-23,2019-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2019-08-06,2019-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2019-08-20,2019-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2019-09-03,2019-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2019-09-17,2019-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2019-09-30,2019-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2019-10-13,2019-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2019-10-20,2019-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2019-11-03,2019-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2019-11-16,2019-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2019-12-07,2019-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2019-12-21,2019-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2019年3月15日,,,,加拿大,,,,伊利莎白女王剧院（queenelizabeththeatre）,,,,温哥华,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年3月20日,,,,加拿大,,,,可口可乐体育馆（coca-colacoliseum）,,,,多伦多,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年3月22日,,,,美国,,,,比尔·格雷厄姆市政礼堂,,,,旧金山,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年3月9日,,,,中国,,,,金光综艺馆,,,,澳门特别行政区,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月27日,,,,中国,,,,高雄巨蛋,,,,台湾省高雄市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月28日,,,,中国,,,,高雄巨蛋,,,,台湾省高雄市,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月5日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+1.0,,2019年4月6日,,,,马来西亚,,,,云顶云星剧场,,,,云顶高原,,,,,,"邓紫棋""queenofhearts""世界巡回演唱会",,,,g.e.m.queenofheartsworldtour,
+,1.0,2020-01-04,2020-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2020-01-18,2020-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2020-02-01,2020-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2020-02-22,2020-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2020-03-09,2020-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2020-03-23,2020-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2020-04-06,2020-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2020-04-27,2020-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2020-05-11,2020-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2020-05-25,2020-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2020-06-07,2020-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2020-06-14,2020-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2020-07-09,2020-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2020-07-23,2020-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2020-08-06,2020-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2020-08-20,2020-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2020-09-03,2020-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2020-09-17,2020-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2020-09-30,2020-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2020-10-13,2020-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2020-10-20,2020-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2020-11-03,2020-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2020-11-16,2020-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2020-12-07,2020-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2020-12-21,2020-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2021-01-04,2021-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2021-01-18,2021-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2021-02-01,2021-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2021-02-22,2021-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2021-03-09,2021-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2021-03-23,2021-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2021-04-06,2021-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2021-04-27,2021-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2021-05-11,2021-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2021-05-25,2021-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2021-06-07,2021-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2021-06-14,2021-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2021-07-09,2021-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2021-07-23,2021-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2021-08-06,2021-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2021-08-20,2021-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2021-09-03,2021-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2021-09-17,2021-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2021-09-30,2021-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2021-10-13,2021-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2021-10-20,2021-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2021-11-03,2021-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2021-11-16,2021-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2021-12-07,2021-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2021-12-21,2021-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2022-01-04,2022-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2022-01-18,2022-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2022-02-01,2022-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2022-02-22,2022-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2022-03-09,2022-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2022-03-23,2022-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2022-04-06,2022-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2022-04-27,2022-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2022-05-11,2022-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2022-05-25,2022-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2022-06-07,2022-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2022-06-14,2022-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2022-07-09,2022-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2022-07-23,2022-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2022-08-06,2022-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2022-08-20,2022-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2022-09-03,2022-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2022-09-17,2022-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2022-09-30,2022-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2022-10-13,2022-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2022-10-20,2022-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2022-11-03,2022-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2022-11-16,2022-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2022-12-07,2022-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2022-12-21,2022-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2023-01-04,2023-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2023-01-18,2023-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2023-02-01,2023-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2023-02-22,2023-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2023-03-09,2023-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2023-03-23,2023-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2023-04-06,2023-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2023-04-27,2023-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2023-05-11,2023-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2023-05-25,2023-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2023-06-07,2023-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2023-06-14,2023-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2023-07-09,2023-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2023-07-23,2023-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2023-08-06,2023-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2023-08-20,2023-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2023-09-03,2023-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2023-09-17,2023-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2023-09-30,2023-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2023-10-13,2023-10-13,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2023-10-20,2023-10-20,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2023-11-03,2023-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2023-11-16,2023-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2023-12-21,2023-12-21,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+1.0,,2023年12月23日,,,,中国,,,,广西体育中心主体育场,,,,广西壮族自治区南宁市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2023年12月24日,,,,中国,,,,广西体育中心主体育场,,,,广西壮族自治区南宁市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2023年12月8日,,,,中国,,,,广东奥林匹克体育中心体育场,,,,广东省广州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2023年12月9日,,,,中国,,,,广东奥林匹克体育中心体育场,,,,广东省广州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+,1.0,2024-01-04,2024-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2024-01-18,2024-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2024-02-01,2024-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2024-02-22,2024-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2024-03-09,2024-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2024-03-23,2024-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2024-04-06,2024-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2024-04-27,2024-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2024-05-11,2024-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2024-05-25,2024-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2024-06-07,2024-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2024-06-14,2024-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2024-07-09,2024-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2024-07-23,2024-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2024-08-06,2024-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2024-08-20,2024-08-20,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2024-09-03,2024-09-03,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2024-09-17,2024-09-17,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2024-09-30,2024-09-30,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2024-11-03,2024-11-03,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2024-11-16,2024-11-16,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2024-12-07,2024-12-07,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+1.0,,2024年10月19日,,,,中国,,,,重庆市奥林匹克体育中心体育场,,,,重庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月26日,,,,中国,,,,苏州奥林匹克体育中心体育场,,,,江苏省苏州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月27日,,,,中国,,,,苏州奥林匹克体育中心体育场,,,,江苏省苏州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月6日,,,,中国,,,,武汉体育中心主体育场,,,,湖北省武汉市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年10月7日,,,,中国,,,,武汉体育中心主体育场,,,,湖北省武汉市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月10日,,,,中国,,,,南昌国际体育中心体育场,,,,江西省南昌市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月15日,,,,中国,,,,杭州奥林匹克体育中心体育场,,,,浙江省杭州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月16日,,,,中国,,,,杭州奥林匹克体育中心体育场,,,,浙江省杭州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月17日,,,,中国,,,,杭州奥林匹克体育中心体育场,,,,浙江省杭州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月30日,,,,中国,,,,湛江奥林匹克体育中心体育场,,,,广东省湛江市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年11月9日,,,,中国,,,,南昌国际体育中心体育场,,,,江西省南昌市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月1日,,,,中国,,,,湛江奥林匹克体育中心体育场,,,,广东省湛江市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月22日,,,,中国,,,,厦门奥林匹克体育中心白鹭体育场,,,,福建省厦门市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月28日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月29日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年12月31日,,,,中国,,,,惠州奥林匹克体育场,,,,广东省惠州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月20日,,,,中国,,,,泉州海峡体育中心体育场,,,,福建省泉州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月21日,,,,中国,,,,泉州海峡体育中心体育场,,,,福建省泉州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月6日,,,,中国,,,,深圳湾体育中心体育场,,,,广东省深圳市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月7日,,,,中国,,,,深圳湾体育中心体育场,,,,广东省深圳市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年1月8日,,,,中国,,,,深圳湾体育中心体育场,,,,广东省深圳市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年3月30日,,,,中国,,,,合肥体育中心体育场,,,,安徽省合肥市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年3月31日,,,,中国,,,,合肥体育中心体育场,,,,安徽省合肥市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月12日,,,,中国,,,,长沙贺龙体育中心体育场,,,,湖南省长沙市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月13日,,,,中国,,,,长沙贺龙体育中心体育场,,,,湖南省长沙市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月14日,,,,中国,,,,长沙贺龙体育中心体育场,,,,湖南省长沙市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月18日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月19日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月20日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年4月21日,,,,中国,,,,佛山世纪莲体育中心体育场,,,,广东省佛山市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月10日,,,,中国,,,,大连体育中心体育场,,,,辽宁省大连市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月11日,,,,中国,,,,大连体育中心体育场,,,,辽宁省大连市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月18日,,,,中国,,,,山西体育中心体育场,,,,山西省太原市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月19日,,,,中国,,,,山西体育中心体育场,,,,山西省太原市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月24日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月25日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月26日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月27日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月28日,,,,中国,,,,上海体育场,,,,上海市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月2日,,,,中国,,,,天津奥林匹克体育中心体育场,,,,天津市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年5月3日,,,,中国,,,,天津奥林匹克体育中心体育场,,,,天津市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月15日,,,,中国,,,,青岛市民健身中心体育场,,,,山东省青岛市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月16日,,,,中国,,,,青岛市民健身中心体育场,,,,山东省青岛市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月1日,,,,中国,,,,东安湖体育公园主体育场,,,,四川省成都市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月21日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月22日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月23日,,,,中国,,,,南京奥林匹克体育中心体育场,,,,江苏省南京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月29日,,,,中国,,,,郑州奥林匹克体育中心体育场,,,,河南省郑州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月2日,,,,中国,,,,东安湖体育公园主体育场,,,,四川省成都市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月30日,,,,中国,,,,郑州奥林匹克体育中心体育场,,,,河南省郑州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年6月3日,,,,中国,,,,东安湖体育公园主体育场,,,,四川省成都市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月13日,,,,中国,,,,哈尔滨国际会展体育中心体育场,,,,黑龙江省哈尔滨市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月20日,,,,中国,,,,台州市体育中心体育场,,,,浙江省台州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月21日,,,,中国,,,,台州市体育中心体育场,,,,浙江省台州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月27日,,,,中国,,,,呼和浩特体育场,,,,内蒙古自治区呼和浩特市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月6日,,,,中国,,,,福州海峡奥林匹克体育中心体育场,,,,福建省福州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年7月7日,,,,中国,,,,福州海峡奥林匹克体育中心体育场,,,,福建省福州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月10日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月11日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月22日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月23日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月24日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月25日,,,,中国,,,,国家体育场（鸟巢）,,,,北京市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月2日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月3日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月4日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年8月9日,,,,中国,,,,银河综艺馆,,,,澳门特别行政区,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月21日,,,,中国,,,,清远体育中心体育场,,,,广东省清远市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月22日,,,,中国,,,,清远体育中心体育场,,,,广东省清远市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月27日,,,,中国,,,,西安奥林匹克体育中心体育场,,,,陕西省西安市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月28日,,,,中国,,,,西安奥林匹克体育中心体育场,,,,陕西省西安市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2024年9月7日,,,,中国,,,,衢州体育中心体育场,,,,浙江省衢州市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+,1.0,2025-01-04,2025-01-04,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-01-18,2025-01-18,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2025-02-01,2025-02-01,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-02-22,2025-02-22,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2025-03-09,2025-03-09,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2025-03-23,2025-03-23,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-04-06,2025-04-06,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-04-27,2025-04-27,,,,cn,,,,鸟巢,,,,北京,,,,,,nan,,,,nan
+,1.0,2025-05-11,2025-05-11,,,,cn,,,,青岛啤酒城,,,,青岛,,,,,,nan,,,,nan
+,1.0,2025-05-25,2025-05-25,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2025-06-07,2025-06-07,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-06-14,2025-06-14,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-07-09,2025-07-09,,,,cn,,,,重庆奥体中心,,,,重庆,,,,,,nan,,,,nan
+,1.0,2025-07-23,2025-07-23,,,,cn,,,,成都体育中心,,,,成都,,,,,,nan,,,,nan
+,1.0,2025-08-06,2025-08-06,,,,cn,,,,上海世博演艺中心,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-08-15,2025-08-15,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-08-19,2025-08-19,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-08-29,2025-08-29,,,,cn,,,,上海虹口足球场,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-09-05,2025-09-05,,,,cn,,,,上海虹口足球场,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-09-19,2025-09-19,,,,cn,,,,上海虹口足球场,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-09-21,2025-09-21,,,,cn,,,,上海虹口足球场,,,,上海,,,,,,nan,,,,nan
+,1.0,2025-09-25,2025-09-25,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-09-29,2025-09-29,,,,cn,,,,香港红磡体育馆,,,,香港,,,,,,nan,,,,nan
+,1.0,2025-10-18,2025-10-18,,,,cn,,,,东安湖体育公园主体育场,,,,成都,,,,,,nan,,,,nan
+,1.0,2025-10-19,2025-10-19,,,,cn,,,,东安湖体育公园主体育场,,,,成都,,,,,,nan,,,,nan
+,1.0,2025-10-20,2025-10-20,,,,cn,,,,东安湖体育公园主体育场,,,,成都,,,,,,nan,,,,nan
+1.0,,2025年1月11日,,,,中国,,,,肇庆市体育中心体育场,,,,广东省肇庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年1月12日,,,,中国,,,,肇庆市体育中心体育场,,,,广东省肇庆市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年1月21日,,,,法国,,,,巴黎天顶音乐厅（zenithparis-lavillette）,,,,巴黎,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年1月24日,,,,英国,,,,温布利体育馆（ovoarenawembly）,,,,伦敦,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年2月15日,,,,马来西亚,,,,武吉加里尔国家体育场（nationalstadiumbukitjalil）,,,,吉隆坡,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月15日,,,,美国,,,,米高梅大花园体育馆（mgmgrandgardenarena）,,,,拉斯维加斯,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月1日,,,,新加坡,,,,新加坡国家体育场（nationalstadium）,,,,新加坡市,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月22日,,,,美国,,,,大通中心球馆（chasecenter）,,,,旧金山,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年3月29日,,,,美国,,,,巴克莱中心球馆（barclayscenter）,,,,纽约,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,
+1.0,,2025年4月7日,,,,加拿大,,,,可口可乐体育馆（coca-colacoliseum）,,,,多伦多,,,,,,邓紫棋“iamgloria”世界巡回演唱会,,,,g.e.m.iamgloriaworldtour,

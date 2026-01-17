@@ -1,0 +1,523 @@
+exist_flag_gt,exist_flag_response,模型名称,模型名称_before_map,aime2025_number_near,aime2025_number_near_eval_msg,aime2025_query,aime2025_response,swe-benchverified_number_near,swe-benchverified_number_near_eval_msg,swe-benchverified_query,swe-benchverified_response,tau-bench-airline_number_near,tau-bench-airline_number_near_eval_msg,tau-bench-airline_query,tau-bench-airline_response,tau-bench-retail_number_near,tau-bench-retail_number_near_eval_msg,tau-bench-retail_query,tau-bench-retail_response,上下文窗口_llm_judge,上下文窗口_llm_judge_eval_msg,上下文窗口_query,上下文窗口_response,公司_llm_judge,公司_llm_judge_eval_msg,公司_query,公司_response,模型名称_exact_match,模型名称_exact_match_eval_msg
+,,gemini2.5pro,Gemini 2.5 Pro,0.0,"number not convertable, response: None, target: 0.88",88%,NULL,0.0,"number not convertable, response: None, target: 0.596",59.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"分析过程：
+
+- idx_0: response = ""1million"", target = ""1m""  
+  语义相同，""1million"" 与 ""1m"" 指代相同数量，符合标准答案语义相同大致或指向一致的要求。得分1。
+
+- idx_1: response = ""1million"", target = ""1m""  
+  同上，指代相同，得分1。
+
+- idx_2: response = ""200,000"", target = ""200k""  
+  数值相同，格式不同，但语义一致，得分1。
+
+- idx_3: response = ""notavailable"", target = ""200k""  
+  语义不一致，一个表示无数据，一个是具体数值，不符要求，得分0。
+
+- idx_4: response = ""32,000"", target = ""32k""  
+  数值相同，格式差异不影响语义一致，得分1。
+
+- idx_5: response = ""1million"", target = ""128k""  
+  数值不一致，语义不符，得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",1m,1million,1.0,"Let's analyze each item according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Answers that convey the same meaning roughly or point to the same entity are considered correct.)
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Analysis: ""google"" and ""谷歌"" refer to the same entity (Google). Acceptable.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0, response matches target entity.  
+- Score: 1
+
+**idx_2**  
+- Response: ""openai""  
+- Target: ""openai""  
+- Exactly the same.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exactly the same.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- ""bytedance"" is the English name for ""字节跳动"". Matches.  
+- Score: 1
+
+**idx_5**  
+- Response: ""deepseek""  
+- Target: ""deepseek""  
+- Exactly the same.  
+- Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",谷歌,google,1.0,key_match
+,,gemini2.5flash-lite-thinking,Gemini 2.5 Flash-Lite,0.0,"number not convertable, response: None, target: 0.631",63.10%,NULL,0.0,"number not convertable, response: None, target: 0.276",27.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"分析过程：
+
+- idx_0: response = ""1million"", target = ""1m""  
+  语义相同，""1million"" 与 ""1m"" 指代相同数量，符合标准答案语义相同大致或指向一致的要求。得分1。
+
+- idx_1: response = ""1million"", target = ""1m""  
+  同上，指代相同，得分1。
+
+- idx_2: response = ""200,000"", target = ""200k""  
+  数值相同，格式不同，但语义一致，得分1。
+
+- idx_3: response = ""notavailable"", target = ""200k""  
+  语义不一致，一个表示无数据，一个是具体数值，不符要求，得分0。
+
+- idx_4: response = ""32,000"", target = ""32k""  
+  数值相同，格式差异不影响语义一致，得分1。
+
+- idx_5: response = ""1million"", target = ""128k""  
+  数值不一致，语义不符，得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",1m,1million,1.0,"Let's analyze each item according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Answers that convey the same meaning roughly or point to the same entity are considered correct.)
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Analysis: ""google"" and ""谷歌"" refer to the same entity (Google). Acceptable.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0, response matches target entity.  
+- Score: 1
+
+**idx_2**  
+- Response: ""openai""  
+- Target: ""openai""  
+- Exactly the same.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exactly the same.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- ""bytedance"" is the English name for ""字节跳动"". Matches.  
+- Score: 1
+
+**idx_5**  
+- Response: ""deepseek""  
+- Target: ""deepseek""  
+- Exactly the same.  
+- Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",谷歌,google,1.0,key_match
+,,o3mini,O3-mini,0.0,"number not convertable, response: None, target: 0.865",86.50%,NULL,0.0,"number not convertable, response: None, target: 0.493",49.30%,NULL,0.0,"number not convertable, response: None, target: 0.324",32.40%,NULL,0.0,"number not convertable, response: None, target: 0.5760000000000001",57.60%,NULL,1.0,"分析过程：
+
+- idx_0: response = ""1million"", target = ""1m""  
+  语义相同，""1million"" 与 ""1m"" 指代相同数量，符合标准答案语义相同大致或指向一致的要求。得分1。
+
+- idx_1: response = ""1million"", target = ""1m""  
+  同上，指代相同，得分1。
+
+- idx_2: response = ""200,000"", target = ""200k""  
+  数值相同，格式不同，但语义一致，得分1。
+
+- idx_3: response = ""notavailable"", target = ""200k""  
+  语义不一致，一个表示无数据，一个是具体数值，不符要求，得分0。
+
+- idx_4: response = ""32,000"", target = ""32k""  
+  数值相同，格式差异不影响语义一致，得分1。
+
+- idx_5: response = ""1million"", target = ""128k""  
+  数值不一致，语义不符，得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",200k,"200,000",1.0,"Let's analyze each item according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Answers that convey the same meaning roughly or point to the same entity are considered correct.)
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Analysis: ""google"" and ""谷歌"" refer to the same entity (Google). Acceptable.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0, response matches target entity.  
+- Score: 1
+
+**idx_2**  
+- Response: ""openai""  
+- Target: ""openai""  
+- Exactly the same.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exactly the same.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- ""bytedance"" is the English name for ""字节跳动"". Matches.  
+- Score: 1
+
+**idx_5**  
+- Response: ""deepseek""  
+- Target: ""deepseek""  
+- Exactly the same.  
+- Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",openai,openai,1.0,key_match
+,,claude3.7sonnet,Claude 3.7 Sonnet,0.0,"number not near, response: 0.65, target: 0.5479999999999999",54.80%,65%,0.0,"number not convertable, response: None, target: 0.623",62.30%,NULL,0.0,"number not convertable, response: None, target: 0.584",58.40%,NULL,0.0,"number not convertable, response: None, target: 0.812",81.20%,NULL,0.0,"分析过程：
+
+- idx_0: response = ""1million"", target = ""1m""  
+  语义相同，""1million"" 与 ""1m"" 指代相同数量，符合标准答案语义相同大致或指向一致的要求。得分1。
+
+- idx_1: response = ""1million"", target = ""1m""  
+  同上，指代相同，得分1。
+
+- idx_2: response = ""200,000"", target = ""200k""  
+  数值相同，格式不同，但语义一致，得分1。
+
+- idx_3: response = ""notavailable"", target = ""200k""  
+  语义不一致，一个表示无数据，一个是具体数值，不符要求，得分0。
+
+- idx_4: response = ""32,000"", target = ""32k""  
+  数值相同，格式差异不影响语义一致，得分1。
+
+- idx_5: response = ""1million"", target = ""128k""  
+  数值不一致，语义不符，得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",200k,notavailable,1.0,"Let's analyze each item according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Answers that convey the same meaning roughly or point to the same entity are considered correct.)
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Analysis: ""google"" and ""谷歌"" refer to the same entity (Google). Acceptable.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0, response matches target entity.  
+- Score: 1
+
+**idx_2**  
+- Response: ""openai""  
+- Target: ""openai""  
+- Exactly the same.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exactly the same.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- ""bytedance"" is the English name for ""字节跳动"". Matches.  
+- Score: 1
+
+**idx_5**  
+- Response: ""deepseek""  
+- Target: ""deepseek""  
+- Exactly the same.  
+- Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",anthropic,anthropic,1.0,key_match
+,,seed-thinkingv1.5,Doubao 1.5 Thinking,0.0,"number not convertable, response: None, target: 0.74",74%,NULL,0.0,"number not convertable, response: None, target: 0.47",47%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"分析过程：
+
+- idx_0: response = ""1million"", target = ""1m""  
+  语义相同，""1million"" 与 ""1m"" 指代相同数量，符合标准答案语义相同大致或指向一致的要求。得分1。
+
+- idx_1: response = ""1million"", target = ""1m""  
+  同上，指代相同，得分1。
+
+- idx_2: response = ""200,000"", target = ""200k""  
+  数值相同，格式不同，但语义一致，得分1。
+
+- idx_3: response = ""notavailable"", target = ""200k""  
+  语义不一致，一个表示无数据，一个是具体数值，不符要求，得分0。
+
+- idx_4: response = ""32,000"", target = ""32k""  
+  数值相同，格式差异不影响语义一致，得分1。
+
+- idx_5: response = ""1million"", target = ""128k""  
+  数值不一致，语义不符，得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",32k,"32,000",1.0,"Let's analyze each item according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Answers that convey the same meaning roughly or point to the same entity are considered correct.)
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Analysis: ""google"" and ""谷歌"" refer to the same entity (Google). Acceptable.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0, response matches target entity.  
+- Score: 1
+
+**idx_2**  
+- Response: ""openai""  
+- Target: ""openai""  
+- Exactly the same.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exactly the same.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- ""bytedance"" is the English name for ""字节跳动"". Matches.  
+- Score: 1
+
+**idx_5**  
+- Response: ""deepseek""  
+- Target: ""deepseek""  
+- Exactly the same.  
+- Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",字节跳动,bytedance,1.0,key_match
+,,deepseek-v3,DeepSeek V4,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"number not convertable, response: None, target: 0.42",42%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"分析过程：
+
+- idx_0: response = ""1million"", target = ""1m""  
+  语义相同，""1million"" 与 ""1m"" 指代相同数量，符合标准答案语义相同大致或指向一致的要求。得分1。
+
+- idx_1: response = ""1million"", target = ""1m""  
+  同上，指代相同，得分1。
+
+- idx_2: response = ""200,000"", target = ""200k""  
+  数值相同，格式不同，但语义一致，得分1。
+
+- idx_3: response = ""notavailable"", target = ""200k""  
+  语义不一致，一个表示无数据，一个是具体数值，不符要求，得分0。
+
+- idx_4: response = ""32,000"", target = ""32k""  
+  数值相同，格式差异不影响语义一致，得分1。
+
+- idx_5: response = ""1million"", target = ""128k""  
+  数值不一致，语义不符，得分0。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",128k,1million,1.0,"Let's analyze each item according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Answers that convey the same meaning roughly or point to the same entity are considered correct.)
+
+---
+
+**idx_0**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Analysis: ""google"" and ""谷歌"" refer to the same entity (Google). Acceptable.  
+- Score: 1
+
+**idx_1**  
+- Response: ""google""  
+- Target: ""谷歌""  
+- Same as idx_0, response matches target entity.  
+- Score: 1
+
+**idx_2**  
+- Response: ""openai""  
+- Target: ""openai""  
+- Exactly the same.  
+- Score: 1
+
+**idx_3**  
+- Response: ""anthropic""  
+- Target: ""anthropic""  
+- Exactly the same.  
+- Score: 1
+
+**idx_4**  
+- Response: ""bytedance""  
+- Target: ""字节跳动""  
+- ""bytedance"" is the English name for ""字节跳动"". Matches.  
+- Score: 1
+
+**idx_5**  
+- Response: ""deepseek""  
+- Target: ""deepseek""  
+- Exactly the same.  
+- Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",deepseek,deepseek,1.0,key_match
+1.0,,claudeopus4,,,,75.50%,,,,72.50%,,,,59.60%,,,,81.40%,,,,200k,,,,anthropic,,,
+1.0,,claudesonnet4,,,,70.50%,,,,72.70%,,,,60%,,,,80.50%,,,,200k,,,,anthropic,,,
+1.0,,deepseek-r1,,,,70%,,,,49.20%,,,,NULL,,,,NULL,,,,128k,,,,deepseek,,,
+1.0,,deepseek-r1-0528,,,,87.50%,,,,57.60%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,deepseek-v3-0324,,,,47.74%,,,,38.80%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,gemini2.5flash-lite-nonthinking,,,,49.80%,,,,31.60%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-nonthinking,,,,61.60%,,,,50%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-thinking,,,,72.00%,,,,48.90%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+,1.0,gemini2.5lite,Gemini 2.5 Lite,,,,NULL,,,,NULL,,,,NULL,,,,NULL,,,,1million,,,,google,,
+1.0,,o3,,,,88.90%,,,,69.10%,,,,52%,,,,70.40%,,,,200k,,,,openai,,,
+1.0,,o4-mini,,,,92.70%,,,,68.10%,,,,49.20%,,,,65.60%,,,,200k,,,,openai,,,
+1.0,,seed-thinkingv1.6,,,,86%,,,,NULL,,,,NULL,,,,NULL,,,,256k,,,,字节跳动,,,

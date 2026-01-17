@@ -1,0 +1,279 @@
+exist_flag_gt,exist_flag_response,专辑名,专辑名_before_map,专辑名_exact_match,专辑名_exact_match_eval_msg,出道日期_exact_match,出道日期_exact_match_eval_msg,出道日期_query,出道日期_response,包含歌曲_llm_judge,包含歌曲_llm_judge_eval_msg,包含歌曲_query,包含歌曲_response,发行时间_exact_match,发行时间_exact_match_eval_msg,发行时间_query,发行时间_response,女团名_llm_judge,女团名_llm_judge_eval_msg,女团名_query,女团名_response,娱乐公司_llm_judge,娱乐公司_llm_judge_eval_msg,娱乐公司_query,娱乐公司_response
+,,thealbum,THE ALBUM,1.0,key_match,0.0,"exact not match, response: 2016-08-02, target: 2016年8月8日",2016年8月8日,2016-08-02,1.0,"首先确认标准答案与回答中的内容关系：
+
+- idx_0:
+  - 标准答案（target）包含多个歌曲名，第一首是 ""howyoulikethat""，后续还有其他歌曲。
+  - 回答（response）仅包含 ""howyoulikethat""。
+  - 根据评分标准“和参考答案语义相同大致、或者指向的实体一致即可”，在此题目下，若回答中提到的内容（""howyoulikethat""）与目标标准答案中列出的第一首歌曲一致，即可视为对应。
+  - 由于回答中仅提及其中一个歌曲名，并且该歌曲名确实出现在标准答案中，基本指向实体一致，符合要求。
+  - 因此，给分为 1。
+
+- idx_1:
+  - 标准答案（target）是多首歌曲名，均非 ""squareone""。
+  - 回答（response）是 ""squareone""。
+  - 该回答中的实体（""squareone""）不在标准答案列表中，也与标准答案的实体不符。
+  - 因此，给分为 0。
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```","howyoulikethat
+icecream
+prettysavage
+betyouwanna
+lovesickgirls
+crazyoveryou
+lovetohateme
+youneverknow",howyoulikethat,0.0,"exact not match, response: 2020-08-27, target: 2020年10月2日",2020年10月2日,2020-08-27,1.0,"Let's analyze each pair one by one based on the grading criterion:
+
+Criterion:
+- Responses and target answers should be semantically roughly the same or point to the same entity.
+- Exact wording is not necessary.
+
+Analysis:
+
+1. idx_0:
+   - Response: ""blackpink""
+   - Target: ""blackpink""
+   - Both are exactly the same word, so they point to the same entity.
+   - Meets criterion completely.
+
+2. idx_1:
+   - Response: ""blackpink""
+   - Target: ""blackpink""
+   - Same reasoning as idx_0.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",blackpink,blackpink,1.0,"Let's analyze each pair based on the provided criterion:
+
+Criterion summary:
+- The response and target answers should have the same or roughly the same meaning.
+- Or they should refer to the same entity.
+- Exact word-for-word matching is not necessary.
+
+Analysis for each index:
+
+1. idx_0:
+   - Response: ""ygentertainment""
+   - Target: ""yg""
+   - ""yg"" is commonly an abbreviation for ""yg entertainment"".
+   - The response uses the full name, target uses the abbreviation.
+   - Both point to the same entity ""YG Entertainment"".
+   - According to the criterion, this is acceptable and should score 1.
+
+2. idx_1:
+   - Response: ""ygentertainment""
+   - Target: ""yg""
+   - Same as above, same entity.
+   - Should score 1.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",yg,ygentertainment
+,,bornpink,BORN PINK,1.0,key_match,0.0,"exact not match, response: 2016-08-02, target: 2016年8月8日",2016年8月8日,2016-08-02,0.0,"首先确认标准答案与回答中的内容关系：
+
+- idx_0:
+  - 标准答案（target）包含多个歌曲名，第一首是 ""howyoulikethat""，后续还有其他歌曲。
+  - 回答（response）仅包含 ""howyoulikethat""。
+  - 根据评分标准“和参考答案语义相同大致、或者指向的实体一致即可”，在此题目下，若回答中提到的内容（""howyoulikethat""）与目标标准答案中列出的第一首歌曲一致，即可视为对应。
+  - 由于回答中仅提及其中一个歌曲名，并且该歌曲名确实出现在标准答案中，基本指向实体一致，符合要求。
+  - 因此，给分为 1。
+
+- idx_1:
+  - 标准答案（target）是多首歌曲名，均非 ""squareone""。
+  - 回答（response）是 ""squareone""。
+  - 该回答中的实体（""squareone""）不在标准答案列表中，也与标准答案的实体不符。
+  - 因此，给分为 0。
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```","pinkvenom
+shutdown
+typagirl
+yeahyeahyeah
+hardtolove
+thehappiestgirl
+tally
+readyforlove",squareone,0.0,"exact not match, response: 2017-08-22, target: 2022年9月16日",2022年9月16日,2017-08-22,1.0,"Let's analyze each pair one by one based on the grading criterion:
+
+Criterion:
+- Responses and target answers should be semantically roughly the same or point to the same entity.
+- Exact wording is not necessary.
+
+Analysis:
+
+1. idx_0:
+   - Response: ""blackpink""
+   - Target: ""blackpink""
+   - Both are exactly the same word, so they point to the same entity.
+   - Meets criterion completely.
+
+2. idx_1:
+   - Response: ""blackpink""
+   - Target: ""blackpink""
+   - Same reasoning as idx_0.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",blackpink,blackpink,1.0,"Let's analyze each pair based on the provided criterion:
+
+Criterion summary:
+- The response and target answers should have the same or roughly the same meaning.
+- Or they should refer to the same entity.
+- Exact word-for-word matching is not necessary.
+
+Analysis for each index:
+
+1. idx_0:
+   - Response: ""ygentertainment""
+   - Target: ""yg""
+   - ""yg"" is commonly an abbreviation for ""yg entertainment"".
+   - The response uses the full name, target uses the abbreviation.
+   - Both point to the same entity ""YG Entertainment"".
+   - According to the criterion, this is acceptable and should score 1.
+
+2. idx_1:
+   - Response: ""ygentertainment""
+   - Target: ""yg""
+   - Same as above, same entity.
+   - Should score 1.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",yg,ygentertainment
+1.0,,armageddon,,,,,,2020年11月17日,,,,"supernova
+armageddon
+setthetone
+mine
+licorice
+bahama
+longchat(#♥)
+prologue
+livemylife
+声音（목소리；melody）",,,,2024年5月27日,,,,aespa,,,,sm,
+1.0,,babymons7er,,,,,,2023年11月27日,,,,"monsters
+sheesh
+likethat
+stuckinthemiddle(7ver.)
+batterup(7ver.)
+dream
+stuckinthemiddle(remix)",,,,2024年4月1日,,,,babymonster,,,,yg,
+1.0,,blackpink,,,,,,2016年8月8日,,,,"boombayah
+whistle
+playingwithfire
+stay
+asifit'syourlast
+whistle(acousticver.)",,,,2017年8月30日,,,,blackpink,,,,yg,
+1.0,,blackpinkinyourarea,,,,,,2016年8月8日,,,,"boombayah-jpver.-
+whistle-jpver.-
+stay-jpver.-
+asifit'syourlast-jpver.-
+foreveryoung-jpver.-
+really-jpver.-
+seeulater-jpver.-",,,,2018年11月23日,,,,blackpink,,,,yg,
+1.0,,drama,,,,,,2020年11月17日,,,,"drama
+trickortrick
+don'tblink
+hotairballoon
+yolo
+you",,,,2023年11月10日,,,,aespa,,,,sm,
+1.0,,drip,,,,,,2023年11月27日,,,,"clikclak
+drip
+love,maybe
+reallylikeyou
+billionaire
+loveinmyheart
+wokeupintokyo(ruka&asa)
+forever
+batterup(remix)",,,,2024年11月1日,,,,babymonster,,,,yg,
+1.0,,girls,,,,,,2020年11月17日,,,,"girls
+lllusion
+lingo（링고）
+life'stooshort
+icu（쉬어가도돼/避风港）
+life'stooshort(englishver.)
+blackmamba
+forever
+dreamscometrue",,,,2022年7月8日,,,,aespa,,,,sm,
+,1.0,jump,JUMP,,,,,,2016-08-02,,,,notitletrack,,,,2016-10-21,,,,blackpink,,,,ygentertainment
+1.0,,killthislove,,,,,,2016年8月8日,,,,"killthislove
+don'tknowwhattodo
+kickit
+hopenot
+ddu-duddu-du(remix)",,,,2019年4月4日,,,,blackpink,,,,yg,
+1.0,,myworld,,,,,,2020年11月17日,,,,"welcometomyworld
+spicy
+salty&sweet
+thirsty
+i'munhappy
+'tilwemeetagain",,,,2023年5月8日,,,,aespa,,,,sm,
+,1.0,perfectvelvet,Perfect Velvet,,,,,,2014-08-18,,,,peek-a-boo,,,,2017-11-17,,,,redvelvet,,,,smentertainment
+,1.0,pinkvenom,Pink Venom,,,,,,2016-08-02,,,,killthislove,,,,2018-07-16,,,,blackpink,,,,ygentertainment
+1.0,,re：blackpink,,,,,,2016年8月8日,,,,"boombayah(붐바야)(japanesever.)
+whistle(japanesever.)
+playingwithfire(japanesever.)
+stay(japanesever.)
+asifit'syourlast(마지막처럼)(japanesever.)
+whistle(휘파람)(acousticver.)
+boombayah(붐바야)(koreanver.)
+whistle(휘파람)(koreanver.)
+playingwithfire(koreanver.)
+stay(koreanver.)",,,,2018年3月28日,,,,blackpink,,,,yg,
+1.0,,savage,,,,,,2020年11月17日,,,,"ænergy
+savage
+i'llmakeyoucry
+yeppiyeppi
+iconic
+luciddream（자각몽）",,,,2021年10月5日,,,,aespa,,,,sm,
+1.0,,squareone,,,,,,2016年8月8日,,,,"whistle（휘파람）
+boombayah（붐바야）",,,,2016年8月8日,,,,blackpink,,,,yg,
+1.0,,squaretwo,,,,,,2016年8月8日,,,,"playingwithfire（불장난）
+stay
+whistle（acousticver.）",,,,2016年11月1日,,,,blackpink,,,,yg,
+1.0,,squareup,,,,,,2016年8月8日,,,,"ddu-duddu-du
+foreveryoung
+really
+seeulater",,,,2018年6月15日,,,,blackpink,,,,yg,
+1.0,,synk:parallelline-specialdigitalsingle,,,,,,2020年11月17日,,,,"up
+dopamine
+bored!
+spark",,,,2024年10月9日,,,,aespa,,,,sm,
+1.0,,thechase,,,,,,2025年2月24日,,,,"thechase
+butterflies",,,,2025年2月24日,,,,hearts2hearts,,,,sm,
+,1.0,theperfectredvelvet,The Perfect Red Velvet,,,,,,2014-08-18,,,,moonlightmelody,,,,2018-01-29,,,,redvelvet,,,,smentertainment
+1.0,,whiplash,,,,,,2020年11月17日,,,,"whiplash
+killit
+flights,notfeelings
+pinkhoodie
+flowers
+justanothergirl",,,,2024年10月21日,,,,aespa,,,,sm,

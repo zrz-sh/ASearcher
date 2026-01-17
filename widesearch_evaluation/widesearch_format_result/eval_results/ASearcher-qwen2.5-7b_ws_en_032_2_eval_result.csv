@@ -1,0 +1,1559 @@
+exist_flag_gt,exist_flag_response,linenumber,linenumber_before_map,linename_llm_judge,linename_llm_judge_eval_msg,linename_query,linename_response,linenumber_exact_match,linenumber_exact_match_eval_msg,termini_llm_judge,termini_llm_judge_eval_msg,termini_query,termini_response,totalstations_exact_match,totalstations_exact_match_eval_msg,totalstations_query,totalstations_response
+,,t1,1,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",northshore&westernlines,central,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",berowra/emuplains/richmond,"centralstation,townhall",0.0,"exact not match, response: 31, target: 56",56,31
+,,t2,2,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",leppington&innerwestline,northern,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",citycircle/parramatta/leppington,"chatswood,strathfield",0.0,"exact not match, response: 26, target: 37",37,26
+,,t3,3,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",liverpool&innerwestline,western,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",citycircle/liverpoolstation,"blacktown,bankstown",0.0,"exact not match, response: 21, target: 30",30,21
+,,t4,4,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",easternsuburbs&illawarraline,southwestern,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",bondijunction/cronullastation/waterfall,"campbelltown,sutherland",0.0,"exact not match, response: 20, target: 33",33,20
+,,t5,5,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",cumberlandline,eastern,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",leppington/richmond,"hurstville,baulkhamhills",0.0,"exact not match, response: 22, target: 30",30,22
+,,t6,6,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",lidcombe&bankstownline,illawarra,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",bankstown/lidcombe,"wollongong,northwollongong",0.0,"exact not match, response: 16, target: 6",6,16
+,,t7,7,0.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",olympicparkline,northshore,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",lidcombe/olympicpark,"northsydney,gordon",0.0,"exact not match, response: 18, target: 2",2,18
+,,t8,8,1.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",airport&southline,t1,1.0,key_match,1.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",central/macarthurstation,"centralstation,townhall",0.0,"exact not match, response: 11, target: 34",34,11
+,,t9,9,1.0,"Let's analyze each idx one by one based on the criterion:
+
+Criterion summary: 
+- Semantics need to be approximately the same as the reference or point to the same entity.
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**:  
+- Response: ""central""  
+- Target: ""northshore&westernlines""  
+These are clearly different lines, different names, different directions. ""central"" line is not the same entity as ""northshore&westernlines"". This is incorrect.  
+Score: 0
+
+**idx_1**:  
+- Response: ""northern""  
+- Target: ""leppington&innerwestline""  
+""Northern"" and ""leppington&innerwestline"" are different; ""northern"" line is a specific line, but ""leppington"" and ""innerwestline"" are different lines. Not semantically same.  
+Score: 0
+
+**idx_2**:  
+- Response: ""western""  
+- Target: ""liverpool&innerwestline""  
+""Western"" and ""liverpool&innerwestline"" are not equivalent. Liverpool line is distinct from a line simply called ""western"" and innerwestline is a different line from western line.  
+Score: 0
+
+**idx_3**:  
+- Response: ""southwestern""  
+- Target: ""easternsuburbs&illawarraline""  
+""Southwestern"" does not mean ""easternsuburbs&illawarraline"". Different directions and different lines.  
+Score: 0
+
+**idx_4**:  
+- Response: ""eastern""  
+- Target: ""cumberlandline""  
+""eastern"" does not equal ""cumberlandline"". Different lines.  
+Score: 0
+
+**idx_5**:  
+- Response: ""illawarra""  
+- Target: ""lidcombe&bankstownline""  
+""Illawarra"" line is distinct from ""lidcombe&bankstownline"". Not equivalent.  
+Score: 0
+
+**idx_6**:  
+- Response: ""northshore""  
+- Target: ""olympicparkline""  
+These are different lines. ""Northshore"" line is different than Olympic Park Line.  
+Score: 0
+
+**idx_7**:  
+- Response: ""t1""  
+- Target: ""airport&southline""  
+""T1"" line includes Airport & South Line (T1 is an official designation including Airport & South). So ""t1"" and ""airport&southline"" can be considered approximately the same.  
+Score: 1
+
+**idx_8**:  
+- Response: ""t2""  
+- Target: ""northernline""  
+""T2"" is the official designation of the Northern Line, so this is semantically equivalent.  
+Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",northernline,t2,1.0,key_match,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for word-for-word matching.
+
+---
+
+### idx_0  
+- Response: 'centralstation,townhall'  
+- Target: 'berowra/emuplains/richmond'  
+- Analysis: The response is naming stations ""centralstation, townhall"" which are not semantically close or the same as ""berowra, emuplains, richmond"" (suburban stations). Different entities, no semantic overlap.  
+- Score: 0  
+
+---
+
+### idx_1  
+- Response: 'chatswood,strathfield'  
+- Target: 'citycircle/parramatta/leppington'  
+- Analysis: Chatswood and Strathfield are different train stations from City Circle, Parramatta, or Leppington. They point to different parts of the network. No semantic match in entities.  
+- Score: 0  
+
+---
+
+### idx_2  
+- Response: 'blacktown,bankstown'  
+- Target: 'citycircle/liverpoolstation'  
+- Analysis: Blacktown and Bankstown are different stations than City Circle or Liverpool Station. No semantic overlap or same entity.  
+- Score: 0  
+
+---
+
+### idx_3  
+- Response: 'campbelltown,sutherland'  
+- Target: 'bondijunction/cronullastation/waterfall'  
+- Analysis: Campbelltown and Sutherland are different stations from Bondi Junction, Cronulla, Waterfall. Different entities again. No semantic equivalency.  
+- Score: 0  
+
+---
+
+### idx_4  
+- Response: 'hurstville,baulkhamhills'  
+- Target: 'leppington/richmond'  
+- Analysis: Hurstville and Baulkham Hills vs Leppington and Richmond - completely different stations. No semantic or entity match.  
+- Score: 0  
+
+---
+
+### idx_5  
+- Response: 'wollongong,northwollongong'  
+- Target: 'bankstown/lidcombe'  
+- Analysis: Wollongong and North Wollongong are different stations than Bankstown or Lidcombe; different locations entirely. No entity match.  
+- Score: 0  
+
+---
+
+### idx_6  
+- Response: 'northsydney,gordon'  
+- Target: 'lidcombe/olympicpark'  
+- Analysis: North Sydney and Gordon are not the same as Lidcombe or Olympic Park. No semantic or entity equivalence.  
+- Score: 0  
+
+---
+
+### idx_7  
+- Response: 'centralstation,townhall'  
+- Target: 'central/macarthurstation'  
+- Analysis: Central Station is present in both response and target - this is the same entity. Townhall is also a nearby or part of the city circle group. Since central matches exactly, there is partial semantic/ entity overlap so the criterion is met.  
+- Score: 1  
+
+---
+
+### idx_8  
+- Response: 'centralstation,townhall'  
+- Target: 'gordon/hornsby'  
+- Analysis: Central Station / Townhall vs Gordon/Hornsby - different stations. No overlap or equivalency.  
+- Score: 0  
+
+---
+
+## Final results in JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 1,
+    ""idx_8"": 0
+}
+```",gordon/hornsby,"centralstation,townhall",0.0,"exact not match, response: 11, target: 31",31,11
+1.0,,m1,,,,metronorthwest&bankstown,,,,,,sydenham/tallawong,,,,21,

@@ -1,0 +1,317 @@
+exist_flag_gt,exist_flag_response,modelcode,modelcode_before_map,region,region_before_map,firstretailavailabilitydate_date_near,firstretailavailabilitydate_date_near_eval_msg,firstretailavailabilitydate_query,firstretailavailabilitydate_response,launchmsrp_llm_judge,launchmsrp_llm_judge_eval_msg,launchmsrp_query,launchmsrp_response,modelcode_exact_match,modelcode_exact_match_eval_msg,numberofincludedattachments_exact_match,numberofincludedattachments_exact_match_eval_msg,numberofincludedattachments_query,numberofincludedattachments_response,region_exact_match,region_exact_match_eval_msg,warranty(yrs)_exact_match,warranty(yrs)_exact_match_eval_msg,warranty(yrs)_query,warranty(yrs)_response
+,,hd01,HD01,u.s.,U.S.,0.0,"date not near, response: 2016-04-01 00:00:00, target: 2016-09-01 00:00:00",2016-09-01,2016-04-01,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- No need for exact word-for-word match, but the values must represent the same or very close amounts.
+
+---
+
+**idx_0:**  
+- Response: $379.99  
+- Target: $379.99  
+- Same value with exact match → fully correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: $399.99  
+- Target: $379.99  
+- Different value, $20 difference on approximately $380—does not point to the same entity/value.  
+- According to the criterion, close amounts but not ""approximately the same"" semantically for price?  
+- The criterion says ""approximately the same"" or same entity.  
+- Here, it is unclear if the price is ""approximately the same."" $399.99 vs $379.99 is a difference of $20, ~5.26% difference.  
+- Usually for such pricing, this difference might be considered not the same. The criterion is ambiguous. However, since the figure changed, the semantics do not match exactly.  
+- The criterion says ""It is sufficient if the semantics are approximately the same or if they point to the same entity.""  
+- The entity is the price, but the price is different. It could still be considered different.  
+- If ""approximately the same"" is lenient, it may be accepted. But as the question requires only 0 or 1, it is better to be strict.  
+- So assign score 0.
+
+**idx_2:**  
+- Response: $479.99  
+- Target: $399.99  
+- Difference is $80, around 20% difference. Definitely not approximately the same → score 0.
+
+**idx_3:**  
+- Response: ￥3990  
+- Target: ¥2990  
+- Both use the Yen currency symbol in different styles (￥ vs ¥) but the amount is 3990 vs 2990, $1000 difference.  
+- Currency unit is the same, but the amount is considerably different (~33% difference).  
+- The criterion says semantics approximately the same or pointing to same entity → here the price changed significantly.  
+- Thus, score 0.
+
+**idx_4:**  
+- Response: ¥39800  
+- Target: ¥45000  
+- Both use the same currency symbol, but values are 39800 vs 45000.  
+- Difference 5200, around 11.5% difference.  
+- According to the criterion, this is likely not approximately the same price.  
+- Score 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",$379.99,$379.99,1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,u.s.,U.S.,0.0,"date not near, response: 2017-10-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2017-10-01,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- No need for exact word-for-word match, but the values must represent the same or very close amounts.
+
+---
+
+**idx_0:**  
+- Response: $379.99  
+- Target: $379.99  
+- Same value with exact match → fully correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: $399.99  
+- Target: $379.99  
+- Different value, $20 difference on approximately $380—does not point to the same entity/value.  
+- According to the criterion, close amounts but not ""approximately the same"" semantically for price?  
+- The criterion says ""approximately the same"" or same entity.  
+- Here, it is unclear if the price is ""approximately the same."" $399.99 vs $379.99 is a difference of $20, ~5.26% difference.  
+- Usually for such pricing, this difference might be considered not the same. The criterion is ambiguous. However, since the figure changed, the semantics do not match exactly.  
+- The criterion says ""It is sufficient if the semantics are approximately the same or if they point to the same entity.""  
+- The entity is the price, but the price is different. It could still be considered different.  
+- If ""approximately the same"" is lenient, it may be accepted. But as the question requires only 0 or 1, it is better to be strict.  
+- So assign score 0.
+
+**idx_2:**  
+- Response: $479.99  
+- Target: $399.99  
+- Difference is $80, around 20% difference. Definitely not approximately the same → score 0.
+
+**idx_3:**  
+- Response: ￥3990  
+- Target: ¥2990  
+- Both use the Yen currency symbol in different styles (￥ vs ¥) but the amount is 3990 vs 2990, $1000 difference.  
+- Currency unit is the same, but the amount is considerably different (~33% difference).  
+- The criterion says semantics approximately the same or pointing to same entity → here the price changed significantly.  
+- Thus, score 0.
+
+**idx_4:**  
+- Response: ¥39800  
+- Target: ¥45000  
+- Both use the same currency symbol, but values are 39800 vs 45000.  
+- Difference 5200, around 11.5% difference.  
+- According to the criterion, this is likely not approximately the same price.  
+- Score 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",$379.99,$399.99,1.0,key_match,0.0,"exact not match, response: 1, target: 4",4,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd07,HD07,u.s.,U.S.,0.0,"date not near, response: 2019-03-01 00:00:00, target: 2021-08-01 00:00:00",2021-08-01,2019-03-01,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- No need for exact word-for-word match, but the values must represent the same or very close amounts.
+
+---
+
+**idx_0:**  
+- Response: $379.99  
+- Target: $379.99  
+- Same value with exact match → fully correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: $399.99  
+- Target: $379.99  
+- Different value, $20 difference on approximately $380—does not point to the same entity/value.  
+- According to the criterion, close amounts but not ""approximately the same"" semantically for price?  
+- The criterion says ""approximately the same"" or same entity.  
+- Here, it is unclear if the price is ""approximately the same."" $399.99 vs $379.99 is a difference of $20, ~5.26% difference.  
+- Usually for such pricing, this difference might be considered not the same. The criterion is ambiguous. However, since the figure changed, the semantics do not match exactly.  
+- The criterion says ""It is sufficient if the semantics are approximately the same or if they point to the same entity.""  
+- The entity is the price, but the price is different. It could still be considered different.  
+- If ""approximately the same"" is lenient, it may be accepted. But as the question requires only 0 or 1, it is better to be strict.  
+- So assign score 0.
+
+**idx_2:**  
+- Response: $479.99  
+- Target: $399.99  
+- Difference is $80, around 20% difference. Definitely not approximately the same → score 0.
+
+**idx_3:**  
+- Response: ￥3990  
+- Target: ¥2990  
+- Both use the Yen currency symbol in different styles (￥ vs ¥) but the amount is 3990 vs 2990, $1000 difference.  
+- Currency unit is the same, but the amount is considerably different (~33% difference).  
+- The criterion says semantics approximately the same or pointing to same entity → here the price changed significantly.  
+- Thus, score 0.
+
+**idx_4:**  
+- Response: ¥39800  
+- Target: ¥45000  
+- Both use the same currency symbol, but values are 39800 vs 45000.  
+- Difference 5200, around 11.5% difference.  
+- According to the criterion, this is likely not approximately the same price.  
+- Score 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",$399.99,$479.99,1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd01,HD01,china,China,0.0,"date not near, response: 2016-04-01 00:00:00, target: 2016-08-01 00:00:00",2016-08-01,2016-04-01,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- No need for exact word-for-word match, but the values must represent the same or very close amounts.
+
+---
+
+**idx_0:**  
+- Response: $379.99  
+- Target: $379.99  
+- Same value with exact match → fully correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: $399.99  
+- Target: $379.99  
+- Different value, $20 difference on approximately $380—does not point to the same entity/value.  
+- According to the criterion, close amounts but not ""approximately the same"" semantically for price?  
+- The criterion says ""approximately the same"" or same entity.  
+- Here, it is unclear if the price is ""approximately the same."" $399.99 vs $379.99 is a difference of $20, ~5.26% difference.  
+- Usually for such pricing, this difference might be considered not the same. The criterion is ambiguous. However, since the figure changed, the semantics do not match exactly.  
+- The criterion says ""It is sufficient if the semantics are approximately the same or if they point to the same entity.""  
+- The entity is the price, but the price is different. It could still be considered different.  
+- If ""approximately the same"" is lenient, it may be accepted. But as the question requires only 0 or 1, it is better to be strict.  
+- So assign score 0.
+
+**idx_2:**  
+- Response: $479.99  
+- Target: $399.99  
+- Difference is $80, around 20% difference. Definitely not approximately the same → score 0.
+
+**idx_3:**  
+- Response: ￥3990  
+- Target: ¥2990  
+- Both use the Yen currency symbol in different styles (￥ vs ¥) but the amount is 3990 vs 2990, $1000 difference.  
+- Currency unit is the same, but the amount is considerably different (~33% difference).  
+- The criterion says semantics approximately the same or pointing to same entity → here the price changed significantly.  
+- Thus, score 0.
+
+**idx_4:**  
+- Response: ¥39800  
+- Target: ¥45000  
+- Both use the same currency symbol, but values are 39800 vs 45000.  
+- Difference 5200, around 11.5% difference.  
+- According to the criterion, this is likely not approximately the same price.  
+- Score 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",¥2990,￥3990,1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd01,HD01,japan,Japan,1.0,"date near, response: 2016-04-01 00:00:00, target: 2016-04-01 00:00:00",2016-04-01,2016-04-01,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary:  
+- The semantics should be approximately the same or point to the same entity.  
+- No need for exact word-for-word match, but the values must represent the same or very close amounts.
+
+---
+
+**idx_0:**  
+- Response: $379.99  
+- Target: $379.99  
+- Same value with exact match → fully correct.  
+- Score: 1
+
+**idx_1:**  
+- Response: $399.99  
+- Target: $379.99  
+- Different value, $20 difference on approximately $380—does not point to the same entity/value.  
+- According to the criterion, close amounts but not ""approximately the same"" semantically for price?  
+- The criterion says ""approximately the same"" or same entity.  
+- Here, it is unclear if the price is ""approximately the same."" $399.99 vs $379.99 is a difference of $20, ~5.26% difference.  
+- Usually for such pricing, this difference might be considered not the same. The criterion is ambiguous. However, since the figure changed, the semantics do not match exactly.  
+- The criterion says ""It is sufficient if the semantics are approximately the same or if they point to the same entity.""  
+- The entity is the price, but the price is different. It could still be considered different.  
+- If ""approximately the same"" is lenient, it may be accepted. But as the question requires only 0 or 1, it is better to be strict.  
+- So assign score 0.
+
+**idx_2:**  
+- Response: $479.99  
+- Target: $399.99  
+- Difference is $80, around 20% difference. Definitely not approximately the same → score 0.
+
+**idx_3:**  
+- Response: ￥3990  
+- Target: ¥2990  
+- Both use the Yen currency symbol in different styles (￥ vs ¥) but the amount is 3990 vs 2990, $1000 difference.  
+- Currency unit is the same, but the amount is considerably different (~33% difference).  
+- The criterion says semantics approximately the same or pointing to same entity → here the price changed significantly.  
+- Thus, score 0.
+
+**idx_4:**  
+- Response: ¥39800  
+- Target: ¥45000  
+- Both use the same currency symbol, but values are 39800 vs 45000.  
+- Difference 5200, around 11.5% difference.  
+- According to the criterion, this is likely not approximately the same price.  
+- Score 0.
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",¥45000,¥39800,1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+1.0,,hd03,,china,,,,2019-09-01,,,,¥2990,,,,,,4,,,,,,2,
+1.0,,hd08,,china,,,,2021-07-01,,,,¥2799,,,,,,5,,,,,,2,
+1.0,,hd15,,china,,,,2024-04-01,,,,¥3499,,,,,,5,,,,,,2,
+1.0,,hd16,,china,,,,2024-04-01,,,,¥3499,,,,,,5,,,,,,2,
+1.0,,hd03,,japan,,,,2019-09-01,,,,¥47980,,,,,,4,,,,,,2,
+1.0,,hd08,,japan,,,,2021-09-01,,,,¥39900,,,,,,5,,,,,,2,
+1.0,,hd15,,japan,,,,2023-04-01,,,,¥48800,,,,,,3,,,,,,2,
+1.0,,hd16,,japan,,,,2023-03-01,,,,¥49900,,,,,,3,,,,,,2,
+,1.0,hd08,HD08,u.s.,U.S.,,,,2021-11-01,,,,$499.99,,,,,,1,,,,,,2
+1.0,,hd15,,u.s.,,,,2024-05-01,,,,$429.99,,,,,,5,,,,,,2,
+1.0,,hd16,,u.s.,,,,2024-03-01,,,,$499.99,,,,,,5,,,,,,2,

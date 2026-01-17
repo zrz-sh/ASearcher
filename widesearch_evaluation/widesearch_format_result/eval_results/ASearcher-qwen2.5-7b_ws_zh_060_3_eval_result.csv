@@ -1,0 +1,823 @@
+exist_flag_gt,exist_flag_response,模型名称,模型名称_before_map,aime2025_number_near,aime2025_number_near_eval_msg,aime2025_query,aime2025_response,swe-benchverified_number_near,swe-benchverified_number_near_eval_msg,swe-benchverified_query,swe-benchverified_response,tau-bench-airline_number_near,tau-bench-airline_number_near_eval_msg,tau-bench-airline_query,tau-bench-airline_response,tau-bench-retail_number_near,tau-bench-retail_number_near_eval_msg,tau-bench-retail_query,tau-bench-retail_response,上下文窗口_llm_judge,上下文窗口_llm_judge_eval_msg,上下文窗口_query,上下文窗口_response,公司_llm_judge,公司_llm_judge_eval_msg,公司_query,公司_response,模型名称_exact_match,模型名称_exact_match_eval_msg
+,,gemini2.5pro,Gemini 2.5 Pro,0.0,"number not convertable, response: None, target: 0.88",88%,NULL,0.0,"number not convertable, response: None, target: 0.596",59.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",1m,"1,000,000tokens",1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",谷歌,google,1.0,key_match
+,,o4-mini,O4-mini,0.0,"number not convertable, response: None, target: 0.927",92.70%,NULL,0.0,"number not convertable, response: None, target: 0.6809999999999999",68.10%,NULL,0.0,"number not convertable, response: None, target: 0.49200000000000005",49.20%,NULL,0.0,"number not convertable, response: None, target: 0.6559999999999999",65.60%,NULL,1.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",200k,"200,000tokens",1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",openai,openai,1.0,key_match
+,,o3mini,O3-mini,0.0,"number not convertable, response: None, target: 0.865",86.50%,NULL,0.0,"number not convertable, response: None, target: 0.493",49.30%,NULL,0.0,"number not convertable, response: None, target: 0.324",32.40%,NULL,0.0,"number not convertable, response: None, target: 0.5760000000000001",57.60%,NULL,1.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",200k,"200,000tokens",1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",openai,openai,1.0,key_match
+,,claude3.7sonnet,Claude 3.7,0.0,"number not near, response: 3.7, target: 0.5479999999999999",54.80%,3.7,0.0,"number not convertable, response: None, target: 0.623",62.30%,NULL,0.0,"number not convertable, response: None, target: 0.584",58.40%,NULL,0.0,"number not convertable, response: None, target: 0.812",81.20%,NULL,0.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",200k,-,1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",anthropic,anthropic,1.0,key_match
+,,seed-thinkingv1.5,Doubao-1.5-Thinking,0.0,"number not convertable, response: None, target: 0.74",74%,NULL,0.0,"number not convertable, response: None, target: 0.47",47%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",32k,"128,000tokens",1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",字节跳动,bytedance,1.0,key_match
+,,seed-thinkingv1.6,Doubao-1.6-Thinking,0.0,"number not convertable, response: None, target: 0.86",86%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",256k,"256,000tokens",1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",字节跳动,bytedance,1.0,key_match
+,,deepseek-v3,DeepSeek V3,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"number not convertable, response: None, target: 0.42",42%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"Let's analyze each response compared to the target, following the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means if the response and the target convey the same meaning or refer to the same entity (value), it is correct.
+
+---
+
+**idx_0**  
+- response: ""1,000,000tokens""  
+- target: ""1m""  
+Analysis: ""1m"" means 1 million; ""1,000,000tokens"" is equivalent to 1 million tokens. Semantically consistent.  
+Score: 1
+
+**idx_1**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Analysis: ""200k"" means 200,000; response is exactly 200,000 tokens. Correct.  
+Score: 1
+
+**idx_2**  
+- response: ""200,000tokens""  
+- target: ""200k""  
+Same as idx_1, response matches target.  
+Score: 1
+
+**idx_3**  
+- response: ""-""  
+- target: ""200k""  
+Response is ""-"" literally, no numeric value or relevant info; target is 200k. They do not match.  
+Score: 0
+
+**idx_4**  
+- response: ""128,000tokens""  
+- target: ""32k""  
+Response indicates 128,000, target is 32,000; values differ significantly, no semantic equivalence.  
+Score: 0
+
+**idx_5**  
+- response: ""256,000tokens""  
+- target: ""256k""  
+""256k"" means 256,000; response matches exactly.  
+Score: 1
+
+**idx_6**  
+- response: ""128,000tokens""  
+- target: ""128k""  
+""128k"" means 128,000; response matches exactly.  
+Score: 1
+
+---
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",128k,"128,000tokens",1.0,"分析与判定：
+
+1. idx_0:  
+   - response: ""google""  
+   - target: ""谷歌""  
+   - 判定依据：英文名称“google”与中文名称“谷歌”是同一实体，语义相同大致，符合要求。  
+   - 评分：1
+
+2. idx_1:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+3. idx_2:  
+   - response: ""openai""  
+   - target: ""openai""  
+   - 一致，完全正确。  
+   - 评分：1
+
+4. idx_3:  
+   - response: ""anthropic""  
+   - target: ""anthropic""  
+   - 一致，完全正确。  
+   - 评分：1
+
+5. idx_4:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 英文名称“bytedance”与中文“字节跳动”是同一实体，语义相同大致。  
+   - 评分：1
+
+6. idx_5:  
+   - response: ""bytedance""  
+   - target: ""字节跳动""  
+   - 同上判定。  
+   - 评分：1
+
+7. idx_6:  
+   - response: ""deepseek""  
+   - target: ""deepseek""  
+   - 一致，完全正确。  
+   - 评分：1
+
+综合以上分析，所有响应与对应参考答案语义相同或指向相同实体，均符合标准，得分均为1。
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",deepseek,deepseek,1.0,key_match
+1.0,,claudeopus4,,,,75.50%,,,,72.50%,,,,59.60%,,,,81.40%,,,,200k,,,,anthropic,,,
+1.0,,claudesonnet4,,,,70.50%,,,,72.70%,,,,60%,,,,80.50%,,,,200k,,,,anthropic,,,
+1.0,,deepseek-r1,,,,70%,,,,49.20%,,,,NULL,,,,NULL,,,,128k,,,,deepseek,,,
+1.0,,deepseek-r1-0528,,,,87.50%,,,,57.60%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,deepseek-v3-0324,,,,47.74%,,,,38.80%,,,,NULL,,,,NULL,,,,64k,,,,deepseek,,,
+1.0,,gemini2.5flash-lite-nonthinking,,,,49.80%,,,,31.60%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-lite-thinking,,,,63.10%,,,,27.60%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-nonthinking,,,,61.60%,,,,50%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,gemini2.5flash-thinking,,,,72.00%,,,,48.90%,,,,NULL,,,,NULL,,,,1m,,,,谷歌,,,
+1.0,,o3,,,,88.90%,,,,69.10%,,,,52%,,,,70.40%,,,,200k,,,,openai,,,

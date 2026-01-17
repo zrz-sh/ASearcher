@@ -1,0 +1,1856 @@
+device,device_before_map,exist_flag_gt,exist_flag_response,announceddate_exact_match,announceddate_exact_match_eval_msg,announceddate_query,announceddate_response,availablecolors_llm_judge,availablecolors_llm_judge_eval_msg,availablecolors_query,availablecolors_response,batterycapacity_exact_match,batterycapacity_exact_match_eval_msg,batterycapacity_query,batterycapacity_response,device_exact_match,device_exact_match_eval_msg,launchos_llm_judge,launchos_llm_judge_eval_msg,launchos_query,launchos_response,materials(frame/front&back)_llm_judge,materials(frame/front&back)_llm_judge_eval_msg,materials(frame/front&back)_query,materials(frame/front&back)_response,ram_exact_match,ram_exact_match_eval_msg,ram_query,ram_response,size(h×w×d;mm)_llm_judge,size(h×w×d;mm)_llm_judge_eval_msg,size(h×w×d;mm)_query,size(h×w×d;mm)_response,u.s.launchprice(msrpbystorage)_llm_judge,u.s.launchprice(msrpbystorage)_llm_judge_eval_msg,u.s.launchprice(msrpbystorage)_query,u.s.launchprice(msrpbystorage)_response
+pixel7,Google Pixel 7,,,0.0,"exact not match, response: 2022-10-19, target: 2022-10-06",2022-10-06,2022-10-19,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No word-for-word correspondence needed.
+
+Given:
+- All responses are ""notreleased""
+- Targets are specific combinations of terms like ""snow/lemongrass/obsidian""
+
+Step-by-step analysis per idx:
+
+- idx_0: response = ""notreleased""; target = ""snow/lemongrass/obsidian""  
+  Response ""notreleased"" does not semantically approximate or point to the same entity as the target ""snow/lemongrass/obsidian"". These are different entities or terms. So score = 0.
+
+- idx_1: response = ""notreleased""; target = ""snow/obsidian/hazel""  
+  Same as above, no semantic match or pointing to the same entity. Score = 0.
+
+- idx_2: response = ""notreleased""; target = ""hazel/mint/rose/obsidian""  
+  Same reasoning. Score = 0.
+
+- idx_3: response = ""notreleased""; target = ""bay/mint/obsidian/porcelain""  
+  Same, score = 0.
+
+- idx_4: response = ""notreleased""; target = ""peony/wintergreen/porcelain/obsidian""  
+  Same, score = 0.
+
+- idx_5: response = ""notreleased""; target = ""obsidian/porcelain/rosequartz/hazel""  
+  Same, score = 0.
+
+None of the responses approximate or point to the same entity as the targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",snow/lemongrass/obsidian,notreleased,0.0,"exact not match, response: 4614mah, target: 4355mah",4355mah,4614mah,1.0,key_match,1.0,"Let's analyze each pair based on the criterion:
+
+- The scoring range is 0 or 1 (integer).
+- It's sufficient if the semantics are approximately the same or if they point to the same entity.
+- Identical matches get a full score of 1.
+- If the response differs in the entity (version number) from the target, score 0.
+
+Step-by-step analysis:
+
+1. idx_0: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+2. idx_1: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+3. idx_2: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+4. idx_3: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+5. idx_4: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+6. idx_5: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android13,android13,1.0,"Let's analyze each pair step-by-step based on the criterion.
+
+-----
+
+### Given criterion:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Broader answers covering the reference answer are acceptable.
+- No need for exact word-for-word match.
+
+-----
+
+### Analysis per idx:
+
+**idx_0**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictusfront&back""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": these are spelling variants (US vs UK English) and considered equivalent.  
+    - Response says ""glassfront&back"" vs target ""corninggorillaglassvictusfront&back"". Corning Gorilla Glass Victus is a specific type of glass; ""glass"" is broader but acceptable as per criterion.  
+    - Both mention front & back glass; matches in semantics.  
+- Verdict: acceptable → score 1
+
+**idx_1**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_2**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_3**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front,glassback""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": acceptable.  
+    - ""glassfront&back"" vs ""corninggorillaglassvictus2front, glassback""  
+    - ""glassfront&back"" covers ""glassfront"" and ""glassback"" so semantically matched. ""corninggorillaglassvictus2"" is specific glass type; ""glass"" is broader → acceptable.  
+- Verdict: score 1
+
+**idx_4**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front&back""  
+- Analysis: Same logic as above — acceptable.  
+- Verdict: score 1
+
+**idx_5**  
+- Same as idx_4.  
+- Verdict: score 1
+
+-----
+
+### Final scoring (all 1s):
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```
+",aluminium/corninggorillaglassvictusfront&back,aluminum/glassfront&back,1.0,"exact match, response: 8gb, target: 8gb",8gb,8gb,0.0,"Let's analyze each pair according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In other words, if the given dimensions correspond approximately (not necessarily exactly) to the target dimensions, or effectively describe the same measurement, they get a 1. If the dimensions differ significantly, score 0.
+
+---
+
+### idx_0  
+- Response: 162.5x74.8x8.6mm  
+- Target: 155.6×73.2×8.7  
+Analysis:  
+- Length: 162.5 vs 155.6 (difference ~7 mm, >5 mm is a noticeable mismatch)  
+- Width: 74.8 vs 73.2 (~1.6 mm difference, may be close)  
+- Thickness: 8.6 vs 8.7 (0.1 mm difference, close)  
+Overall, length differs by ~7 mm, roughly 5% difference, somewhat substantial in this context. It's borderline, but sizes differ noticeably. Given the criterion, ""approximately"" may allow for small variations, but this one appears quite a bit off in length. Thus, assign 0.
+
+---
+
+### idx_1  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.9×76.6×8.9  
+Analysis:  
+- Length: 163.9 vs 162.9 (1 mm diff - negligible)  
+- Width: 75.9 vs 76.6 (0.7 mm diff - negligible)  
+- Thickness: 8.9 vs 8.9 (same)  
+Dimensions are very close, clearly same entity. Assign 1.
+
+---
+
+### idx_2  
+- Response: 162.5x74.8x8.6mm  
+- Target: 150.5×70.8×8.9  
+Analysis:  
+- Length: 162.5 vs 150.5 (12 mm difference - quite large)  
+- Width: 74.8 vs 70.8 (4 mm difference)  
+- Thickness: 8.6 vs 8.9 (0.3 mm difference)  
+This is quite off from the target dimensions. Assign 0.
+
+---
+
+### idx_3  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.6×76.5×8.8  
+Analysis:  
+- Length: 163.9 vs 162.6 (1.3 mm difference - negligible)  
+- Width: 75.9 vs 76.5 (0.6 mm diff - negligible)  
+- Thickness: 8.9 vs 8.8 (0.1 mm diff - negligible)  
+Clearly same or approximate dimension. Assign 1.
+
+---
+
+### idx_4  
+- Response: 162.5x74.8x8.6mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 162.5 vs 152.8 (almost 10 mm difference - significant)  
+- Width: 74.8 vs 72 (2.8 mm difference)  
+- Thickness: 8.6 vs 8.5 (0.1 mm diff)  
+Considering the length difference is somewhat large, assign 0.
+
+---
+
+### idx_5  
+- Response: 163.9x75.9x8.9mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 163.9 vs 152.8 (11.1 mm difference)  
+- Width: 75.9 vs 72 (3.9 mm difference)  
+- Thickness: 8.9 vs 8.5 (0.4 mm difference)  
+Dimensions are quite different; assign 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",155.6×73.2×8.7,162.5x74.8x8.6mm,0.0,"Let's analyze each pair according to the grading criteria:
+
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for exact word-for-word correspondence.
+
+- The question is about price listings for storage options.
+- The target answers provide storage sizes with corresponding prices.
+- The responses should match these prices approximately or refer to the same entity (the prices for the given storage sizes).
+
+---
+
+### idx_0
+- Target: 128gb:599, 256gb:699
+- Response: 128gb:$649, 256gb:$749
+- Prices are both higher than target by $50.
+- Not approximate, but the units and entities are the same (storage size and price points).
+- However, the criterion states ""approximately the same,"" and $50 difference is quite significant here (almost 8-9%), probably too far.
+- The response is a different price, so semantics about prices differ.
+- So, score = 0
+
+### idx_1
+- Target: 128gb:899, 256gb:999, 512gb:1099
+- Response: 128gb:$849, 256gb:$949, 512gb:$1149
+- Differences: -50, -50, +50
+- Prices differ with $50 less or more, similar to idx_0.
+- Not approximate enough; prices are different.
+- Response otherwise shows correct sizes with prices.
+- Since criterion requires approximate close semantics, this may be borderline, but 50 difference is too big.
+- Score = 0
+
+### idx_2
+- Target: 128gb:699, 256gb:759
+- Response: 128gb:$899, 256gb:$999
+- Price difference: +$200, +$240 (much higher)
+- Prices are not approximate at all.
+- Response and target differ greatly; semantics not the same.
+- Score = 0
+
+### idx_3
+- Target: 128gb:999, 256gb:1059, 512gb:1179, 1tb:1399
+- Response: 128gb:$1099, 256gb:$1199, 512gb:$1399
+- Response misses 1tb option.
+- Price differences between response and target are $100, $140, $220 roughly.
+- Prices differ significantly, not approximate.
+- Also, response misses 1tb size entirely.
+- According to the criterion, it does not need exact match, but missing an entire entity would count against.
+- Score = 0
+
+### idx_4
+- Target: 128gb:799, 256gb:899
+- Response: 128gb:$1199, 256gb:$1299, 512gb:$1499
+- Response prices much higher and added 512gb not in target.
+- Prices differ greatly.
+- Prices not approximate.
+- Response adds an entity that target does not have.
+- Since the given criterion accepts approximate semantics and pointing to the same entity, but here prices are different greatly and there is an extra storage option.
+- Score = 0
+
+### idx_5
+- Target: 128gb:999, 256gb:1099, 512gb:1219, 1tb:1449
+- Response: 128gb:$1399, 256gb:$1499, 512gb:$1699
+- Price difference about +$400.
+- Missing the 1tb size.
+- Prices differ greatly; semantics differ significantly.
+- Score = 0
+
+---
+
+**Final conclusion:** None of the responses approximate the target answers semantically enough, as the prices are off significantly or important entities are missing.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","128gb:599,256gb:699","128gb:$649,256gb:$749"
+pixel7pro,Google Pixel 7 Pro,,,0.0,"exact not match, response: 2022-10-19, target: 2022-10-06",2022-10-06,2022-10-19,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No word-for-word correspondence needed.
+
+Given:
+- All responses are ""notreleased""
+- Targets are specific combinations of terms like ""snow/lemongrass/obsidian""
+
+Step-by-step analysis per idx:
+
+- idx_0: response = ""notreleased""; target = ""snow/lemongrass/obsidian""  
+  Response ""notreleased"" does not semantically approximate or point to the same entity as the target ""snow/lemongrass/obsidian"". These are different entities or terms. So score = 0.
+
+- idx_1: response = ""notreleased""; target = ""snow/obsidian/hazel""  
+  Same as above, no semantic match or pointing to the same entity. Score = 0.
+
+- idx_2: response = ""notreleased""; target = ""hazel/mint/rose/obsidian""  
+  Same reasoning. Score = 0.
+
+- idx_3: response = ""notreleased""; target = ""bay/mint/obsidian/porcelain""  
+  Same, score = 0.
+
+- idx_4: response = ""notreleased""; target = ""peony/wintergreen/porcelain/obsidian""  
+  Same, score = 0.
+
+- idx_5: response = ""notreleased""; target = ""obsidian/porcelain/rosequartz/hazel""  
+  Same, score = 0.
+
+None of the responses approximate or point to the same entity as the targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",snow/obsidian/hazel,notreleased,0.0,"exact not match, response: 5003mah, target: 5000mah",5000mah,5003mah,1.0,key_match,1.0,"Let's analyze each pair based on the criterion:
+
+- The scoring range is 0 or 1 (integer).
+- It's sufficient if the semantics are approximately the same or if they point to the same entity.
+- Identical matches get a full score of 1.
+- If the response differs in the entity (version number) from the target, score 0.
+
+Step-by-step analysis:
+
+1. idx_0: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+2. idx_1: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+3. idx_2: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+4. idx_3: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+5. idx_4: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+6. idx_5: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android13,android13,1.0,"Let's analyze each pair step-by-step based on the criterion.
+
+-----
+
+### Given criterion:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Broader answers covering the reference answer are acceptable.
+- No need for exact word-for-word match.
+
+-----
+
+### Analysis per idx:
+
+**idx_0**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictusfront&back""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": these are spelling variants (US vs UK English) and considered equivalent.  
+    - Response says ""glassfront&back"" vs target ""corninggorillaglassvictusfront&back"". Corning Gorilla Glass Victus is a specific type of glass; ""glass"" is broader but acceptable as per criterion.  
+    - Both mention front & back glass; matches in semantics.  
+- Verdict: acceptable → score 1
+
+**idx_1**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_2**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_3**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front,glassback""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": acceptable.  
+    - ""glassfront&back"" vs ""corninggorillaglassvictus2front, glassback""  
+    - ""glassfront&back"" covers ""glassfront"" and ""glassback"" so semantically matched. ""corninggorillaglassvictus2"" is specific glass type; ""glass"" is broader → acceptable.  
+- Verdict: score 1
+
+**idx_4**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front&back""  
+- Analysis: Same logic as above — acceptable.  
+- Verdict: score 1
+
+**idx_5**  
+- Same as idx_4.  
+- Verdict: score 1
+
+-----
+
+### Final scoring (all 1s):
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```
+",aluminium/corninggorillaglassvictusfront&back,aluminum/glassfront&back,1.0,"exact match, response: 12gb, target: 12gb",12gb,12gb,1.0,"Let's analyze each pair according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In other words, if the given dimensions correspond approximately (not necessarily exactly) to the target dimensions, or effectively describe the same measurement, they get a 1. If the dimensions differ significantly, score 0.
+
+---
+
+### idx_0  
+- Response: 162.5x74.8x8.6mm  
+- Target: 155.6×73.2×8.7  
+Analysis:  
+- Length: 162.5 vs 155.6 (difference ~7 mm, >5 mm is a noticeable mismatch)  
+- Width: 74.8 vs 73.2 (~1.6 mm difference, may be close)  
+- Thickness: 8.6 vs 8.7 (0.1 mm difference, close)  
+Overall, length differs by ~7 mm, roughly 5% difference, somewhat substantial in this context. It's borderline, but sizes differ noticeably. Given the criterion, ""approximately"" may allow for small variations, but this one appears quite a bit off in length. Thus, assign 0.
+
+---
+
+### idx_1  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.9×76.6×8.9  
+Analysis:  
+- Length: 163.9 vs 162.9 (1 mm diff - negligible)  
+- Width: 75.9 vs 76.6 (0.7 mm diff - negligible)  
+- Thickness: 8.9 vs 8.9 (same)  
+Dimensions are very close, clearly same entity. Assign 1.
+
+---
+
+### idx_2  
+- Response: 162.5x74.8x8.6mm  
+- Target: 150.5×70.8×8.9  
+Analysis:  
+- Length: 162.5 vs 150.5 (12 mm difference - quite large)  
+- Width: 74.8 vs 70.8 (4 mm difference)  
+- Thickness: 8.6 vs 8.9 (0.3 mm difference)  
+This is quite off from the target dimensions. Assign 0.
+
+---
+
+### idx_3  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.6×76.5×8.8  
+Analysis:  
+- Length: 163.9 vs 162.6 (1.3 mm difference - negligible)  
+- Width: 75.9 vs 76.5 (0.6 mm diff - negligible)  
+- Thickness: 8.9 vs 8.8 (0.1 mm diff - negligible)  
+Clearly same or approximate dimension. Assign 1.
+
+---
+
+### idx_4  
+- Response: 162.5x74.8x8.6mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 162.5 vs 152.8 (almost 10 mm difference - significant)  
+- Width: 74.8 vs 72 (2.8 mm difference)  
+- Thickness: 8.6 vs 8.5 (0.1 mm diff)  
+Considering the length difference is somewhat large, assign 0.
+
+---
+
+### idx_5  
+- Response: 163.9x75.9x8.9mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 163.9 vs 152.8 (11.1 mm difference)  
+- Width: 75.9 vs 72 (3.9 mm difference)  
+- Thickness: 8.9 vs 8.5 (0.4 mm difference)  
+Dimensions are quite different; assign 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",162.9×76.6×8.9,163.9x75.9x8.9mm,0.0,"Let's analyze each pair according to the grading criteria:
+
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for exact word-for-word correspondence.
+
+- The question is about price listings for storage options.
+- The target answers provide storage sizes with corresponding prices.
+- The responses should match these prices approximately or refer to the same entity (the prices for the given storage sizes).
+
+---
+
+### idx_0
+- Target: 128gb:599, 256gb:699
+- Response: 128gb:$649, 256gb:$749
+- Prices are both higher than target by $50.
+- Not approximate, but the units and entities are the same (storage size and price points).
+- However, the criterion states ""approximately the same,"" and $50 difference is quite significant here (almost 8-9%), probably too far.
+- The response is a different price, so semantics about prices differ.
+- So, score = 0
+
+### idx_1
+- Target: 128gb:899, 256gb:999, 512gb:1099
+- Response: 128gb:$849, 256gb:$949, 512gb:$1149
+- Differences: -50, -50, +50
+- Prices differ with $50 less or more, similar to idx_0.
+- Not approximate enough; prices are different.
+- Response otherwise shows correct sizes with prices.
+- Since criterion requires approximate close semantics, this may be borderline, but 50 difference is too big.
+- Score = 0
+
+### idx_2
+- Target: 128gb:699, 256gb:759
+- Response: 128gb:$899, 256gb:$999
+- Price difference: +$200, +$240 (much higher)
+- Prices are not approximate at all.
+- Response and target differ greatly; semantics not the same.
+- Score = 0
+
+### idx_3
+- Target: 128gb:999, 256gb:1059, 512gb:1179, 1tb:1399
+- Response: 128gb:$1099, 256gb:$1199, 512gb:$1399
+- Response misses 1tb option.
+- Price differences between response and target are $100, $140, $220 roughly.
+- Prices differ significantly, not approximate.
+- Also, response misses 1tb size entirely.
+- According to the criterion, it does not need exact match, but missing an entire entity would count against.
+- Score = 0
+
+### idx_4
+- Target: 128gb:799, 256gb:899
+- Response: 128gb:$1199, 256gb:$1299, 512gb:$1499
+- Response prices much higher and added 512gb not in target.
+- Prices differ greatly.
+- Prices not approximate.
+- Response adds an entity that target does not have.
+- Since the given criterion accepts approximate semantics and pointing to the same entity, but here prices are different greatly and there is an extra storage option.
+- Score = 0
+
+### idx_5
+- Target: 128gb:999, 256gb:1099, 512gb:1219, 1tb:1449
+- Response: 128gb:$1399, 256gb:$1499, 512gb:$1699
+- Price difference about +$400.
+- Missing the 1tb size.
+- Prices differ greatly; semantics differ significantly.
+- Score = 0
+
+---
+
+**Final conclusion:** None of the responses approximate the target answers semantically enough, as the prices are off significantly or important entities are missing.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","128gb:899,256gb:999,512gb:1099","128gb:$849,256gb:$949,512gb:$1149"
+pixel8,Google Pixel 8,,,0.0,"exact not match, response: 2023-10-19, target: 2023-10-04",2023-10-04,2023-10-19,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No word-for-word correspondence needed.
+
+Given:
+- All responses are ""notreleased""
+- Targets are specific combinations of terms like ""snow/lemongrass/obsidian""
+
+Step-by-step analysis per idx:
+
+- idx_0: response = ""notreleased""; target = ""snow/lemongrass/obsidian""  
+  Response ""notreleased"" does not semantically approximate or point to the same entity as the target ""snow/lemongrass/obsidian"". These are different entities or terms. So score = 0.
+
+- idx_1: response = ""notreleased""; target = ""snow/obsidian/hazel""  
+  Same as above, no semantic match or pointing to the same entity. Score = 0.
+
+- idx_2: response = ""notreleased""; target = ""hazel/mint/rose/obsidian""  
+  Same reasoning. Score = 0.
+
+- idx_3: response = ""notreleased""; target = ""bay/mint/obsidian/porcelain""  
+  Same, score = 0.
+
+- idx_4: response = ""notreleased""; target = ""peony/wintergreen/porcelain/obsidian""  
+  Same, score = 0.
+
+- idx_5: response = ""notreleased""; target = ""obsidian/porcelain/rosequartz/hazel""  
+  Same, score = 0.
+
+None of the responses approximate or point to the same entity as the targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",hazel/mint/rose/obsidian,notreleased,0.0,"exact not match, response: 4614mah, target: 4575mah",4575mah,4614mah,1.0,key_match,1.0,"Let's analyze each pair based on the criterion:
+
+- The scoring range is 0 or 1 (integer).
+- It's sufficient if the semantics are approximately the same or if they point to the same entity.
+- Identical matches get a full score of 1.
+- If the response differs in the entity (version number) from the target, score 0.
+
+Step-by-step analysis:
+
+1. idx_0: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+2. idx_1: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+3. idx_2: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+4. idx_3: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+5. idx_4: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+6. idx_5: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android14,android14,1.0,"Let's analyze each pair step-by-step based on the criterion.
+
+-----
+
+### Given criterion:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Broader answers covering the reference answer are acceptable.
+- No need for exact word-for-word match.
+
+-----
+
+### Analysis per idx:
+
+**idx_0**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictusfront&back""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": these are spelling variants (US vs UK English) and considered equivalent.  
+    - Response says ""glassfront&back"" vs target ""corninggorillaglassvictusfront&back"". Corning Gorilla Glass Victus is a specific type of glass; ""glass"" is broader but acceptable as per criterion.  
+    - Both mention front & back glass; matches in semantics.  
+- Verdict: acceptable → score 1
+
+**idx_1**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_2**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_3**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front,glassback""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": acceptable.  
+    - ""glassfront&back"" vs ""corninggorillaglassvictus2front, glassback""  
+    - ""glassfront&back"" covers ""glassfront"" and ""glassback"" so semantically matched. ""corninggorillaglassvictus2"" is specific glass type; ""glass"" is broader → acceptable.  
+- Verdict: score 1
+
+**idx_4**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front&back""  
+- Analysis: Same logic as above — acceptable.  
+- Verdict: score 1
+
+**idx_5**  
+- Same as idx_4.  
+- Verdict: score 1
+
+-----
+
+### Final scoring (all 1s):
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```
+",aluminium/corninggorillaglassvictusfront&back,aluminum/glassfront&back,0.0,"exact not match, response: 12gb, target: 8gb",8gb,12gb,0.0,"Let's analyze each pair according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In other words, if the given dimensions correspond approximately (not necessarily exactly) to the target dimensions, or effectively describe the same measurement, they get a 1. If the dimensions differ significantly, score 0.
+
+---
+
+### idx_0  
+- Response: 162.5x74.8x8.6mm  
+- Target: 155.6×73.2×8.7  
+Analysis:  
+- Length: 162.5 vs 155.6 (difference ~7 mm, >5 mm is a noticeable mismatch)  
+- Width: 74.8 vs 73.2 (~1.6 mm difference, may be close)  
+- Thickness: 8.6 vs 8.7 (0.1 mm difference, close)  
+Overall, length differs by ~7 mm, roughly 5% difference, somewhat substantial in this context. It's borderline, but sizes differ noticeably. Given the criterion, ""approximately"" may allow for small variations, but this one appears quite a bit off in length. Thus, assign 0.
+
+---
+
+### idx_1  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.9×76.6×8.9  
+Analysis:  
+- Length: 163.9 vs 162.9 (1 mm diff - negligible)  
+- Width: 75.9 vs 76.6 (0.7 mm diff - negligible)  
+- Thickness: 8.9 vs 8.9 (same)  
+Dimensions are very close, clearly same entity. Assign 1.
+
+---
+
+### idx_2  
+- Response: 162.5x74.8x8.6mm  
+- Target: 150.5×70.8×8.9  
+Analysis:  
+- Length: 162.5 vs 150.5 (12 mm difference - quite large)  
+- Width: 74.8 vs 70.8 (4 mm difference)  
+- Thickness: 8.6 vs 8.9 (0.3 mm difference)  
+This is quite off from the target dimensions. Assign 0.
+
+---
+
+### idx_3  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.6×76.5×8.8  
+Analysis:  
+- Length: 163.9 vs 162.6 (1.3 mm difference - negligible)  
+- Width: 75.9 vs 76.5 (0.6 mm diff - negligible)  
+- Thickness: 8.9 vs 8.8 (0.1 mm diff - negligible)  
+Clearly same or approximate dimension. Assign 1.
+
+---
+
+### idx_4  
+- Response: 162.5x74.8x8.6mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 162.5 vs 152.8 (almost 10 mm difference - significant)  
+- Width: 74.8 vs 72 (2.8 mm difference)  
+- Thickness: 8.6 vs 8.5 (0.1 mm diff)  
+Considering the length difference is somewhat large, assign 0.
+
+---
+
+### idx_5  
+- Response: 163.9x75.9x8.9mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 163.9 vs 152.8 (11.1 mm difference)  
+- Width: 75.9 vs 72 (3.9 mm difference)  
+- Thickness: 8.9 vs 8.5 (0.4 mm difference)  
+Dimensions are quite different; assign 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",150.5×70.8×8.9,162.5x74.8x8.6mm,0.0,"Let's analyze each pair according to the grading criteria:
+
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for exact word-for-word correspondence.
+
+- The question is about price listings for storage options.
+- The target answers provide storage sizes with corresponding prices.
+- The responses should match these prices approximately or refer to the same entity (the prices for the given storage sizes).
+
+---
+
+### idx_0
+- Target: 128gb:599, 256gb:699
+- Response: 128gb:$649, 256gb:$749
+- Prices are both higher than target by $50.
+- Not approximate, but the units and entities are the same (storage size and price points).
+- However, the criterion states ""approximately the same,"" and $50 difference is quite significant here (almost 8-9%), probably too far.
+- The response is a different price, so semantics about prices differ.
+- So, score = 0
+
+### idx_1
+- Target: 128gb:899, 256gb:999, 512gb:1099
+- Response: 128gb:$849, 256gb:$949, 512gb:$1149
+- Differences: -50, -50, +50
+- Prices differ with $50 less or more, similar to idx_0.
+- Not approximate enough; prices are different.
+- Response otherwise shows correct sizes with prices.
+- Since criterion requires approximate close semantics, this may be borderline, but 50 difference is too big.
+- Score = 0
+
+### idx_2
+- Target: 128gb:699, 256gb:759
+- Response: 128gb:$899, 256gb:$999
+- Price difference: +$200, +$240 (much higher)
+- Prices are not approximate at all.
+- Response and target differ greatly; semantics not the same.
+- Score = 0
+
+### idx_3
+- Target: 128gb:999, 256gb:1059, 512gb:1179, 1tb:1399
+- Response: 128gb:$1099, 256gb:$1199, 512gb:$1399
+- Response misses 1tb option.
+- Price differences between response and target are $100, $140, $220 roughly.
+- Prices differ significantly, not approximate.
+- Also, response misses 1tb size entirely.
+- According to the criterion, it does not need exact match, but missing an entire entity would count against.
+- Score = 0
+
+### idx_4
+- Target: 128gb:799, 256gb:899
+- Response: 128gb:$1199, 256gb:$1299, 512gb:$1499
+- Response prices much higher and added 512gb not in target.
+- Prices differ greatly.
+- Prices not approximate.
+- Response adds an entity that target does not have.
+- Since the given criterion accepts approximate semantics and pointing to the same entity, but here prices are different greatly and there is an extra storage option.
+- Score = 0
+
+### idx_5
+- Target: 128gb:999, 256gb:1099, 512gb:1219, 1tb:1449
+- Response: 128gb:$1399, 256gb:$1499, 512gb:$1699
+- Price difference about +$400.
+- Missing the 1tb size.
+- Prices differ greatly; semantics differ significantly.
+- Score = 0
+
+---
+
+**Final conclusion:** None of the responses approximate the target answers semantically enough, as the prices are off significantly or important entities are missing.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","128gb:699,256gb:759","128gb:$899,256gb:$999"
+pixel8pro,Google Pixel 8 Pro,,,0.0,"exact not match, response: 2023-10-19, target: 2023-10-04",2023-10-04,2023-10-19,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No word-for-word correspondence needed.
+
+Given:
+- All responses are ""notreleased""
+- Targets are specific combinations of terms like ""snow/lemongrass/obsidian""
+
+Step-by-step analysis per idx:
+
+- idx_0: response = ""notreleased""; target = ""snow/lemongrass/obsidian""  
+  Response ""notreleased"" does not semantically approximate or point to the same entity as the target ""snow/lemongrass/obsidian"". These are different entities or terms. So score = 0.
+
+- idx_1: response = ""notreleased""; target = ""snow/obsidian/hazel""  
+  Same as above, no semantic match or pointing to the same entity. Score = 0.
+
+- idx_2: response = ""notreleased""; target = ""hazel/mint/rose/obsidian""  
+  Same reasoning. Score = 0.
+
+- idx_3: response = ""notreleased""; target = ""bay/mint/obsidian/porcelain""  
+  Same, score = 0.
+
+- idx_4: response = ""notreleased""; target = ""peony/wintergreen/porcelain/obsidian""  
+  Same, score = 0.
+
+- idx_5: response = ""notreleased""; target = ""obsidian/porcelain/rosequartz/hazel""  
+  Same, score = 0.
+
+None of the responses approximate or point to the same entity as the targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",bay/mint/obsidian/porcelain,notreleased,0.0,"exact not match, response: 5003mah, target: 5050mah",5050mah,5003mah,1.0,key_match,1.0,"Let's analyze each pair based on the criterion:
+
+- The scoring range is 0 or 1 (integer).
+- It's sufficient if the semantics are approximately the same or if they point to the same entity.
+- Identical matches get a full score of 1.
+- If the response differs in the entity (version number) from the target, score 0.
+
+Step-by-step analysis:
+
+1. idx_0: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+2. idx_1: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+3. idx_2: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+4. idx_3: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+5. idx_4: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+6. idx_5: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android14,android14,1.0,"Let's analyze each pair step-by-step based on the criterion.
+
+-----
+
+### Given criterion:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Broader answers covering the reference answer are acceptable.
+- No need for exact word-for-word match.
+
+-----
+
+### Analysis per idx:
+
+**idx_0**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictusfront&back""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": these are spelling variants (US vs UK English) and considered equivalent.  
+    - Response says ""glassfront&back"" vs target ""corninggorillaglassvictusfront&back"". Corning Gorilla Glass Victus is a specific type of glass; ""glass"" is broader but acceptable as per criterion.  
+    - Both mention front & back glass; matches in semantics.  
+- Verdict: acceptable → score 1
+
+**idx_1**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_2**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_3**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front,glassback""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": acceptable.  
+    - ""glassfront&back"" vs ""corninggorillaglassvictus2front, glassback""  
+    - ""glassfront&back"" covers ""glassfront"" and ""glassback"" so semantically matched. ""corninggorillaglassvictus2"" is specific glass type; ""glass"" is broader → acceptable.  
+- Verdict: score 1
+
+**idx_4**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front&back""  
+- Analysis: Same logic as above — acceptable.  
+- Verdict: score 1
+
+**idx_5**  
+- Same as idx_4.  
+- Verdict: score 1
+
+-----
+
+### Final scoring (all 1s):
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```
+","aluminium/corninggorillaglassvictus2front,glassback",aluminum/glassfront&back,1.0,"exact match, response: 12gb, target: 12gb",12gb,12gb,1.0,"Let's analyze each pair according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In other words, if the given dimensions correspond approximately (not necessarily exactly) to the target dimensions, or effectively describe the same measurement, they get a 1. If the dimensions differ significantly, score 0.
+
+---
+
+### idx_0  
+- Response: 162.5x74.8x8.6mm  
+- Target: 155.6×73.2×8.7  
+Analysis:  
+- Length: 162.5 vs 155.6 (difference ~7 mm, >5 mm is a noticeable mismatch)  
+- Width: 74.8 vs 73.2 (~1.6 mm difference, may be close)  
+- Thickness: 8.6 vs 8.7 (0.1 mm difference, close)  
+Overall, length differs by ~7 mm, roughly 5% difference, somewhat substantial in this context. It's borderline, but sizes differ noticeably. Given the criterion, ""approximately"" may allow for small variations, but this one appears quite a bit off in length. Thus, assign 0.
+
+---
+
+### idx_1  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.9×76.6×8.9  
+Analysis:  
+- Length: 163.9 vs 162.9 (1 mm diff - negligible)  
+- Width: 75.9 vs 76.6 (0.7 mm diff - negligible)  
+- Thickness: 8.9 vs 8.9 (same)  
+Dimensions are very close, clearly same entity. Assign 1.
+
+---
+
+### idx_2  
+- Response: 162.5x74.8x8.6mm  
+- Target: 150.5×70.8×8.9  
+Analysis:  
+- Length: 162.5 vs 150.5 (12 mm difference - quite large)  
+- Width: 74.8 vs 70.8 (4 mm difference)  
+- Thickness: 8.6 vs 8.9 (0.3 mm difference)  
+This is quite off from the target dimensions. Assign 0.
+
+---
+
+### idx_3  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.6×76.5×8.8  
+Analysis:  
+- Length: 163.9 vs 162.6 (1.3 mm difference - negligible)  
+- Width: 75.9 vs 76.5 (0.6 mm diff - negligible)  
+- Thickness: 8.9 vs 8.8 (0.1 mm diff - negligible)  
+Clearly same or approximate dimension. Assign 1.
+
+---
+
+### idx_4  
+- Response: 162.5x74.8x8.6mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 162.5 vs 152.8 (almost 10 mm difference - significant)  
+- Width: 74.8 vs 72 (2.8 mm difference)  
+- Thickness: 8.6 vs 8.5 (0.1 mm diff)  
+Considering the length difference is somewhat large, assign 0.
+
+---
+
+### idx_5  
+- Response: 163.9x75.9x8.9mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 163.9 vs 152.8 (11.1 mm difference)  
+- Width: 75.9 vs 72 (3.9 mm difference)  
+- Thickness: 8.9 vs 8.5 (0.4 mm difference)  
+Dimensions are quite different; assign 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",162.6×76.5×8.8,163.9x75.9x8.9mm,0.0,"Let's analyze each pair according to the grading criteria:
+
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for exact word-for-word correspondence.
+
+- The question is about price listings for storage options.
+- The target answers provide storage sizes with corresponding prices.
+- The responses should match these prices approximately or refer to the same entity (the prices for the given storage sizes).
+
+---
+
+### idx_0
+- Target: 128gb:599, 256gb:699
+- Response: 128gb:$649, 256gb:$749
+- Prices are both higher than target by $50.
+- Not approximate, but the units and entities are the same (storage size and price points).
+- However, the criterion states ""approximately the same,"" and $50 difference is quite significant here (almost 8-9%), probably too far.
+- The response is a different price, so semantics about prices differ.
+- So, score = 0
+
+### idx_1
+- Target: 128gb:899, 256gb:999, 512gb:1099
+- Response: 128gb:$849, 256gb:$949, 512gb:$1149
+- Differences: -50, -50, +50
+- Prices differ with $50 less or more, similar to idx_0.
+- Not approximate enough; prices are different.
+- Response otherwise shows correct sizes with prices.
+- Since criterion requires approximate close semantics, this may be borderline, but 50 difference is too big.
+- Score = 0
+
+### idx_2
+- Target: 128gb:699, 256gb:759
+- Response: 128gb:$899, 256gb:$999
+- Price difference: +$200, +$240 (much higher)
+- Prices are not approximate at all.
+- Response and target differ greatly; semantics not the same.
+- Score = 0
+
+### idx_3
+- Target: 128gb:999, 256gb:1059, 512gb:1179, 1tb:1399
+- Response: 128gb:$1099, 256gb:$1199, 512gb:$1399
+- Response misses 1tb option.
+- Price differences between response and target are $100, $140, $220 roughly.
+- Prices differ significantly, not approximate.
+- Also, response misses 1tb size entirely.
+- According to the criterion, it does not need exact match, but missing an entire entity would count against.
+- Score = 0
+
+### idx_4
+- Target: 128gb:799, 256gb:899
+- Response: 128gb:$1199, 256gb:$1299, 512gb:$1499
+- Response prices much higher and added 512gb not in target.
+- Prices differ greatly.
+- Prices not approximate.
+- Response adds an entity that target does not have.
+- Since the given criterion accepts approximate semantics and pointing to the same entity, but here prices are different greatly and there is an extra storage option.
+- Score = 0
+
+### idx_5
+- Target: 128gb:999, 256gb:1099, 512gb:1219, 1tb:1449
+- Response: 128gb:$1399, 256gb:$1499, 512gb:$1699
+- Price difference about +$400.
+- Missing the 1tb size.
+- Prices differ greatly; semantics differ significantly.
+- Score = 0
+
+---
+
+**Final conclusion:** None of the responses approximate the target answers semantically enough, as the prices are off significantly or important entities are missing.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","128gb:999,256gb:1059,512gb:1179,1tb:1399","128gb:$1099,256gb:$1199,512gb:$1399"
+pixel9,Google Pixel 9,,,0.0,"exact not match, response: 2024-10-19, target: 2024-08-13",2024-08-13,2024-10-19,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No word-for-word correspondence needed.
+
+Given:
+- All responses are ""notreleased""
+- Targets are specific combinations of terms like ""snow/lemongrass/obsidian""
+
+Step-by-step analysis per idx:
+
+- idx_0: response = ""notreleased""; target = ""snow/lemongrass/obsidian""  
+  Response ""notreleased"" does not semantically approximate or point to the same entity as the target ""snow/lemongrass/obsidian"". These are different entities or terms. So score = 0.
+
+- idx_1: response = ""notreleased""; target = ""snow/obsidian/hazel""  
+  Same as above, no semantic match or pointing to the same entity. Score = 0.
+
+- idx_2: response = ""notreleased""; target = ""hazel/mint/rose/obsidian""  
+  Same reasoning. Score = 0.
+
+- idx_3: response = ""notreleased""; target = ""bay/mint/obsidian/porcelain""  
+  Same, score = 0.
+
+- idx_4: response = ""notreleased""; target = ""peony/wintergreen/porcelain/obsidian""  
+  Same, score = 0.
+
+- idx_5: response = ""notreleased""; target = ""obsidian/porcelain/rosequartz/hazel""  
+  Same, score = 0.
+
+None of the responses approximate or point to the same entity as the targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",peony/wintergreen/porcelain/obsidian,notreleased,0.0,"exact not match, response: 4614mah, target: 4700mah",4700mah,4614mah,1.0,key_match,0.0,"Let's analyze each pair based on the criterion:
+
+- The scoring range is 0 or 1 (integer).
+- It's sufficient if the semantics are approximately the same or if they point to the same entity.
+- Identical matches get a full score of 1.
+- If the response differs in the entity (version number) from the target, score 0.
+
+Step-by-step analysis:
+
+1. idx_0: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+2. idx_1: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+3. idx_2: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+4. idx_3: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+5. idx_4: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+6. idx_5: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android14,android15,1.0,"Let's analyze each pair step-by-step based on the criterion.
+
+-----
+
+### Given criterion:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Broader answers covering the reference answer are acceptable.
+- No need for exact word-for-word match.
+
+-----
+
+### Analysis per idx:
+
+**idx_0**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictusfront&back""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": these are spelling variants (US vs UK English) and considered equivalent.  
+    - Response says ""glassfront&back"" vs target ""corninggorillaglassvictusfront&back"". Corning Gorilla Glass Victus is a specific type of glass; ""glass"" is broader but acceptable as per criterion.  
+    - Both mention front & back glass; matches in semantics.  
+- Verdict: acceptable → score 1
+
+**idx_1**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_2**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_3**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front,glassback""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": acceptable.  
+    - ""glassfront&back"" vs ""corninggorillaglassvictus2front, glassback""  
+    - ""glassfront&back"" covers ""glassfront"" and ""glassback"" so semantically matched. ""corninggorillaglassvictus2"" is specific glass type; ""glass"" is broader → acceptable.  
+- Verdict: score 1
+
+**idx_4**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front&back""  
+- Analysis: Same logic as above — acceptable.  
+- Verdict: score 1
+
+**idx_5**  
+- Same as idx_4.  
+- Verdict: score 1
+
+-----
+
+### Final scoring (all 1s):
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```
+",aluminium/corninggorillaglassvictus2front&back,aluminum/glassfront&back,1.0,"exact match, response: 12gb, target: 12gb",12gb,12gb,0.0,"Let's analyze each pair according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In other words, if the given dimensions correspond approximately (not necessarily exactly) to the target dimensions, or effectively describe the same measurement, they get a 1. If the dimensions differ significantly, score 0.
+
+---
+
+### idx_0  
+- Response: 162.5x74.8x8.6mm  
+- Target: 155.6×73.2×8.7  
+Analysis:  
+- Length: 162.5 vs 155.6 (difference ~7 mm, >5 mm is a noticeable mismatch)  
+- Width: 74.8 vs 73.2 (~1.6 mm difference, may be close)  
+- Thickness: 8.6 vs 8.7 (0.1 mm difference, close)  
+Overall, length differs by ~7 mm, roughly 5% difference, somewhat substantial in this context. It's borderline, but sizes differ noticeably. Given the criterion, ""approximately"" may allow for small variations, but this one appears quite a bit off in length. Thus, assign 0.
+
+---
+
+### idx_1  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.9×76.6×8.9  
+Analysis:  
+- Length: 163.9 vs 162.9 (1 mm diff - negligible)  
+- Width: 75.9 vs 76.6 (0.7 mm diff - negligible)  
+- Thickness: 8.9 vs 8.9 (same)  
+Dimensions are very close, clearly same entity. Assign 1.
+
+---
+
+### idx_2  
+- Response: 162.5x74.8x8.6mm  
+- Target: 150.5×70.8×8.9  
+Analysis:  
+- Length: 162.5 vs 150.5 (12 mm difference - quite large)  
+- Width: 74.8 vs 70.8 (4 mm difference)  
+- Thickness: 8.6 vs 8.9 (0.3 mm difference)  
+This is quite off from the target dimensions. Assign 0.
+
+---
+
+### idx_3  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.6×76.5×8.8  
+Analysis:  
+- Length: 163.9 vs 162.6 (1.3 mm difference - negligible)  
+- Width: 75.9 vs 76.5 (0.6 mm diff - negligible)  
+- Thickness: 8.9 vs 8.8 (0.1 mm diff - negligible)  
+Clearly same or approximate dimension. Assign 1.
+
+---
+
+### idx_4  
+- Response: 162.5x74.8x8.6mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 162.5 vs 152.8 (almost 10 mm difference - significant)  
+- Width: 74.8 vs 72 (2.8 mm difference)  
+- Thickness: 8.6 vs 8.5 (0.1 mm diff)  
+Considering the length difference is somewhat large, assign 0.
+
+---
+
+### idx_5  
+- Response: 163.9x75.9x8.9mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 163.9 vs 152.8 (11.1 mm difference)  
+- Width: 75.9 vs 72 (3.9 mm difference)  
+- Thickness: 8.9 vs 8.5 (0.4 mm difference)  
+Dimensions are quite different; assign 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",152.8×72×8.5,162.5x74.8x8.6mm,0.0,"Let's analyze each pair according to the grading criteria:
+
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for exact word-for-word correspondence.
+
+- The question is about price listings for storage options.
+- The target answers provide storage sizes with corresponding prices.
+- The responses should match these prices approximately or refer to the same entity (the prices for the given storage sizes).
+
+---
+
+### idx_0
+- Target: 128gb:599, 256gb:699
+- Response: 128gb:$649, 256gb:$749
+- Prices are both higher than target by $50.
+- Not approximate, but the units and entities are the same (storage size and price points).
+- However, the criterion states ""approximately the same,"" and $50 difference is quite significant here (almost 8-9%), probably too far.
+- The response is a different price, so semantics about prices differ.
+- So, score = 0
+
+### idx_1
+- Target: 128gb:899, 256gb:999, 512gb:1099
+- Response: 128gb:$849, 256gb:$949, 512gb:$1149
+- Differences: -50, -50, +50
+- Prices differ with $50 less or more, similar to idx_0.
+- Not approximate enough; prices are different.
+- Response otherwise shows correct sizes with prices.
+- Since criterion requires approximate close semantics, this may be borderline, but 50 difference is too big.
+- Score = 0
+
+### idx_2
+- Target: 128gb:699, 256gb:759
+- Response: 128gb:$899, 256gb:$999
+- Price difference: +$200, +$240 (much higher)
+- Prices are not approximate at all.
+- Response and target differ greatly; semantics not the same.
+- Score = 0
+
+### idx_3
+- Target: 128gb:999, 256gb:1059, 512gb:1179, 1tb:1399
+- Response: 128gb:$1099, 256gb:$1199, 512gb:$1399
+- Response misses 1tb option.
+- Price differences between response and target are $100, $140, $220 roughly.
+- Prices differ significantly, not approximate.
+- Also, response misses 1tb size entirely.
+- According to the criterion, it does not need exact match, but missing an entire entity would count against.
+- Score = 0
+
+### idx_4
+- Target: 128gb:799, 256gb:899
+- Response: 128gb:$1199, 256gb:$1299, 512gb:$1499
+- Response prices much higher and added 512gb not in target.
+- Prices differ greatly.
+- Prices not approximate.
+- Response adds an entity that target does not have.
+- Since the given criterion accepts approximate semantics and pointing to the same entity, but here prices are different greatly and there is an extra storage option.
+- Score = 0
+
+### idx_5
+- Target: 128gb:999, 256gb:1099, 512gb:1219, 1tb:1449
+- Response: 128gb:$1399, 256gb:$1499, 512gb:$1699
+- Price difference about +$400.
+- Missing the 1tb size.
+- Prices differ greatly; semantics differ significantly.
+- Score = 0
+
+---
+
+**Final conclusion:** None of the responses approximate the target answers semantically enough, as the prices are off significantly or important entities are missing.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","128gb:799,256gb:899","128gb:$1199,256gb:$1299,512gb:$1499"
+pixel9pro,Google Pixel 9 Pro,,,0.0,"exact not match, response: 2024-10-19, target: 2024-08-13",2024-08-13,2024-10-19,0.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No word-for-word correspondence needed.
+
+Given:
+- All responses are ""notreleased""
+- Targets are specific combinations of terms like ""snow/lemongrass/obsidian""
+
+Step-by-step analysis per idx:
+
+- idx_0: response = ""notreleased""; target = ""snow/lemongrass/obsidian""  
+  Response ""notreleased"" does not semantically approximate or point to the same entity as the target ""snow/lemongrass/obsidian"". These are different entities or terms. So score = 0.
+
+- idx_1: response = ""notreleased""; target = ""snow/obsidian/hazel""  
+  Same as above, no semantic match or pointing to the same entity. Score = 0.
+
+- idx_2: response = ""notreleased""; target = ""hazel/mint/rose/obsidian""  
+  Same reasoning. Score = 0.
+
+- idx_3: response = ""notreleased""; target = ""bay/mint/obsidian/porcelain""  
+  Same, score = 0.
+
+- idx_4: response = ""notreleased""; target = ""peony/wintergreen/porcelain/obsidian""  
+  Same, score = 0.
+
+- idx_5: response = ""notreleased""; target = ""obsidian/porcelain/rosequartz/hazel""  
+  Same, score = 0.
+
+None of the responses approximate or point to the same entity as the targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",obsidian/porcelain/rosequartz/hazel,notreleased,0.0,"exact not match, response: 5003mah, target: 4700mah",4700mah,5003mah,1.0,key_match,0.0,"Let's analyze each pair based on the criterion:
+
+- The scoring range is 0 or 1 (integer).
+- It's sufficient if the semantics are approximately the same or if they point to the same entity.
+- Identical matches get a full score of 1.
+- If the response differs in the entity (version number) from the target, score 0.
+
+Step-by-step analysis:
+
+1. idx_0: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+2. idx_1: response = ""android13"", target = ""android13""
+   - Exact match, score = 1.
+
+3. idx_2: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+4. idx_3: response = ""android14"", target = ""android14""
+   - Exact match, score = 1.
+
+5. idx_4: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+6. idx_5: response = ""android15"", target = ""android14""
+   - Different version, different entity, score = 0.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android14,android15,1.0,"Let's analyze each pair step-by-step based on the criterion.
+
+-----
+
+### Given criterion:
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Broader answers covering the reference answer are acceptable.
+- No need for exact word-for-word match.
+
+-----
+
+### Analysis per idx:
+
+**idx_0**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictusfront&back""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": these are spelling variants (US vs UK English) and considered equivalent.  
+    - Response says ""glassfront&back"" vs target ""corninggorillaglassvictusfront&back"". Corning Gorilla Glass Victus is a specific type of glass; ""glass"" is broader but acceptable as per criterion.  
+    - Both mention front & back glass; matches in semantics.  
+- Verdict: acceptable → score 1
+
+**idx_1**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_2**  
+- Same as idx_0; identical response and target.  
+- Verdict: score 1
+
+**idx_3**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front,glassback""  
+- Analysis:  
+    - ""aluminum"" vs ""aluminium"": acceptable.  
+    - ""glassfront&back"" vs ""corninggorillaglassvictus2front, glassback""  
+    - ""glassfront&back"" covers ""glassfront"" and ""glassback"" so semantically matched. ""corninggorillaglassvictus2"" is specific glass type; ""glass"" is broader → acceptable.  
+- Verdict: score 1
+
+**idx_4**  
+- Response: ""aluminum/glassfront&back""  
+- Target: ""aluminium/corninggorillaglassvictus2front&back""  
+- Analysis: Same logic as above — acceptable.  
+- Verdict: score 1
+
+**idx_5**  
+- Same as idx_4.  
+- Verdict: score 1
+
+-----
+
+### Final scoring (all 1s):
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1
+}
+```
+",aluminium/corninggorillaglassvictus2front&back,aluminum/glassfront&back,0.0,"exact not match, response: 12gb, target: 16gb",16gb,12gb,0.0,"Let's analyze each pair according to the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+In other words, if the given dimensions correspond approximately (not necessarily exactly) to the target dimensions, or effectively describe the same measurement, they get a 1. If the dimensions differ significantly, score 0.
+
+---
+
+### idx_0  
+- Response: 162.5x74.8x8.6mm  
+- Target: 155.6×73.2×8.7  
+Analysis:  
+- Length: 162.5 vs 155.6 (difference ~7 mm, >5 mm is a noticeable mismatch)  
+- Width: 74.8 vs 73.2 (~1.6 mm difference, may be close)  
+- Thickness: 8.6 vs 8.7 (0.1 mm difference, close)  
+Overall, length differs by ~7 mm, roughly 5% difference, somewhat substantial in this context. It's borderline, but sizes differ noticeably. Given the criterion, ""approximately"" may allow for small variations, but this one appears quite a bit off in length. Thus, assign 0.
+
+---
+
+### idx_1  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.9×76.6×8.9  
+Analysis:  
+- Length: 163.9 vs 162.9 (1 mm diff - negligible)  
+- Width: 75.9 vs 76.6 (0.7 mm diff - negligible)  
+- Thickness: 8.9 vs 8.9 (same)  
+Dimensions are very close, clearly same entity. Assign 1.
+
+---
+
+### idx_2  
+- Response: 162.5x74.8x8.6mm  
+- Target: 150.5×70.8×8.9  
+Analysis:  
+- Length: 162.5 vs 150.5 (12 mm difference - quite large)  
+- Width: 74.8 vs 70.8 (4 mm difference)  
+- Thickness: 8.6 vs 8.9 (0.3 mm difference)  
+This is quite off from the target dimensions. Assign 0.
+
+---
+
+### idx_3  
+- Response: 163.9x75.9x8.9mm  
+- Target: 162.6×76.5×8.8  
+Analysis:  
+- Length: 163.9 vs 162.6 (1.3 mm difference - negligible)  
+- Width: 75.9 vs 76.5 (0.6 mm diff - negligible)  
+- Thickness: 8.9 vs 8.8 (0.1 mm diff - negligible)  
+Clearly same or approximate dimension. Assign 1.
+
+---
+
+### idx_4  
+- Response: 162.5x74.8x8.6mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 162.5 vs 152.8 (almost 10 mm difference - significant)  
+- Width: 74.8 vs 72 (2.8 mm difference)  
+- Thickness: 8.6 vs 8.5 (0.1 mm diff)  
+Considering the length difference is somewhat large, assign 0.
+
+---
+
+### idx_5  
+- Response: 163.9x75.9x8.9mm  
+- Target: 152.8×72×8.5  
+Analysis:  
+- Length: 163.9 vs 152.8 (11.1 mm difference)  
+- Width: 75.9 vs 72 (3.9 mm difference)  
+- Thickness: 8.9 vs 8.5 (0.4 mm difference)  
+Dimensions are quite different; assign 0.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0
+}
+```",152.8×72×8.5,163.9x75.9x8.9mm,0.0,"Let's analyze each pair according to the grading criteria:
+
+**Criterion:** It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for exact word-for-word correspondence.
+
+- The question is about price listings for storage options.
+- The target answers provide storage sizes with corresponding prices.
+- The responses should match these prices approximately or refer to the same entity (the prices for the given storage sizes).
+
+---
+
+### idx_0
+- Target: 128gb:599, 256gb:699
+- Response: 128gb:$649, 256gb:$749
+- Prices are both higher than target by $50.
+- Not approximate, but the units and entities are the same (storage size and price points).
+- However, the criterion states ""approximately the same,"" and $50 difference is quite significant here (almost 8-9%), probably too far.
+- The response is a different price, so semantics about prices differ.
+- So, score = 0
+
+### idx_1
+- Target: 128gb:899, 256gb:999, 512gb:1099
+- Response: 128gb:$849, 256gb:$949, 512gb:$1149
+- Differences: -50, -50, +50
+- Prices differ with $50 less or more, similar to idx_0.
+- Not approximate enough; prices are different.
+- Response otherwise shows correct sizes with prices.
+- Since criterion requires approximate close semantics, this may be borderline, but 50 difference is too big.
+- Score = 0
+
+### idx_2
+- Target: 128gb:699, 256gb:759
+- Response: 128gb:$899, 256gb:$999
+- Price difference: +$200, +$240 (much higher)
+- Prices are not approximate at all.
+- Response and target differ greatly; semantics not the same.
+- Score = 0
+
+### idx_3
+- Target: 128gb:999, 256gb:1059, 512gb:1179, 1tb:1399
+- Response: 128gb:$1099, 256gb:$1199, 512gb:$1399
+- Response misses 1tb option.
+- Price differences between response and target are $100, $140, $220 roughly.
+- Prices differ significantly, not approximate.
+- Also, response misses 1tb size entirely.
+- According to the criterion, it does not need exact match, but missing an entire entity would count against.
+- Score = 0
+
+### idx_4
+- Target: 128gb:799, 256gb:899
+- Response: 128gb:$1199, 256gb:$1299, 512gb:$1499
+- Response prices much higher and added 512gb not in target.
+- Prices differ greatly.
+- Prices not approximate.
+- Response adds an entity that target does not have.
+- Since the given criterion accepts approximate semantics and pointing to the same entity, but here prices are different greatly and there is an extra storage option.
+- Score = 0
+
+### idx_5
+- Target: 128gb:999, 256gb:1099, 512gb:1219, 1tb:1449
+- Response: 128gb:$1399, 256gb:$1499, 512gb:$1699
+- Price difference about +$400.
+- Missing the 1tb size.
+- Prices differ greatly; semantics differ significantly.
+- Score = 0
+
+---
+
+**Final conclusion:** None of the responses approximate the target answers semantically enough, as the prices are off significantly or important entities are missing.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```","128gb:999,256gb:1099,512gb:1219,1tb:1449","128gb:$1399,256gb:$1499,512gb:$1699"
+googlepixel10,Google Pixel 10,,1.0,,,,2025-07-20,,,,notreleased,,,,4614mah,,,,,,android16,,,,aluminum/glassfront&back,,,,12gb,,,,162.5x74.8x8.6mm,,,,"128gb:$1499,256gb:$1599,512gb:$1799"
+googlepixel10pro,Google Pixel 10 Pro,,1.0,,,,2025-07-20,,,,notreleased,,,,5003mah,,,,,,android16,,,,aluminum/glassfront&back,,,,12gb,,,,163.9x75.9x8.9mm,,,,"128gb:$1699,256gb:$1799,512gb:$1999"
+googlepixel10profold,Google Pixel 10 Pro Fold,,1.0,,,,2025-07-20,,,,notreleased,,,,5003mah,,,,,,android16,,,,aluminum/glassfront&back,,,,12gb,,,,"unfolded:163.9x75.9x8.9mm,folded:162.5x74.8x8.6mm",,,,"128gb:$2099,256gb:$2199,512gb:$2399"
+googlepixel6,Google Pixel 6,,1.0,,,,2021-10-19,,,,"sortacoral,sortaseafoam,cloudywhite,sortasunny,kindacoral",,,,4614mah,,,,,,android12,,,,aluminum/glassfront&back,,,,8gb,,,,162.5x74.8x8.6mm,,,,"128gb:$599,256gb:$699"
+googlepixel6pro,Google Pixel 6 Pro,,1.0,,,,2021-10-19,,,,"sortacoral,sortaseafoam,cloudywhite,sortasunny,kindacoral",,,,5003mah,,,,,,android12,,,,aluminum/glassfront&back,,,,12gb,,,,163.9x75.9x8.9mm,,,,"128gb:$799,256gb:$899,512gb:$1099"
+pixel6a,,1.0,,,,2022-05-11,,,,sage/chalk/charcoal,,,,4410mah,,,,,,android12,,,,"aluminium/corninggorillaglass3front,plasticback",,,,6gb,,,,152.2×71.8×8.9,,,,128gb:449,
+pixel7a,,1.0,,,,2023-05-10,,,,charcoal/sea/snow/cora,,,,4385mah,,,,,,android13,,,,"aluminium/corninggorillaglass3front,plasticback",,,,8gb,,,,152×72.9×9.0,,,,128gb:499,
+pixel8a,,1.0,,,,2024-05-07,,,,obsidian/porcelain/bay/aloe,,,,4492mah,,,,,,android14,,,,"aluminium/corninggorillaglass3front,plasticback",,,,8gb,,,,152.4×73.7×10.2,,,,"128gb:499,256gb:559",
+pixel9a,,1.0,,,,2025-03-19,,,,obsidian/porcelain/peony/iris,,,,5100mah,,,,,,android15,,,,"aluminium/corninggorillaglassvictus3front,plasticback",,,,8gb,,,,154.7×73.3×8.9,,,,"128gb:499,256gb:599",
+pixel9profold,,1.0,,,,2024-08-13,,,,obsidian/porcelain,,,,4650mah,,,,,,android14,,,,aluminium&metal/corninggorillaglassvictus2front&back,,,,16gb,,,,"folded:155.2×77.1×10.5
+unfolded:155.2×150.2×5.1",,,,"256gb:1799,512gb:1919",
+pixel9proxl,,1.0,,,,2024-08-13,,,,obsidian/porcelain/rosequartz/hazel,,,,5060mah,,,,,,android14,,,,aluminium/corninggorillaglassvictus2front&back,,,,16gb,,,,162.8×76.6×8.5,,,,"128gb：1099,256gb：1199,512gb：1319,1tb：1549",
+pixelfold,,1.0,,,,2023-05-10,,,,obsidian/porcelain,,,,4821mah,,,,,,android13,,,,"aluminum/corninggorillaglassvictus&ultrathinglassfront,corninggorillaglassvictusback",,,,12gb,,,,folded:139.7×79.5×12.1;unfolded:139.7×158.7×5.8,,,,"256gb:1799,512gb:1919",

@@ -1,0 +1,4008 @@
+exist_flag_gt,exist_flag_response,电影名,电影名_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,电影名_exact_match,电影名_exact_match_eval_msg,累积票房（十亿韩元）_number_near,累积票房（十亿韩元）_number_near_eval_msg,累积票房（十亿韩元）_query,累积票房（十亿韩元）_response,累积观影人次_number_near,累积观影人次_number_near_eval_msg,累积观影人次_query,累积观影人次_response,领衔主演_llm_judge,领衔主演_llm_judge_eval_msg,领衔主演_query,领衔主演_response,题材_llm_judge,题材_llm_judge_eval_msg,题材_query,题材_response
+,,孤胆特工（又译大叔）,The Man from Nowhere,1.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2010,2010,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",李桢凡,kangje-gyu,1.0,key_match,0.0,"number not near, response: 20.0, target: 48.0",48.0,20.0,0.0,"number not near, response: 3940000.0, target: 6282774.0",6282774,3940000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",元斌、金赛纶,songkang-ho,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",动作,动作
+,,义兄弟,The Handmaiden,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2010,2017,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",张勋,parkchan-wook,1.0,key_match,0.0,"number not near, response: 8.0, target: 40.0",40.0,8.0,0.0,"number not near, response: 1670000.0, target: 5507106.0",5507106,1670000,1.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",姜栋元、宋康昊,songkang-ho,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",动作,剧情/爱情
+,,盗贼同盟（又译夺宝联盟）,The Thieves,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2012,2011,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",崔东勋,kimjee-woon,1.0,key_match,0.0,"number not near, response: 17.0, target: 93.0",93.0,17.0,0.0,"number not near, response: 3320000.0, target: 12984701.0",12984701,3320000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥,songkang-ho,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",犯罪动作,犯罪/剧情
+,,复仇者联盟,Army of the Dead,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2012,2021,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",乔斯·韦登,zacksnyder,1.0,key_match,0.0,"number not near, response: 3.0, target: 59.0",59.0,3.0,0.0,"number not near, response: 930000.0, target: 7087184.0",7087184,930000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯,scotteastwood,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",科幻,科幻/动作
+,,7号房的礼物,Miracle in Cell No. 7,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2013,2012,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",李焕庆,bongjoon-ho,1.0,key_match,0.0,"number not near, response: 15.0, target: 91.0",91.0,15.0,0.0,"number not near, response: 2910000.0, target: 12812186.0",12812186,2910000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",柳承龙、葛素媛、郑进永、朴信惠,songkang-ho,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",剧情喜剧,犯罪/剧情
+,,老手（又译辣手警探）,The Little Stranger,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2015,2022,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",柳承菀,parkchan-wook,1.0,key_match,0.0,"number not near, response: 2.0, target: 105.0",105.0,2.0,0.0,"number not near, response: 790000.0, target: 13414009.0",13414009,790000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",黄政民、刘亚仁、刘海镇、吴达庶,kimsoo-hyun,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",动作,剧情/恐怖
+,,釜山行（又译尸速列车）,Train to Busan,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2016,2014,1.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",延相昊,yeonsang-ho,1.0,key_match,0.0,"number not near, response: 12.0, target: 93.0",93.0,12.0,0.0,"number not near, response: 2390000.0, target: 11565479.0",11565479,2390000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",孔刘、郑有美、金秀安、金义城、马东锡、崔宇植,songkang-ho,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",灾难惊悚,恐怖/剧情
+,,共助,The Wailing,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2017,2015,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",金成勋,nahong-jin,1.0,key_match,0.0,"number not near, response: 11.0, target: 64.0",64.0,11.0,0.0,"number not near, response: 2260000.0, target: 7817446.0",7817446,2260000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",玄彬、刘海镇、金柱赫、林允儿、李东辉,songkang-ho,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",动作,恐怖/剧情
+,,从邪恶中拯救我,The Call,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2020,2019,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",洪元灿,leemyung-se,1.0,key_match,0.0,"number not near, response: 5.0, target: 39.0",39.0,5.0,0.0,"number not near, response: 1180000.0, target: 4357873.0",4357873,1180000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",黄政民、李政宰、朴正民、朴昭怡、崔嬉序,songkang-ho,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",动作,剧情/惊悚
+,,阿凡达：水之道,Avatar,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2022,2010,1.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",詹姆斯·卡梅隆,jamescameron,1.0,key_match,0.0,"number not near, response: 27.0, target: 90.0",90.0,27.0,0.0,"number not near, response: 5190000.0, target: 7313149.0",7313149,5190000,1.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗,samworthington,1.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",科幻,科幻
+,,壮志凌云2：独行侠（或者壮志凌云2）,Burning,0.0,"Let's analyze each item according to the criterion:
+
+Criterion summary: The answers must have the same meaning roughly or refer to the same entity. The scoring is binary 0 or 1.
+
+---
+
+Item idx_0: response: '2010' vs target: '2010'  
+- Exactly the same year → score 1
+
+idx_1: response: '2017' vs target: '2010'  
+- Different years, do not point to the same entity → score 0
+
+idx_2: response: '2011' vs target: '2012'  
+- Different years → score 0
+
+idx_3: response: '2021' vs target: '2012'  
+- Different years → score 0
+
+idx_4: response: '2012' vs target: '2013'  
+- Different years → score 0
+
+idx_5: response: '2022' vs target: '2015'  
+- Different years → score 0
+
+idx_6: response: '2014' vs target: '2016'  
+- Different years → score 0
+
+idx_7: response: '2015' vs target: '2017'  
+- Different years → score 0
+
+idx_8: response: '2019' vs target: '2020'  
+- Different years → score 0
+
+idx_9: response: '2010' vs target: '2022'  
+- Different years → score 0
+
+idx_10: response: '2018' vs target: '2022'  
+- Different years → score 0
+
+---
+
+Final scoring results:  
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0
+}
+```",2022,2018,0.0,"首先，我们需要判断每个response和对应的target所指的实体是否一致，或者语义是否大致相同。
+
+根据题目标准“和参考答案语义相同大致、或者指向的实体一致即可，全称和简称都可以”。
+
+逐项分析：
+
+idx_0:
+response: kangje-gyu
+target: 李桢凡
+分析：kangje-gyu（姜济久）与李桢凡不一致，应判0。
+
+idx_1:
+response: parkchan-wook
+target: 张勋
+分析：parkchan-wook是朴赞郁导演，张勋是另一人，不一致，判0。
+
+idx_2:
+response: kimjee-woon
+target: 崔东勋
+分析：kimjee-woon是金基德，崔东勋是另一导演，不一致，判0。
+
+idx_3:
+response: zacksnyder
+target: 乔斯·韦登
+分析：zacksnyder是扎克·施奈德，乔斯·韦登是Joss Whedon，不一致，判0。
+
+idx_4:
+response: bongjoon-ho
+target: 李焕庆
+分析：bongjoon-ho是奉俊昊，李焕庆是另一人，不一致，判0。
+
+idx_5:
+response: parkchan-wook
+target: 柳承菀
+分析：parkchan-wook是朴赞郁，柳承菀是另一人，不一致，判0。
+
+idx_6:
+response: yeonsang-ho
+target: 延相昊
+分析：yeonsang-ho是韩语拼写延相昊，完全匹配，一致，判1。
+
+idx_7:
+response: nahong-jin
+target: 金成勋
+分析：nahong-jin（罗泓轸）和金成勋是不同人，不一致，判0。
+
+idx_8:
+response: leemyung-se
+target: 洪元灿
+分析：leemyung-se（李明世）和洪元灿不是同一人，不一致，判0。
+
+idx_9:
+response: jamescameron
+target: 詹姆斯·卡梅隆
+分析：拼写为James Cameron，和詹姆斯·卡梅隆一致，判1。
+
+idx_10:
+response: leechang-dong
+target: 约瑟夫·科辛斯基
+分析：leechang-dong是李沧东导演，约瑟夫·科辛斯基（Joseph Kosinski）是另一导演，不一致，判0。
+
+最终评分：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",约瑟夫·科辛斯基,leechang-dong,1.0,key_match,0.0,"number not near, response: 6.0, target: 87.0",87.0,6.0,0.0,"number not near, response: 1320000.0, target: 8239497.0",8239497,1320000,0.0,"首先明确题目和评分标准的核心点是：  
+- 只要回答的实体（这里主要是明星/演员名字）与参考答案语义相同大致、指向的实体一致即可，字词不必完全对应。  
+- 答案的子集也可接受。  
+- 表示电影名称的情况里，翻译稍有差异或只给出带序号的电影名也是可接受的。
+
+根据提供的信息，回答和标准答案都是一组演员名字，回答者只给出了1个演员的名字，而标准答案中给出了多位演员。回答的与目标答案中列出的演员名字是否匹配，决定得分。
+
+按idx逐条分析：
+
+---
+
+**idx_0**  
+response: ""songkang-ho""  
+target: ""元斌、金赛纶""  
+分析：  
+- response给出的是宋康昊（韩文名songkang-ho），target是元斌和金赛纶，完全不同演员，没有匹配。  
+得分：0
+
+---
+
+**idx_1**  
+response: ""songkang-ho""  
+target: ""姜栋元、宋康昊""  
+分析：  
+- target中有""宋康昊""（songkang-ho），response给出的也是""songkang-ho""。  
+- 回答是目标答案的子集，完全符合。  
+得分：1
+
+---
+
+**idx_2**  
+response: ""songkang-ho""  
+target: ""金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥""  
+分析：  
+- response只给出了“宋康昊”，而target名单中没有宋康昊。  
+- 无匹配演员。  
+得分：0
+
+---
+
+**idx_3**  
+response: ""scotteastwood""  
+target: ""小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯""  
+分析：  
+- response是“斯科特·伊斯特伍德”，target是漫威多位演员，完全不匹配。  
+得分：0
+
+---
+
+**idx_4**  
+response: ""songkang-ho""  
+target: ""柳承龙、葛素媛、郑进永、朴信惠""  
+分析：  
+- response是“宋康昊”，target全是其他演员，没有宋康昊。  
+得分：0
+
+---
+
+**idx_5**  
+response: ""kimsoo-hyun""  
+target: ""黄政民、刘亚仁、刘海镇、吴达庶""  
+分析：  
+- response是“金秀贤”（kimsoo-hyun），target是四位演员均不是金秀贤。无匹配  
+得分：0
+
+---
+
+**idx_6**  
+response: ""songkang-ho""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+分析：  
+- response“宋康昊”，target是其他演员，没有宋康昊。无匹配。  
+得分：0
+
+---
+
+**idx_7**  
+response: ""songkang-ho""  
+target: ""玄彬、刘海镇、金柱赫、林允儿、李东辉""  
+分析：  
+- response是宋康昊，不在target中。无匹配。  
+得分：0
+
+---
+
+**idx_8**  
+response: ""songkang-ho""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+分析：  
+- response“宋康昊”，target中无宋康昊。  
+得分：0
+
+---
+
+**idx_9**  
+response: ""samworthington""  
+target: ""萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗""  
+分析：  
+- response“samworthington”即“萨姆·沃辛顿”，target出现该名字，完全匹配。  
+得分：1
+
+---
+
+**idx_10**  
+response: ""songkang-ho""  
+target: ""汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默""  
+分析：  
+- response“宋康昊”与target全演员无交集。  
+得分：0
+
+---
+
+最终结果总结：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 1,
+    ""idx_10"": 0
+}
+```",汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默,songkang-ho,0.0,"Let's analyze each pair based on the criterion:
+
+Criterion summary:  
+- Semantic equivalence or entity consistency is enough (not required to match exactly word-for-word).  
+- Outputting a subset of the types in the reference answer counts as correct.  
+- Types based on authoritative and official classifications are also correct.  
+- Mentioning one of the subset types with other reasonable types also counts as correct.
+
+---
+
+**idx_0:**  
+Response: 动作  
+Target: 动作  
+Exact match, clearly correct.  
+Score: 1
+
+**idx_1:**  
+Response: 剧情/爱情  
+Target: 动作  
+Response does not include 动作 at all or a subset of 动作. 剧情 and 爱情 are different genres than 动作.  
+Score: 0
+
+**idx_2:**  
+Response: 犯罪/剧情  
+Target: 犯罪动作  
+""犯罪动作"" = 犯罪 + 动作 genres combined. Response includes 犯罪 and 剧情, but no 动作. So response partially overlaps with 犯罪 but misses 动作.  
+However, criterion says ""答出参考答案中的部分类型（即子集）即视为正确"" (answering subset types counts as correct). 犯罪 is in the response, which is a part of 犯罪动作. 剧情 is extra but does not invalidate. So this counts as correct.  
+Score: 1
+
+**idx_3:**  
+Response: 科幻/动作  
+Target: 科幻  
+Response has 科幻 plus 动作, so includes the target genre as a subset.  
+Score: 1
+
+**idx_4:**  
+Response: 犯罪/剧情  
+Target: 剧情喜剧  
+Target is 剧情喜剧, which is 剧情 + 喜剧. Response is 犯罪 + 剧情, includes 剧情 but not 喜剧 or a superset.  
+Response contains 剧情, which is a subset of 剧情喜剧. The criterion says subset counts as correct. So answer is correct.  
+Score: 1
+
+**idx_5:**  
+Response: 剧情/恐怖  
+Target: 动作  
+Response does not mention 动作, only 剧情/恐怖. No overlap.  
+Score: 0
+
+**idx_6:**  
+Response: 恐怖/剧情  
+Target: 灾难惊悚  
+Target is 灾难 + 惊悚 genres. Response is 恐怖 (horror) + 剧情 (drama). 恐怖 vs 惊悚 are similar but distinct genres (惊悚 = thriller). Disaster (灾难) is not matched by 剧情.  
+No strong subset relationship here. Even if 恐怖 and 惊悚 are close, the criterion does not clearly say similar but different genres are correct. ""基于权威来源及官方依据的类型标注同样正确"" - if 恐怖 and 惊悚 might be considered differently.  
+Since no explicit overlap in types, we treat as incorrect.  
+Score: 0
+
+**idx_7:**  
+Response: 恐怖/剧情  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_8:**  
+Response: 剧情/惊悚  
+Target: 动作  
+No overlap with 动作  
+Score: 0
+
+**idx_9:**  
+Response: 科幻  
+Target: 科幻  
+Exact match  
+Score: 1
+
+**idx_10:**  
+Response: 悬疑/剧情  
+Target: 动作  
+No 动作 mentioned. 不视为正确  
+Score: 0
+
+---
+
+### Final scores in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 0
+}
+```",动作,悬疑/剧情
+,1.0,nan,nan,,,,2024,,,,nan,,,,,,NULL,,,,NULL,,,,nan,,,,nan
+1.0,,sunny（又译阳光姐妹淘）,,,,2011,,,,姜炯哲,,,,,,54.0,,,,7375110,,,,沈恩京、姜素拉、金敏英、闵孝琳,,,,喜剧,
+1.0,,与神同行2：因与缘,,,,2018,,,,金容华,,,,,,103.0,,,,12274996,,,,河正宇、朱智勋、金香奇、马东锡、金东旭、李政宰,,,,奇幻,
+1.0,,与神同行：罪与罚（或者与神同行）,,,,2017,,,,金容华,,,,,,68.0,,,,8539495,,,,河正宇、车太贤、朱智勋、金香奇,,,,奇幻,
+1.0,,光海，成为王的男人（又译双面君王）,,,,2012,,,,秋昌民,,,,,,87.0,,,,12319390,,,,李秉宪、柳承龙、韩孝珠,,,,古装,
+1.0,,冰雪奇缘,,,,2014,,,,克里斯·巴克、珍妮弗·李,,,,,,82.0,,,,10296101,,,,克里斯汀·贝尔、伊迪娜·门泽尔、乔纳森·格罗夫、乔什·盖德、圣蒂诺·方塔纳,,,,动画,
+1.0,,冰雪奇缘2,,,,2019,,,,克里斯·巴克、珍妮弗·李,,,,,,112.0,,,,13369064,,,,克里斯汀·贝尔、伊迪娜·门泽尔、乔纳森·格罗夫、乔什·盖德,,,,动画,
+1.0,,出租车司机,,,,2017,,,,张薰,,,,,,95.0,,,,12186327,,,,宋康昊、托马斯·克莱舒曼、柳海真、柳俊烈,,,,剧情,
+1.0,,南山的部长们,,,,2020,,,,禹民镐,,,,,,41.0,,,,4750917,,,,李秉宪、李星民、郭道元、李熙俊,,,,剧情,
+1.0,,变形金刚3,,,,2011,,,,迈克尔·贝,,,,,,74.0,,,,7790434,,,,希亚·拉博夫、乔什·杜哈明、约翰·特托罗、泰瑞斯·吉布森、罗茜·汉丁顿-惠特莉,,,,科幻动作,
+1.0,,复仇者联盟2,,,,2015,,,,乔斯·韦登,,,,,,88.0,,,,10494499,,,,小罗伯特·唐尼、克里斯·海姆斯沃斯、马克·鲁法洛、克里斯·埃文斯、斯嘉丽·约翰逊、杰瑞米·雷纳,,,,科幻冒险,
+1.0,,复仇者联盟3：无限战争(或者复仇者联盟3),,,,2018,,,,安东尼·罗素、乔·罗素,,,,,,99.0,,,,11211880,,,,小罗伯特·唐尼、乔什·布洛林、克里斯·埃文斯,,,,科幻动作,
+1.0,,复仇者联盟4：终局之战,,,,2019,,,,安东尼·罗素和乔·罗素,,,,,,122.0,,,,13934592,,,,小罗伯特·唐尼、克里斯·埃文斯、克里斯·海姆斯沃斯、马克·鲁法洛、斯嘉丽·约翰逊、杰瑞米·雷纳、保罗·路德、布丽·拉尔森、唐·钱德尔、凯伦·吉兰、乔什·布洛林,,,,科幻,
+1.0,,头脑特工队2,,,,2024,,,,凯尔西·曼,,,,,,77.0,,,,8799611,,,,艾米·波勒、黛安·莲恩、菲利斯·史密斯、刘易斯·布莱克,,,,奇幻动画,
+,1.0,寄生虫,Parasite,,,,2016,,,,bongjoon-ho,,,,,,9.0,,,,1930000,,,,songkang-ho,,,,剧情/喜剧
+1.0,,摩加迪沙,,,,2021,,,,柳昇完,,,,,,34.0,,,,3613984,,,,金允石、赵寅成,,,,动作,
+1.0,,星际穿越,,,,2014,,,,克里斯托弗·诺兰,,,,,,80.0,,,,10105249,,,,马修·麦康纳、安妮·海瑟薇、杰西卡·查斯坦,,,,科幻,
+1.0,,暗杀,,,,2015,,,,崔东勋,,,,,,98.0,,,,12705700,,,,全智贤、李政宰、河正宇,,,,动作,
+1.0,,最终兵器：弓,,,,2011,,,,金韩民,,,,,,56.0,,,,7459974,,,,朴海日、文彩元、柳承龙,,,,古装动作,
+1.0,,极限职业,,,,2019,,,,李炳宪,,,,,,139.0,,,,16265618,,,,柳承龙、李东辉、李哈妮、陈善奎、孔明,,,,喜剧,
+1.0,,检察官外传,,,,2016,,,,李日炯,,,,,,77.0,,,,9707158,,,,黄政民、姜栋元,,,,犯罪喜剧,
+1.0,,永恒族,,,,2021,,,,赵婷,,,,,,32.0,,,,3050132,,,,嘉玛·陈、理查德·麦登、安吉丽娜·朱莉、萨尔玛·海耶克、基特·哈灵顿、库梅尔·南贾尼、莉亚·麦克休、布莱恩·泰里·亨利、劳伦·利德洛夫、巴里·基奥汉、马东锡,,,,动作奇幻,
+1.0,,波西米亚狂想曲,,,,2018,,,,布莱恩·辛格,,,,,,80.0,,,,9224582,,,,皮特·摩根编剧，拉米·马雷克、露西·波顿、格林威廉·李、本·哈迪,,,,音乐传记,
+1.0,,犯罪都市2,,,,2022,,,,李相龙,,,,,,131.0,,,,12693415,,,,马东锡、孙锡求,,,,犯罪动作,
+1.0,,犯罪都市3,,,,2023,,,,李相龙,,,,,,106.0,,,,10682813,,,,马东锡、李浚赫、青木崇高,,,,犯罪动作,
+1.0,,犯罪都市4,,,,2024,,,,许明行,,,,,,115.0,,,,11502928,,,,马东锡、金武烈、李东辉、朴智焕,,,,犯罪,
+1.0,,疯狂元素城,,,,2023,,,,彼得·孙,,,,,,69.0,,,,7241486,,,,莉娅·刘易斯、马莫多·阿西,,,,动画,
+1.0,,盗梦空间,,,,2010,,,,克里斯托弗·诺兰,,,,,,43.0,,,,5872548,,,,莱昂纳多·迪卡普里奥、玛丽昂·歌迪亚、约瑟夫·高登-莱维特、艾利奥特·佩吉、汤姆·哈迪,,,,科幻动作,
+1.0,,破墓,,,,2024,,,,张宰贤,,,,,,119.0,,,,11914784,,,,崔岷植、金高银、李到晛、柳海真、洪瑞俊,,,,惊悚,
+1.0,,美国队长3,,,,2016,,,,安东尼·罗素、乔·罗素,,,,,,72.0,,,,8677249,,,,克里斯·埃文斯、小罗伯特·唐尼、斯嘉丽·约翰逊、塞巴斯蒂安·斯坦、安东尼·麦凯,,,,科幻动作,
+1.0,,蜘蛛侠：英雄无归,,,,2021,,,,乔·沃茨,,,,,,56.0,,,,5560940,,,,汤姆·赫兰德、赞达亚·科尔曼、本尼迪克特·康伯巴奇,,,,动作科幻,
+1.0,,观相,,,,2013,,,,韩在林,,,,,,66.0,,,,9134586,,,,宋康昊、金惠秀、李政宰,,,,历史剧情,
+1.0,,釜山行2：半岛,,,,2020,,,,延相昊,,,,,,33.0,,,,3812954,,,,姜栋元、李贞贤,,,,动作类惊悚,
+1.0,,雪国列车,,,,2013,,,,奉俊昊,,,,,,67.0,,,,9341572,,,,克里斯·埃文斯、宋康昊、蒂尔达·斯文顿、杰米·贝尔、艾德·哈里斯,,,,动作科幻,
+1.0,,首尔之春,,,,2023,,,,金成洙,,,,,,115.0,,,,11854812,,,,黄政民、郑雨盛、李星民,,,,剧情,
+1.0,,鸣梁海战,,,,2014,,,,金汉珉,,,,,,135.0,,,,17616461,,,,崔岷植、柳承龙、赵震雄、晋久、李贞贤,,,,古装战争,

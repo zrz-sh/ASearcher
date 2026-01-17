@@ -1,0 +1,394 @@
+{
+  "instance_id": "ws_en_062",
+  "response": "",
+  "message_history": [
+    {
+      "role": "user",
+      "content": "A conversation between User and Assistant. The user asks a question, and the Assistant answers it. The Assistant analyzes the given question and information in the mind, retains important relevant information, calls a search engine to find necessary information, accesses web pages with certain urls, and provides the user with the answer. The Assistant conducts search by <search> query </search>, access certain url by <access> url </access>, and the top search results and url page will be returned between <information> and </information>.  The reasoning processes are enclosed within <think> </think>. Finally, the Assistant provides answer inside <answer> and </answer>, i.e. <answer> answer here </answer>. If there are multiple queries, ensure all answers are enclosed within <answer> </answer>, seperated with comma. \n\nNote: the question is a valid question and you should try to find a correct answer. \n\nUser: Please help me compile the founding year, governing authority, official website addresses of all Russell Group universities in the UK, as well as their rankings in the 2025 Guardian University Guide and the 2026 QS World University Rankings.\n\nPlease output the compiled data in the format of one Markdown table.\nThe column names in the table are as follows in sequence: University, Founding Year, Governing Body, Official Website Address, 2025 UK Guardian Rankings, 2026 QS World Rankings.\n\nAmong them:\nThe full name of the university should be written, for example: University of Cambridge;\n\"Founding Year\" refers to the official date on which the institution was recognized as a university—most commonly the year it received its Royal Charter or parliamentary approval.\nThe full name of the governing authority should be written, for example: University Council; if there are multiple governing authorities, please separate them with commas;\nThe official website address should be complete, for example: https://www.ox.ac.uk/\nThe rankings in the lists should be in Arabic numerals, for example: 11.\n\n\nDon't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown\n{data_content}\n```\n\nAssistant: \n<think>"
+    },
+    {
+      "role": "assistant",
+      "content": " To find the required information about Russell Group universities, I'll search through reliable sources. </think>\n<search> founding year russell group universities </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year russell group universities\nResult: [Doc 1](https://en.wikipedia.org/wiki/Russell_Group):\nRussell Group - Wikipedia The group is headquartered in Cambridge and was established in 1994 to represent its members' interests, principally to government and Parliament. It was ...\n\n[Doc 2](https://www.theuniguide.co.uk/advice/choosing-a-course/what-is-the-russell-group):\nWhat is the Russell Group? List of Russell Group universities When the Russell Group was formed in 1994, it had 17 member universities: Birmingham, Bristol, Cambridge, Edinburgh, Glasgow, Imperial, Leeds, Liverpool, London ...\n\n[Doc 3](https://gostudyin.com/study-in-uk/study-guides/russell-group-universities-explained/):\nWhy are Russell Group Universities Important? - GoStudyIn The member universities are claimed to yield the lion's share of the UK's best research, add value worth eighty-seven billion pounds to the economy of the UK.\n\n[Doc 4](https://www.study.eu/article/what-is-the-russell-group):\nUniversities in the UK: What is the Russell Group? - Study.eu List of Russell Group universities ; Imperial College London, 1994, 18,400 ; King's College London, 1998, 32,300 ; London School of Economics and ...\n\n[Doc 5](https://www.uniadmissions.co.uk/application-guides/what-is-russell-group/):\nWhat Is A Russell Group University? Your Essential Guide The university was founded in 1900 as one of the original 'red brick' universities and currently operates two Birmingham campuses and an international campus ..."
+    },
+    {
+      "role": "assistant",
+      "content": "Now I'll search for the founding year, governing authority, and official website of each university. I'll also check their rankings in the 2025 Guardian University Guide and 2026 QS World University Rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year of university of cambridge </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year of university of cambridge\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Cambridge):\nUniversity of Cambridge - Wikipedia Founded in 1209, the University of Cambridge is the world's third-oldest university in continuous operation. The university's founding followed the arrival of ...\n\n[Doc 2](https://www.cam.ac.uk/about-the-university/history):\nHistory | University of Cambridge Established in 1209, the University is rich in history. Cambridge's famous Colleges and University buildings attract visitors from all over the world.\n\n[Doc 3](https://www.britannica.com/topic/University-of-Cambridge):\nUniversity of Cambridge | History, Notable Alumni, & Facts | Britannica The start of the university is generally taken as 1209, when scholars from Oxford migrated to Cambridge to escape Oxford's riots of “town and ...\n\n[Doc 4](https://www.cam.ac.uk/about-the-university/cambridge-at-a-glance):\nCambridge at a glance Established. The University of Cambridge was founded in 1209. Cambridge is the fourth-oldest university in the world.\n\n[Doc 5](https://www.bluebridge.education/blog/a-brief-history-of-cambridge):\nA Brief History of Cambridge - Bluebridge Education Founded in 1209, the University of Cambridge has grown from a handful of scholars fleeing Oxford into one of the world's most respected ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll continue searching for the other universities in a similar manner.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of oxford </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of oxford\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Oxford):\nUniversity of Oxford - Wikipedia There is evidence of teaching as early as 1096, making it the oldest university in the English-speaking world and the world's second-oldest university in ...\n\n[Doc 2](https://www.ox.ac.uk/about/organisation/history):\nHistory - University of Oxford Established between 1249 and 1264, University, Balliol and Merton Colleges are the oldest. (Image: Merton College and chapel, from the first quadrangle, 1775 ...\n\n[Doc 3](https://www.reddit.com/r/AskHistorians/comments/n3s232/what_is_the_general_consensus_on_the_founding/):\nWhat is the general consensus on the founding date of Oxford ... The generally agreed upon date is 1243, when \"major schools\" were already organised there. If one wants to be purist, the date to be considered should be 1346.\n\n[Doc 4](https://www.topuniversities.com/blog/10-oldest-universities-world):\n10 of the oldest universities in the world | TopUniversities While the university's exact foundation date remains a little vague, evidence of teaching dates as far back as 1096, and some claim it was ...\n\n[Doc 5](https://www.facebook.com/smithsonianmagazine/posts/did-you-know-that-teaching-at-oxford-began-by-1096-centuries-before-the-aztec-ca/1256924332966421/):\nDid you know that teaching at Oxford began by 1096, centuries ... It's fascinating to consider that Oxford University, founded in 1096 AD, was already shaping European scholarship more than 200 years before the ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep searching for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year imperial college london </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year imperial college london\nResult: [Doc 1](https://en.wikipedia.org/wiki/Imperial_College_London):\nImperial College London - Wikipedia The earliest college that led to the formation of Imperial was the Royal College of Chemistry, founded in 1845, with the support of Prince Albert and ...\n\n[Doc 2](https://www.imperial.ac.uk/about/):\nAbout | Imperial College London We were founded in 1907 with a mission 'To be useful', but we know that before anyone can usefully change something, they first need to understand it.\n\n[Doc 3](https://en.wikipedia.org/wiki/History_of_Imperial_College_London):\nHistory of Imperial College London - Wikipedia The college was formed in 1907 out of the royal colleges in South Kensington, and throughout the 20th century became central to the national strategy for ...\n\n[Doc 4](https://www.usnews.com/education/best-global-universities/imperial-college-london-505571):\nImperial College London in United Kingdom - US News Best Global ... Imperial College London is a public institution that was founded in 1907. The university was previously a college of the University of London.\n\n[Doc 5](https://www.russellgroup.ac.uk/our-universities/imperial-college-london):\nImperial College London - Russell Group Founded in 1907, Imperial's future builds on a distinguished past, having pioneered penicillin, holography and fibre optics. Today, Imperial combines ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of edinburgh </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of edinburgh\nResult: [Doc 1](https://www.ed.ac.uk/about/our-history):\nOur history | About us - The University of Edinburgh As one of Scotland's four ancient universities, Edinburgh has been influencing the world for more than four centuries.\n\n[Doc 2](https://en.wikipedia.org/wiki/University_of_Edinburgh):\nUniversity of Edinburgh - Wikipedia Founded by the town council under the authority of a royal charter from King James VI in 1582 and officially opened in 1583, it is one of Scotland's four ...\n\n[Doc 3](https://ourhistory.is.ed.ac.uk/index.php/University_of_Edinburgh):\nUniversity of Edinburgh - Our History The University opened in 1583 and first classes of the university were held in Hamilton House known as the Duke's Lodge. In 1582 a site that ...\n\n[Doc 4](https://universitas21.com/member/university-edinburgh/):\nThe University of Edinburgh - Universitas 21 The University of Edinburgh was founded in 1583, making it one of Scotland's four ancient universities. Today, the university is a leading European centre ...\n\n[Doc 5](https://www.usnews.com/education/best-global-universities/university-of-edinburgh-505832):\nUniversity of Edinburgh in United Kingdom - US News Best Global ... The University of Edinburgh is a public institution that was founded in 1583. It is spread across five campuses in Edinburgh, Scotland – the capital and one ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of edinburgh royal college of medicine </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of edinburgh royal college of medicine\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Edinburgh_Medical_School):\nUniversity of Edinburgh Medical School - Wikipedia The medical school was established in 1726, during the Scottish Enlightenment, making it the oldest medical school in the United Kingdom and the oldest medical ...\n\n[Doc 2](https://medicine-vet-medicine.ed.ac.uk/300-years-of-medicine/about/medicine-at-the-university-of-edinburgh):\nMedicine at the University of Edinburgh | 300 years of medicine The University of Edinburgh was founded in 1583 by the Town Council of Edinburgh as the first civic university in Britain.\n\n[Doc 3](https://www.ed.ac.uk/about/our-history):\nOur history | About us - The University of Edinburgh The Faculty of Law is founded. 1708. The Faculty of Arts is founded. 1726. The Faculty of Medicine is founded. 1745. Classes are suspended as ...\n\n[Doc 4](https://en.wikipedia.org/wiki/Royal_College_of_Physicians_of_Edinburgh):\nRoyal College of Physicians of Edinburgh - Wikipedia Royal College of Physicians of Edinburgh. Map. Wikimedia | © OpenStreetMap. Abbreviation, RCPE. Established, 1681; 345 years ago (1681). Type, Medical royal ...\n\n[Doc 5](https://www.rcpe.ac.uk/heritage/history-college):\nHistory of the College | Royal College of Physicians of Edinburgh Through his friendship with the King's Physician, he had the opportunity to petition King Charles II who granted the College its Royal Charter in 1681."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of glasgow </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of glasgow\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Glasgow):\nUniversity of Glasgow - Wikipedia Founded by papal bull in 1451 [O.S. 1450], it is the fourth-oldest university in the English-speaking world and one of Scotland's four ancient universities.\n\n[Doc 2](https://www.gla.ac.uk/media/Media_94581_smxx.pdf):\n[PDF] A Brief History - University of Glasgow The University of Glasgow was founded by Pope Nicholas V in a letter dated. 7 January 1451 and authenticated with a lead seal or `bull'.\n\n[Doc 3](https://www.gla.ac.uk/explore/history/):\nExplore - Our history - University of Glasgow 1451: The University of Glasgow is established, making it the fourth oldest university in the UK. · 1737: Adam Smith, the father of modern economics and author ...\n\n[Doc 4](https://www.britannica.com/topic/University-of-Glasgow):\nUniversity of Glasgow | Academic Disciplines, Education, Colleges ... The university was founded in 1451 by a bull of Pope Nicholas V on the petition of King James II of Scotland. From 1460, lands granted by Lord ...\n\n[Doc 5](https://www.gla.ac.uk/explore/meetglasgow/):\nExplore - Meet World Changing Glasgow The University of Glasgow and our inspiring people have been changing the world for more than 570 years ; 1451. The UNIVERSITY OF GLASGOW is established ; 1776"
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of leeds </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of leeds\nResult: [Doc 1](https://www.leeds.ac.uk/about/doc/about-history):\nOur history | University of Leeds The University of Leeds was founded in 1904, but our origins go back to the nineteenth century with the founding of the Leeds School of Medicine in 1831.\n\n[Doc 2](https://en.wikipedia.org/wiki/University_of_Leeds):\nUniversity of Leeds - Wikipedia It was established in 1874 as the Yorkshire College of Science. In 1884, it merged with the Leeds School of Medicine (established 1831) and was renamed ...\n\n[Doc 3](https://www.leeds.ac.uk/about):\nAbout | University of Leeds Established in 1904, the University of Leeds is one of the largest universities in the UK. We're part of the Russell Group of research-intensive universities.\n\n[Doc 4](https://www.facebook.com/groups/westriding/posts/9419087591514591/):\n\"The University of Leeds was founded in 1904, but our origins go ... \"The University of Leeds was founded in 1904, but our origins go back to the nineteenth century with the founding of the Leeds School of ...\n\n[Doc 5](https://www.ukuniversitysearch.com/institutions/the-university-of-leeds):\nUniversity of Leeds The University of Leeds was founded in 1904, but its origins go back to the nineteenth century with the founding of the Leeds School of Medicine in 1831 and ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of liverpool </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of liverpool\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Liverpool):\nUniversity of Liverpool - Wikipedia Founded in 1881 as University College Liverpool and affiliated with Victoria University in 1884, it received a royal charter from King Edward VII in 1903, ...\n\n[Doc 2](https://www.liverpool.ac.uk/about/the-university/our-history/):\nOur history | About us - University of Liverpool The University of Liverpool was originally founded as University College, Liverpool in 1881. It officially opened its doors a year later in 1882 to just 45 ...\n\n[Doc 3](https://international.sonoma.edu/opportunity/university-liverpool):\nUniversity of Liverpool | International Education at Sonoma State ... The University of Liverpool was founded in 1881 and was one of the founding members of the Russell Group, an elite group of British research universities.\n\n[Doc 4](https://www.liverpool.ac.uk/legal/freedom-of-information/publication-scheme/whoweare/):\nWho we are | Legal and Governance - University of Liverpool The University of Liverpool was originally founded as University College, Liverpool in 1881. The University as we know it today was set up in 1903 following the ...\n\n[Doc 5](https://theconversation.com/institutions/university-of-liverpool-1198):\nUniversity of Liverpool on The Conversation Founded in 1881 as the original 'red brick', the University of Liverpool is one of the UK's leading research-intensive higher education institutions."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of manchester </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of manchester\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Manchester):\nUniversity of Manchester - Wikipedia The current University of Manchester was formed in 2004 following the merger of the University of Manchester Institute of Science and Technology (UMIST) and the ...\n\n[Doc 2](https://www.manchester.ac.uk/about/governance/foundations/foundation-day-live/):\nFoundation Day | The University of Manchester The University of Manchester in its current form was created in 2004 by the amalgamation of the Victoria University of Manchester and the University of ...\n\n[Doc 3](https://www.manchester.ac.uk/about/history-heritage/history/):\nThe history of The University of Manchester The University of Manchester, in its present form, was created in 2004 by the amalgamation of the Victoria University of Manchester and the University of ...\n\n[Doc 4](https://www.manchester.ac.uk/about/our-story/):\nOur story | The University of Manchester Founded in 1824, the Manchester Mechanics' Institution was formed as part of a national movement for the education of working men.\n\n[Doc 5](https://www.manchester.edu/manchester-university-celebrates-136-year-legacy/):\nManchester University celebrates 136-year legacy Manchester University celebrates 136-year legacy ... founded in 1889 when the seminary moved to North Manchester and became Manchester College."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university college london </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university college london\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_College_London):\nUniversity College London - Wikipedia Established, 11 February 1826; 199 years ago (1826-02-11) (University status 2023) ; Endowment, £175.0 million (2025) ; Budget, £2.163 billion (2024/25) ; Chair ...\n\n[Doc 2](https://uclpress.co.uk/how-a-world-class-university-was-founded/):\nHow a world-class university was founded | UCL Press What we know today as University College London (UCL) was founded in 1826 and first opened its doors to students as the self-styled ...\n\n[Doc 3](https://www.ucl.ac.uk/about/about-ucl):\nAbout UCL Founded in 1826 in the heart of London, UCL is London's leading multidisciplinary university, with more than 18000 staff and 51000 students ...\n\n[Doc 4](https://en.wikipedia.org/wiki/History_of_University_College_London):\nHistory of University College London - Wikipedia University College London (UCL) was founded on 11 February 1826, under the name London University, as a secular alternative to the strictly religious ...\n\n[Doc 5](https://www.ucl.ac.uk/news/sites/news/files/boards1_0.pdf):\n[PDF] University College London was founded in 1826 and opened to ... University College London was founded in. 1826 and opened to students in October. 1828. Founded as the self-styled 'London. University', the new institution ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year king's college london </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year king's college london\nResult: [Doc 1](https://www.kcl.ac.uk/about/history):\nOur history | King's College London King's College London was founded in 1829 but our roots reach back to the 12th century.\n\n[Doc 2](https://en.wikipedia.org/wiki/King%27s_College_London):\nKing's College London - Wikipedia King's was established by royal charter in 1829 under the patronage of King George IV and the Duke of Wellington. In 1836, King's became one of the two ...\n\n[Doc 3](https://www.kcl.ac.uk/about/about-kings):\nAbout - King's College London King's was founded in 1829 and is made up of five campuses across London. We have more than 42,000 students and over 185,000 alumni from all over the world and ...\n\n[Doc 4](https://en.wikipedia.org/wiki/History_of_King%27s_College_London):\nHistory of King's College London - Wikipedia The history of King's College London, on its own, spans over 190 years since it was founded as a 'university college' by royal charter in 1829.\n\n[Doc 5](https://www.globalexperiences.pitt.edu/kingscollegelondon):\nKing's College London - Pitt Global Experiences King's College London was established by royal charter in 1829. It has a long history of welcoming International students which contributes to the vibrant ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year london school of economics </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year london school of economics\nResult: [Doc 1](https://en.wikipedia.org/wiki/London_School_of_Economics):\nLondon School of Economics - Wikipedia Origins. The London School of Economics and Political Science was founded in 1895 by Beatrice and Sidney Webb, Graham Wallas and George Bernard Shaw initially ...\n\n[Doc 2](https://www.lse.ac.uk/about-lse/our-history):\nLSE history overview Known as the School, LSE first opened its doors in 1895 in three rooms in 9 John Adam Street, close to the Strand in central London. An economic historian, 29- ...\n\n[Doc 3](https://www.lse.ac.uk/about-lse):\nAbout LSE Since 1895, the London School of Economics has shaped society and driven global change. Join us as we celebrate 130 years of LSE's impact and enduring legacy.\n\n[Doc 4](https://www.london.ac.uk/federation/london-school-economics-political-science):\nThe London School of Economics and Political Science (LSE) LSE was founded in 1895 and joined the University of London in 1900. View ... LSE was named University of the Year for 2025. The School's academic ...\n\n[Doc 5](https://en.wikipedia.org/wiki/History_of_the_London_School_of_Economics):\nHistory of the London School of Economics - Wikipedia The history of the London School of Economics dates from 1895, when the School was founded by Fabian Society members Sidney and Beatrice Webb, Graham Wallas ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of bath </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of bath\nResult: [Doc 1](https://www.bath.ac.uk/corporate-information/the-story-of-the-university/):\nThe story of the University - University of Bath In response, the Bristol Trade School, the first part of the institution that would become the University of Bath, was established in 1856. Its aim was to ...\n\n[Doc 2](https://en.wikipedia.org/wiki/University_of_Bath):\nUniversity of Bath - Wikipedia University of Bath ; Public · 1886 (Merchant Venturers Technical College) 1960 (Bristol College of Science and Technology) 1966 (Bath University of Technology)\n\n[Doc 3](https://www.bath.ac.uk/topics/about-the-university/):\nAbout the University - University of Bath The University of Bath was established on Claverton Down in Bath in 1966. We are a campus university in the South West of England. Bath is only 1 hour and 25 ...\n\n[Doc 4](https://www.timeshighereducation.com/world-university-rankings/university-bath):\nUniversity of Bath | World University Rankings | THE Founded in 1966, the University of Bath is a top 10 UK university and ranks 132nd globally (QS 2026), placing it among the top 10% worldwide.\n\n[Doc 5](https://www.unirank.org/gb/uni/university-of-bath/):\nUniversity of Bath UB 2025 Rankings, Courses, Tuition & Admissions Established in 1966, University of Bath is a non-profit public higher education institution located in the suburban setting of the small city of Bath."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of bristol </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of bristol\nResult: [Doc 1](https://www.bristol.ac.uk/university/history/):\nHistory of the University | About the University - University of Bristol University College, Bristol finally opened its doors at 9 am on Tuesday 10 October 1876 in rented premises at 32 Park Row.\n\n[Doc 2](https://en.wikipedia.org/wiki/University_of_Bristol):\nUniversity of Bristol - Wikipedia It received its royal charter in 1909, although it can trace its roots to a Merchant Venturers' school founded in 1595 and University College, Bristol, which ...\n\n[Doc 3](https://www.bristol.ac.uk/university/facts/):\nFacts and figures | About the University - University of Bristol The University was founded in 1876 as University College, Bristol. It was the first higher education institution in England to admit women on an equal basis to ...\n\n[Doc 4](https://fulbright.org.uk/us-postgraduate-awards/university-of-bristol/):\nUniversity of Bristol - Fulbright Commission Founded in 1876, the University of Bristol offers a world-class learning environment. · Bristol is one of the UK's top 10 universities and 55th in the world (QS ...\n\n[Doc 5](https://www.topuniversities.com/universities/university-bristol):\nUniversity of Bristol : Rankings, Fees & Courses Details Founded in 1876, the University of Bristol offers a world-class learning environment. Our academic excellence is combined with an independent and forward- ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of durham </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of durham\nResult: [Doc 1](https://en.wikipedia.org/wiki/History_of_Durham_University):\nHistory of Durham University - Wikipedia The history of Durham University spans over 190 years since it was founded by Act of Parliament. King William IV granted royal assent to the Act on 4 July 1832.\n\n[Doc 2](https://www.durham.ac.uk/colleges-and-student-experience/colleges/university/about/history/):\nHistory - Durham University \n\n[Doc 3](https://en.wikipedia.org/wiki/Durham_University):\nDurham University - Wikipedia a collegiate public research university in Durham, England, founded by an Act of Parliament in 1832 and incorporated by royal charter in 1837.\n\n[Doc 4](https://www.durhamworldheritagesite.com/history/university/foundation):\nDurham University, founded 1832 Durham University was officially recognised through an act of parliament which received the royal assent on July 4 th 1832.\n\n[Doc 5](https://www.russellgroup.ac.uk/our-universities/durham-university):\nDurham University - Russell Group Founded in 1832, it is a Collegiate University committed to providing students with an outstanding education, and with exceptional support and opportunities ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of southampton </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of southampton\nResult: [Doc 1](https://www.southampton.ac.uk/about/reputation/history-timeline.page):\nOur history timeline | University of Southampton Our history timeline · 1862 – The Hartley Institution is formed · 1919 – The new Highfield campus is finally opened · 1931 – The Chemistry and Engineering ...\n\n[Doc 2](https://en.wikipedia.org/wiki/University_of_Southampton):\nUniversity of Southampton - Wikipedia Motto, Latin: Strenuis Ardua Cedunt ; Motto in English. The Heights Yield to Endeavour ; Type, Public research university ; Established. 1862: Hartley Institution ...\n\n[Doc 3](https://www.southampton.ac.uk/about/reputation/history.page):\nOur history | University of Southampton Learn about our history from our humble beginnings in 1862 right through to our world-renowned present day success.\n\n[Doc 4](https://calendar-archive.soton.ac.uk/2023_24/history-timeline.page.html):\nOur history timeline - Calendar Archives - University of Southampton 1862 – The Hartley Institution is formed. In its first years the Hartley Institution had just 700 day and evening students enrolled – just a fraction of the ...\n\n[Doc 5](https://www.studies-overseas.com/universities/uk/university-of-southampton):\nUniversity of Southampton : Rankings, Courses, Fees & More The University of Southampton was established in 1862 as the Hartley Institution. Since then, it evolved as a leading Research-intensive Public University ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of surrey </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of surrey\nResult: [Doc 1](https://www.surrey.ac.uk/about/facts/our-history):\nOur history | University of Surrey The University of Surrey was established on 9 September 1966 with the grant of its Royal Charter, but its roots go back to a late 19th-century concern.\n\n[Doc 2](https://en.wikipedia.org/wiki/University_of_Surrey):\nUniversity of Surrey - Wikipedia On 9 September 1966 the University of Surrey was established by royal charter. ... \"The Times and The Sunday Times University of the Year: University of Surrey\".\n\n[Doc 3](https://world.uz/en/post/view/universitet_surreya):\nUniversity of Surrey | Study in United Kingdom | Education in England The University of Surrey was established on 9 September 1966 with the grant of its Royal Charter, but its roots go back to a late 19th-century concern.\n\n[Doc 4](https://www.ucas.com/explore/unis/5ea13bf3/university-of-surrey/international?studyYear=2026):\nUniversity of Surrey | International - UCAS The University of Surrey was established on 9 September 1966 with the grant of its Royal Charter, but its roots go back to a late 19th-century concern to ...\n\n[Doc 5](https://justapedia.org/wiki/Surrey_Sports_Park):\nUniversity of Surrey - Justapedia On 9 September 1966 the University of Surrey was established by Royal ... ^ \"R40 Student Key Facts: University of Surrey 2016-17 Academic Year\" (PDF)."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year university of warwick </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year university of warwick\nResult: [Doc 1](https://en.wikipedia.org/wiki/University_of_Warwick):\nUniversity of Warwick - Wikipedia The university was founded in 1965 as part of a government initiative to expand higher education. Warwick Business School was established in 1967, Warwick Law ...\n\n[Doc 2](https://warwick.ac.uk/about/history/):\nHistory - University of Warwick The establishment of The University of Warwick was given approval by the government in 1961 and received its Royal Charter of Incorporation in 1965.\n\n[Doc 3](https://www.bbc.com/news/articles/cy9qwwvzlneo):\nUniversity of Warwick to celebrate 60th anniversary - BBC To commemorate the educational institution's founding in 1965, the university has programmed a year of events to mark six decades of education ...\n\n[Doc 4](https://warwick.ac.uk/):\nWelcome to University of Warwick Founded in 1965, the University of Warwick is the youngest member of the Russell Group and renowned for seeking out and addressing complex global challenges.\n\n[Doc 5](https://www.crimsoneducation.org/us/resources/universities/university-of-warwick/):\nUniversity of Warwick - Crimson Education US Warwick has one of the largest unions for clubs and societies in the UK. A brief history. The establishment of the University of Warwick was ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year kcl royal college of surgeons edinburgh </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year kcl royal college of surgeons edinburgh\nResult: [Doc 1](https://en.wikipedia.org/wiki/Royal_College_of_Surgeons_of_Edinburgh):\nRoyal College of Surgeons of Edinburgh - Wikipedia Royal College of Surgeons of Edinburgh ; 1505; 521 years ago (1505) · King James IV · Surgical education, training and standards · 55°56′49″N 3°11′01″W﻿ / ﻿ ...\n\n[Doc 2](https://www.rcsed.ac.uk/the-college/our-history/history-and-vision):\nHistory and Vision | RCSEd When was the Royal College of Surgeons of Edinburgh founded? RCSEd was formally founded in 1505, making it the oldest surgical college in the world. What is ...\n\n[Doc 3](https://www.isecsn.org/surgical-colleges-information/):\nSurgical Colleges Information The Royal College of Surgeons of Edinburgh was founded in 1505 by Royal Charter granted from King James IV. From the discoveries of Simpson and Lister to modern ...\n\n[Doc 4](https://haddingtonshistory.org.uk/2023/01/a-seal-of-cause-the-history-and-the-people-of-the-royal-college-of-surgeons/):\nThe History and the People of the Royal College of Surgeons It began life on 1 July 1505 when a Seal of Cause (a Charter of Privileges) was granted by the Town Council of Edinburgh incorporating the ...\n\n[Doc 5](https://www.rcsed.ac.uk/the-college/our-history/about-us):\nAbout Us | RCSEd ... founded in 1505 by Royal Charter granted by King James IV. From the ... The Royal College of Surgeons of Edinburgh is the oldest Surgical College in ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> founding year kcl royal college of physicians edinburgh </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: founding year kcl royal college of physicians edinburgh\nResult: [Doc 1](https://www.rcpe.ac.uk/heritage/history-college):\nHistory of the College | Royal College of Physicians of Edinburgh Through his friendship with the King's Physician, he had the opportunity to petition King Charles II who granted the College its Royal Charter in 1681.\n\n[Doc 2](https://www.rcpe.ac.uk/heritage/college-charter):\nThe College Charter - Royal College of Physicians of Edinburgh Since its inception in 1681 the College has always been subject to the terms and conditions of the current Royal Charter.\n\n[Doc 3](https://grokipedia.com/page/Royal_College_of_Physicians_of_Edinburgh):\nRoyal College of Physicians of Edinburgh - Grokipedia Founded in 1681 by royal charter from King Charles II, it supports doctors at all career stages, from students to consultants, and maintains a global presence ...\n\n[Doc 4](https://www.wileydigitalarchives.com/royal-college-of-physicians/):\nRoyal College of Physicians - Wiley Digital Archives The Royal College of Physicians was founded in 1518 by King Henry VIII, in response to a critical need for more stringent guidelines around the medical ...\n\n[Doc 5](https://curiousedinburgh.org/2017/03/24/royal-college-of-physicians-of-edinburgh/):\nRoyal College of Physicians of Edinburgh The Royal College of Physicians of Edinburgh was established by Royal Charter in 1681. Its 21 founding members included such notable figures ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the 2025 Guardian University Guide and 2026 QS World University Rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> 2025 guardian university guide rankings </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: 2025 guardian university guide rankings\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/universityguide):\nThe Guardian University Guide Latest University guide news, comment and analysis from the Guardian, the world's leading liberal voice.\n\n[Doc 3](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 4](https://www.reddit.com/r/UniUK/comments/1nfsmz6/the_guardian_university_guide_the_full_rankings/):\nThe Guardian University Guide - the full rankings : r/UniUK - Reddit Different university league tables use different criteria for their rankings. The Guardian one mainly uses student satisfaction, staff numbers, ...\n\n[Doc 5](https://en.wikipedia.org/wiki/Rankings_of_universities_in_the_United_Kingdom):\nRankings of universities in the United Kingdom - Wikipedia As of 2025, the top-five ranked universities in the United Kingdom are Oxford, Cambridge, London School of Economics (LSE), St Andrews, and Durham, with ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the specific rankings of each university.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of cambridge guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of cambridge guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 3](https://www.alumni.cam.ac.uk/news/24-cambridge-subjects-rank-in-the-top-3-in-the-guardians-university-guide-2025):\n24 Cambridge subjects rank in the top 3 in The Guardian's ... - Alumni 24 Cambridge subjects rank in the top 3 in The Guardian's University Guide 2025 · Ranked #1. Anthropology and archaeology. Chemical engineering. Computer science ...\n\n[Doc 4](https://www.avanse.com/blog/the-guardian-uk-university-rankings):\nThe Guardian UK University Rankings Best Universities in the UK - The Guardian Rankings 2025 ; University of Cambridge, 3, 2 ; London School of Economics, 4, 7 ; Imperial College, 5 ...\n\n[Doc 5](https://www.theguardian.com/education/universityguide):\nThe Guardian University Guide Latest University guide news, comment and analysis from the Guardian, the world's leading liberal voice."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the other universities' rankings in a similar manner.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of oxford guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of oxford guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings 1, 2, Oxford ; Satisfied with teaching. The rating for the quality of teaching on the course, given by final-year students in the NSS 94.3.\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings 1, 1, Oxford ; Satisfied with teaching. The rating for the quality of teaching on the course, given by final-year students in the NSS 94.\n\n[Doc 3](https://en.wikipedia.org/wiki/Rankings_of_universities_in_the_United_Kingdom):\nRankings of universities in the United Kingdom Summary of national rankings​​ Oxford, Cambridge, LSE, St Andrews, and Durham ranked as the top-five British universities in 2025.\n\n[Doc 4](https://www.ox.ac.uk/about/facts-and-figures/full-version-facts-and-figures):\nFacts and figures - full version Oxford University is ranked number two in The Best UK Universities 2024 league table in The Guardian. Oxford's academic community includes more than 90 Fellows ...\n\n[Doc 5](https://cherwell.org/2025/09/24/oxford-out-of-top-three-uk-universities/):\nOxford falls from top three in Times UK university rankings This is the first year that Oxford has failed to secure a spot in the guide's top three – having ranked third in the newspaper's 2025 ranking ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of edinburgh guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of edinburgh guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 3](https://www.graddinghomes.com/blog/uk/university-of-edinburgh-ranking):\nUniversity of Edinburgh Ranking 2025: National & Global With the ranking of 24th globally in the 2025 QS World University ranking, the University of Edinburgh provides the best placements. Strong industrial ...\n\n[Doc 4](https://www.reddit.com/r/Scotland/comments/1ffu46d/the_guardian_university_guide_2025_rankings_5_of/):\nThe Guardian University Guide 2025 Rankings [5 of the top ... St Andrews - 2nd (down from 1st place which it's held for the last couple of years) · Aberdeen - 12th · Glasgow - 14th · Edinburgh - 15th.\n\n[Doc 5](https://en.wikipedia.org/wiki/Rankings_of_universities_in_the_United_Kingdom):\nRankings of universities in the United Kingdom Rankings published in 2025 for the prospective year 2026 (1–25) ; Edinburgh. Edinburgh, 18.7, 18. Decrease. 13. Increase ; Birmingham. Birmingham, 19.3, 14."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of glasgow guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of glasgow guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings Find a course at the university of your choice. Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, ...\n\n[Doc 3](https://www.reddit.com/r/Scotland/comments/1ffu46d/the_guardian_university_guide_2025_rankings_5_of/):\nThe Guardian University Guide 2025 Rankings [5 of the top 20 ... St Andrews - 2nd (down from 1st place which it's held for the last couple of years) · Aberdeen - 12th · Glasgow - 14th · Edinburgh - 15th.\n\n[Doc 4](https://www.gla.ac.uk/schools/business/aboutus/accreditationsandrankings/rankings/):\nAdam Smith Business School - About us - Accreditations and rankings University of Glasgow · =31st in the UK (Complete University Guide, 2026) · 22nd in the UK (The Times Good University Guide, 2026) · 24th in the UK (Guardian ...\n\n[Doc 5](https://www.facebook.com/GlasgowWorld/posts/guardian-university-guide-2026-all-14-of-scotlands-universities-ranked-including/1183807727258722/):\nAll 14 of Scotland's universities ranked - including three in Glasgow Glasgow was ranked number 84 globally and praised for its international outlook. See all the UK universities named among the 100 best in the ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of leeds guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of leeds guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 3](https://www.leeds.ac.uk/news-university/news/article/5848/leeds-climbs-nine-places-in-guardian-university-guide):\nLeeds climbs nine places in Guardian University Guide The University rose seven places to 18th in the 2025 Daily Mail University Guide. It climbed two places to 21st in the 2026 Complete University ...\n\n[Doc 4](https://www.theguardian.com/education/universityguide):\nThe Guardian University Guide Latest University guide news, comment and analysis from the Guardian, the world's leading liberal voice.\n\n[Doc 5](https://www.thecompleteuniversityguide.co.uk/league-tables/rankings):\nUniversity Rankings and League Tables 2026 Our 2026 league tables rank the best universities in the UK, overall and in 74 subject areas, and allow you to compare universities ahead ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of liverpool guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of liverpool guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 3](https://news.liverpool.ac.uk/2025/09/15/liverpool-continues-to-rise-in-guardian-university-rankings/):\nLiverpool continues to rise in Guardian University rankings The University of Liverpool has risen five places in the 2026 Guardian University Guide, placing 22nd overall in the UK and second overall in ...\n\n[Doc 4](https://www.liverpool.ac.uk/about/the-university/rankings-and-reputation/):\nRankings and reputation | About us | University of Liverpool The Guardian Best UK Universities 2026, 22. The Times and The ... 54th best student city in the world – QS World University Rankings Best Student City 2025 ...\n\n[Doc 5](https://www.facebook.com/LivUniOnline/posts/we-are-delighted-to-announce-that-the-university-of-liverpool-has-been-ranked-22/1102385521881478/):\nWe are delighted to announce that the University of Liverpool has ... We are delighted to announce that the University of Liverpool has been ranked 22 in The Guardian University Guide rankings 2026."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university of manchester guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university of manchester guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, spending and career prospects\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings Find a course at the university of your choice. Our league tables rank institutions by subject, looking at student satisfaction, staff numbers, ...\n\n[Doc 3](https://www.manchester.ac.uk/about/rankings/):\nRankings and reputation of The University of Manchester Guardian (2026) ... The University was ranked the seventh best UK institution for employability in the 2025 Times Higher Education Global University Employability ...\n\n[Doc 4](https://greatermanchester.ac.uk/news/university-of-bolton-greater-manchester-still-the-highest-ranked-modern-university-in-north-west-in-guardian-2025-guide):\nUniversity of Bolton, Greater Manchester still the highest-ranked ... University of Bolton, Greater Manchester still the highest-ranked modern university in North West in Guardian 2025 guide.\n\n[Doc 5](https://www.graddinghomes.com/blog/uk/university-of-manchester-ranking):\nUniversity of Manchester Ranking 2025: Latest Global & UK Positions 1. QS World University Rankings. 35. 11 · 2. Academic Ranking of World Universities (ARWU). 52. 15 · 3. Times Higher Education (THE) World University Rankings. 53."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> university college london guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: university college london guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings The best UK universities 2025 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 3](https://www.ucl.ac.uk/about/excellence-and-impact/rankings):\nRankings | About UCL UCL is 9th best university in the 2026 QS World University Rankings, and 7th best in the 2025-2026 Best Global Universities. 1st in UK QS Sustainability. QS ...\n\n[Doc 4](https://en.wikipedia.org/wiki/Rankings_of_universities_in_the_United_Kingdom):\nRankings of universities in the United Kingdom As of 2025, the top-five ranked universities in the United Kingdom are Oxford, Cambridge, London School of Economics (LSE), St Andrews, and Durham, with ...\n\n[Doc 5](https://www.ucl.ac.uk/bartlett/news/2025/sep/bartlett-ranked-1-guardian-architecture-and-construction-surveying-and-planning):\nThe Bartlett ranked #1 in The Guardian for Architecture and ... The Bartlett is ranked #1 in the UK for Architecture and Construction, Surveying and Planning in The Guardian University Guide 2026 league table ..."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> kcl guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: kcl guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings ... 2025 – rankings. Find a course at the university of your choice. Our ... King's College London, 63.1, 84.2, 68.4, 14, 7.9, 169, 5.5, 89, 94.6.\n\n[Doc 2](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings The best UK universities 2026 – rankings. Find a course at the university of your choice. Our league tables rank institutions by subject, ...\n\n[Doc 3](https://www.kcl.ac.uk/news/guardian-university-guide-2026-places-kings-among-top-25):\nKing's among top 25 in Guardian University Guide 2026 In June 2025, King's was ranked 31st best university in the world and 5th best in the UK in the QS World University rankings 2026.\n\n[Doc 4](https://www.instagram.com/p/DOnyzDnDGQL/):\nKing's has risen to 21st in the UK in the Guardian University Guide ... King's has risen to 21st in the UK in the Guardian University Guide 2026. Of the 35 specific areas in which King's appeared, an impressive 19 ...\n\n[Doc 5](https://roarnews.co.uk/2025/mixed-picture-for-kcl-in-2025-university-rankings/):\nMixed Picture for KCL in 2025 University Rankings - Roar News King's College London (KCL) fell to 28th in The Guardian's domestic rankings, while climbing to 24th place in The Times and The Sunday Times' domestic rankings."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    },
+    {
+      "role": "assistant",
+      "content": "</think>\n<search> london school of economics guardian ranking 2025 </search>"
+    },
+    {
+      "role": "tool",
+      "content": "Search query: london school of economics guardian ranking 2025\nResult: [Doc 1](https://www.theguardian.com/education/ng-interactive/2024/sep/07/the-guardian-university-guide-2025-the-rankings):\nThe Guardian University Guide 2025 – the rankings London School of Economics, 88.1, 87, 72.1, 12.8, 8.9, 192, 6.8, 93, 96.6. Satisfied with teaching. The rating for the quality of teaching on ...\n\n[Doc 2](https://www.lse.ac.uk/news/latest-news-from-lse/i-september-2024/guardian-best-uk-universities-2025-ranks-lse-top-in-london):\nGuardian University Guide 2025 ranks LSE top in London LSE remains the top university in London for its fifth consecutive year in the Guardian Best UK Universities 2025 league table.\n\n[Doc 3](https://www.theguardian.com/education/ng-interactive/2025/sep/13/best-uk-universities-for-economics-league-table):\nBest UK universities for economics – league table - The Guardian UK universities ranked by subject area: economics ; 1, Oxford, 100 ; 2, St Andrews, 89.2 ; 2, Cambridge, 89.2 ; 4, London School of Economics, 86.8 ; 5, Durham, 86.4\n\n[Doc 4](https://www.theguardian.com/education/ng-interactive/2025/sep/13/the-guardian-university-guide-2026-the-rankings):\nThe Guardian University Guide 2026 – the rankings 2025, Institution, Guardian score/100, Satisfied with teaching ... London School of Economics, 93.8, 89.4, 76.2, 11.4, 8.7, 185, 5.9, 93, 96.4.\n\n[Doc 5](https://www.lse.ac.uk/news/latest-news-from-lse/lse-ranked-as-top-university-in-the-uk):\nLSE named as top university in the UK The Times and The Sunday Times Good University Guide 2026 has named LSE as the top university in the UK for the second year running."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll search for the remaining universities' rankings.\n"
+    }
+  ]
+}

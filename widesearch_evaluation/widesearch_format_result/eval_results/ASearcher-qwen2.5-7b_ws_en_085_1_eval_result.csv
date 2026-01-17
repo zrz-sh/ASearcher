@@ -1,0 +1,745 @@
+exist_flag_gt,exist_flag_response,title,title_before_map,country/regionofproduction_llm_judge,country/regionofproduction_llm_judge_eval_msg,country/regionofproduction_query,country/regionofproduction_response,director_llm_judge,director_llm_judge_eval_msg,director_query,director_response,genre_llm_judge,genre_llm_judge_eval_msg,genre_query,genre_response,runtime_llm_judge,runtime_llm_judge_eval_msg,runtime_query,runtime_response,title_exact_match,title_exact_match_eval_msg
+,,joker,Joker,1.0,"Let's analyze each pair step by step according to the criterion.
+
+---
+
+### Pair idx_0  
+- **Target:** ""usa/canada""  
+- **Response:** ""usa""  
+- **Analysis:**  
+  The criterion states it is sufficient if the semantics approximate the reference or point to the same entity. The response ""usa"" matches one part of the target ""usa/canada"". It is a subset of the reference answer. Therefore, this should get a full score.
+
+**Score: 1**
+
+---
+
+### Pair idx_1  
+- **Target:** ""france/italy""  
+- **Response:** ""france""  
+- **Analysis:**  
+  The response ""france"" matches part of the target ""france/italy"". Subset matches are sufficient. So, this should get a full score.
+
+**Score: 1**
+
+---
+
+### Pair idx_2  
+- **Target:** ""sweden/germany/norway""  
+- **Response:** ""sweden,germany,norway""  
+- **Analysis:**  
+  The response matches the entire set from the target, just with a different separator (comma instead of slash), which is acceptable as per the criterion on semantics. Full match.
+
+**Score: 1**
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",usa/canada,usa,1.0,"Let's analyze each response compared to its target based on the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Exact word match is not necessary, just same entity reference.
+
+---
+
+**idx_0**  
+- Response: ""toddphillips""  
+- Target: ""toddphillips""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""romanpolanski""  
+- Target: ""romanpolanski""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""royandersson""  
+- Target: ""royandersson""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",toddphillips,toddphillips,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same as the reference answer or pointing to the same entity is sufficient.  
+- Classification inconsistencies are permitted.  
+- Only relevance to the reference answer counts.  
+- No need for exact wording or exact match categories.
+
+---
+
+### idx_0
+
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,drama""  
+
+Analysis:  
+- The response mentions ""crime"" and ""drama,"" both present in the target.  
+- ""thriller"" is missing, but since it's not required to match all exactly and classification inconsistencies are allowed, this is fine.  
+- Semantics point to the same entities overall (types of genres overlapping).  
+- Response is relevant and acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Target: ""drama""  
+- Response: ""historicaldrama""
+
+Analysis:  
+- The response gives a subtype of drama (""historical drama"") which is relevant and closely related to the target ""drama.""  
+- Classification inconsistency is permitted, so more specific or differently labeled but relevant answers are acceptable.  
+- Semantically the same category (drama).
+
+Score: 1
+
+---
+
+### idx_2
+
+- Target: ""drama""  
+- Response: ""drama""
+
+Analysis:  
+- Exact match semantically and literally.  
+- Fully correct.
+
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",drama/thriller/crime,"crime,drama",1.0,"Let's analyze each pair according to the given criteria:
+
+Criterion recap: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0**
+
+- Target: 118 min
+- Response: 2h2m
+
+Convert response to minutes:
+2 hours = 120 minutes
+2 minutes = 2 minutes
+Total = 122 minutes
+
+Response says 122 minutes, target is 118 minutes. Not exactly the same number but close.
+
+Are they approximately the same?
+
+Difference: 4 minutes (122 - 118)
+
+Approximate equivalence could be subjective, but 4 minutes on ~2 hours is a little over 3% difference, arguably small.
+
+However, the criterion says semantics should be approximately the same or point to the same entity.
+
+Here the response gives a time duration different from the target.
+
+Is ""2h2m"" approximately the same as ""118min""?
+
+118 minutes = 1h58m. So response says 2h2m, target is 1h58m.
+
+They are off by 4 minutes.
+
+Given the criterion is vague (""approximately the same""), and 4 minutes out of 2 hours is minor, this can be considered as approximately the same.
+
+But to be strict, since the question likely requests the exact time, and the response is 4 minutes off, the response is not exactly semantically equivalent.
+
+However, since the criterion allows approximation, this is acceptable.
+
+=> Score: 1
+
+---
+
+**idx_1**
+
+- Target: 132 min
+- Response: 2h12m
+
+Convert response:
+
+2 hours = 120 min, 12 min = 12 min
+
+Total = 132 min
+
+Target = 132 min
+
+Exact same duration.
+
+=> Score: 1
+
+---
+
+**idx_2**
+
+- Target: 76 min
+- Response: 1h18m
+
+Convert Response:
+
+1 hour = 60 min; 18 min = 18 min
+
+Total = 78 min
+
+Target = 76 min
+
+Difference = 2 minutes
+
+Are these approximately the same?
+
+Target says 76 min = 1h16m, response says 1h18m = 78 min
+
+Difference of 2 minutes out of roughly 1 hour 16 minutes (4% difference)
+
+Given the criterion of approximate meaning, this should be acceptable.
+
+=> Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+",118min,2h2m,1.0,key_match
+,,anofficerandaspy,An Officer and a Spy,1.0,"Let's analyze each pair step by step according to the criterion.
+
+---
+
+### Pair idx_0  
+- **Target:** ""usa/canada""  
+- **Response:** ""usa""  
+- **Analysis:**  
+  The criterion states it is sufficient if the semantics approximate the reference or point to the same entity. The response ""usa"" matches one part of the target ""usa/canada"". It is a subset of the reference answer. Therefore, this should get a full score.
+
+**Score: 1**
+
+---
+
+### Pair idx_1  
+- **Target:** ""france/italy""  
+- **Response:** ""france""  
+- **Analysis:**  
+  The response ""france"" matches part of the target ""france/italy"". Subset matches are sufficient. So, this should get a full score.
+
+**Score: 1**
+
+---
+
+### Pair idx_2  
+- **Target:** ""sweden/germany/norway""  
+- **Response:** ""sweden,germany,norway""  
+- **Analysis:**  
+  The response matches the entire set from the target, just with a different separator (comma instead of slash), which is acceptable as per the criterion on semantics. Full match.
+
+**Score: 1**
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",france/italy,france,1.0,"Let's analyze each response compared to its target based on the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Exact word match is not necessary, just same entity reference.
+
+---
+
+**idx_0**  
+- Response: ""toddphillips""  
+- Target: ""toddphillips""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""romanpolanski""  
+- Target: ""romanpolanski""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""royandersson""  
+- Target: ""royandersson""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",romanpolanski,romanpolanski,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same as the reference answer or pointing to the same entity is sufficient.  
+- Classification inconsistencies are permitted.  
+- Only relevance to the reference answer counts.  
+- No need for exact wording or exact match categories.
+
+---
+
+### idx_0
+
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,drama""  
+
+Analysis:  
+- The response mentions ""crime"" and ""drama,"" both present in the target.  
+- ""thriller"" is missing, but since it's not required to match all exactly and classification inconsistencies are allowed, this is fine.  
+- Semantics point to the same entities overall (types of genres overlapping).  
+- Response is relevant and acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Target: ""drama""  
+- Response: ""historicaldrama""
+
+Analysis:  
+- The response gives a subtype of drama (""historical drama"") which is relevant and closely related to the target ""drama.""  
+- Classification inconsistency is permitted, so more specific or differently labeled but relevant answers are acceptable.  
+- Semantically the same category (drama).
+
+Score: 1
+
+---
+
+### idx_2
+
+- Target: ""drama""  
+- Response: ""drama""
+
+Analysis:  
+- Exact match semantically and literally.  
+- Fully correct.
+
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",drama,historicaldrama,1.0,"Let's analyze each pair according to the given criteria:
+
+Criterion recap: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0**
+
+- Target: 118 min
+- Response: 2h2m
+
+Convert response to minutes:
+2 hours = 120 minutes
+2 minutes = 2 minutes
+Total = 122 minutes
+
+Response says 122 minutes, target is 118 minutes. Not exactly the same number but close.
+
+Are they approximately the same?
+
+Difference: 4 minutes (122 - 118)
+
+Approximate equivalence could be subjective, but 4 minutes on ~2 hours is a little over 3% difference, arguably small.
+
+However, the criterion says semantics should be approximately the same or point to the same entity.
+
+Here the response gives a time duration different from the target.
+
+Is ""2h2m"" approximately the same as ""118min""?
+
+118 minutes = 1h58m. So response says 2h2m, target is 1h58m.
+
+They are off by 4 minutes.
+
+Given the criterion is vague (""approximately the same""), and 4 minutes out of 2 hours is minor, this can be considered as approximately the same.
+
+But to be strict, since the question likely requests the exact time, and the response is 4 minutes off, the response is not exactly semantically equivalent.
+
+However, since the criterion allows approximation, this is acceptable.
+
+=> Score: 1
+
+---
+
+**idx_1**
+
+- Target: 132 min
+- Response: 2h12m
+
+Convert response:
+
+2 hours = 120 min, 12 min = 12 min
+
+Total = 132 min
+
+Target = 132 min
+
+Exact same duration.
+
+=> Score: 1
+
+---
+
+**idx_2**
+
+- Target: 76 min
+- Response: 1h18m
+
+Convert Response:
+
+1 hour = 60 min; 18 min = 18 min
+
+Total = 78 min
+
+Target = 76 min
+
+Difference = 2 minutes
+
+Are these approximately the same?
+
+Target says 76 min = 1h16m, response says 1h18m = 78 min
+
+Difference of 2 minutes out of roughly 1 hour 16 minutes (4% difference)
+
+Given the criterion of approximate meaning, this should be acceptable.
+
+=> Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+",132min,2h12m,1.0,key_match
+,,aboutendlessness,About Endlessness,1.0,"Let's analyze each pair step by step according to the criterion.
+
+---
+
+### Pair idx_0  
+- **Target:** ""usa/canada""  
+- **Response:** ""usa""  
+- **Analysis:**  
+  The criterion states it is sufficient if the semantics approximate the reference or point to the same entity. The response ""usa"" matches one part of the target ""usa/canada"". It is a subset of the reference answer. Therefore, this should get a full score.
+
+**Score: 1**
+
+---
+
+### Pair idx_1  
+- **Target:** ""france/italy""  
+- **Response:** ""france""  
+- **Analysis:**  
+  The response ""france"" matches part of the target ""france/italy"". Subset matches are sufficient. So, this should get a full score.
+
+**Score: 1**
+
+---
+
+### Pair idx_2  
+- **Target:** ""sweden/germany/norway""  
+- **Response:** ""sweden,germany,norway""  
+- **Analysis:**  
+  The response matches the entire set from the target, just with a different separator (comma instead of slash), which is acceptable as per the criterion on semantics. Full match.
+
+**Score: 1**
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",sweden/germany/norway,"sweden,germany,norway",1.0,"Let's analyze each response compared to its target based on the criterion:
+
+Criterion summary:  
+- Semantics should be approximately the same or point to the same entity.  
+- Exact word match is not necessary, just same entity reference.
+
+---
+
+**idx_0**  
+- Response: ""toddphillips""  
+- Target: ""toddphillips""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""romanpolanski""  
+- Target: ""romanpolanski""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""royandersson""  
+- Target: ""royandersson""  
+- They match exactly and refer to the same entity.  
+- Score: 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",royandersson,royandersson,1.0,"Let's analyze each pair step by step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same as the reference answer or pointing to the same entity is sufficient.  
+- Classification inconsistencies are permitted.  
+- Only relevance to the reference answer counts.  
+- No need for exact wording or exact match categories.
+
+---
+
+### idx_0
+
+- Target: ""drama/thriller/crime""  
+- Response: ""crime,drama""  
+
+Analysis:  
+- The response mentions ""crime"" and ""drama,"" both present in the target.  
+- ""thriller"" is missing, but since it's not required to match all exactly and classification inconsistencies are allowed, this is fine.  
+- Semantics point to the same entities overall (types of genres overlapping).  
+- Response is relevant and acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+
+- Target: ""drama""  
+- Response: ""historicaldrama""
+
+Analysis:  
+- The response gives a subtype of drama (""historical drama"") which is relevant and closely related to the target ""drama.""  
+- Classification inconsistency is permitted, so more specific or differently labeled but relevant answers are acceptable.  
+- Semantically the same category (drama).
+
+Score: 1
+
+---
+
+### idx_2
+
+- Target: ""drama""  
+- Response: ""drama""
+
+Analysis:  
+- Exact match semantically and literally.  
+- Fully correct.
+
+Score: 1
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1
+}
+```",drama,drama,1.0,"Let's analyze each pair according to the given criteria:
+
+Criterion recap: It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+**idx_0**
+
+- Target: 118 min
+- Response: 2h2m
+
+Convert response to minutes:
+2 hours = 120 minutes
+2 minutes = 2 minutes
+Total = 122 minutes
+
+Response says 122 minutes, target is 118 minutes. Not exactly the same number but close.
+
+Are they approximately the same?
+
+Difference: 4 minutes (122 - 118)
+
+Approximate equivalence could be subjective, but 4 minutes on ~2 hours is a little over 3% difference, arguably small.
+
+However, the criterion says semantics should be approximately the same or point to the same entity.
+
+Here the response gives a time duration different from the target.
+
+Is ""2h2m"" approximately the same as ""118min""?
+
+118 minutes = 1h58m. So response says 2h2m, target is 1h58m.
+
+They are off by 4 minutes.
+
+Given the criterion is vague (""approximately the same""), and 4 minutes out of 2 hours is minor, this can be considered as approximately the same.
+
+But to be strict, since the question likely requests the exact time, and the response is 4 minutes off, the response is not exactly semantically equivalent.
+
+However, since the criterion allows approximation, this is acceptable.
+
+=> Score: 1
+
+---
+
+**idx_1**
+
+- Target: 132 min
+- Response: 2h12m
+
+Convert response:
+
+2 hours = 120 min, 12 min = 12 min
+
+Total = 132 min
+
+Target = 132 min
+
+Exact same duration.
+
+=> Score: 1
+
+---
+
+**idx_2**
+
+- Target: 76 min
+- Response: 1h18m
+
+Convert Response:
+
+1 hour = 60 min; 18 min = 18 min
+
+Total = 78 min
+
+Target = 76 min
+
+Difference = 2 minutes
+
+Are these approximately the same?
+
+Target says 76 min = 1h16m, response says 1h18m = 78 min
+
+Difference of 2 minutes out of roughly 1 hour 16 minutes (4% difference)
+
+Given the criterion of approximate meaning, this should be acceptable.
+
+=> Score: 1
+
+---
+
+### Final scoring
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```
+",76min,1h18m,1.0,key_match
+1.0,,adastra,,,,usa/brazil/mainlandchina,,,,jamesgray,,,,sciencefiction/adventure,,,,124min,,,
+1.0,,babyteeth,,,,australia,,,,shannonmurphy,,,,drama/comedy/romance,,,,120min,,,
+1.0,,ema,,,,chile,,,,pablolarraín,,,,drama/romance/music,,,,102min,,,
+1.0,,gloriamundi,,,,france/italy,,,,robertguédiguian,,,,drama,,,,107min,,,
+1.0,,guestofhonour,,,,canada,,,,atomegoyan,,,,drama,,,,104min,,,
+1.0,,marriagestory,,,,uk/usa,,,,noahbaumbach,,,,drama/romance,,,,135min,,,
+1.0,,martineden,,,,italy/france/germany,,,,pietromarcello,,,,drama,,,,129min,,,
+1.0,,no.7cherrylane,,,,"hongkongsar,china",,,,yonfan,,,,animation,,,,125min,,,
+1.0,,saturdayfiction,,,,china,,,,yelou,,,,"drama,thriller",,,,126min,,,
+1.0,,thedomain,,,,portugal/france,,,,tiagoguedes,,,,drama,,,,164min,,,
+1.0,,thelaundromat,,,,usa,,,,stevensoderbergh,,,,comedy/drama/thriller/crime,,,,96min,,,
+1.0,,themafiaisnolongerwhatitusedtobe,,,,italy,,,,francomaresco,,,,documentary,,,,107min,,,
+1.0,,themayorofrionesanità,,,,italy,,,,mariomartone,,,,drama,,,,118min,,,
+1.0,,thepaintedbird,,,,czechrepublic/slovakia/ukraine,,,,václavmarhoul,,,,drama/war,,,,169min,,,
+1.0,,theperfectcandidate,,,,saudiarabia/germany,,,,haifaaalmansour,,,,drama,,,,101min,,,
+1.0,,thetruth,,,,france/japan,,,,hirokazukore-eda,,,,drama,,,,106min,,,
+1.0,,waitingforthebarbarians,,,,italy/usa,,,,ciroguerra,,,,drama,,,,112min,,,
+1.0,,waspnetwork,,,,france/spain/belgium/brazil,,,,olivierassayas,,,,thriller,,,,123min,,,

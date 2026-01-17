@@ -1,0 +1,5240 @@
+exist_flag_gt,exist_flag_response,歌曲名称,歌曲名称_before_map,发行时间_exact_match,发行时间_exact_match_eval_msg,发行时间_query,发行时间_response,填词人_llm_judge,填词人_llm_judge_eval_msg,填词人_query,填词人_response,所属专辑_llm_judge,所属专辑_llm_judge_eval_msg,所属专辑_query,所属专辑_response,歌曲名称_exact_match,歌曲名称_exact_match_eval_msg,歌曲时长_llm_judge,歌曲时长_llm_judge_eval_msg,歌曲时长_query,歌曲时长_response,编曲人_llm_judge,编曲人_llm_judge_eval_msg,编曲人_query,编曲人_response
+,,七里香,七里香,1.0,"exact match, response: 2004/08/03, target: 2004/08/03",2004/08/03,2004/08/03,1.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,七里香,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分59秒,4:19,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,七里香,七里香 (Instrumental),1.0,"exact match, response: 2004/08/03, target: 2004/08/03",2004/08/03,2004/08/03,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,-,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,七里香,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分59秒,4:19,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,七里香,七里香 (Music Video),1.0,"exact match, response: 2004/08/03, target: 2004/08/03",2004/08/03,2004/08/03,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,-,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,七里香,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分59秒,4:19,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,七里香,七里香 (Remix),0.0,"exact not match, response: 2007/11/02, target: 2004/08/03",2004/08/03,2007/11/02,1.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,方文山,0.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,我很忙,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分59秒,4:21,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,借口,借口,1.0,"exact match, response: 2004/08/03, target: 2004/08/03",2004/08/03,2004/08/03,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",周杰伦,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,七里香,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分18秒,4:06,1.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",周杰伦,jaychou
+,,外婆,外婆,1.0,"exact match, response: 2004/08/03, target: 2004/08/03",2004/08/03,2004/08/03,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",周杰伦,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,七里香,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分2秒,3:38,1.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",周杰伦,jaychou
+,,将军,将军,1.0,"exact match, response: 2004/08/03, target: 2004/08/03",2004/08/03,2004/08/03,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",黄俊郎,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,七里香,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分24秒,3:58,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",洪敬尧,jaychou
+,,青花瓷,青花瓷,0.0,"exact not match, response: 2005/11/01, target: 2007/11/02",2007/11/02,2005/11/01,1.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,方文山,0.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",我很忙,11月的萧邦,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分59秒,4:20,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,青花瓷,青花瓷 (Music Video),0.0,"exact not match, response: 2006/09/05, target: 2007/11/02",2007/11/02,2006/09/05,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,-,0.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",我很忙,依然范特西,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分59秒,4:20,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,青花瓷,青花瓷 (Remix),0.0,"exact not match, response: 2008/05/18, target: 2007/11/02",2007/11/02,2008/05/18,1.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,方文山,0.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",我很忙,跨时代,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分59秒,4:20,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,说好的幸福呢,说好的幸福呢,0.0,"exact not match, response: 2004/08/03, target: 2008/10/15",2008/10/15,2004/08/03,1.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,方文山,0.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",魔杰座,七里香,1.0,key_match,1.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分16秒,4:12,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,稻香,稻香,0.0,"exact not match, response: 2008/05/18, target: 2008/10/15",2008/10/15,2008/05/18,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",周杰伦,方文山,0.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",魔杰座,跨时代,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分43秒,4:20,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",黄雨勋,jaychou
+,,免费教学录影带,免费教学录影带 (Music Video),0.0,"exact not match, response: 2008/05/18, target: 2010/05/18",2010/05/18,2008/05/18,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",黄俊郎,-,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",跨时代,跨时代,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分59秒,4:20,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",蔡科俊,jaychou
+,,烟花易冷,烟花易冷,1.0,"exact match, response: 2010/05/18, target: 2010/05/18",2010/05/18,2010/05/18,1.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",方文山,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",跨时代,跨时代,1.0,key_match,1.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分23秒,4:24,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",黄雨勋,jaychou
+,,说了再见,说了再见,1.0,"exact match, response: 2010/05/18, target: 2010/05/18",2010/05/18,2010/05/18,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",古小力、黄淩嘉,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",跨时代,跨时代,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",4分42秒,3:51,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,jaychou
+,,跨时代,跨时代,1.0,"exact match, response: 2010/05/18, target: 2010/05/18",2010/05/18,2010/05/18,0.0,"分析依据：
+- 根据评分标准，答复和参考答案语义相同大致或指向的实体一致即可判为正确（1分）。
+- 若回答为空（“-”）或者指向实体不一致，则为错误（0分）。
+- 只要答案与参考答案所指实体一致，即使不是字面完全一致，也判1分。
+
+逐条分析：
+
+idx_0: response=方文山, target=方文山  
+实体完全一致，得1分。
+
+idx_1: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_2: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_3: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_4: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_5: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_6: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+idx_7: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_8: response= ""-"", target=方文山  
+回答为空，得0分。
+
+idx_9: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_10: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_11: response=方文山, target=周杰伦  
+指向实体不同，得0分。
+
+idx_12: response= ""-"", target=黄俊郎  
+回答为空，得0分。
+
+idx_13: response=方文山, target=方文山  
+实体一致，得1分。
+
+idx_14: response=方文山, target=古小力、黄淩嘉  
+指向实体不同，得0分。
+
+idx_15: response=方文山, target=黄俊郎  
+指向实体不同，得0分。
+
+最终打分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",黄俊郎,方文山,1.0,"分析过程：
+
+评分标准：
+- 只要回答与参考答案语义相同或指向的实体一致，即得1分
+- 不一致得0分
+- 评分只有0或1分
+
+逐条分析：
+
+idx_0: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_1: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_2: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_3: response='我很忙', target='七里香'  
+内容不同，指向实体不同 → 0分
+
+idx_4: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_5: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_6: response='七里香', target='七里香'  
+语义一致，实体相同 → 1分
+
+idx_7: response='11月的萧邦', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_8: response='依然范特西', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_9: response='跨时代', target='我很忙'  
+内容不同，指向实体不同 → 0分
+
+idx_10: response='七里香', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_11: response='跨时代', target='魔杰座'  
+内容不同，指向实体不同 → 0分
+
+idx_12: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_13: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_14: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+idx_15: response='跨时代', target='跨时代'  
+语义一致，实体相同 → 1分
+
+---
+
+最终打分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",跨时代,跨时代,1.0,key_match,0.0,"Let's analyze each item one by one:
+
+Criterion states:
+- Semantic equivalence or pointing to the same entity suffices; no need for exact wording.
+- Song length error within 5 seconds is counted as correct (score=1).
+- Scores only 0 or 1.
+
+We need to convert both response and target to seconds and compare the difference.
+
+---
+
+**idx_0**  
+response: 4:19 = 4*60 + 19 = 259 sec  
+target: 4分59秒 = 4*60 + 59 = 299 sec  
+Difference = 299 - 259 = 40 sec → too big → 0
+
+**idx_1**  
+Same as idx_0 → 0
+
+**idx_2**  
+Same as idx_0 → 0
+
+**idx_3**  
+response: 4:21 = 261 sec  
+target: 299 sec  
+Difference = 38 sec → 0
+
+**idx_4**  
+response: 4:06 = 246 sec  
+target: 4分18秒 = 258 sec  
+Difference = 12 sec → 0
+
+**idx_5**  
+response: 3:38 = 218 sec  
+target: 4分2秒 = 242 sec  
+Difference = 24 sec → 0
+
+**idx_6**  
+response: 3:58 = 238 sec  
+target: 3分24秒 = 204 sec  
+Difference = 34 sec → 0
+
+**idx_7**  
+response: 4:20 = 260 sec  
+target: 3分59秒 = 239 sec  
+Difference = 21 sec → 0
+
+**idx_8**  
+Same as idx_7 → 0
+
+**idx_9**  
+Same as idx_7 → 0
+
+**idx_10**  
+response: 4:12 = 252 sec  
+target: 4分16秒 = 256 sec  
+Difference = 4 sec → <= 5 sec → 1
+
+**idx_11**  
+response: 4:20 = 260 sec  
+target: 3分43秒 = 223 sec  
+Difference = 37 sec → 0
+
+**idx_12**  
+Same as idx_7 → 0
+
+**idx_13**  
+response: 4:24 = 264 sec  
+target: 4分23秒 = 263 sec  
+Difference = 1 sec → 1
+
+**idx_14**  
+response: 3:51 = 231 sec  
+target: 4分42秒 = 282 sec  
+Difference = 51 sec → 0
+
+**idx_15**  
+response: 4:07 = 247 sec  
+target: 3分14秒 = 194 sec  
+Difference = 53 sec → 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 1,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 1,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+This matches the grading criteria exactly.",3分14秒,4:07,0.0,"分析过程：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+标准答案均为人名，不同条目的目标人名如下：
+
+- idx_0 到 idx_3，idx_7 到 idx_10，idx_14 的 target 是“钟兴民”；
+- idx_4 和 idx_5 的 target 是“周杰伦”；
+- idx_6 的 target 是“洪敬尧”；
+- idx_11、idx_13、idx_15 的 target 是“黄雨勋”；
+- idx_12 的 target 是“蔡科俊”。
+
+所有响应均为“jaychou”。
+
+“jaychou”是英文名或网络ID，显著指向“周杰伦”。
+
+判定标准：
+
+- 如果target是“周杰伦”，response“jaychou”语义一致（指向实体一致） → 得分1；
+- 如果target是非“周杰伦”的人名，response“jaychou”指向“周杰伦”，与target不符 → 得分0。
+
+逐条分析：
+
+- idx_0 (target: 钟兴民) vs response: jaychou → 不同实体 → 0
+- idx_1 钟兴民 → 0
+- idx_2 钟兴民 → 0
+- idx_3 钟兴民 → 0
+- idx_4 周杰伦 → 同一实体 → 1
+- idx_5 周杰伦 → 1
+- idx_6 洪敬尧 → 0
+- idx_7 钟兴民 → 0
+- idx_8 钟兴民 → 0
+- idx_9 钟兴民 → 0
+- idx_10 钟兴民 → 0
+- idx_11 黄雨勋 → 0
+- idx_12 蔡科俊 → 0
+- idx_13 黄雨勋 → 0
+- idx_14 钟兴民 → 0
+- idx_15 黄雨勋 → 0
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",黄雨勋,jaychou
+,1.0,11月的萧邦,11月的萧邦,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4:08,,,,jaychou
+1.0,,一路向北,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分54秒,,,,蔡科俊,
+,1.0,不能说的秘密,不能说的秘密,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3:46,,,,jaychou
+,1.0,东风破,东风破,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4:35,,,,jaychou
+,1.0,东风破,东风破 (Music Video),,,,2005/11/01,,,,-,,,,11月的萧邦,,,,,,4:35,,,,jaychou
+1.0,,乔克叔叔,,,,2008/10/15,,,,黄俊郎,,,,魔杰座,,,,,,4分16秒,,,,黄雨勋,
+1.0,,乱舞春秋,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分37秒,,,,钟兴民,
+,1.0,依然范特西,依然范特西,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4:05,,,,jaychou
+1.0,,兰亭序,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,4分13秒,,,,钟兴民,
+,1.0,十字路口,十字路口,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4:06,,,,jaychou
+1.0,,千里之外,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分16秒,,,,林迈可,
+,1.0,双截棍,双截棍,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4:03,,,,jaychou
+1.0,,发如雪,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,5分1秒,,,,林迈可,
+1.0,,听妈妈的话,,,,2006/09/05,,,,周杰伦,,,,依然范特西,,,,,,4分26秒,,,,林迈可、洪敬尧,
+,1.0,周杰伦的床边故事,周杰伦的床边故事,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3:46,,,,jaychou
+,1.0,嘎达梅林,嘎达梅林,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,3:40,,,,jaychou
+1.0,,嘻哈空姐,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,2分48秒,,,,林迈可,
+1.0,,四面楚歌,,,,2005/11/01,,,,周杰伦,,,,11月的萧邦,,,,,,4分8秒,,,,洪敬尧,
+1.0,,园游会,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分13秒,,,,洪敬尧,
+1.0,,困兽之斗,,,,2004/08/03,,,,刘畊宏,,,,七里香,,,,,,4分29秒,,,,蔡科俊,
+,1.0,地下铁,地下铁,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4:17,,,,jaychou
+1.0,,夜曲,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,3分48秒,,,,林迈可,
+1.0,,夜的第七章,,,,2006/09/05,,,,黄俊郎,,,,依然范特西,,,,,,3分48秒,,,,钟兴民、林迈可,
+1.0,,好久不见,,,,2010/05/18,,,,周杰伦,,,,跨时代,,,,,,4分12秒,,,,蔡庭贵,
+1.0,,彩虹,,,,2007/11/02,,,,周杰伦,,,,我很忙,,,,,,4分21秒,,,,林迈可,
+1.0,,心雨,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分29秒,,,,林迈可,
+1.0,,我不配,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4分48秒,,,,林迈可,
+,1.0,我们的故事,我们的故事,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4:08,,,,jaychou
+1.0,,我的地盘,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分5秒,,,,洪敬尧,
+1.0,,我落泪情绪零碎,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4分17秒,,,,钟兴民,
+1.0,,扯,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3分30秒,,,,林迈可,
+1.0,,搁浅,,,,2004/08/03,,,,宋健彰,,,,七里香,,,,,,3分58秒,,,,钟兴民,
+1.0,,无双,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3分53秒,,,,钟兴民,
+1.0,,时光机,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,5分11秒,,,,黄雨勋,
+1.0,,最长的电影,,,,2007/11/02,,,,周杰伦,,,,我很忙,,,,,,3分55秒,,,,钟兴民,
+1.0,,本草纲目,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,3分29秒,,,,林迈可,
+1.0,,枫,,,,2005/11/01,,,,宋健彰,,,,11月的萧邦,,,,,,4分35秒,,,,钟兴民,
+1.0,,止战之殇,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分34秒,,,,周杰伦,
+1.0,,流浪诗人,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,2分49秒,,,,蔡科俊,
+1.0,,浪漫手机,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分0秒,,,,洪敬尧,
+,1.0,爱在西元前,爱在西元前,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,3:53,,,,jaychou
+1.0,,爱的飞行日记,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4分15秒,,,,蔡科俊,
+1.0,,牛仔很忙,,,,2007/11/02,,,,黄俊郎,,,,我很忙,,,,,,2分48秒,,,,钟兴民,
+,1.0,独自去远行,独自去远行,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,3:51,,,,jaychou
+,1.0,独自彷徨,独自彷徨,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,3:53,,,,jaychou
+1.0,,珊瑚海,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分15秒,,,,钟兴民,
+1.0,,甜甜的,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4分0秒,,,,林迈可,
+1.0,,白色风车,,,,2006/09/05,,,,周杰伦,,,,依然范特西,,,,,,4分32秒,,,,蔡科俊,
+,1.0,红尘客栈,红尘客栈,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,3:54,,,,jaychou
+1.0,,红模仿,,,,2006/09/05,,,,周杰伦,,,,依然范特西,,,,,,3分5秒,,,,林迈可,
+1.0,,给我一首歌的时间,,,,2008/10/15,,,,周杰伦,,,,魔杰座,,,,,,4分13秒,,,,林迈可,
+1.0,,自导自演,,,,2010/05/18,,,,周杰伦,,,,跨时代,,,,,,4分15秒,,,,黄雨勋,
+1.0,,花海,,,,2008/10/15,,,,古小力、黄淩嘉,,,,魔杰座,,,,,,4分24秒,,,,黄雨勋,
+,1.0,范特西,范特西,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,3:52,,,,jaychou
+,1.0,范特西,范特西 (Music Video),,,,2006/09/05,,,,-,,,,依然范特西,,,,,,3:52,,,,jaychou
+1.0,,菊花台,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分53秒,,,,钟兴民,
+1.0,,蒲公英的约定,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4分7秒,,,,林迈可,
+1.0,,蓝色风暴,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分47秒,,,,洪敬尧,
+1.0,,蛇舞,,,,2008/10/15,,,,黄俊郎,,,,魔杰座,,,,,,2分54秒,,,,黄雨勋,
+1.0,,超人不会飞,,,,2010/05/18,,,,周杰伦,,,,跨时代,,,,,,4分59秒,,,,林迈可,
+1.0,,迷迭香,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分11秒,,,,钟兴民,
+1.0,,退后,,,,2006/09/05,,,,宋健彰,,,,依然范特西,,,,,,4分21秒,,,,林迈可,
+1.0,,逆鳞,,,,2005/11/01,,,,黄俊郎,,,,11月的萧邦,,,,,,3分54秒,,,,钟兴民,
+,1.0,钢琴lesson,钢琴 Lesson,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4:08,,,,jaychou
+1.0,,阳光宅男,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3分42秒,,,,周杰伦,
+1.0,,雨下一整晚,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4分16秒,,,,钟兴民,
+1.0,,飘移,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分4秒,,,,林迈可,
+1.0,,魔术先生,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,3分47秒,,,,钟兴民,
+1.0,,麦芽糖,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分20秒,,,,洪敬尧,
+1.0,,黑色毛衣,,,,2005/11/01,,,,周杰伦,,,,11月的萧邦,,,,,,4分11秒,,,,林迈可,
+1.0,,龙战骑士,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,4分31秒,,,,钟兴民,

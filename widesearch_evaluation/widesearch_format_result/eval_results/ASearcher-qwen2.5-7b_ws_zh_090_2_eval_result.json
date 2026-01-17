@@ -1,0 +1,11 @@
+{
+    "instance_id": "ws_zh_090",
+    "score": 0.0,
+    "precision_by_row": 0.0,
+    "recall_by_row": 0.0,
+    "f1_by_row": 0.0,
+    "precision_by_item": 0.0,
+    "recall_by_item": 0.0,
+    "f1_by_item": 0.0,
+    "msg": "evaluator error: \nTraceback (most recent call last):\n  File \"/mnt/mnt/public/zhangruize/MAS/repo/WideSearch/src/evaluation/evaluation.py\", line 239, in evaluate_single_query\n    metric_info_series = df_inner.apply(\n                         ^^^^^^^^^^^^^^^\n  File \"/opt/venv/reason/lib/python3.11/site-packages/pandas/core/frame.py\", line 10401, in apply\n    return op.apply().__finalize__(self, method=\"apply\")\n           ^^^^^^^^^^\n  File \"/opt/venv/reason/lib/python3.11/site-packages/pandas/core/apply.py\", line 916, in apply\n    return self.apply_standard()\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/venv/reason/lib/python3.11/site-packages/pandas/core/apply.py\", line 1063, in apply_standard\n    results, res_index = self.apply_series_generator()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/venv/reason/lib/python3.11/site-packages/pandas/core/apply.py\", line 1081, in apply_series_generator\n    results[i] = self.func(v, *self.args, **self.kwargs)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/mnt/public/zhangruize/MAS/repo/WideSearch/src/evaluation/evaluation.py\", line 240, in <lambda>\n    lambda x: metric_call(\n              ^^^^^^^^^^^^\n  File \"/mnt/mnt/public/zhangruize/MAS/repo/WideSearch/src/evaluation/evaluation.py\", line 66, in metric_call\n    score, msg = metric_func(response, target)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/mnt/public/zhangruize/MAS/repo/WideSearch/src/evaluation/metric_utils.py\", line 61, in exact_match\n    if response.lower() == target.lower():\n       ^^^^^^^^^^^^^^\n  File \"/opt/venv/reason/lib/python3.11/site-packages/pandas/core/generic.py\", line 6321, in __getattr__\n    return object.__getattribute__(self, name)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'Series' object has no attribute 'lower'\n"
+}

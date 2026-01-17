@@ -1,0 +1,6625 @@
+exist_flag_gt,exist_flag_response,地区,地区_before_map,年月,年月_before_map,排名,排名_before_map,地区_exact_match,地区_exact_match_eval_msg,年月_exact_match,年月_exact_match_eval_msg,排名_exact_match,排名_exact_match_eval_msg,旅客吞吐量_number_near,旅客吞吐量_number_near_eval_msg,旅客吞吐量_query,旅客吞吐量_response,机场名_llm_judge,机场名_llm_judge_eval_msg,机场名_query,机场名_response
+,,西南,西南,2024年1月,2024年1月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 4298025.0",4298025,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",天府机场,成都双流机场
+,,西南,西南,2024年1月,2024年1月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24949100.0, target: 3924752.0",3924752,24949100,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",长水机场,重庆江北机场
+,,西南,西南,2024年1月,2024年1月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24692700.0, target: 3866313.0",3866313,24692700,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",江北机场,昆明长水机场
+,,西南,西南,2024年2月,2024年2月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 4833380.0",4833380,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",天府机场,成都双流机场
+,,西南,西南,2024年2月,2024年2月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24949100.0, target: 4360444.0",4360444,24949100,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",长水机场,重庆江北机场
+,,西南,西南,2024年2月,2024年2月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24692700.0, target: 4293793.0",4293793,24692700,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",江北机场,昆明长水机场
+,,西南,西南,2024年3月,2024年3月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 4328871.0",4328871,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",天府机场,成都双流机场
+,,西南,西南,2024年3月,2024年3月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24949100.0, target: 4044650.0",4044650,24949100,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",长水机场,重庆江北机场
+,,西南,西南,2024年3月,2024年3月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24692700.0, target: 4009323.0",4009323,24692700,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",江北机场,昆明长水机场
+,,西南,西南,2024年4月,2024年4月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 4229872.0",4229872,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",天府机场,成都双流机场
+,,西南,西南,2024年4月,2024年4月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24949100.0, target: 3783350.0",3783350,24949100,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",长水机场,重庆江北机场
+,,西南,西南,2024年4月,2024年4月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24692700.0, target: 3773466.0",3773466,24692700,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",江北机场,昆明长水机场
+,,西南,西南,2024年5月,2024年5月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 4462305.0",4462305,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",天府机场,成都双流机场
+,,西南,西南,2024年5月,2024年5月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24949100.0, target: 4013376.0",4013376,24949100,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",江北机场,重庆江北机场
+,,西南,西南,2024年5月,2024年5月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24692700.0, target: 3679450.0",3679450,24692700,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",长水机场,昆明长水机场
+,,西南,西南,2024年6月,2024年6月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 4449214.0",4449214,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",天府机场,成都双流机场
+,,西南,西南,2024年6月,2024年6月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24949100.0, target: 3955096.0",3955096,24949100,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",江北机场,重庆江北机场
+,,西南,西南,2024年6月,2024年6月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 24692700.0, target: 3581749.0",3581749,24692700,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",长水机场,昆明长水机场
+,,华东,华东,2024年1月,2024年1月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 76787039.0, target: 5861958.0",5861958,76787039,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",浦东机场,上海浦东机场
+,,华东,华东,2024年1月,2024年1月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 35340425.0, target: 3921801.0",3921801,35340425,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",虹桥机场,上海虹桥机场
+,,华东,华东,2024年1月,2024年1月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 34633106.0, target: 3684899.0",3684899,34633106,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",萧山机场,广州白云机场
+,,华东,华东,2024年1月,2024年1月,4,4,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 33634789.0, target: 2395862.0",2395862,33634789,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",禄口机场,北京首都机场
+,,华东,华东,2024年1月,2024年1月,5,5,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 2190647.0",2190647,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",高崎机场,成都双流机场
+,,华东,华东,2024年2月,2024年2月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 76787039.0, target: 6311779.0",6311779,76787039,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",浦东机场,上海浦东机场
+,,华东,华东,2024年2月,2024年2月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 35340425.0, target: 3922269.0",3922269,35340425,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",萧山机场,上海虹桥机场
+,,华东,华东,2024年2月,2024年2月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 34633106.0, target: 3866348.0",3866348,34633106,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",虹桥机场,广州白云机场
+,,华东,华东,2024年2月,2024年2月,4,4,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 33634789.0, target: 2621224.0",2621224,33634789,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",禄口机场,北京首都机场
+,,华东,华东,2024年2月,2024年2月,5,5,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 2406552.0",2406552,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",高崎机场,成都双流机场
+,,华东,华东,2024年3月,2024年3月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 76787039.0, target: 6102782.0",6102782,76787039,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",浦东机场,上海浦东机场
+,,华东,华东,2024年3月,2024年3月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 35340425.0, target: 4044933.0",4044933,35340425,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",虹桥机场,上海虹桥机场
+,,华东,华东,2024年3月,2024年3月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 34633106.0, target: 4006960.0",4006960,34633106,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",萧山机场,广州白云机场
+,,华东,华东,2024年3月,2024年3月,4,4,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 33634789.0, target: 2387391.0",2387391,33634789,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",禄口机场,北京首都机场
+,,华东,华东,2024年3月,2024年3月,5,5,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 2206640.0",2206640,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",高崎机场,成都双流机场
+,,华东,华东,2024年4月,2024年4月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 76787039.0, target: 6073107.0",6073107,76787039,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",浦东机场,上海浦东机场
+,,华东,华东,2024年4月,2024年4月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 35340425.0, target: 3781390.0",3781390,35340425,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",萧山机场,上海虹桥机场
+,,华东,华东,2024年4月,2024年4月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 34633106.0, target: 3707978.0",3707978,34633106,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",虹桥机场,广州白云机场
+,,华东,华东,2024年4月,2024年4月,4,4,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 33634789.0, target: 2477530.0",2477530,33634789,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",禄口机场,北京首都机场
+,,华东,华东,2024年4月,2024年4月,5,5,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 2216847.0",2216847,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",高崎机场,成都双流机场
+,,华东,华东,2024年5月,2024年5月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 76787039.0, target: 6258627.0",6258627,76787039,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",浦东机场,上海浦东机场
+,,华东,华东,2024年5月,2024年5月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 35340425.0, target: 4056667.0",4056667,35340425,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",虹桥机场,上海虹桥机场
+,,华东,华东,2024年5月,2024年5月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 34633106.0, target: 4027200.0",4027200,34633106,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",萧山机场,广州白云机场
+,,华东,华东,2024年5月,2024年5月,4,4,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 33634789.0, target: 2564260.0",2564260,33634789,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",禄口机场,北京首都机场
+,,华东,华东,2024年5月,2024年5月,5,5,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 2284743.0",2284743,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",高崎机场,成都双流机场
+,,华东,华东,2024年6月,2024年6月,1,1,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 76787039.0, target: 6271134.0",6271134,76787039,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",浦东机场,上海浦东机场
+,,华东,华东,2024年6月,2024年6月,2,2,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 35340425.0, target: 3884892.0",3884892,35340425,1.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",虹桥机场,上海虹桥机场
+,,华东,华东,2024年6月,2024年6月,3,3,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 34633106.0, target: 3868963.0",3868963,34633106,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",萧山机场,广州白云机场
+,,华东,华东,2024年6月,2024年6月,4,4,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 33634789.0, target: 2534159.0",2534159,33634789,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",禄口机场,北京首都机场
+,,华东,华东,2024年6月,2024年6月,5,5,1.0,key_match,1.0,key_match,1.0,key_match,0.0,"number not near, response: 25117300.0, target: 2281430.0",2281430,25117300,0.0,"首先根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。机场名可能会带上城市如成都天府，也可以算对”。  
+简而言之，只要response和target指向的是同一个机场（地理位置、机场名称常用别名等视为同一实体），就给1分，否则0分。
+
+下面逐条分析：
+
+---  
+**idx_0:** response: 成都双流机场； target: 天府机场  
+双流机场和天府机场是成都两个不同的机场，不能算同一个。score=0
+
+**idx_1:** response: 重庆江北机场； target: 长水机场  
+江北机场在重庆，长水机场在昆明，不同机场。score=0
+
+**idx_2:** response: 昆明长水机场； target: 江北机场  
+长水机场是昆明机场，江北机场是重庆机场，不同。score=0
+
+**idx_3:** same as idx_0，score=0  
+**idx_4:** same as idx_1，score=0  
+**idx_5:** same as idx_2，score=0  
+**idx_6:** same as idx_0，score=0  
+**idx_7:** same as idx_1，score=0  
+**idx_8:** same as idx_2，score=0  
+**idx_9:** same as idx_0，score=0  
+**idx_10:** same as idx_1，score=0  
+**idx_11:** same as idx_2，score=0  
+
+**idx_12:** same as idx_0，score=0  
+
+**idx_13:** response: 重庆江北机场； target: 江北机场  
+这里response和target均是江北机场，虽然target少了“重庆”，但按照标准答案，带城市名也是算对的。score=1
+
+**idx_14:** response: 昆明长水机场； target: 长水机场  
+同上“带城市”，算对。score=1
+
+**idx_15:** 成都双流机场 vs 天府机场，score=0  
+**idx_16:** 重庆江北机场 vs 江北机场，score=1  
+**idx_17:** 昆明长水机场 vs 长水机场，score=1
+
+**idx_18:** 上海浦东机场 vs 浦东机场，算对，score=1  
+**idx_19:** 上海虹桥机场 vs 虹桥机场，算对，score=1  
+
+**idx_20:** 广州白云机场 vs 萧山机场  
+白云机场是广州机场，萧山机场是杭州机场，不同机场，score=0  
+
+**idx_21:** 北京首都机场 vs 禄口机场  
+首都机场在北京，禄口机场在南京，不同机场，score=0  
+
+**idx_22:** 成都双流机场 vs 高崎机场  
+双流机场在成都，高崎机场是青岛机场，不同，score=0  
+
+**idx_23:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_24:** 上海虹桥机场 vs 萧山机场（杭州），不同机场，score=0  
+**idx_25:** 广州白云机场 vs 虹桥机场（上海），不同，score=0  
+**idx_26:** 北京首都机场 vs 禄口机场（南京），不同，score=0
+
+**idx_27:** same as idx_22，score=0  
+**idx_28:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_29:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_30:** 广州白云机场 vs 萧山机场，score=0  
+**idx_31:** 北京首都机场 vs 禄口机场，score=0  
+**idx_32:** same as idx_22，score=0  
+**idx_33:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_34:** 上海虹桥机场 vs 萧山机场，score=0  
+**idx_35:** 广州白云机场 vs 虹桥机场，score=0  
+**idx_36:** 北京首都机场 vs 禄口机场，score=0  
+**idx_37:** same as idx_22，score=0  
+**idx_38:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_39:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_40:** 广州白云机场 vs 萧山机场，score=0  
+**idx_41:** 北京首都机场 vs 禄口机场，score=0  
+**idx_42:** same as idx_22，score=0  
+**idx_43:** 上海浦东机场 vs 浦东机场，score=1  
+**idx_44:** 上海虹桥机场 vs 虹桥机场，score=1  
+**idx_45:** 广州白云机场 vs 萧山机场，score=0  
+**idx_46:** 北京首都机场 vs 禄口机场，score=0  
+**idx_47:** 成都双流机场 vs 胶东机场  
+双流机场是成都机场，胶东机场是青岛机场，不同，score=0
+
+---
+
+整理结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 1,
+  ""idx_24"": 0,
+  ""idx_25"": 0,
+  ""idx_26"": 0,
+  ""idx_27"": 0,
+  ""idx_28"": 1,
+  ""idx_29"": 1,
+  ""idx_30"": 0,
+  ""idx_31"": 0,
+  ""idx_32"": 0,
+  ""idx_33"": 1,
+  ""idx_34"": 0,
+  ""idx_35"": 0,
+  ""idx_36"": 0,
+  ""idx_37"": 0,
+  ""idx_38"": 1,
+  ""idx_39"": 1,
+  ""idx_40"": 0,
+  ""idx_41"": 0,
+  ""idx_42"": 0,
+  ""idx_43"": 1,
+  ""idx_44"": 1,
+  ""idx_45"": 0,
+  ""idx_46"": 0,
+  ""idx_47"": 0
+}
+```
+以上即为评分结果。",胶东机场,成都双流机场
+1.0,,华东,,2024年1月,,10,,,,,,,,,,982203,,,,龙湾机场,
+1.0,,西南,,2024年1月,,10,,,,,,,,,,222243,,,,南郊机场,
+1.0,,华东,,2024年1月,,11,,,,,,,,,,960169,,,,新桥机场,
+1.0,,西南,,2024年1月,,11,,,,,,,,,,205660,,,,大理机场,
+1.0,,华东,,2024年1月,,12,,,,,,,,,,887121,,,,吕北机场,
+1.0,,西南,,2024年1月,,12,,,,,,,,,,195232,,,,云龙机场,
+1.0,,华东,,2024年1月,,13,,,,,,,,,,814919,,,,硕放机场,
+1.0,,西南,,2024年1月,,13,,,,,,,,,,140689,,,,五粮液机场,
+1.0,,华东,,2024年1月,,14,,,,,,,,,,677690,,,,晋江机场,
+1.0,,西南,,2024年1月,,14,,,,,,,,,,115384,,,,新舟机场,
+1.0,,华东,,2024年1月,,15,,,,,,,,,,658549,,,,蓬莱机场,
+1.0,,西南,,2024年1月,,15,,,,,,,,,,113975,,,,驼峰机场,
+1.0,,华东,,2024年1月,,16,,,,,,,,,,327723,,,,奔牛机场,
+1.0,,西南,,2024年1月,,16,,,,,,,,,,107479,,,,金垭机场,
+1.0,,华东,,2024年1月,,17,,,,,,,,,,291625,,,,兴东机场,
+1.0,,西南,,2024年1月,,17,,,,,,,,,,105904,,,,茅台机场,
+1.0,,华东,,2024年1月,,18,,,,,,,,,,277658,,,,泰州机场,
+1.0,,西南,,2024年1月,,18,,,,,,,,,,92655,,,,万峰林机场,
+1.0,,华东,,2024年1月,,19,,,,,,,,,,259850,,,,观音机场,
+1.0,,西南,,2024年1月,,19,,,,,,,,,,81171,,,,高坪机场,
+1.0,,华东,,2024年1月,,20,,,,,,,,,,252266,,,,义乌机场,
+1.0,,西南,,2024年1月,,20,,,,,,,,,,79681,,,,青山机场,
+1.0,,西南,,2024年1月,,4,,,,,,,,,,2494542,,,,双流机场,
+1.0,,西南,,2024年1月,,5,,,,,,,,,,1686324,,,,龙洞堡机场,
+1.0,,华东,,2024年1月,,6,,,,,,,,,,1853217,,,,胶东机场,
+1.0,,西南,,2024年1月,,6,,,,,,,,,,601336,,,,嘎洒机场,
+1.0,,华东,,2024年1月,,7,,,,,,,,,,1464445,,,,遥墙机场,
+1.0,,西南,,2024年1月,,7,,,,,,,,,,537850,,,,三义机场,
+1.0,,华东,,2024年1月,,8,,,,,,,,,,1238865,,,,长乐机场,
+1.0,,西南,,2024年1月,,8,,,,,,,,,,448763,,,,贡嘎机场,
+1.0,,华东,,2024年1月,,9,,,,,,,,,,1081288,,,,栎社机场,
+1.0,,西南,,2024年1月,,9,,,,,,,,,,228648,,,,芒市机场,
+1.0,,华东,,2024年2月,,10,,,,,,,,,,1169776,,,,龙湾机场,
+1.0,,西南,,2024年2月,,10,,,,,,,,,,265342,,,,云龙机场,
+1.0,,华东,,2024年2月,,11,,,,,,,,,,1161266,,,,新桥机场,
+1.0,,西南,,2024年2月,,11,,,,,,,,,,257381,,,,芒市机场,
+1.0,,华东,,2024年2月,,12,,,,,,,,,,1057546,,,,昌北机场,
+1.0,,西南,,2024年2月,,12,,,,,,,,,,240449,,,,大理机场,
+1.0,,华东,,2024年2月,,13,,,,,,,,,,834858,,,,晋江机场,
+1.0,,西南,,2024年2月,,13,,,,,,,,,,200735,,,,五粮液机场,
+1.0,,华东,,2024年2月,,14,,,,,,,,,,819339,,,,硕放机场,
+1.0,,西南,,2024年2月,,14,,,,,,,,,,171723,,,,金垭机场,
+1.0,,华东,,2024年2月,,15,,,,,,,,,,725731,,,,蓬莱机场,
+1.0,,西南,,2024年2月,,15,,,,,,,,,,138968,,,,茅台机场,
+1.0,,华东,,2024年2月,,16,,,,,,,,,,395888,,,,奔牛机场,
+1.0,,西南,,2024年2月,,16,,,,,,,,,,138217,,,,新舟机场,
+1.0,,华东,,2024年2月,,17,,,,,,,,,,350305,,,,兴东机场,
+1.0,,西南,,2024年2月,,17,,,,,,,,,,133830,,,,高坪机场,
+1.0,,华东,,2024年2月,,18,,,,,,,,,,330509,,,,泰州机场,
+1.0,,西南,,2024年2月,,18,,,,,,,,,,133232,,,,驼峰机场,
+1.0,,华东,,2024年2月,,19,,,,,,,,,,281191,,,,观音机场,
+1.0,,西南,,2024年2月,,19,,,,,,,,,,127159,,,,五桥机场,
+1.0,,华东,,2024年2月,,20,,,,,,,,,,247809,,,,义乌机场,
+1.0,,西南,,2024年2月,,20,,,,,,,,,,110227,,,,青山机场,
+1.0,,西南,,2024年2月,,4,,,,,,,,,,2623725,,,,双流机场,
+1.0,,西南,,2024年2月,,5,,,,,,,,,,1918578,,,,龙洞堡机场,
+1.0,,华东,,2024年2月,,6,,,,,,,,,,2114314,,,,胶东机场,
+1.0,,西南,,2024年2月,,6,,,,,,,,,,684701,,,,三义机场,
+1.0,,华东,,2024年2月,,7,,,,,,,,,,1616362,,,,遥墙机场,
+1.0,,西南,,2024年2月,,7,,,,,,,,,,640247,,,,嘎洒机场,
+1.0,,华东,,2024年2月,,8,,,,,,,,,,1362750,,,,长乐机场,
+1.0,,西南,,2024年2月,,8,,,,,,,,,,452671,,,,贡嘎机场,
+1.0,,华东,,2024年2月,,9,,,,,,,,,,1271189,,,,栎社机场,
+1.0,,西南,,2024年2月,,9,,,,,,,,,,268483,,,,南郊机场,
+1.0,,华东,,2024年3月,,10,,,,,,,,,,975480,,,,龙湾机场,
+1.0,,西南,,2024年3月,,10,,,,,,,,,,242226,,,,南郊机场,
+1.0,,华东,,2024年3月,,11,,,,,,,,,,912569,,,,新桥机场,
+1.0,,西南,,2024年3月,,11,,,,,,,,,,230579,,,,大理机场,
+1.0,,华东,,2024年3月,,12,,,,,,,,,,894002,,,,昌北机场,
+1.0,,西南,,2024年3月,,12,,,,,,,,,,189544,,,,云龙机场,
+1.0,,华东,,2024年3月,,13,,,,,,,,,,850048,,,,硕放机场,
+1.0,,西南,,2024年3月,,13,,,,,,,,,,170781,,,,茅台机场,
+1.0,,华东,,2024年3月,,14,,,,,,,,,,719640,,,,晋江机场,
+1.0,,西南,,2024年3月,,14,,,,,,,,,,167685,,,,五粮液机场,
+1.0,,华东,,2024年3月,,15,,,,,,,,,,582880,,,,蓬莱机场,
+1.0,,西南,,2024年3月,,15,,,,,,,,,,114473,,,,新舟机场,
+1.0,,华东,,2024年3月,,16,,,,,,,,,,334213,,,,奔牛机场,
+1.0,,西南,,2024年3月,,16,,,,,,,,,,114040,,,,驼峰机场,
+1.0,,华东,,2024年3月,,17,,,,,,,,,,298589,,,,兴东机场,
+1.0,,西南,,2024年3月,,17,,,,,,,,,,108662,,,,金垭机场,
+1.0,,华东,,2024年3月,,18,,,,,,,,,,294226,,,,泰州机场,
+1.0,,西南,,2024年3月,,18,,,,,,,,,,107072,,,,万峰林机场,
+1.0,,华东,,2024年3月,,19,,,,,,,,,,282801,,,,义乌机场,
+1.0,,西南,,2024年3月,,19,,,,,,,,,,78197,,,,青山机场,
+1.0,,华东,,2024年3月,,20,,,,,,,,,,258992,,,,普陀山机场,
+1.0,,西南,,2024年3月,,20,,,,,,,,,,73557,,,,高坪机场,
+1.0,,西南,,2024年3月,,4,,,,,,,,,,2607970,,,,双流机场,
+1.0,,西南,,2024年3月,,5,,,,,,,,,,1715114,,,,龙洞堡机场,
+1.0,,华东,,2024年3月,,6,,,,,,,,,,1847973,,,,胶东机场,
+1.0,,西南,,2024年3月,,6,,,,,,,,,,637501,,,,三义机场,
+1.0,,华东,,2024年3月,,7,,,,,,,,,,1469345,,,,遥墙机场,
+1.0,,西南,,2024年3月,,7,,,,,,,,,,623478,,,,嘎洒机场,
+1.0,,华东,,2024年3月,,8,,,,,,,,,,1245547,,,,长乐机场,
+1.0,,西南,,2024年3月,,8,,,,,,,,,,411709,,,,贡嘎机场,
+1.0,,华东,,2024年3月,,9,,,,,,,,,,1162939,,,,栎社机场,
+1.0,,西南,,2024年3月,,9,,,,,,,,,,242974,,,,芒市机场,
+1.0,,华东,,2024年4月,,10,,,,,,,,,,984239,,,,龙湾机场,
+1.0,,西南,,2024年4月,,10,,,,,,,,,,252617,,,,大理机场,
+1.0,,华东,,2024年4月,,11,,,,,,,,,,915029,,,,新桥机场,
+1.0,,西南,,2024年4月,,11,,,,,,,,,,202670,,,,芒市机场,
+1.0,,华东,,2024年4月,,12,,,,,,,,,,845517,,,,昌北机场,
+1.0,,西南,,2024年4月,,12,,,,,,,,,,180679,,,,云龙机场,
+1.0,,华东,,2024年4月,,13,,,,,,,,,,825060,,,,硕放机场,
+1.0,,西南,,2024年4月,,13,,,,,,,,,,150077,,,,五粮液机场,
+1.0,,华东,,2024年4月,,14,,,,,,,,,,704204,,,,晋江机场,
+1.0,,西南,,2024年4月,,14,,,,,,,,,,121082,,,,新舟机场,
+1.0,,华东,,2024年4月,,15,,,,,,,,,,638230,,,,蓬莱机场,
+1.0,,西南,,2024年4月,,15,,,,,,,,,,120068,,,,茅台机场,
+1.0,,华东,,2024年4月,,16,,,,,,,,,,348947,,,,奔牛机场,
+1.0,,西南,,2024年4月,,16,,,,,,,,,,105098,,,,金垭机场,
+1.0,,华东,,2024年4月,,17,,,,,,,,,,323908,,,,兴东机场,
+1.0,,西南,,2024年4月,,17,,,,,,,,,,97301,,,,万峰林机场,
+1.0,,华东,,2024年4月,,18,,,,,,,,,,287197,,,,泰州机场,
+1.0,,西南,,2024年4月,,18,,,,,,,,,,71847,,,,米林机场,
+1.0,,华东,,2024年4月,,19,,,,,,,,,,261547,,,,观音机场,
+1.0,,西南,,2024年4月,,19,,,,,,,,,,70078,,,,凤凰机场,
+1.0,,华东,,2024年4月,,20,,,,,,,,,,255250,,,,义乌机场,
+1.0,,西南,,2024年4月,,20,,,,,,,,,,67614,,,,青山机场,
+1.0,,西南,,2024年4月,,4,,,,,,,,,,2441549,,,,双流机场,
+1.0,,西南,,2024年4月,,5,,,,,,,,,,1729834,,,,龙洞堡机场,
+1.0,,华东,,2024年4月,,6,,,,,,,,,,2092044,,,,胶东机场,
+1.0,,西南,,2024年4月,,6,,,,,,,,,,688452,,,,三义机场,
+1.0,,华东,,2024年4月,,7,,,,,,,,,,1572618,,,,遥墙机场,
+1.0,,西南,,2024年4月,,7,,,,,,,,,,687750,,,,嘎洒机场,
+1.0,,华东,,2024年4月,,8,,,,,,,,,,1216376,,,,长乐机场,
+1.0,,西南,,2024年4月,,8,,,,,,,,,,464268,,,,贡嘎机场,
+1.0,,华东,,2024年4月,,9,,,,,,,,,,1141742,,,,栎社机场,
+1.0,,西南,,2024年4月,,9,,,,,,,,,,255824,,,,南郊机场,
+1.0,,华东,,2024年5月,,10,,,,,,,,,,1044012,,,,龙湾机场,
+1.0,,西南,,2024年5月,,10,,,,,,,,,,225757,,,,南郊机场,
+1.0,,华东,,2024年5月,,11,,,,,,,,,,963824,,,,新桥机场,
+1.0,,西南,,2024年5月,,11,,,,,,,,,,206580,,,,芒市机场,
+1.0,,华东,,2024年5月,,12,,,,,,,,,,879698,,,,硕放机场,
+1.0,,西南,,2024年5月,,12,,,,,,,,,,176932,,,,云龙机场,
+1.0,,华东,,2024年5月,,13,,,,,,,,,,872164,,,,昌北机场,
+1.0,,西南,,2024年5月,,13,,,,,,,,,,156225,,,,五粮液机场,
+1.0,,华东,,2024年5月,,14,,,,,,,,,,730814,,,,晋江机场,
+1.0,,西南,,2024年5月,,14,,,,,,,,,,129461,,,,茅台机场,
+1.0,,华东,,2024年5月,,15,,,,,,,,,,698443,,,,蓬莱机场,
+1.0,,西南,,2024年5月,,15,,,,,,,,,,113087,,,,万峰林机场,
+1.0,,华东,,2024年5月,,16,,,,,,,,,,358770,,,,奔牛机场,
+1.0,,西南,,2024年5月,,16,,,,,,,,,,107798,,,,新舟机场,
+1.0,,华东,,2024年5月,,17,,,,,,,,,,331479,,,,兴东机场,
+1.0,,西南,,2024年5月,,17,,,,,,,,,,101065,,,,金垭机场,
+1.0,,华东,,2024年5月,,18,,,,,,,,,,300414,,,,观音机场,
+1.0,,西南,,2024年5月,,18,,,,,,,,,,80854,,,,凤凰机场,
+1.0,,华东,,2024年5月,,19,,,,,,,,,,299532,,,,义乌机场,
+1.0,,西南,,2024年5月,,19,,,,,,,,,,75267,,,,青山机场,
+1.0,,华东,,2024年5月,,20,,,,,,,,,,294747,,,,泰州机场,
+1.0,,西南,,2024年5月,,20,,,,,,,,,,62544,,,,米林机场,
+1.0,,西南,,2024年5月,,4,,,,,,,,,,2801280,,,,双流机场,
+1.0,,西南,,2024年5月,,5,,,,,,,,,,1811596,,,,龙洞堡机场,
+1.0,,华东,,2024年5月,,6,,,,,,,,,,2231217,,,,胶东机场,
+1.0,,西南,,2024年5月,,6,,,,,,,,,,648904,,,,三义机场,
+1.0,,华东,,2024年5月,,7,,,,,,,,,,1672853,,,,遥墙机场,
+1.0,,西南,,2024年5月,,7,,,,,,,,,,572165,,,,嘎洒机场,
+1.0,,华东,,2024年5月,,8,,,,,,,,,,1253294,,,,栎社机场,
+1.0,,西南,,2024年5月,,8,,,,,,,,,,522269,,,,贡嘎机场,
+1.0,,华东,,2024年5月,,9,,,,,,,,,,1251755,,,,长乐机场,
+1.0,,西南,,2024年5月,,9,,,,,,,,,,267810,,,,大理机场,
+1.0,,华东,,2024年6月,,10,,,,,,,,,,1030203,,,,龙湾机场,
+1.0,,西南,,2024年6月,,10,,,,,,,,,,228744,,,,南郊机场,
+1.0,,华东,,2024年6月,,11,,,,,,,,,,999471,,,,新桥机场,
+1.0,,西南,,2024年6月,,11,,,,,,,,,,195660,,,,芒市机场,
+1.0,,华东,,2024年6月,,12,,,,,,,,,,870278,,,,硕放机场,
+1.0,,西南,,2024年6月,,12,,,,,,,,,,179700,,,,云龙机场,
+1.0,,华东,,2024年6月,,13,,,,,,,,,,868681,,,,昌北机场,
+1.0,,西南,,2024年6月,,13,,,,,,,,,,163284,,,,五粮液机场,
+1.0,,华东,,2024年6月,,14,,,,,,,,,,737460,,,,蓬莱机场,
+1.0,,西南,,2024年6月,,14,,,,,,,,,,114585,,,,茅台机场,
+1.0,,华东,,2024年6月,,15,,,,,,,,,,706262,,,,晋江机场,
+1.0,,西南,,2024年6月,,15,,,,,,,,,,106580,,,,新舟机场,
+1.0,,华东,,2024年6月,,16,,,,,,,,,,370767,,,,奔牛机场,
+1.0,,西南,,2024年6月,,16,,,,,,,,,,105938,,,,万峰林机场,
+1.0,,华东,,2024年6月,,17,,,,,,,,,,347978,,,,兴东机场,
+1.0,,西南,,2024年6月,,17,,,,,,,,,,105181,,,,金垭机场,
+1.0,,华东,,2024年6月,,18,,,,,,,,,,298649,,,,泰州机场,
+1.0,,西南,,2024年6月,,18,,,,,,,,,,71594,,,,凤凰机场,
+1.0,,华东,,2024年6月,,19,,,,,,,,,,283025,,,,义乌机场,
+1.0,,西南,,2024年6月,,19,,,,,,,,,,70025,,,,米林机场,
+1.0,,华东,,2024年6月,,20,,,,,,,,,,282966,,,,观音机场,
+1.0,,西南,,2024年6月,,20,,,,,,,,,,68856,,,,青山机场,
+1.0,,西南,,2024年6月,,4,,,,,,,,,,2704735,,,,双流机场,
+1.0,,西南,,2024年6月,,5,,,,,,,,,,1848674,,,,龙洞堡机场,
+1.0,,华东,,2024年6月,,6,,,,,,,,,,2205265,,,,高崎机场,
+1.0,,西南,,2024年6月,,6,,,,,,,,,,650762,,,,三义机场,
+1.0,,华东,,2024年6月,,7,,,,,,,,,,1640529,,,,遥墙机场,
+1.0,,西南,,2024年6月,,7,,,,,,,,,,544461,,,,贡嘎机场,
+1.0,,华东,,2024年6月,,8,,,,,,,,,,1227979,,,,长乐机场,
+1.0,,西南,,2024年6月,,8,,,,,,,,,,480284,,,,嘎洒机场,
+1.0,,华东,,2024年6月,,9,,,,,,,,,,1208518,,,,栎社机场,
+1.0,,西南,,2024年6月,,9,,,,,,,,,,265599,,,,大理机场,

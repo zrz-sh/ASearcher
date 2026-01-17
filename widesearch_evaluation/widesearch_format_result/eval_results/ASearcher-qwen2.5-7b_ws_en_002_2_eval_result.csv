@@ -1,0 +1,901 @@
+brand,brand_before_map,exist_flag_gt,exist_flag_response,product,product_before_map,abv%_llm_judge,abv%_llm_judge_eval_msg,abv%_query,abv%_response,brand_exact_match,brand_exact_match_eval_msg,category_llm_judge,category_llm_judge_eval_msg,category_query,category_response,packsize(bottle)_llm_judge,packsize(bottle)_llm_judge_eval_msg,packsize(bottle)_query,packsize(bottle)_response,product_exact_match,product_exact_match_eval_msg,sub-category_llm_judge,sub-category_llm_judge_eval_msg,sub-category_query,sub-category_response
+johnniewalker,Johnnie Walker,,,redlabel,Red Label,1.0,"Let's analyze each item:
+
+- idx_0: response = ""40"", target = ""40.0%""
+  - Semantically the same (40 vs 40.0%). The ""%"" sign is just a unit, the number is identical.
+  - According to criteria, approximate semantics is sufficient.
+  - Score: 1
+
+- idx_1: response = ""40"", target = ""43.0%""
+  - Response ""40"" differs semantically from target ""43.0%"" (40 ≠ 43)
+  - Not the same entity or value.
+  - Score: 0
+
+- idx_2: response = ""40"", target = ""40.0%""
+  - Same as idx_0, semantically same
+  - Score: 1
+
+- idx_3: response = ""40"", target = ""35.0%""
+  - 40 ≠ 35, different value
+  - Score: 0
+
+- idx_4: response = ""40"", target = ""40.0%""
+  - Same as idx_0 and idx_2
+  - Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each pair according to the provided criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity is enough; no need for word-for-word matching.
+
+---
+
+**idx_0**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match in semantics and entity.  
+- Score: 1
+
+**idx_1**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_2**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_3**:  
+- Response: ""vodka""  
+- Target: ""cocktail""  
+- Analysis: ""vodka"" is a type of alcoholic beverage, but ""cocktail"" usually refers to mixed drinks. They are not the same entity nor approximately the same semantically. Hence it does not satisfy the criterion.  
+- Score: 0
+
+**idx_4**:  
+- Response: ""rum""  
+- Target: ""rum""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",whisky,whisky,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Capacity does not need to exactly match the reference answer because different regions have different wine specifications.
+
+Given that, let's see each pair:
+
+**idx_0**  
+- Response: 700ml  
+- Target: 750ml  
+- Analysis: Both answers are wine bottle capacities. The criterion specifically states capacity variation is acceptable. So 700ml is acceptable as it is the same entity (wine bottle capacity) though slightly different number.  
+- Score: 1
+
+**idx_1**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+**idx_2**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0 and idx_1  
+- Score: 1
+
+**idx_3**  
+- Response: 700ml  
+- Target: 375ml  
+- Different volumes but both wine bottle specs. The criterion says different regions have different specs so exact match is not needed. It points to the same entity (bottle capacity).  
+- Score: 1
+
+**idx_4**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+All responses are acceptable under the given criterion.
+
+Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",750ml,700ml,1.0,key_match,0.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Analysis: The response ""core"" does not identify or approximate ""blendedscotchwhisky."" The response seems unrelated to the target entity. The semantics are not the same nor do they point to the same entity.  
+  - Score: 0
+
+- idx_1:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same analysis as idx_0. Not related or approximate.  
+  - Score: 0
+
+- idx_2:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same as above.  
+  - Score: 0
+
+- idx_3:  
+  - Response: ""core""  
+  - Target: ""/"" (which might indicate no target or empty target)  
+  - Analysis: The target ""/"" probably means no particular entity or a placeholder. The response ""core"" neither confirms nor contradicts the target because no meaningful target is provided. Under the criteria, since the semantics do not contradict and there is no actual target, we can consider this acceptable or at least not incorrect.  
+  - Score: 1
+
+- idx_4:  
+  - Response: ""core""  
+  - Target: ""whiterum""  
+  - Analysis: ""core"" is not semantically related to ""whiterum"" or points to the same entity. The response does not approximate or identify whiterum.  
+  - Score: 0
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0
+}
+```",blendedscotchwhisky,core
+johnniewalker,Johnnie Walker,,,greenlabel,Green Label,0.0,"Let's analyze each item:
+
+- idx_0: response = ""40"", target = ""40.0%""
+  - Semantically the same (40 vs 40.0%). The ""%"" sign is just a unit, the number is identical.
+  - According to criteria, approximate semantics is sufficient.
+  - Score: 1
+
+- idx_1: response = ""40"", target = ""43.0%""
+  - Response ""40"" differs semantically from target ""43.0%"" (40 ≠ 43)
+  - Not the same entity or value.
+  - Score: 0
+
+- idx_2: response = ""40"", target = ""40.0%""
+  - Same as idx_0, semantically same
+  - Score: 1
+
+- idx_3: response = ""40"", target = ""35.0%""
+  - 40 ≠ 35, different value
+  - Score: 0
+
+- idx_4: response = ""40"", target = ""40.0%""
+  - Same as idx_0 and idx_2
+  - Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",43.0%,40,1.0,key_match,1.0,"Let's analyze each pair according to the provided criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity is enough; no need for word-for-word matching.
+
+---
+
+**idx_0**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match in semantics and entity.  
+- Score: 1
+
+**idx_1**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_2**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_3**:  
+- Response: ""vodka""  
+- Target: ""cocktail""  
+- Analysis: ""vodka"" is a type of alcoholic beverage, but ""cocktail"" usually refers to mixed drinks. They are not the same entity nor approximately the same semantically. Hence it does not satisfy the criterion.  
+- Score: 0
+
+**idx_4**:  
+- Response: ""rum""  
+- Target: ""rum""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",whisky,whisky,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Capacity does not need to exactly match the reference answer because different regions have different wine specifications.
+
+Given that, let's see each pair:
+
+**idx_0**  
+- Response: 700ml  
+- Target: 750ml  
+- Analysis: Both answers are wine bottle capacities. The criterion specifically states capacity variation is acceptable. So 700ml is acceptable as it is the same entity (wine bottle capacity) though slightly different number.  
+- Score: 1
+
+**idx_1**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+**idx_2**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0 and idx_1  
+- Score: 1
+
+**idx_3**  
+- Response: 700ml  
+- Target: 375ml  
+- Different volumes but both wine bottle specs. The criterion says different regions have different specs so exact match is not needed. It points to the same entity (bottle capacity).  
+- Score: 1
+
+**idx_4**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+All responses are acceptable under the given criterion.
+
+Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",750ml,700ml,1.0,key_match,0.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Analysis: The response ""core"" does not identify or approximate ""blendedscotchwhisky."" The response seems unrelated to the target entity. The semantics are not the same nor do they point to the same entity.  
+  - Score: 0
+
+- idx_1:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same analysis as idx_0. Not related or approximate.  
+  - Score: 0
+
+- idx_2:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same as above.  
+  - Score: 0
+
+- idx_3:  
+  - Response: ""core""  
+  - Target: ""/"" (which might indicate no target or empty target)  
+  - Analysis: The target ""/"" probably means no particular entity or a placeholder. The response ""core"" neither confirms nor contradicts the target because no meaningful target is provided. Under the criteria, since the semantics do not contradict and there is no actual target, we can consider this acceptable or at least not incorrect.  
+  - Score: 1
+
+- idx_4:  
+  - Response: ""core""  
+  - Target: ""whiterum""  
+  - Analysis: ""core"" is not semantically related to ""whiterum"" or points to the same entity. The response does not approximate or identify whiterum.  
+  - Score: 0
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0
+}
+```",blendedscotchwhisky,core
+chivasregal,Chivas Regal,,,12years,12 Years Old,1.0,"Let's analyze each item:
+
+- idx_0: response = ""40"", target = ""40.0%""
+  - Semantically the same (40 vs 40.0%). The ""%"" sign is just a unit, the number is identical.
+  - According to criteria, approximate semantics is sufficient.
+  - Score: 1
+
+- idx_1: response = ""40"", target = ""43.0%""
+  - Response ""40"" differs semantically from target ""43.0%"" (40 ≠ 43)
+  - Not the same entity or value.
+  - Score: 0
+
+- idx_2: response = ""40"", target = ""40.0%""
+  - Same as idx_0, semantically same
+  - Score: 1
+
+- idx_3: response = ""40"", target = ""35.0%""
+  - 40 ≠ 35, different value
+  - Score: 0
+
+- idx_4: response = ""40"", target = ""40.0%""
+  - Same as idx_0 and idx_2
+  - Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each pair according to the provided criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity is enough; no need for word-for-word matching.
+
+---
+
+**idx_0**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match in semantics and entity.  
+- Score: 1
+
+**idx_1**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_2**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_3**:  
+- Response: ""vodka""  
+- Target: ""cocktail""  
+- Analysis: ""vodka"" is a type of alcoholic beverage, but ""cocktail"" usually refers to mixed drinks. They are not the same entity nor approximately the same semantically. Hence it does not satisfy the criterion.  
+- Score: 0
+
+**idx_4**:  
+- Response: ""rum""  
+- Target: ""rum""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",whisky,whisky,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Capacity does not need to exactly match the reference answer because different regions have different wine specifications.
+
+Given that, let's see each pair:
+
+**idx_0**  
+- Response: 700ml  
+- Target: 750ml  
+- Analysis: Both answers are wine bottle capacities. The criterion specifically states capacity variation is acceptable. So 700ml is acceptable as it is the same entity (wine bottle capacity) though slightly different number.  
+- Score: 1
+
+**idx_1**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+**idx_2**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0 and idx_1  
+- Score: 1
+
+**idx_3**  
+- Response: 700ml  
+- Target: 375ml  
+- Different volumes but both wine bottle specs. The criterion says different regions have different specs so exact match is not needed. It points to the same entity (bottle capacity).  
+- Score: 1
+
+**idx_4**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+All responses are acceptable under the given criterion.
+
+Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",750ml,700ml,1.0,key_match,0.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Analysis: The response ""core"" does not identify or approximate ""blendedscotchwhisky."" The response seems unrelated to the target entity. The semantics are not the same nor do they point to the same entity.  
+  - Score: 0
+
+- idx_1:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same analysis as idx_0. Not related or approximate.  
+  - Score: 0
+
+- idx_2:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same as above.  
+  - Score: 0
+
+- idx_3:  
+  - Response: ""core""  
+  - Target: ""/"" (which might indicate no target or empty target)  
+  - Analysis: The target ""/"" probably means no particular entity or a placeholder. The response ""core"" neither confirms nor contradicts the target because no meaningful target is provided. Under the criteria, since the semantics do not contradict and there is no actual target, we can consider this acceptable or at least not incorrect.  
+  - Score: 1
+
+- idx_4:  
+  - Response: ""core""  
+  - Target: ""whiterum""  
+  - Analysis: ""core"" is not semantically related to ""whiterum"" or points to the same entity. The response does not approximate or identify whiterum.  
+  - Score: 0
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0
+}
+```",blendedscotchwhisky,core
+greygoose,Grey Goose,,,classicmartinicocktail,Classic,0.0,"Let's analyze each item:
+
+- idx_0: response = ""40"", target = ""40.0%""
+  - Semantically the same (40 vs 40.0%). The ""%"" sign is just a unit, the number is identical.
+  - According to criteria, approximate semantics is sufficient.
+  - Score: 1
+
+- idx_1: response = ""40"", target = ""43.0%""
+  - Response ""40"" differs semantically from target ""43.0%"" (40 ≠ 43)
+  - Not the same entity or value.
+  - Score: 0
+
+- idx_2: response = ""40"", target = ""40.0%""
+  - Same as idx_0, semantically same
+  - Score: 1
+
+- idx_3: response = ""40"", target = ""35.0%""
+  - 40 ≠ 35, different value
+  - Score: 0
+
+- idx_4: response = ""40"", target = ""40.0%""
+  - Same as idx_0 and idx_2
+  - Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",35.0%,40,1.0,key_match,0.0,"Let's analyze each pair according to the provided criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity is enough; no need for word-for-word matching.
+
+---
+
+**idx_0**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match in semantics and entity.  
+- Score: 1
+
+**idx_1**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_2**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_3**:  
+- Response: ""vodka""  
+- Target: ""cocktail""  
+- Analysis: ""vodka"" is a type of alcoholic beverage, but ""cocktail"" usually refers to mixed drinks. They are not the same entity nor approximately the same semantically. Hence it does not satisfy the criterion.  
+- Score: 0
+
+**idx_4**:  
+- Response: ""rum""  
+- Target: ""rum""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",cocktail,vodka,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Capacity does not need to exactly match the reference answer because different regions have different wine specifications.
+
+Given that, let's see each pair:
+
+**idx_0**  
+- Response: 700ml  
+- Target: 750ml  
+- Analysis: Both answers are wine bottle capacities. The criterion specifically states capacity variation is acceptable. So 700ml is acceptable as it is the same entity (wine bottle capacity) though slightly different number.  
+- Score: 1
+
+**idx_1**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+**idx_2**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0 and idx_1  
+- Score: 1
+
+**idx_3**  
+- Response: 700ml  
+- Target: 375ml  
+- Different volumes but both wine bottle specs. The criterion says different regions have different specs so exact match is not needed. It points to the same entity (bottle capacity).  
+- Score: 1
+
+**idx_4**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+All responses are acceptable under the given criterion.
+
+Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",375ml,700ml,1.0,key_match,1.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Analysis: The response ""core"" does not identify or approximate ""blendedscotchwhisky."" The response seems unrelated to the target entity. The semantics are not the same nor do they point to the same entity.  
+  - Score: 0
+
+- idx_1:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same analysis as idx_0. Not related or approximate.  
+  - Score: 0
+
+- idx_2:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same as above.  
+  - Score: 0
+
+- idx_3:  
+  - Response: ""core""  
+  - Target: ""/"" (which might indicate no target or empty target)  
+  - Analysis: The target ""/"" probably means no particular entity or a placeholder. The response ""core"" neither confirms nor contradicts the target because no meaningful target is provided. Under the criteria, since the semantics do not contradict and there is no actual target, we can consider this acceptable or at least not incorrect.  
+  - Score: 1
+
+- idx_4:  
+  - Response: ""core""  
+  - Target: ""whiterum""  
+  - Analysis: ""core"" is not semantically related to ""whiterum"" or points to the same entity. The response does not approximate or identify whiterum.  
+  - Score: 0
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0
+}
+```",/,core
+bacardi,Bacardi,,,superior,Superior,1.0,"Let's analyze each item:
+
+- idx_0: response = ""40"", target = ""40.0%""
+  - Semantically the same (40 vs 40.0%). The ""%"" sign is just a unit, the number is identical.
+  - According to criteria, approximate semantics is sufficient.
+  - Score: 1
+
+- idx_1: response = ""40"", target = ""43.0%""
+  - Response ""40"" differs semantically from target ""43.0%"" (40 ≠ 43)
+  - Not the same entity or value.
+  - Score: 0
+
+- idx_2: response = ""40"", target = ""40.0%""
+  - Same as idx_0, semantically same
+  - Score: 1
+
+- idx_3: response = ""40"", target = ""35.0%""
+  - 40 ≠ 35, different value
+  - Score: 0
+
+- idx_4: response = ""40"", target = ""40.0%""
+  - Same as idx_0 and idx_2
+  - Score: 1
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each pair according to the provided criteria:
+
+- Criterion: Semantics approximately the same or pointing to the same entity is enough; no need for word-for-word matching.
+
+---
+
+**idx_0**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match in semantics and entity.  
+- Score: 1
+
+**idx_1**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_2**:  
+- Response: ""whisky""  
+- Target: ""whisky""  
+- Analysis: Exact match.  
+- Score: 1
+
+**idx_3**:  
+- Response: ""vodka""  
+- Target: ""cocktail""  
+- Analysis: ""vodka"" is a type of alcoholic beverage, but ""cocktail"" usually refers to mixed drinks. They are not the same entity nor approximately the same semantically. Hence it does not satisfy the criterion.  
+- Score: 0
+
+**idx_4**:  
+- Response: ""rum""  
+- Target: ""rum""  
+- Analysis: Exact match.  
+- Score: 1
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",rum,rum,1.0,"Let's analyze each pair in detail according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Capacity does not need to exactly match the reference answer because different regions have different wine specifications.
+
+Given that, let's see each pair:
+
+**idx_0**  
+- Response: 700ml  
+- Target: 750ml  
+- Analysis: Both answers are wine bottle capacities. The criterion specifically states capacity variation is acceptable. So 700ml is acceptable as it is the same entity (wine bottle capacity) though slightly different number.  
+- Score: 1
+
+**idx_1**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+**idx_2**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0 and idx_1  
+- Score: 1
+
+**idx_3**  
+- Response: 700ml  
+- Target: 375ml  
+- Different volumes but both wine bottle specs. The criterion says different regions have different specs so exact match is not needed. It points to the same entity (bottle capacity).  
+- Score: 1
+
+**idx_4**  
+- Response: 700ml  
+- Target: 750ml  
+- Same as idx_0  
+- Score: 1
+
+All responses are acceptable under the given criterion.
+
+Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1
+}
+```",750ml,700ml,1.0,key_match,0.0,"Let's analyze each pair step by step:
+
+- idx_0:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Analysis: The response ""core"" does not identify or approximate ""blendedscotchwhisky."" The response seems unrelated to the target entity. The semantics are not the same nor do they point to the same entity.  
+  - Score: 0
+
+- idx_1:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same analysis as idx_0. Not related or approximate.  
+  - Score: 0
+
+- idx_2:  
+  - Response: ""core""  
+  - Target: ""blendedscotchwhisky""  
+  - Same as above.  
+  - Score: 0
+
+- idx_3:  
+  - Response: ""core""  
+  - Target: ""/"" (which might indicate no target or empty target)  
+  - Analysis: The target ""/"" probably means no particular entity or a placeholder. The response ""core"" neither confirms nor contradicts the target because no meaningful target is provided. Under the criteria, since the semantics do not contradict and there is no actual target, we can consider this acceptable or at least not incorrect.  
+  - Score: 1
+
+- idx_4:  
+  - Response: ""core""  
+  - Target: ""whiterum""  
+  - Analysis: ""core"" is not semantically related to ""whiterum"" or points to the same entity. The response does not approximate or identify whiterum.  
+  - Score: 0
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0
+}
+```",whiterum,core
+absolut,,1.0,,absolutvodka,,,,40.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+absolut,,1.0,,elyx,,,,42.3%,,,,,,vodka,,,,750ml/1000ml/1750ml,,,,,,premiumvodka,
+absolut,Absolut Vodka,,1.0,original,Original,,,,40,,,,,,vodka,,,,700ml,,,,,,core
+bacardi,,1.0,,añejocuatro,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,black,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,flavored,,,,35.0%,,,,,,rum,,,,750ml,,,,,,flavoredrum,
+bacardi,,1.0,,gold,,,,40.0%,,,,,,rum,,,,750ml,,,,,,goldrum,
+bacardi,,1.0,,granreservadiez,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,granreservalimitada,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,readytodrinkcocktails,,,,5.9%,,,,,,cocktail,,,,355ml,,,,,,/,
+bacardi,,1.0,,readytoservecocktails,,,,12.5%,,,,,,cocktail,,,,1.75l,,,,,,/,
+bacardi,,1.0,,reservaocho,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,sevillianorange,,,,45.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,spiced,,,,35.0%,,,,,,rum,,,,750ml,,,,,,spicedrum,
+chivasregal,,1.0,,18years,,,,40.0%,,,,,,whisky,,,,700ml/750ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,25years,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,extra,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,mizunara,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,theicon,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,ultis,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,xv,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+greygoose,,1.0,,altius,,,,40.0%,,,,,,vodka,,,,700ml/1750ml,,,,,,premiumvodka,
+greygoose,,1.0,,greygoosevodka,,,,40.0%,,,,,,vodka,,,,50ml/200ml/375ml/750ml/1000ml/1750ml,,,,,,frenchvodka,
+johnniewalker,,1.0,,&sonskinggeorgev.,,,,43.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,aged18years(ex-platinum),,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,blacklabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,blonde,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,bluelabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,doubleblacklabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,goldlabelreserve,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,highrye,,,,45.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+smirnoff,Smirnoff,,1.0,classicmartinicocktail,Classic,,,,40,,,,,,vodka,,,,700ml,,,,,,core
+smirnoff,,1.0,,no.21,,,,40.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,,1.0,,no.27,,,,45.2%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,,1.0,,no.57,,,,50.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,

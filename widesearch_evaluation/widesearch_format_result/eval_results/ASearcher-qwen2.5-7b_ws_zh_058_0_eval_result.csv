@@ -1,0 +1,222 @@
+exist_flag_gt,exist_flag_response,世界遗产名称,世界遗产名称_before_map,列入年份,列入年份_before_map,世界遗产名称_exact_match,世界遗产名称_exact_match_eval_msg,列入年份_exact_match,列入年份_exact_match_eval_msg,所在省份（直辖市/自治区）_llm_judge,所在省份（直辖市/自治区）_llm_judge_eval_msg,所在省份（直辖市/自治区）_query,所在省份（直辖市/自治区）_response,遗产类别_llm_judge,遗产类别_llm_judge_eval_msg,遗产类别_query,遗产类别_response
+,,中国丹霞,中国丹霞（一期）,2010年,2010,1.0,key_match,1.0,key_match,1.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion:  
+- The response and target must be semantically roughly the same or point to the same entities.  
+- Exact wording is not needed, but key entities should be present.
+
+---
+
+### idx_0
+
+- **Response:** 湖南省、福建省、江西省、广东省、贵州省、云南省  
+- **Target:** 广东省、浙江省、江西省、福建省、湖南省、贵州省
+
+**Analysis:**  
+- Both lists have six provinces.  
+- Response includes: 湖南, 福建, 江西, 广东, 贵州, 云南  
+- Target includes: 广东, 浙江, 江西, 福建, 湖南, 贵州  
+- Differences:  
+  - Response has 云南省 instead of 浙江省  
+  - Target has 浙江省, response has 云南省 instead  
+- The rest of the provinces are matching.  
+- According to the criterion, the response and target need to be semantically roughly the same or refer to the same entities. Here, the lists differ by one province: 云南 vs 浙江, which are distinct provinces. So, they are not completely consistent, but mostly similar.
+
+Do we consider this as ""大致相同""? The criterion says roughly the same or pointing to the same entities. Since one province is different, the set of provinces is not identical but highly overlapping (5 out of 6).  
+Given the criterion is loose (""大致相同""), this likely qualifies for score 1.
+
+---
+
+### idx_1
+
+- **Response:** 青海省  
+- **Target:** 青海省
+
+**Analysis:**  
+- Identical, exact match.  
+- Clearly score 1.
+
+---
+
+### Final scoring
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",广东省、浙江省、江西省、福建省、湖南省、贵州省,湖南省、福建省、江西省、广东省、贵州省、云南省,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The response and the standard answer should be roughly semantically the same or pointing to the same entity to get a full score (1). No need for word-for-word matching.
+
+Pair idx_0:  
+- Response: ""自然遗产""  
+- Target: ""自然遗产""  
+They are exactly the same.
+
+Pair idx_1:  
+- Response: ""自然遗产""  
+- Target: ""自然遗产""  
+They are exactly the same.
+
+Both responses match the standard answer exactly and thus should be scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",自然遗产,自然遗产
+,,青海可可西里,青海可可西里,2017年,2017,1.0,key_match,1.0,key_match,1.0,"Let's analyze each response against the target according to the criterion:
+
+Criterion:  
+- The response and target must be semantically roughly the same or point to the same entities.  
+- Exact wording is not needed, but key entities should be present.
+
+---
+
+### idx_0
+
+- **Response:** 湖南省、福建省、江西省、广东省、贵州省、云南省  
+- **Target:** 广东省、浙江省、江西省、福建省、湖南省、贵州省
+
+**Analysis:**  
+- Both lists have six provinces.  
+- Response includes: 湖南, 福建, 江西, 广东, 贵州, 云南  
+- Target includes: 广东, 浙江, 江西, 福建, 湖南, 贵州  
+- Differences:  
+  - Response has 云南省 instead of 浙江省  
+  - Target has 浙江省, response has 云南省 instead  
+- The rest of the provinces are matching.  
+- According to the criterion, the response and target need to be semantically roughly the same or refer to the same entities. Here, the lists differ by one province: 云南 vs 浙江, which are distinct provinces. So, they are not completely consistent, but mostly similar.
+
+Do we consider this as ""大致相同""? The criterion says roughly the same or pointing to the same entities. Since one province is different, the set of provinces is not identical but highly overlapping (5 out of 6).  
+Given the criterion is loose (""大致相同""), this likely qualifies for score 1.
+
+---
+
+### idx_1
+
+- **Response:** 青海省  
+- **Target:** 青海省
+
+**Analysis:**  
+- Identical, exact match.  
+- Clearly score 1.
+
+---
+
+### Final scoring
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",青海省,青海省,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The response and the standard answer should be roughly semantically the same or pointing to the same entity to get a full score (1). No need for word-for-word matching.
+
+Pair idx_0:  
+- Response: ""自然遗产""  
+- Target: ""自然遗产""  
+They are exactly the same.
+
+Pair idx_1:  
+- Response: ""自然遗产""  
+- Target: ""自然遗产""  
+They are exactly the same.
+
+Both responses match the standard answer exactly and thus should be scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",自然遗产,自然遗产
+,1.0,布达拉宫,布达拉宫,1987年,1987,,,,,,,,西藏自治区,,,,自然、文化混合遗产
+1.0,,泰山,,1987年,,,,,,,,山东省,,,,文化自然混合遗产,
+,1.0,苏州古典园林,苏州古典园林,1987年,1987,,,,,,,,江苏省,,,,自然、文化混合遗产
+,1.0,长城,长城,1987年,1987,,,,,,,,北京市,,,,自然、文化混合遗产
+,1.0,颐和园,颐和园,1987年,1987,,,,,,,,北京市,,,,自然、文化混合遗产
+1.0,,黄山,,1990年,,,,,,,,安徽省,,,,文化自然混合遗产,
+,1.0,九寨沟,九寨沟,1992年,1992,,,,,,,,四川省,,,,自然遗产
+1.0,,九寨沟风景名胜区,,1992年,,,,,,,,四川省,,,,自然遗产,
+,1.0,武陵源,武陵源,1992年,1992,,,,,,,,湖南省,,,,自然遗产
+1.0,,武陵源风景名胜区,,1992年,,,,,,,,湖南省,,,,自然遗产,
+,1.0,黄龙,黄龙,1992年,1992,,,,,,,,四川省,,,,自然遗产
+1.0,,黄龙风景名胜区,,1992年,,,,,,,,四川省,,,,自然遗产,
+,1.0,武夷山,武夷山,1994,1994,,,,,,,,福建省,,,,自然、文化混合遗产
+1.0,,峨眉山风景名胜区，含乐山大佛风景区,,1996年,,,,,,,,四川省,,,,文化自然混合遗产,
+,1.0,丽江古城,丽江古城,1997,1997,,,,,,,,云南省,,,,自然、文化混合遗产
+,1.0,皖南古村落（西递、宏村）,皖南古村落（西递、宏村）,1997,1997,,,,,,,,安徽省,,,,自然、文化混合遗产
+1.0,,武夷山,,1999年,,,,,,,,福建省、江西省,,,,文化自然混合遗产,
+,1.0,泰山,泰山,1999年,1999,,,,,,,,山东省,,,,自然、文化混合遗产
+,1.0,三清山,三清山,2000,2000,,,,,,,,江西省,,,,自然遗产
+,1.0,鼓浪屿：历史国际社区,鼓浪屿：历史国际社区,2000,2000,,,,,,,,福建省,,,,自然、文化混合遗产
+,1.0,武当山古建筑群,武当山古建筑群,2001,2001,,,,,,,,湖北省,,,,自然、文化混合遗产
+,1.0,黄山,黄山,2001,2001,,,,,,,,安徽省,,,,自然遗产
+,1.0,蓬莱阁,蓬莱阁,2002,2002,,,,,,,,山东省,,,,自然、文化混合遗产
+,1.0,云冈石窟,云冈石窟,2003年,2003,,,,,,,,山西省,,,,自然、文化混合遗产
+1.0,,云南三江并流保护区,,2003年,,,,,,,,云南省,,,,自然遗产,
+,1.0,龙门石窟,龙门石窟,2003年,2003,,,,,,,,河南省,,,,自然、文化混合遗产
+,1.0,中国南方喀斯特（第一期）,中国南方喀斯特（一期）,2004,2004,,,,,,,,贵州省、云南省、广西壮族自治区,,,,自然遗产
+,1.0,大足石刻,大足石刻,2004,2004,,,,,,,,四川省,,,,自然、文化混合遗产
+,1.0,澡溪河,澡溪河,2004,2004,,,,,,,,四川省,,,,自然遗产
+,1.0,九寨沟风景名胜区,九寨沟风景名胜区,2005,2005,,,,,,,,四川省,,,,自然遗产
+,1.0,武夷山国家公园,武夷山国家公园,2005,2005,,,,,,,,福建省、江西省,,,,自然遗产
+,1.0,武陵源风景名胜区,武陵源风景名胜区,2005,2005,,,,,,,,湖南省,,,,自然遗产
+,1.0,黄山风景名胜区,黄山风景名胜区,2005,2005,,,,,,,,安徽省,,,,自然遗产
+1.0,,四川大熊猫栖息地,,2006年,,,,,,,,四川省,,,,自然遗产,
+,1.0,大足石刻,大足石刻,2006年,2006,,,,,,,,四川省,,,,自然、文化混合遗产
+,1.0,皖南古村落（宏村、西递、查济）,皖南古村落（宏村、西递、查济）,2006年,2006,,,,,,,,安徽省,,,,自然、文化混合遗产
+,1.0,上饶市三清山风景名胜区,三清山风景名胜区,2007年,2007,,,,,,,,江西省,,,,自然遗产
+1.0,,中国南方喀斯特（第一期）,,2007年,,,,,,,,云南省、贵州省、重庆市,,,,自然遗产,
+,1.0,峨眉山风景名胜区，含乐山大佛风景区,峨眉山—乐山大佛,2007年,2007,,,,,,,,四川省,,,,自然、文化混合遗产
+,1.0,武夷山国家公园,武夷山国家公园,2007年,2007,,,,,,,,福建省、江西省,,,,自然遗产
+,1.0,长城（嘉峪关—山海关段）,长城（嘉峪关—山海关段）,2007年,2007,,,,,,,,甘肃省、河北省,,,,自然、文化混合遗产
+,1.0,黄山风景名胜区,黄山风景名胜区,2007年,2007,,,,,,,,安徽省,,,,自然遗产
+,1.0,黄龙风景名胜区,黄龙风景名胜区,2007年,2007,,,,,,,,四川省,,,,自然遗产
+1.0,,上饶市三清山风景名胜区,,2008年,,,,,,,,江西省,,,,自然遗产,
+,1.0,中国南方喀斯特（第二期）,中国南方喀斯特（二期）,2008年,2008,,,,,,,,贵州省、云南省、广西壮族自治区,,,,自然遗产
+,1.0,西湖文化景观,西湖文化景观,2008年,2008,,,,,,,,浙江省,,,,自然、文化混合遗产
+,1.0,大足石刻,大足石刻,2009,2009,,,,,,,,四川省,,,,自然、文化混合遗产
+,1.0,三江并流,三江并流,2010年,2010,,,,,,,,云南省,,,,自然遗产
+,1.0,五台山,五台山,2011,2011,,,,,,,,山西省,,,,自然、文化混合遗产
+,1.0,泰山风景名胜区,泰山风景名胜区,2011,2011,,,,,,,,山东省,,,,自然遗产
+,1.0,中国丹霞（二期）,中国丹霞（二期）,2012年,2012,,,,,,,,福建省、贵州省、江西省、广东省,,,,自然遗产
+,1.0,中国南方喀斯特（三期）,中国南方喀斯特（三期）,2012年,2012,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+1.0,,澄江生物群,,2012年,,,,,,,,云南省,,,,自然遗产,
+,1.0,中国丹霞,中国丹霞（三期）,2013年,2013,,,,,,,,贵州省、江西省、广东省,,,,自然遗产
+,1.0,云南三江并流保护区,云南三江并流,2013年,2013,,,,,,,,云南省,,,,自然遗产
+,1.0,四川大熊猫栖息地,大熊猫栖息地,2013年,2013,,,,,,,,四川省、陕西省、甘肃省,,,,自然遗产
+1.0,,天山山脉,,2013年,,,,,,,,新疆维吾尔自治区,,,,自然遗产,
+,1.0,红河哈尼梯田文化景观,红河哈尼梯田文化景观,2013年,2013,,,,,,,,云南省,,,,自然、文化混合遗产
+,1.0,中国南方喀斯特（五期）,中国南方喀斯特（五期）,2014年,2014,,,,,,,,贵州省、广西壮族自治区,,,,自然遗产
+,1.0,中国南方喀斯特（四期）,中国南方喀斯特（四期）,2014年,2014,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+1.0,,中国南方喀斯特（第二期）,,2014年,,,,,,,,广西壮族自治区、贵州、重庆,,,,自然遗产,
+,1.0,上饶市三清山风景名胜区,江西三清山,2015,2015,,,,,,,,江西省,,,,自然遗产
+,1.0,花山岩画文化景观,花山岩画文化景观,2015,2015,,,,,,,,广西壮族自治区,,,,自然、文化混合遗产
+,1.0,长城（嘉峪关—山海关段）,长城（嘉峪关—山海关段）,2015,2015,,,,,,,,甘肃省、河北省,,,,自然、文化混合遗产
+,1.0,上饶市三清山风景名胜区,江西三清山,2016年,2016,,,,,,,,江西省,,,,自然遗产
+,1.0,中国南方喀斯特（六期）,中国南方喀斯特（六期）,2016年,2016,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+1.0,,神农架国家森林公园,,2016年,,,,,,,,湖北省,,,,自然遗产,
+,1.0,中国南方喀斯特（七期）,中国南方喀斯特（七期）,2017年,2017,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+,1.0,五台山,五台山,2017年,2017,,,,,,,,山西省,,,,自然、文化混合遗产
+,1.0,广西左江花山岩画文化景观,广西左江花山岩画文化景观,2018年,2018,,,,,,,,广西壮族自治区,,,,自然、文化混合遗产
+1.0,,梵净山,,2018年,,,,,,,,贵州省,,,,自然遗产,
+,1.0,神农架国家森林公园,神农架,2018年,2018,,,,,,,,湖北省,,,,自然遗产
+,1.0,中国南方喀斯特（八期）,中国南方喀斯特（八期）,2019年,2019,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+1.0,,中国黄（渤）海候鸟栖息地（第一期）,,2019年,,,,,,,,江苏省,,,,自然遗产,
+,1.0,长城（嘉峪关—山海关段）,长城（嘉峪关—山海关段）,2019年,2019,,,,,,,,甘肃省、河北省,,,,自然、文化混合遗产
+,1.0,梵净山,梵净山,2020,2020,,,,,,,,贵州省,,,,自然遗产
+,1.0,武夷山国家公园,武夷山国家公园,2020,2020,,,,,,,,福建省、江西省,,,,自然遗产
+,1.0,上饶市三清山风景名胜区,三清山风景名胜区,2021,2021,,,,,,,,江西省,,,,自然遗产
+,1.0,中国南方喀斯特（九期）,中国南方喀斯特（九期）,2021,2021,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+,1.0,中国南方喀斯特（十期）,中国南方喀斯特（十期）,2021,2021,,,,,,,,云南省、贵州省、广西壮族自治区,,,,自然遗产
+,1.0,青海可可西里,青海可可西里,2021,2021,,,,,,,,青海省,,,,自然遗产
+1.0,,中国黄（渤）海候鸟栖息地（第二期）,,2024年,,,,,,,,河北省、辽宁省、上海市、山东省,,,,自然遗产,
+1.0,,巴丹吉林沙漠-沙山湖泊群,,2024年,,,,,,,,内蒙古自治区,,,,自然遗产,

@@ -1,0 +1,6126 @@
+exist_flag_gt,exist_flag_response,league,league_before_map,season,season_before_map,championclub_llm_judge,championclub_llm_judge_eval_msg,championclub_query,championclub_response,club_llm_judge,club_llm_judge_eval_msg,club_query,club_response,league_exact_match,league_exact_match_eval_msg,mvpplayer_llm_judge,mvpplayer_llm_judge_eval_msg,mvpplayer_query,mvpplayer_response,rating_exact_match,rating_exact_match_eval_msg,rating_query,rating_response,season_exact_match,season_exact_match_eval_msg
+,,bundesliga,Bundesliga,2020-21,2020/21,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,key_match,1.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",robertlewandowski,robertlewandowski,0.0,"exact not match, response: 7.57, target: 7.83",7.83,7.57,1.0,key_match
+,,bundesliga,Bundesliga,2021-22,2021/22,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",joshuakimmich,robertlewandowski,0.0,"exact not match, response: 7.57, target: 7.79",7.79,7.57,1.0,key_match
+,,bundesliga,Bundesliga,2022-23,2022/23,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",joshuakimmich,robertlewandowski,0.0,"exact not match, response: 7.57, target: 7.73",7.73,7.57,1.0,key_match
+,,bundesliga,Bundesliga,2023-24,2023/24,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayerleverkusen,bayernmunich,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",harrykane,robertlewandowski,0.0,"exact not match, response: 7.57, target: 7.76",7.76,7.57,1.0,key_match
+,,bundesliga,Bundesliga,2024-25,2024/25,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",bayernmunich,bayernmunich,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",joshuakimmich,robertlewandowski,0.0,"exact not match, response: 7.57, target: 7.91",7.91,7.57,1.0,key_match
+,,ligue1,Ligue 1,2020-21,2020/21,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",lille,parissaint-germain,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",olympiquelyon,parissaint-germain,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",memphisdepay,kylianmbappé,0.0,"exact not match, response: 7.96, target: 7.59",7.59,7.96,1.0,key_match
+,,ligue1,Ligue 1,2021-22,2021/22,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,key_match,1.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",kylianmbappé,kylianmbappé,0.0,"exact not match, response: 7.96, target: 7.77",7.77,7.96,1.0,key_match
+,,ligue1,Ligue 1,2022-23,2022/23,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",lionelmessi,kylianmbappé,0.0,"exact not match, response: 7.96, target: 8.11",8.11,7.96,1.0,key_match
+,,ligue1,Ligue 1,2023-24,2023/24,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,key_match,1.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",kylianmbappé,kylianmbappé,0.0,"exact not match, response: 7.96, target: 7.89",7.89,7.96,1.0,key_match
+,,ligue1,Ligue 1,2024-25,2024/25,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",parissaint-germain,parissaint-germain,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",achrafhakimi,kylianmbappé,0.0,"exact not match, response: 7.96, target: 7.76",7.76,7.96,1.0,key_match
+,,laliga,La Liga,2020-21,2020/21,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",atléticomadrid,realmadrid,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",barcelona,realmadrid,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",lionelmessi,sergioramos,0.0,"exact not match, response: 7.23, target: 8.33",8.33,7.23,1.0,key_match
+,,laliga,La Liga,2021-22,2021/22,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",realmadrid,realmadrid,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",realmadrid,realmadrid,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",karimbenzema,sergioramos,0.0,"exact not match, response: 7.23, target: 7.73",7.73,7.23,1.0,key_match
+,,laliga,La Liga,2022-23,2022/23,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",barcelona,realmadrid,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",atléticomadrid,realmadrid,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",antoinegriezmann,sergioramos,0.0,"exact not match, response: 7.23, target: 7.74",7.74,7.23,1.0,key_match
+,,laliga,La Liga,2023-24,2023/24,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",realmadrid,realmadrid,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",realmadrid,realmadrid,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",judebellingham,sergioramos,0.0,"exact not match, response: 7.23, target: 8.05",8.05,7.23,1.0,key_match
+,,laliga,La Liga,2024-25,2024/25,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",barcelona,realmadrid,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",barcelona,realmadrid,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",raphaeldiasbelloli(raphinha),sergioramos,0.0,"exact not match, response: 7.23, target: 7.8",7.8,7.23,1.0,key_match
+,,premierleague,Premier,2020-21,2020/21,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",tottenhamhotspur,borussiadortmund,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",harrykane,erlinghaaland,0.0,"exact not match, response: 7.56, target: 7.63",7.63,7.56,1.0,key_match
+,,premierleague,Premier,2021-22,2021/22,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,1.0,key_match,1.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",kevindebruyne,kevindebruyne,0.0,"exact not match, response: 7.58, target: 7.78",7.78,7.58,1.0,key_match
+,,premierleague,Premier,2022-23,2022/23,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,1.0,key_match,1.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",kevindebruyne,kevindebruyne,0.0,"exact not match, response: 7.58, target: 7.78",7.78,7.58,1.0,key_match
+,,premierleague,Premier,2023-24,2023/24,1.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,1.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",manchestercity,manchestercity,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",rodrigohernándezcascante(rodri),kevindebruyne,0.0,"exact not match, response: 7.58, target: 8.01",8.01,7.58,1.0,key_match
+,,premierleague,Premier,2024-25,2024/25,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",liverpool,manchestercity,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",liverpool,manchestercity,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",mohamedsalah,kevindebruyne,0.0,"exact not match, response: 7.58, target: 7.78",7.78,7.58,1.0,key_match
+,,seriea,Serie A,2020-21,2020/21,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",intermilan,juventus,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",napoli,juventus,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",lorenzoinsigne,cristianoronaldo,0.0,"exact not match, response: 7.45, target: 7.55",7.55,7.45,1.0,key_match
+,,seriea,Serie A,2021-22,2021/22,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",acmilan,juventus,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",sassuolo,juventus,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",domenicoberardi,cristianoronaldo,0.0,"exact not match, response: 7.45, target: 7.59",7.59,7.45,1.0,key_match
+,,seriea,Serie A,2022-23,2022/23,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",napoli,juventus,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",intermilan,juventus,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",hakançalhanoğlu,cristianoronaldo,0.0,"exact not match, response: 7.45, target: 7.31",7.31,7.45,1.0,key_match
+,,seriea,Serie A,2023-24,2023/24,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",intermilan,juventus,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",intermilan,juventus,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",hakançalhanoğlu,cristianoronaldo,0.0,"exact not match, response: 7.45, target: 7.68",7.68,7.45,1.0,key_match
+,,seriea,Serie A,2024-25,2024/25,0.0,"Let's analyze each pair carefully according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or they point to the same entity.  
+- No need for exact word matching, but the entity (football club) named should be the same.
+
+Analysis:
+
+- idx_0: response = 'bayernmunich', target = 'bayernmunich' → same entity → score 1  
+- idx_1: same as above → 1  
+- idx_2: same as above → 1  
+- idx_3: response = 'bayernmunich', target = 'bayerleverkusen' → different clubs → 0  
+- idx_4: 'bayernmunich' vs 'bayernmunich' → 1  
+- idx_5: response = 'parissaint-germain', target = 'lille' → different clubs → 0  
+- idx_6: 'parissaint-germain' vs 'parissaint-germain' → 1  
+- idx_7: same → 1  
+- idx_8: same → 1  
+- idx_9: same → 1  
+- idx_10: 'realmadrid' vs 'atléticomadrid' → different clubs (Madrid rivals) → 0  
+- idx_11: 'realmadrid' vs 'realmadrid' → 1  
+- idx_12: 'realmadrid' vs 'barcelona' → different clubs → 0  
+- idx_13: 'realmadrid' vs 'realmadrid' → 1  
+- idx_14: 'realmadrid' vs 'barcelona' → different → 0  
+- idx_15: 'manchestercity' vs 'manchestercity' → 1  
+- idx_16: same → 1  
+- idx_17: same →1  
+- idx_18: same →1  
+- idx_19: 'manchestercity' vs 'liverpool' → different clubs → 0  
+- idx_20: 'juventus' vs 'intermilan' → different clubs → 0  
+- idx_21: 'juventus' vs 'acmilan' → different clubs → 0  
+- idx_22: 'juventus' vs 'napoli' → different clubs → 0  
+- idx_23: 'juventus' vs 'intermilan' → 0  
+- idx_24: 'juventus' vs 'napoli' → 0  
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",napoli,juventus,0.0,"Let's analyze each item, comparing the response and the target with respect to the criterion:
+
+**Criterion**: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+---
+
+- idx_0: response = ""bayernmunich"", target = ""bayernmunich"" → identical → score 1
+- idx_1: same as above → 1
+- idx_2: same → 1
+- idx_3: same → 1
+- idx_4: same → 1
+
+- idx_5: response = ""parissaint-germain"", target = ""olympiquelyon"" → different entities, not semantically similar → score 0
+
+- idx_6: ""parissaint-germain"" vs ""parissaint-germain"" → same → 1
+- idx_7: same → 1
+- idx_8: same → 1
+- idx_9: same → 1
+
+- idx_10: response = ""realmadrid"", target = ""barcelona"" → different football clubs, not semantically same → 0
+- idx_11: both ""realmadrid"" → 1
+- idx_12: response ""realmadrid"", target ""atléticomadrid"" (Atletico Madrid) → different clubs → 0
+- idx_13: ""realmadrid"" vs ""realmadrid"" → 1
+- idx_14: ""realmadrid"" vs ""barcelona"" → different clubs → 0
+
+- idx_15: response ""borussiadortmund"", target ""tottenhamhotspur"" → different clubs → 0
+
+- idx_16: both ""manchestercity"" → 1
+- idx_17: both ""manchestercity"" → 1
+- idx_18: both ""manchestercity"" → 1
+- idx_19: response ""manchestercity"", target ""liverpool"" → distinct clubs → 0
+
+- idx_20: response ""juventus"", target ""napoli"" → different clubs → 0
+- idx_21: response ""juventus"", target ""sassuolo"" → different clubs → 0
+- idx_22: response ""juventus"", target ""intermilan"" → different clubs → 0
+- idx_23: same as above → 0
+- idx_24: response ""juventus"", target ""lazio"" → different clubs → 0
+
+---
+
+**Final scores:**
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 1,
+  ""idx_12"": 0,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",lazio,juventus,1.0,key_match,0.0,"Let's analyze item by item.
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+Analysis:
+
+- idx_0: response='robertlewandowski', target='robertlewandowski'  
+  Exactly the same → score 1
+
+- idx_1: response='robertlewandowski', target='joshuakimmich'  
+  Different entities → score 0
+
+- idx_2: same as idx_1 → score 0
+
+- idx_3: response='robertlewandowski', target='harrykane'  
+  Different entities → score 0
+
+- idx_4: same as idx_1 → score 0
+
+- idx_5: response='kylianmbappé', target='memphisdepay'  
+  Different entities → score 0
+
+- idx_6: response='kylianmbappé', target='kylianmbappé'  
+  Same → score 1
+
+- idx_7: response='kylianmbappé', target='lionelmessi'  
+  Different → score 0
+
+- idx_8: same as idx_6 → score 1
+
+- idx_9: response='kylianmbappé', target='achrafhakimi'  
+  Different → score 0
+
+- idx_10: response='sergioramos', target='lionelmessi'  
+  Different → score 0
+
+- idx_11: response='sergioramos', target='karimbenzema'  
+  Different → score 0
+
+- idx_12: response='sergioramos', target='antoinegriezmann'  
+  Different → score 0
+
+- idx_13: response='sergioramos', target='judebellingham'  
+  Different → score 0
+
+- idx_14: response='sergioramos', target='raphaeldiasbelloli(raphinha)'  
+  Different → score 0
+
+- idx_15: response='erlinghaaland', target='harrykane'  
+  Different → score 0
+
+- idx_16: response='kevindebruyne', target='kevindebruyne'  
+  Same → score 1
+
+- idx_17: same as idx_16 → score 1
+
+- idx_18: response='kevindebruyne', target='rodrigohernándezcascante(rodri)'  
+  Different → score 0
+
+- idx_19: response='kevindebruyne', target='mohamedsalah'  
+  Different → score 0
+
+- idx_20: response='cristianoronaldo', target='lorenzoinsigne'  
+  Different → score 0
+
+- idx_21: response='cristianoronaldo', target='domenicoberardi'  
+  Different → score 0
+
+- idx_22: response='cristianoronaldo', target='hakançalhanoğlu'  
+  Different → score 0
+
+- idx_23: same as idx_22 → score 0
+
+- idx_24: response='cristianoronaldo', target='mattiazaccagni'  
+  Different → score 0
+
+---
+
+Final JSON output:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0,
+  ""idx_21"": 0,
+  ""idx_22"": 0,
+  ""idx_23"": 0,
+  ""idx_24"": 0
+}
+```",mattiazaccagni,cristianoronaldo,0.0,"exact not match, response: 7.45, target: 7.34",7.34,7.45,1.0,key_match

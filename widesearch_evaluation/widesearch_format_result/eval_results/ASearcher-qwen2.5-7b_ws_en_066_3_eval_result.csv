@@ -1,0 +1,715 @@
+exist_flag_gt,exist_flag_response,modelcode,modelcode_before_map,region,region_before_map,firstretailavailabilitydate_date_near,firstretailavailabilitydate_date_near_eval_msg,firstretailavailabilitydate_query,firstretailavailabilitydate_response,launchmsrp_llm_judge,launchmsrp_llm_judge_eval_msg,launchmsrp_query,launchmsrp_response,modelcode_exact_match,modelcode_exact_match_eval_msg,numberofincludedattachments_exact_match,numberofincludedattachments_exact_match_eval_msg,numberofincludedattachments_query,numberofincludedattachments_response,region_exact_match,region_exact_match_eval_msg,warranty(yrs)_exact_match,warranty(yrs)_exact_match_eval_msg,warranty(yrs)_query,warranty(yrs)_response
+,,hd01,HD01,u.s.,US,0.0,"date not near, response: 2016-04-01 00:00:00, target: 2016-09-01 00:00:00",2016-09-01,2016-04-01,1.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",$379.99,$379.99,1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,u.s.,US,0.0,"date not near, response: 2018-04-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2018-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",$379.99,$349.99,1.0,key_match,0.0,"exact not match, response: 1, target: 4",4,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd07,HD07,u.s.,US,0.0,"date not near, response: 2022-04-01 00:00:00, target: 2021-08-01 00:00:00",2021-08-01,2022-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",$399.99,$349.99,1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd01,HD01,china,China,0.0,"date not near, response: 2016-04-01 00:00:00, target: 2016-08-01 00:00:00",2016-08-01,2016-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",¥2990,"¥3,499",1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,china,China,0.0,"date not near, response: 2018-04-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2018-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",¥2990,"¥3,499",1.0,key_match,0.0,"exact not match, response: 1, target: 4",4,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd08,HD08,china,China,0.0,"date not near, response: 2023-04-01 00:00:00, target: 2021-07-01 00:00:00",2021-07-01,2023-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",¥2799,"¥3,499",1.0,key_match,0.0,"exact not match, response: 1, target: 5",5,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd01,HD01,japan,Japan,1.0,"date near, response: 2016-04-01 00:00:00, target: 2016-04-01 00:00:00",2016-04-01,2016-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",¥45000,"¥3,499",1.0,key_match,0.0,"exact not match, response: 1, target: 3",3,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd03,HD03,japan,Japan,0.0,"date not near, response: 2018-04-01 00:00:00, target: 2019-09-01 00:00:00",2019-09-01,2018-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",¥47980,"¥3,499",1.0,key_match,0.0,"exact not match, response: 1, target: 4",4,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,,hd08,HD08,japan,Japan,0.0,"date not near, response: 2023-04-01 00:00:00, target: 2021-09-01 00:00:00",2021-09-01,2023-04-01,0.0,"Let's analyze and judge each pair step by step according to the criterion:
+
+Criterion summary: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.""
+
+Since the answers here are numeric price values and currency values, we can interpret ""semantics are approximately the same"" as the response's numeric value matching the target value. If the values are the same (or maybe close enough?), it's a correct answer (score=1), otherwise 0.
+
+However, the criterion only states ""approximately the same semantics"" or ""point to the same entity"". Since these are exact numeric prices given in different currencies or amounts, likely only exact matches count.
+
+Let's go through one by one:
+
+---
+
+- idx_0:  
+  response: ""$379.99""  
+  target: ""$379.99""  
+  Exact match. So 1.
+
+- idx_1:  
+  response: ""$349.99""  
+  target: ""$379.99""  
+  Different numbers, difference $30. Not approximately the same. No indication that 349.99 is acceptable for 379.99. So 0.
+
+- idx_2:  
+  response: ""$349.99""  
+  target: ""$399.99""  
+  Different, difference $50, not approximately same. 0.
+
+- idx_3:  
+  response: ""¥3,499""  
+  target: ""¥2990""  
+  Different values. 3499 vs 2990. Not same. 0.
+
+- idx_4:  
+  same as above, same response ""¥3,499"" vs target ""¥2990"". 0.
+
+- idx_5:  
+  response: ""¥3,499""  
+  target: ""¥2799""  
+  Not same values. 0.
+
+- idx_6:  
+  response: ""¥3,499""  
+  target: ""¥45000""  
+  Way different. 0.
+
+- idx_7:  
+  response: ""¥3,499""  
+  target: ""¥47980""  
+  Different. 0.
+
+- idx_8:  
+  response: ""¥3,499""  
+  target: ""¥39900""  
+  Different. 0.
+
+---
+
+Summary: Only idx_0 matches exactly and thus scores 1. All others are different numeric prices, so score 0.
+
+---
+
+Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```
+",¥39900,"¥3,499",1.0,key_match,0.0,"exact not match, response: 1, target: 5",5,1,1.0,key_match,1.0,"exact match, response: 2, target: 2",2,2
+,1.0,hd02,HD02,china,China,,,,2017-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd04,HD04,china,China,,,,2019-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd05,HD05,china,China,,,,2020-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd06,HD06,china,China,,,,2021-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd07,HD07,china,China,,,,2022-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+1.0,,hd15,,china,,,,2024-04-01,,,,¥3499,,,,,,5,,,,,,2,
+1.0,,hd16,,china,,,,2024-04-01,,,,¥3499,,,,,,5,,,,,,2,
+,1.0,hd02,HD02,japan,Japan,,,,2017-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd04,HD04,japan,Japan,,,,2019-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd05,HD05,japan,Japan,,,,2020-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd06,HD06,japan,Japan,,,,2021-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+,1.0,hd07,HD07,japan,Japan,,,,2022-04-01,,,,"¥3,499",,,,,,1,,,,,,2
+1.0,,hd15,,japan,,,,2023-04-01,,,,¥48800,,,,,,3,,,,,,2,
+1.0,,hd16,,japan,,,,2023-03-01,,,,¥49900,,,,,,3,,,,,,2,
+,1.0,hd02,HD02,u.s.,US,,,,2017-04-01,,,,$399.99,,,,,,1,,,,,,2
+,1.0,hd04,HD04,u.s.,US,,,,2019-04-01,,,,$349.99,,,,,,1,,,,,,2
+,1.0,hd05,HD05,u.s.,US,,,,2020-04-01,,,,$349.99,,,,,,1,,,,,,2
+,1.0,hd06,HD06,u.s.,US,,,,2021-04-01,,,,$349.99,,,,,,1,,,,,,2
+,1.0,hd08,HD08,u.s.,US,,,,2023-04-01,,,,$349.99,,,,,,1,,,,,,2
+1.0,,hd15,,u.s.,,,,2024-05-01,,,,$429.99,,,,,,5,,,,,,2,
+1.0,,hd16,,u.s.,,,,2024-03-01,,,,$499.99,,,,,,5,,,,,,2,

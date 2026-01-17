@@ -1,0 +1,775 @@
+exist_flag_gt,exist_flag_response,准入技术,准入技术_before_map,医疗机构名称,医疗机构名称_before_map,准入技术_exact_match,准入技术_exact_match_eval_msg,医疗机构名称_exact_match,医疗机构名称_exact_match_eval_msg,医疗机构等级_llm_judge,医疗机构等级_llm_judge_eval_msg,医疗机构等级_query,医疗机构等级_response,机构地址_llm_judge,机构地址_llm_judge_eval_msg,机构地址_query,机构地址_response,联系电话_llm_judge,联系电话_llm_judge_eval_msg,联系电话_query,联系电话_response
+,,卵胞浆内单精子显微注射技术,人工授精、体外受精-胚胎移植技术、卵胞浆内单精子显微注射技术,北京大学第三医院,北京大学第三医院,1.0,key_match,1.0,key_match,1.0,"First, analyze each pair of response and standard answer according to the criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The answer must be roughly semantically the same or refer to the same entity as the reference answer; exact wording is not required.)
+
+Given:  
+For all idx from 0 to 4, the response is ""三级甲等"" and the target/standard answer is ""三甲"".
+
+Analysis:  
+- ""三甲"" is a common shorthand for ""三级甲等"" in Chinese hospital grading system terminology.  
+- Both terms refer to the same concept: the highest level (三级甲等) hospital rating.  
+- Therefore, the responses correctly capture the meaning and point to the same entity as the standard answers.
+
+Since the criterion is that semantic equivalence or entity consistency is sufficient, and the responses meet this, each item should receive a score of 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",三甲,三级甲等,1.0,"Let's analyze each pair individually according to the criterion:
+
+Criterion:  
+- Semantic equivalence or referring to the same entity is enough.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: 北京市海淀区花园北路49号  
+- Target: 北京市海淀区花园北路49号  
+- Exact match, so completely correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: 北京市东城区帅府园1号  
+- Target: 北京市西城区大木仓胡同41号  
+- Different districts: 东城区 vs 西城区  
+- Different streets and street numbers.  
+- Not semantically equivalent or referencing same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: 北京市朝阳区工体西路1号  
+- Target: 北京市朝阳区姚家园路251号  
+- Same district 朝阳区  
+- Different streets: 工体西路 vs 姚家园路 (completely different roads)  
+- Not same entity or semantically equivalent.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 北京市西城区西什库大街8号  
+- Target: 北京市西城区西安门大街1号  
+- Same district 西城区  
+- Different streets: 西什库大街 vs 西安门大街  
+- Different addresses, so not same entity.  
+Score: 0
+
+---
+
+**idx_4**  
+- Response: 北京市朝阳区工体南路8号  
+- Target: 北京市朝阳区工人体育场南路8号  
+- District is the same: 朝阳区  
+- The street names are very close: 工体南路 vs 工人体育场南路  
+- “工体南路” is a common short form for “工人体育场南路”, basically the same street, same number 8号  
+- Therefore, the addresses are semantically equivalent / refer to the same entity.  
+Score: 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",北京市海淀区花园北路49号,北京市海淀区花园北路49号,0.0,"分析过程：
+
+评分标准：  
+- 参考答案和模型回答语义相同或者指向的实体一致即可，得1分。
+- 当参考答案中有多个医院电话时，模型回答是参考答案的子集也得1分。
+- 只要电话不符且无语义对应，则得0分。
+
+逐条分析：
+
+idx_0：  
+- 模型回答电话是010-82266114  
+- 参考答案电话是010-82266699  
+- 电话不相同，也不是参考答案的子集或者同义表达。  
+- 视为不符，得0分。
+
+idx_1：  
+- 模型回答电话010-65105000  
+- 参考答案电话010-69151188（东单院区）、69158100（西单院区）  
+- 参考答案有两个号码，模型回答与参考答案均不匹配也非子集。  
+- 电话完全不同，得0分。
+
+idx_2：  
+- 模型回答电话010-64277691  
+- 参考答案电话010-52276699  
+- 电话号不一致，也非子集，没有语义对应。  
+- 0分。
+
+idx_3：  
+- 模型回答电话010-83227295  
+- 参考答案电话010-83572211  
+- 电话不一致，非子集，得0分。
+
+idx_4：  
+- 模型回答电话010-65264315  
+- 参考答案电话010-85231777  
+- 电话不同，得0分。
+
+综合上述，5个回答均未匹配到参考电话，均得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",010-82266699,[010-82266114](tel:010-82266114)
+,,常规体外受精-胚胎移植技术,人工授精、体外受精-胚胎移植技术,中国医学科学院北京协和医院,北京协和医院,1.0,key_match,1.0,key_match,1.0,"First, analyze each pair of response and standard answer according to the criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The answer must be roughly semantically the same or refer to the same entity as the reference answer; exact wording is not required.)
+
+Given:  
+For all idx from 0 to 4, the response is ""三级甲等"" and the target/standard answer is ""三甲"".
+
+Analysis:  
+- ""三甲"" is a common shorthand for ""三级甲等"" in Chinese hospital grading system terminology.  
+- Both terms refer to the same concept: the highest level (三级甲等) hospital rating.  
+- Therefore, the responses correctly capture the meaning and point to the same entity as the standard answers.
+
+Since the criterion is that semantic equivalence or entity consistency is sufficient, and the responses meet this, each item should receive a score of 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",三甲,三级甲等,0.0,"Let's analyze each pair individually according to the criterion:
+
+Criterion:  
+- Semantic equivalence or referring to the same entity is enough.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: 北京市海淀区花园北路49号  
+- Target: 北京市海淀区花园北路49号  
+- Exact match, so completely correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: 北京市东城区帅府园1号  
+- Target: 北京市西城区大木仓胡同41号  
+- Different districts: 东城区 vs 西城区  
+- Different streets and street numbers.  
+- Not semantically equivalent or referencing same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: 北京市朝阳区工体西路1号  
+- Target: 北京市朝阳区姚家园路251号  
+- Same district 朝阳区  
+- Different streets: 工体西路 vs 姚家园路 (completely different roads)  
+- Not same entity or semantically equivalent.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 北京市西城区西什库大街8号  
+- Target: 北京市西城区西安门大街1号  
+- Same district 西城区  
+- Different streets: 西什库大街 vs 西安门大街  
+- Different addresses, so not same entity.  
+Score: 0
+
+---
+
+**idx_4**  
+- Response: 北京市朝阳区工体南路8号  
+- Target: 北京市朝阳区工人体育场南路8号  
+- District is the same: 朝阳区  
+- The street names are very close: 工体南路 vs 工人体育场南路  
+- “工体南路” is a common short form for “工人体育场南路”, basically the same street, same number 8号  
+- Therefore, the addresses are semantically equivalent / refer to the same entity.  
+Score: 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",北京市西城区大木仓胡同41号,北京市东城区帅府园1号,0.0,"分析过程：
+
+评分标准：  
+- 参考答案和模型回答语义相同或者指向的实体一致即可，得1分。
+- 当参考答案中有多个医院电话时，模型回答是参考答案的子集也得1分。
+- 只要电话不符且无语义对应，则得0分。
+
+逐条分析：
+
+idx_0：  
+- 模型回答电话是010-82266114  
+- 参考答案电话是010-82266699  
+- 电话不相同，也不是参考答案的子集或者同义表达。  
+- 视为不符，得0分。
+
+idx_1：  
+- 模型回答电话010-65105000  
+- 参考答案电话010-69151188（东单院区）、69158100（西单院区）  
+- 参考答案有两个号码，模型回答与参考答案均不匹配也非子集。  
+- 电话完全不同，得0分。
+
+idx_2：  
+- 模型回答电话010-64277691  
+- 参考答案电话010-52276699  
+- 电话号不一致，也非子集，没有语义对应。  
+- 0分。
+
+idx_3：  
+- 模型回答电话010-83227295  
+- 参考答案电话010-83572211  
+- 电话不一致，非子集，得0分。
+
+idx_4：  
+- 模型回答电话010-65264315  
+- 参考答案电话010-85231777  
+- 电话不同，得0分。
+
+综合上述，5个回答均未匹配到参考电话，均得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",010-69151188（东单院区）、69158100（西单院区）,[010-65105000](tel:010-65105000)
+,,常规体外受精-胚胎移植技术,人工授精、体外受精-胚胎移植技术,首都医科大学附属北京妇产医院,首都医科大学附属北京妇产医院,1.0,key_match,1.0,key_match,1.0,"First, analyze each pair of response and standard answer according to the criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The answer must be roughly semantically the same or refer to the same entity as the reference answer; exact wording is not required.)
+
+Given:  
+For all idx from 0 to 4, the response is ""三级甲等"" and the target/standard answer is ""三甲"".
+
+Analysis:  
+- ""三甲"" is a common shorthand for ""三级甲等"" in Chinese hospital grading system terminology.  
+- Both terms refer to the same concept: the highest level (三级甲等) hospital rating.  
+- Therefore, the responses correctly capture the meaning and point to the same entity as the standard answers.
+
+Since the criterion is that semantic equivalence or entity consistency is sufficient, and the responses meet this, each item should receive a score of 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",三甲,三级甲等,0.0,"Let's analyze each pair individually according to the criterion:
+
+Criterion:  
+- Semantic equivalence or referring to the same entity is enough.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: 北京市海淀区花园北路49号  
+- Target: 北京市海淀区花园北路49号  
+- Exact match, so completely correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: 北京市东城区帅府园1号  
+- Target: 北京市西城区大木仓胡同41号  
+- Different districts: 东城区 vs 西城区  
+- Different streets and street numbers.  
+- Not semantically equivalent or referencing same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: 北京市朝阳区工体西路1号  
+- Target: 北京市朝阳区姚家园路251号  
+- Same district 朝阳区  
+- Different streets: 工体西路 vs 姚家园路 (completely different roads)  
+- Not same entity or semantically equivalent.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 北京市西城区西什库大街8号  
+- Target: 北京市西城区西安门大街1号  
+- Same district 西城区  
+- Different streets: 西什库大街 vs 西安门大街  
+- Different addresses, so not same entity.  
+Score: 0
+
+---
+
+**idx_4**  
+- Response: 北京市朝阳区工体南路8号  
+- Target: 北京市朝阳区工人体育场南路8号  
+- District is the same: 朝阳区  
+- The street names are very close: 工体南路 vs 工人体育场南路  
+- “工体南路” is a common short form for “工人体育场南路”, basically the same street, same number 8号  
+- Therefore, the addresses are semantically equivalent / refer to the same entity.  
+Score: 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",北京市朝阳区姚家园路251号,北京市朝阳区工体西路1号,0.0,"分析过程：
+
+评分标准：  
+- 参考答案和模型回答语义相同或者指向的实体一致即可，得1分。
+- 当参考答案中有多个医院电话时，模型回答是参考答案的子集也得1分。
+- 只要电话不符且无语义对应，则得0分。
+
+逐条分析：
+
+idx_0：  
+- 模型回答电话是010-82266114  
+- 参考答案电话是010-82266699  
+- 电话不相同，也不是参考答案的子集或者同义表达。  
+- 视为不符，得0分。
+
+idx_1：  
+- 模型回答电话010-65105000  
+- 参考答案电话010-69151188（东单院区）、69158100（西单院区）  
+- 参考答案有两个号码，模型回答与参考答案均不匹配也非子集。  
+- 电话完全不同，得0分。
+
+idx_2：  
+- 模型回答电话010-64277691  
+- 参考答案电话010-52276699  
+- 电话号不一致，也非子集，没有语义对应。  
+- 0分。
+
+idx_3：  
+- 模型回答电话010-83227295  
+- 参考答案电话010-83572211  
+- 电话不一致，非子集，得0分。
+
+idx_4：  
+- 模型回答电话010-65264315  
+- 参考答案电话010-85231777  
+- 电话不同，得0分。
+
+综合上述，5个回答均未匹配到参考电话，均得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",010-52276699,[010-64277691](tel:010-64277691)
+,,常规体外受精-胚胎移植技术,人工授精、体外受精-胚胎移植技术,北京大学第一医院,北京大学第一医院,1.0,key_match,1.0,key_match,1.0,"First, analyze each pair of response and standard answer according to the criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The answer must be roughly semantically the same or refer to the same entity as the reference answer; exact wording is not required.)
+
+Given:  
+For all idx from 0 to 4, the response is ""三级甲等"" and the target/standard answer is ""三甲"".
+
+Analysis:  
+- ""三甲"" is a common shorthand for ""三级甲等"" in Chinese hospital grading system terminology.  
+- Both terms refer to the same concept: the highest level (三级甲等) hospital rating.  
+- Therefore, the responses correctly capture the meaning and point to the same entity as the standard answers.
+
+Since the criterion is that semantic equivalence or entity consistency is sufficient, and the responses meet this, each item should receive a score of 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",三甲,三级甲等,0.0,"Let's analyze each pair individually according to the criterion:
+
+Criterion:  
+- Semantic equivalence or referring to the same entity is enough.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: 北京市海淀区花园北路49号  
+- Target: 北京市海淀区花园北路49号  
+- Exact match, so completely correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: 北京市东城区帅府园1号  
+- Target: 北京市西城区大木仓胡同41号  
+- Different districts: 东城区 vs 西城区  
+- Different streets and street numbers.  
+- Not semantically equivalent or referencing same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: 北京市朝阳区工体西路1号  
+- Target: 北京市朝阳区姚家园路251号  
+- Same district 朝阳区  
+- Different streets: 工体西路 vs 姚家园路 (completely different roads)  
+- Not same entity or semantically equivalent.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 北京市西城区西什库大街8号  
+- Target: 北京市西城区西安门大街1号  
+- Same district 西城区  
+- Different streets: 西什库大街 vs 西安门大街  
+- Different addresses, so not same entity.  
+Score: 0
+
+---
+
+**idx_4**  
+- Response: 北京市朝阳区工体南路8号  
+- Target: 北京市朝阳区工人体育场南路8号  
+- District is the same: 朝阳区  
+- The street names are very close: 工体南路 vs 工人体育场南路  
+- “工体南路” is a common short form for “工人体育场南路”, basically the same street, same number 8号  
+- Therefore, the addresses are semantically equivalent / refer to the same entity.  
+Score: 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",北京市西城区西安门大街1号,北京市西城区西什库大街8号,0.0,"分析过程：
+
+评分标准：  
+- 参考答案和模型回答语义相同或者指向的实体一致即可，得1分。
+- 当参考答案中有多个医院电话时，模型回答是参考答案的子集也得1分。
+- 只要电话不符且无语义对应，则得0分。
+
+逐条分析：
+
+idx_0：  
+- 模型回答电话是010-82266114  
+- 参考答案电话是010-82266699  
+- 电话不相同，也不是参考答案的子集或者同义表达。  
+- 视为不符，得0分。
+
+idx_1：  
+- 模型回答电话010-65105000  
+- 参考答案电话010-69151188（东单院区）、69158100（西单院区）  
+- 参考答案有两个号码，模型回答与参考答案均不匹配也非子集。  
+- 电话完全不同，得0分。
+
+idx_2：  
+- 模型回答电话010-64277691  
+- 参考答案电话010-52276699  
+- 电话号不一致，也非子集，没有语义对应。  
+- 0分。
+
+idx_3：  
+- 模型回答电话010-83227295  
+- 参考答案电话010-83572211  
+- 电话不一致，非子集，得0分。
+
+idx_4：  
+- 模型回答电话010-65264315  
+- 参考答案电话010-85231777  
+- 电话不同，得0分。
+
+综合上述，5个回答均未匹配到参考电话，均得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",010-83572211,[010-83227295](tel:010-83227295)
+,,常规体外受精-胚胎移植技术,人工授精、体外受精-胚胎移植技术,首都医科大学附属北京朝阳医院,首都医科大学附属北京朝阳医院,1.0,key_match,1.0,key_match,1.0,"First, analyze each pair of response and standard answer according to the criterion:
+
+Criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+(Translation: The answer must be roughly semantically the same or refer to the same entity as the reference answer; exact wording is not required.)
+
+Given:  
+For all idx from 0 to 4, the response is ""三级甲等"" and the target/standard answer is ""三甲"".
+
+Analysis:  
+- ""三甲"" is a common shorthand for ""三级甲等"" in Chinese hospital grading system terminology.  
+- Both terms refer to the same concept: the highest level (三级甲等) hospital rating.  
+- Therefore, the responses correctly capture the meaning and point to the same entity as the standard answers.
+
+Since the criterion is that semantic equivalence or entity consistency is sufficient, and the responses meet this, each item should receive a score of 1.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",三甲,三级甲等,1.0,"Let's analyze each pair individually according to the criterion:
+
+Criterion:  
+- Semantic equivalence or referring to the same entity is enough.  
+- No need for word-for-word matching.
+
+---
+
+**idx_0**  
+- Response: 北京市海淀区花园北路49号  
+- Target: 北京市海淀区花园北路49号  
+- Exact match, so completely correct.  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: 北京市东城区帅府园1号  
+- Target: 北京市西城区大木仓胡同41号  
+- Different districts: 东城区 vs 西城区  
+- Different streets and street numbers.  
+- Not semantically equivalent or referencing same entity.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: 北京市朝阳区工体西路1号  
+- Target: 北京市朝阳区姚家园路251号  
+- Same district 朝阳区  
+- Different streets: 工体西路 vs 姚家园路 (completely different roads)  
+- Not same entity or semantically equivalent.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: 北京市西城区西什库大街8号  
+- Target: 北京市西城区西安门大街1号  
+- Same district 西城区  
+- Different streets: 西什库大街 vs 西安门大街  
+- Different addresses, so not same entity.  
+Score: 0
+
+---
+
+**idx_4**  
+- Response: 北京市朝阳区工体南路8号  
+- Target: 北京市朝阳区工人体育场南路8号  
+- District is the same: 朝阳区  
+- The street names are very close: 工体南路 vs 工人体育场南路  
+- “工体南路” is a common short form for “工人体育场南路”, basically the same street, same number 8号  
+- Therefore, the addresses are semantically equivalent / refer to the same entity.  
+Score: 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",北京市朝阳区工人体育场南路8号,北京市朝阳区工体南路8号,0.0,"分析过程：
+
+评分标准：  
+- 参考答案和模型回答语义相同或者指向的实体一致即可，得1分。
+- 当参考答案中有多个医院电话时，模型回答是参考答案的子集也得1分。
+- 只要电话不符且无语义对应，则得0分。
+
+逐条分析：
+
+idx_0：  
+- 模型回答电话是010-82266114  
+- 参考答案电话是010-82266699  
+- 电话不相同，也不是参考答案的子集或者同义表达。  
+- 视为不符，得0分。
+
+idx_1：  
+- 模型回答电话010-65105000  
+- 参考答案电话010-69151188（东单院区）、69158100（西单院区）  
+- 参考答案有两个号码，模型回答与参考答案均不匹配也非子集。  
+- 电话完全不同，得0分。
+
+idx_2：  
+- 模型回答电话010-64277691  
+- 参考答案电话010-52276699  
+- 电话号不一致，也非子集，没有语义对应。  
+- 0分。
+
+idx_3：  
+- 模型回答电话010-83227295  
+- 参考答案电话010-83572211  
+- 电话不一致，非子集，得0分。
+
+idx_4：  
+- 模型回答电话010-65264315  
+- 参考答案电话010-85231777  
+- 电话不同，得0分。
+
+综合上述，5个回答均未匹配到参考电话，均得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",010-85231777,[010-65264315](tel:010-65264315)
+1.0,,卵胞浆内单精子显微注射技术,,中国医学科学院北京协和医院,,,,,,,,三甲,,,,北京市西城区大木仓胡同41号,,,,010-69151188（东单院区）、69158100（西单院区）,
+1.0,,夫精人工授精技术,,中国医学科学院北京协和医院,,,,,,,,三甲,,,,北京市西城区大木仓胡同41号,,,,010-69151188（东单院区）、69158100（西单院区）,
+1.0,,植入前胚胎遗传学诊断技术,,中国医学科学院北京协和医院,,,,,,,,三甲,,,,北京市西城区大木仓胡同41号,,,,010-69151188（东单院区）、69158100（西单院区）,
+1.0,,夫精人工授精技术,,北京中医药大学东方医院,,,,,,,,三甲,,,,北京市丰台区方庄芳星园一区6号楼,,,,010-67689655,
+1.0,,卵胞浆内单精子显微注射技术,,北京大学人民医院,,,,,,,,三甲,,,,北京市西城区西直门南大街11号,,,,010-88326666,
+1.0,,夫精人工授精技术,,北京大学人民医院,,,,,,,,三甲,,,,北京市西城区西直门南大街11号,,,,010-88326666,
+1.0,,常规体外受精-胚胎移植技术,,北京大学人民医院,,,,,,,,三甲,,,,北京市西城区西直门南大街11号,,,,010-88326666,
+1.0,,卵胞浆内单精子显微注射技术,,北京大学第一医院,,,,,,,,三甲,,,,北京市西城区西安门大街1号,,,,010-83572211,
+1.0,,夫精人工授精技术,,北京大学第一医院,,,,,,,,三甲,,,,北京市西城区西安门大街1号,,,,010-83572211,
+1.0,,供精人工授精技术,,北京大学第三医院,,,,,,,,三甲,,,,北京市海淀区花园北路49号,,,,010-82266699,
+1.0,,夫精人工授精技术,,北京大学第三医院,,,,,,,,三甲,,,,北京市海淀区花园北路49号,,,,010-82266699,
+1.0,,常规体外受精-胚胎移植技术,,北京大学第三医院,,,,,,,,三甲,,,,北京市海淀区花园北路49号,,,,010-82266699,
+1.0,,植入前胚胎遗传学诊断技术,,北京大学第三医院,,,,,,,,三甲,,,,北京市海淀区花园北路49号,,,,010-82266699,
+1.0,,卵胞浆内单精子显微注射技术,,北京家圆医院,,,,,,,,私立,,,,北京市西城区富国街2号及附楼,,,,nan,
+1.0,,夫精人工授精技术,,北京家圆医院,,,,,,,,私立,,,,北京市西城区富国街2号及附楼,,,,nan,
+1.0,,常规体外受精-胚胎移植技术,,北京家圆医院,,,,,,,,私立,,,,北京市西城区富国街2号及附楼,,,,nan,
+1.0,,卵胞浆内单精子显微注射技术,,北京家恩德运医院,,,,,,,,私立,,,,北京市海淀区知春路29号11栋,,,,nan,
+1.0,,夫精人工授精技术,,北京家恩德运医院,,,,,,,,私立,,,,北京市海淀区知春路29号11栋,,,,nan,
+1.0,,常规体外受精-胚胎移植技术,,北京家恩德运医院,,,,,,,,私立,,,,北京市海淀区知春路29号11栋,,,,nan,
+1.0,,卵胞浆内单精子显微注射技术,,北京市海淀区妇幼保健院,,,,,,,,三甲,,,,北京市海淀区苏州街53号,,,,010-62538899,
+1.0,,夫精人工授精技术,,北京市海淀区妇幼保健院,,,,,,,,三甲,,,,北京市海淀区苏州街53号,,,,010-62538899,
+1.0,,常规体外受精-胚胎移植技术,,北京市海淀区妇幼保健院,,,,,,,,三甲,,,,北京市海淀区苏州街53号,,,,010-62538899,
+,1.0,人类精子库,人类精子库,北京市计划生育科学研究所,北京市计划生育科学研究所,,,,,,,,nan,,,,北京市海淀区大慧寺路12号,,,,nan
+1.0,,卵胞浆内单精子显微注射技术,,北京美中宜和北三环妇儿医院,,,,,,,,私立,,,,北京市新街口外大街1号,,,,nan,
+1.0,,夫精人工授精技术,,北京美中宜和北三环妇儿医院,,,,,,,,私立,,,,北京市新街口外大街1号,,,,nan,
+1.0,,常规体外受精-胚胎移植技术,,北京美中宜和北三环妇儿医院,,,,,,,,私立,,,,北京市新街口外大街1号,,,,nan,
+1.0,,供精人工授精技术,,国家卫生健康委科学技术研究所门诊部,,,,,,,,三甲,,,,北京市海淀区大慧寺路12号,,,,010-62115671、62173437,
+1.0,,夫精人工授精技术,,国家卫生健康委科学技术研究所门诊部,,,,,,,,三甲,,,,北京市海淀区大慧寺路12号,,,,010-62115671、62173437,
+1.0,,卵胞浆内单精子显微注射技术,,战略支援部队特色医学中心,,,,,,,,三甲,,,,北京市朝阳区安翔北里9号,,,,010-66356729(总机)、66356100(院总值班)、66356308(医疗值班),
+1.0,,夫精人工授精技术,,战略支援部队特色医学中心,,,,,,,,三甲,,,,北京市朝阳区安翔北里9号,,,,010-66356729(总机)、66356100(院总值班)、66356308(医疗值班),
+1.0,,常规体外受精-胚胎移植技术,,战略支援部队特色医学中心,,,,,,,,三甲,,,,北京市朝阳区安翔北里9号,,,,010-66356729(总机)、66356100(院总值班)、66356308(医疗值班),
+1.0,,卵胞浆内单精子显微注射技术,,火箭军特色医学中心,,,,,,,,三甲,,,,北京市西城区新街口外大街16号,,,,010-66343337、66343114,
+1.0,,夫精人工授精技术,,火箭军特色医学中心,,,,,,,,三甲,,,,北京市西城区新街口外大街16号,,,,010-66343337、66343114,
+1.0,,常规体外受精-胚胎移植技术,,火箭军特色医学中心,,,,,,,,三甲,,,,北京市西城区新街口外大街16号,,,,010-66343337、66343114,
+1.0,,卵胞浆内单精子显微注射技术,,空军特色医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路30号,,,,010-66928118(总机)、68410099(随访咨询)、010-66928200(门诊咨询),
+1.0,,夫精人工授精技术,,空军特色医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路30号,,,,010-66928118(总机)、68410099(随访咨询)、010-66928200(门诊咨询),
+1.0,,常规体外受精-胚胎移植技术,,空军特色医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路30号,,,,010-66928118(总机)、68410099(随访咨询)、010-66928200(门诊咨询),
+1.0,,卵胞浆内单精子显微注射技术,,解放军总医院第一医学中心,,,,,,,,三甲,,,,北京市海淀区复兴路28号,,,,010-68182255,
+1.0,,夫精人工授精技术,,解放军总医院第一医学中心,,,,,,,,三甲,,,,北京市海淀区复兴路28号,,,,010-68182255,
+1.0,,常规体外受精-胚胎移植技术,,解放军总医院第一医学中心,,,,,,,,三甲,,,,北京市海淀区复兴路28号,,,,010-68182255,
+1.0,,植入前胚胎遗传学诊断技术,,解放军总医院第一医学中心,,,,,,,,三甲,,,,北京市海淀区复兴路28号,,,,010-68182255,
+1.0,,卵胞浆内单精子显微注射技术,,解放军总医院第七医学中心,,,,,,,,三甲,,,,北京市东城区东四十条南门仓5号,,,,010-66721629,
+1.0,,夫精人工授精技术,,解放军总医院第七医学中心,,,,,,,,三甲,,,,北京市东城区东四十条南门仓5号,,,,010-66721629,
+1.0,,常规体外受精-胚胎移植技术,,解放军总医院第七医学中心,,,,,,,,三甲,,,,北京市东城区东四十条南门仓5号,,,,010-66721629,
+1.0,,供精人工授精技术,,解放军总医院第六医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路6号,,,,010-66958114、66958322,
+1.0,,卵胞浆内单精子显微注射技术,,解放军总医院第六医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路6号,,,,010-66958114、66958322,
+1.0,,夫精人工授精技术,,解放军总医院第六医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路6号,,,,010-66958114、66958322,
+1.0,,常规体外受精-胚胎移植技术,,解放军总医院第六医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路6号,,,,010-66958114、66958322,
+1.0,,植入前胚胎遗传学诊断技术,,解放军总医院第六医学中心,,,,,,,,三甲,,,,北京市海淀区阜成路6号,,,,010-66958114、66958322,
+1.0,,卵胞浆内单精子显微注射技术,,首都医科大学附属北京妇产医院,,,,,,,,三甲,,,,北京市朝阳区姚家园路251号,,,,010-52276699,
+1.0,,夫精人工授精技术,,首都医科大学附属北京妇产医院,,,,,,,,三甲,,,,北京市朝阳区姚家园路251号,,,,010-52276699,
+1.0,,供精人工授精技术,,首都医科大学附属北京朝阳医院,,,,,,,,三甲,,,,北京市朝阳区工人体育场南路8号,,,,010-85231777,
+1.0,,卵胞浆内单精子显微注射技术,,首都医科大学附属北京朝阳医院,,,,,,,,三甲,,,,北京市朝阳区工人体育场南路8号,,,,010-85231777,
+1.0,,夫精人工授精技术,,首都医科大学附属北京朝阳医院,,,,,,,,三甲,,,,北京市朝阳区工人体育场南路8号,,,,010-85231777,

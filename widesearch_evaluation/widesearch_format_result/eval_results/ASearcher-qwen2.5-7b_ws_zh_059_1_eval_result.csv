@@ -1,0 +1,6378 @@
+exist_flag_gt,exist_flag_response,产品名称,产品名称_before_map,产品名称_exact_match,产品名称_exact_match_eval_msg,容量_llm_judge,容量_llm_judge_eval_msg,容量_query,容量_response,容量对应售价（美元）_llm_judge,容量对应售价（美元）_llm_judge_eval_msg,容量对应售价（美元）_query,容量对应售价（美元）_response,核心新增技术/功能_llm_judge,核心新增技术/功能_llm_judge_eval_msg,核心新增技术/功能_query,核心新增技术/功能_response,首发年份_exact_match,首发年份_exact_match_eval_msg,首发年份_query,首发年份_response
+,,iphone4,iPhone 4,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/32gb,8gb/16gb/32gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",199$/299$,$199/299/399,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",retina显示屏，首次加入led闪光灯,"retinadisplay,a5processor,8mpcamera",1.0,"exact match, response: 2010, target: 2010",2010,2010
+,,iphone4s,iPhone 4S,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/32gb/64gb,8gb/16gb/32gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",199$/299$/399$,$199/299/399,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",引入siri语音助手,"a5xprocessor,8mpcamera,siri",1.0,"exact match, response: 2011, target: 2011",2011,2011
+,,iphone5,iPhone 5,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/32gb/64gb,16gb/32gb/64gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",199$/299$/399$,$199/299/399,0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",采用新的lightning接口，首次使用nano-sim卡,"retinadisplay,a6processor,8mpcamera,lte",1.0,"exact match, response: 2012, target: 2012",2012,2012
+,,iphone5s,iPhone 5S,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/32gb/64gb,16gb/32gb/64gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",199$/299$/399$,$199/299/399,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",首次引入touchid指纹识别,"a7processor,touchid,m7coprocessor,8mpcamera",1.0,"exact match, response: 2013, target: 2013",2013,2013
+,,iphone6,iPhone 6,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/64gb/128gb,16gb/32gb/128gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",199$/299$/399$,$199/299/449,0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",首次支持nfc和applepay,"retinahddisplay,a8processor,8mpcamera,lteadvanced",1.0,"exact match, response: 2014, target: 2014",2014,2014
+,,iphone6plus,iPhone 6 Plus,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/64gb/128gb,16gb/64gb/128gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",299$/399$/499$,$299/449/549,0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",首次支持nfc和applepay,"large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced",1.0,"exact match, response: 2014, target: 2014",2014,2014
+,,iphone6s,iPhone 6S,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/64gb/128gb,16gb/32gb/128gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",199$/299$/399$,$449/549/649,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",引入3dtouch触控技术,"3dtouch,a9processor,12mpcamera,applepay",1.0,"exact match, response: 2015, target: 2015",2015,2015
+,,iphone6splus,iPhone 6S Plus,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",16gb/64gb/128gb,16gb/32gb/128gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",299$/399$/499$,$549/649/749,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",引入3dtouch触控技术,"large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay",1.0,"exact match, response: 2015, target: 2015",2015,2015
+,,iphone7,iPhone 7,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",32gb/128gb/256gb,32gb/128gb/256gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",649$/749$/849$,$399/499/649,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头,"a10fusionprocessor,12mpcamera,waterresistant,touchid",1.0,"exact match, response: 2016, target: 2016",2016,2016
+,,iphone7plus,iPhone 7 Plus,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",32gb/128gb/256gb,32gb/128gb/256gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",769$/869$/969$,$539/639/739,1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头,"large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid",1.0,"exact match, response: 2016, target: 2016",2016,2016
+,,iphone8,iPhone 8,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",64gb/256gb,64gb/256gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",699$/849$,$699/849,0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",玻璃后盖支持无线充电,"a11bionicprocessor,12mpcamera,waterresistant,faceid",1.0,"exact match, response: 2017, target: 2017",2017,2017
+,,iphone8plus,iPhone 8 Plus,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",64gb/256gb,64gb/256gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",799$/949$,$799/949,0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",玻璃后盖支持无线充电,"large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid",1.0,"exact match, response: 2017, target: 2017",2017,2017
+,,iphonex,iPhone X,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",64gb/256gb,64gb/256gb/512gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",999$/1149$,"$999/1,149/1,349",1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",全面屏设计，引入faceid人脸识别,"5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji",1.0,"exact match, response: 2017, target: 2017",2017,2017
+,,iphonexr,iPhone XR,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",64gb/128gb/256gb,64gb/128gb/256gb,0.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",749$/799$/899$,"$749/849/1,099",1.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",全面屏设计，引入faceid人脸识别，液态视网膜显示屏,"liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant",1.0,"exact match, response: 2018, target: 2018",2018,2018
+,,iphonexs,iPhone XS,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",64gb/256gb/512gb,64gb/256gb/512gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",999$/1149$/1349$,"$999/1,149/1,349",0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",首次支持双卡，引入smarthdr摄影技术,"a12bionicprocessor,12mpcamera,faceid,wirelesscharging",1.0,"exact match, response: 2018, target: 2018",2018,2018
+,,iphonexsmax,iPhone XS Max,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+In other words, if the response mentions the same capacity values/entities as the target answer (irrespective of order or extra items), it should be scored 1. If they are significantly different or missing important items, score 0.
+
+---
+
+**idx_0**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb  
+Analysis: Response includes 16gb and 32gb but adds 8gb which is not in the target. Since the criterion allows roughly the same meaning or pointing to the same entities, but 8gb is an additional item not in the target. The key is whether the additional 8gb causes the meaning not matching or not. The target does not mention 8gb, so response includes extra capacity (*8gb*). The criterion does not explicitly disallow extra items. Given that response includes all target capacities (16gb and 32gb), this should be acceptable. Score = 1.
+
+---
+
+**idx_1**  
+Response: 8gb/16gb/32gb  
+Target: 16gb/32gb/64gb  
+Response misses 64gb, but includes extra 8gb. Missing a target entity (64gb) is likely failure to meet criterion. Score = 0.
+
+---
+
+**idx_2**  
+Response: 16gb/32gb/64gb  
+Target: 16gb/32gb/64gb  
+Exact match. Score =1.
+
+---
+
+**idx_3**  
+Same as idx_2. Score = 1.
+
+---
+
+**idx_4**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Response has 32gb and target has 64gb instead. Both share 16gb and 128gb, but differ on the second capacity. 32gb vs 64gb. This is a mismatch in one important entity. According to the criterion, a mismatch on the entity means they don't point to the same entity. Score = 0.
+
+---
+
+**idx_5**  
+Response: 16gb/64gb/128gb  
+Target: 16gb/64gb/128gb  
+Exact match. Score =1.
+
+---
+
+**idx_6**  
+Response: 16gb/32gb/128gb  
+Target: 16gb/64gb/128gb  
+Same as idx_4 case; 32gb vs 64gb mismatch. Score = 0.
+
+---
+
+**idx_7**  
+Same as idx_6. Score = 0.
+
+---
+
+**idx_8**  
+Response: 32gb/128gb/256gb  
+Target: 32gb/128gb/256gb  
+Exact match. Score = 1.
+
+---
+
+**idx_9**  
+Same as idx_8. Score = 1.
+
+---
+
+**idx_10**  
+Response: 64gb/256gb  
+Target: 64gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_11**  
+Same as idx_10. Score =1.
+
+---
+
+**idx_12**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb  
+Response includes extra 512gb. According to criterion, extra is allowed if the response covers the target entities. Here response contains all of target and extra 512gb. Score =1.
+
+---
+
+**idx_13**  
+Response: 64gb/128gb/256gb  
+Target: 64gb/128gb/256gb  
+Exact match. Score =1.
+
+---
+
+**idx_14**  
+Response: 64gb/256gb/512gb  
+Target: 64gb/256gb/512gb  
+Exact match. Score =1.
+
+---
+
+**idx_15**  
+Same as idx_14. Score=1.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 1,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",64gb/256gb/512gb,64gb/256gb/512gb,1.0,"Let's analyze each idx pair step by step according to the criterion:
+
+Criterion: The response should be semantically roughly the same or refer to the same entities as the target. Perfect character-wise matching is not required.
+
+---
+
+**idx_0**  
+- Response: '$199/299/399'  
+- Target: '199$/299$'  
+Comparison: Target lists two prices: 199$ and 299$. Response lists three prices: 199, 299, 399 (no dollar sign). The first two prices match exactly. The added third price (399) is extra but does not conflict. The response covers the target prices correctly.  
+Conclusion: semantically consistent with target (at least same entities).  
+Score: 1
+
+---
+
+**idx_1**  
+- Response: '$199/299/399'  
+- Target: '199$/299$/399$'  
+Comparison: Target includes three prices: 199, 299, 399 (with $). Response lists the exact three prices, no $ but criterion says exact character matching is not required. Entities match exactly.  
+Score: 1
+
+---
+
+**idx_2**  
+- Same as idx_1.  
+Response and target same as idx_1.  
+Score: 1
+
+---
+
+**idx_3**  
+- Same as idx_1 & 2.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: '$199/299/449'  
+- Target: '199$/299$/399$'  
+Comparison: Response gives prices 199, 299, 449. Target has 199, 299, 399. The first two prices consistent, but the third price is different (449 vs 399). According to the criterion, entities should be roughly the same / point to the same entity. The discrepancy here is significant because the third price is off.  
+Score: 0 (not the same entities for the last price)
+
+---
+
+**idx_5**  
+- Response: '$299/449/549'  
+- Target: '299$/399$/499$'  
+Comparison: Response prices are 299, 449, 549; target prices 299, 399, 499. Only first price matches; 2nd and 3rd prices are different (449 vs 399, 549 vs 499). Different entities.  
+Score: 0
+
+---
+
+**idx_6**  
+- Response: '$449/549/649'  
+- Target: '199$/299$/399$'  
+All three prices are different. No overlap. Different entities.  
+Score: 0
+
+---
+
+**idx_7**  
+- Response: '$549/649/749'  
+- Target: '299$/399$/499$'  
+No overlapping prices. Different entities.  
+Score: 0
+
+---
+
+**idx_8**  
+- Response: '$399/499/649'  
+- Target: '649$/749$/849$'  
+Response starts with 399/499, target starts with 649/749. Only 649 appears in response last but the sets differ in the first two prices. Because majority prices differ and the entities pointed to are different, we consider them different.  
+Score: 0
+
+---
+
+**idx_9**  
+- Response: '$539/639/739'  
+- Target: '769$/869$/969$'  
+No overlap in prices at all. Different entities.  
+Score: 0
+
+---
+
+**idx_10**  
+- Response: '$699/849'  
+- Target: '699$/849$'  
+Same two prices, dollar signs are irrelevant.  
+Score: 1
+
+---
+
+**idx_11**  
+- Response: '$799/949'  
+- Target: '799$/949$'  
+Same prices.  
+Score: 1
+
+---
+
+**idx_12**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$'  
+Target has two prices: 999 and 1149 (no comma), response has three prices: 999, 1,149, 1,349. The first two prices (999 and 1149/1,149) are roughly the same, with just a comma difference which is acceptable by criterion. The third price 1,349 is extra but doesn't conflict.  
+Score: 1
+
+---
+
+**idx_13**  
+- Response: '$749/849/1,099'  
+- Target: '749$/799$/899$'  
+Response prices: 749, 849, 1099  
+Target prices: 749, 799, 899  
+Only the first price matches; the other two are different. So entities differ for majority of the prices.  
+Score: 0
+
+---
+
+**idx_14**  
+- Response: '$999/1,149/1,349'  
+- Target: '999$/1149$/1349$'  
+Three prices match exactly, commas vs no commas ignored, dollar sign ignored.  
+Score: 1
+
+---
+
+**idx_15**  
+- Response: '$1,099/1,249/1,449'  
+- Target: '1099$/1249$/1449$'  
+Same as idx_14 structure—same digits, commas vs none ignored.  
+Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 0,
+  ""idx_14"": 1,
+  ""idx_15"": 1
+}
+```",1099$/1249$/1449$,"$1,099/1,249/1,449",0.0,"分析过程：
+
+根据评分标准，只要语义相同大致、或者指向的实体一致，即可判定为正确，得1分；否则0分。
+
+逐条分析：
+
+idx_0：
+- Target：retina显示屏，首次加入led闪光灯
+- Response：retinadisplay,a5processor,8mpcamera
+  - 有retina显示屏，虽然没有led闪光灯，但只答出其中一个“retina显示屏”即符合标准，得1分。
+
+idx_1：
+- Target：引入siri语音助手
+- Response：a5xprocessor,8mpcamera,siri
+  - 包含siri，符合，得1分。
+
+idx_2：
+- Target：采用新的lightning接口，首次使用nano-sim卡
+- Response：retinadisplay,a6processor,8mpcamera,lte
+  - 无lightning接口和nano-sim卡相关信息，不符，0分。
+
+idx_3：
+- Target：首次引入touchid指纹识别
+- Response：a7processor,touchid,m7coprocessor,8mpcamera
+  - 包含touchid，符合，1分。
+
+idx_4：
+- Target：首次支持nfc和applepay
+- Response：retinahddisplay,a8processor,8mpcamera,lteadvanced
+  - 无nfc和applepay相关信息，不符，0分。
+
+idx_5：
+- Target：首次支持nfc和applepay
+- Response：large5.5-inchdisplay,a8processor,8mpcamera,lteadvanced
+  - 同样无nfc和applepay相关信息，0分。
+
+idx_6：
+- Target：引入3dtouch触控技术
+- Response：3dtouch,a9processor,12mpcamera,applepay
+  - 包含3dtouch，符合，1分。
+
+idx_7：
+- Target：引入3dtouch触控技术
+- Response：large5.5-inchdisplay,3dtouch,a9processor,12mpcamera,applepay
+  - 同上，包含3dtouch，符合，1分。
+
+idx_8：
+- Target：取消3.5mm耳机插孔，支持ip67级防尘防水，首次引入双立体声外放，首次配备双摄像头
+- Response：a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 只包含waterresistant（防水），但未指明防尘和耳机插孔取消，双立体声外放，双摄等信息缺失
+  - 但评分标准只需语义大致相同或指向实体一致，waterresistant指向防水，响应信息未体现全部target内容，只有部分信息重合
+  - 题目“只答出其中一个可算对”，这里只需包含其中一个“取消3.5mm耳机插孔”、“支持ip67防尘防水”、“首次引入双立体声外放”、“首次配备双摄像头”的实体即可
+  - 包含waterresistant，相当于“支持ip67级防尘防水”的一部分，符合标准，得1分。
+
+idx_9：
+- Target与idx_8相同
+- Response：large5.5-inchdisplay,a10fusionprocessor,12mpcamera,waterresistant,touchid
+  - 同理，包含waterresistant，符合，1分。
+
+idx_10：
+- Target：玻璃后盖支持无线充电
+- Response：a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - Response无提到无线充电或玻璃后盖，只有防水和faceid
+  - 不符，0分。
+
+idx_11：
+- Target同上
+- Response：large5.5-inchdisplay,a11bionicprocessor,12mpcamera,waterresistant,faceid
+  - 同idx_10，未提及无线充电，0分。
+
+idx_12：
+- Target：全面屏设计，引入faceid人脸识别
+- Response：5.8-incholeddisplay,a11bionicprocessor,12mpcamera,faceid,animoji
+  - 包含faceid，5.8寸oled显示屏对应全面屏设计，符合，1分。
+
+idx_13：
+- Target：全面屏设计，引入faceid人脸识别，液态视网膜显示屏
+- Response：liquidretinadisplay,a12bionicprocessor,12mpcamera,faceid,waterresistant
+  - 包含liquidretina显示屏（液态视网膜）、faceid、全面屏设计（liquidretina一般指全面屏）
+  - 大致符合，1分。
+
+idx_14：
+- Target：首次支持双卡，引入smarthdr摄影技术
+- Response：a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 无双卡和smarthdr信息，不符，0分。
+
+idx_15：
+- Target同上
+- Response：large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging
+  - 同上，0分。
+
+综上评分如下：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 0,
+  ""idx_15"": 0
+}
+```",首次支持双卡，引入smarthdr摄影技术,"large6.5-inchdisplay,a12bionicprocessor,12mpcamera,faceid,wirelesscharging",1.0,"exact match, response: 2018, target: 2018",2018,2018
+1.0,,iphone,,,,,,4gb/8gb,,,,499$/599$,,,,划时代机型，触摸屏设计,,,,2007,
+1.0,,iphone11,,,,,,64gb/128gb/256gb,,,,699$/749$/849$,,,,引入超广角摄像头、夜间模式、u1芯片支持超宽带技术,,,,2019,
+1.0,,iphone11pro,,,,,,64gb/256gb/512gb,,,,999$/1149$/1349$,,,,引入超广角摄像头、夜间模式、u2芯片支持超宽带技术,,,,2019,
+1.0,,iphone11promax,,,,,,64gb/256gb/512gb,,,,1099$/1249$/1449$,,,,引入超广角摄像头、夜间模式、u3芯片支持超宽带技术,,,,2019,
+1.0,,iphone12,,,,,,64gb/128gb/256gb,,,,799$/849$/949$,,,,5g网络支持、引入magsafe磁吸充电,,,,2020,
+1.0,,iphone12pro,,,,,,128gb/256gb/512gb,,,,999$/1099$/1299$,,,,5g网络支持、引入magsafe磁吸充电、激光雷达扫描仪、新增了appleproraw技术,,,,2020,
+1.0,,iphone12promax,,,,,,128gb/256gb/512gb,,,,1099$/1199$/1399$,,,,5g网络支持、引入magsafe磁吸充电、激光雷达扫描仪、新增了appleproraw技术,,,,2020,
+1.0,,iphone13,,,,,,128gb/256gb/512gb,,,,799$/899$/1099$,,,,引入电影效果模式拍摄,,,,2021,
+1.0,,iphone13pro,,,,,,128gb/256gb/512gb/1t,,,,999$/1099$/1299$/1499$,,,,引入promotion显示屏,,,,2021,
+1.0,,iphone13promax,,,,,,128gb/256gb/512gb/1t,,,,1099$/1199$/1399$/1599$,,,,引入promotion显示屏,,,,2021,
+1.0,,iphone14,,,,,,128gb/256gb/512gb,,,,799$/899$/1099$,,,,车祸检测、卫星通信,,,,2022,
+1.0,,iphone14plus,,,,,,128gb/256gb/512gb,,,,899$/999$/1199$,,,,灵动岛和全天候显示、车祸检测、卫星通信,,,,2022,
+1.0,,iphone14pro,,,,,,128gb/256gb/512gb/1t,,,,999$/1099$/1299$/1499$,,,,灵动岛和全天候显示，运动模式视频防抖,,,,2022,
+1.0,,iphone14promax,,,,,,128gb/256gb/512gb/1t,,,,1099$/1199$/1399$/1599$,,,,灵动岛和全天候显示，运动模式视频防抖,,,,2022,
+1.0,,iphone15,,,,,,128gb/256gb/512gb,,,,799$/899$/1099$,,,,usb-c替代lightning接口，钛金属边框,,,,2023,
+1.0,,iphone15plus,,,,,,128gb/256gb/512gb,,,,899$/999$/1199$,,,,usb-c替代lightning接口，钛金属边框,,,,2023,
+1.0,,iphone15pro,,,,,,128gb/256gb/512gb/1t,,,,999$/1099$/1299$/1499$,,,,usb-c替代lightning接口，钛金属边框、3nm工艺a17pro芯片,,,,2023,
+1.0,,iphone15promax,,,,,,256gb/512gb/1t,,,,1199$/1399$/1599$,,,,usb-c替代lightning接口，钛金属边框、3nm工艺a17pro芯片,,,,2023,
+1.0,,iphone16,,,,,,128gb/256gb/512gb,,,,799$/899$/1099$,,,,appleintelligence(含视觉智能visualintelligence功能)，侧边相机控制,,,,2024,
+1.0,,iphone16plus,,,,,,128gb/256gb/512gb,,,,899$/999$/1199$,,,,appleintelligence(含视觉智能visualintelligence功能)，侧边相机控制,,,,2024,
+1.0,,iphone16pro,,,,,,128gb/256gb/512gb/1t,,,,999$/1099$/1299$/1499$,,,,appleintelligence(含视觉智能visualintelligence功能)，侧边相机控制,,,,2024,
+1.0,,iphone16promax,,,,,,256gb/512gb/1t,,,,1199$/1399$/1599$,,,,appleintelligence(含视觉智能visualintelligence功能)，侧边相机控制,,,,2024,
+1.0,,iphone3g,,,,,,8gb/16gb,,,,199$/299$,,,,支持3g网络、appstore开启软件时代,,,,2008,
+1.0,,iphone3gs,,,,,,8gb/16gb/32gb,,,,99$/199$/299$,,,,首次引入语音控制功能，还增加了视频录制和数字罗盘,,,,2009,
+,1.0,iphone5c,iPhone 5C,,,,,,8gb/16gb/32gb,,,,$99/149/199,,,,"plasticframe,lte,touchid",,,,2013

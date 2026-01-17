@@ -1,0 +1,97 @@
+exist_flag_gt,exist_flag_response,releasedate,releasedate_before_map,batterycapacity_exact_match,batterycapacity_exact_match_eval_msg,batterycapacity_query,batterycapacity_response,cpucorecount_exact_match,cpucorecount_exact_match_eval_msg,cpucorecount_query,cpucorecount_response,cpumanufacturingprocess_exact_match,cpumanufacturingprocess_exact_match_eval_msg,cpumanufacturingprocess_query,cpumanufacturingprocess_response,cpumodel_llm_judge,cpumodel_llm_judge_eval_msg,cpumodel_query,cpumodel_response,highestcameraresolution_exact_match,highestcameraresolution_exact_match_eval_msg,highestcameraresolution_query,highestcameraresolution_response,launchprice(usd)_number_near,launchprice(usd)_number_near_eval_msg,launchprice(usd)_query,launchprice(usd)_response,modelname_llm_judge,modelname_llm_judge_eval_msg,modelname_query,modelname_response,pre-installedos_llm_judge,pre-installedos_llm_judge_eval_msg,pre-installedos_query,pre-installedos_response,processorbrand_exact_match,processorbrand_exact_match_eval_msg,processorbrand_query,processorbrand_response,ramsize_exact_match,ramsize_exact_match_eval_msg,ramsize_query,ramsize_response,releasedate_exact_match,releasedate_exact_match_eval_msg,resolution_llm_judge,resolution_llm_judge_eval_msg,resolution_query,resolution_response,screensize_llm_judge,screensize_llm_judge_eval_msg,screensize_query,screensize_response,storagesize_exact_match,storagesize_exact_match_eval_msg,storagesize_query,storagesize_response
+,,2015-04-10,2015-04-10,1.0,"exact match, response: 2550mah, target: 2550mah",2550mah,2550mah,1.0,"exact match, response: 8-core, target: 8-core",8-core,8-core,1.0,"exact match, response: 14nm, target: 14nm",14nm,14nm,1.0,"Analysis:
+
+- idx_0:
+  - Target answer: ""exynos7420""
+  - Response: ""exynos7420""
+  - The response exactly matches the target.
+  - According to the criterion, an exact match or approximate same semantics pointing to the same entity is sufficient for full score.
+  - Therefore, score = 1.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1
+}
+```",exynos7420,exynos7420,1.0,"exact match, response: 16mp, target: 16mp",16mp,16mp,0.0,"number not near, response: 649.0, target: 699.0",699.0,649,1.0,"Let's analyze the pair step-by-step according to the grading criteria:
+
+- The reference answer (target) is ""galaxys6"".
+- The response is ""galaxys6"".
+- The criterion states that semantics only need to be approximately the same or pointing to the same entity. Exact word-for-word match is not required, but since the response is identical, it perfectly matches the target.
+- Therefore, the response is completely correct.
+
+Final score: 1
+
+```json
+{
+  ""idx_0"": 1
+}
+```",galaxys6,galaxys6,1.0,"Let's analyze the pair with idx_0:
+
+- Standard answer: ""android5""
+- Response: ""android5""
+
+According to the grading criteria, it is sufficient if the semantics are approximately the same or point to the same entity. Here, the response is exactly the same as the reference.
+
+Hence, the score should be 1.
+
+```json
+{
+    ""idx_0"": 1
+}
+```",android5,android5,1.0,"exact match, response: samsung, target: samsung",samsung,samsung,1.0,"exact match, response: 3gb, target: 3gb",3gb,3gb,1.0,key_match,0.0,"Let's analyze the response according to the criterion.
+
+Standard answer: ""2560x1440""  
+Response: ""1080x1920""
+
+- The criterion states that it is sufficient if the semantics are approximately the same or if they point to the same entity.
+- Both answers are referring to screen resolutions but the numbers are different.
+- ""2560x1440"" is a 1440p (QHD) resolution, typically landscape-oriented.
+- ""1080x1920"" corresponds to Full HD but in portrait orientation.  
+- These are not approximately the same numbers and do not point to the same entity; these are clearly different resolutions.
+
+Therefore, the response does not meet the criterion of being approximately the same or pointing at the same entity.
+
+Final score: 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",2560x1440,1080x1920,1.0,"Let's analyze the provided pair according to the grading criterion:
+
+- Standard answer: ""5.1inches""
+- Response: ""5.1\""""
+
+Analysis:
+- The response uses the symbol "" instead of writing ""inches,"" but this symbol is a common abbreviation for inches.
+- The numeric value ""5.1"" matches exactly.
+- Semantically, ""5.1\"""" and ""5.1inches"" refer to the same measurement.
+- According to the criterion, semantics being approximately the same and pointing to the same entity is sufficient.
+
+Therefore, the response can be considered correct.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1
+}
+```",5.1inches,"5.1""",0.0,"exact not match, response: 32gb/64gb/128gb, target: 32gb",32gb,32gb/64gb/128gb
+1.0,,2015-08-21,,,,3000mah,,,,8-core,,,,14nm,,,,exynos7octa7420,,,,16mp,,,,768.0,,,,galaxynote5,,,,android5,,,,samsung,,,,4gb,,,,,,1440x2560,,,,5.7inches,,,,32gb,
+1.0,,2016-03-11,,,,3000mah,,,,4-core,,,,14nm,,,,snapdragon820,,,,12mp,,,,699.0,,,,galaxys7,,,,android6,,,,qualcomm,,,,4gb,,,,,,2560×1440,,,,5.1inches,,,,32gb,
+1.0,,2016-08-19,,,,3500mah,,,,8-core,,,,14nm,,,,snapdragon820,,,,12mp,,,,849.0,,,,galaxynote7,,,,android6,,,,qualcomm,,,,4gb,,,,,,1440x2560,,,,5.7inches,,,,64gb,
+1.0,,2017-04-21,,,,3000mah,,,,8-core,,,,10nm,,,,snapdragon835,,,,12mp,,,,720.0,,,,galaxys8,,,,android7,,,,qualcomm,,,,4gb,,,,,,2960x1440,,,,5.8inches,,,,64gb,
+1.0,,2017-09-15,,,,3300mah,,,,8-core,,,,10nm,,,,snapdragon835,,,,12mp,,,,930.0,,,,galaxynote8,,,,android7,,,,qualcomm,,,,6gb,,,,,,2960x1440,,,,6.3inches,,,,64gb,
+1.0,,2018-03-16,,,,3000mah,,,,8-core,,,,10nm,,,,snapdragon845,,,,12mp,,,,719.99,,,,galaxys9,,,,android8,,,,qualcomm,,,,4gb,,,,,,2960x1440,,,,5.8inches,,,,64gb,
+1.0,,2018-08-24,,,,4000mah,,,,8-core,,,,10nm,,,,snapdragon845,,,,12mp,,,,999.0,,,,galaxynote9,,,,android8,,,,qualcomm,,,,6gb,,,,,,2960x1440,,,,6.4inches,,,,128gb,
+1.0,,2019-03-08,,,,3400mah,,,,8-core,,,,7nm,,,,snapdragon855,,,,16mp,,,,799.0,,,,galaxys10,,,,android9,,,,qualcomm,,,,8gb,,,,,,3040x1440,,,,6.1inches,,,,128gb,
+1.0,,2019-08-23,,,,3500mah,,,,8-core,,,,7nm,,,,snapdragon855,,,,16mp,,,,949.0,,,,galaxynote10,,,,android9,,,,qualcomm,,,,8gb,,,,,,2280×1080,,,,6.3inches,,,,256gb,
+1.0,,2020-03-06,,,,4000mah,,,,8-core,,,,7nm,,,,snapdragon865,,,,64mp,,,,999.0,,,,galaxys20,,,,android10,,,,qualcomm,,,,8gb,,,,,,3200×1440,,,,6.2inches,,,,128gb,
+1.0,,2020-08-21,,,,4300mah,,,,8-core,,,,7nm+,,,,snapdragon865plus,,,,64mp,,,,999.0,,,,galaxynote20,,,,android10,,,,qualcomm,,,,8gb,,,,,,2400x1080,,,,6.7inches,,,,128gb,
+1.0,,2021-01-29,,,,4000mah,,,,8-core,,,,5nm,,,,snapdragon888,,,,64mp,,,,799.99,,,,galaxys21,,,,android11,,,,qualcomm,,,,8gb,,,,,,2400x1080,,,,6.2inches,,,,128gb,
+1.0,,2022-02-25,,,,3700mah,,,,8-core,,,,4nm,,,,snapdragon8gen1,,,,50mp,,,,799.99,,,,galaxys22,,,,android12,,,,qualcomm,,,,8gb,,,,,,2340x1080,,,,6.1inches,,,,128gb,
+1.0,,2023-02-17,,,,3900mah,,,,8-core,,,,4nm,,,,snapdragon8gen2forgalaxy,,,,50mp,,,,799.99,,,,galaxys23,,,,android13,,,,qualcomm,,,,8gb,,,,,,2340x1080,,,,6.1inches,,,,128gb,
+1.0,,2024-01-31,,,,4000mah,,,,8-core,,,,4nm,,,,snapdragon8gen3,,,,50mp,,,,799.99,,,,galaxys24,,,,android14,,,,qualcomm,,,,8gb,,,,,,2340x1080,,,,6.2inches,,,,256gb,
+1.0,,2025-02-07,,,,4000mah,,,,8-core,,,,3nm,,,,snapdragon8eliteforgalaxy,,,,50mp,,,,799.0,,,,galaxys25,,,,android15,,,,qualcomm,,,,12gb,,,,,,2340x1080,,,,6.2inches,,,,128gb,

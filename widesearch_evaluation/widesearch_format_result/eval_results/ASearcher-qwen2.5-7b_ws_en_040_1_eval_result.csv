@@ -1,0 +1,2331 @@
+exist_flag_gt,exist_flag_response,rank,rank_before_map,year,year_before_map,app_llm_judge,app_llm_judge_eval_msg,app_query,app_response,category_llm_judge,category_llm_judge_eval_msg,category_query,category_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,downloads(million)_number_near,downloads(million)_number_near_eval_msg,downloads(million)_query,downloads(million)_response,parentcompany_llm_judge,parentcompany_llm_judge_eval_msg,parentcompany_query,parentcompany_response,rank_exact_match,rank_exact_match_eval_msg,year_exact_match,year_exact_match_eval_msg
+,,no.1,1,2020,2020,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",tiktok,tiktok,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",socialmedia,socialmedia,1.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",china,china,0.0,"number not near, response: 800.0, target: 850.0",850,800,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",bytedance,tencent,1.0,key_match,1.0,key_match
+,,no.2,2,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",whatsapp,tinder,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",messaging,dating,1.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,us,0.0,"number not near, response: 513.0, target: 600.0",600,513,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",meta,matchgroup,1.0,key_match,1.0,key_match
+,,no.3,3,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",facebook,youtube,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",socialmedia,videosharing,1.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,us,0.0,"number not near, response: 478.0, target: 540.0",540,478,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",meta,google,1.0,key_match,1.0,key_match
+,,no.4,4,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",instagram,disney+,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",socialmedia,streaming,1.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,us,0.0,"number not near, response: 314.0, target: 503.0",503,314,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",meta,waltdisneycompany,1.0,key_match,1.0,key_match
+,,no.5,5,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",zoom,tencentvideo,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",communication,streaming,0.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,china,0.0,"number not near, response: 300.0, target: 477.0",477,300,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",zoomvideocommunications,tencent,1.0,key_match,1.0,key_match
+,,no.6,6,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",messenger,piccoma,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",messaging,manga/novel,0.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,japan,0.0,"number not near, response: 289.0, target: 404.0",404,289,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",meta,kakaopiccomacorp,1.0,key_match,1.0,key_match
+,,no.7,7,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",snapchat,line,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",socialmedia,messaging,0.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,japan,1.0,"number near in range 5.0%, response: 270.0, target: 281.0",281,270,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```","snap,inc.",linecorp,1.0,key_match,1.0,key_match
+,,no.8,8,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",telegram,whatsapp,1.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",messaging,messaging,0.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",russia,us,1.0,"number near in range 5.0%, response: 250.0, target: 256.0",256,250,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",telegrammessengerllp,facebook,1.0,key_match,1.0,key_match
+,,no.9,9,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",googlemeet,facebook,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",communication,socialmedia,1.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,us,0.0,"number not near, response: 240.0, target: 254.0",254,240,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```",googlellc,meta,1.0,key_match,1.0,key_match
+,,no.10,10,2020,2020,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The semantics are approximately the same or point to the same entity.
+
+- idx_0: response = ""tiktok"", target = ""tiktok""
+  - Exact match.
+  - Score: 1
+
+- idx_1: response = ""tinder"", target = ""whatsapp""
+  - Different entities and different semantics.
+  - Score: 0
+
+- idx_2: response = ""youtube"", target = ""facebook""
+  - Different platforms, no semantic equivalence.
+  - Score: 0
+
+- idx_3: response = ""disney+"", target = ""instagram""
+  - Different entities.
+  - Score: 0
+
+- idx_4: response = ""tencentvideo"", target = ""zoom""
+  - Different entities.
+  - Score: 0
+
+- idx_5: response = ""piccoma"", target = ""messenger""
+  - Different entities.
+  - Score: 0
+
+- idx_6: response = ""line"", target = ""snapchat""
+  - Different entities.
+  - Score: 0
+
+- idx_7: response = ""whatsapp"", target = ""telegram""
+  - Different entities.
+  - Score: 0
+
+- idx_8: response = ""facebook"", target = ""googlemeet""
+  - Different entities.
+  - Score: 0
+
+- idx_9: response = ""googleplay"", target = ""netflix""
+  - Different entities.
+  - Score: 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",netflix,googleplay,0.0,"Let's analyze each pair item by item:
+
+- idx_0: response = ""socialmedia"", target = ""socialmedia""  
+  Exact match in semantics. Score = 1
+
+- idx_1: response = ""dating"", target = ""messaging""  
+  ""dating"" and ""messaging"" refer to different service categories. Not equivalent. Score = 0
+
+- idx_2: response = ""videosharing"", target = ""socialmedia""  
+  Videosharing is typically a subtype or overlaps with social media, but ""videosharing"" is more specific than ""socialmedia."" The criterion allows approximate semantics or pointing to the same entity. Videosharing platforms are social media platforms. So they are approximately the same entity category. Score = 1
+
+- idx_3: response = ""streaming"", target = ""socialmedia""  
+  Streaming usually refers to media delivery, whereas social media implies interactive platforms. They are related but not the same entity or close semantics. So no. Score = 0
+
+- idx_4: response = ""streaming"", target = ""communication""  
+  Streaming is a form of media consumption/delivery, communication is broader and often refers to chat, messaging etc. Not semantically the same or equivalent. Score = 0
+
+- idx_5: response = ""manga/novel"", target = ""messaging""  
+  Manga/novel is content category, messaging is communication type. Different entity. Score = 0
+
+- idx_6: response = ""messaging"", target = ""socialmedia""  
+  Messaging is a component or feature of social media, but not the same entity or category. Social media is broader. The criterion requires approximate or semantic equivalence. Not enough. Score = 0
+
+- idx_7: response = ""messaging"", target = ""messaging""  
+  Exact match. Score = 1
+
+- idx_8: response = ""socialmedia"", target = ""communication""  
+  Social media includes communication but communication is broader. Given ""socialmedia"" vs ""communication"" is not exactly the same but since the criterion allows approximate semantics or pointing to same entity, and communication is broader than social media, they are not approximately the same semantics. Social media is more specific than communication, so they are not pointing to same entity. Score = 0
+
+- idx_9: response = ""appstore"", target = ""entertainment""  
+  Appstore is a platform for distributing apps, entertainment is a category of content. They are different categories. Not semantically equivalent. Score = 0
+
+Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```",entertainment,appstore,1.0,"Let's analyze each response against the target according to the criterion:
+
+- Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for word-for-word correspondence.
+
+Item-by-item analysis:
+
+1. idx_0: response = ""china"", target = ""china""  
+   - Exact match. Score = 1
+
+2. idx_1: response = ""us"", target = ""usa""  
+   - ""us"" and ""usa"" point to the same entity (United States of America). Semantically equivalent. Score = 1
+
+3. idx_2: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+4. idx_3: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+5. idx_4: response = ""china"", target = ""usa""  
+   - Different entities. Score = 0
+
+6. idx_5: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+7. idx_6: response = ""japan"", target = ""usa""  
+   - Different entities. Score = 0
+
+8. idx_7: response = ""us"", target = ""russia""  
+   - Different entities. Score = 0
+
+9. idx_8: response = ""us"", target = ""usa""  
+   - Same as idx_1. Score = 1
+
+10. idx_9: response = ""us"", target = ""usa""  
+    - Same as idx_1. Score = 1
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1
+}
+```",usa,us,1.0,"number near in range 5.0%, response: 230.0, target: 223.0",223,230,0.0,"Let's analyze each pair item by item according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+
+---
+
+**idx_0**  
+Response: ""tencent""  
+Target: ""bytedance""  
+These are different companies, so not the same entity or semantics. Score: 0
+
+**idx_1**  
+Response: ""matchgroup""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_2**  
+Response: ""google""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_3**  
+Response: ""waltdisneycompany""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_4**  
+Response: ""tencent""  
+Target: ""zoomvideocommunications""  
+Different companies/entities. Score: 0
+
+**idx_5**  
+Response: ""kakaopiccomacorp""  
+Target: ""meta""  
+Different companies/entities. Score: 0
+
+**idx_6**  
+Response: ""linecorp""  
+Target: ""snap,inc.""  
+Different companies/entities. Score: 0
+
+**idx_7**  
+Response: ""facebook""  
+Target: ""telegrammessengerllp""  
+Different companies/entities. Score: 0
+
+**idx_8**  
+Response: ""meta""  
+Target: ""googlellc""  
+Different companies/entities. Score: 0
+
+**idx_9**  
+Response: ""google""  
+Target: ""netflix,inc.""  
+Different companies/entities. Score: 0
+
+---
+
+Since none of the responses point to the same entity or approximately the same semantics as the target, all scores are 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0
+}
+```","netflix,inc.",google,1.0,key_match,1.0,key_match
+1.0,,no.1,,2021,,,,tiktok,,,,socialmedia,,,,china,,,,656,,,,bytedance,,,,,
+1.0,,no.10,,2021,,,,spotify,,,,music,,,,swedish,,,,203,,,,spotifytechnologys.a.,,,,,
+1.0,,no.2,,2021,,,,instagram,,,,socialmedia,,,,usa,,,,545,,,,meta,,,,,
+1.0,,no.3,,2021,,,,facebook,,,,socialmedia,,,,usa,,,,416,,,,meta,,,,,
+1.0,,no.4,,2021,,,,whatsapp,,,,messaging,,,,usa,,,,395,,,,meta,,,,,
+1.0,,no.5,,2021,,,,telegram,,,,messaging,,,,russia,,,,329,,,,telegrammessengerllp,,,,,
+1.0,,no.6,,2021,,,,snapchat,,,,socialmedia,,,,usa,,,,327,,,,"snap,inc.",,,,,
+1.0,,no.7,,2021,,,,zoom,,,,communication,,,,usa,,,,300,,,,zoomvideocommunications,,,,,
+1.0,,no.8,,2021,,,,messenger,,,,messaging,,,,usa,,,,268,,,,meta,,,,,
+1.0,,no.9,,2021,,,,capcut,,,,photo&video,,,,china,,,,255,,,,bytedancepte.ltd.,,,,,
+1.0,,no.1,,2022,,,,tiktok,,,,socialmedia,,,,china,,,,672,,,,bytedance,,,,,
+1.0,,no.10,,2022,,,,spotify,,,,music,,,,swedish,,,,238,,,,spotifytechnologys.a.,,,,,
+1.0,,no.2,,2022,,,,instagram,,,,socialmedia,,,,usa,,,,548,,,,meta,,,,,
+1.0,,no.3,,2022,,,,whatsapp,,,,messaging,,,,usa,,,,424,,,,meta,,,,,
+1.0,,no.4,,2022,,,,capcut,,,,photo&video,,,,china,,,,357,,,,bytedancepte.ltd.,,,,,
+1.0,,no.5,,2022,,,,snapchat,,,,socialmedia,,,,usa,,,,330,,,,"snap,inc.",,,,,
+1.0,,no.6,,2022,,,,telegram,,,,messaging,,,,russia,,,,310,,,,telegrammessengerllp,,,,,
+1.0,,no.7,,2022,,,,subwaysurfers,,,,games,,,,denmark,,,,304,,,,sybogamesaps,,,,,
+1.0,,no.8,,2022,,,,facebook,,,,socialmedia,,,,usa,,,,298,,,,meta,,,,,
+1.0,,no.9,,2022,,,,stumbleguys,,,,games,,,,finland,,,,254,,,,"scopely,inc.",,,,,

@@ -1,0 +1,648 @@
+exist_flag_gt,exist_flag_response,modelname,modelname_before_map,aime2025_number_near,aime2025_number_near_eval_msg,aime2025_query,aime2025_response,company_llm_judge,company_llm_judge_eval_msg,company_query,company_response,contextwindow_llm_judge,contextwindow_llm_judge_eval_msg,contextwindow_query,contextwindow_response,modelname_exact_match,modelname_exact_match_eval_msg,swe-benchverified_number_near,swe-benchverified_number_near_eval_msg,swe-benchverified_query,swe-benchverified_response,tau-bench-airline_number_near,tau-bench-airline_number_near_eval_msg,tau-bench-airline_query,tau-bench-airline_response,tau-bench-retail_number_near,tau-bench-retail_number_near_eval_msg,tau-bench-retail_query,tau-bench-retail_response
+,,gemini2.5flash-lite-thinking,Gemini 2.5 Flash-Lite,0.0,"number not convertable, response: None, target: 0.631",63.10%,NULL,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response is scored 1 if the semantics are approximately the same or if they point to the same entity as the target.  
+- No requirement for word-for-word match.
+
+---
+
+**idx_0**  
+Response: ""google""  
+Target: ""google""  
+Same entity, exact match → score = 1
+
+**idx_1**  
+Response: ""openai""  
+Target: ""openai""  
+Same entity, exact match → score = 1
+
+**idx_2**  
+Response: ""anthropic""  
+Target: ""anthropic""  
+Same entity, exact match → score = 1
+
+**idx_3**  
+Response: ""bytedance""  
+Target: ""bytedance""  
+Same entity, exact match → score = 1
+
+**idx_4**  
+Response: ""deepseek""  
+Target: ""deepseek""  
+Same entity, exact match → score = 1
+
+---
+
+Final scores for all pairs are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```
+",google,google,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact wording, just roughly the same meaning.
+
+---
+
+**idx_0**  
+- Response: ""1,048,576""  
+- Target: ""1m"" (1 million, typically 1,000,000)
+
+Analysis:  
+- The response value ""1,048,576"" corresponds to 2^20, often called 1 megabyte in bytes, but numerically it is 1,048,576.  
+- The target ""1m"" likely stands for 1 million or 1,000,000.  
+- Semantically, 1,048,576 is roughly close to 1 million, often considered 1m in binary form contexts. The criterion says approximate semantics are sufficient.  
+- Here, the difference is about 4.8%, and in digital memory contexts 1m can mean 2^20. So by the criterion, this should be accepted.
+
+**Score:** 1
+
+---
+
+**idx_1**  
+- Response: ""200,000""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Both are exactly the same number expressed differently.  
+- Semantically identical.
+
+**Score:** 1
+
+---
+
+**idx_2**  
+- Response: ""1,048,576""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Response is 1,048,576, which is much larger than 200,000.  
+- They do not represent the same magnitude or entity.  
+- Not semantically the same.
+
+**Score:** 0
+
+---
+
+**idx_3**  
+- Response: ""64,000""  
+- Target: ""32k"" (32,000)
+
+Analysis:  
+- Response is double the target.  
+- They do not match semantically.  
+- The difference is large enough that they do not point to the same entity.
+
+**Score:** 0
+
+---
+
+**idx_4**  
+- Response: ""128,000""  
+- Target: ""128k"" (128,000)
+
+Analysis:  
+- Exactly the same number, different format.  
+- Semantically the same.
+
+**Score:** 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",1m,"1,048,576",1.0,key_match,0.0,"number not convertable, response: None, target: 0.276",27.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+,,o3mini,O3 Mini,0.0,"number not convertable, response: None, target: 0.865",86.50%,NULL,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response is scored 1 if the semantics are approximately the same or if they point to the same entity as the target.  
+- No requirement for word-for-word match.
+
+---
+
+**idx_0**  
+Response: ""google""  
+Target: ""google""  
+Same entity, exact match → score = 1
+
+**idx_1**  
+Response: ""openai""  
+Target: ""openai""  
+Same entity, exact match → score = 1
+
+**idx_2**  
+Response: ""anthropic""  
+Target: ""anthropic""  
+Same entity, exact match → score = 1
+
+**idx_3**  
+Response: ""bytedance""  
+Target: ""bytedance""  
+Same entity, exact match → score = 1
+
+**idx_4**  
+Response: ""deepseek""  
+Target: ""deepseek""  
+Same entity, exact match → score = 1
+
+---
+
+Final scores for all pairs are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```
+",openai,openai,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact wording, just roughly the same meaning.
+
+---
+
+**idx_0**  
+- Response: ""1,048,576""  
+- Target: ""1m"" (1 million, typically 1,000,000)
+
+Analysis:  
+- The response value ""1,048,576"" corresponds to 2^20, often called 1 megabyte in bytes, but numerically it is 1,048,576.  
+- The target ""1m"" likely stands for 1 million or 1,000,000.  
+- Semantically, 1,048,576 is roughly close to 1 million, often considered 1m in binary form contexts. The criterion says approximate semantics are sufficient.  
+- Here, the difference is about 4.8%, and in digital memory contexts 1m can mean 2^20. So by the criterion, this should be accepted.
+
+**Score:** 1
+
+---
+
+**idx_1**  
+- Response: ""200,000""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Both are exactly the same number expressed differently.  
+- Semantically identical.
+
+**Score:** 1
+
+---
+
+**idx_2**  
+- Response: ""1,048,576""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Response is 1,048,576, which is much larger than 200,000.  
+- They do not represent the same magnitude or entity.  
+- Not semantically the same.
+
+**Score:** 0
+
+---
+
+**idx_3**  
+- Response: ""64,000""  
+- Target: ""32k"" (32,000)
+
+Analysis:  
+- Response is double the target.  
+- They do not match semantically.  
+- The difference is large enough that they do not point to the same entity.
+
+**Score:** 0
+
+---
+
+**idx_4**  
+- Response: ""128,000""  
+- Target: ""128k"" (128,000)
+
+Analysis:  
+- Exactly the same number, different format.  
+- Semantically the same.
+
+**Score:** 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",200k,"200,000",1.0,key_match,0.0,"number not convertable, response: None, target: 0.493",49.30%,NULL,0.0,"number not convertable, response: None, target: 0.324",32.40%,NULL,0.0,"number not convertable, response: None, target: 0.5760000000000001",57.60%,NULL
+,,claude3.7sonnet,Claude 3.7,0.0,"number not convertable, response: None, target: 0.5479999999999999",54.80%,NULL,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response is scored 1 if the semantics are approximately the same or if they point to the same entity as the target.  
+- No requirement for word-for-word match.
+
+---
+
+**idx_0**  
+Response: ""google""  
+Target: ""google""  
+Same entity, exact match → score = 1
+
+**idx_1**  
+Response: ""openai""  
+Target: ""openai""  
+Same entity, exact match → score = 1
+
+**idx_2**  
+Response: ""anthropic""  
+Target: ""anthropic""  
+Same entity, exact match → score = 1
+
+**idx_3**  
+Response: ""bytedance""  
+Target: ""bytedance""  
+Same entity, exact match → score = 1
+
+**idx_4**  
+Response: ""deepseek""  
+Target: ""deepseek""  
+Same entity, exact match → score = 1
+
+---
+
+Final scores for all pairs are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```
+",anthropic,anthropic,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact wording, just roughly the same meaning.
+
+---
+
+**idx_0**  
+- Response: ""1,048,576""  
+- Target: ""1m"" (1 million, typically 1,000,000)
+
+Analysis:  
+- The response value ""1,048,576"" corresponds to 2^20, often called 1 megabyte in bytes, but numerically it is 1,048,576.  
+- The target ""1m"" likely stands for 1 million or 1,000,000.  
+- Semantically, 1,048,576 is roughly close to 1 million, often considered 1m in binary form contexts. The criterion says approximate semantics are sufficient.  
+- Here, the difference is about 4.8%, and in digital memory contexts 1m can mean 2^20. So by the criterion, this should be accepted.
+
+**Score:** 1
+
+---
+
+**idx_1**  
+- Response: ""200,000""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Both are exactly the same number expressed differently.  
+- Semantically identical.
+
+**Score:** 1
+
+---
+
+**idx_2**  
+- Response: ""1,048,576""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Response is 1,048,576, which is much larger than 200,000.  
+- They do not represent the same magnitude or entity.  
+- Not semantically the same.
+
+**Score:** 0
+
+---
+
+**idx_3**  
+- Response: ""64,000""  
+- Target: ""32k"" (32,000)
+
+Analysis:  
+- Response is double the target.  
+- They do not match semantically.  
+- The difference is large enough that they do not point to the same entity.
+
+**Score:** 0
+
+---
+
+**idx_4**  
+- Response: ""128,000""  
+- Target: ""128k"" (128,000)
+
+Analysis:  
+- Exactly the same number, different format.  
+- Semantically the same.
+
+**Score:** 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",200k,"1,048,576",1.0,key_match,0.0,"number not near, response: 0.6572, target: 0.623",62.30%,65.72%,0.0,"number not convertable, response: None, target: 0.584",58.40%,NULL,0.0,"number not convertable, response: None, target: 0.812",81.20%,NULL
+,,seed-thinkingv1.5,Doubao 1.5 Thinking Pro,0.0,"number not convertable, response: None, target: 0.74",74%,NULL,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response is scored 1 if the semantics are approximately the same or if they point to the same entity as the target.  
+- No requirement for word-for-word match.
+
+---
+
+**idx_0**  
+Response: ""google""  
+Target: ""google""  
+Same entity, exact match → score = 1
+
+**idx_1**  
+Response: ""openai""  
+Target: ""openai""  
+Same entity, exact match → score = 1
+
+**idx_2**  
+Response: ""anthropic""  
+Target: ""anthropic""  
+Same entity, exact match → score = 1
+
+**idx_3**  
+Response: ""bytedance""  
+Target: ""bytedance""  
+Same entity, exact match → score = 1
+
+**idx_4**  
+Response: ""deepseek""  
+Target: ""deepseek""  
+Same entity, exact match → score = 1
+
+---
+
+Final scores for all pairs are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```
+",bytedance,bytedance,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact wording, just roughly the same meaning.
+
+---
+
+**idx_0**  
+- Response: ""1,048,576""  
+- Target: ""1m"" (1 million, typically 1,000,000)
+
+Analysis:  
+- The response value ""1,048,576"" corresponds to 2^20, often called 1 megabyte in bytes, but numerically it is 1,048,576.  
+- The target ""1m"" likely stands for 1 million or 1,000,000.  
+- Semantically, 1,048,576 is roughly close to 1 million, often considered 1m in binary form contexts. The criterion says approximate semantics are sufficient.  
+- Here, the difference is about 4.8%, and in digital memory contexts 1m can mean 2^20. So by the criterion, this should be accepted.
+
+**Score:** 1
+
+---
+
+**idx_1**  
+- Response: ""200,000""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Both are exactly the same number expressed differently.  
+- Semantically identical.
+
+**Score:** 1
+
+---
+
+**idx_2**  
+- Response: ""1,048,576""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Response is 1,048,576, which is much larger than 200,000.  
+- They do not represent the same magnitude or entity.  
+- Not semantically the same.
+
+**Score:** 0
+
+---
+
+**idx_3**  
+- Response: ""64,000""  
+- Target: ""32k"" (32,000)
+
+Analysis:  
+- Response is double the target.  
+- They do not match semantically.  
+- The difference is large enough that they do not point to the same entity.
+
+**Score:** 0
+
+---
+
+**idx_4**  
+- Response: ""128,000""  
+- Target: ""128k"" (128,000)
+
+Analysis:  
+- Exactly the same number, different format.  
+- Semantically the same.
+
+**Score:** 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",32k,"64,000",1.0,key_match,0.0,"number not convertable, response: None, target: 0.47",47%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+,,deepseek-v3,DeepSeek V3,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response is scored 1 if the semantics are approximately the same or if they point to the same entity as the target.  
+- No requirement for word-for-word match.
+
+---
+
+**idx_0**  
+Response: ""google""  
+Target: ""google""  
+Same entity, exact match → score = 1
+
+**idx_1**  
+Response: ""openai""  
+Target: ""openai""  
+Same entity, exact match → score = 1
+
+**idx_2**  
+Response: ""anthropic""  
+Target: ""anthropic""  
+Same entity, exact match → score = 1
+
+**idx_3**  
+Response: ""bytedance""  
+Target: ""bytedance""  
+Same entity, exact match → score = 1
+
+**idx_4**  
+Response: ""deepseek""  
+Target: ""deepseek""  
+Same entity, exact match → score = 1
+
+---
+
+Final scores for all pairs are 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```
+",deepseek,deepseek,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion summary: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. No need for exact wording, just roughly the same meaning.
+
+---
+
+**idx_0**  
+- Response: ""1,048,576""  
+- Target: ""1m"" (1 million, typically 1,000,000)
+
+Analysis:  
+- The response value ""1,048,576"" corresponds to 2^20, often called 1 megabyte in bytes, but numerically it is 1,048,576.  
+- The target ""1m"" likely stands for 1 million or 1,000,000.  
+- Semantically, 1,048,576 is roughly close to 1 million, often considered 1m in binary form contexts. The criterion says approximate semantics are sufficient.  
+- Here, the difference is about 4.8%, and in digital memory contexts 1m can mean 2^20. So by the criterion, this should be accepted.
+
+**Score:** 1
+
+---
+
+**idx_1**  
+- Response: ""200,000""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Both are exactly the same number expressed differently.  
+- Semantically identical.
+
+**Score:** 1
+
+---
+
+**idx_2**  
+- Response: ""1,048,576""  
+- Target: ""200k"" (200,000)
+
+Analysis:  
+- Response is 1,048,576, which is much larger than 200,000.  
+- They do not represent the same magnitude or entity.  
+- Not semantically the same.
+
+**Score:** 0
+
+---
+
+**idx_3**  
+- Response: ""64,000""  
+- Target: ""32k"" (32,000)
+
+Analysis:  
+- Response is double the target.  
+- They do not match semantically.  
+- The difference is large enough that they do not point to the same entity.
+
+**Score:** 0
+
+---
+
+**idx_4**  
+- Response: ""128,000""  
+- Target: ""128k"" (128,000)
+
+Analysis:  
+- Exactly the same number, different format.  
+- Semantically the same.
+
+**Score:** 1
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1
+}
+```",128k,"128,000",1.0,key_match,0.0,"number not near, response: 4.0, target: 0.42",42%,4,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+1.0,,claudeopus4,,,,75.50%,,,,anthropic,,,,200k,,,,,,72.50%,,,,59.60%,,,,81.40%,
+1.0,,claudesonnet4,,,,70.50%,,,,anthropic,,,,200k,,,,,,72.70%,,,,60%,,,,80.50%,
+1.0,,deepseek-r1,,,,70%,,,,deepseek,,,,128k,,,,,,49.20%,,,,NULL,,,,NULL,
+1.0,,deepseek-r1-0528,,,,87.50%,,,,deepseek,,,,64k,,,,,,57.60%,,,,NULL,,,,NULL,
+1.0,,deepseek-v3-0324,,,,47.74%,,,,deepseek,,,,64k,,,,,,38.80%,,,,NULL,,,,NULL,
+1.0,,gemini2.5flash-lite-nonthinking,,,,49.80%,,,,google,,,,1m,,,,,,31.60%,,,,NULL,,,,NULL,
+1.0,,gemini2.5flash-nonthinking,,,,61.60%,,,,google,,,,1m,,,,,,50%,,,,NULL,,,,NULL,
+1.0,,gemini2.5flash-thinking,,,,72.00%,,,,google,,,,1m,,,,,,48.90%,,,,NULL,,,,NULL,
+1.0,,gemini2.5pro,,,,88%,,,,google,,,,1m,,,,,,59.60%,,,,NULL,,,,NULL,
+1.0,,o3,,,,88.90%,,,,openai,,,,200k,,,,,,69.10%,,,,52%,,,,70.40%,
+1.0,,o4-mini,,,,92.70%,,,,openai,,,,200k,,,,,,68.10%,,,,49.20%,,,,65.60%,
+1.0,,seed-thinkingv1.6,,,,86%,,,,bytedance,,,,256k,,,,,,NULL,,,,NULL,,,,NULL,

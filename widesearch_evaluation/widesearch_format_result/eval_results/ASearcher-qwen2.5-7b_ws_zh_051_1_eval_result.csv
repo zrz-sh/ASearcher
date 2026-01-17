@@ -1,0 +1,1674 @@
+exist_flag_gt,exist_flag_response,中文名称,中文名称_before_map,中国上映时间_exact_match,中国上映时间_exact_match_eval_msg,中国上映时间_query,中国上映时间_response,中国大陆票房（单位：人民币）_number_near,中国大陆票房（单位：人民币）_number_near_eval_msg,中国大陆票房（单位：人民币）_query,中国大陆票房（单位：人民币）_response,中文名称_exact_match,中文名称_exact_match_eval_msg,英文名称_llm_judge,英文名称_llm_judge_eval_msg,英文名称_query,英文名称_response
+,,钢铁侠,钢铁侠,0.0,"exact not match, response: 2008年4月9日, target: 2008年4月30日",2008年4月30日,2008年4月9日,0.0,"number not near, response: 1.37, target: 9200.0",9200.0,1.37,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",ironman,ironman
+,,无敌浩克,绿巨人,0.0,"exact not match, response: 2008年6月13日, target: 2008年8月20日",2008年8月20日,2008年6月13日,1.0,"number near in range 10.0%, response: 6492.0, target: 6000.0",6000.0,6492,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",theincrediblehulk,theincrediblehulk
+,,钢铁侠2,钢铁侠2,1.0,"exact match, response: 2010年5月7日, target: 2010年5月7日",2010年5月7日,2010年5月7日,0.0,"number not near, response: 2.49, target: 1.75",1.75,2.49,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",ironman2,ironman2
+,,雷神,雷神,0.0,"exact not match, response: 2011年8月5日, target: 2011年5月8日",2011年5月8日,2011年8月5日,0.0,"number not near, response: 3.01, target: 9779.3",9779.3,3.01,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",thor,thor
+,,美国队长：复仇者先锋,美国队长：复仇者先锋,0.0,"exact not match, response: 2011年7月22日, target: 2011年9月9日",2011年9月9日,2011年7月22日,1.0,"number near in range 10.0%, response: 6745.0, target: 6576.5",6576.5,6745,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",captainamerica:thefirstavenger,captainamerica:thefirstavenger
+,,复仇者联盟,复仇者联盟,0.0,"exact not match, response: 2012年4月24日, target: 2012年5月5日",2012年5月5日,2012年4月24日,0.0,"number not near, response: 1.15, target: 5.68",5.68,1.15,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",theavengers,theavengers
+,,钢铁侠3,钢铁侠3,0.0,"exact not match, response: 2013年4月26日, target: 2013年5月1日",2013年5月1日,2013年4月26日,0.0,"number not near, response: 5.38, target: 7.54",7.54,5.38,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",ironman3,ironman3
+,,雷神2：黑暗世界,雷神：黑暗世界,1.0,"exact match, response: 2013年11月8日, target: 2013年11月8日",2013年11月8日,2013年11月8日,0.0,"number not near, response: 4841.0, target: 3.42",3.42,4841,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",thor:thedarkworld,thor:thedarkworld
+,,美国队长2：冬日战士,美国队长：冬日战士,1.0,"exact match, response: 2014年4月4日, target: 2014年4月4日",2014年4月4日,2014年4月4日,0.0,"number not near, response: 7538.0, target: 7.18",7.18,7538,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",captainamerica:thewintersoldier,captainamerica:thewintersoldier
+,,银河护卫队,银河护卫队,1.0,"exact match, response: 2014年10月10日, target: 2014年10月10日",2014年10月10日,2014年10月10日,0.0,"number not near, response: 5695.0, target: 5.96",5.96,5695,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",guardiansofthegalaxy,guardiansofthegalaxy
+,,复仇者联盟2：奥创纪元,复仇者联盟2：奥创纪元,0.0,"exact not match, response: 2015年5月1日, target: 2015年5月12日",2015年5月12日,2015年5月1日,0.0,"number not near, response: 1.32, target: 14.61",14.61,1.32,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",avengers:ageofultron,avengers:ageofultron
+,,蚁人,蚁人,0.0,"exact not match, response: 2015年7月17日, target: 2015年10月16日",2015年10月16日,2015年7月17日,0.0,"number not near, response: 3485.0, target: 6.7",6.70,3485,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",ant-man,ant-man
+,,美国队长3：内战,美国队长： Civil War,1.0,"exact match, response: 2016年5月6日, target: 2016年5月6日",2016年5月6日,2016年5月6日,0.0,"number not near, response: 5.83, target: 12.43",12.43,5.83,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",captainamerica:civilwar,captainamerica:civilwar
+,,奇异博士,奇异博士,1.0,"exact match, response: 2016年11月4日, target: 2016年11月4日",2016年11月4日,2016年11月4日,0.0,"number not near, response: 5438.0, target: 7.5",7.50,5438,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",doctorstrange,doctorstrange
+,,蜘蛛侠：英雄归来,蜘蛛侠：返校日,0.0,"exact not match, response: 2017年7月7日, target: 2017年9月8日",2017年9月8日,2017年7月7日,0.0,"number not near, response: 5.49, target: 7.74",7.74,5.49,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",spider-man:homecoming,spider-man:homecoming
+,,雷神3：诸神黄昏,雷神：雷神再临,1.0,"exact match, response: 2017年11月3日, target: 2017年11月3日",2017年11月3日,2017年11月3日,0.0,"number not near, response: 4725.0, target: 7.43",7.43,4725,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",thor:ragnarok,thor:ragnarok
+,,黑豹,黑豹,0.0,"exact not match, response: 2018年2月16日, target: 2018年3月9日",2018年3月9日,2018年2月16日,1.0,"number near in range 10.0%, response: 6.05, target: 6.62",6.62,6.05,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",blackpanther,blackpanther
+,,复仇者联盟3：无限战争,复仇者联盟3：无限战争,0.0,"exact not match, response: 2018年4月24日, target: 2018年5月11日",2018年5月11日,2018年4月24日,0.0,"number not near, response: 2.02, target: 23.9",23.90,2.02,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",avengers:infinitywar,avengers:infinitywar-part1
+,,蚁人2：黄蜂女现身,蚁人2：黄蜂女现身,0.0,"exact not match, response: 2018年7月6日, target: 2018年8月24日",2018年8月24日,2018年7月6日,0.0,"number not near, response: 3358.0, target: 8.31",8.31,3358,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",ant-manandthewasp,ant-manandthewasp
+,,复仇者联盟4：终局之战,复仇者联盟4：终局之战,1.0,"exact match, response: 2019年4月24日, target: 2019年4月24日",2019年4月24日,2019年4月24日,0.0,"number not near, response: 3.58, target: 42.5",42.50,3.58,1.0,key_match,0.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",avengers:endgame,avengers:infinitywar-part2
+,,黑寡妇,黑寡妇,0.0,"exact not match, response: 2021年7月9日, target: 未上映",未上映,2021年7月9日,0.0,"number not convertable, response: 2.22, target: None",NULL,2.22,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",blackwidow,blackwidow
+,,尚气与十环传奇,尚气与十环传奇,0.0,"exact not match, response: 2021年9月30日, target: 未上映",未上映,2021年9月30日,0.0,"number not convertable, response: 5542.0, target: None",NULL,5542,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",shang-chiandthelegendofthetenrings,shang-chiandthelegendofthetenrings
+,,永恒族,永恒族,0.0,"exact not match, response: 2021年11月5日, target: 未上映",未上映,2021年11月5日,0.0,"number not convertable, response: 1.23, target: None",NULL,1.23,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",eternals,eternals
+,,蜘蛛侠：英雄无归,蜘蛛侠：无家可归,0.0,"exact not match, response: 2021年12月17日, target: 未上映",未上映,2021年12月17日,0.0,"number not convertable, response: 13.6, target: None",NULL,13.6,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",spider-man:nowayhome,spider-man:nowayhome
+,,奇异博士2：疯狂多元宇宙,奇异博士2：疯狂多元宇宙,0.0,"exact not match, response: 2022年5月6日, target: 未上映",未上映,2022年5月6日,0.0,"number not convertable, response: 2.11, target: None",NULL,2.11,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",doctorstrangeinthemultiverseofmadness,doctorstrangeinthemultiverseofmadness
+,,黑豹2：瓦坎达万岁,黑豹2,0.0,"exact not match, response: 2022年11月11日, target: 2023年2月7日",2023年2月7日,2022年11月11日,0.0,"number not near, response: 6.43, target: 1.06",1.06,6.43,1.0,key_match,1.0,"根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”  
+也就是说，只要回答指向的实体（这里即电影名称）和参考答案一致，均应得分1。  
+
+下面逐条分析：
+
+- idx_0: response = ""ironman"", target = ""ironman"" → 完全一致，得分1  
+- idx_1: response = ""theincrediblehulk"", target = ""theincrediblehulk"" → 完全一致，得分1  
+- idx_2: response = ""ironman2"", target = ""ironman2"" → 完全一致，得分1  
+- idx_3: response = ""thor"", target = ""thor"" → 完全一致，得分1  
+- idx_4: response = ""captainamerica:thefirstavenger"", target = ""captainamerica:thefirstavenger"" → 完全一致，得分1  
+- idx_5: response = ""theavengers"", target = ""theavengers"" → 完全一致，得分1  
+- idx_6: response = ""ironman3"", target = ""ironman3"" → 完全一致，得分1  
+- idx_7: response = ""thor:thedarkworld"", target = ""thor:thedarkworld"" → 完全一致，得分1  
+- idx_8: response = ""captainamerica:thewintersoldier"", target = ""captainamerica:thewintersoldier"" → 完全一致，得分1  
+- idx_9: response = ""guardiansofthegalaxy"", target = ""guardiansofthegalaxy"" → 完全一致，得分1  
+- idx_10: response = ""avengers:ageofultron"", target = ""avengers:ageofultron"" → 完全一致，得分1  
+- idx_11: response = ""ant-man"", target = ""ant-man"" → 完全一致，得分1  
+- idx_12: response = ""captainamerica:civilwar"", target = ""captainamerica:civilwar"" → 完全一致，得分1  
+- idx_13: response = ""doctorstrange"", target = ""doctorstrange"" → 完全一致，得分1  
+- idx_14: response = ""spider-man:homecoming"", target = ""spider-man:homecoming"" → 完全一致，得分1  
+- idx_15: response = ""thor:ragnarok"", target = ""thor:ragnarok"" → 完全一致，得分1  
+- idx_16: response = ""blackpanther"", target = ""blackpanther"" → 完全一致，得分1  
+- idx_17: response = ""avengers:infinitywar-part1"", target = ""avengers:infinitywar"" → 此项响应名称末尾加了“-part1”，但语义指向“复仇者联盟：无限战争”的第一部分，符合指向实体一致标准，得分1  
+- idx_18: response = ""ant-manandthewasp"", target = ""ant-manandthewasp"" → 完全一致，得分1  
+- idx_19: response = ""avengers:infinitywar-part2"", target = ""avengers:endgame"" → response指的是无限战争第二部分，而target是最终之战（endgame），这是两部不同电影。语义不一致，得分0  
+- idx_20: response = ""blackwidow"", target = ""blackwidow"" → 完全一致，得分1  
+- idx_21: response = ""shang-chiandthelegendofthetenrings"", target = ""shang-chiandthelegendofthetenrings"" → 完全一致，得分1  
+- idx_22: response = ""eternals"", target = ""eternals"" → 完全一致，得分1  
+- idx_23: response = ""spider-man:nowayhome"", target = ""spider-man:nowayhome"" → 完全一致，得分1  
+- idx_24: response = ""doctorstrangeinthemultiverseofmadness"", target = ""doctorstrangeinthemultiverseofmadness"" → 完全一致，得分1  
+- idx_25: response = ""blackpanther:wakandaforever"", target = ""blackpanther:wakandaforever"" → 完全一致，得分1  
+
+总结：只有 idx_19 不一致得分0，其余均为1。
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1,
+    ""idx_16"": 1,
+    ""idx_17"": 1,
+    ""idx_18"": 1,
+    ""idx_19"": 0,
+    ""idx_20"": 1,
+    ""idx_21"": 1,
+    ""idx_22"": 1,
+    ""idx_23"": 1,
+    ""idx_24"": 1,
+    ""idx_25"": 1
+}
+```",blackpanther:wakandaforever,blackpanther:wakandaforever
+1.0,,惊奇队长,,,,2019年3月8日,,,,10.35,,,,,,captainmarvel,
+1.0,,惊奇队长2,,,,2023年11月10日,,,,1.10,,,,,,themarvels,
+1.0,,死侍与金刚狼,,,,2024年7月26日,,,,4.30,,,,,,deadpool&wolverine,
+1.0,,美国队长4：新世界秩序,,,,2025年2月14日,,,,1.04,,,,,,captainamerica:bravenewworld,
+1.0,,蚁人与黄蜂女：量子狂潮,,,,2023年2月17日,,,,2.72,,,,,,ant-manandthewasp:quantumania,
+1.0,,蜘蛛侠：英雄远征,,,,2019年6月28日,,,,14.17,,,,,,spider-man:farfromhome,
+1.0,,银河护卫队2,,,,2017年5月5日,,,,6.86,,,,,,guardiansofthegalaxyvol.2,
+1.0,,银河护卫队3,,,,2023年5月5日,,,,6.06,,,,,,guardiansofthegalaxyvol.3,
+1.0,,雷神4：爱与雷霆,,,,未上映,,,,NULL,,,,,,thor:loveandthunder,

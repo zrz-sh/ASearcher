@@ -1,0 +1,949 @@
+exist_flag_gt,exist_flag_response,university,university_before_map,2025ukguardianrankings_exact_match,2025ukguardianrankings_exact_match_eval_msg,2025ukguardianrankings_query,2025ukguardianrankings_response,2026qsworldrankings_exact_match,2026qsworldrankings_exact_match_eval_msg,2026qsworldrankings_query,2026qsworldrankings_response,foundingyear_exact_match,foundingyear_exact_match_eval_msg,foundingyear_query,foundingyear_response,governingbody_llm_judge,governingbody_llm_judge_eval_msg,governingbody_query,governingbody_response,officialwebsiteaddress_llm_judge,officialwebsiteaddress_llm_judge_eval_msg,officialwebsiteaddress_query,officialwebsiteaddress_response,university_exact_match,university_exact_match_eval_msg
+,,universityofcambridge,University of Cambridge,0.0,"exact not match, response: 1, target: 3",3,1,0.0,"exact not match, response: 3, target: 6",6,3,1.0,"exact match, response: 1209, target: 1209",1209,1209,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",theregenthouse,universitycouncil,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://www.cam.ac.uk/,https://www.cam.ac.uk/,1.0,key_match
+,,imperialcollegelondon,Imperial College London,0.0,"exact not match, response: 7, target: 5",5,7,0.0,"exact not match, response: 9, target: 2",2,9,1.0,"exact match, response: 1907, target: 1907",1907,1907,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",universitycouncil,presidentandprincipalandcouncil,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://imperial.ac.uk/,https://www.imperial.ac.uk/,1.0,key_match
+,,king'scollegelondon,King's College London,0.0,"exact not match, response: 12, target: 28",28,12,0.0,"exact not match, response: 12, target: 31",31,12,1.0,"exact match, response: 1829, target: 1829",1829,1829,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",universitycouncil,chancellorandcourt,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://kcl.ac.uk/,https://www.kcl.ac.uk/,1.0,key_match
+,,thelondonschoolofeconomicsandpoliticalscience,London School of Economics and S.,0.0,"exact not match, response: 17, target: 4",4,17,0.0,"exact not match, response: 15, target: 56",56,15,1.0,"exact match, response: 1895, target: 1895",1895,1895,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",universitycouncil,chancellorandcourt,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://lse.ac.uk/,https://www.lse.ac.uk/,1.0,key_match
+,,universityofoxford,University of Oxford,0.0,"exact not match, response: 2, target: 1",1,2,1.0,"exact match, response: 4, target: 4",4,4,1.0,"exact match, response: 1096, target: 1096",1096,1096,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",universitycouncil,vice-chancellorandfellows,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://ox.ac.uk/,https://www.ox.ac.uk/,1.0,key_match
+,,universitycollegelondon,University College London,0.0,"exact not match, response: 8, target: 9",9,8,0.0,"exact not match, response: 11, target: 9",9,11,1.0,"exact match, response: 1826, target: 1826",1826,1826,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",universitycouncil,chancellorandcourt,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://ucl.ac.uk/,https://www.ucl.ac.uk/,1.0,key_match
+,,universityofwarwick,Warwick University,0.0,"exact not match, response: 24, target: 8",8,24,0.0,"exact not match, response: 22, target: 74",74,22,1.0,"exact match, response: 1965, target: 1965",1965,1965,0.0,"Let's analyze each pair step by step according to the given criterion:
+
+Criterion summary:  
+- Semantics must be approximately the same or point to the same entity.  
+- No need for exact word-for-word match.
+
+---
+
+**idx_0**  
+- Response: ""universitycouncil""  
+- Target: ""theregenthouse""  
+Analysis:  
+These are clearly different entities. The ""regent house"" and the ""university council"" are distinct bodies in a university context. They do not point to the same entity or have similar semantics.  
+Score: 0
+
+**idx_1**  
+- Response: ""presidentandprincipalandcouncil""  
+- Target: ""universitycouncil""  
+Analysis:  
+The response combines ""president and principal and council,"" while target is just ""university council."" The ""university council"" is a specific governing body; the ""president and principal"" are individual roles. Responding with additional entities does not equate to the council alone, and the meaning isn't approximately the same.  
+Score: 0  
+
+**idx_2**  
+- Response: ""chancellorandcourt""  
+- Target: ""universitycouncil""  
+Analysis:  
+""Chancellor and court"" and ""university council"" are different bodies, so no semantic equivalence or pointing to the same entity.  
+Score: 0  
+
+**idx_3**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_4**  
+- Response: ""vice-chancellorandfellows""  
+- Target: ""universitycouncil""  
+Analysis:  
+Different entities (""vice-chancellor and fellows"" vs ""university council""). No equivalence or approximate similarity.  
+Score: 0  
+
+**idx_5**  
+- Same as idx_2.  
+Score: 0  
+
+**idx_6**  
+- Same as idx_2.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0
+}
+```",universitycouncil,chancellorandcourt,1.0,"Let's analyze each pair one by one according to the criteria:
+
+Criterion recap:  
+- The semantics should be approximately the same or point to the same entity (website).  
+- No need for exact word-for-word (or exact URL) matching if the difference is superficial (e.g., with or without ""www"" or ""www2"", or http/https, or presence/absence of trailing slash).  
+- The URLs should logically point to the same website or organization.
+
+---
+
+**idx_0:**  
+- Response: `https://www.cam.ac.uk/`  
+- Target: `https://www.cam.ac.uk/`  
+Exact match. Score = 1
+
+---
+
+**idx_1:**  
+- Response: `https://www.imperial.ac.uk/`  
+- Target: `https://imperial.ac.uk/`  
+Difference is ""www."" prefix only. This is likely the same site/entity, only difference is www subdomain, which is common and considered the same. Score = 1
+
+---
+
+**idx_2:**  
+- Response: `https://www.kcl.ac.uk/`  
+- Target: `https://kcl.ac.uk/`  
+Again, differing only by the ""www."" prefix. Semantically same entity. Score = 1
+
+---
+
+**idx_3:**  
+- Response: `https://www.lse.ac.uk/`  
+- Target: `https://lse.ac.uk/`  
+Same ""www."" difference. Same entity, score = 1
+
+---
+
+**idx_4:**  
+- Response: `https://www.ox.ac.uk/`  
+- Target: `https://ox.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_5:**  
+- Response: `https://www.ucl.ac.uk/`  
+- Target: `https://ucl.ac.uk/`  
+Same ""www."" difference. Same entity. Score = 1
+
+---
+
+**idx_6:**  
+- Response: `https://www2.warwick.ac.uk/`  
+- Target: `https://warwick.ac.uk/`  
+This is interesting since the response has ""www2"" instead of ""www"" or no ""www"". Typically, ""www2"" is a subdomain used for load balancing or specific servers, but generally points to the same entity/organization website. The core domain ""warwick.ac.uk"" matches. According to the criterion, approximate semantics or pointing to same entity is sufficient. So this is acceptable. Score = 1
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1
+}
+```",https://warwick.ac.uk/,https://www2.warwick.ac.uk/,1.0,key_match
+1.0,,cardiffuniversity,,,,46,,,,181,,,,1883,,,,universitycouncil,,,,https://www.cardiff.ac.uk/,,,
+1.0,,durhamuniversity,,,,6,,,,94,,,,1832,,,,universitycouncil,,,,https://dur.ac.uk/,,,
+1.0,,newcastleuniversity,,,,63,,,,137,,,,1834,,,,universitycouncil,,,,https://ncl.ac.uk/,,,
+1.0,,queen'suniversitybelfast,,,,43,,,,199,,,,1845,,,,"universitysenate,(universitycommittee)",,,,https://qub.ac.uk/,,,
+1.0,,queenmaryuniversityoflondon,,,,74,,,,110,,,,1887,,,,universitycouncil,,,,https://qmul.ac.uk/,,,
+1.0,,universityofbirmingham,,,,36,,,,76,,,,1900,,,,universitycouncil,,,,https://www.birmingham.ac.uk/,,,
+1.0,,universityofbristol,,,,16,,,,51,,,,1909,,,,boardoftrustees,,,,https://bristol.ac.uk/,,,
+1.0,,universityofedinburgh,,,,15,,,,34,,,,1582,,,,theuniversitycourt,,,,https://www.ed.ac.uk/,,,
+1.0,,universityofexeter,,,,18,,,,155,,,,1955,,,,universitycouncil,,,,https://www.exeter.ac.uk/,,,
+1.0,,universityofglasgow,,,,14,,,,79,,,,1451,,,,universitycourt,,,,https://gla.ac.uk/,,,
+1.0,,universityofleeds,,,,37,,,,86,,,,1904,,,,universitycouncil,,,,https://leeds.ac.uk/,,,
+1.0,,universityofliverpool,,,,27,,,,147,,,,1903,,,,universitycouncil,,,,https://liverpool.ac.uk/,,,
+1.0,,universityofmanchester,,,,31,,,,35,,,,2004,,,,theboardofgovernors,,,,https://manchester.ac.uk/,,,
+1.0,,universityofnottingham,,,,62,,,,97,,,,1948,,,,universitycouncil,,,,https://nottingham.ac.uk/,,,
+1.0,,universityofsheffield,,,,20,,,,92,,,,1905,,,,universitycouncil,,,,https://sheffield.ac.uk/,,,
+1.0,,universityofsouthampton,,,,22,,,,87,,,,1952,,,,universitycouncil,,,,https://southampton.ac.uk/,,,
+1.0,,universityofyork,,,,25,,,,169,,,,1963,,,,universitycouncil,,,,https://york.ac.uk/,,,

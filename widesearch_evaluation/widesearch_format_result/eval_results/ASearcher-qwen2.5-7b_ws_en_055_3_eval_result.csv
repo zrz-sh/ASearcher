@@ -1,0 +1,685 @@
+exist_flag_gt,exist_flag_response,location,location_before_map,park,park_before_map,attendance(inthousands)_number_near,attendance(inthousands)_number_near_eval_msg,attendance(inthousands)_query,attendance(inthousands)_response,location_exact_match,location_exact_match_eval_msg,owningentity/company_llm_judge,owningentity/company_llm_judge_eval_msg,owningentity/company_query,owningentity/company_response,park_exact_match,park_exact_match_eval_msg
+,,"usa,lakebuenavista,fl","Florida, USA",magickingdom(waltdisneyworld),Walt Disney World Resort,0.0,"number not near, response: 20550.0, target: 17720.0",17720,20550,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",thewaltdisneycompany,thewaltdisneycompany,1.0,key_match
+,,"usa,anaheim,ca","California, USA",disneylandpark,Disneyland,0.0,"number not near, response: 18472.0, target: 17250.0",17250,18472,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",thewaltdisneycompany,thewaltdisneycompany,1.0,key_match
+,,"japan,osaka","Osaka, Japan",universalstudiosjapan,Universal Studios Japan,0.0,"number not near, response: 11600.0, target: 16000.0",16000,11600,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",universaldestinations&experiences,universalparks&resorts,1.0,key_match
+,,"japan,tokyo","Tokyo, Japan",tokyodisneyland,Tokyo Disneyland,1.0,"number near in range 5.0%, response: 14847.0, target: 15100.0",15100,14847,1.0,key_match,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",orientallandco.(disney-licensed),thewaltdisneycompany,1.0,key_match
+,,"china,shanghai","Shanghai, China",shanghaidisneyland,Shanghai Disneyland,1.0,"number near in range 5.0%, response: 14700.0, target: 14000.0",14000,14700,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",shanghaishendigroup/waltdisneyco.jv,thewaltdisneycompany,1.0,key_match
+,,"japan,tokyo","Tokyo, Japan",tokyodisneysea,Tokyo DisneySea,0.0,"number not near, response: 11749.0, target: 12400.0",12400,11749,1.0,key_match,0.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",theorientallandcompany(licensedbydisney),thewaltdisneycompany,1.0,key_match
+,,"france,marne-la-vallée","Marne-la-Vallée, France",disneylandpark(paris),Disneyland Paris,0.0,"number not near, response: 12334.0, target: 10400.0",10400,12334,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",thewaltdisneycompany,thewaltdisneycompany,1.0,key_match
+,,"china(hksar),hongkong",Hong Kong,hongkongdisneyland,Hong Kong Disneyland,0.0,"number not near, response: 11500.0, target: 6400.0",6400,11500,1.0,key_match,1.0,"Let's analyze each idx item according to the criterion:
+
+Criterion:  
+- The semantics should be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word matching not necessary.
+
+---
+
+**idx_0**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_1**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_2**  
+Response: ""universalparks&resorts""  
+Target: ""universaldestinations&experiences""  
+Analysis:  
+- The two entities are related but different.  
+- Universal Parks & Resorts is the operational segment, Universal Destinations & Experiences is a broader entity name used by NBCUniversal for theme parks and resorts. They might be used interchangeably in certain contexts but strictly speaking they differ.  
+- Since the criterion allows approximate semantics or pointing to the same entity, I judge this as the same entity conceptually representing Universal's theme park division. So, scoring 1.
+
+**idx_3**  
+Response: ""thewaltdisneycompany""  
+Target: ""orientallandco.(disney-licensed)""  
+Analysis:  
+- Oriental Land Co. operates Tokyo Disneyland under license from Disney.  
+- Target specifies the licensed operator, not Disney itself. Response only says ""thewaltdisneycompany.""  
+- Different entities involved, so semantics do not match sufficiently → score 0  
+
+**idx_4**  
+Response: ""thewaltdisneycompany""  
+Target: ""shanghaishendigroup/waltdisneyco.jv""  
+Analysis:  
+- The target is a joint venture of Shanghai Shendi Group and Walt Disney Company.  
+- Response mentions ""thewaltdisneycompany"" only, does not mention JV or partner.  
+- Since the JV involves Disney and is known extensively as a separate legal entity but points to Disney cooperation, the criterion ""approximately same semantics or same entity"" allows this as pointing to Disney. The JV is strongly tied to Disney.  
+- I consider this sufficiently matching the entity of Disney-related theme park ops → score 1  
+
+**idx_5**  
+Response: ""thewaltdisneycompany""  
+Target: ""theorientallandcompany(licensedbydisney)""  
+Analysis:  
+- Same as idx_3: response says Disney Co., target says Oriental Land Co. licensed by Disney.  
+- Different entities → score 0  
+
+**idx_6**  
+Response: ""thewaltdisneycompany""  
+Target: ""thewaltdisneycompany""  
+Analysis: Exact match → score 1  
+
+**idx_7**  
+Response: ""thewaltdisneycompany""  
+Target: ""hongkonginternationalthemeparks(hkgovt/disney)""  
+Analysis:  
+- Hong Kong International Theme Parks Ltd. is a joint venture between the Hong Kong Government and Disney to operate Hong Kong Disneyland.  
+- Response only says ""thewaltdisneycompany"" and omits the joint venture aspect.  
+- Since it is essentially Disney's entity together with government partners, pointing to the same principal entity, allowed by criterion.  
+- Score 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 1
+}
+```
+",hongkonginternationalthemeparks(hkgovt/disney),thewaltdisneycompany,1.0,key_match
+1.0,,"china,zhuhai,guangdong",,chimelongoceankingdom,,,,12520,,,,,,chimelonggroup,,,
+1.0,,"china,guangzhou,guangdong",,chimelongparadise,,,,5580,,,,,,chimelonggroup,,,
+1.0,,"usa,anaheim,ca",,disneycaliforniaadventurepark,,,,10000,,,,,,thewaltdisneycompany,,,
+1.0,,"usa,lakebuenavista,fl",,disney’sanimalkingdom,,,,8770,,,,,,thewaltdisneycompany,,,
+1.0,,"usa,lakebuenavista,fl",,disney’shollywoodstudios,,,,10300,,,,,,thewaltdisneycompany,,,
+1.0,,"netherlands,kaatsheuvel",,efteling,,,,5560,,,,,,eftelingnatureparkfoundation,,,
+1.0,,"usa,lakebuenavista,fl",,epcot(waltdisneyworld),,,,11980,,,,,,thewaltdisneycompany,,,
+1.0,,"germany,rust,baden-württemberg",,europa-park,,,,6000,,,,,,themackfamily,,,
+1.0,,"southkorea,yongin,gyeonggi",,everland,,,,5880,,,,,,samsungc&tresortgroup,,,
+,1.0,"usa,lakebuenavista,fl","Florida, USA",islandsofadventure,Islands of Adventure,,,,11000,,,,,,universalparks&resorts,,
+,1.0,"california,usa","Carlsbad, USA",legolandcalifornia,Legoland California,,,,11300,,,,,,merlinentertainmentsgroup,,
+,1.0,"georgia,usa","Georgia, USA",legolanddiscoverycenteratlanta,Legoland Discovery Center Atlanta,,,,9700,,,,,,merlinentertainmentsgroup,,
+,1.0,"germany,rust,baden-württemberg","Berlin, Germany",legolanddiscoverycenterberlin,Legoland Discovery Center Berlin,,,,9900,,,,,,merlinentertainmentsgroup,,
+,1.0,"massachusetts,usa","Massachusetts, USA",legolanddiscoverycenterboston,Legoland Discovery Center Boston,,,,10100,,,,,,merlinentertainmentsgroup,,
+,1.0,"illinois,usa","Illinois, USA",legolanddiscoverycenterchicago,Legoland Discovery Center Chicago,,,,9800,,,,,,merlinentertainmentsgroup,,
+,1.0,"dubai,uae","Dubai, UAE",legolanddiscoverycenterdubai,Legoland Discovery Center Dubai,,,,9600,,,,,,merlinentertainmentsgroup,,
+,1.0,"dublin,ireland","Dublin, Ireland",legolanddiscoverycenterdublin,Legoland Discovery Center Dublin,,,,10300,,,,,,merlinentertainmentsgroup,,
+,1.0,"london,uk","London, UK",legolanddiscoverycenterlondon,Legoland Discovery Center London,,,,10700,,,,,,merlinentertainmentsgroup,,
+,1.0,"usa,anaheim,ca","California, USA",legolanddiscoverycenterlosangeles,Legoland Discovery Center Los Angeles,,,,10000,,,,,,merlinentertainmentsgroup,,
+,1.0,"usa,lakebuenavista,fl","Florida, USA",legolanddiscoverycenterorlando,Legoland Discovery Center Orlando,,,,10500,,,,,,merlinentertainmentsgroup,,
+,1.0,"france,marne-la-vallée","Paris, France",legolanddiscoverycenterparis,Legoland Discovery Center Paris,,,,10400,,,,,,merlinentertainmentsgroup,,
+,1.0,"texas,usa","Texas, USA",legolanddiscoverycentersanantonio,Legoland Discovery Center San Antonio,,,,10200,,,,,,merlinentertainmentsgroup,,
+,1.0,"windsor,uk","Windsor, UK",legolandwindsor,Legoland Windsor,,,,11200,,,,,,merlinentertainmentsgroup,,
+1.0,,"southkorea,seoul",,lotteworld,,,,5190,,,,,,lottecorporation,,,
+1.0,,"china,mianyang,sichuan",,mianyangfantawildorientalheritage,,,,4620,,,,,,fantawildholdingsinc,,,
+,1.0,"usa,lakebuenavista,fl","Florida, USA",universalislandsofadventure,Universal Studios Islands of Adventure,,,,11536,,,,,,universalparks&resorts,,
+1.0,,"usa,orlando,fl",,universalislandsofadventure,,,,10000,,,,,,universaldestinations&experiences,,,
+1.0,,"china,beijing",,universalstudiosbeijing,,,,9000,,,,,,universaldestinations&experiences/beijingshouhuan,,,
+,1.0,"usa,lakebuenavista,fl","Florida, USA",universalstudiosflorida,Universal Studios Florida,,,,11400,,,,,,universalparks&resorts,,
+1.0,,"usa,orlando,fl",,universalstudiosflorida,,,,9750,,,,,,universaldestinations&experiences,,,
+,1.0,"usa,anaheim,ca","California, USA",universalstudioshollywood,Universal Studios Hollywood,,,,14370,,,,,,universalparks&resorts,,
+1.0,,"usa,universalcity,ca",,universalstudioshollywood,,,,9660,,,,,,universaldestinations&experiences,,,
+,1.0,"japan,osaka","Osaka, Japan",universalstudiosjapan(2),Universal Studios Japan (2),,,,10600,,,,,,universalparks&resorts,,
+,1.0,singapore,Singapore,universalstudiossingapore,Universal Studios Singapore,,,,10800,,,,,,universalparks&resorts,,
+1.0,,"france,marne-la-vallée",,waltdisneystudiospark,,,,5700,,,,,,thewaltdisneycompany,,,
+1.0,,"china,zigong,sichuan",,zigongfantawilddinokingdom,,,,4860,,,,,,fantawildholdingsinc,,,

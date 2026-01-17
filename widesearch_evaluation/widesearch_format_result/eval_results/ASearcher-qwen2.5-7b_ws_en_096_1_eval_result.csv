@@ -1,0 +1,5836 @@
+cameramodel,cameramodel_before_map,exist_flag_gt,exist_flag_response,cameramodel_exact_match,cameramodel_exact_match_eval_msg,digitalimageprocessor_llm_judge,digitalimageprocessor_llm_judge_eval_msg,digitalimageprocessor_query,digitalimageprocessor_response,effectivepixels_llm_judge,effectivepixels_llm_judge_eval_msg,effectivepixels_query,effectivepixels_response,highestnumberoffocuspoints_llm_judge,highestnumberoffocuspoints_llm_judge_eval_msg,highestnumberoffocuspoints_query,highestnumberoffocuspoints_response,in-cameravibrationreductiontechnology_llm_judge,in-cameravibrationreductiontechnology_llm_judge_eval_msg,in-cameravibrationreductiontechnology_query,in-cameravibrationreductiontechnology_response,isorange_llm_judge,isorange_llm_judge_eval_msg,isorange_query,isorange_response,maximumframespersecond_exact_match,maximumframespersecond_exact_match_eval_msg,maximumframespersecond_query,maximumframespersecond_response,shutterspeedrange_llm_judge,shutterspeedrange_llm_judge_eval_msg,shutterspeedrange_query,shutterspeedrange_response,weight_number_near,weight_number_near_eval_msg,weight_query,weight_response
+z9,Nikon Z9,,,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed7imageprocessor,expeed7,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",45.71million,45.7,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",493,691,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",5-axisimagesensorshift,vibrationreductionsystem,0.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso64-25600,100-102400(upto51200),0.0,"exact not match, response: 12, target: 120fps",120fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb",1/4000-30sec,0.0,"number not near, response: 950.0, target: 1340.0",1340,950
+z8,Nikon Z8,,,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed7imageprocessor,expeed7,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",45.71million,45.7,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",493,691,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",5-axisimagesensorshift,vibrationreductionsystem,0.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso64-25600,100-102400(upto51200),0.0,"exact not match, response: 11, target: 120fps",120fps,11,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb",1/4000-30sec,0.0,"number not near, response: 800.0, target: 910.0",910,800
+z7ⅱ,Nikon Z7 II,,,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",dualexpeed6digitalimageprocessors,expeed7,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",45.75million,45.7,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",493,691,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",5-axisimagesensorshift,vibrationreductionsystem,0.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso64-25600,100-102400(upto51200),0.0,"exact not match, response: 12, target: 10fps",10fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200",1/4000-30sec,0.0,"number not near, response: 795.0, target: 705.0",705,795
+z7,Nikon Z7,,,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed6digitalimageprocessor,expeed7,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",45.75million,45.7,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",493,691,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",imagesensor5-axisshift,vibrationreductionsystem,0.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso64-25600,100-102400(upto51200),0.0,"exact not match, response: 12, target: 9fps",9fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200",1/4000-30sec,0.0,"number not near, response: 800.0, target: 675.0",675,800
+z6ⅲ,Nikon Z6 III,,,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed7digitalimageprocessor,expeed7,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",24.50million,25.0,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",299,515,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",5-axisimagesensorshift,vibrationreductionsystem,1.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso100-64000,100-51200(expandableto50-204800),0.0,"exact not match, response: 12, target: 120fps",120fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s",1/4000-30sec,0.0,"number not near, response: 695.0, target: 760.0",760,695
+z6ⅱ,Nikon Z6 II,,,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",dualexpeed6digitalimageprocessors,expeed6,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",24.50million,24.5,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",273,515,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",5-axisimagesensorshift,vibrationreductionsystem,1.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso100-51200,100-64000(upto51200),0.0,"exact not match, response: 12, target: 14fps",14fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200",1/4000-30sec,0.0,"number not near, response: 640.0, target: 705.0",705,640
+z6,Nikon Z6,,,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed6imageprocessor,expeed6,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",24.50million,24.5,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",273,515,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",imagesensor5-axisshift,vibrationreductionsystem,1.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso100-51200,100-51200(expandableto50-204800),0.0,"exact not match, response: 12, target: 12fps",12fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200",1/4000-30sec,0.0,"number not near, response: 640.0, target: 675.0",675,640
+z5ⅱ,Nikon Z5 II,,,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed7imageprocessor,expeed6,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",24.50million,24.5,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",299,273,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",5-axisimagesensorshift,vibrationreductionsystem,1.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso100-64000,100-64000(upto51200),0.0,"exact not match, response: 12, target: 30fps",30fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb",1/4000-30sec,0.0,"number not near, response: 640.0, target: 700.0",700,640
+z5,Nikon Z5,,,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed6imageprocessor,expeed6,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",24.32million,24.5,1.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",273,273,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",imagesensor5-axisshift,vibrationreductionsystem,1.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso100-51200,100-64000(upto51200),0.0,"exact not match, response: 12, target: 4.5fps",4.5fps,12,0.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200",1/4000-30sec,0.0,"number not near, response: 640.0, target: 675.0",675,640
+zfc,Nikon Zfc,,,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word matching.
+
+---
+
+### idx_0  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Analysis: ""expeed7"" is a shortened name but refers to the same entity as ""expeed7imageprocessor"" (likely just a shorthand). The semantics are approximately the same.  
+Score: 1  
+
+### idx_1  
+- Response: ""expeed7""  
+- Target: ""expeed7imageprocessor""  
+Same as idx_0. Score: 1  
+
+### idx_2  
+- Response: ""expeed7""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target is ""dual expeed6 digital image processors"" (plural, version 6), while response is ""expeed7"" (version 7). Different version numbers and not the same entity. So semantics are NOT the same.  
+Score: 0  
+
+### idx_3  
+- Response: ""expeed7""  
+- Target: ""expeed6digitalimageprocessor""  
+Analysis: Target is ""expeed6"" vs response ""expeed7"". Different versions, so not the same entity.  
+Score: 0  
+
+### idx_4  
+- Response: ""expeed7""  
+- Target: ""expeed7digitalimageprocessor""  
+Same concept/version, so semantics are the same.  
+Score: 1  
+
+### idx_5  
+- Response: ""expeed6""  
+- Target: ""dualexpeed6digitalimageprocessors""  
+Analysis: The target specifies ""dual"" and plural; response is singular ""expeed6"". However, both contain ""expeed6"". Since the criterion accepts approximate semantics and pointing to the same entity, ""expeed6"" can be considered to approximate the entity ""dual expeed6 digital image processors"" but the plurality and ""dual"" details are missing. This seems borderline. Does ""expeed6"" reasonably identify the same entity as ""dualexpeed6digitalimageprocessors""?  
+Since ""expeed6"" refers to the chip version, but ""dual expeed6 digital image processors"" means specifically two processors of version 6. The response is underspecified by missing ""dual"" and plurality. The criterion says approximate is sufficient, no need for word-for-word. But here, ""dual"" could be considered an important semantic component because it specifies quantity/architecture.  
+I conclude the response is close but misses an important part of the entity specification. So, mark as incorrect.  
+Score: 0  
+
+### idx_6  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same entity, only shorter form missing ""imageprocessor"" suffix, but clearly the same version and entity.  
+Score: 1  
+
+### idx_7  
+- Response: ""expeed6""  
+- Target: ""expeed7imageprocessor""  
+Different versions (6 vs 7). Not the same entity.  
+Score: 0  
+
+### idx_8  
+- Response: ""expeed6""  
+- Target: ""expeed6imageprocessor""  
+Same as idx_6, score 1  
+
+### idx_9  
+- Response: ""expeed6""  
+- Target: ""expeed6digitalimageprocessor""  
+Similar to idx_6 and idx_8, same version, missing suffix ""digital"" but semantically corresponds.  
+Score: 1  
+
+---
+
+### Final Scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",expeed6digitalimageprocessor,expeed6,1.0,"Let's analyze each pair of response and target according to the criterion:
+
+Criterion: It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.
+
+---
+
+**idx_0:**
+- Response: ""45.7""
+- Target: ""45.71million""
+- Analysis: The response ""45.7"" approximates ""45.71"" very closely; the difference is only 0.01. Semantically pointed to the same value (likely population or similar metric in millions).
+- Score: 1
+
+---
+
+**idx_1:**
+- Same as idx_0
+- Score: 1
+
+---
+
+**idx_2:**
+- Response: ""45.7""
+- Target: ""45.75million""
+- Analysis: ""45.7"" versus ""45.75"" differs by 0.05, still close enough. The criterion states semantics approximately the same is enough.
+- Score: 1
+
+---
+
+**idx_3:**
+- Same as idx_2
+- Score: 1
+
+---
+
+**idx_4:**
+- Response: ""25.0""
+- Target: ""24.50million""
+- Analysis: The response is ""25.0"" which differs from ""24.50"" by 0.5 million, about 2% difference. This is more substantial than previous ones, but arguably still approximate? The criterion says ""approximately the same"", but this might be borderline.
+- Considering a 0.5 difference on ~24.5 is a ~2% difference, which is arguably acceptable for approximate semantic equivalence regarding the same entity.
+- Assign score: 1
+
+---
+
+**idx_5:**
+- Response: ""24.5""
+- Target: ""24.50million""
+- Analysis: Exactly the same numeric value (except no unit in response but unit in target is implied). Meets criterion.
+- Score: 1
+
+---
+
+**idx_6:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_7:**
+- Same as idx_5
+- Score: 1
+
+---
+
+**idx_8:**
+- Response: ""24.5""
+- Target: ""24.32million""
+- Analysis: Difference of 0.18 million (less than 1%), very close.
+- Score: 1
+
+---
+
+**idx_9:**
+- Response: ""20.9""
+- Target: ""20.88million""
+- Analysis: Difference of 0.02 million, negligible.
+- Score: 1
+
+---
+
+### Summary:
+
+All responses approximate the target values closely enough to be considered correct by the criterion.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1
+}
+```",20.88million,20.9,0.0,"Let's analyze each response-target pair:
+
+- Criterion: The semantics should be approximately the same or point to the same entity. Word-for-word match is not required.
+- Scores: Either 0 or 1.
+
+---
+
+**idx_0**: response='691' vs target='493'  
+- '691' ≠ '493' and they represent different numbers/entities. No semantic equivalence implied here.  
+- Score = 0
+
+**idx_1**: same as idx_0.  
+- Score = 0
+
+**idx_2**: same as idx_0.  
+- Score = 0
+
+**idx_3**: same as idx_0.  
+- Score = 0
+
+**idx_4**: response='515' vs target='299'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+**idx_5**: response='515' vs target='273'  
+- Different numbers.  
+- Score = 0
+
+**idx_6**: same as idx_5  
+- Score = 0
+
+**idx_7**: response='273' vs target='299'  
+- Different numbers.  
+- Score = 0
+
+**idx_8**: response='273' vs target='273'  
+- Exactly equal, same entity.  
+- Score = 1
+
+**idx_9**: response='9' vs target='209'  
+- Different numbers, no semantic equivalence.  
+- Score = 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",209,9,0.0,"Let's analyze each item one by one according to the criterion:
+
+Criterion summary: The semantics must be approximately the same or point to the same entity. No need for exact wording.
+
+---
+
+**Item idx_0**  
+- Response: ""vibrationreductionsystem""  
+- Target: ""5-axisimagesensorshift""  
+Analysis:  
+- ""vibration reduction system"" and ""5-axis image sensor shift"" both relate to camera stabilization.  
+- ""5-axis image sensor shift"" usually refers to a stabilization mechanism where the image sensor moves in five axes to reduce vibration.  
+- ""vibration reduction system"" is a more general term, which could include lens-based stabilization or sensor-shift.  
+- Does ""vibration reduction system"" semantically correspond closely to ""5-axis image sensor shift""? It is related, but not exactly the same entity. The target specifies exactly ""5-axis image sensor shift"", a specific method. The response refers to a general system for vibration reduction, which may or may not be the same.
+
+Given that the criterion says ""semantics are approximately the same or point to the same entity,"" this is borderline. However, since ""5-axis image sensor shift"" is a specific type of vibration reduction system, and ""vibration reduction system"" is more general, it does not exactly or approximately point to the same entity. Thus, it should be considered incorrect.
+
+Score: 0
+
+---
+
+**Item idx_1**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_2**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_3**  
+Response: ""vibrationreductionsystem""  
+Target: ""imagesensor5-axisshift""  
+Same situation as above, just reordering words but same concept. The target is ""image sensor 5-axis shift"" i.e., sensor-based stabilization. The response is general ""vibration reduction system.""
+
+Conclusion: Response is more general than target; not strictly the same entity.
+
+Score: 0
+
+---
+
+**Item idx_4**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_5**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_6**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_7**  
+Same as idx_0  
+Score: 0
+
+---
+
+**Item idx_8**  
+Same as idx_3  
+Score: 0
+
+---
+
+**Item idx_9**  
+Response: ""vibrationreductionsystem""  
+Target: ""-"" (dash) which probably means no target / no answer expected
+
+Since target is ""-"", we do not expect a valid answer. The response provides an answer when none expected.
+
+Usually, if no answer is expected and response provides something, it is incorrect or 0.
+
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0
+}
+```
+",-,vibrationreductionsystem,0.0,"Let's analyze each pair of response and target step by step according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.""
+
+---
+
+### idx_0
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Analysis: 
+  - The target ISO range is 64 to 25600.
+  - The response says 100 to 102400 (up to 51200).
+  - The ranges are substantially different. The response has a starting ISO of 100 vs. 64 in target, which isn't exact but close.
+  - The upper bound is much higher in the response (102400 or even 51200) compared to 25600 in target.
+  - Since the ISO range is significantly different, they are not the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_2
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_3
+- Response: ""100-102400(upto51200)""
+- Target: ""iso64-25600""
+- Same as idx_0, same response and target.
+- Score: 0
+
+### idx_4
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says ISO range is 100 to 51200, expandable to 50-204800.
+  - Target is iso100-64000.
+  - There is overlap but expandable range is different and wider.
+  - The basic range in response is up to 51200 vs target up to 64000, slightly less.
+  - The presence of expandable range (50-204800) is not in target but does not conflict.
+  - Since semantics roughly describe the ISO range capability (base plus expanded), this can be considered the same entity.
+- Score: 1
+
+### idx_5
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000, up to 51200.
+  - Target is 100-51200.
+  - The response's base range 100-64000 is wider than target 100-51200, but also says ""upto51200"".
+  - Possibly confusing, but the ""upto51200"" matches target.
+  - Semantically, target and response point to the same ISO 100-51200 range.
+  - Score: 1
+
+### idx_6
+- Response: ""100-51200(expandableto50-204800)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response base range is 100-51200, expandable 50-204800.
+  - Target is exactly 100-51200.
+  - The expandable range is additional info, does not contradict the target.
+  - Semantically matches base ISO range.
+- Score: 1
+
+### idx_7
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-64000""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-64000.
+  - Response says ""up to 51200"" which is less than 64000 but base is 64000.
+  - Despite this inconsistency in wording, the key ISO range is 100-64000.
+  - This roughly matches the same entity.
+- Score: 1
+
+### idx_8
+- Response: ""100-64000(upto51200)""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response says 100-64000 (up to 51200).
+  - Target is 100-51200.
+  - Response's statement ""upto51200"" matches target's upper ISO.
+  - Base of 64000 in response is extra, but the key semantic range they share is 100-51200.
+- Score: 1
+
+### idx_9
+- Response: ""100-25600""
+- Target: ""iso100-51200""
+- Analysis:
+  - Response max ISO is 25600, target is 51200.
+  - Response is narrower range than target.
+  - Since ISO ranges differ, and response doesn't mention expandable or extending range, the semantic is different.
+- Score: 0
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 0
+}
+```",iso100-51200,100-25600,0.0,"exact not match, response: 12, target: 11fps",11fps,12,1.0,"Let's analyze each idx item by comparing the response and target according to the given criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+### Common points in responses and targets:
+
+- The response is always `""1/4000-30sec""`.
+- The targets vary around shutter speed ranges from 1/32000 or 1/8000 or 1/4000 to 30 seconds.
+- Targets often mention steps/increments (1/3, 1/2, or 1 ev), extendability to 900s in MM mode, bulb modes, remote bulb, sometimes flash sync, x200, or electronic shutter up to 1/16000s.
+
+---
+
+### idx_0:
+- Response: `""1/4000-30sec""`
+- Target: `""1/32000−30s(stepof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb""`
+- The target max shutter speed is 1/32000, while response only says 1/4000. There's a clear difference in max shutter speed (4000 vs 32000).
+- Also, target provides step info, extendability, bulb modes (bulb, remote bulb).
+- Response only gives shutter speed range 1/4000-30sec, no mention of steps or other modes.
+- Semantically, they don't point to the same entity because the max speed is different by a large factor.
+- **Score: 0**
+
+---
+
+### idx_1:
+- Same as idx_0 (same target and response).
+- **Score: 0**
+
+---
+
+### idx_2:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Max shutter speed differs: response says 1/4000, target 1/8000.
+- Other descriptive features in target are not in response.
+- Max shutter speed difference is significant.
+- **Score: 0**
+
+---
+
+### idx_3:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as above, response max 1/4000, target max 1/8000.
+- Missing additional detail in response.
+- Max speed difference matters.
+- **Score: 0**
+
+---
+
+### idx_4:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb;electronicshutterupto1/16000s""
+- Target max shutter speed 1/8000 (mechanical), electronic shutter up to 1/16000.
+- Response max speed only 1/4000.
+- Response missing detail about electronic shutter and increments.
+- Large difference in max shutter speed.
+- **Score: 0**
+
+---
+
+### idx_5:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev;extendableto900sinmmode),bulb,remotebulb,x200""
+- Same as idx_2, difference in max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_6:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Same as idx_3 and idx_8:
+- Max speed 1/4000 vs 1/8000.
+- **Score: 0**
+
+---
+
+### idx_7:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb""
+- Same pattern: 4000 vs 8000 max speed difference.
+- **Score: 0**
+
+---
+
+### idx_8:
+- Response: ""1/4000-30sec""
+- Target: ""1/8000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb,x200""
+- Again, max speed difference.
+- **Score: 0**
+
+---
+
+### idx_9:
+- Response: ""1/4000-30sec""
+- Target: ""1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)""
+- Here the max speed matches (1/4000).
+- The response is minimal and does not mention step increments or bulb mode.
+- However, the criterion says ""semantics approximately the same or point to same entity.""
+- Both specify the same speed range.
+- The response implies same shutter speed range as target.
+- Missing other details, but no explicit deduction criteria.
+- Since the max speed matches exactly and the range overlaps fully, this should be considered the same entity.
+- **Score: 1**
+
+---
+
+### Summary:
+- Only idx_9 matches the semantics fully (same max shutter speed range).
+- All others have a notable difference in maximum shutter speed, so semantics not matched.
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 1
+}
+```","1/4000−30s(stepof1/3;extendableto900sinmmode),bulb,remotebulb,x(flashsync)",1/4000-30sec,1.0,"number near in range 5.0%, response: 450.0, target: 445.0",445,450
+nikonzr,Nikon ZR,,1.0,,,,,,expeed6,,,,24.5,,,,9,,,,vibrationreductionsystem,,,,100-51200,,,,12,,,,1/4000-30sec,,,,550
+z30,,1.0,,,,,,expeed6digitalimageprocessor,,,,20.88million,,,,209,,,,-,,,,iso100-51200,,,,11fps,,,,"1/4000−30s(fine-tunewith1/3ev),bulb,remotebulb",,,,405,
+z50,,1.0,,,,,,expeed6digitalimageprocessor,,,,20.88million,,,,209,,,,-,,,,iso100-51200,,,,11fps,,,,"1/4000−30s(fine-tunewith1/3or1/2ev),bulb,remotebulb",,,,450,
+z50ⅱ,,1.0,,,,,,expeed7digitalimageprocessor,,,,20.90million,,,,231,,,,-,,,,iso100-51200,,,,30fps,,,,"1/4000−30s(fine-tunewith1/3,1/2,or1ev;extendableto900sinmmode),bulb,remotebulb",,,,550,
+zf,,1.0,,,,,,expeed7digitalimageprocessor,,,,24.50million,,,,273,,,,5-axisimagesensorshift,,,,iso100-64000,,,,30fps,,,,"1/8000−30s(incrementof1/3ev;extendableto900sinmmode),bulb,remotebulb,x(flashsync)",,,,710,

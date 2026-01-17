@@ -1,0 +1,269 @@
+brand,brand_before_map,exist_flag_gt,exist_flag_response,product,product_before_map,abv%_llm_judge,abv%_llm_judge_eval_msg,abv%_query,abv%_response,brand_exact_match,brand_exact_match_eval_msg,category_llm_judge,category_llm_judge_eval_msg,category_query,category_response,packsize(bottle)_llm_judge,packsize(bottle)_llm_judge_eval_msg,packsize(bottle)_query,packsize(bottle)_response,product_exact_match,product_exact_match_eval_msg,sub-category_llm_judge,sub-category_llm_judge_eval_msg,sub-category_query,sub-category_response
+johnniewalker,Johnnie Walker,,,redlabel,Red Label,1.0,"Let's analyze each item one by one:
+
+- idx_0:
+  - Response: ""40""
+  - Target: ""40.0%""
+  - Analysis: The reference answer specifies ""40.0%"", which is a percentage with decimal point precision, whereas the response is simply ""40"".
+  - According to the criterion: ""semantics are approximately the same or point to the same entity,"" 40 and 40.0% both represent the percentage 40%, just with different formatting (number vs number with percent sign).
+  - Since ""40"" can reasonably represent ""40%"" and the semantics are approximately the same, the response is acceptable.
+
+- idx_1:
+  - Response: ""40""
+  - Target: ""40.0%""
+  - Same analysis as idx_0 applies here.
+
+Hence, both responses should be scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0:  
+  Response = ""whisky""  
+  Target = ""whisky""  
+  The response exactly matches the target. According to the criterion, approximate semantics or pointing to the same entity is sufficient, and here it is a complete match. So score = 1.
+
+- idx_1:  
+  Response = ""whisky""  
+  Target = ""whisky""  
+  Same as idx_0, exact match. Score = 1.
+
+Final scoring results:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",whisky,whisky,1.0,"Let's analyze each item step by step according to the grading criteria:
+
+**General criterion:**  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different regions have wines of different specifications, so capacity does not need to exactly match.  
+
+---
+
+### Analysis for idx_0:
+
+- **Response:** ""750ml/700ml""  
+- **Target:** ""750ml""  
+
+The response includes ""750ml,"" which exactly matches the target, plus an additional specification ""700ml."" Since the criterion says different capacities in different regions are acceptable and approximate matching is enough, including ""750ml"" suffices. The extra ""700ml"" does not negate correctness.
+
+**Verdict:** Correct → Score = 1
+
+---
+
+### Analysis for idx_1:
+
+- **Response:** ""750ml/700ml""  
+- **Target:** ""750ml""  
+
+Same as idx_0, response contains the exact target capacity and a secondary one. The extra specification does not reduce the correctness, based on the criteria.
+
+**Verdict:** Correct → Score = 1
+
+---
+
+### Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```
+",750ml,750ml/700ml,1.0,key_match,0.0,"Let's analyze each pair of response and target based on the given criteria:
+
+**Criterion recap**:  
+- Sufficient if semantics approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- Broader answers accepted (e.g., NA or premium vodka accepted for vodka).
+
+---
+
+### Pair idx_0:
+- Response: ""corerange""  
+- Target: ""blendedscotchwhisky""
+
+Analysis:  
+- ""corerange"" is a generic phrase and does not denote any specific entity, especially not ""blended scotch whisky"".  
+- The semantics of ""corerange"" and ""blendedscotchwhisky"" do not match, nor do they point to the same entity.  
+
+Verdict: score = 0
+
+### Pair idx_1:
+- Response: ""corerange""  
+- Target: ""blendedscotchwhisky""
+
+Analysis:  
+- Same as idx_0, the response does not match the reference answer semantically or in entity reference.  
+
+Verdict: score = 0
+
+---
+
+### Final output:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```",blendedscotchwhisky,corerange
+chivasregal,Chivas Regal,,,12years,12 Years Old,1.0,"Let's analyze each item one by one:
+
+- idx_0:
+  - Response: ""40""
+  - Target: ""40.0%""
+  - Analysis: The reference answer specifies ""40.0%"", which is a percentage with decimal point precision, whereas the response is simply ""40"".
+  - According to the criterion: ""semantics are approximately the same or point to the same entity,"" 40 and 40.0% both represent the percentage 40%, just with different formatting (number vs number with percent sign).
+  - Since ""40"" can reasonably represent ""40%"" and the semantics are approximately the same, the response is acceptable.
+
+- idx_1:
+  - Response: ""40""
+  - Target: ""40.0%""
+  - Same analysis as idx_0 applies here.
+
+Hence, both responses should be scored 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",40.0%,40,1.0,key_match,1.0,"Let's analyze each pair step-by-step:
+
+- idx_0:  
+  Response = ""whisky""  
+  Target = ""whisky""  
+  The response exactly matches the target. According to the criterion, approximate semantics or pointing to the same entity is sufficient, and here it is a complete match. So score = 1.
+
+- idx_1:  
+  Response = ""whisky""  
+  Target = ""whisky""  
+  Same as idx_0, exact match. Score = 1.
+
+Final scoring results:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",whisky,whisky,1.0,"Let's analyze each item step by step according to the grading criteria:
+
+**General criterion:**  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- Different regions have wines of different specifications, so capacity does not need to exactly match.  
+
+---
+
+### Analysis for idx_0:
+
+- **Response:** ""750ml/700ml""  
+- **Target:** ""750ml""  
+
+The response includes ""750ml,"" which exactly matches the target, plus an additional specification ""700ml."" Since the criterion says different capacities in different regions are acceptable and approximate matching is enough, including ""750ml"" suffices. The extra ""700ml"" does not negate correctness.
+
+**Verdict:** Correct → Score = 1
+
+---
+
+### Analysis for idx_1:
+
+- **Response:** ""750ml/700ml""  
+- **Target:** ""750ml""  
+
+Same as idx_0, response contains the exact target capacity and a secondary one. The extra specification does not reduce the correctness, based on the criteria.
+
+**Verdict:** Correct → Score = 1
+
+---
+
+### Final output:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```
+",750ml,750ml/700ml,1.0,key_match,0.0,"Let's analyze each pair of response and target based on the given criteria:
+
+**Criterion recap**:  
+- Sufficient if semantics approximately the same or point to the same entity.  
+- No need for word-for-word match.  
+- Broader answers accepted (e.g., NA or premium vodka accepted for vodka).
+
+---
+
+### Pair idx_0:
+- Response: ""corerange""  
+- Target: ""blendedscotchwhisky""
+
+Analysis:  
+- ""corerange"" is a generic phrase and does not denote any specific entity, especially not ""blended scotch whisky"".  
+- The semantics of ""corerange"" and ""blendedscotchwhisky"" do not match, nor do they point to the same entity.  
+
+Verdict: score = 0
+
+### Pair idx_1:
+- Response: ""corerange""  
+- Target: ""blendedscotchwhisky""
+
+Analysis:  
+- Same as idx_0, the response does not match the reference answer semantically or in entity reference.  
+
+Verdict: score = 0
+
+---
+
+### Final output:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```",blendedscotchwhisky,corerange
+absolut,,1.0,,absolutvodka,,,,40.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+absolut,,1.0,,elyx,,,,42.3%,,,,,,vodka,,,,750ml/1000ml/1750ml,,,,,,premiumvodka,
+absolut,Absolut,,1.0,vodka,Vodka,,,,40,,,,,,vodka,,,,750ml,,,,,,corerange
+bacardi,,1.0,,añejocuatro,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,black,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,Bacardi,,1.0,cartablanca,Carta Blanca,,,,40,,,,,,rum,,,,1l,,,,,,corerange
+bacardi,,1.0,,flavored,,,,35.0%,,,,,,rum,,,,750ml,,,,,,flavoredrum,
+bacardi,,1.0,,gold,,,,40.0%,,,,,,rum,,,,750ml,,,,,,goldrum,
+bacardi,,1.0,,granreservadiez,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,granreservalimitada,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,readytodrinkcocktails,,,,5.9%,,,,,,cocktail,,,,355ml,,,,,,/,
+bacardi,,1.0,,readytoservecocktails,,,,12.5%,,,,,,cocktail,,,,1.75l,,,,,,/,
+bacardi,,1.0,,reservaocho,,,,40.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,sevillianorange,,,,45.0%,,,,,,rum,,,,750ml,,,,,,darkrum,
+bacardi,,1.0,,spiced,,,,35.0%,,,,,,rum,,,,750ml,,,,,,spicedrum,
+bacardi,,1.0,,superior,,,,40.0%,,,,,,rum,,,,750ml,,,,,,whiterum,
+chivasregal,,1.0,,18years,,,,40.0%,,,,,,whisky,,,,700ml/750ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,25years,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,extra,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,mizunara,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,theicon,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,ultis,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+chivasregal,,1.0,,xv,,,,40.0%,,,,,,whisky,,,,700ml,,,,,,blendedscotchwhisky,
+greygoose,,1.0,,altius,,,,40.0%,,,,,,vodka,,,,700ml/1750ml,,,,,,premiumvodka,
+greygoose,,1.0,,classicmartinicocktail,,,,35.0%,,,,,,cocktail,,,,375ml,,,,,,/,
+greygoose,,1.0,,greygoosevodka,,,,40.0%,,,,,,vodka,,,,50ml/200ml/375ml/750ml/1000ml/1750ml,,,,,,frenchvodka,
+greygoose,Grey Goose,,1.0,vodka,Vodka,,,,40,,,,,,vodka,,,,750ml,,,,,,corerange
+johnniewalker,,1.0,,&sonskinggeorgev.,,,,43.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,aged18years(ex-platinum),,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,blacklabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,blonde,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,bluelabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,doubleblacklabel,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,goldlabelreserve,,,,40.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,greenlabel,,,,43.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+johnniewalker,,1.0,,highrye,,,,45.0%,,,,,,whisky,,,,750ml,,,,,,blendedscotchwhisky,
+smirnoff,Smirnoff,,1.0,classicmartinicocktail,Classic Vodka,,,,40,,,,,,vodka,,,,750ml,,,,,,corerange
+smirnoff,,1.0,,no.21,,,,40.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,,1.0,,no.27,,,,45.2%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,
+smirnoff,,1.0,,no.57,,,,50.0%,,,,,,vodka,,,,750ml,,,,,,premiumvodka,

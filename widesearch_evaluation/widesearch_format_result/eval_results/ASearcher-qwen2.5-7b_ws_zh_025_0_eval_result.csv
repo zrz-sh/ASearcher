@@ -1,0 +1,4605 @@
+exist_flag_gt,exist_flag_response,发布日期,发布日期_before_map,cpu制造工艺_exact_match,cpu制造工艺_exact_match_eval_msg,cpu制造工艺_query,cpu制造工艺_response,cpu核心数_exact_match,cpu核心数_exact_match_eval_msg,cpu核心数_query,cpu核心数_response,出厂搭载系统_llm_judge,出厂搭载系统_llm_judge_eval_msg,出厂搭载系统_query,出厂搭载系统_response,分辨率_llm_judge,分辨率_llm_judge_eval_msg,分辨率_query,分辨率_response,发布日期_exact_match,发布日期_exact_match_eval_msg,发布时的售价_exact_match,发布时的售价_exact_match_eval_msg,发布时的售价_query,发布时的售价_response,存储空间大小_exact_match,存储空间大小_exact_match_eval_msg,存储空间大小_query,存储空间大小_response,屏幕尺寸_llm_judge,屏幕尺寸_llm_judge_eval_msg,屏幕尺寸_query,屏幕尺寸_response,手机cpu型号_llm_judge,手机cpu型号_llm_judge_eval_msg,手机cpu型号_query,手机cpu型号_response,手机型号_llm_judge,手机型号_llm_judge_eval_msg,手机型号_query,手机型号_response,手机处理器品牌_llm_judge,手机处理器品牌_llm_judge_eval_msg,手机处理器品牌_query,手机处理器品牌_response,最高像素_llm_judge,最高像素_llm_judge_eval_msg,最高像素_query,最高像素_response,电池容量_llm_judge,电池容量_llm_judge_eval_msg,电池容量_query,电池容量_response,运行内存大小_exact_match,运行内存大小_exact_match_eval_msg,运行内存大小_query,运行内存大小_response
+,,2020-11-26,2020-03-20,1.0,"exact match, response: 7nm, target: 7nm",7nm,7nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",miui12,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2340x1080,1080x2400像素,1.0,key_match,0.0,"exact not match, response: 2999元, target: 1299元",1299元,2999元,0.0,"exact not match, response: 128gb/256gb, target: 128gb",128gb,128gb/256gb,0.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.53英寸,6.67英寸,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",天玑800u,snapdragon865,0.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redminote95g,redmik30pro,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",联发科,qualcomm,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",4800万像素,6400万像素,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",5000mah,4700mah,0.0,"exact not match, response: 6gb/8gb, target: 6gb",6gb,6gb/8gb
+,,2023-09-11,2023-01-01,0.0,"exact not match, response: 4nm, target: 6nm",6nm,4nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",miui14,android,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2400x1080,2400x1080像素,1.0,key_match,0.0,"exact not match, response: 2999元, target: 1099元",1099元,2999元,0.0,"exact not match, response: 128gb/256gb, target: 128gb",128gb,128gb/256gb,1.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.67英寸,6.67英寸,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",天玑6080,snapdragon8+gen1,0.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redminote13,redmik60,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",联发科,qualcomm,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",1亿像素,6400万像素,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",5000mah,5500mah,0.0,"exact not match, response: 16gb, target: 6gb",6gb,16gb
+,,2019-05-28,2019-06-19,0.0,"exact not match, response: 7nm, target: 8nm",8nm,7nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",miui10,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2340x1080,1080x2340像素,1.0,key_match,0.0,"exact not match, response: 1599元, target: 1999元",1999元,1599元,0.0,"exact not match, response: 128gb/256gb, target: 64gb",64gb,128gb/256gb,1.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.39英寸,6.39英寸,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",骁龙730,snapdragon730,1.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redmik20,redmik20,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",高通,qualcomm,1.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",4800万像素,4800万像素,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",4000mah（typ）/3900mah（min）,4000mah,0.0,"exact not match, response: 6gb/8gb, target: 6gb",6gb,6gb/8gb
+,,2019-12-10,2019-12-20,1.0,"exact match, response: 7nm, target: 7nm",7nm,7nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",miui11,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2400x1080,1080x2400像素,1.0,key_match,0.0,"exact not match, response: 1599元, target: 1999元",1999元,1599元,0.0,"exact not match, response: 64gb/128gb/256gb, target: 64gb",64gb,64gb/128gb/256gb,1.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.67英寸,6.67英寸,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",骁龙765g,snapdragon730g,1.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redmik305g,redmik30,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",高通,qualcomm,1.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",6400万像素,6400万像素,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",4500mah（typ）,4500mah,0.0,"exact not match, response: 6gb/8gb, target: 6gb",6gb,6gb/8gb
+,,2021-02-25,2021-02-25,1.0,"exact match, response: 7nm, target: 7nm",7nm,7nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",miui12,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2400x1080,1080x2400像素,1.0,key_match,1.0,"exact match, response: 1999元, target: 1999元",1999元,1999元,0.0,"exact not match, response: 128gb/256gb, target: 128gb",128gb,128gb/256gb,1.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.67英寸,6.67英寸,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",骁龙870,snapdragon870,1.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redmik40,redmik40,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",高通,qualcomm,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",4800万像素,6400万像素,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",4520mah（typ）,4520mah,0.0,"exact not match, response: 6gb/8gb/12gb, target: 6gb",6gb,6gb/8gb/12gb
+,,2022-12-27,2022-12-27,0.0,"exact not match, response: 6nm, target: 4nm",4nm,6nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",miui14,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",3200x1440,2400x1080像素,1.0,key_match,1.0,"exact match, response: 2499元, target: 2499元",2499元,2499元,0.0,"exact not match, response: 128gb/256gb, target: 128gb",128gb,128gb/256gb,1.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.67英寸,6.67英寸,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",骁龙8+gen1,dimensity8100,0.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redmik60,redmik50,0.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",高通,mediatek,1.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",6400万像素,6400万像素,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",5500mah（typ）,5500mah,0.0,"exact not match, response: 8gb/12gb, target: 8gb",8gb,8gb/12gb
+,,2024-11-27,2024-11-27,1.0,"exact match, response: 4nm, target: 4nm",4nm,4nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",xiaomihyperos2,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",3200x1440,2400x1080像素,1.0,key_match,0.0,"exact not match, response: 2999元, target: 2499元",2499元,2999元,0.0,"exact not match, response: 256gb/512gb, target: 256gb",256gb,256gb/512gb,1.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.67英寸,6.67英寸,1.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",骁龙8gen3,snapdragon8gen3,1.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redmik80,redmik80,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",高通,qualcomm,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",5000万像素,6400万像素,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",6550mah（typ）/6410mah（min）,6550mah,0.0,"exact not match, response: 16gb, target: 12gb",12gb,16gb
+,,2024-11-27,2025-10-25,1.0,"exact match, response: 4nm, target: 4nm",4nm,4nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze each item according to the given criterion:
+
+Criterion summary:
+- Semantic equivalence or pointing to the same entity is sufficient.
+- Exact wording is not required.
+- No additional negative items or deductions are mentioned.
+- Xiaomi Hyper OS = Xiaomi Hyper also acceptable.
+
+Given responses vs targets:
+
+1. idx_0: response ""android"", target ""miui12""
+   - MIUI 12 is a Xiaomi customized OS skin based on Android.
+   - Response ""android"" is more general, not exactly MIUI12.
+   - Criterion allows semantic similarity or pointing to the same entity.
+   - ""android"" is an OS, but ""miui12"" is a specific version of a skin on Android.
+   - The response is less precise and does not refer to the exact OS version or skin.
+   - Is ""android"" semantically the same as ""miui12""? No, miui12 is a customized version layered on Android, so the answer is less specific.
+   - The criterion says ""semantic approximate or referring to the same entity"".
+   - Android != MIUI12; MIUI12 is based on Android but not the same.
+   - So it is not the same entity.
+   - According to instructions, the score should be 0 or 1 only.
+   - Given this, ""android"" is just the base OS, not the target.
+   - So, score: 0.
+
+2. idx_1: response ""android"", target ""miui14""
+   - Same reasoning as idx_0.
+   - ""android"" is not equivalent to ""miui14"".
+   - Score: 0.
+
+3. idx_2: response ""android"", target ""miui10""
+   - Same as above.
+   - Score: 0.
+
+4. idx_3: response ""android"", target ""miui11""
+   - Same reasoning.
+   - Score: 0.
+
+5. idx_4: response ""android"", target ""miui12""
+   - Same as idx_0.
+   - Score: 0.
+
+6. idx_5: response ""android"", target ""miui14""
+   - Same as idx_1.
+   - Score: 0.
+
+7. idx_6: response ""android"", target ""xiaomihyperos2""
+   - Target is Xiaomi Hyper OS 2 (also acceptable if written Xiaomi Hyper).
+   - The response is simply ""android"".
+   - Xiaomi Hyper OS 2 is based on Android but is a specifically named OS.
+   - Response ""android"" is general, does not specifically point to Xiaomi Hyper OS.
+   - The criterion says approximate semantic or pointing to the same entity.
+   - Android is the base but not the exact same entity as Xiaomi Hyper OS 2.
+   - So, the response is insufficient.
+   - Score: 0.
+
+8. idx_7: response ""android"", target ""xiaomihyperos2""
+   - Same as idx_6.
+   - Score: 0.
+
+Final scoring:
+
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",xiaomihyperos2,android,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion summary: The response should have roughly the same meaning or point to the same entity. The exact character-to-character matching is not required.
+
+---
+
+**idx_0:**  
+Response: ""1080x2400像素""  
+Target: ""2340x1080""  
+- The numbers are reversed and different from the target.  
+- ""1080x2400"" is not the same resolution as ""2340x1080"". These are not semantically the same or pointing to the same entity.  
+- According to criterion, this is incorrect.
+
+**Score: 0**
+
+---
+
+**idx_1:**  
+Response: ""2400x1080像素""  
+Target: ""2400x1080""  
+- The response matches the target exactly except for the unit ""像素"" which is acceptable.  
+- This indicates the same entity fully.
+
+**Score: 1**
+
+---
+
+**idx_2:**  
+Response: ""1080x2340像素""  
+Target: ""2340x1080""  
+- Numbers are the same but reversed order.  
+- Resolution is width x height, and commonly, the first number is width and second is height.  
+- 1080x2340 != 2340x1080, so these indicate different resolutions (one is 1080 pixels wide and 2340 pixels tall, the other is the reverse).  
+- They are not semantically the same as they point to different entities.
+
+**Score: 0**
+
+---
+
+**idx_3:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- Same analysis as idx_0: different resolutions, order reversed, different numbers.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_4:**  
+Response: ""1080x2400像素""  
+Target: ""2400x1080""  
+- The same as idx_3 and idx_0.
+
+**Score: 0**
+
+---
+
+**idx_5:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Numbers are completely different, not semantically equivalent.  
+- Not the same entity.
+
+**Score: 0**
+
+---
+
+**idx_6:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5.
+
+**Score: 0**
+
+---
+
+**idx_7:**  
+Response: ""2400x1080像素""  
+Target: ""3200x1440""  
+- Same as idx_5, idx_6.
+
+**Score: 0**
+
+---
+
+### Final Scores Summary:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",3200x1440,2400x1080像素,1.0,key_match,0.0,"exact not match, response: 3299元, target: 2499元",2499元,3299元,0.0,"exact not match, response: 256gb/512gb, target: 256gb",256gb,256gb/512gb,0.0,"分析过程：
+
+判分标准：  
+- 只要语义相同大致或者指向实体一致，即得1分。  
+- 分数只能为0或1。
+
+逐条分析：
+
+- idx_0：响应“6.67英寸”，目标“6.53英寸”。两者数值不同，差距0.14英寸，即指向的实体并不一致（尺寸具体数值应一致）。根据标准，不符合完全相同或指向一致，得0分。  
+- idx_1：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_2：响应“6.39英寸”，目标“6.39英寸”，完全一致，得1分。  
+- idx_3：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_4：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_5：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_6：响应“6.67英寸”，目标“6.67英寸”，完全一致，得1分。  
+- idx_7：响应“6.59英寸”，目标“6.67英寸”，虽然数值接近，但不同，属于具体数值的不同，指向实体不一致，得0分。
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",6.67英寸,6.59英寸,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应""  
+(Meaning the response only needs to have basically the same semantic or refer to the same entity as the target/reference answer.)
+
+---
+
+### idx_0:
+- Response: snapdragon865  
+- Target: 天玑800u  
+- ""snapdragon865"" = Qualcomm Snapdragon 865  
+- ""天玑800u"" = MediaTek Dimensity 800U  
+These are two different chipsets from different manufacturers, different series. So they do NOT refer to the same entity or a roughly semantically equivalent answer.  
+Score: 0
+
+---
+
+### idx_1:
+- Response: snapdragon8+gen1  
+- Target: 天玑6080  
+- Snapdragon 8+ Gen 1 vs Dimensity 6080, two different chipsets again, different brands and models. Not equivalent.  
+Score: 0
+
+---
+
+### idx_2:
+- Response: snapdragon730  
+- Target: 骁龙730  
+- ""snapdragon730"" and ""骁龙730"" are the English and Chinese names of the same chipset.  
+They are semantically equivalent.  
+Score: 1
+
+---
+
+### idx_3:
+- Response: snapdragon730g  
+- Target: 骁龙765g  
+- Response is Snapdragon 730G, target is Snapdragon 765G. Two different chipsets, although similar generation and brand, the models differ clearly. Not equivalent.  
+Score: 0
+
+---
+
+### idx_4:
+- Response: snapdragon870  
+- Target: 骁龙870  
+- Same chipset name, one English, one Chinese. Equivalent.  
+Score: 1
+
+---
+
+### idx_5:
+- Response: dimensity8100  
+- Target: 骁龙8+gen1  
+- Dimensity 8100 (MediaTek) vs Snapdragon 8+ Gen 1 (Qualcomm), different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+### idx_6:
+- Response: snapdragon8gen3  
+- Target: 骁龙8gen3  
+- Same chipset name, English vs Chinese, equivalent.  
+Score: 1
+
+---
+
+### idx_7:
+- Response: snapdragon8elite  
+- Target: 骁龙8gen3  
+- Response uses ""snapdragon8elite"", target ""骁龙8gen3"".  
+""Snapdragon 8 Elite"" is sometimes a marketing name referring to Snapdragon 8 Gen 2 Elite or an enhanced version, but ""骁龙8gen3"" is Snapdragon 8 Gen 3, which is a newer generation. They are not the same chipset.  
+Assuming strict model difference, these are different chipsets. Not equivalent.  
+Score: 0
+
+---
+
+## Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",骁龙8gen3,snapdragon8elite,0.0,"首先，对每一对response和target进行分析，根据标准答案和评分标准：
+
+评分标准说明：
+- 语义相同大致，或指向实体一致，即判定正确。
+- 手机型号多答出5G或少答出5G不扣分，即“redmik30”与“redmik305g”视为相同。
+
+逐项分析：
+
+idx_0:
+- response: ""redmik30pro""
+- target: ""redminote95g""
+- 两者型号区别较大，一个为“redmi k30 pro”，一个为“redmi note 9 5G”
+- 指向不同系列，不一致
+- 评分：0
+
+idx_1:
+- response: ""redmik60""
+- target: ""redminote13""
+- 一个是“redmi k60”，一个是“redmi note 13”
+- 不同系列
+- 评分：0
+
+idx_2:
+- response: ""redmik20""
+- target: ""redmik20""
+- 两者完全一致
+- 评分：1
+
+idx_3:
+- response: ""redmik30""
+- target: ""redmik305g""
+- 根据规则，缺少或多出5G不扣分，型号“redmi k30”与“redmi k30 5G”视为相同
+- 评分：1
+
+idx_4:
+- response: ""redmik40""
+- target: ""redmik40""
+- 完全一致
+- 评分：1
+
+idx_5:
+- response: ""redmik50""
+- target: ""redmik60""
+- 不同型号，50和60属于不同产品
+- 评分：0
+
+idx_6:
+- response: ""redmik80""
+- target: ""redmik80""
+- 完全一致
+- 评分：1
+
+idx_7:
+- response: ""redmik90""
+- target: ""redmik80""
+- 不同型号
+- 评分：0
+
+最终评分如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",redmik80,redmik90,1.0,"Let's analyze each pair one by one according to the criterion:
+
+Criterion:
+- The response and the target just need to have the same or roughly the same meaning, or point to the same entity.
+- Exact word matches are not required.
+
+---
+
+### idx_0
+- Response: ""qualcomm""
+- Target: ""联发科"" (MediaTek)
+- Analysis: Qualcomm and MediaTek are two different companies; they do not refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: ""qualcomm""
+- Target: ""联发科""
+- Same as above.
+- Score: 0
+
+### idx_2
+- Response: ""qualcomm""
+- Target: ""高通"" (Chinese for Qualcomm)
+- They are the same entity.
+- Score: 1
+
+### idx_3
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_4
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same as above.
+- Score: 1
+
+### idx_5
+- Response: ""mediatek""
+- Target: ""高通""
+- Different entities.
+- Score: 0
+
+### idx_6
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+### idx_7
+- Response: ""qualcomm""
+- Target: ""高通""
+- Same entity.
+- Score: 1
+
+---
+
+### Final JSON output:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1
+}
+```",高通,qualcomm,0.0,"Let's analyze each pair based on the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"" That is, the response should have the same or roughly the same semantic meaning or refer to the same entity.
+
+---
+
+**idx_0**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: The response and target refer to different megapixel counts. They are not roughly equivalent nor the same entity. Score: 0
+
+**idx_1**  
+Response: ""6400万像素""  
+Target: ""1亿像素""  
+Analysis: Different numbers, not the same or roughly equivalent. Score: 0
+
+**idx_2**  
+Response: ""4800万像素""  
+Target: ""4800万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_3**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Exactly the same. Score: 1
+
+**idx_4**  
+Response: ""6400万像素""  
+Target: ""4800万像素""  
+Analysis: Same as idx_0, different values. Score: 0
+
+**idx_5**  
+Response: ""6400万像素""  
+Target: ""6400万像素""  
+Analysis: Same. Score: 1
+
+**idx_6**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Different values, not equivalent. Score: 0
+
+**idx_7**  
+Response: ""6400万像素""  
+Target: ""5000万像素""  
+Analysis: Same as idx_6, different values. Score: 0
+
+---
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",5000万像素,6400万像素,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion summary:  
+- The response should be semantically equivalent or point to the same entity as the target.  
+- Not necessary to match exactly word for word but should be close or consistent information.
+
+---
+
+**idx_0**  
+- Response: 4700mah  
+- Target: 5000mah  
+- The numbers differ significantly, not close or equivalent. No indication that they point to the same nominal capacity.  
+- Score: 0
+
+**idx_1**  
+- Response: 5500mah   
+- Target: 5000mah  
+- Again, the numbers differ by 500mah, which is a big difference. Not equivalent.  
+- Score: 0
+
+**idx_2**  
+- Response: 4000mah  
+- Target: 4000mah（typ）/3900mah（min）  
+- Response matches a typical capacity value exactly (4000mah). It aligns with one of the provided values in the target (typical 4000mah).  
+- Semantically equivalent (target includes more detail, response covers typical value).  
+- Score: 1
+
+**idx_3**  
+- Response: 4500mah  
+- Target: 4500mah（typ）  
+- Exact number matches the typical value.  
+- Semantically equivalent.  
+- Score: 1
+
+**idx_4**  
+- Response: 4520mah  
+- Target: 4520mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_5**  
+- Response: 5500mah  
+- Target: 5500mah（typ）  
+- Exact number matches typical.  
+- Score: 1
+
+**idx_6**  
+- Response: 6550mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response matches typical value exactly.  
+- Score: 1
+
+**idx_7**  
+- Response: 7100mah  
+- Target: 6550mah（typ）/6410mah（min）  
+- Response is much higher (7100 vs 6550 typical max). Not the same entity/value.  
+- Score: 0
+
+---
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0
+}
+```",6550mah（typ）/6410mah（min）,7100mah,0.0,"exact not match, response: 12gb/16gb, target: 12gb",12gb,12gb/16gb
+1.0,,2015-08-13,,,,28nm,,,,8核,,,,miui7,,,,1920x1080,,,,,,799元,,,,16gb,,,,5.5英寸,,,,heliox10,,,,红米note2,,,,联发科,,,,1300万像素,,,,3060mah,,,,2gb,
+1.0,,2015-11-24,,,,28nm,,,,8核,,,,miui7,,,,1920x1080,,,,,,899元,,,,16gb,,,,5.5英寸,,,,heliox10,,,,红米note3,,,,联发科,,,,1300万像素,,,,4000mah/4050mah(typ),,,,2gb,
+1.0,,2016-08-25,,,,20nm,,,,10核,,,,miui8,,,,1920x1080,,,,,,899元,,,,16gb,,,,5.5英寸,,,,heliox20,,,,红米note4,,,,联发科,,,,1300万像素,,,,4100mah(typ),,,,2gb,
+1.0,,2018-03-16,,,,14nm,,,,8核,,,,miui9,,,,2160x1080,,,,,,1099元,,,,32gb,,,,5.99英寸,,,,骁龙636,,,,红米note5,,,,高通,,,,1300万像素,,,,4000mah（typ）/3900mah（min）,,,,3gb,
+1.0,,2019-01-10,,,,14nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,999元,,,,32gb,,,,6.3英寸,,,,骁龙660,,,,红米note7,,,,高通,,,,4800万像素,,,,4000mah（typ）/3900mah（min）,,,,3gb,
+1.0,,2019-08-29,,,,11nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,999元,,,,64gb,,,,6.3英寸,,,,骁龙665,,,,redminote8,,,,高通,,,,4800万像素,,,,4000mah(typ)/3900mah(min),,,,4gb,
+1.0,,2021-05-26,,,,7nm,,,,8核,,,,miui12,,,,2400x1080,,,,,,1099元,,,,128gb,,,,6.5英寸,,,,天玑700,,,,redminote10,,,,联发科,,,,4800万像素,,,,5000mah（典型值）,,,,4gb,
+1.0,,2021-10-28,,,,6nm,,,,8核,,,,miui12.5,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.6英寸,,,,天玑810,,,,redminote115g,,,,联发科,,,,5000万像素,,,,5000mah电池（典型值）,,,,4gb,
+1.0,,2022-03-17,,,,5nm,,,,8核,,,,miui13,,,,3200x1440,,,,,,2399元,,,,128gb,,,,6.67英寸,,,,天玑8100,,,,redmik50,,,,联发科,,,,4800万像素,,,,5500mah（typ）,,,,8gb,
+1.0,,2022-10-27,,,,6nm,,,,8核,,,,miui13,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.67英寸,,,,骁龙4gen1,,,,redminote12,,,,高通,,,,4800万像素,,,,5000mah电池（典型值）,,,,4gb,
+1.0,,2023-11-29,,,,4nm,,,,8核,,,,小米澎湃os,,,,3200x1440,,,,,,2499元,,,,256gb,,,,6.67英寸,,,,骁龙8gen2,,,,redmik70,,,,高通,,,,5000万像素,,,,5000mah（typ）,,,,12gb,
+1.0,,2024-09-26,,,,6nm,,,,8核,,,,小米澎湃os,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.67英寸,,,,天玑7025-ultra,,,,redminote145g,,,,联发科,,,,5000万像素,,,,5110mah（typ）/5010mah（min）,,,,6gb,

@@ -1,0 +1,50 @@
+clinic,clinic_before_map,exist_flag_gt,exist_flag_response,clinic_exact_match,clinic_exact_match_eval_msg,county_exact_match,county_exact_match_eval_msg,county_query,county_response,fulladdress_llm_judge,fulladdress_llm_judge_eval_msg,fulladdress_query,fulladdress_response,phonenumber_exact_match,phonenumber_exact_match_eval_msg,phonenumber_query,phonenumber_response,saturdayoperationhours_llm_judge,saturdayoperationhours_llm_judge_eval_msg,saturdayoperationhours_query,saturdayoperationhours_response
+fpawomen'shealth-fresno,FPA Women's Health,,,1.0,key_match,1.0,"exact match, response: fresno, target: fresno",fresno,fresno,1.0,"Let's analyze the given pair step by step:
+
+Pair idx_0:  
+- Standard answer: ""165northclarkstreet,fresno,ca93701""  
+- Response: ""165n.clarkstreet""  
+
+Analysis according to the criterion:  
+- The criterion states that semantics should be approximately the same or pointing to the same entity; exact match is not required.  
+- The response gives ""165n.clarkstreet"" which is clearly the same address but abbreviated: ""n."" for ""north"", and no city or zip code.  
+- Although the response omits ""fresno, ca93701"", it still points clearly to the same address because:  
+  - ""165n.clarkstreet"" points to the same location as ""165northclarkstreet"".  
+- The criterion does not require the full address with city and zip, just approximate semantics or pointing to the same entity.  
+- The abbreviations ""n."" vs ""north"" and the missing city/zip do not prevent the response from meaning the same entity.  
+
+Conclusion: The response is good enough and meets the criterion, so it should be scored 1.
+
+```json
+{
+    ""idx_0"": 1
+}
+```","165northclarkstreet,fresno,ca93701",165n.clarkstreet,1.0,"exact match, response: (559)233-8657, target: (559)233-8657",(559)233-8657,(559)233-8657,1.0,"Let's analyze the given pair step by step.
+
+---
+
+**Item idx_0**
+
+- **Standard answer:** ""closed""
+- **Response:** ""closed""
+- **Criterion:** Semantics need to be approximately the same, or point to the same entity. Word-for-word correspondence is not necessary, but here it is exactly the same.
+
+**Analysis:**  
+The response matches the standard answer exactly, both are the word ""closed"". This clearly satisfies the criterion for full correctness.
+
+**Score:** 1
+
+---
+
+**Final scoring results:**
+
+```json
+{
+    ""idx_0"": 1
+}
+```",closed,closed
+fpawomen'shealth-tulare,,1.0,,,,,,tulare,,,,"1068ncherrystreet,tulare,ca93274",,,,(559)233-0990,,,,closed,
+plannedparenthood-familyfirsthealthcenter,,1.0,,,,,,fresno,,,,"6095n.1ststreet,fresno,ca93710",,,,(559)446-1515,,,,closed,
+plannedparenthood-fultonstreethealthcenter,,1.0,,,,,,fresno,,,,"650n.fultonstreet,fresno,ca93728",,,,(559)488-4900,,,,8am-4:30pm,
+plannedparenthood-maderahealthcenter,,1.0,,,,,,madera,,,,"500e.almondave,#1,madera,ca93637",,,,(559)675-1133,,,,closed,
+plannedparenthood-mercedhealthcenter,,1.0,,,,,,merced,,,,"3166collinsdrive,merced,ca95348",,,,(209)723-7751,,,,closed,

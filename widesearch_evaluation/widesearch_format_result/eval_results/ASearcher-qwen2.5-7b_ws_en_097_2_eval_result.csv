@@ -1,0 +1,693 @@
+exist_flag_gt,exist_flag_response,movietitle,movietitle_before_map,awards_llm_judge,awards_llm_judge_eval_msg,awards_query,awards_response,director_llm_judge,director_llm_judge_eval_msg,director_query,director_response,distributor_llm_judge,distributor_llm_judge_eval_msg,distributor_query,distributor_response,leadingactress_llm_judge,leadingactress_llm_judge_eval_msg,leadingactress_query,leadingactress_response,movietitle_exact_match,movietitle_exact_match_eval_msg,yearofpremiere_exact_match,yearofpremiere_exact_match_eval_msg,yearofpremiere_query,yearofpremiere_response
+,,inthemoodforlove,In the Mood for Love,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word match.
+
+---
+
+### idx_0
+
+**Response:**  
+`bestdirector:wongkar-wai;bestleadingactor:tonyleungchiu-wai`
+
+**Target:**  
+```
+200053thcannesfilmfestivalbestactor,
+200120thhongkongfilmawardsbestactor
+the1stchinesefilmmediaawardsbestactor
+```
+
+**Analysis:**  
+- The target lists several best actor awards at different film festivals. All relate to best actor awards.  
+- The response gives best director (wongkar-wai) and best leading actor (tonyleungchiu-wai).  
+- Tonyleungchiu-wai matches the actor entity in the target (all awards are about best actor). So the response mentions a correct actor, given the target is about best actor awards.  
+- Best director is extra, not mentioned in the target, but since the criterion does not deduct for extra info, only if the semantics differ or do not meet the target, this is fine.  
+- The response does not list the specific awards like Cannes, HK film awards, Chinese film awards. However, per criteria, approximate semantics or pointing to the same entity is sufficient. Here, bestactor is the main point; it matches.  
+- So the response approximately matches the target, pointing to the same entity (best actor: Tony Leung Chiu Wai).
+
+**Conclusion:** Score = 1
+
+---
+
+### idx_1
+
+**Response:**  
+`bestdirector:wongkar-wai;bestactress:zhangziyi`
+
+**Target:**  
+```
+the24thhongkongfilmawards:bestactor
+bestactorawardatthe8thtallinnblacknightsfilmfestival
+bestactorawardatthe10thhongkonggoldenbauhiniaawards
+bestactorawardatthe11thhongkongfilmcriticssocietyawards
+```
+
+**Analysis:**  
+- Target awards are ALL best actor awards.  
+- Response mentions best director (wongkar-wai) and best actress (zhangziyi).  
+- The response mentions best actress, which is not in the target (best actor only).  
+- Also mentions best director (wongkar-wai) which is not in the target.  
+- There's no mention of best actor or any matching entity from the target.  
+- Since target is strictly about best actor awards and response is about best director and best actress (different category, different gender), semantics do NOT match.  
+- Under criterion, ""It is sufficient if semantics approximately the same or point to the same entity."" Here the response points to a different entity (best actress), so it's not sufficient.  
+- Hence, score = 0
+
+---
+
+### idx_2
+
+**Response:**  
+`bestactor:tonyleungchiu-wai`
+
+**Target:**  
+```
+thehongkongfilmdirectors’guildawards:bestactor
+outstandingactorawardatthe9thasianfilmexpo
+bestchineseactorawardatthe4thdoubanfilmawards
+```
+
+**Analysis:**  
+- Target is a set of best actor or outstanding actor awards given to presumably Tony Leung Chiu Wai (since the question seems to be about him).  
+- Response mentions best actor Tony Leung Chiu Wai.  
+- Response points to the same entity (best actor) as target.  
+- No mention of specific festivals or awards, but per criterion, approximate semantics and pointing to same entity are sufficient.  
+- This matches in semantics and entity.
+
+**Conclusion:** Score=1
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```","200053thcannesfilmfestivalbestactor,
+200120thhongkongfilmawardsbestactor
+the1stchinesefilmmediaawardsbestactor",bestdirector:wongkar-wai;bestleadingactor:tonyleungchiu-wai,1.0,"Let's analyze each pair (response vs. target) according to the given grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+Responses and targets:  
+- idx_0: response = ""wongkar-wai"", target = ""karwaiwong""  
+- idx_1: response = ""wongkar-wai"", target = ""karwaiwong""  
+- idx_2: response = ""wongkar-wai"", target = ""karwaiwong""  
+
+Analysis:  
+The target ""karwaiwong"" and the response ""wongkar-wai"" both clearly refer to the same entity, the name ""Kar Wai Wong,"" a well-known film director. The response splits the name differently and includes a hyphen, but this is still semantically the same entity. The criterion states approximate equivalence or pointing to the same entity is sufficient. Therefore, all three responses should be scored as 1.
+
+Final scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",karwaiwong,wongkar-wai,0.0,"Let's analyze each item step by step:
+
+---
+
+### idx_0
+- Target:  
+  - block2pictures(hongkong)  
+  - océanfilms(france)  
+
+- Response:
+  - jettoneproduction
+
+**Analysis:**  
+The response ""jettoneproduction"" is a company/entity name. However, it does not match either ""block2pictures"" or ""océanfilms"" which are the standard answers. The response does not mention Hong Kong or France companies as required by the target. The criterion states semantics should be approximately the same or point to the same entity. Here, the entities differ completely. Thus, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### idx_1
+- Target:
+  - meiahentertainment  
+  - 20thcenturyfox(hongkong)  
+  - océanfilms(france)  
+  - istitutoluce(italy)  
+  - prokinofilmverleih(germany)
+
+- Response:
+  - sonypicturesclassics
+
+**Analysis:**  
+The response ""sonypicturesclassics"" is a company name, but it does not appear in the target list, nor does it point to any of the mentioned entities or countries. The target contains multiple distributors from Hong Kong, France, Italy, and Germany, none of which are connected semantically to ""sonypicturesclassics."" Therefore, the semantics do not correspond.
+
+**Score:** 0
+
+---
+
+### idx_2
+- Target:
+  - larkfilmsdistribution(hongkong)  
+  - chinafilmgroupcorporation(china)
+
+- Response:
+  - chinamoviedigitalmediaco.,ltd.
+
+**Analysis:**  
+The response mentions ""chinamoviedigitalmediaco.,ltd."" which is a Chinese company or group linked to China’s movie or media industry. The target entities also are Chinese companies (chinafilmgroupcorporation, larkfilmsdistribution (Hong Kong is part of China, so close geographically and politically). The response and target are pointing to similar types of entities (film/media groups in China/Hong Kong). According to the criterion, approximate semantic equivalence and pointing to the same entity or at least the same concept is sufficient.
+
+**Score:** 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```
+","block2pictures(hongkong)
+océanfilms(france)",jettoneproduction,1.0,"Let's analyze each pair according to the grading criteria:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word matching.
+
+---
+
+**idx_0**  
+- Response: ""maggiecheung""  
+- Target: ""maggiecheung""  
+- They are exactly the same.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""maggiecheung""  
+- Target: ""ligong""  
+- Different strings, pointing to different entities.  
+- No semantic equivalence or same entity indicated.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""zhangziyi""  
+- Target: ""ziyizhang""  
+- The two names appear to be two variations of the same Chinese name ""Zhang Ziyi"" in different word orders or formatting.  
+- Semantically, they clearly point to the same person.  
+- The criterion says semantics or pointing to the same entity is sufficient.  
+- Score: 1
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",maggiecheung,maggiecheung,1.0,key_match,1.0,"exact match, response: 2000, target: 2000",2000,2000
+,,2046,2046,0.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word match.
+
+---
+
+### idx_0
+
+**Response:**  
+`bestdirector:wongkar-wai;bestleadingactor:tonyleungchiu-wai`
+
+**Target:**  
+```
+200053thcannesfilmfestivalbestactor,
+200120thhongkongfilmawardsbestactor
+the1stchinesefilmmediaawardsbestactor
+```
+
+**Analysis:**  
+- The target lists several best actor awards at different film festivals. All relate to best actor awards.  
+- The response gives best director (wongkar-wai) and best leading actor (tonyleungchiu-wai).  
+- Tonyleungchiu-wai matches the actor entity in the target (all awards are about best actor). So the response mentions a correct actor, given the target is about best actor awards.  
+- Best director is extra, not mentioned in the target, but since the criterion does not deduct for extra info, only if the semantics differ or do not meet the target, this is fine.  
+- The response does not list the specific awards like Cannes, HK film awards, Chinese film awards. However, per criteria, approximate semantics or pointing to the same entity is sufficient. Here, bestactor is the main point; it matches.  
+- So the response approximately matches the target, pointing to the same entity (best actor: Tony Leung Chiu Wai).
+
+**Conclusion:** Score = 1
+
+---
+
+### idx_1
+
+**Response:**  
+`bestdirector:wongkar-wai;bestactress:zhangziyi`
+
+**Target:**  
+```
+the24thhongkongfilmawards:bestactor
+bestactorawardatthe8thtallinnblacknightsfilmfestival
+bestactorawardatthe10thhongkonggoldenbauhiniaawards
+bestactorawardatthe11thhongkongfilmcriticssocietyawards
+```
+
+**Analysis:**  
+- Target awards are ALL best actor awards.  
+- Response mentions best director (wongkar-wai) and best actress (zhangziyi).  
+- The response mentions best actress, which is not in the target (best actor only).  
+- Also mentions best director (wongkar-wai) which is not in the target.  
+- There's no mention of best actor or any matching entity from the target.  
+- Since target is strictly about best actor awards and response is about best director and best actress (different category, different gender), semantics do NOT match.  
+- Under criterion, ""It is sufficient if semantics approximately the same or point to the same entity."" Here the response points to a different entity (best actress), so it's not sufficient.  
+- Hence, score = 0
+
+---
+
+### idx_2
+
+**Response:**  
+`bestactor:tonyleungchiu-wai`
+
+**Target:**  
+```
+thehongkongfilmdirectors’guildawards:bestactor
+outstandingactorawardatthe9thasianfilmexpo
+bestchineseactorawardatthe4thdoubanfilmawards
+```
+
+**Analysis:**  
+- Target is a set of best actor or outstanding actor awards given to presumably Tony Leung Chiu Wai (since the question seems to be about him).  
+- Response mentions best actor Tony Leung Chiu Wai.  
+- Response points to the same entity (best actor) as target.  
+- No mention of specific festivals or awards, but per criterion, approximate semantics and pointing to same entity are sufficient.  
+- This matches in semantics and entity.
+
+**Conclusion:** Score=1
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```","the24thhongkongfilmawards:bestactor
+bestactorawardatthe8thtallinnblacknightsfilmfestival
+bestactorawardatthe10thhongkonggoldenbauhiniaawards
+bestactorawardatthe11thhongkongfilmcriticssocietyawards",bestdirector:wongkar-wai;bestactress:zhangziyi,1.0,"Let's analyze each pair (response vs. target) according to the given grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+Responses and targets:  
+- idx_0: response = ""wongkar-wai"", target = ""karwaiwong""  
+- idx_1: response = ""wongkar-wai"", target = ""karwaiwong""  
+- idx_2: response = ""wongkar-wai"", target = ""karwaiwong""  
+
+Analysis:  
+The target ""karwaiwong"" and the response ""wongkar-wai"" both clearly refer to the same entity, the name ""Kar Wai Wong,"" a well-known film director. The response splits the name differently and includes a hyphen, but this is still semantically the same entity. The criterion states approximate equivalence or pointing to the same entity is sufficient. Therefore, all three responses should be scored as 1.
+
+Final scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",karwaiwong,wongkar-wai,0.0,"Let's analyze each item step by step:
+
+---
+
+### idx_0
+- Target:  
+  - block2pictures(hongkong)  
+  - océanfilms(france)  
+
+- Response:
+  - jettoneproduction
+
+**Analysis:**  
+The response ""jettoneproduction"" is a company/entity name. However, it does not match either ""block2pictures"" or ""océanfilms"" which are the standard answers. The response does not mention Hong Kong or France companies as required by the target. The criterion states semantics should be approximately the same or point to the same entity. Here, the entities differ completely. Thus, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### idx_1
+- Target:
+  - meiahentertainment  
+  - 20thcenturyfox(hongkong)  
+  - océanfilms(france)  
+  - istitutoluce(italy)  
+  - prokinofilmverleih(germany)
+
+- Response:
+  - sonypicturesclassics
+
+**Analysis:**  
+The response ""sonypicturesclassics"" is a company name, but it does not appear in the target list, nor does it point to any of the mentioned entities or countries. The target contains multiple distributors from Hong Kong, France, Italy, and Germany, none of which are connected semantically to ""sonypicturesclassics."" Therefore, the semantics do not correspond.
+
+**Score:** 0
+
+---
+
+### idx_2
+- Target:
+  - larkfilmsdistribution(hongkong)  
+  - chinafilmgroupcorporation(china)
+
+- Response:
+  - chinamoviedigitalmediaco.,ltd.
+
+**Analysis:**  
+The response mentions ""chinamoviedigitalmediaco.,ltd."" which is a Chinese company or group linked to China’s movie or media industry. The target entities also are Chinese companies (chinafilmgroupcorporation, larkfilmsdistribution (Hong Kong is part of China, so close geographically and politically). The response and target are pointing to similar types of entities (film/media groups in China/Hong Kong). According to the criterion, approximate semantic equivalence and pointing to the same entity or at least the same concept is sufficient.
+
+**Score:** 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```
+","meiahentertainment
+20thcenturyfox(hongkong)
+océanfilms(france)
+istitutoluce(italy)
+prokinofilmverleih(germany)",sonypicturesclassics,0.0,"Let's analyze each pair according to the grading criteria:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word matching.
+
+---
+
+**idx_0**  
+- Response: ""maggiecheung""  
+- Target: ""maggiecheung""  
+- They are exactly the same.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""maggiecheung""  
+- Target: ""ligong""  
+- Different strings, pointing to different entities.  
+- No semantic equivalence or same entity indicated.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""zhangziyi""  
+- Target: ""ziyizhang""  
+- The two names appear to be two variations of the same Chinese name ""Zhang Ziyi"" in different word orders or formatting.  
+- Semantically, they clearly point to the same person.  
+- The criterion says semantics or pointing to the same entity is sufficient.  
+- Score: 1
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",ligong,maggiecheung,1.0,key_match,1.0,"exact match, response: 2004, target: 2004",2004,2004
+,,thegrandmaster,The Grandmaster,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word match.
+
+---
+
+### idx_0
+
+**Response:**  
+`bestdirector:wongkar-wai;bestleadingactor:tonyleungchiu-wai`
+
+**Target:**  
+```
+200053thcannesfilmfestivalbestactor,
+200120thhongkongfilmawardsbestactor
+the1stchinesefilmmediaawardsbestactor
+```
+
+**Analysis:**  
+- The target lists several best actor awards at different film festivals. All relate to best actor awards.  
+- The response gives best director (wongkar-wai) and best leading actor (tonyleungchiu-wai).  
+- Tonyleungchiu-wai matches the actor entity in the target (all awards are about best actor). So the response mentions a correct actor, given the target is about best actor awards.  
+- Best director is extra, not mentioned in the target, but since the criterion does not deduct for extra info, only if the semantics differ or do not meet the target, this is fine.  
+- The response does not list the specific awards like Cannes, HK film awards, Chinese film awards. However, per criteria, approximate semantics or pointing to the same entity is sufficient. Here, bestactor is the main point; it matches.  
+- So the response approximately matches the target, pointing to the same entity (best actor: Tony Leung Chiu Wai).
+
+**Conclusion:** Score = 1
+
+---
+
+### idx_1
+
+**Response:**  
+`bestdirector:wongkar-wai;bestactress:zhangziyi`
+
+**Target:**  
+```
+the24thhongkongfilmawards:bestactor
+bestactorawardatthe8thtallinnblacknightsfilmfestival
+bestactorawardatthe10thhongkonggoldenbauhiniaawards
+bestactorawardatthe11thhongkongfilmcriticssocietyawards
+```
+
+**Analysis:**  
+- Target awards are ALL best actor awards.  
+- Response mentions best director (wongkar-wai) and best actress (zhangziyi).  
+- The response mentions best actress, which is not in the target (best actor only).  
+- Also mentions best director (wongkar-wai) which is not in the target.  
+- There's no mention of best actor or any matching entity from the target.  
+- Since target is strictly about best actor awards and response is about best director and best actress (different category, different gender), semantics do NOT match.  
+- Under criterion, ""It is sufficient if semantics approximately the same or point to the same entity."" Here the response points to a different entity (best actress), so it's not sufficient.  
+- Hence, score = 0
+
+---
+
+### idx_2
+
+**Response:**  
+`bestactor:tonyleungchiu-wai`
+
+**Target:**  
+```
+thehongkongfilmdirectors’guildawards:bestactor
+outstandingactorawardatthe9thasianfilmexpo
+bestchineseactorawardatthe4thdoubanfilmawards
+```
+
+**Analysis:**  
+- Target is a set of best actor or outstanding actor awards given to presumably Tony Leung Chiu Wai (since the question seems to be about him).  
+- Response mentions best actor Tony Leung Chiu Wai.  
+- Response points to the same entity (best actor) as target.  
+- No mention of specific festivals or awards, but per criterion, approximate semantics and pointing to same entity are sufficient.  
+- This matches in semantics and entity.
+
+**Conclusion:** Score=1
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```","thehongkongfilmdirectors’guildawards:bestactor
+outstandingactorawardatthe9thasianfilmexpo
+bestchineseactorawardatthe4thdoubanfilmawards",bestactor:tonyleungchiu-wai,1.0,"Let's analyze each pair (response vs. target) according to the given grading criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for exact word-for-word match.  
+
+Responses and targets:  
+- idx_0: response = ""wongkar-wai"", target = ""karwaiwong""  
+- idx_1: response = ""wongkar-wai"", target = ""karwaiwong""  
+- idx_2: response = ""wongkar-wai"", target = ""karwaiwong""  
+
+Analysis:  
+The target ""karwaiwong"" and the response ""wongkar-wai"" both clearly refer to the same entity, the name ""Kar Wai Wong,"" a well-known film director. The response splits the name differently and includes a hyphen, but this is still semantically the same entity. The criterion states approximate equivalence or pointing to the same entity is sufficient. Therefore, all three responses should be scored as 1.
+
+Final scoring:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",karwaiwong,wongkar-wai,1.0,"Let's analyze each item step by step:
+
+---
+
+### idx_0
+- Target:  
+  - block2pictures(hongkong)  
+  - océanfilms(france)  
+
+- Response:
+  - jettoneproduction
+
+**Analysis:**  
+The response ""jettoneproduction"" is a company/entity name. However, it does not match either ""block2pictures"" or ""océanfilms"" which are the standard answers. The response does not mention Hong Kong or France companies as required by the target. The criterion states semantics should be approximately the same or point to the same entity. Here, the entities differ completely. Thus, the response is incorrect.
+
+**Score:** 0
+
+---
+
+### idx_1
+- Target:
+  - meiahentertainment  
+  - 20thcenturyfox(hongkong)  
+  - océanfilms(france)  
+  - istitutoluce(italy)  
+  - prokinofilmverleih(germany)
+
+- Response:
+  - sonypicturesclassics
+
+**Analysis:**  
+The response ""sonypicturesclassics"" is a company name, but it does not appear in the target list, nor does it point to any of the mentioned entities or countries. The target contains multiple distributors from Hong Kong, France, Italy, and Germany, none of which are connected semantically to ""sonypicturesclassics."" Therefore, the semantics do not correspond.
+
+**Score:** 0
+
+---
+
+### idx_2
+- Target:
+  - larkfilmsdistribution(hongkong)  
+  - chinafilmgroupcorporation(china)
+
+- Response:
+  - chinamoviedigitalmediaco.,ltd.
+
+**Analysis:**  
+The response mentions ""chinamoviedigitalmediaco.,ltd."" which is a Chinese company or group linked to China’s movie or media industry. The target entities also are Chinese companies (chinafilmgroupcorporation, larkfilmsdistribution (Hong Kong is part of China, so close geographically and politically). The response and target are pointing to similar types of entities (film/media groups in China/Hong Kong). According to the criterion, approximate semantic equivalence and pointing to the same entity or at least the same concept is sufficient.
+
+**Score:** 1
+
+---
+
+### Final scores:
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```
+","larkfilmsdistribution(hongkong)
+chinafilmgroupcorporation(china)","chinamoviedigitalmediaco.,ltd.",1.0,"Let's analyze each pair according to the grading criteria:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same or if they point to the same entity. No need for exact word matching.
+
+---
+
+**idx_0**  
+- Response: ""maggiecheung""  
+- Target: ""maggiecheung""  
+- They are exactly the same.  
+- Score: 1
+
+---
+
+**idx_1**  
+- Response: ""maggiecheung""  
+- Target: ""ligong""  
+- Different strings, pointing to different entities.  
+- No semantic equivalence or same entity indicated.  
+- Score: 0
+
+---
+
+**idx_2**  
+- Response: ""zhangziyi""  
+- Target: ""ziyizhang""  
+- The two names appear to be two variations of the same Chinese name ""Zhang Ziyi"" in different word orders or formatting.  
+- Semantically, they clearly point to the same person.  
+- The criterion says semantics or pointing to the same entity is sufficient.  
+- Score: 1
+
+---
+
+Final scores in JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1
+}
+```",ziyizhang,zhangziyi,1.0,key_match,1.0,"exact match, response: 2013, target: 2013",2013,2013
+1.0,,chineseodyssey2002,,,,-,,,,jeffreylau,,,,shanghaifilmgroupcorporation,,,,fayewong,,,,,,2002,
+1.0,,confessionofpain,,,,-,,,,andrewlau，alanmak,,,,mediaasiadistributionltd.,,,,jingleixu,,,,,,2006,
+1.0,,europeraiders,,,,-,,,,jinglema,,,,"jettonefilms
+inlookmedia",,,,yantang,,,,,,2018,
+1.0,,fightingforlove,,,,-,,,,joema,,,,filmpowercompanylimited(hk),,,,sammicheng,,,,,,2001,
+1.0,,healinghearts,,,,-,,,,tut-heitang,,,,cinekom(physicalmedia/laserdisc&vcddistributor),,,,michelereis,,,,,,2000,
+1.0,,hemahema:singmeasongwhileiwait,,,,-,,,,dzongsarkhyentserinpoche,,,,-,,,,xunzhou,,,,,,2016,
+1.0,,hero,,,,-,,,,yimouzhang,,,,"beijingnewpicturesco.,ltd
+edkofilmsltd.",,,,cheungman-yu,,,,,,2002,
+1.0,,hiddenblade,,,,36thgoldenroosterawards-bestactor-won,,,,ercheng,,,,"polybonafilms
+chinafilmco.
+huaxiafilm
+alibabapictures",,,,xunzhou,,,,,,2023,
+1.0,,infernalaffairs,,,,"the22ndhongkongfilmawards:wonbestactor
+the40thgoldenhorseawards:wonbestactor
+the8thhongkonggoldenbauhiniaawards:wonbestactor
+silverawardformostpopularactoratthe3rdchinesefilmmediaawards",,,,andrewlau，alanmak,,,,mediaasiadistribution,,,,kellychen,,,,,,2002,
+1.0,,infernalaffairsiii:thefinalinsurrection,,,,-,,,,andrewlau，alanmak,,,,mediaasiadistribution,,,,kellychen,,,,,,2003,
+1.0,,"loveme,lovemymoney",,,,-,,,,jingwong,,,,chinastarentertainmentgroup,,,,qishu,,,,,,2001,
+1.0,,"lust,caution",,,,"•the44thgoldenhorseawards(taiwan):bestactor
+•the2ndasianfilmawards:bestactor
+•outstandingfilmactorawardatthe3rdasianexcellenceawards
+•bestactoratthe1stironelephantfilmawards",,,,anglee,,,,"focusfeatures(unitedstates)
+chinafilmgroupcorporation(china)
+edkofilms(hongkong)
+buenavistainternational(taiwan)",,,,weitang,,,,,,2007,
+1.0,,monsterhunt2,,,,-,,,,ramanhui,,,,-,,,,baihebai,,,,,,2018,
+1.0,,myluckystar,,,,-,,,,vincentkok,,,,goldenharvest,,,,miriamyeung,,,,,,2003,
+1.0,,redcliff(part1),,,,-,,,,johnwoo,,,,meiahentertainmentgroupltd.,,,,chilinglin,,,,,,2008,
+1.0,,redcliff(part2),,,,-,,,,johnwoo,,,,meiahentertainmentgroupltd.,,,,chilinglin,,,,,,2009,
+1.0,,seeyoutomorrow,,,,-,,,,jiajiazhang,,,,"jettonefilms
+alibabapictures",,,,angelababy,,,,,,2016,
+1.0,,seoulraiders,,,,-,,,,jinglema,,,,mediaasiadistributionltd.,,,,qishu,,,,,,2005,
+1.0,,shang-chiandthelegendofthetenrings,,,,-,,,,destindanielcretton,,,,waltdisneystudiosmotionpictures,,,,noralum,,,,,,2021,
+1.0,,soundofcolors,,,,the4thchinesefilmmediaawards:hk-taiwanbestactor(silveraward).,,,,joema,,,,block2pictures(hkrelease),,,,miriamyeung,,,,,,2003,
+1.0,,supermodel,,,,-,,,,vincentkoktakchiu,,,,typhoongroup,,,,karenalamkayan,,,,,,2004,
+1.0,,thegoldfinger,,,,"42ndhongkongfilmawards-bestactor-won
+bestactorofthe2023hongkongfilmdirectors'guildannualawards
+mosthighlightactorofthe2ndhongkongonlinefilmcriticshighlightawards",,,,felixchong,,,,emperormotionpictures,,,,charlenechoi,,,,,,2023,
+1.0,,thegreatmagician,,,,-,,,,tung-shingyee,,,,emperormotionpictures,,,,xunzhou,,,,,,2011,
+1.0,,thesilentwar,,,,-,,,,alanmak，felixchong,,,,meiahentertainment,,,,xunzhou,,,,,,2012,
+1.0,,tokyoraiders,,,,-,,,,jinglema,,,,goldenharvestpictures(china)ltd.,,,,kellychen,,,,,,2000,
+1.0,,wherethewindblows,,,,16thasianfilmawards-bestactor-won,,,,philipyung,,,,meiahentertainmentgroupltd.,,,,juandu,,,,,,2022,

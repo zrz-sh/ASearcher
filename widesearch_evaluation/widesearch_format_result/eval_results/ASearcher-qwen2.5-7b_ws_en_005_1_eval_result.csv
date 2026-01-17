@@ -1,0 +1,3094 @@
+exist_flag_gt,exist_flag_response,university,university_before_map,alliance_llm_judge,alliance_llm_judge_eval_msg,alliance_query,alliance_response,country_llm_judge,country_llm_judge_eval_msg,country_query,country_response,minimumgparequirement_llm_judge,minimumgparequirement_llm_judge_eval_msg,minimumgparequirement_query,minimumgparequirement_response,university_exact_match,university_exact_match_eval_msg
+,,brownuniversity,Brown University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,1.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```","nominimumgpaspecified
+（butapplicantsbelow3.0mustsupplyextraevidence）",nominimumgpaspecified,1.0,key_match
+,,columbiauniversity,Columbia University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",gpa≥2.5/4.0,nominimumgpaspecified,1.0,key_match
+,,cornelluniversity,Cornell University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",gpa≥2.7/4.0,nominimumgpaspecified,1.0,key_match
+,,harvarduniversity,Harvard University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,1.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,universityofpennsylvania,University of Pennsylvania,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,1.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,princetonuniversity,Princeton University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,1.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,yaleuniversity,Yale University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",ivyleague,ivyleague,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",us,unitedstates,1.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",nominimumgpaspecified,nominimumgpaspecified,1.0,key_match
+,,australiannationaluniversity,Australian National University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",gpa≥5.0/7.0,nominimumgpaspecified,1.0,key_match
+,,universityofmelbourne,University of Melbourne,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",wam≥65%,nominimumgpaspecified,1.0,key_match
+,,universityofsydney,University of Sydney,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",wam≥65%,nominimumgpaspecified,1.0,key_match
+,,universityofnewsouthwales,University of New South Wales,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",wam≥65%,nominimumgpaspecified,1.0,key_match
+,,universityofqueensland,University of Queensland,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",gpa≥5.0/7.0,nominimumgpaspecified,1.0,key_match
+,,monashuniversity,Monash University,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",creditaverage≥65%,nominimumgpaspecified,1.0,key_match
+,,universityofwesternaustralia,The University of Western Australia,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",wam≥65%,nominimumgpaspecified,1.0,key_match
+,,universityofadelaide,The University of Adelaide,1.0,"Let's analyze each response against the target answer:
+
+- idx_0 to idx_6: Response = ""ivyleague"", Target = ""ivyleague""  
+  The responses exactly match the target answers. According to the criteria, exact or approximate semantic match is sufficient. So score = 1.
+
+- idx_7 to idx_14: Response = ""groupofeight"", Target = ""groupofeight""  
+  Again, exact matches of response and target answers. Score = 1.
+
+No deduction needed as per the criterion.
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1
+}
+```",groupofeight,groupofeight,1.0,"Let's analyze each item based on the criterion:
+
+Criterion:  
+- ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+- No need for word-for-word correspondence.
+
+The reference answers and responses are:
+
+- idx_0 to idx_6:  
+   Target: ""us""  
+   Response: ""unitedstates""
+
+- idx_7 to idx_14:  
+   Target: ""australia""  
+   Response: ""australia""
+
+Step-by-step analysis:
+
+For idx_0 to idx_6:  
+- ""us"" is commonly understood as ""United States"" or ""United States of America.""  
+- ""unitedstates"" points to the same entity as ""us.""  
+- Semantically they correspond.  
+- According to criterion, semantics approximated or same entity is sufficient.  
+- So score is 1 for each.
+
+For idx_7 to idx_14:  
+- Both response and target are exactly ""australia.""  
+- Perfect match.  
+- Score = 1.
+
+No responses appear incorrect or off-topic.
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1
+}
+```",australia,australia,0.0,"Let's analyze each pair of response and target:
+
+- Response for all is ""nominimumgpaspecified"".
+- Targets vary; some specify a minimum GPA or WAM, others explicitly also say ""nominimumgpaspecified"".
+
+Scoring criteria:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""  
+No need for word-for-word matching.
+
+Step by step:
+
+1. idx_0:  
+Target: ""nominimumgpaspecified\n（butapplicantsbelow3.0mustsupplyextraevidence）""  
+Response: ""nominimumgpaspecified""  
+The response captures that there is no minimum GPA specified, but the target adds a caveat about applicants under 3.0 need to supply extra evidence. Since the main statement ""nominimumgpaspecified"" is aligned semantically, it meets the criterion of ""approximately the same semantics or pointing to the same entity."" The additional info in target does not contradict or require the response to include it necessarily.  
+=> Score: 1
+
+2. idx_1:  
+Target: ""gpa≥2.5/4.0""  
+Response: ""nominimumgpaspecified""  
+Target is explicit about a minimum GPA of 2.5, but response says no minimum GPA. This is incorrect because they contradict each other.  
+=> Score: 0
+
+3. idx_2:  
+Target: ""gpa≥2.7/4.0""  
+Response: ""nominimumgpaspecified""  
+Same logic as idx_1.  
+=> Score: 0
+
+4. idx_3:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+5. idx_4:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+6. idx_5:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+7. idx_6:  
+Target: ""nominimumgpaspecified""  
+Response: ""nominimumgpaspecified""  
+Exact match.  
+=> Score: 1
+
+8. idx_7:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+9. idx_8:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, target requires minimum WAM of 65%, response says no minimum specified.  
+=> Score: 0
+
+10. idx_9:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+11. idx_10:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Same as idx_8  
+=> Score: 0
+
+12. idx_11:  
+Target: ""gpa≥5.0/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+13. idx_12:  
+Target: ""creditaverage≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction, since credit average of 65% is a minimum requirement, not no minimum specified.  
+=> Score: 0
+
+14. idx_13:  
+Target: ""wam≥65%""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+15. idx_14:  
+Target: ""gpa≥4.5/7.0""  
+Response: ""nominimumgpaspecified""  
+Contradiction.  
+=> Score: 0
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0
+}
+```",gpa≥4.5/7.0,nominimumgpaspecified,1.0,key_match
+1.0,,dartmouthcollege,,,,ivyleague,,,,us,,,,nominimumgpaspecified,,,
+,1.0,stanforduniversity,Stanford University,,,,ivyleague,,,,unitedstates,,,,nominimumgpaspecified,,

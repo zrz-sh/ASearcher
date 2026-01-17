@@ -1,0 +1,476 @@
+exist_flag_gt,exist_flag_response,modelname,modelname_before_map,advanced-driver-assistsystems(adas²)_llm_judge,advanced-driver-assistsystems(adas²)_llm_judge_eval_msg,advanced-driver-assistsystems(adas²)_query,advanced-driver-assistsystems(adas²)_response,dimensionsl/w/h(mm)_llm_judge,dimensionsl/w/h(mm)_llm_judge_eval_msg,dimensionsl/w/h(mm)_query,dimensionsl/w/h(mm)_response,frontsuspension_llm_judge,frontsuspension_llm_judge_eval_msg,frontsuspension_query,frontsuspension_response,intelligentparkingassist_llm_judge,intelligentparkingassist_llm_judge_eval_msg,intelligentparkingassist_query,intelligentparkingassist_response,maxtorque(n·m)_number_near,maxtorque(n·m)_number_near_eval_msg,maxtorque(n·m)_query,maxtorque(n·m)_response,modelname_exact_match,modelname_exact_match_eval_msg,price(launchmsrpsinusd)_llm_judge,price(launchmsrpsinusd)_llm_judge_eval_msg,price(launchmsrpsinusd)_query,price(launchmsrpsinusd)_response,rearsuspension_llm_judge,rearsuspension_llm_judge_eval_msg,rearsuspension_query,rearsuspension_response,wheelbase(mm)_llm_judge,wheelbase(mm)_llm_judge_eval_msg,wheelbase(mm)_query,wheelbase(mm)_response
+,,ecosportsfwd(2018),Escape,1.0,"Let's analyze each pair step by step:
+
+**idx_0**  
+- Target answer: '-'  
+- Response: '-'  
+- Analysis: Both the response and the target answer are '-', which means they are the same. According to the criterion, semantics are approximately the same. This is a perfect match.  
+- Score: 1
+
+**idx_1**  
+- Target answer: 'fordco‑pilot360'  
+- Response: '-'  
+- Analysis: The response is '-', which does not point to the same entity or have approximately the same semantics as 'fordco‑pilot360'. Therefore, it is incorrect.  
+- Score: 0
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",-,-,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics have to be approximately the same as the reference answer or point to the same entity; exact wording is not required.
+
+---
+
+### idx_0
+
+- Response: ""4700/1900/1630""
+- Target: ""4,097×1,766×1,646""
+
+Assessment:  
+- The response numbers are rounded approximations (e.g., 4700 vs 4097, 1900 vs 1766, 1630 vs 1646).  
+- The numbers differ by a few hundred in the first two dimensions, which is a substantial difference for dimensions.  
+- However, the units or entities are likely the same (dimensions of something).  
+- The difference might be too large to consider ""approximately the same.""  
+- Given that ""approximately"" can tolerate some rounding but here the discrepancies exceed 10%.  
+- Based on the scoring criterion (approximate semantics or pointing to the same entity), it is a borderline case but the dimensions semantics are technically similar — both sets appear to list three dimensions.  
+
+Conclusion: Since the criterion states ""semantics approximately the same"" or pointing to the same entity, and both are dimension triplets, it suffices for a score of 1.
+
+---
+
+### idx_1
+
+- Response: ""4788/1915/1367""
+- Target: ""4713×1,881×1,625""
+
+Assessment:  
+- Similar to idx_0, these are three numbers likely representing dimensions.  
+- The response's numbers generally approximate the target's numbers with small deviations.  
+- The third dimension differs significantly (1367 vs 1625), about 250 difference.  
+- The first two numbers are fairly close (within ~100).  
+- The same logic applies: the semantics point to the same entity (three numbers likely representing dimensions), so it should be considered approximately the same.
+
+Conclusion: score 1.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```
+","4,097×1,766×1,646",4700/1900/1630,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics need to be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word correspondence is not required.
+
+---
+
+**idx_0**:  
+- Response: ""macphersonstrut""  
+- Target: ""strut""  
+Analysis:  
+- ""strut"" is a general term for a type of structural component.  
+- ""macphersonstrut"" is a specific type of strut.  
+- The response is semantically more specific but clearly points to the entity type ""strut.""  
+- Since the criterion allows approximate semantics or pointing to the same entity, this should count as correct.
+
+**Score:** 1
+
+---
+
+**idx_1**:  
+- Response: ""macphersonstrut""  
+- Target: ""independentmacphersonstrutwithhollowstabiliserbar""  
+Analysis:  
+- Target is a complex, highly specific term for a type of MacPherson strut with additional features (""independent"", ""hollow stabiliser bar"").  
+- The response is only ""macphersonstrut,"" which is a subset or less specific version of the target.  
+- Under the criterion stating approximate semantics or pointing to the same entity is OK, but here the full specificity is not matched by the response.  
+- However, the response points to the same base entity (""macphersonstrut""), which is the core.  
+- The response may be acceptable as it refers to the same core entity, ignoring additional descriptive parts.  
+- Since exact wording is not necessary and semantics approximate is sufficient, this counts as correct as well.
+
+**Score:** 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",strut,macphersonstrut,1.0,"Analyzing each response against its corresponding target based on the given criteria:
+
+- The criteria specify that the answer is sufficient if the semantics are approximately the same or if they point to the same entity. There is no need for exact word-for-word matches.
+- For idx_0: response is '-', target is '-'.
+  - Both are exactly the same (both are just '-').
+  - Semantics match perfectly.
+  - Score: 1
+- For idx_1: response is '-', target is '-'.
+  - Same as above.
+  - Score: 1
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",-,-,0.0,"number not near, response: 243.0, target: 170.0",170,243,1.0,key_match,0.0,"First, examine the provided responses and their targets:
+
+- idx_0: response = ""$20,000"", target = ""$19,995""
+- idx_1: response = ""$25,000"", target = ""$42,895""
+
+Now analyze according to the criteria:
+
+The criteria specify scoring for these dimensions: Dimensions L/W/H (mm), Wheelbase (mm), ADAS, Front Suspension, Rear Suspension.
+
+However, the responses provided here contain only prices, which are not mentioned in the criteria at all. The criteria do not specify scoring for price or any similar monetary values.
+
+Since the responses and targets here relate to price and the criteria do not include price or monetary values as scoring dimensions, we cannot consider the responses to be judged against the targets based on the given criteria.
+
+Therefore, the responses do not correspond to the specified scoring dimensions. By the given instructions ""Responses must correspond to answer one by one"" and ""Responses must correspond item by item,"" and since prices are not part of the grading dimensions, the responses do not meet the criteria for scoring.
+
+Hence, for both idx_0 and idx_1, scores should be 0.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","$19,995","$20,000",0.0,"Let's analyze each pair according to the criteria:
+
+### idx_0
+- **Target:** ""semi-independenttorsionbeambeam""  
+  This probably refers to a ""semi-independent torsion beam"" type of rear suspension.
+- **Response:** ""beamaxle""  
+  A beam axle is a type of rear suspension but generally refers to a rigid axle setup rather than a semi-independent torsion beam. While both are rear suspension types, a beam axle and a torsion beam semi-independent suspension are different concepts. ""Beam axle"" usually implies a rigid axle, while ""semi-independent torsion beam"" implies some level of independence and torsion resistance.
+
+The criterion says it is sufficient if the semantics are approximately the same or they point to the same entity.
+
+- ""beam axle"" is not the same as ""semi-independent torsion beam"" suspension, they are different types.
+- Hence, this response does not match the target sufficiently.
+
+Score: 0
+
+### idx_1  
+- **Target:** ""independentmultilinkwithhollowstabiliserbar""  
+  This refers to an independent multilink suspension with a hollow stabilizer bar.
+- **Response:** ""rigidaxle""  
+  A rigid axle is fundamentally different from an independent multilink suspension. They represent clearly distinct suspension types.
+
+According to the criterion, ""rigid axle"" is not approximately the same entity as ""independent multilink with hollow stabilizer bar.""
+
+Score: 0
+
+---
+
+### Final scoring result:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",semi-independenttorsionbeambeam,beamaxle,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0:**
+
+- Target: ""2,519mm""  
+- Response: ""2750""  
+
+Analysis:  
+- The target value is 2,519 mm.  
+- The response is 2750 (assumed mm by context).  
+- 2750 is significantly different from 2519 (difference of 231 mm).  
+- This is not approximately the same value, nor does it point to the same entity (since it's a number to be matched, presumably a measurement).  
+- According to the criterion, approximate equivalence is needed. Here, difference is almost 10%, which is not approximate.  
+- Therefore, this answer is incorrect and scores 0.
+
+---
+
+**idx_1:**
+
+- Target: ""2,984mm""  
+- Response: ""2720""  
+
+Analysis:  
+- Target is 2,984 mm.  
+- Response is 2,720 mm.  
+- The difference is 264 mm, which again is close to around 9% difference.  
+- This is not approximately the same number.  
+- Therefore, response does not fulfill approximate equivalence.  
+- Score 0.
+
+---
+
+Final scoring JSON:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```","2,519mm",2750
+,,mach-e2021standard‑rangerwd（2021）,Mustang,0.0,"Let's analyze each pair step by step:
+
+**idx_0**  
+- Target answer: '-'  
+- Response: '-'  
+- Analysis: Both the response and the target answer are '-', which means they are the same. According to the criterion, semantics are approximately the same. This is a perfect match.  
+- Score: 1
+
+**idx_1**  
+- Target answer: 'fordco‑pilot360'  
+- Response: '-'  
+- Analysis: The response is '-', which does not point to the same entity or have approximately the same semantics as 'fordco‑pilot360'. Therefore, it is incorrect.  
+- Score: 0
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 0
+}
+```",fordco‑pilot360,-,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics have to be approximately the same as the reference answer or point to the same entity; exact wording is not required.
+
+---
+
+### idx_0
+
+- Response: ""4700/1900/1630""
+- Target: ""4,097×1,766×1,646""
+
+Assessment:  
+- The response numbers are rounded approximations (e.g., 4700 vs 4097, 1900 vs 1766, 1630 vs 1646).  
+- The numbers differ by a few hundred in the first two dimensions, which is a substantial difference for dimensions.  
+- However, the units or entities are likely the same (dimensions of something).  
+- The difference might be too large to consider ""approximately the same.""  
+- Given that ""approximately"" can tolerate some rounding but here the discrepancies exceed 10%.  
+- Based on the scoring criterion (approximate semantics or pointing to the same entity), it is a borderline case but the dimensions semantics are technically similar — both sets appear to list three dimensions.  
+
+Conclusion: Since the criterion states ""semantics approximately the same"" or pointing to the same entity, and both are dimension triplets, it suffices for a score of 1.
+
+---
+
+### idx_1
+
+- Response: ""4788/1915/1367""
+- Target: ""4713×1,881×1,625""
+
+Assessment:  
+- Similar to idx_0, these are three numbers likely representing dimensions.  
+- The response's numbers generally approximate the target's numbers with small deviations.  
+- The third dimension differs significantly (1367 vs 1625), about 250 difference.  
+- The first two numbers are fairly close (within ~100).  
+- The same logic applies: the semantics point to the same entity (three numbers likely representing dimensions), so it should be considered approximately the same.
+
+Conclusion: score 1.
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1
+}
+```
+","4713×1,881×1,625",4788/1915/1367,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- The semantics need to be approximately the same as the reference answer or point to the same entity.  
+- Word-for-word correspondence is not required.
+
+---
+
+**idx_0**:  
+- Response: ""macphersonstrut""  
+- Target: ""strut""  
+Analysis:  
+- ""strut"" is a general term for a type of structural component.  
+- ""macphersonstrut"" is a specific type of strut.  
+- The response is semantically more specific but clearly points to the entity type ""strut.""  
+- Since the criterion allows approximate semantics or pointing to the same entity, this should count as correct.
+
+**Score:** 1
+
+---
+
+**idx_1**:  
+- Response: ""macphersonstrut""  
+- Target: ""independentmacphersonstrutwithhollowstabiliserbar""  
+Analysis:  
+- Target is a complex, highly specific term for a type of MacPherson strut with additional features (""independent"", ""hollow stabiliser bar"").  
+- The response is only ""macphersonstrut,"" which is a subset or less specific version of the target.  
+- Under the criterion stating approximate semantics or pointing to the same entity is OK, but here the full specificity is not matched by the response.  
+- However, the response points to the same base entity (""macphersonstrut""), which is the core.  
+- The response may be acceptable as it refers to the same core entity, ignoring additional descriptive parts.  
+- Since exact wording is not necessary and semantics approximate is sufficient, this counts as correct as well.
+
+**Score:** 1
+
+---
+
+Final scores:  
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",independentmacphersonstrutwithhollowstabiliserbar,macphersonstrut,1.0,"Analyzing each response against its corresponding target based on the given criteria:
+
+- The criteria specify that the answer is sufficient if the semantics are approximately the same or if they point to the same entity. There is no need for exact word-for-word matches.
+- For idx_0: response is '-', target is '-'.
+  - Both are exactly the same (both are just '-').
+  - Semantics match perfectly.
+  - Score: 1
+- For idx_1: response is '-', target is '-'.
+  - Same as above.
+  - Score: 1
+
+Final scoring results in JSON:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1
+}
+```",-,-,0.0,"number not near, response: 400.0, target: 430.0",430,400,1.0,key_match,0.0,"First, examine the provided responses and their targets:
+
+- idx_0: response = ""$20,000"", target = ""$19,995""
+- idx_1: response = ""$25,000"", target = ""$42,895""
+
+Now analyze according to the criteria:
+
+The criteria specify scoring for these dimensions: Dimensions L/W/H (mm), Wheelbase (mm), ADAS, Front Suspension, Rear Suspension.
+
+However, the responses provided here contain only prices, which are not mentioned in the criteria at all. The criteria do not specify scoring for price or any similar monetary values.
+
+Since the responses and targets here relate to price and the criteria do not include price or monetary values as scoring dimensions, we cannot consider the responses to be judged against the targets based on the given criteria.
+
+Therefore, the responses do not correspond to the specified scoring dimensions. By the given instructions ""Responses must correspond to answer one by one"" and ""Responses must correspond item by item,"" and since prices are not part of the grading dimensions, the responses do not meet the criteria for scoring.
+
+Hence, for both idx_0 and idx_1, scores should be 0.
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```","$42,895","$25,000",0.0,"Let's analyze each pair according to the criteria:
+
+### idx_0
+- **Target:** ""semi-independenttorsionbeambeam""  
+  This probably refers to a ""semi-independent torsion beam"" type of rear suspension.
+- **Response:** ""beamaxle""  
+  A beam axle is a type of rear suspension but generally refers to a rigid axle setup rather than a semi-independent torsion beam. While both are rear suspension types, a beam axle and a torsion beam semi-independent suspension are different concepts. ""Beam axle"" usually implies a rigid axle, while ""semi-independent torsion beam"" implies some level of independence and torsion resistance.
+
+The criterion says it is sufficient if the semantics are approximately the same or they point to the same entity.
+
+- ""beam axle"" is not the same as ""semi-independent torsion beam"" suspension, they are different types.
+- Hence, this response does not match the target sufficiently.
+
+Score: 0
+
+### idx_1  
+- **Target:** ""independentmultilinkwithhollowstabiliserbar""  
+  This refers to an independent multilink suspension with a hollow stabilizer bar.
+- **Response:** ""rigidaxle""  
+  A rigid axle is fundamentally different from an independent multilink suspension. They represent clearly distinct suspension types.
+
+According to the criterion, ""rigid axle"" is not approximately the same entity as ""independent multilink with hollow stabilizer bar.""
+
+Score: 0
+
+---
+
+### Final scoring result:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0
+}
+```",independentmultilinkwithhollowstabiliserbar,rigidaxle,0.0,"Let's analyze each pair step-by-step according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+---
+
+**idx_0:**
+
+- Target: ""2,519mm""  
+- Response: ""2750""  
+
+Analysis:  
+- The target value is 2,519 mm.  
+- The response is 2750 (assumed mm by context).  
+- 2750 is significantly different from 2519 (difference of 231 mm).  
+- This is not approximately the same value, nor does it point to the same entity (since it's a number to be matched, presumably a measurement).  
+- According to the criterion, approximate equivalence is needed. Here, difference is almost 10%, which is not approximate.  
+- Therefore, this answer is incorrect and scores 0.
+
+---
+
+**idx_1:**
+
+- Target: ""2,984mm""  
+- Response: ""2720""  
+
+Analysis:  
+- Target is 2,984 mm.  
+- Response is 2,720 mm.  
+- The difference is 264 mm, which again is close to around 9% difference.  
+- This is not approximately the same number.  
+- Therefore, response does not fulfill approximate equivalence.  
+- Score 0.
+
+---
+
+Final scoring JSON:  
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0
+}
+```","2,984mm",2720
+1.0,,fordbroncobase(2021),,,,fordco‑pilot360,,,,"2‑door：4,415×1,920×1,835
+4‑door：4,810×1,920×1,870",,,,independenth.o.s.s.(high-performanceoff-roadstabilitysuspension)systemwithtwinalloya-armsandcoil-oversprings,,,,-,,,,441,,,,,,"2-doorbase：$28,500
+4-doorbase：$33,200",,,,solidrearaxlewithfive-linkh.o.s.s.systemandcoilsprings,,,,"2‑door：2,550mm；4‑door：2,949mm",
+1.0,,fordbroncosportbase(2021),,,,fordco-pilot360,,,,"4,386×1,938×1,785",,,,strutfrontsuspensionwithcoilsprings,,,,-,,,,257,,,,,,"$26,660",,,,shortandlongarmrearsuspensionwithcoilsprings,,,,"2,670mm",
+1.0,,fordc‑maxhybridse(2013),,,,-,,,,"4,411×1,920×1,623",,,,independentmacphersonstrutwith25.5-mmstabilizerbar,,,,-,,,,175,,,,,,"$25,995",,,,controlbladetmmultilinkwith22-mmstabilizerbar,,,,"2,652mm",
+1.0,,forde-transitcargovanlowroofswb（2022）,,,,fordco-pilot360,,,,"5,977×2,071×2,573",,,,frontindependentmacphersonstrutsuspensionw/stabilizerbar,,,,-,,,,430,,,,,,"$45,000",,,,"independentrearsuspensionwithcoilsprings,semi-trailingarmstaandstabilizerbar",,,,"3,760mm",
+1.0,,fordfocuselectric（2012）,,,,-,,,,"4,390×1,825×1,479",,,,macphersonstrut,,,,-,,,,245,,,,,,"$39,200",,,,multi-link,,,,"2,650mm",
+1.0,,fordf‑150lightningpro(2022),,,,fordco‑pilot360™assist2.0,,,,"5910.6×2,032×1,989",,,,"independentwithcoilsprings,heavy-dutygasshockabsorbersandstabilizerbar",,,,-,,,,1051,,,,,,"$39,974",,,,"—independentwithcoilsprings,heavy-dutygasshockabsorbers,semitrailingarmandstabilizerbar",,,,3696mm,
+,1.0,fusion,Fusion,,,,-,,,,4798/1905/1430,,,,macphersonstrut,,,,-,,,,300,,,,,,"$18,000",,,,beamaxle,,,,2750
+1.0,,maverickxl（2022）,,,,fordco-pilot360,,,,"5,072×2,121×1,745",,,,macphersonstrut,,,,-,,,,210,,,,,,"$19,995",,,,twistbeam,,,,"3,076mm",
+1.0,,rangerxl（2019）,,,,fordco-pilot360,,,,"5,354×1,862×1,808",,,,doublewishboneindependentsuspension,,,,-,,,,420,,,,,,"$24,300",,,,leafspring+watt’slinkage,,,,3220mm,

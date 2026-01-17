@@ -1,0 +1,2233 @@
+exist_flag_gt,exist_flag_response,laureate,laureate_before_map,awardyear_exact_match,awardyear_exact_match_eval_msg,awardyear_query,awardyear_response,eventcity_llm_judge,eventcity_llm_judge_eval_msg,eventcity_query,eventcity_response,laureate_exact_match,laureate_exact_match_eval_msg,talktitle_llm_judge,talktitle_llm_judge_eval_msg,talktitle_query,talktitle_response
+,,edwardburtynsky,Edward Burtynsky,1.0,"exact match, response: 2005, target: 2005",2005,2005,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",monterey,"longbeach,ca",1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:manufacturedlandscapesandgreeneducation,mywish:manufacturedlandscapesandgreeneducation
+,,cameronsinclair,Cameron Sinclair,1.0,"exact match, response: 2006, target: 2006",2006,2006,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",monterey,nan,1.0,key_match,0.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:acallforopen-sourcearchitecture,nan
+,,eowilson,E.O. Wilson,1.0,"exact match, response: 2007, target: 2007",2007,2007,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",monterey,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:buildtheencyclopediaoflife,mywish:buildtheencyclopediaoflife
+,,karenarmstrong,Karen Armstrong,0.0,"exact not match, response: 2009, target: 2008",2008,2009,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",monterey,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:thecharterforcompassion,mywish:createacharterforcompassion
+,,sylviaearle,Sylvia Earle,0.0,"exact not match, response: 2008, target: 2009",2009,2008,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",longbeach,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:protectouroceans,mywish:protectouroceans
+,,jamieoliver,Jamie Oliver,1.0,"exact match, response: 2010, target: 2010",2010,2010,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",longbeach,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",teacheverychildaboutfood,teacheverychildaboutfood
+,,jr,JR,1.0,"exact match, response: 2011, target: 2011",2011,2011,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",longbeach,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:usearttoturntheworldinsideout,mywish:usearttoturntheworldinsideout
+,,thecity2.0,The City 2.0,1.0,"exact match, response: 2012, target: 2012",2012,2012,1.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",nan,nan,1.0,key_match,0.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",thecity2.0reimaginesthefuture,nan
+,,sugatamitra,Sugata Mitra,1.0,"exact match, response: 2013, target: 2013",2013,2013,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",longbeach,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",buildaschoolinthecloud,mywish:buildaschoolinthecloud
+,,charmiangooch,Charmian Gooch,1.0,"exact match, response: 2014, target: 2014",2014,2014,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",vancouver,nan,1.0,key_match,0.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",mywish:tolaunchaneweraofopennessinbusiness,nan
+,,daveisay,Dave Isay,1.0,"exact match, response: 2015, target: 2015",2015,2015,0.0,"Let's analyze each pair (response vs target) against the criterion:
+
+Criterion summary: 
+- Semantics should be approximately the same or point to the same entity.
+- No need for exact word match.
+
+---
+
+**idx_0**  
+Response: ""longbeach,ca""  
+Target: ""monterey""  
+Analysis: ""longbeach"" and ""monterey"" are different places. They do not point to the same entity or have approximately the same semantic meaning.  
+Score: 0
+
+**idx_1**  
+Response: ""nan""  
+Target: ""monterey""  
+Analysis: ""nan"" is presumably a placeholder for no answer. It is not addressing the target answer ""monterey."" No semantic equivalence or entity matching.  
+Score: 0
+
+**idx_2**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_3**  
+Response: ""nan""  
+Target: ""monterey""  
+Same as idx_1  
+Score: 0
+
+**idx_4**  
+Response: ""nan""  
+Target: ""longbeach""  
+Response is empty/not answered, target is ""longbeach."" No match.  
+Score: 0
+
+**idx_5**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_6**  
+Response: ""nan""  
+Target: ""longbeach""  
+Same as above.  
+Score: 0
+
+**idx_7**  
+Response: ""nan""  
+Target: ""nan""  
+Both response and target are ""nan."" Since both are the same, they can be considered matching the same entity (both empty or no answer).  
+Score: 1
+
+**idx_8**  
+Response: ""nan""  
+Target: ""longbeach""  
+No match.  
+Score: 0
+
+**idx_9**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+**idx_10**  
+Response: ""nan""  
+Target: ""vancouver""  
+No match.  
+Score: 0
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 1,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0
+}
+```",vancouver,nan,1.0,key_match,1.0,"Let's analyze each idx pair according to the provided criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- No need for exact word-for-word match.  
+- Scoring 0 or 1 only.
+
+---
+
+**idx_0**  
+Response: 'mywish:manufacturedlandscapesandgreeneducation'  
+Target: 'mywish:manufacturedlandscapesandgreeneducation'  
+Exact same => score 1
+
+---
+
+**idx_1**  
+Response: 'nan' (not an answer)  
+Target: 'mywish:acallforopen-sourcearchitecture'  
+Response does not match or approximate target => score 0
+
+---
+
+**idx_2**  
+Response: 'mywish:buildtheencyclopediaoflife'  
+Target: 'mywish:buildtheencyclopediaoflife'  
+Exact same => score 1
+
+---
+
+**idx_3**  
+Response: 'mywish:createacharterforcompassion'  
+Target: 'mywish:thecharterforcompassion'  
+
+Check semantic equivalence:  
+""create a charter for compassion"" vs. ""the charter for compassion"" - same entity referred, conceptually equal (the charter for compassion is likely a known entity, ""create a charter for compassion"" is similar phrase).  
+Criterion says approximate semantics or same entity is enough.  
+
+=> score 1
+
+---
+
+**idx_4**  
+Response: 'mywish:protectouroceans'  
+Target: 'mywish:protectouroceans'  
+Exact same => score 1
+
+---
+
+**idx_5**  
+Response: 'teacheverychildaboutfood'  
+Target: 'teacheverychildaboutfood'  
+Exact same => score 1
+
+---
+
+**idx_6**  
+Response: 'mywish:usearttoturntheworldinsideout'  
+Target: 'mywish:usearttoturntheworldinsideout'  
+Exact same => score 1
+
+---
+
+**idx_7**  
+Response: 'nan'  
+Target: 'thecity2.0reimaginesthefuture'  
+No match => score 0
+
+---
+
+**idx_8**  
+Response: 'mywish:buildaschoolinthecloud'  
+Target: 'buildaschoolinthecloud'  
+The prefix 'mywish:' doesn't change the core phrase or semantic meaning. They both point to the same entity ""build a school in the cloud"".  
+Criterion allows approximate semantics or pointing to same entity.  
+So score 1
+
+---
+
+**idx_9**  
+Response: 'nan'  
+Target: 'mywish:tolaunchaneweraofopennessinbusiness'  
+No match => score 0
+
+---
+
+**idx_10**  
+Response: 'everyonearoundyouhasastorytheworldneedstohear'  
+Target: 'everyonearoundyouhasastorytheworldneedstohear'  
+Exact same => score 1
+
+---
+
+Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 0,
+  ""idx_8"": 1,
+  ""idx_9"": 0,
+  ""idx_10"": 1
+}
+```",everyonearoundyouhasastorytheworldneedstohear,everyonearoundyouhasastorytheworldneedstohear
+1.0,,billclinton,,,,2007,,,,monterey,,,,,,mywish:rebuildingrwanda,
+1.0,,bono,,,,2005,,,,monterey,,,,,,mywish:threeactionsforafrica,
+1.0,,daveeggers,,,,2008,,,,monterey,,,,,,mywish:onceuponaschool,
+1.0,,jamesnachtwey,,,,2007,,,,monterey,,,,,,mywish:letmyphotographsbearwitness,
+1.0,,jehanenoujaim,,,,2006,,,,monterey,,,,,,mywish:aglobaldayoffilm,
+1.0,,jilltarter,,,,2009,,,,longbeach,,,,,,jointhesetisearch,
+1.0,,joséabreu,,,,2009,,,,longbeach,,,,,,theelsistemamusicrevolution,
+1.0,,lawrencebrilliant,,,,2006,,,,monterey,,,,,,mywish:helpmestoppandemics,
+1.0,,neilturok,,,,2008,,,,monterey,,,,,,mywish:findthenexteinsteininafrica,
+1.0,,robertfischell,,,,2005,,,,monterey,,,,,,mywish:threeunusualmedicalinventions,

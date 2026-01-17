@@ -1,0 +1,1656 @@
+exist_flag_gt,exist_flag_response,releasedate,releasedate_before_map,batterycapacity_exact_match,batterycapacity_exact_match_eval_msg,batterycapacity_query,batterycapacity_response,cpucorecount_exact_match,cpucorecount_exact_match_eval_msg,cpucorecount_query,cpucorecount_response,cpumanufacturingprocess_exact_match,cpumanufacturingprocess_exact_match_eval_msg,cpumanufacturingprocess_query,cpumanufacturingprocess_response,cpumodel_llm_judge,cpumodel_llm_judge_eval_msg,cpumodel_query,cpumodel_response,highestcameraresolution_exact_match,highestcameraresolution_exact_match_eval_msg,highestcameraresolution_query,highestcameraresolution_response,launchprice(usd)_number_near,launchprice(usd)_number_near_eval_msg,launchprice(usd)_query,launchprice(usd)_response,modelname_llm_judge,modelname_llm_judge_eval_msg,modelname_query,modelname_response,pre-installedos_llm_judge,pre-installedos_llm_judge_eval_msg,pre-installedos_query,pre-installedos_response,processorbrand_exact_match,processorbrand_exact_match_eval_msg,processorbrand_query,processorbrand_response,ramsize_exact_match,ramsize_exact_match_eval_msg,ramsize_query,ramsize_response,releasedate_exact_match,releasedate_exact_match_eval_msg,resolution_llm_judge,resolution_llm_judge_eval_msg,resolution_query,resolution_response,screensize_llm_judge,screensize_llm_judge_eval_msg,screensize_query,screensize_response,storagesize_exact_match,storagesize_exact_match_eval_msg,storagesize_query,storagesize_response
+,,2015-04-10,2015-04-10,0.0,"exact not match, response: 2600mah, target: 2550mah",2550mah,2600mah,0.0,"exact not match, response: 8-core/8-core, target: 8-core",8-core,8-core/8-core,0.0,"exact not match, response: 28nm/20nm, target: 14nm",14nm,28nm/20nm,0.0,"Let's analyze each item carefully:
+
+---
+
+**idx_0**  
+- Response: ""exynos5430/snapdragon810""  
+- Target: ""exynos7420""  
+- The response lists exynos5430 and snapdragon810. The target is exynos7420 only. The response does not mention exynos7420 or snapdragon related to the target. So this does not match semantically to the reference answer.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""exynos8890/snapdragon820""  
+- Target: ""snapdragon820""  
+- The response includes snapdragon820 and exynos8890, target is snapdragon820 only. Including extra is acceptable as long as core entity is included. Here, the core part ""snapdragon820"" is present in response. Matches semantically.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""exynos9820/snapdragon855""  
+- Target: ""snapdragon855""  
+- Response contains snapdragon855, target is snapdragon855. This matches semantically.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""exynos990/snapdragon865""  
+- Target: ""snapdragon865""  
+- Response includes snapdragon865, so it matches semantically.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Response: ""exynos3300/snapdragon8gen2+""  
+- Target: ""snapdragon8gen2forgalaxy""  
+- According to criteria, ""snapdragon8gen2+"" ~= ""snapdragon8gen2forgalaxy"" (approximate semantics, point to same entity) - acceptable. Response also has exynos3300 extra, which is allowed.  
+- Score: 1
+
+---
+
+**idx_5**  
+- Response: ""exynos5500/snapdragon10gen4""  
+- Target: ""snapdragon8eliteforgalaxy""  
+- Response has snapdragon10gen4, target is snapdragon8eliteforgalaxy. These are different Snapdragon chips, not semantically the same or pointing to same entity. So this is incorrect.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",exynos7420,exynos5430/snapdragon810,1.0,"exact match, response: 16mp, target: 16mp",16mp,16mp,0.0,"number not near, response: 649.99, target: 699.0",699.0,649.99,1.0,"Let's analyze and judge each item one-by-one according to the grading criterion:
+
+Criterion Summary:  
+- The answer only needs to be semantically approximately the same or point to the same entity as the reference, no need for exact strict matching.
+
+---
+
+### idx_0  
+- Response: ""galaxys6""  
+- Target: ""galaxys6""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_1  
+- Response: ""galaxys7""  
+- Target: ""galaxys7""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_2  
+- Response: ""galaxys10""  
+- Target: ""galaxys10""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_3  
+- Response: ""galaxys20""  
+- Target: ""galaxys20""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_4  
+- Response: ""galaxys23""  
+- Target: ""galaxys23""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_5  
+- Response: ""galaxys25""  
+- Target: ""galaxys25""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+---
+
+All responses match perfectly or sufficiently with references to get full score.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",galaxys6,galaxys6,1.0,"Let me analyze each pair according to the criterion:
+
+Criterion restated:  
+- The response semantics should approximately match the reference answer or point to the same entity. No need for word-for-word matching.  
+- Scoring is binary (0 or 1).
+
+---
+
+**idx_0**  
+- Response: android5.0.2  
+- Target: android5  
+Analysis: The response ""android5.0.2"" is a more specific version within the Android 5 series. It points to the same major entity as ""android5"".  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_1**  
+- Response: android6.0  
+- Target: android6  
+Analysis: The response matches the target's major version exactly.  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_2**  
+- Response: android10.0  
+- Target: android9  
+Analysis: These are different major versions, android10 is newer than android9. Not approximately the same or pointing to the same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_3**  
+- Response: android10.0  
+- Target: android10  
+Analysis: Exact match in semantics (android10.0 and android10 equivalent).  
+Judgment: Same → Score = 1
+
+---
+
+**idx_4**  
+- Response: android14.0  
+- Target: android13  
+Analysis: Different major versions, android14 != android13. Not matching same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_5**  
+- Response: android16.0  
+- Target: android15  
+Analysis: Different major versions, no semantic equivalence here.  
+Judgment: Different → Score = 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android5,android5.0.2,1.0,"exact match, response: samsung, target: samsung",samsung,samsung,1.0,"exact match, response: 3gb, target: 3gb",3gb,3gb,1.0,key_match,0.0,"Let's analyze each item considering the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:**  
+- Response: ""1440x2560""  
+- Target: ""2560x1440""  
+These are the same numbers but swapped dimensions. Typically, screen resolution is given as width x height. If the response reverses these dimensions, it may imply different screen orientation or is just swapped. Since the two values point to the same numbers but swapped, this is likely a different resolution. So not the same entity or approximate semantics. Hence, score: 0
+
+**idx_1:**  
+- Response: ""1440x2560""  
+- Target: ""2560×1440"" (just a different ""x"" character)  
+As above, just swapped dimensions. Same analysis as idx_0, score: 0
+
+**idx_2:**  
+- Response: ""2960x1440""  
+- Target: ""3040x1440""  
+Difference in width by 80 pixels. Although close, it's not the same resolution. The criterion says approximate semantics or same entity, but this is a difference in one dimension by a not insignificant margin. This may be considered different enough to score 0.
+
+**idx_3:**  
+- Response: ""2400x1080""  
+- Target: ""3200×1440""  
+Different dimensions entirely. Not the same or approximate. Score: 0
+
+**idx_4:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Difference in width by 60 pixels, height same. Slightly off, but close. The criterion says approximate semantics or same entity is sufficient. However, 60 pixels difference could be a different resolution.  
+But might be considered approximate? Let's see: 2400 vs 2340, a minor difference. Could be a typo or rounding. They probably refer to the same class of screen resolution (FHD+ variant). Given the criterion is lenient, we can score this as 1.  
+
+**idx_5:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Same as idx_4, with same reasoning. Score: 1
+
+---
+
+**Final scoring:**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",2560x1440,1440x2560,1.0,"Let's analyze each pair:
+
+- idx_0: response = ""5.1"", target = ""5.1inches""
+  - Semantics match (the number 5.1 corresponds to 5.1 inches).
+  - Meets criterion of approximate semantic equivalence.
+  - Score = 1
+
+- idx_1: response = ""5.1"", target = ""5.1inches""
+  - Same as idx_0.
+  - Score = 1
+
+- idx_2: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_3: response = ""6.2"", target = ""6.2inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_4: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_5: response = ""6.1"", target = ""6.2inches""
+  - Response is 6.1, target is 6.2 inches.
+  - Different values, so semantics differ.
+  - Score = 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",5.1inches,5.1,0.0,"exact not match, response: 32gb/64gb/128gb, target: 32gb",32gb,32gb/64gb/128gb
+,,2016-03-11,2016-03-11,0.0,"exact not match, response: 2600mah, target: 3000mah",3000mah,2600mah,0.0,"exact not match, response: 8-core/8-core, target: 4-core",4-core,8-core/8-core,0.0,"exact not match, response: 14nm/14nm, target: 14nm",14nm,14nm/14nm,1.0,"Let's analyze each item carefully:
+
+---
+
+**idx_0**  
+- Response: ""exynos5430/snapdragon810""  
+- Target: ""exynos7420""  
+- The response lists exynos5430 and snapdragon810. The target is exynos7420 only. The response does not mention exynos7420 or snapdragon related to the target. So this does not match semantically to the reference answer.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""exynos8890/snapdragon820""  
+- Target: ""snapdragon820""  
+- The response includes snapdragon820 and exynos8890, target is snapdragon820 only. Including extra is acceptable as long as core entity is included. Here, the core part ""snapdragon820"" is present in response. Matches semantically.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""exynos9820/snapdragon855""  
+- Target: ""snapdragon855""  
+- Response contains snapdragon855, target is snapdragon855. This matches semantically.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""exynos990/snapdragon865""  
+- Target: ""snapdragon865""  
+- Response includes snapdragon865, so it matches semantically.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Response: ""exynos3300/snapdragon8gen2+""  
+- Target: ""snapdragon8gen2forgalaxy""  
+- According to criteria, ""snapdragon8gen2+"" ~= ""snapdragon8gen2forgalaxy"" (approximate semantics, point to same entity) - acceptable. Response also has exynos3300 extra, which is allowed.  
+- Score: 1
+
+---
+
+**idx_5**  
+- Response: ""exynos5500/snapdragon10gen4""  
+- Target: ""snapdragon8eliteforgalaxy""  
+- Response has snapdragon10gen4, target is snapdragon8eliteforgalaxy. These are different Snapdragon chips, not semantically the same or pointing to same entity. So this is incorrect.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",snapdragon820,exynos8890/snapdragon820,1.0,"exact match, response: 12mp, target: 12mp",12mp,12mp,0.0,"number not near, response: 649.99, target: 699.0",699.0,649.99,1.0,"Let's analyze and judge each item one-by-one according to the grading criterion:
+
+Criterion Summary:  
+- The answer only needs to be semantically approximately the same or point to the same entity as the reference, no need for exact strict matching.
+
+---
+
+### idx_0  
+- Response: ""galaxys6""  
+- Target: ""galaxys6""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_1  
+- Response: ""galaxys7""  
+- Target: ""galaxys7""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_2  
+- Response: ""galaxys10""  
+- Target: ""galaxys10""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_3  
+- Response: ""galaxys20""  
+- Target: ""galaxys20""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_4  
+- Response: ""galaxys23""  
+- Target: ""galaxys23""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_5  
+- Response: ""galaxys25""  
+- Target: ""galaxys25""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+---
+
+All responses match perfectly or sufficiently with references to get full score.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",galaxys7,galaxys7,1.0,"Let me analyze each pair according to the criterion:
+
+Criterion restated:  
+- The response semantics should approximately match the reference answer or point to the same entity. No need for word-for-word matching.  
+- Scoring is binary (0 or 1).
+
+---
+
+**idx_0**  
+- Response: android5.0.2  
+- Target: android5  
+Analysis: The response ""android5.0.2"" is a more specific version within the Android 5 series. It points to the same major entity as ""android5"".  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_1**  
+- Response: android6.0  
+- Target: android6  
+Analysis: The response matches the target's major version exactly.  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_2**  
+- Response: android10.0  
+- Target: android9  
+Analysis: These are different major versions, android10 is newer than android9. Not approximately the same or pointing to the same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_3**  
+- Response: android10.0  
+- Target: android10  
+Analysis: Exact match in semantics (android10.0 and android10 equivalent).  
+Judgment: Same → Score = 1
+
+---
+
+**idx_4**  
+- Response: android14.0  
+- Target: android13  
+Analysis: Different major versions, android14 != android13. Not matching same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_5**  
+- Response: android16.0  
+- Target: android15  
+Analysis: Different major versions, no semantic equivalence here.  
+Judgment: Different → Score = 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android6,android6.0,0.0,"exact not match, response: samsung, target: qualcomm",qualcomm,samsung,1.0,"exact match, response: 4gb, target: 4gb",4gb,4gb,1.0,key_match,0.0,"Let's analyze each item considering the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:**  
+- Response: ""1440x2560""  
+- Target: ""2560x1440""  
+These are the same numbers but swapped dimensions. Typically, screen resolution is given as width x height. If the response reverses these dimensions, it may imply different screen orientation or is just swapped. Since the two values point to the same numbers but swapped, this is likely a different resolution. So not the same entity or approximate semantics. Hence, score: 0
+
+**idx_1:**  
+- Response: ""1440x2560""  
+- Target: ""2560×1440"" (just a different ""x"" character)  
+As above, just swapped dimensions. Same analysis as idx_0, score: 0
+
+**idx_2:**  
+- Response: ""2960x1440""  
+- Target: ""3040x1440""  
+Difference in width by 80 pixels. Although close, it's not the same resolution. The criterion says approximate semantics or same entity, but this is a difference in one dimension by a not insignificant margin. This may be considered different enough to score 0.
+
+**idx_3:**  
+- Response: ""2400x1080""  
+- Target: ""3200×1440""  
+Different dimensions entirely. Not the same or approximate. Score: 0
+
+**idx_4:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Difference in width by 60 pixels, height same. Slightly off, but close. The criterion says approximate semantics or same entity is sufficient. However, 60 pixels difference could be a different resolution.  
+But might be considered approximate? Let's see: 2400 vs 2340, a minor difference. Could be a typo or rounding. They probably refer to the same class of screen resolution (FHD+ variant). Given the criterion is lenient, we can score this as 1.  
+
+**idx_5:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Same as idx_4, with same reasoning. Score: 1
+
+---
+
+**Final scoring:**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",2560×1440,1440x2560,1.0,"Let's analyze each pair:
+
+- idx_0: response = ""5.1"", target = ""5.1inches""
+  - Semantics match (the number 5.1 corresponds to 5.1 inches).
+  - Meets criterion of approximate semantic equivalence.
+  - Score = 1
+
+- idx_1: response = ""5.1"", target = ""5.1inches""
+  - Same as idx_0.
+  - Score = 1
+
+- idx_2: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_3: response = ""6.2"", target = ""6.2inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_4: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_5: response = ""6.1"", target = ""6.2inches""
+  - Response is 6.1, target is 6.2 inches.
+  - Different values, so semantics differ.
+  - Score = 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",5.1inches,5.1,0.0,"exact not match, response: 32gb/64gb/128gb, target: 32gb",32gb,32gb/64gb/128gb
+,,2019-03-08,2019-03-08,1.0,"exact match, response: 3400mah, target: 3400mah",3400mah,3400mah,0.0,"exact not match, response: 8-core/8-core, target: 8-core",8-core,8-core/8-core,0.0,"exact not match, response: 7nm/7nm, target: 7nm",7nm,7nm/7nm,1.0,"Let's analyze each item carefully:
+
+---
+
+**idx_0**  
+- Response: ""exynos5430/snapdragon810""  
+- Target: ""exynos7420""  
+- The response lists exynos5430 and snapdragon810. The target is exynos7420 only. The response does not mention exynos7420 or snapdragon related to the target. So this does not match semantically to the reference answer.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""exynos8890/snapdragon820""  
+- Target: ""snapdragon820""  
+- The response includes snapdragon820 and exynos8890, target is snapdragon820 only. Including extra is acceptable as long as core entity is included. Here, the core part ""snapdragon820"" is present in response. Matches semantically.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""exynos9820/snapdragon855""  
+- Target: ""snapdragon855""  
+- Response contains snapdragon855, target is snapdragon855. This matches semantically.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""exynos990/snapdragon865""  
+- Target: ""snapdragon865""  
+- Response includes snapdragon865, so it matches semantically.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Response: ""exynos3300/snapdragon8gen2+""  
+- Target: ""snapdragon8gen2forgalaxy""  
+- According to criteria, ""snapdragon8gen2+"" ~= ""snapdragon8gen2forgalaxy"" (approximate semantics, point to same entity) - acceptable. Response also has exynos3300 extra, which is allowed.  
+- Score: 1
+
+---
+
+**idx_5**  
+- Response: ""exynos5500/snapdragon10gen4""  
+- Target: ""snapdragon8eliteforgalaxy""  
+- Response has snapdragon10gen4, target is snapdragon8eliteforgalaxy. These are different Snapdragon chips, not semantically the same or pointing to same entity. So this is incorrect.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",snapdragon855,exynos9820/snapdragon855,0.0,"exact not match, response: 12mp, target: 16mp",16mp,12mp,0.0,"number not near, response: 999.99, target: 799.0",799.0,999.99,1.0,"Let's analyze and judge each item one-by-one according to the grading criterion:
+
+Criterion Summary:  
+- The answer only needs to be semantically approximately the same or point to the same entity as the reference, no need for exact strict matching.
+
+---
+
+### idx_0  
+- Response: ""galaxys6""  
+- Target: ""galaxys6""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_1  
+- Response: ""galaxys7""  
+- Target: ""galaxys7""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_2  
+- Response: ""galaxys10""  
+- Target: ""galaxys10""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_3  
+- Response: ""galaxys20""  
+- Target: ""galaxys20""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_4  
+- Response: ""galaxys23""  
+- Target: ""galaxys23""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_5  
+- Response: ""galaxys25""  
+- Target: ""galaxys25""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+---
+
+All responses match perfectly or sufficiently with references to get full score.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",galaxys10,galaxys10,0.0,"Let me analyze each pair according to the criterion:
+
+Criterion restated:  
+- The response semantics should approximately match the reference answer or point to the same entity. No need for word-for-word matching.  
+- Scoring is binary (0 or 1).
+
+---
+
+**idx_0**  
+- Response: android5.0.2  
+- Target: android5  
+Analysis: The response ""android5.0.2"" is a more specific version within the Android 5 series. It points to the same major entity as ""android5"".  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_1**  
+- Response: android6.0  
+- Target: android6  
+Analysis: The response matches the target's major version exactly.  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_2**  
+- Response: android10.0  
+- Target: android9  
+Analysis: These are different major versions, android10 is newer than android9. Not approximately the same or pointing to the same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_3**  
+- Response: android10.0  
+- Target: android10  
+Analysis: Exact match in semantics (android10.0 and android10 equivalent).  
+Judgment: Same → Score = 1
+
+---
+
+**idx_4**  
+- Response: android14.0  
+- Target: android13  
+Analysis: Different major versions, android14 != android13. Not matching same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_5**  
+- Response: android16.0  
+- Target: android15  
+Analysis: Different major versions, no semantic equivalence here.  
+Judgment: Different → Score = 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android9,android10.0,0.0,"exact not match, response: samsung, target: qualcomm",qualcomm,samsung,1.0,"exact match, response: 8gb, target: 8gb",8gb,8gb,1.0,key_match,0.0,"Let's analyze each item considering the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:**  
+- Response: ""1440x2560""  
+- Target: ""2560x1440""  
+These are the same numbers but swapped dimensions. Typically, screen resolution is given as width x height. If the response reverses these dimensions, it may imply different screen orientation or is just swapped. Since the two values point to the same numbers but swapped, this is likely a different resolution. So not the same entity or approximate semantics. Hence, score: 0
+
+**idx_1:**  
+- Response: ""1440x2560""  
+- Target: ""2560×1440"" (just a different ""x"" character)  
+As above, just swapped dimensions. Same analysis as idx_0, score: 0
+
+**idx_2:**  
+- Response: ""2960x1440""  
+- Target: ""3040x1440""  
+Difference in width by 80 pixels. Although close, it's not the same resolution. The criterion says approximate semantics or same entity, but this is a difference in one dimension by a not insignificant margin. This may be considered different enough to score 0.
+
+**idx_3:**  
+- Response: ""2400x1080""  
+- Target: ""3200×1440""  
+Different dimensions entirely. Not the same or approximate. Score: 0
+
+**idx_4:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Difference in width by 60 pixels, height same. Slightly off, but close. The criterion says approximate semantics or same entity is sufficient. However, 60 pixels difference could be a different resolution.  
+But might be considered approximate? Let's see: 2400 vs 2340, a minor difference. Could be a typo or rounding. They probably refer to the same class of screen resolution (FHD+ variant). Given the criterion is lenient, we can score this as 1.  
+
+**idx_5:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Same as idx_4, with same reasoning. Score: 1
+
+---
+
+**Final scoring:**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",3040x1440,2960x1440,1.0,"Let's analyze each pair:
+
+- idx_0: response = ""5.1"", target = ""5.1inches""
+  - Semantics match (the number 5.1 corresponds to 5.1 inches).
+  - Meets criterion of approximate semantic equivalence.
+  - Score = 1
+
+- idx_1: response = ""5.1"", target = ""5.1inches""
+  - Same as idx_0.
+  - Score = 1
+
+- idx_2: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_3: response = ""6.2"", target = ""6.2inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_4: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_5: response = ""6.1"", target = ""6.2inches""
+  - Response is 6.1, target is 6.2 inches.
+  - Different values, so semantics differ.
+  - Score = 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",6.1inches,6.1,0.0,"exact not match, response: 128gb/512gb, target: 128gb",128gb,128gb/512gb
+,,2020-03-06,2020-03-06,1.0,"exact match, response: 4000mah, target: 4000mah",4000mah,4000mah,0.0,"exact not match, response: 8-core/8-core, target: 8-core",8-core,8-core/8-core,0.0,"exact not match, response: 7nm/7nm, target: 7nm",7nm,7nm/7nm,1.0,"Let's analyze each item carefully:
+
+---
+
+**idx_0**  
+- Response: ""exynos5430/snapdragon810""  
+- Target: ""exynos7420""  
+- The response lists exynos5430 and snapdragon810. The target is exynos7420 only. The response does not mention exynos7420 or snapdragon related to the target. So this does not match semantically to the reference answer.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""exynos8890/snapdragon820""  
+- Target: ""snapdragon820""  
+- The response includes snapdragon820 and exynos8890, target is snapdragon820 only. Including extra is acceptable as long as core entity is included. Here, the core part ""snapdragon820"" is present in response. Matches semantically.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""exynos9820/snapdragon855""  
+- Target: ""snapdragon855""  
+- Response contains snapdragon855, target is snapdragon855. This matches semantically.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""exynos990/snapdragon865""  
+- Target: ""snapdragon865""  
+- Response includes snapdragon865, so it matches semantically.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Response: ""exynos3300/snapdragon8gen2+""  
+- Target: ""snapdragon8gen2forgalaxy""  
+- According to criteria, ""snapdragon8gen2+"" ~= ""snapdragon8gen2forgalaxy"" (approximate semantics, point to same entity) - acceptable. Response also has exynos3300 extra, which is allowed.  
+- Score: 1
+
+---
+
+**idx_5**  
+- Response: ""exynos5500/snapdragon10gen4""  
+- Target: ""snapdragon8eliteforgalaxy""  
+- Response has snapdragon10gen4, target is snapdragon8eliteforgalaxy. These are different Snapdragon chips, not semantically the same or pointing to same entity. So this is incorrect.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",snapdragon865,exynos990/snapdragon865,0.0,"exact not match, response: 12mp, target: 64mp",64mp,12mp,1.0,"number near in range 5.0%, response: 999.99, target: 999.0",999.0,999.99,1.0,"Let's analyze and judge each item one-by-one according to the grading criterion:
+
+Criterion Summary:  
+- The answer only needs to be semantically approximately the same or point to the same entity as the reference, no need for exact strict matching.
+
+---
+
+### idx_0  
+- Response: ""galaxys6""  
+- Target: ""galaxys6""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_1  
+- Response: ""galaxys7""  
+- Target: ""galaxys7""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_2  
+- Response: ""galaxys10""  
+- Target: ""galaxys10""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_3  
+- Response: ""galaxys20""  
+- Target: ""galaxys20""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_4  
+- Response: ""galaxys23""  
+- Target: ""galaxys23""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_5  
+- Response: ""galaxys25""  
+- Target: ""galaxys25""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+---
+
+All responses match perfectly or sufficiently with references to get full score.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",galaxys20,galaxys20,1.0,"Let me analyze each pair according to the criterion:
+
+Criterion restated:  
+- The response semantics should approximately match the reference answer or point to the same entity. No need for word-for-word matching.  
+- Scoring is binary (0 or 1).
+
+---
+
+**idx_0**  
+- Response: android5.0.2  
+- Target: android5  
+Analysis: The response ""android5.0.2"" is a more specific version within the Android 5 series. It points to the same major entity as ""android5"".  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_1**  
+- Response: android6.0  
+- Target: android6  
+Analysis: The response matches the target's major version exactly.  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_2**  
+- Response: android10.0  
+- Target: android9  
+Analysis: These are different major versions, android10 is newer than android9. Not approximately the same or pointing to the same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_3**  
+- Response: android10.0  
+- Target: android10  
+Analysis: Exact match in semantics (android10.0 and android10 equivalent).  
+Judgment: Same → Score = 1
+
+---
+
+**idx_4**  
+- Response: android14.0  
+- Target: android13  
+Analysis: Different major versions, android14 != android13. Not matching same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_5**  
+- Response: android16.0  
+- Target: android15  
+Analysis: Different major versions, no semantic equivalence here.  
+Judgment: Different → Score = 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android10,android10.0,0.0,"exact not match, response: samsung, target: qualcomm",qualcomm,samsung,1.0,"exact match, response: 8gb, target: 8gb",8gb,8gb,1.0,key_match,0.0,"Let's analyze each item considering the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:**  
+- Response: ""1440x2560""  
+- Target: ""2560x1440""  
+These are the same numbers but swapped dimensions. Typically, screen resolution is given as width x height. If the response reverses these dimensions, it may imply different screen orientation or is just swapped. Since the two values point to the same numbers but swapped, this is likely a different resolution. So not the same entity or approximate semantics. Hence, score: 0
+
+**idx_1:**  
+- Response: ""1440x2560""  
+- Target: ""2560×1440"" (just a different ""x"" character)  
+As above, just swapped dimensions. Same analysis as idx_0, score: 0
+
+**idx_2:**  
+- Response: ""2960x1440""  
+- Target: ""3040x1440""  
+Difference in width by 80 pixels. Although close, it's not the same resolution. The criterion says approximate semantics or same entity, but this is a difference in one dimension by a not insignificant margin. This may be considered different enough to score 0.
+
+**idx_3:**  
+- Response: ""2400x1080""  
+- Target: ""3200×1440""  
+Different dimensions entirely. Not the same or approximate. Score: 0
+
+**idx_4:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Difference in width by 60 pixels, height same. Slightly off, but close. The criterion says approximate semantics or same entity is sufficient. However, 60 pixels difference could be a different resolution.  
+But might be considered approximate? Let's see: 2400 vs 2340, a minor difference. Could be a typo or rounding. They probably refer to the same class of screen resolution (FHD+ variant). Given the criterion is lenient, we can score this as 1.  
+
+**idx_5:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Same as idx_4, with same reasoning. Score: 1
+
+---
+
+**Final scoring:**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",3200×1440,2400x1080,1.0,"Let's analyze each pair:
+
+- idx_0: response = ""5.1"", target = ""5.1inches""
+  - Semantics match (the number 5.1 corresponds to 5.1 inches).
+  - Meets criterion of approximate semantic equivalence.
+  - Score = 1
+
+- idx_1: response = ""5.1"", target = ""5.1inches""
+  - Same as idx_0.
+  - Score = 1
+
+- idx_2: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_3: response = ""6.2"", target = ""6.2inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_4: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_5: response = ""6.1"", target = ""6.2inches""
+  - Response is 6.1, target is 6.2 inches.
+  - Different values, so semantics differ.
+  - Score = 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",6.2inches,6.2,0.0,"exact not match, response: 128gb/256gb/512gb, target: 128gb",128gb,128gb/256gb/512gb
+,,2023-02-17,2023-02-17,0.0,"exact not match, response: 4500mah, target: 3900mah",3900mah,4500mah,0.0,"exact not match, response: 8-core/8-core, target: 8-core",8-core,8-core/8-core,0.0,"exact not match, response: 4nm/4nm, target: 4nm",4nm,4nm/4nm,1.0,"Let's analyze each item carefully:
+
+---
+
+**idx_0**  
+- Response: ""exynos5430/snapdragon810""  
+- Target: ""exynos7420""  
+- The response lists exynos5430 and snapdragon810. The target is exynos7420 only. The response does not mention exynos7420 or snapdragon related to the target. So this does not match semantically to the reference answer.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""exynos8890/snapdragon820""  
+- Target: ""snapdragon820""  
+- The response includes snapdragon820 and exynos8890, target is snapdragon820 only. Including extra is acceptable as long as core entity is included. Here, the core part ""snapdragon820"" is present in response. Matches semantically.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""exynos9820/snapdragon855""  
+- Target: ""snapdragon855""  
+- Response contains snapdragon855, target is snapdragon855. This matches semantically.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""exynos990/snapdragon865""  
+- Target: ""snapdragon865""  
+- Response includes snapdragon865, so it matches semantically.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Response: ""exynos3300/snapdragon8gen2+""  
+- Target: ""snapdragon8gen2forgalaxy""  
+- According to criteria, ""snapdragon8gen2+"" ~= ""snapdragon8gen2forgalaxy"" (approximate semantics, point to same entity) - acceptable. Response also has exynos3300 extra, which is allowed.  
+- Score: 1
+
+---
+
+**idx_5**  
+- Response: ""exynos5500/snapdragon10gen4""  
+- Target: ""snapdragon8eliteforgalaxy""  
+- Response has snapdragon10gen4, target is snapdragon8eliteforgalaxy. These are different Snapdragon chips, not semantically the same or pointing to same entity. So this is incorrect.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",snapdragon8gen2forgalaxy,exynos3300/snapdragon8gen2+,0.0,"exact not match, response: 20mp, target: 50mp",50mp,20mp,1.0,"number near in range 5.0%, response: 799.99, target: 799.99",799.99,799.99,1.0,"Let's analyze and judge each item one-by-one according to the grading criterion:
+
+Criterion Summary:  
+- The answer only needs to be semantically approximately the same or point to the same entity as the reference, no need for exact strict matching.
+
+---
+
+### idx_0  
+- Response: ""galaxys6""  
+- Target: ""galaxys6""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_1  
+- Response: ""galaxys7""  
+- Target: ""galaxys7""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_2  
+- Response: ""galaxys10""  
+- Target: ""galaxys10""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_3  
+- Response: ""galaxys20""  
+- Target: ""galaxys20""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_4  
+- Response: ""galaxys23""  
+- Target: ""galaxys23""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_5  
+- Response: ""galaxys25""  
+- Target: ""galaxys25""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+---
+
+All responses match perfectly or sufficiently with references to get full score.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",galaxys23,galaxys23,0.0,"Let me analyze each pair according to the criterion:
+
+Criterion restated:  
+- The response semantics should approximately match the reference answer or point to the same entity. No need for word-for-word matching.  
+- Scoring is binary (0 or 1).
+
+---
+
+**idx_0**  
+- Response: android5.0.2  
+- Target: android5  
+Analysis: The response ""android5.0.2"" is a more specific version within the Android 5 series. It points to the same major entity as ""android5"".  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_1**  
+- Response: android6.0  
+- Target: android6  
+Analysis: The response matches the target's major version exactly.  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_2**  
+- Response: android10.0  
+- Target: android9  
+Analysis: These are different major versions, android10 is newer than android9. Not approximately the same or pointing to the same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_3**  
+- Response: android10.0  
+- Target: android10  
+Analysis: Exact match in semantics (android10.0 and android10 equivalent).  
+Judgment: Same → Score = 1
+
+---
+
+**idx_4**  
+- Response: android14.0  
+- Target: android13  
+Analysis: Different major versions, android14 != android13. Not matching same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_5**  
+- Response: android16.0  
+- Target: android15  
+Analysis: Different major versions, no semantic equivalence here.  
+Judgment: Different → Score = 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android13,android14.0,0.0,"exact not match, response: samsung, target: qualcomm",qualcomm,samsung,1.0,"exact match, response: 8gb, target: 8gb",8gb,8gb,1.0,key_match,1.0,"Let's analyze each item considering the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:**  
+- Response: ""1440x2560""  
+- Target: ""2560x1440""  
+These are the same numbers but swapped dimensions. Typically, screen resolution is given as width x height. If the response reverses these dimensions, it may imply different screen orientation or is just swapped. Since the two values point to the same numbers but swapped, this is likely a different resolution. So not the same entity or approximate semantics. Hence, score: 0
+
+**idx_1:**  
+- Response: ""1440x2560""  
+- Target: ""2560×1440"" (just a different ""x"" character)  
+As above, just swapped dimensions. Same analysis as idx_0, score: 0
+
+**idx_2:**  
+- Response: ""2960x1440""  
+- Target: ""3040x1440""  
+Difference in width by 80 pixels. Although close, it's not the same resolution. The criterion says approximate semantics or same entity, but this is a difference in one dimension by a not insignificant margin. This may be considered different enough to score 0.
+
+**idx_3:**  
+- Response: ""2400x1080""  
+- Target: ""3200×1440""  
+Different dimensions entirely. Not the same or approximate. Score: 0
+
+**idx_4:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Difference in width by 60 pixels, height same. Slightly off, but close. The criterion says approximate semantics or same entity is sufficient. However, 60 pixels difference could be a different resolution.  
+But might be considered approximate? Let's see: 2400 vs 2340, a minor difference. Could be a typo or rounding. They probably refer to the same class of screen resolution (FHD+ variant). Given the criterion is lenient, we can score this as 1.  
+
+**idx_5:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Same as idx_4, with same reasoning. Score: 1
+
+---
+
+**Final scoring:**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",2340x1080,2400x1080,1.0,"Let's analyze each pair:
+
+- idx_0: response = ""5.1"", target = ""5.1inches""
+  - Semantics match (the number 5.1 corresponds to 5.1 inches).
+  - Meets criterion of approximate semantic equivalence.
+  - Score = 1
+
+- idx_1: response = ""5.1"", target = ""5.1inches""
+  - Same as idx_0.
+  - Score = 1
+
+- idx_2: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_3: response = ""6.2"", target = ""6.2inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_4: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_5: response = ""6.1"", target = ""6.2inches""
+  - Response is 6.1, target is 6.2 inches.
+  - Different values, so semantics differ.
+  - Score = 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",6.1inches,6.1,0.0,"exact not match, response: 128gb/256gb/512gb, target: 128gb",128gb,128gb/256gb/512gb
+,,2025-02-07,2025-02-07,0.0,"exact not match, response: 4500mah, target: 4000mah",4000mah,4500mah,0.0,"exact not match, response: 8-core/8-core, target: 8-core",8-core,8-core/8-core,0.0,"exact not match, response: 4nm/4nm, target: 3nm",3nm,4nm/4nm,0.0,"Let's analyze each item carefully:
+
+---
+
+**idx_0**  
+- Response: ""exynos5430/snapdragon810""  
+- Target: ""exynos7420""  
+- The response lists exynos5430 and snapdragon810. The target is exynos7420 only. The response does not mention exynos7420 or snapdragon related to the target. So this does not match semantically to the reference answer.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""exynos8890/snapdragon820""  
+- Target: ""snapdragon820""  
+- The response includes snapdragon820 and exynos8890, target is snapdragon820 only. Including extra is acceptable as long as core entity is included. Here, the core part ""snapdragon820"" is present in response. Matches semantically.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""exynos9820/snapdragon855""  
+- Target: ""snapdragon855""  
+- Response contains snapdragon855, target is snapdragon855. This matches semantically.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""exynos990/snapdragon865""  
+- Target: ""snapdragon865""  
+- Response includes snapdragon865, so it matches semantically.  
+- Score: 1
+
+---
+
+**idx_4**  
+- Response: ""exynos3300/snapdragon8gen2+""  
+- Target: ""snapdragon8gen2forgalaxy""  
+- According to criteria, ""snapdragon8gen2+"" ~= ""snapdragon8gen2forgalaxy"" (approximate semantics, point to same entity) - acceptable. Response also has exynos3300 extra, which is allowed.  
+- Score: 1
+
+---
+
+**idx_5**  
+- Response: ""exynos5500/snapdragon10gen4""  
+- Target: ""snapdragon8eliteforgalaxy""  
+- Response has snapdragon10gen4, target is snapdragon8eliteforgalaxy. These are different Snapdragon chips, not semantically the same or pointing to same entity. So this is incorrect.  
+- Score: 0
+
+---
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0
+}
+```",snapdragon8eliteforgalaxy,exynos5500/snapdragon10gen4,0.0,"exact not match, response: 20mp, target: 50mp",50mp,20mp,1.0,"number near in range 5.0%, response: 799.99, target: 799.0",799.0,799.99,1.0,"Let's analyze and judge each item one-by-one according to the grading criterion:
+
+Criterion Summary:  
+- The answer only needs to be semantically approximately the same or point to the same entity as the reference, no need for exact strict matching.
+
+---
+
+### idx_0  
+- Response: ""galaxys6""  
+- Target: ""galaxys6""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_1  
+- Response: ""galaxys7""  
+- Target: ""galaxys7""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_2  
+- Response: ""galaxys10""  
+- Target: ""galaxys10""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_3  
+- Response: ""galaxys20""  
+- Target: ""galaxys20""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_4  
+- Response: ""galaxys23""  
+- Target: ""galaxys23""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+### idx_5  
+- Response: ""galaxys25""  
+- Target: ""galaxys25""  
+- Analysis: Exact match. Semantically and literally the same.  
+- Score: 1
+
+---
+
+All responses match perfectly or sufficiently with references to get full score.
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",galaxys25,galaxys25,0.0,"Let me analyze each pair according to the criterion:
+
+Criterion restated:  
+- The response semantics should approximately match the reference answer or point to the same entity. No need for word-for-word matching.  
+- Scoring is binary (0 or 1).
+
+---
+
+**idx_0**  
+- Response: android5.0.2  
+- Target: android5  
+Analysis: The response ""android5.0.2"" is a more specific version within the Android 5 series. It points to the same major entity as ""android5"".  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_1**  
+- Response: android6.0  
+- Target: android6  
+Analysis: The response matches the target's major version exactly.  
+Judgment: Same entity → Score = 1
+
+---
+
+**idx_2**  
+- Response: android10.0  
+- Target: android9  
+Analysis: These are different major versions, android10 is newer than android9. Not approximately the same or pointing to the same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_3**  
+- Response: android10.0  
+- Target: android10  
+Analysis: Exact match in semantics (android10.0 and android10 equivalent).  
+Judgment: Same → Score = 1
+
+---
+
+**idx_4**  
+- Response: android14.0  
+- Target: android13  
+Analysis: Different major versions, android14 != android13. Not matching same entity.  
+Judgment: Different → Score = 0
+
+---
+
+**idx_5**  
+- Response: android16.0  
+- Target: android15  
+Analysis: Different major versions, no semantic equivalence here.  
+Judgment: Different → Score = 0
+
+---
+
+### Final scoring in JSON format:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0,
+    ""idx_5"": 0
+}
+```",android15,android16.0,0.0,"exact not match, response: samsung, target: qualcomm",qualcomm,samsung,0.0,"exact not match, response: 8gb, target: 12gb",12gb,8gb,1.0,key_match,1.0,"Let's analyze each item considering the criterion:  
+""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:**  
+- Response: ""1440x2560""  
+- Target: ""2560x1440""  
+These are the same numbers but swapped dimensions. Typically, screen resolution is given as width x height. If the response reverses these dimensions, it may imply different screen orientation or is just swapped. Since the two values point to the same numbers but swapped, this is likely a different resolution. So not the same entity or approximate semantics. Hence, score: 0
+
+**idx_1:**  
+- Response: ""1440x2560""  
+- Target: ""2560×1440"" (just a different ""x"" character)  
+As above, just swapped dimensions. Same analysis as idx_0, score: 0
+
+**idx_2:**  
+- Response: ""2960x1440""  
+- Target: ""3040x1440""  
+Difference in width by 80 pixels. Although close, it's not the same resolution. The criterion says approximate semantics or same entity, but this is a difference in one dimension by a not insignificant margin. This may be considered different enough to score 0.
+
+**idx_3:**  
+- Response: ""2400x1080""  
+- Target: ""3200×1440""  
+Different dimensions entirely. Not the same or approximate. Score: 0
+
+**idx_4:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Difference in width by 60 pixels, height same. Slightly off, but close. The criterion says approximate semantics or same entity is sufficient. However, 60 pixels difference could be a different resolution.  
+But might be considered approximate? Let's see: 2400 vs 2340, a minor difference. Could be a typo or rounding. They probably refer to the same class of screen resolution (FHD+ variant). Given the criterion is lenient, we can score this as 1.  
+
+**idx_5:**  
+- Response: ""2400x1080""  
+- Target: ""2340x1080""  
+Same as idx_4, with same reasoning. Score: 1
+
+---
+
+**Final scoring:**
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 1,
+  ""idx_5"": 1
+}
+```",2340x1080,2400x1080,0.0,"Let's analyze each pair:
+
+- idx_0: response = ""5.1"", target = ""5.1inches""
+  - Semantics match (the number 5.1 corresponds to 5.1 inches).
+  - Meets criterion of approximate semantic equivalence.
+  - Score = 1
+
+- idx_1: response = ""5.1"", target = ""5.1inches""
+  - Same as idx_0.
+  - Score = 1
+
+- idx_2: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_3: response = ""6.2"", target = ""6.2inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_4: response = ""6.1"", target = ""6.1inches""
+  - Semantics match.
+  - Score = 1
+
+- idx_5: response = ""6.1"", target = ""6.2inches""
+  - Response is 6.1, target is 6.2 inches.
+  - Different values, so semantics differ.
+  - Score = 0
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0
+}
+```",6.2inches,6.1,0.0,"exact not match, response: 128gb/256gb/512gb, target: 128gb",128gb,128gb/256gb/512gb
+,1.0,2014-04-11,2014-04-11,,,,2600mah,,,,4-core,,,,28nm,,,,snapdragon801,,,,13mp,,,,649.99,,,,galaxys5,,,,android4.4.2,,,,qualcomm,,,,2gb,,,,,,1080x1920,,,,5.1,,,,16gb/32gb
+1.0,,2015-08-21,,,,3000mah,,,,8-core,,,,14nm,,,,exynos7octa7420,,,,16mp,,,,768.0,,,,galaxynote5,,,,android5,,,,samsung,,,,4gb,,,,,,1440x2560,,,,5.7inches,,,,32gb,
+1.0,,2016-08-19,,,,3500mah,,,,8-core,,,,14nm,,,,snapdragon820,,,,12mp,,,,849.0,,,,galaxynote7,,,,android6,,,,qualcomm,,,,4gb,,,,,,1440x2560,,,,5.7inches,,,,64gb,
+1.0,,2017-04-21,,,,3000mah,,,,8-core,,,,10nm,,,,snapdragon835,,,,12mp,,,,720.0,,,,galaxys8,,,,android7,,,,qualcomm,,,,4gb,,,,,,2960x1440,,,,5.8inches,,,,64gb,
+,1.0,2017-04-24,2017-04-24,,,,3000mah,,,,8-core/8-core,,,,10nm/10nm,,,,exynos8895/snapdragon835,,,,12mp,,,,799.99,,,,galaxys8,,,,android7.0,,,,samsung,,,,4gb,,,,,,2960x1440,,,,5.8,,,,64gb/128gb/256gb
+1.0,,2017-09-15,,,,3300mah,,,,8-core,,,,10nm,,,,snapdragon835,,,,12mp,,,,930.0,,,,galaxynote8,,,,android7,,,,qualcomm,,,,6gb,,,,,,2960x1440,,,,6.3inches,,,,64gb,
+,1.0,2018-03-09,2018-03-09,,,,3000mah,,,,8-core/8-core,,,,8nm/8nm,,,,exynos9810/snapdragon845,,,,12mp,,,,749.99,,,,galaxys9,,,,android8.0,,,,samsung,,,,4gb,,,,,,2960x1440,,,,5.8,,,,64gb/128gb/256gb
+1.0,,2018-03-16,,,,3000mah,,,,8-core,,,,10nm,,,,snapdragon845,,,,12mp,,,,719.99,,,,galaxys9,,,,android8,,,,qualcomm,,,,4gb,,,,,,2960x1440,,,,5.8inches,,,,64gb,
+1.0,,2018-08-24,,,,4000mah,,,,8-core,,,,10nm,,,,snapdragon845,,,,12mp,,,,999.0,,,,galaxynote9,,,,android8,,,,qualcomm,,,,6gb,,,,,,2960x1440,,,,6.4inches,,,,128gb,
+1.0,,2019-08-23,,,,3500mah,,,,8-core,,,,7nm,,,,snapdragon855,,,,16mp,,,,949.0,,,,galaxynote10,,,,android9,,,,qualcomm,,,,8gb,,,,,,2280×1080,,,,6.3inches,,,,256gb,
+1.0,,2020-08-21,,,,4300mah,,,,8-core,,,,7nm+,,,,snapdragon865plus,,,,64mp,,,,999.0,,,,galaxynote20,,,,android10,,,,qualcomm,,,,8gb,,,,,,2400x1080,,,,6.7inches,,,,128gb,
+1.0,,2021-01-29,,,,4000mah,,,,8-core,,,,5nm,,,,snapdragon888,,,,64mp,,,,799.99,,,,galaxys21,,,,android11,,,,qualcomm,,,,8gb,,,,,,2400x1080,,,,6.2inches,,,,128gb,
+,1.0,2021-02-25,2021-02-25,,,,4000mah,,,,8-core/8-core,,,,5nm/5nm,,,,exynos2100/snapdragon888,,,,12mp,,,,799.99,,,,galaxys21,,,,android11.0,,,,samsung,,,,8gb,,,,,,2400x1080,,,,6.2,,,,128gb/256gb/512gb
+,1.0,2022-02-17,2022-02-17,,,,4500mah,,,,8-core/8-core,,,,4nm/4nm,,,,exynos2200/snapdragon8gen2,,,,20mp,,,,799.99,,,,galaxys22,,,,android13.0,,,,samsung,,,,8gb,,,,,,2400x1080,,,,6.1,,,,128gb/256gb/512gb
+1.0,,2022-02-25,,,,3700mah,,,,8-core,,,,4nm,,,,snapdragon8gen1,,,,50mp,,,,799.99,,,,galaxys22,,,,android12,,,,qualcomm,,,,8gb,,,,,,2340x1080,,,,6.1inches,,,,128gb,
+1.0,,2024-01-31,,,,4000mah,,,,8-core,,,,4nm,,,,snapdragon8gen3,,,,50mp,,,,799.99,,,,galaxys24,,,,android14,,,,qualcomm,,,,8gb,,,,,,2340x1080,,,,6.2inches,,,,256gb,
+,1.0,2024-02-24,2024-02-24,,,,4500mah,,,,8-core/8-core,,,,4nm/4nm,,,,exynos4400/snapdragon9gen3,,,,20mp,,,,799.99,,,,galaxys24,,,,android15.0,,,,samsung,,,,8gb,,,,,,2400x1080,,,,6.1,,,,128gb/256gb/512gb

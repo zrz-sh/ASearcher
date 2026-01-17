@@ -1,0 +1,831 @@
+exist_flag_gt,exist_flag_response,排名,排名_before_map,作曲人_llm_judge,作曲人_llm_judge_eval_msg,作曲人_query,作曲人_response,作词人_llm_judge,作词人_llm_judge_eval_msg,作词人_query,作词人_response,发行日期_exact_match,发行日期_exact_match_eval_msg,发行日期_query,发行日期_response,排名_exact_match,排名_exact_match_eval_msg,榜单名称_exact_match,榜单名称_exact_match_eval_msg,榜单名称_query,榜单名称_response,歌曲名称_llm_judge,歌曲名称_llm_judge_eval_msg,歌曲名称_query,歌曲名称_response,歌曲时长_exact_match,歌曲时长_exact_match_eval_msg,歌曲时长_query,歌曲时长_response,演唱者_llm_judge,演唱者_llm_judge_eval_msg,演唱者_query,演唱者_response
+,,1,1,0.0,"首先，我们明确评分标准：  
+- 只要响应和标准答案指向的实体一致或者语义大致相同，即可得分1。  
+- 响应为“nan”（无回答），显然与标准答案不符，属于不正确回答，得分0。  
+- 评分只能为0或1。
+
+下面逐条分析：
+
+1. idx_0  
+   - 标准答案：陈小霞  
+   - 响应：nan  
+   - 响应无信息，不指向任何实体，与标准答案不符，得分0。
+
+2. idx_1  
+   - 标准答案：ashleyfulton、yejikim/lizbecker  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+3. idx_2  
+   - 标准答案：鹿柯的宁叔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+4. idx_3  
+   - 标准答案：in-k  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+5. idx_4  
+   - 标准答案：赵誉乔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+综上，所有响应均未给出对应实体信息，不符评分标准，均得分0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",陈小霞,nan,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response and the target (standard answer) need to be roughly semantically the same or point to the same entity. The response here is always 'nan', which likely means ""not a number"" or ""no answer,"" hence it is not the same or equivalent to the target entity.
+
+Step-by-step analysis:
+
+- idx_0: response = 'nan', target = '姚谦'  
+  'nan' is not the same as the entity '姚谦'. No semantic match. Score = 0.
+
+- idx_1: response = 'nan', target = 'ashleyfulton、yejikim、lizbecker'  
+  Again, 'nan' does not represent the entities listed. No match. Score = 0.
+
+- idx_2: response = 'nan', target = '姜洄'  
+  No semantic equivalence. Score = 0.
+
+- idx_3: response = 'nan', target = 'in-k'  
+  No equivalence. Score = 0.
+
+- idx_4: response = 'nan', target = '农文鑫'  
+  No equivalence. Score = 0.
+
+Final results: all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```
+",姚谦,nan,0.0,"exact not match, response: nan, target: 2025/05/18",2025/05/18,nan,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"Let's analyze item by item:
+
+- idx_0  
+  - Response: ""someonelikeyou""  
+  - Target: ""嗨！人间""  
+  - Judgment: ""someonelikeyou"" vs. ""嗨！人间"" are clearly different phrases, no semantic or entity relation apparent. Score: 0
+
+- idx_1  
+  - Response: ""奔腾""  
+  - Target: ""crush""  
+  - Judgment: ""奔腾"" means ""galloping"" or ""surging forward,"" while ""crush"" is an English word for someone you like or can refer to crushing physically. No semantic equivalence or entity relation. Score: 0
+
+- idx_2  
+  - Response: ""不会太晚"" (not too late)  
+  - Target: ""跳楼机"" (drop tower ride)  
+  - Judgment: The response is a phrase about timing; the target denotes a type of amusement ride. Different semantics and entities. Score: 0
+
+- idx_3  
+  - Response: ""不渝"" (unwavering, unchanging)  
+  - Target: ""第57次取消发送"" (the 57th cancellation of send)  
+  - Judgment: Clearly unrelated semantically and as entities. Score: 0
+
+- idx_4  
+  - Response: ""纵马踏歌行"" (riding horseback singing songs)  
+  - Target: ""四点的海棠花未眠"" (the begonia blossoms are still awake at 4 o'clock)  
+  - Judgment: Different meaning and imagery, no equivalence or entity match. Score: 0
+
+All responses do not match their targets semantically or in entity.
+
+Final scoring (all scores 0):
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",嗨！人间,someonelikeyou,0.0,"exact not match, response: nan, target: 3分38秒",3分38秒,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: “和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+Translation: The response is acceptable as long as the meaning is roughly the same or it refers to the same entity; exact word-for-word matching is not needed.
+
+---
+
+### idx_0
+- Response: 张真源
+- Target: 周深
+Analysis: Different names, different entities. 张真源 ≠ 周深。They are two different people.
+Score: 0
+
+### idx_1
+- Response: 周深
+- Target: 喻言
+Analysis: Different people again, 周深 ≠ 喻言.
+Score: 0
+
+### idx_2
+- Response: 刘宇宁
+- Target: lbi利比（时柏尘）
+Analysis: Different. 刘宇宁 and lbi利比（时柏尘） are different entities.
+Score: 0
+
+### idx_3
+- Response: 梓渝
+- Target: 菲菲公主（陆绮菲）
+Analysis: Different. 梓渝 and 菲菲公主（陆绮菲） are different persons/entities.
+Score: 0
+
+### idx_4
+- Response: 刘宇宁
+- Target: 渡
+Analysis: Different persons/entities.
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```
+",周深,张真源
+,,2,2,0.0,"首先，我们明确评分标准：  
+- 只要响应和标准答案指向的实体一致或者语义大致相同，即可得分1。  
+- 响应为“nan”（无回答），显然与标准答案不符，属于不正确回答，得分0。  
+- 评分只能为0或1。
+
+下面逐条分析：
+
+1. idx_0  
+   - 标准答案：陈小霞  
+   - 响应：nan  
+   - 响应无信息，不指向任何实体，与标准答案不符，得分0。
+
+2. idx_1  
+   - 标准答案：ashleyfulton、yejikim/lizbecker  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+3. idx_2  
+   - 标准答案：鹿柯的宁叔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+4. idx_3  
+   - 标准答案：in-k  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+5. idx_4  
+   - 标准答案：赵誉乔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+综上，所有响应均未给出对应实体信息，不符评分标准，均得分0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",ashleyfulton、yejikim/lizbecker,nan,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response and the target (standard answer) need to be roughly semantically the same or point to the same entity. The response here is always 'nan', which likely means ""not a number"" or ""no answer,"" hence it is not the same or equivalent to the target entity.
+
+Step-by-step analysis:
+
+- idx_0: response = 'nan', target = '姚谦'  
+  'nan' is not the same as the entity '姚谦'. No semantic match. Score = 0.
+
+- idx_1: response = 'nan', target = 'ashleyfulton、yejikim、lizbecker'  
+  Again, 'nan' does not represent the entities listed. No match. Score = 0.
+
+- idx_2: response = 'nan', target = '姜洄'  
+  No semantic equivalence. Score = 0.
+
+- idx_3: response = 'nan', target = 'in-k'  
+  No equivalence. Score = 0.
+
+- idx_4: response = 'nan', target = '农文鑫'  
+  No equivalence. Score = 0.
+
+Final results: all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```
+",ashleyfulton、yejikim、lizbecker,nan,0.0,"exact not match, response: nan, target: 2025/05/20",2025/05/20,nan,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"Let's analyze item by item:
+
+- idx_0  
+  - Response: ""someonelikeyou""  
+  - Target: ""嗨！人间""  
+  - Judgment: ""someonelikeyou"" vs. ""嗨！人间"" are clearly different phrases, no semantic or entity relation apparent. Score: 0
+
+- idx_1  
+  - Response: ""奔腾""  
+  - Target: ""crush""  
+  - Judgment: ""奔腾"" means ""galloping"" or ""surging forward,"" while ""crush"" is an English word for someone you like or can refer to crushing physically. No semantic equivalence or entity relation. Score: 0
+
+- idx_2  
+  - Response: ""不会太晚"" (not too late)  
+  - Target: ""跳楼机"" (drop tower ride)  
+  - Judgment: The response is a phrase about timing; the target denotes a type of amusement ride. Different semantics and entities. Score: 0
+
+- idx_3  
+  - Response: ""不渝"" (unwavering, unchanging)  
+  - Target: ""第57次取消发送"" (the 57th cancellation of send)  
+  - Judgment: Clearly unrelated semantically and as entities. Score: 0
+
+- idx_4  
+  - Response: ""纵马踏歌行"" (riding horseback singing songs)  
+  - Target: ""四点的海棠花未眠"" (the begonia blossoms are still awake at 4 o'clock)  
+  - Judgment: Different meaning and imagery, no equivalence or entity match. Score: 0
+
+All responses do not match their targets semantically or in entity.
+
+Final scoring (all scores 0):
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",crush,奔腾,0.0,"exact not match, response: nan, target: 2分56秒",2分56秒,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: “和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+Translation: The response is acceptable as long as the meaning is roughly the same or it refers to the same entity; exact word-for-word matching is not needed.
+
+---
+
+### idx_0
+- Response: 张真源
+- Target: 周深
+Analysis: Different names, different entities. 张真源 ≠ 周深。They are two different people.
+Score: 0
+
+### idx_1
+- Response: 周深
+- Target: 喻言
+Analysis: Different people again, 周深 ≠ 喻言.
+Score: 0
+
+### idx_2
+- Response: 刘宇宁
+- Target: lbi利比（时柏尘）
+Analysis: Different. 刘宇宁 and lbi利比（时柏尘） are different entities.
+Score: 0
+
+### idx_3
+- Response: 梓渝
+- Target: 菲菲公主（陆绮菲）
+Analysis: Different. 梓渝 and 菲菲公主（陆绮菲） are different persons/entities.
+Score: 0
+
+### idx_4
+- Response: 刘宇宁
+- Target: 渡
+Analysis: Different persons/entities.
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```
+",喻言,周深
+,,3,3,0.0,"首先，我们明确评分标准：  
+- 只要响应和标准答案指向的实体一致或者语义大致相同，即可得分1。  
+- 响应为“nan”（无回答），显然与标准答案不符，属于不正确回答，得分0。  
+- 评分只能为0或1。
+
+下面逐条分析：
+
+1. idx_0  
+   - 标准答案：陈小霞  
+   - 响应：nan  
+   - 响应无信息，不指向任何实体，与标准答案不符，得分0。
+
+2. idx_1  
+   - 标准答案：ashleyfulton、yejikim/lizbecker  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+3. idx_2  
+   - 标准答案：鹿柯的宁叔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+4. idx_3  
+   - 标准答案：in-k  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+5. idx_4  
+   - 标准答案：赵誉乔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+综上，所有响应均未给出对应实体信息，不符评分标准，均得分0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",鹿柯的宁叔,nan,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response and the target (standard answer) need to be roughly semantically the same or point to the same entity. The response here is always 'nan', which likely means ""not a number"" or ""no answer,"" hence it is not the same or equivalent to the target entity.
+
+Step-by-step analysis:
+
+- idx_0: response = 'nan', target = '姚谦'  
+  'nan' is not the same as the entity '姚谦'. No semantic match. Score = 0.
+
+- idx_1: response = 'nan', target = 'ashleyfulton、yejikim、lizbecker'  
+  Again, 'nan' does not represent the entities listed. No match. Score = 0.
+
+- idx_2: response = 'nan', target = '姜洄'  
+  No semantic equivalence. Score = 0.
+
+- idx_3: response = 'nan', target = 'in-k'  
+  No equivalence. Score = 0.
+
+- idx_4: response = 'nan', target = '农文鑫'  
+  No equivalence. Score = 0.
+
+Final results: all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```
+",姜洄,nan,0.0,"exact not match, response: nan, target: 2024/11/13",2024/11/13,nan,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"Let's analyze item by item:
+
+- idx_0  
+  - Response: ""someonelikeyou""  
+  - Target: ""嗨！人间""  
+  - Judgment: ""someonelikeyou"" vs. ""嗨！人间"" are clearly different phrases, no semantic or entity relation apparent. Score: 0
+
+- idx_1  
+  - Response: ""奔腾""  
+  - Target: ""crush""  
+  - Judgment: ""奔腾"" means ""galloping"" or ""surging forward,"" while ""crush"" is an English word for someone you like or can refer to crushing physically. No semantic equivalence or entity relation. Score: 0
+
+- idx_2  
+  - Response: ""不会太晚"" (not too late)  
+  - Target: ""跳楼机"" (drop tower ride)  
+  - Judgment: The response is a phrase about timing; the target denotes a type of amusement ride. Different semantics and entities. Score: 0
+
+- idx_3  
+  - Response: ""不渝"" (unwavering, unchanging)  
+  - Target: ""第57次取消发送"" (the 57th cancellation of send)  
+  - Judgment: Clearly unrelated semantically and as entities. Score: 0
+
+- idx_4  
+  - Response: ""纵马踏歌行"" (riding horseback singing songs)  
+  - Target: ""四点的海棠花未眠"" (the begonia blossoms are still awake at 4 o'clock)  
+  - Judgment: Different meaning and imagery, no equivalence or entity match. Score: 0
+
+All responses do not match their targets semantically or in entity.
+
+Final scoring (all scores 0):
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",跳楼机,不会太晚,0.0,"exact not match, response: nan, target: 3分21秒",3分21秒,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: “和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+Translation: The response is acceptable as long as the meaning is roughly the same or it refers to the same entity; exact word-for-word matching is not needed.
+
+---
+
+### idx_0
+- Response: 张真源
+- Target: 周深
+Analysis: Different names, different entities. 张真源 ≠ 周深。They are two different people.
+Score: 0
+
+### idx_1
+- Response: 周深
+- Target: 喻言
+Analysis: Different people again, 周深 ≠ 喻言.
+Score: 0
+
+### idx_2
+- Response: 刘宇宁
+- Target: lbi利比（时柏尘）
+Analysis: Different. 刘宇宁 and lbi利比（时柏尘） are different entities.
+Score: 0
+
+### idx_3
+- Response: 梓渝
+- Target: 菲菲公主（陆绮菲）
+Analysis: Different. 梓渝 and 菲菲公主（陆绮菲） are different persons/entities.
+Score: 0
+
+### idx_4
+- Response: 刘宇宁
+- Target: 渡
+Analysis: Different persons/entities.
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```
+",lbi利比（时柏尘）,刘宇宁
+,,4,4,0.0,"首先，我们明确评分标准：  
+- 只要响应和标准答案指向的实体一致或者语义大致相同，即可得分1。  
+- 响应为“nan”（无回答），显然与标准答案不符，属于不正确回答，得分0。  
+- 评分只能为0或1。
+
+下面逐条分析：
+
+1. idx_0  
+   - 标准答案：陈小霞  
+   - 响应：nan  
+   - 响应无信息，不指向任何实体，与标准答案不符，得分0。
+
+2. idx_1  
+   - 标准答案：ashleyfulton、yejikim/lizbecker  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+3. idx_2  
+   - 标准答案：鹿柯的宁叔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+4. idx_3  
+   - 标准答案：in-k  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+5. idx_4  
+   - 标准答案：赵誉乔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+综上，所有响应均未给出对应实体信息，不符评分标准，均得分0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",in-k,nan,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response and the target (standard answer) need to be roughly semantically the same or point to the same entity. The response here is always 'nan', which likely means ""not a number"" or ""no answer,"" hence it is not the same or equivalent to the target entity.
+
+Step-by-step analysis:
+
+- idx_0: response = 'nan', target = '姚谦'  
+  'nan' is not the same as the entity '姚谦'. No semantic match. Score = 0.
+
+- idx_1: response = 'nan', target = 'ashleyfulton、yejikim、lizbecker'  
+  Again, 'nan' does not represent the entities listed. No match. Score = 0.
+
+- idx_2: response = 'nan', target = '姜洄'  
+  No semantic equivalence. Score = 0.
+
+- idx_3: response = 'nan', target = 'in-k'  
+  No equivalence. Score = 0.
+
+- idx_4: response = 'nan', target = '农文鑫'  
+  No equivalence. Score = 0.
+
+Final results: all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```
+",in-k,nan,0.0,"exact not match, response: nan, target: 2025/02/10",2025/02/10,nan,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"Let's analyze item by item:
+
+- idx_0  
+  - Response: ""someonelikeyou""  
+  - Target: ""嗨！人间""  
+  - Judgment: ""someonelikeyou"" vs. ""嗨！人间"" are clearly different phrases, no semantic or entity relation apparent. Score: 0
+
+- idx_1  
+  - Response: ""奔腾""  
+  - Target: ""crush""  
+  - Judgment: ""奔腾"" means ""galloping"" or ""surging forward,"" while ""crush"" is an English word for someone you like or can refer to crushing physically. No semantic equivalence or entity relation. Score: 0
+
+- idx_2  
+  - Response: ""不会太晚"" (not too late)  
+  - Target: ""跳楼机"" (drop tower ride)  
+  - Judgment: The response is a phrase about timing; the target denotes a type of amusement ride. Different semantics and entities. Score: 0
+
+- idx_3  
+  - Response: ""不渝"" (unwavering, unchanging)  
+  - Target: ""第57次取消发送"" (the 57th cancellation of send)  
+  - Judgment: Clearly unrelated semantically and as entities. Score: 0
+
+- idx_4  
+  - Response: ""纵马踏歌行"" (riding horseback singing songs)  
+  - Target: ""四点的海棠花未眠"" (the begonia blossoms are still awake at 4 o'clock)  
+  - Judgment: Different meaning and imagery, no equivalence or entity match. Score: 0
+
+All responses do not match their targets semantically or in entity.
+
+Final scoring (all scores 0):
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",第57次取消发送,不渝,0.0,"exact not match, response: nan, target: 3分0秒",3分0秒,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: “和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+Translation: The response is acceptable as long as the meaning is roughly the same or it refers to the same entity; exact word-for-word matching is not needed.
+
+---
+
+### idx_0
+- Response: 张真源
+- Target: 周深
+Analysis: Different names, different entities. 张真源 ≠ 周深。They are two different people.
+Score: 0
+
+### idx_1
+- Response: 周深
+- Target: 喻言
+Analysis: Different people again, 周深 ≠ 喻言.
+Score: 0
+
+### idx_2
+- Response: 刘宇宁
+- Target: lbi利比（时柏尘）
+Analysis: Different. 刘宇宁 and lbi利比（时柏尘） are different entities.
+Score: 0
+
+### idx_3
+- Response: 梓渝
+- Target: 菲菲公主（陆绮菲）
+Analysis: Different. 梓渝 and 菲菲公主（陆绮菲） are different persons/entities.
+Score: 0
+
+### idx_4
+- Response: 刘宇宁
+- Target: 渡
+Analysis: Different persons/entities.
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```
+",菲菲公主（陆绮菲）,梓渝
+,,5,5,0.0,"首先，我们明确评分标准：  
+- 只要响应和标准答案指向的实体一致或者语义大致相同，即可得分1。  
+- 响应为“nan”（无回答），显然与标准答案不符，属于不正确回答，得分0。  
+- 评分只能为0或1。
+
+下面逐条分析：
+
+1. idx_0  
+   - 标准答案：陈小霞  
+   - 响应：nan  
+   - 响应无信息，不指向任何实体，与标准答案不符，得分0。
+
+2. idx_1  
+   - 标准答案：ashleyfulton、yejikim/lizbecker  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+3. idx_2  
+   - 标准答案：鹿柯的宁叔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+4. idx_3  
+   - 标准答案：in-k  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+5. idx_4  
+   - 标准答案：赵誉乔  
+   - 响应：nan  
+   - 无信息，不符，得分0。
+
+综上，所有响应均未给出对应实体信息，不符评分标准，均得分0。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",赵誉乔,nan,0.0,"Let's analyze each pair according to the criterion:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+This means the response and the target (standard answer) need to be roughly semantically the same or point to the same entity. The response here is always 'nan', which likely means ""not a number"" or ""no answer,"" hence it is not the same or equivalent to the target entity.
+
+Step-by-step analysis:
+
+- idx_0: response = 'nan', target = '姚谦'  
+  'nan' is not the same as the entity '姚谦'. No semantic match. Score = 0.
+
+- idx_1: response = 'nan', target = 'ashleyfulton、yejikim、lizbecker'  
+  Again, 'nan' does not represent the entities listed. No match. Score = 0.
+
+- idx_2: response = 'nan', target = '姜洄'  
+  No semantic equivalence. Score = 0.
+
+- idx_3: response = 'nan', target = 'in-k'  
+  No equivalence. Score = 0.
+
+- idx_4: response = 'nan', target = '农文鑫'  
+  No equivalence. Score = 0.
+
+Final results: all 0.
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```
+",农文鑫,nan,0.0,"exact not match, response: nan, target: 2025/03/07",2025/03/07,nan,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"Let's analyze item by item:
+
+- idx_0  
+  - Response: ""someonelikeyou""  
+  - Target: ""嗨！人间""  
+  - Judgment: ""someonelikeyou"" vs. ""嗨！人间"" are clearly different phrases, no semantic or entity relation apparent. Score: 0
+
+- idx_1  
+  - Response: ""奔腾""  
+  - Target: ""crush""  
+  - Judgment: ""奔腾"" means ""galloping"" or ""surging forward,"" while ""crush"" is an English word for someone you like or can refer to crushing physically. No semantic equivalence or entity relation. Score: 0
+
+- idx_2  
+  - Response: ""不会太晚"" (not too late)  
+  - Target: ""跳楼机"" (drop tower ride)  
+  - Judgment: The response is a phrase about timing; the target denotes a type of amusement ride. Different semantics and entities. Score: 0
+
+- idx_3  
+  - Response: ""不渝"" (unwavering, unchanging)  
+  - Target: ""第57次取消发送"" (the 57th cancellation of send)  
+  - Judgment: Clearly unrelated semantically and as entities. Score: 0
+
+- idx_4  
+  - Response: ""纵马踏歌行"" (riding horseback singing songs)  
+  - Target: ""四点的海棠花未眠"" (the begonia blossoms are still awake at 4 o'clock)  
+  - Judgment: Different meaning and imagery, no equivalence or entity match. Score: 0
+
+All responses do not match their targets semantically or in entity.
+
+Final scoring (all scores 0):
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",四点的海棠花未眠,纵马踏歌行,0.0,"exact not match, response: nan, target: 3分20秒",3分20秒,nan,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: “和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+Translation: The response is acceptable as long as the meaning is roughly the same or it refers to the same entity; exact word-for-word matching is not needed.
+
+---
+
+### idx_0
+- Response: 张真源
+- Target: 周深
+Analysis: Different names, different entities. 张真源 ≠ 周深。They are two different people.
+Score: 0
+
+### idx_1
+- Response: 周深
+- Target: 喻言
+Analysis: Different people again, 周深 ≠ 喻言.
+Score: 0
+
+### idx_2
+- Response: 刘宇宁
+- Target: lbi利比（时柏尘）
+Analysis: Different. 刘宇宁 and lbi利比（时柏尘） are different entities.
+Score: 0
+
+### idx_3
+- Response: 梓渝
+- Target: 菲菲公主（陆绮菲）
+Analysis: Different. 梓渝 and 菲菲公主（陆绮菲） are different persons/entities.
+Score: 0
+
+### idx_4
+- Response: 刘宇宁
+- Target: 渡
+Analysis: Different persons/entities.
+Score: 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```
+",渡,刘宇宁
+1.0,,10,,,,姜海威、芦全瑞,,,,赵素冰,,,,2025/05/14,,,,,,由你榜,,,,烽月,,,,4分25秒,,,,摩登兄弟刘宇宁,
+1.0,,11,,,,祝子由,,,,祝子由、毛然鹤,,,,2024/11/02,,,,,,由你榜,,,,先说爱的人为什么先离开,,,,3分40秒,,,,田园,
+1.0,,12,,,,瞿子千,,,,温莨、任素汐,,,,2025/04/24,,,,,,由你榜,,,,亲爱的你啊,,,,3分55秒,,,,任素汐,
+1.0,,13,,,,胡静宜、徐大耳朵,,,,徐大耳朵、胡静宜、雨伞的鱼、林意梵,,,,2025/02/10,,,,,,由你榜,,,,座位,,,,3分28秒,,,,于冬然,
+1.0,,14,,,,苏二墨,,,,余有所悸、战十七,,,,2025/03/31,,,,,,由你榜,,,,月亮照山川,,,,3分17秒,,,,窝窝,
+1.0,,15,,,,卢润泽,,,,姜洄,,,,2024/09/27,,,,,,由你榜,,,,土坡上的狗尾草,,,,3分15秒,,,,卢润泽,
+1.0,,6,,,,马健涛,,,,马健涛,,,,2024/11/25,,,,,,由你榜,,,,搀扶,,,,5分27秒,,,,马健涛,
+1.0,,7,,,,鱼椒盐,,,,李聪,,,,2025/05/15,,,,,,由你榜,,,,珠玉,,,,3分22秒,,,,单依纯,
+1.0,,8,,,,付俊乐,,,,付俊乐,,,,2025/01/25,,,,,,由你榜,,,,去远方,,,,3分34秒,,,,付俊乐,
+1.0,,9,,,,kellanbarrett、niccosanchez(sauceup),,,,pandeng,,,,2025/05/22,,,,,,由你榜,,,,梦,,,,3分02秒,,,,鹿晗,

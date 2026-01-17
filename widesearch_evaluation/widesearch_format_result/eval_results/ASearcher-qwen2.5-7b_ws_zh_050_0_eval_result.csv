@@ -1,0 +1,7271 @@
+exist_flag_gt,exist_flag_response,年份,年份_before_map,排名,排名_before_map,年份_exact_match,年份_exact_match_eval_msg,排名_exact_match,排名_exact_match_eval_msg,歌手_llm_judge,歌手_llm_judge_eval_msg,歌手_query,歌手_response,歌曲名称_llm_judge,歌曲名称_llm_judge_eval_msg,歌曲名称_query,歌曲名称_response
+,,2015,2015,1,1,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",markronsonfeaturingbrunomars,markronsonft.brunomars,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",uptownfunk,uptownfunk
+,,2015,2015,2,2,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",edsheeran,edsheeran,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",thinkingoutloud,thinkingoutloud
+,,2015,2015,3,3,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",wizkhalifafeaturingcharlieputh,wizkhalifaft.charlieputh,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",seeyouagain,seeyouagain
+,,2016,2016,1,1,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",justinbieber,edsheeran,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",loveyourself,shapeofyou
+,,2016,2016,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",justinbieber,adele,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",sorry,hello
+,,2016,2016,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",drakefeaturingwizkidandkyla,justinbieber,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",onedance,whatdoyoumean?
+,,2017,2017,1,1,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",edsheeran,edsheeran,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",shapeofyou,shapeofyou
+,,2017,2017,2,2,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",luisfonsianddaddyyankeefeaturingjustinbieber,luisfonsift.daddyyankee,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",despacito(remix),despacito
+,,2017,2017,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",brunomars,adele,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",that'swhatilike,hello
+,,2018,2018,1,1,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",drake,edsheeran,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",god'splan,shapeofyou
+,,2018,2018,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",edsheeran,imaginedragons,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",perfect,rememberthename
+,,2018,2018,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",beberexhafeaturingfloridageorgialine,kendricklamar,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",meanttobe,humble.
+,,2019,2019,1,1,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",lilnasxfeaturingbillyraycyrus,lilnasxft.billyraycyrus,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",oldtownroad,oldtownroad
+,,2019,2019,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",postmaloneandswaelee,theweeknd,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",sunflower,blindinglights
+,,2019,2019,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",halsey,billieeilish,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",withoutme,badguy
+,,2020,2020,1,1,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",theweeknd,theweeknd,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",blindinglights,blindinglights
+,,2020,2020,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",postmalone,dualipa,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",circles,levitating
+,,2020,2020,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",roddyricch,oliviarodrigo,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",thebox,driverslicense
+,,2021,2021,1,1,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",dualipa,lilnasx,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",levitating,montero(callmebyyourname)
+,,2021,2021,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",theweekndandarianagrande,dualipa,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",saveyourtears,levitating
+,,2021,2021,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",theweeknd,oliviarodrigo,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",blindinglights,good4u
+,,2022,2022,1,1,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",glassanimals,harrystyles,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",heatwaves,asitwas
+,,2022,2022,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",harrystyles,dojacatft.sza,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",asitwas,kissmemore
+,,2022,2022,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",thekidlaroiandjustinbieber,justinbieberft.danielcaesar&giveon,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",stay,peaches
+,,2023,2023,1,1,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",morganwallen,thekidlaroi&justinbieber,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",lastnight,stay
+,,2023,2023,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",mileycyrus,dojacatft.sza,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",flowers,kissmemore
+,,2023,2023,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",sza,50centft.gunna,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",killbill,48hrs.
+,,2024,2024,1,1,1.0,key_match,1.0,key_match,1.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",teddyswims,teddyswims,1.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",losecontrol,losecontrol
+,,2024,2024,2,2,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",shaboozey,teddyswims,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",abarsong(tipsy),losecontrol
+,,2024,2024,3,3,1.0,key_match,1.0,key_match,0.0,"首先根据判分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+即只要回答与参考答案指向的歌手/艺人实体相同，得1分；否则得0分。
+
+下面逐条分析：
+
+- idx_0: response ""markronsonft.brunomars"" vs target ""markronsonfeaturingbrunomars""  
+  表示同一个实体（Mark Ronson feat. Bruno Mars），得1分。
+
+- idx_1: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_2: response ""wizkhalifaft.charlieputh"" vs target ""wizkhalifafeaturingcharlieputh""  
+  同一实体，得1分。
+
+- idx_3: response ""edsheeran"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_4: response ""adele"" vs target ""justinbieber""  
+  不同艺人，得0分。
+
+- idx_5: response ""justinbieber"" vs target ""drakefeaturingwizkidandkyla""  
+  不同艺人，得0分。
+
+- idx_6: response ""edsheeran"" vs target ""edsheeran""  
+  完全一致，得1分。
+
+- idx_7: response ""luisfonsift.daddyyankee"" vs target ""luisfonsianddaddyyankeefeaturingjustinbieber""  
+  response指luisfonsi feat. daddyyankee，target是luisfonsi and daddy yankee feat. justin bieber  
+  response没有Justin Bieber，但题意表示语义指向相同即可，且主体是luisfonsi和daddyyankee，忽略附加的Justin Bieber也可以接受。  
+  这里可以理解为相同的主要艺人组合，得1分。
+
+- idx_8: response ""adele"" vs target ""brunomars""  
+  不同艺人，得0分。
+
+- idx_9: response ""edsheeran"" vs target ""drake""  
+  不同艺人，得0分。
+
+- idx_10: response ""imaginedragons"" vs target ""edsheeran""  
+  不同艺人，得0分。
+
+- idx_11: response ""kendricklamar"" vs target ""beberexhafeaturingfloridageorgialine""  
+  target不明确（可能为Bebe Rexha featuring Florida Georgia Line），response演员是Kendrick Lamar，不同，得0分。
+
+- idx_12: response ""lilnasxft.billyraycyrus"" vs target ""lilnasxfeaturingbillyraycyrus""  
+  一致，得1分。
+
+- idx_13: response ""theweeknd"" vs target ""postmaloneandswaelee""  
+  不同艺人，得0分。
+
+- idx_14: response ""billieeilish"" vs target ""halsey""  
+  不同，得0分。
+
+- idx_15: response ""theweeknd"" vs target ""theweeknd""  
+  一致，得1分。
+
+- idx_16: response ""dualipa"" vs target ""postmalone""  
+  不同，得0分。
+
+- idx_17: response ""oliviarodrigo"" vs target ""roddyricch""  
+  不同，得0分。
+
+- idx_18: response ""lilnasx"" vs target ""dualipa""  
+  不同，得0分。
+
+- idx_19: response ""dualipa"" vs target ""theweekndandarianagrande""  
+  不同，得0分。
+
+- idx_20: response ""oliviarodrigo"" vs target ""theweeknd""  
+  不同，得0分。
+
+- idx_21: response ""harrystyles"" vs target ""glassanimals""  
+  不同，得0分。
+
+- idx_22: response ""dojacatft.sza"" vs target ""harrystyles""  
+  不同，得0分。
+
+- idx_23: response ""justinbieberft.danielcaesar&giveon"" vs target ""thekidlaroiandjustinbieber""  
+  response中包含Justin Bieber，target是The Kid LAROI and Justin Bieber  
+  response缺少The Kid LAROI，且加了其他人，不完全一致，但题目标准是“语义大致相同或指向的实体一致即可”，  
+  在这里两者实体不同，response缺少一位合作主体。  
+  因此判断为不同艺人组合，得0分。
+
+- idx_24: response ""thekidlaroi&justinbieber"" vs target ""morganwallen""  
+  不同艺人，得0分。
+
+- idx_25: response ""dojacatft.sza"" vs target ""mileycyrus""  
+  不同艺人，得0分。
+
+- idx_26: response ""50centft.gunna"" vs target ""sza""  
+  不同，得0分。
+
+- idx_27: response ""teddyswims"" vs target ""teddyswims""  
+  一致，得1分。
+
+- idx_28: response ""teddyswims"" vs target ""shaboozey""  
+  不同，得0分。
+
+- idx_29: response ""teddyswims"" vs target ""bensonboone""  
+  不同，得0分。
+
+
+综合以上分析，最终评分如下：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",bensonboone,teddyswims,0.0,"分析和判定过程（逐项）：
+
+- 评分标准：只要与参考答案语义相同大致或指向的实体一致，即可判定为正确，得1分；否则得0分。
+
+逐项分析：
+
+idx_0: response='uptownfunk' vs target='uptownfunk'，完全一致，得1分。
+
+idx_1: response='thinkingoutloud' vs target='thinkingoutloud'，完全一致，得1分。
+
+idx_2: response='seeyouagain' vs target='seeyouagain'，一致，得1分。
+
+idx_3: response='shapeofyou' vs target='loveyourself'，两个不同歌曲，实体不符，得0分。
+
+idx_4: response='hello' vs target='sorry'，歌曲不同，得0分。
+
+idx_5: response='whatdoyoumean?' vs target='onedance'，不同歌曲，得0分。
+
+idx_6: response='shapeofyou' vs target='shapeofyou'，完全一致，得1分。
+
+idx_7: response='despacito' vs target='despacito(remix)'，虽然有(remix)的区别，但实体非常接近，视为一致，得1分。
+
+idx_8: response='hello' vs target=""that'swhatilike""，不同歌曲，得0分。
+
+idx_9: response='shapeofyou' vs target=""god'splan""，不同，得0分。
+
+idx_10: response='rememberthename' vs target='perfect'，不同，得0分。
+
+idx_11: response='humble.' vs target='meanttobe'，不同，得0分。
+
+idx_12: response='oldtownroad' vs target='oldtownroad'，一致，得1分。
+
+idx_13: response='blindinglights' vs target='sunflower'，不同，得0分。
+
+idx_14: response='badguy' vs target='withoutme'，不同，得0分。
+
+idx_15: response='blindinglights' vs target='blindinglights'，一致，得1分。
+
+idx_16: response='levitating' vs target='circles'，不同，得0分。
+
+idx_17: response='driverslicense' vs target='thebox'，不同，得0分。
+
+idx_18: response='montero(callmebyyourname)' vs target='levitating'，不同，得0分。
+
+idx_19: response='levitating' vs target='saveyourtears'，不同，得0分。
+
+idx_20: response='good4u' vs target='blindinglights'，不同，得0分。
+
+idx_21: response='asitwas' vs target='heatwaves'，不同，得0分。
+
+idx_22: response='kissmemore' vs target='asitwas'，不同，得0分。
+
+idx_23: response='peaches' vs target='stay'，不同，得0分。
+
+idx_24: response='stay' vs target='lastnight'，不同，得0分。
+
+idx_25: response='kissmemore' vs target='flowers'，不同，得0分。
+
+idx_26: response='48hrs.' vs target='killbill'，不同，得0分。
+
+idx_27: response='losecontrol' vs target='losecontrol'，一致，得1分。
+
+idx_28: response='losecontrol' vs target='abarsong(tipsy)'，不同歌曲，得0分。
+
+idx_29: response='losecontrol' vs target='beautifulthings'，不同，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 1,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 1,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 0,
+    ""idx_19"": 0,
+    ""idx_20"": 0,
+    ""idx_21"": 0,
+    ""idx_22"": 0,
+    ""idx_23"": 0,
+    ""idx_24"": 0,
+    ""idx_25"": 0,
+    ""idx_26"": 0,
+    ""idx_27"": 1,
+    ""idx_28"": 0,
+    ""idx_29"": 0
+}
+```",beautifulthings,losecontrol
+1.0,,2015,,10,,,,,,,,theweeknd,,,,thehills,
+1.0,,2015,,4,,,,,,,,fettywap,,,,trapqueen,
+1.0,,2015,,5,,,,,,,,maroon5,,,,sugar,
+1.0,,2015,,6,,,,,,,,walkthemoon,,,,shutupanddance,
+1.0,,2015,,7,,,,,,,,taylorswift,,,,blankspace,
+1.0,,2015,,8,,,,,,,,silentó,,,,watchme,
+1.0,,2015,,9,,,,,,,,theweeknd,,,,earnedit,
+1.0,,2016,,10,,,,,,,,thechainsmokersfeaturinghalsey,,,,closer,
+1.0,,2016,,4,,,,,,,,rihannafeaturingdrake,,,,work,
+1.0,,2016,,5,,,,,,,,twentyonepilots,,,,stressedout,
+1.0,,2016,,6,,,,,,,,desiigner,,,,panda,
+1.0,,2016,,7,,,,,,,,adele,,,,hello,
+1.0,,2016,,8,,,,,,,,thechainsmokersfeaturingdaya,,,,don'tletmedown,
+1.0,,2016,,9,,,,,,,,justintimberlake,,,,can'tstopthefeeling!,
+1.0,,2017,,10,,,,,,,,postmalonefeaturingquavo,,,,congratulations,
+1.0,,2017,,4,,,,,,,,kendricklamar,,,,humble,
+1.0,,2017,,5,,,,,,,,thechainsmokersandcoldplay,,,,somethingjustlikethis,
+1.0,,2017,,6,,,,,,,,migosfeaturingliluzivert,,,,badandboujee,
+1.0,,2017,,7,,,,,,,,thechainsmokersfeaturinghalsey,,,,closer,
+1.0,,2017,,8,,,,,,,,samhunt,,,,bodylikeabackroad,
+1.0,,2017,,9,,,,,,,,imaginedragons,,,,believer,
+1.0,,2018,,10,,,,,,,,maroon5featuringcardib,,,,girlslikeyou,
+1.0,,2018,,4,,,,,,,,camilacabellofeaturingyoungthug,,,,havana,
+1.0,,2018,,5,,,,,,,,postmalonefeaturing21savage,,,,rockstar,
+1.0,,2018,,6,,,,,,,,postmalonefeaturingtydollasign,,,,psycho,
+1.0,,2018,,7,,,,,,,,"cardib,badbunnyandjbalvin",,,,ilikeit,
+1.0,,2018,,8,,,,,,,,"zedd,marenmorrisandgrey",,,,themiddle,
+1.0,,2018,,9,,,,,,,,drake,,,,inmyfeelings,
+1.0,,2019,,10,,,,,,,,jonasbrothers,,,,sucker,
+1.0,,2019,,4,,,,,,,,billieeilish,,,,badguy,
+1.0,,2019,,5,,,,,,,,postmalone,,,,wow,
+1.0,,2019,,6,,,,,,,,marshmelloandbastille,,,,happier,
+1.0,,2019,,7,,,,,,,,arianagrande,,,,7rings,
+1.0,,2019,,8,,,,,,,,khalid,,,,talk,
+1.0,,2019,,9,,,,,,,,travisscott,,,,sickomode,
+1.0,,2020,,10,,,,,,,,lewiscapaldi,,,,someoneyouloved,
+1.0,,2020,,4,,,,,,,,dualipa,,,,don'tstartnow,
+1.0,,2020,,5,,,,,,,,dababyfeaturingroddyricch,,,,rockstar,
+1.0,,2020,,6,,,,,,,,harrystyles,,,,adoreyou,
+1.0,,2020,,7,,,,,,,,futurefeaturingdrake,,,,lifeisgood,
+1.0,,2020,,8,,,,,,,,maroon5,,,,memories,
+1.0,,2020,,9,,,,,,,,marenmorris,,,,thebones,
+1.0,,2021,,10,,,,,,,,justinbieberfeaturingdanielcaesarandgiveon,,,,peaches,
+1.0,,2021,,4,,,,,,,,24kgoldnfeaturingianndior,,,,mood,
+1.0,,2021,,5,,,,,,,,oliviarodrigo,,,,good4u,
+1.0,,2021,,6,,,,,,,,dojacatfeaturingsza,,,,kissmemore,
+1.0,,2021,,7,,,,,,,,silksonic(brunomarsandanderson.paak),,,,leavethedooropen,
+1.0,,2021,,8,,,,,,,,oliviarodrigo,,,,driverslicense,
+1.0,,2021,,9,,,,,,,,lilnasx,,,,montero(callmebyyourname),
+1.0,,2022,,10,,,,,,,,eltonjohnanddualipa,,,,coldheart(pnauremix),
+1.0,,2022,,4,,,,,,,,adele,,,,easyonme,
+1.0,,2022,,5,,,,,,,,edsheeran,,,,shivers,
+1.0,,2022,,6,,,,,,,,jackharlow,,,,firstclass,
+1.0,,2022,,7,,,,,,,,latto,,,,bigenergy,
+1.0,,2022,,8,,,,,,,,justinbieber,,,,ghost,
+1.0,,2022,,9,,,,,,,,kodakblack,,,,supergremlin,
+1.0,,2023,,10,,,,,,,,davidguettaandbeberexha,,,,i'mgood(blue),
+1.0,,2023,,4,,,,,,,,taylorswift,,,,anti-hero,
+1.0,,2023,,5,,,,,,,,"metroboomin,theweekndand21savage",,,,creepin',
+1.0,,2023,,6,,,,,,,,remaandselenagomez,,,,calmdown,
+1.0,,2023,,7,,,,,,,,theweekndandarianagrande,,,,dieforyou,
+1.0,,2023,,8,,,,,,,,lukecombs,,,,fastcar,
+1.0,,2023,,9,,,,,,,,sza,,,,snooze,
+1.0,,2024,,10,,,,,,,,hozier,,,,toosweet,
+1.0,,2024,,4,,,,,,,,postmalonefeaturingmorganwallen,,,,ihadsomehelp,
+1.0,,2024,,5,,,,,,,,jackharlow,,,,lovinonme,
+1.0,,2024,,6,,,,,,,,kendricklamar,,,,notlikeus,
+1.0,,2024,,7,,,,,,,,sabrinacarpenter,,,,espresso,
+1.0,,2024,,8,,,,,,,,tommyrichman,,,,milliondollarbaby,
+1.0,,2024,,9,,,,,,,,zachbryanfeaturingkaceymusgraves,,,,iremembereverything,

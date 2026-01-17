@@ -1,0 +1,906 @@
+exist_flag_gt,exist_flag_response,排名,排名_before_map,作曲人_llm_judge,作曲人_llm_judge_eval_msg,作曲人_query,作曲人_response,作词人_llm_judge,作词人_llm_judge_eval_msg,作词人_query,作词人_response,发行日期_exact_match,发行日期_exact_match_eval_msg,发行日期_query,发行日期_response,排名_exact_match,排名_exact_match_eval_msg,榜单名称_exact_match,榜单名称_exact_match_eval_msg,榜单名称_query,榜单名称_response,歌曲名称_llm_judge,歌曲名称_llm_judge_eval_msg,歌曲名称_query,歌曲名称_response,歌曲时长_exact_match,歌曲时长_exact_match_eval_msg,歌曲时长_query,歌曲时长_response,演唱者_llm_judge,演唱者_llm_judge_eval_msg,演唱者_query,演唱者_response
+,,1,1,0.0,"分析步骤：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐条分析：
+
+- idx_0: 响应是“李荣浩”，参考答案是“陈小霞”。两者为不同的人名，且没有相同或相似语义和指向，不得分。
+
+- idx_1: 响应“李荣浩”，参考答案是“ashleyfulton、yejikim/lizbecker”，明显不是同一个实体，不得分。
+
+- idx_2: 响应“李荣浩”，参考答案“鹿柯的宁叔”，不同人名，不得分。
+
+- idx_3: 响应“范哲明”，参考答案是“in-k”，不同实体，不得分。
+
+- idx_4: 响应“李荣浩”，参考答案“赵誉乔”，不同人名，不得分。
+
+结论：所有响应与参考答案均不符得分0。
+
+返回结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",陈小霞,李荣浩,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response needs to have the same or roughly the same meaning as the target answer or refer to the same entity. Exact match is not necessary but they should essentially be the same entity.
+
+---
+
+### idx_0
+- Response: 陈曦
+- Target: 姚谦
+- Analysis: Two different names, presumably two different persons. No indication they refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: 李荣浩
+- Target: ashleyfulton、yejikim、lizbecker (3 different names)
+- Analysis: The response is a single name, different from all three target names. No match.
+- Score: 0
+
+### idx_2
+- Response: 陈曦
+- Target: 姜洄
+- Analysis: Different names, presumably different entities.
+- Score: 0
+
+### idx_3
+- Response: 范哲明
+- Target: in-k
+- Analysis: One is a Chinese name, the other looks like an alias or username ""in-k."" Unless known to be the same entity, considered different.
+- Score: 0
+
+### idx_4
+- Response: 范哲明
+- Target: 农文鑫
+- Analysis: Different names.
+- Score: 0
+
+---
+
+All response-target pairs do not refer to the same or roughly the same entities.
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",姚谦,陈曦,0.0,"exact not match, response: 2025-01-01, target: 2025/05/18",2025/05/18,2025-01-01,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐一分析每一个idx：
+
+- idx_0:
+  - response: ""someonelikeyou""
+  - target: ""嗨！人间""
+  - 两者均为歌名，但完全不相同
+  - 并不指向同一个实体，也语义不相同
+  - 评分0
+  
+- idx_1:
+  - response: ""奔腾""
+  - target: ""crush""
+  - 两者词义、指代均不同，且“奔腾”是中文词汇，“crush”英文，与参考答案无明显对应
+  - 评分0
+  
+- idx_2:
+  - response: ""不会太晚""
+  - target: ""跳楼机""
+  - 两者词义不同，且均为名词或短语，不同实体
+  - 评分0
+  
+- idx_3:
+  - response: ""不渝""
+  - target: ""第57次取消发送""
+  - 两个词组语义完全不相同，且没有指代关系
+  - 评分0
+  
+- idx_4:
+  - response: ""纵马踏歌行""
+  - target: ""四点的海棠花未眠""
+  - 均为中文短语或歌名，不同实体，语义无关
+  - 评分0
+
+综合来看，所有response与对应target均不语义相同，也不指向相同实体，全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",嗨！人间,someonelikeyou,0.0,"exact not match, response: 4分20秒, target: 3分38秒",3分38秒,4分20秒,0.0,"分析过程：
+
+题目要求：  
+- 对比回答（response）和参考答案（target）  
+- 若语义相同大致，或指向的实体一致，即可得1分  
+- 不需要字字对应  
+- 分数只能是0或1
+
+逐条分析：
+
+1. idx_0  
+   - response: ""张真源""  
+   - target: ""周深""  
+   - 两人名字完全不同，且通常是两个不同的人物或实体，实体不一致，语义不相同。  
+   - 得分：0
+
+2. idx_1  
+   - response: ""周深""  
+   - target: ""喻言""  
+   - 两个人名不同，指代不同实体，语义不相同。  
+   - 得分：0
+
+3. idx_2  
+   - response: ""刘宇宁""  
+   - target: ""lbi利比（时柏尘）""  
+   - 人物完全不同，实体不一致，语义不相同。  
+   - 得分：0
+
+4. idx_3  
+   - response: ""梓渝""  
+   - target: ""菲菲公主（陆绮菲）""  
+   - 人名不同，实体不同。  
+   - 得分：0
+
+5. idx_4  
+   - response: ""刘宇宁""  
+   - target: ""渡""  
+   - 两个词语不同，一个是人名，一个通常指歌名或者别的实体（“渡”一般指歌名，也可是其他含义，但和人名“刘宇宁”不等同）  
+   - 语义不相同，实体不一致。  
+   - 得分：0
+
+综合以上判断，全部得分为0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",周深,张真源
+,,2,2,0.0,"分析步骤：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐条分析：
+
+- idx_0: 响应是“李荣浩”，参考答案是“陈小霞”。两者为不同的人名，且没有相同或相似语义和指向，不得分。
+
+- idx_1: 响应“李荣浩”，参考答案是“ashleyfulton、yejikim/lizbecker”，明显不是同一个实体，不得分。
+
+- idx_2: 响应“李荣浩”，参考答案“鹿柯的宁叔”，不同人名，不得分。
+
+- idx_3: 响应“范哲明”，参考答案是“in-k”，不同实体，不得分。
+
+- idx_4: 响应“李荣浩”，参考答案“赵誉乔”，不同人名，不得分。
+
+结论：所有响应与参考答案均不符得分0。
+
+返回结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",ashleyfulton、yejikim/lizbecker,李荣浩,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response needs to have the same or roughly the same meaning as the target answer or refer to the same entity. Exact match is not necessary but they should essentially be the same entity.
+
+---
+
+### idx_0
+- Response: 陈曦
+- Target: 姚谦
+- Analysis: Two different names, presumably two different persons. No indication they refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: 李荣浩
+- Target: ashleyfulton、yejikim、lizbecker (3 different names)
+- Analysis: The response is a single name, different from all three target names. No match.
+- Score: 0
+
+### idx_2
+- Response: 陈曦
+- Target: 姜洄
+- Analysis: Different names, presumably different entities.
+- Score: 0
+
+### idx_3
+- Response: 范哲明
+- Target: in-k
+- Analysis: One is a Chinese name, the other looks like an alias or username ""in-k."" Unless known to be the same entity, considered different.
+- Score: 0
+
+### idx_4
+- Response: 范哲明
+- Target: 农文鑫
+- Analysis: Different names.
+- Score: 0
+
+---
+
+All response-target pairs do not refer to the same or roughly the same entities.
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",ashleyfulton、yejikim、lizbecker,李荣浩,0.0,"exact not match, response: 2025-01-01, target: 2025/05/20",2025/05/20,2025-01-01,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐一分析每一个idx：
+
+- idx_0:
+  - response: ""someonelikeyou""
+  - target: ""嗨！人间""
+  - 两者均为歌名，但完全不相同
+  - 并不指向同一个实体，也语义不相同
+  - 评分0
+  
+- idx_1:
+  - response: ""奔腾""
+  - target: ""crush""
+  - 两者词义、指代均不同，且“奔腾”是中文词汇，“crush”英文，与参考答案无明显对应
+  - 评分0
+  
+- idx_2:
+  - response: ""不会太晚""
+  - target: ""跳楼机""
+  - 两者词义不同，且均为名词或短语，不同实体
+  - 评分0
+  
+- idx_3:
+  - response: ""不渝""
+  - target: ""第57次取消发送""
+  - 两个词组语义完全不相同，且没有指代关系
+  - 评分0
+  
+- idx_4:
+  - response: ""纵马踏歌行""
+  - target: ""四点的海棠花未眠""
+  - 均为中文短语或歌名，不同实体，语义无关
+  - 评分0
+
+综合来看，所有response与对应target均不语义相同，也不指向相同实体，全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",crush,奔腾,0.0,"exact not match, response: 5分12秒, target: 2分56秒",2分56秒,5分12秒,0.0,"分析过程：
+
+题目要求：  
+- 对比回答（response）和参考答案（target）  
+- 若语义相同大致，或指向的实体一致，即可得1分  
+- 不需要字字对应  
+- 分数只能是0或1
+
+逐条分析：
+
+1. idx_0  
+   - response: ""张真源""  
+   - target: ""周深""  
+   - 两人名字完全不同，且通常是两个不同的人物或实体，实体不一致，语义不相同。  
+   - 得分：0
+
+2. idx_1  
+   - response: ""周深""  
+   - target: ""喻言""  
+   - 两个人名不同，指代不同实体，语义不相同。  
+   - 得分：0
+
+3. idx_2  
+   - response: ""刘宇宁""  
+   - target: ""lbi利比（时柏尘）""  
+   - 人物完全不同，实体不一致，语义不相同。  
+   - 得分：0
+
+4. idx_3  
+   - response: ""梓渝""  
+   - target: ""菲菲公主（陆绮菲）""  
+   - 人名不同，实体不同。  
+   - 得分：0
+
+5. idx_4  
+   - response: ""刘宇宁""  
+   - target: ""渡""  
+   - 两个词语不同，一个是人名，一个通常指歌名或者别的实体（“渡”一般指歌名，也可是其他含义，但和人名“刘宇宁”不等同）  
+   - 语义不相同，实体不一致。  
+   - 得分：0
+
+综合以上判断，全部得分为0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",喻言,周深
+,,3,3,0.0,"分析步骤：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐条分析：
+
+- idx_0: 响应是“李荣浩”，参考答案是“陈小霞”。两者为不同的人名，且没有相同或相似语义和指向，不得分。
+
+- idx_1: 响应“李荣浩”，参考答案是“ashleyfulton、yejikim/lizbecker”，明显不是同一个实体，不得分。
+
+- idx_2: 响应“李荣浩”，参考答案“鹿柯的宁叔”，不同人名，不得分。
+
+- idx_3: 响应“范哲明”，参考答案是“in-k”，不同实体，不得分。
+
+- idx_4: 响应“李荣浩”，参考答案“赵誉乔”，不同人名，不得分。
+
+结论：所有响应与参考答案均不符得分0。
+
+返回结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",鹿柯的宁叔,李荣浩,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response needs to have the same or roughly the same meaning as the target answer or refer to the same entity. Exact match is not necessary but they should essentially be the same entity.
+
+---
+
+### idx_0
+- Response: 陈曦
+- Target: 姚谦
+- Analysis: Two different names, presumably two different persons. No indication they refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: 李荣浩
+- Target: ashleyfulton、yejikim、lizbecker (3 different names)
+- Analysis: The response is a single name, different from all three target names. No match.
+- Score: 0
+
+### idx_2
+- Response: 陈曦
+- Target: 姜洄
+- Analysis: Different names, presumably different entities.
+- Score: 0
+
+### idx_3
+- Response: 范哲明
+- Target: in-k
+- Analysis: One is a Chinese name, the other looks like an alias or username ""in-k."" Unless known to be the same entity, considered different.
+- Score: 0
+
+### idx_4
+- Response: 范哲明
+- Target: 农文鑫
+- Analysis: Different names.
+- Score: 0
+
+---
+
+All response-target pairs do not refer to the same or roughly the same entities.
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",姜洄,陈曦,0.0,"exact not match, response: 2025-01-01, target: 2024/11/13",2024/11/13,2025-01-01,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐一分析每一个idx：
+
+- idx_0:
+  - response: ""someonelikeyou""
+  - target: ""嗨！人间""
+  - 两者均为歌名，但完全不相同
+  - 并不指向同一个实体，也语义不相同
+  - 评分0
+  
+- idx_1:
+  - response: ""奔腾""
+  - target: ""crush""
+  - 两者词义、指代均不同，且“奔腾”是中文词汇，“crush”英文，与参考答案无明显对应
+  - 评分0
+  
+- idx_2:
+  - response: ""不会太晚""
+  - target: ""跳楼机""
+  - 两者词义不同，且均为名词或短语，不同实体
+  - 评分0
+  
+- idx_3:
+  - response: ""不渝""
+  - target: ""第57次取消发送""
+  - 两个词组语义完全不相同，且没有指代关系
+  - 评分0
+  
+- idx_4:
+  - response: ""纵马踏歌行""
+  - target: ""四点的海棠花未眠""
+  - 均为中文短语或歌名，不同实体，语义无关
+  - 评分0
+
+综合来看，所有response与对应target均不语义相同，也不指向相同实体，全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",跳楼机,不会太晚,0.0,"exact not match, response: 4分08秒, target: 3分21秒",3分21秒,4分08秒,0.0,"分析过程：
+
+题目要求：  
+- 对比回答（response）和参考答案（target）  
+- 若语义相同大致，或指向的实体一致，即可得1分  
+- 不需要字字对应  
+- 分数只能是0或1
+
+逐条分析：
+
+1. idx_0  
+   - response: ""张真源""  
+   - target: ""周深""  
+   - 两人名字完全不同，且通常是两个不同的人物或实体，实体不一致，语义不相同。  
+   - 得分：0
+
+2. idx_1  
+   - response: ""周深""  
+   - target: ""喻言""  
+   - 两个人名不同，指代不同实体，语义不相同。  
+   - 得分：0
+
+3. idx_2  
+   - response: ""刘宇宁""  
+   - target: ""lbi利比（时柏尘）""  
+   - 人物完全不同，实体不一致，语义不相同。  
+   - 得分：0
+
+4. idx_3  
+   - response: ""梓渝""  
+   - target: ""菲菲公主（陆绮菲）""  
+   - 人名不同，实体不同。  
+   - 得分：0
+
+5. idx_4  
+   - response: ""刘宇宁""  
+   - target: ""渡""  
+   - 两个词语不同，一个是人名，一个通常指歌名或者别的实体（“渡”一般指歌名，也可是其他含义，但和人名“刘宇宁”不等同）  
+   - 语义不相同，实体不一致。  
+   - 得分：0
+
+综合以上判断，全部得分为0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",lbi利比（时柏尘）,刘宇宁
+,,4,4,0.0,"分析步骤：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐条分析：
+
+- idx_0: 响应是“李荣浩”，参考答案是“陈小霞”。两者为不同的人名，且没有相同或相似语义和指向，不得分。
+
+- idx_1: 响应“李荣浩”，参考答案是“ashleyfulton、yejikim/lizbecker”，明显不是同一个实体，不得分。
+
+- idx_2: 响应“李荣浩”，参考答案“鹿柯的宁叔”，不同人名，不得分。
+
+- idx_3: 响应“范哲明”，参考答案是“in-k”，不同实体，不得分。
+
+- idx_4: 响应“李荣浩”，参考答案“赵誉乔”，不同人名，不得分。
+
+结论：所有响应与参考答案均不符得分0。
+
+返回结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",in-k,范哲明,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response needs to have the same or roughly the same meaning as the target answer or refer to the same entity. Exact match is not necessary but they should essentially be the same entity.
+
+---
+
+### idx_0
+- Response: 陈曦
+- Target: 姚谦
+- Analysis: Two different names, presumably two different persons. No indication they refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: 李荣浩
+- Target: ashleyfulton、yejikim、lizbecker (3 different names)
+- Analysis: The response is a single name, different from all three target names. No match.
+- Score: 0
+
+### idx_2
+- Response: 陈曦
+- Target: 姜洄
+- Analysis: Different names, presumably different entities.
+- Score: 0
+
+### idx_3
+- Response: 范哲明
+- Target: in-k
+- Analysis: One is a Chinese name, the other looks like an alias or username ""in-k."" Unless known to be the same entity, considered different.
+- Score: 0
+
+### idx_4
+- Response: 范哲明
+- Target: 农文鑫
+- Analysis: Different names.
+- Score: 0
+
+---
+
+All response-target pairs do not refer to the same or roughly the same entities.
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",in-k,范哲明,0.0,"exact not match, response: 2025-01-01, target: 2025/02/10",2025/02/10,2025-01-01,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐一分析每一个idx：
+
+- idx_0:
+  - response: ""someonelikeyou""
+  - target: ""嗨！人间""
+  - 两者均为歌名，但完全不相同
+  - 并不指向同一个实体，也语义不相同
+  - 评分0
+  
+- idx_1:
+  - response: ""奔腾""
+  - target: ""crush""
+  - 两者词义、指代均不同，且“奔腾”是中文词汇，“crush”英文，与参考答案无明显对应
+  - 评分0
+  
+- idx_2:
+  - response: ""不会太晚""
+  - target: ""跳楼机""
+  - 两者词义不同，且均为名词或短语，不同实体
+  - 评分0
+  
+- idx_3:
+  - response: ""不渝""
+  - target: ""第57次取消发送""
+  - 两个词组语义完全不相同，且没有指代关系
+  - 评分0
+  
+- idx_4:
+  - response: ""纵马踏歌行""
+  - target: ""四点的海棠花未眠""
+  - 均为中文短语或歌名，不同实体，语义无关
+  - 评分0
+
+综合来看，所有response与对应target均不语义相同，也不指向相同实体，全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",第57次取消发送,不渝,0.0,"exact not match, response: 4分15秒, target: 3分0秒",3分0秒,4分15秒,0.0,"分析过程：
+
+题目要求：  
+- 对比回答（response）和参考答案（target）  
+- 若语义相同大致，或指向的实体一致，即可得1分  
+- 不需要字字对应  
+- 分数只能是0或1
+
+逐条分析：
+
+1. idx_0  
+   - response: ""张真源""  
+   - target: ""周深""  
+   - 两人名字完全不同，且通常是两个不同的人物或实体，实体不一致，语义不相同。  
+   - 得分：0
+
+2. idx_1  
+   - response: ""周深""  
+   - target: ""喻言""  
+   - 两个人名不同，指代不同实体，语义不相同。  
+   - 得分：0
+
+3. idx_2  
+   - response: ""刘宇宁""  
+   - target: ""lbi利比（时柏尘）""  
+   - 人物完全不同，实体不一致，语义不相同。  
+   - 得分：0
+
+4. idx_3  
+   - response: ""梓渝""  
+   - target: ""菲菲公主（陆绮菲）""  
+   - 人名不同，实体不同。  
+   - 得分：0
+
+5. idx_4  
+   - response: ""刘宇宁""  
+   - target: ""渡""  
+   - 两个词语不同，一个是人名，一个通常指歌名或者别的实体（“渡”一般指歌名，也可是其他含义，但和人名“刘宇宁”不等同）  
+   - 语义不相同，实体不一致。  
+   - 得分：0
+
+综合以上判断，全部得分为0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",菲菲公主（陆绮菲）,梓渝
+,,5,5,0.0,"分析步骤：
+
+根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐条分析：
+
+- idx_0: 响应是“李荣浩”，参考答案是“陈小霞”。两者为不同的人名，且没有相同或相似语义和指向，不得分。
+
+- idx_1: 响应“李荣浩”，参考答案是“ashleyfulton、yejikim/lizbecker”，明显不是同一个实体，不得分。
+
+- idx_2: 响应“李荣浩”，参考答案“鹿柯的宁叔”，不同人名，不得分。
+
+- idx_3: 响应“范哲明”，参考答案是“in-k”，不同实体，不得分。
+
+- idx_4: 响应“李荣浩”，参考答案“赵誉乔”，不同人名，不得分。
+
+结论：所有响应与参考答案均不符得分0。
+
+返回结果：
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",赵誉乔,李荣浩,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response needs to have the same or roughly the same meaning as the target answer or refer to the same entity. Exact match is not necessary but they should essentially be the same entity.
+
+---
+
+### idx_0
+- Response: 陈曦
+- Target: 姚谦
+- Analysis: Two different names, presumably two different persons. No indication they refer to the same entity.
+- Score: 0
+
+### idx_1
+- Response: 李荣浩
+- Target: ashleyfulton、yejikim、lizbecker (3 different names)
+- Analysis: The response is a single name, different from all three target names. No match.
+- Score: 0
+
+### idx_2
+- Response: 陈曦
+- Target: 姜洄
+- Analysis: Different names, presumably different entities.
+- Score: 0
+
+### idx_3
+- Response: 范哲明
+- Target: in-k
+- Analysis: One is a Chinese name, the other looks like an alias or username ""in-k."" Unless known to be the same entity, considered different.
+- Score: 0
+
+### idx_4
+- Response: 范哲明
+- Target: 农文鑫
+- Analysis: Different names.
+- Score: 0
+
+---
+
+All response-target pairs do not refer to the same or roughly the same entities.
+
+---
+
+### Final scoring:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",农文鑫,范哲明,0.0,"exact not match, response: 2025-01-01, target: 2025/03/07",2025/03/07,2025-01-01,1.0,key_match,1.0,"exact match, response: 由你榜, target: 由你榜",由你榜,由你榜,0.0,"首先，根据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。”
+
+逐一分析每一个idx：
+
+- idx_0:
+  - response: ""someonelikeyou""
+  - target: ""嗨！人间""
+  - 两者均为歌名，但完全不相同
+  - 并不指向同一个实体，也语义不相同
+  - 评分0
+  
+- idx_1:
+  - response: ""奔腾""
+  - target: ""crush""
+  - 两者词义、指代均不同，且“奔腾”是中文词汇，“crush”英文，与参考答案无明显对应
+  - 评分0
+  
+- idx_2:
+  - response: ""不会太晚""
+  - target: ""跳楼机""
+  - 两者词义不同，且均为名词或短语，不同实体
+  - 评分0
+  
+- idx_3:
+  - response: ""不渝""
+  - target: ""第57次取消发送""
+  - 两个词组语义完全不相同，且没有指代关系
+  - 评分0
+  
+- idx_4:
+  - response: ""纵马踏歌行""
+  - target: ""四点的海棠花未眠""
+  - 均为中文短语或歌名，不同实体，语义无关
+  - 评分0
+
+综合来看，所有response与对应target均不语义相同，也不指向相同实体，全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",四点的海棠花未眠,纵马踏歌行,0.0,"exact not match, response: 5分02秒, target: 3分20秒",3分20秒,5分02秒,0.0,"分析过程：
+
+题目要求：  
+- 对比回答（response）和参考答案（target）  
+- 若语义相同大致，或指向的实体一致，即可得1分  
+- 不需要字字对应  
+- 分数只能是0或1
+
+逐条分析：
+
+1. idx_0  
+   - response: ""张真源""  
+   - target: ""周深""  
+   - 两人名字完全不同，且通常是两个不同的人物或实体，实体不一致，语义不相同。  
+   - 得分：0
+
+2. idx_1  
+   - response: ""周深""  
+   - target: ""喻言""  
+   - 两个人名不同，指代不同实体，语义不相同。  
+   - 得分：0
+
+3. idx_2  
+   - response: ""刘宇宁""  
+   - target: ""lbi利比（时柏尘）""  
+   - 人物完全不同，实体不一致，语义不相同。  
+   - 得分：0
+
+4. idx_3  
+   - response: ""梓渝""  
+   - target: ""菲菲公主（陆绮菲）""  
+   - 人名不同，实体不同。  
+   - 得分：0
+
+5. idx_4  
+   - response: ""刘宇宁""  
+   - target: ""渡""  
+   - 两个词语不同，一个是人名，一个通常指歌名或者别的实体（“渡”一般指歌名，也可是其他含义，但和人名“刘宇宁”不等同）  
+   - 语义不相同，实体不一致。  
+   - 得分：0
+
+综合以上判断，全部得分为0。
+
+最终评分结果如下：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0
+}
+```",渡,刘宇宁
+1.0,,10,,,,姜海威、芦全瑞,,,,赵素冰,,,,2025/05/14,,,,,,由你榜,,,,烽月,,,,4分25秒,,,,摩登兄弟刘宇宁,
+1.0,,11,,,,祝子由,,,,祝子由、毛然鹤,,,,2024/11/02,,,,,,由你榜,,,,先说爱的人为什么先离开,,,,3分40秒,,,,田园,
+1.0,,12,,,,瞿子千,,,,温莨、任素汐,,,,2025/04/24,,,,,,由你榜,,,,亲爱的你啊,,,,3分55秒,,,,任素汐,
+1.0,,13,,,,胡静宜、徐大耳朵,,,,徐大耳朵、胡静宜、雨伞的鱼、林意梵,,,,2025/02/10,,,,,,由你榜,,,,座位,,,,3分28秒,,,,于冬然,
+1.0,,14,,,,苏二墨,,,,余有所悸、战十七,,,,2025/03/31,,,,,,由你榜,,,,月亮照山川,,,,3分17秒,,,,窝窝,
+1.0,,15,,,,卢润泽,,,,姜洄,,,,2024/09/27,,,,,,由你榜,,,,土坡上的狗尾草,,,,3分15秒,,,,卢润泽,
+1.0,,6,,,,马健涛,,,,马健涛,,,,2024/11/25,,,,,,由你榜,,,,搀扶,,,,5分27秒,,,,马健涛,
+1.0,,7,,,,鱼椒盐,,,,李聪,,,,2025/05/15,,,,,,由你榜,,,,珠玉,,,,3分22秒,,,,单依纯,
+1.0,,8,,,,付俊乐,,,,付俊乐,,,,2025/01/25,,,,,,由你榜,,,,去远方,,,,3分34秒,,,,付俊乐,
+1.0,,9,,,,kellanbarrett、niccosanchez(sauceup),,,,pandeng,,,,2025/05/22,,,,,,由你榜,,,,梦,,,,3分02秒,,,,鹿晗,

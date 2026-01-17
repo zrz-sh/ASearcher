@@ -1,0 +1,708 @@
+exist_flag_gt,exist_flag_response,modelname,modelname_before_map,aime2025_number_near,aime2025_number_near_eval_msg,aime2025_query,aime2025_response,company_llm_judge,company_llm_judge_eval_msg,company_query,company_response,contextwindow_llm_judge,contextwindow_llm_judge_eval_msg,contextwindow_query,contextwindow_response,modelname_exact_match,modelname_exact_match_eval_msg,swe-benchverified_number_near,swe-benchverified_number_near_eval_msg,swe-benchverified_query,swe-benchverified_response,tau-bench-airline_number_near,tau-bench-airline_number_near_eval_msg,tau-bench-airline_query,tau-bench-airline_response,tau-bench-retail_number_near,tau-bench-retail_number_near_eval_msg,tau-bench-retail_query,tau-bench-retail_response
+,,gemini2.5pro,Gemini 2.5 Pro,0.0,"number not convertable, response: None, target: 0.88",88%,NULL,1.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",google,google,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",1m,32k,1.0,key_match,0.0,"number not convertable, response: None, target: 0.596",59.60%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+,,gemini2.5flash-lite-thinking,Gemini 2.5 Flash-Lite,0.0,"number not convertable, response: None, target: 0.631",63.10%,NULL,1.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",google,google,1.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",1m,"1,048,576",1.0,key_match,0.0,"number not near, response: 52.8, target: 0.276",27.60%,52.80,0.0,"number not convertable, response: 0.584, target: None",NULL,0.584,0.0,"number not convertable, response: 0.812, target: None",NULL,0.812
+,,o4-mini,O4 Mini,0.0,"number not convertable, response: None, target: 0.927",92.70%,NULL,1.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",openai,openai,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",200k,4k,1.0,key_match,0.0,"number not convertable, response: None, target: 0.6809999999999999",68.10%,NULL,0.0,"number not convertable, response: None, target: 0.49200000000000005",49.20%,NULL,0.0,"number not convertable, response: None, target: 0.6559999999999999",65.60%,NULL
+,,o3,O3,0.0,"number not convertable, response: None, target: 0.889",88.90%,NULL,1.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",openai,openai,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",200k,16k,1.0,key_match,0.0,"number not convertable, response: None, target: 0.691",69.10%,NULL,0.0,"number not convertable, response: None, target: 0.52",52%,NULL,0.0,"number not convertable, response: None, target: 0.7040000000000001",70.40%,NULL
+,,o3mini,O3 Mini,0.0,"number not convertable, response: None, target: 0.865",86.50%,NULL,1.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",openai,openai,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",200k,8k,1.0,key_match,0.0,"number not convertable, response: None, target: 0.493",49.30%,NULL,0.0,"number not convertable, response: None, target: 0.324",32.40%,NULL,0.0,"number not convertable, response: None, target: 0.5760000000000001",57.60%,NULL
+,,seed-thinkingv1.5,Doubao-1.5-Thinking,0.0,"number not convertable, response: None, target: 0.74",74%,NULL,0.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",bytedance,unknown,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",32k,nan,1.0,key_match,0.0,"number not convertable, response: None, target: 0.47",47%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+,,seed-thinkingv1.6,Doubao-1.6-Thinking,0.0,"number not convertable, response: None, target: 0.86",86%,NULL,0.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",bytedance,unknown,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",256k,nan,1.0,key_match,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+,,deepseek-v3,DeepSeek V3,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,0.0,"Let's analyze each idx individually:
+
+- idx_0: response = ""google"", target = ""google""  
+  The response matches exactly the target. According to the criterion, it's correct.  
+  Score = 1
+
+- idx_1: response = ""google"", target = ""google""  
+  Same as idx_0, exact match.  
+  Score = 1
+
+- idx_2: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_3: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_4: response = ""openai"", target = ""openai""  
+  Exact match, correct.  
+  Score = 1
+
+- idx_5: response = ""unknown"", target = ""bytedance""  
+  The response is ""unknown"", while the target is ""bytedance"". The criterion states that approximate or same semantics are sufficient, but ""unknown"" is generic and does not refer to the same entity ""bytedance"". So, this is incorrect.  
+  Score = 0
+
+- idx_6: response = ""unknown"", target = ""bytedance""  
+  Same as idx_5, wrong answer.  
+  Score = 0
+
+- idx_7: response = ""unknown"", target = ""deepseek""  
+  Same as above, no semantic equivalence or pointing to the same entity.  
+  Score = 0
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",deepseek,unknown,0.0,"Let's analyze each idx pair carefully:
+
+- idx_0: response = ""32k"", target = ""1m""  
+  32k is not semantically close to 1 million (1m). They differ by a factor of about 30. So no equivalence. Score = 0.
+
+- idx_1: response = ""1,048,576"", target = ""1m""  
+  1,048,576 = 2^20, which is commonly approximated as 1 million (1m). The criterion allows approximate semantics, so this is acceptable. Score = 1.
+
+- idx_2: response = ""4k"", target = ""200k""  
+  4k is 4000; 200k is 200,000. These values differ significantly and do not point to the same entity. Score = 0.
+
+- idx_3: response = ""16k"", target = ""200k""  
+  16k = 16,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_4: response = ""8k"", target = ""200k""  
+  8k = 8,000; 200k = 200,000. Not semantically equivalent. Score = 0.
+
+- idx_5: response = ""nan"", target = ""32k""  
+  ""nan"" means not a number or no answer. The target is ""32k"", so not equivalent. Score = 0.
+
+- idx_6: response = ""nan"", target = ""256k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+- idx_7: response = ""nan"", target = ""128k""  
+  Same reasoning as idx_5: no. Score = 0.
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 1,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0
+}
+```",128k,nan,1.0,key_match,0.0,"number not convertable, response: None, target: 0.42",42%,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL,1.0,"number equal, response: NULL, target: NULL",NULL,NULL
+,1.0,claude3.7,Claude 3.7,,,,20.8%,,,,anthropic,,,,200k,,,,,,63.7%,,,,58.4%,,,,81.2%
+1.0,,claude3.7sonnet,,,,54.80%,,,,anthropic,,,,200k,,,,,,62.30%,,,,58.40%,,,,81.20%,
+1.0,,claudeopus4,,,,75.50%,,,,anthropic,,,,200k,,,,,,72.50%,,,,59.60%,,,,81.40%,
+1.0,,claudesonnet4,,,,70.50%,,,,anthropic,,,,200k,,,,,,72.70%,,,,60%,,,,80.50%,
+1.0,,deepseek-r1,,,,70%,,,,deepseek,,,,128k,,,,,,49.20%,,,,NULL,,,,NULL,
+1.0,,deepseek-r1-0528,,,,87.50%,,,,deepseek,,,,64k,,,,,,57.60%,,,,NULL,,,,NULL,
+1.0,,deepseek-v3-0324,,,,47.74%,,,,deepseek,,,,64k,,,,,,38.80%,,,,NULL,,,,NULL,
+1.0,,gemini2.5flash-lite-nonthinking,,,,49.80%,,,,google,,,,1m,,,,,,31.60%,,,,NULL,,,,NULL,
+1.0,,gemini2.5flash-nonthinking,,,,61.60%,,,,google,,,,1m,,,,,,50%,,,,NULL,,,,NULL,
+1.0,,gemini2.5flash-thinking,,,,72.00%,,,,google,,,,1m,,,,,,48.90%,,,,NULL,,,,NULL,
+,1.0,gemini2.5lite,Gemini 2.5 Lite,,,,NULL,,,,google,,,,32k,,,,,,NULL,,,,NULL,,,,NULL

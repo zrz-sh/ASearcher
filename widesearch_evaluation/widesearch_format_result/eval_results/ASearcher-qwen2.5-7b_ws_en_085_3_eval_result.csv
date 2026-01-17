@@ -1,0 +1,1107 @@
+exist_flag_gt,exist_flag_response,title,title_before_map,country/regionofproduction_llm_judge,country/regionofproduction_llm_judge_eval_msg,country/regionofproduction_query,country/regionofproduction_response,director_llm_judge,director_llm_judge_eval_msg,director_query,director_response,genre_llm_judge,genre_llm_judge_eval_msg,genre_query,genre_response,runtime_llm_judge,runtime_llm_judge_eval_msg,runtime_query,runtime_response,title_exact_match,title_exact_match_eval_msg
+,,joker,Joker,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The response content only needs to be a subset of the reference answer.  
+- Score is either 0 or 1.  
+
+---
+
+### idx_0  
+- Response: ""usa""  
+- Target: ""usa/canada""  
+Analysis: ""usa"" is contained within ""usa/canada"". Since the response is a subset or matches part of the reference and denotes the same entity, this is acceptable.  
+Score: 1
+
+### idx_1  
+- Response: ""australia""  
+- Target: ""australia""  
+Analysis: Responses exactly match, fully correct.  
+Score: 1
+
+### idx_2  
+- Response: ""usa""  
+- Target: ""usa/brazil/mainlandchina""  
+Analysis: ""usa"" is one of the entities in the target. Response is a subset of the target. Acceptable.  
+Score: 1
+
+### idx_3  
+- Response: ""usa""  
+- Target: ""uk/usa""  
+Analysis: ""usa"" is included in the reference set. The response is correct as a subset.  
+Score: 1
+
+### idx_4  
+- Response: ""usa""  
+- Target: ""usa""  
+Analysis: Exact match. Score is 1.
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",usa/canada,usa,1.0,"Let me analyze each pair step by step:
+
+- idx_0: response is ""toddphillips"", target is ""toddphillips"". Semantics exactly the same (same entity).
+- idx_1: response is ""shannonmurphy"", target is ""shannonmurphy"". Semantics exactly the same.
+- idx_2: response is ""jamesgray"", target is ""jamesgray"". Semantics exactly the same.
+- idx_3: response is ""noahbaumbach"", target is ""noahbaumbach"". Semantics exactly the same.
+- idx_4: response is ""stevensoderbergh"", target is ""stevensoderbergh"". Semantics exactly the same.
+
+All responses match their respective targets exactly, so all get full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",toddphillips,toddphillips,1.0,"Let's analyze each pair item by item according to the criteria:
+
+**Criterion recap:**
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content needs to be relevant; classification differences are allowed.
+
+---
+
+### idx_0
+- **Target:** drama/thriller/crime
+- **Response:** psychologicalthriller
+
+Analysis:
+- ""psychological thriller"" fits well within the thriller genre.
+- It roughly corresponds to ""thriller"" in the target.
+- Although it doesn't mention drama or crime, it sufficiently points to a core genre in the target.
+
+**Decision:** 1
+
+---
+
+### idx_1
+- **Target:** drama/comedy/romance
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" combines comedy and drama.
+- Both comedy and drama are present in the target.
+- Romance is not mentioned, but it's acceptable if approximate.
+  
+**Decision:** 1
+
+---
+
+### idx_2
+- **Target:** sciencefiction/adventure
+- **Response:** sci-fi
+
+Analysis:
+- ""sci-fi"" is synonymous with science fiction (sciencefiction).
+- Does not mention adventure, but approximate match on main genre.
+
+**Decision:** 1
+
+---
+
+### idx_3
+- **Target:** drama/romance
+- **Response:** drama
+
+Analysis:
+- ""drama"" is exactly one of the target genres.
+- Romance is missing but approximate coverage is allowed.
+
+**Decision:** 1
+
+---
+
+### idx_4
+- **Target:** comedy/drama/thriller/crime
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" directly maps to two of the target genres.
+- Thriller/crime missing, but approximate acceptance holds.
+
+**Decision:** 1
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",drama/thriller/crime,psychologicalthriller,1.0,"Let's analyze each pair item by item according to the criterion provided:
+
+Criterion summary:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word matching.
+
+Items to grade:  
+- Responses are numbers (assumed to be minutes) vs. targets which are numbers appended with ""min"".
+
+---
+
+**idx_0**  
+Response: ""122""  
+Target: ""118min""  
+Difference: 4 minutes off.   
+The response and target point to an approximate time but not the same semantically because 4 minutes is significant, and the criterion mentions approximate semantics are sufficient. Is 4 minutes difference acceptable? The criterion is vague about tolerance but indicates approximate meaning is okay. In terms of rounding or approximate answer, 122 vs 118 could be considered close enough to accept.
+
+Verdict: Since the difference is small and both denote a time value, this can be considered approximately the same entity (a time near 120 minutes). Score: 1
+
+---
+
+**idx_1**  
+Response: ""116""  
+Target: ""120min""  
+Difference: 4 minutes  
+Same reasoning as idx_0. Approximate time is close. Both refer to roughly two hours.
+
+Score: 1
+
+---
+
+**idx_2**  
+Response: ""135""  
+Target: ""124min""  
+Difference: 11 minutes  
+This is a bigger difference. Is 11 minutes still approximate? The criterion is not numeric but semantic equivalence or +/- tolerance isn't explicitly given. But semantic equivalence here concerns whether both point to the same entity (a duration). Both responses mention duration time. The difference is not trivial but still the same 'type' of answer.
+
+Since the criterion is ""approximate"" semantics or point to the same entity, and both are minutes, this counts as approximately the same. So 1.
+
+---
+
+**idx_3**  
+Response: ""135""  
+Target: ""135min""  
+Exact same number. Clearly score 1.
+
+---
+
+**idx_4**  
+Response: ""95""  
+Target: ""96min""  
+Difference: 1 minute, very close. Score 1.
+
+---
+
+**Summary:** All responses are within a range representing the same type of duration answer, with varying difference in minutes but all close values.
+
+Given the criterion indicates approximate semantics are sufficient, all should be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",118min,122,1.0,key_match
+,,babyteeth,Babyteeth,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The response content only needs to be a subset of the reference answer.  
+- Score is either 0 or 1.  
+
+---
+
+### idx_0  
+- Response: ""usa""  
+- Target: ""usa/canada""  
+Analysis: ""usa"" is contained within ""usa/canada"". Since the response is a subset or matches part of the reference and denotes the same entity, this is acceptable.  
+Score: 1
+
+### idx_1  
+- Response: ""australia""  
+- Target: ""australia""  
+Analysis: Responses exactly match, fully correct.  
+Score: 1
+
+### idx_2  
+- Response: ""usa""  
+- Target: ""usa/brazil/mainlandchina""  
+Analysis: ""usa"" is one of the entities in the target. Response is a subset of the target. Acceptable.  
+Score: 1
+
+### idx_3  
+- Response: ""usa""  
+- Target: ""uk/usa""  
+Analysis: ""usa"" is included in the reference set. The response is correct as a subset.  
+Score: 1
+
+### idx_4  
+- Response: ""usa""  
+- Target: ""usa""  
+Analysis: Exact match. Score is 1.
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",australia,australia,1.0,"Let me analyze each pair step by step:
+
+- idx_0: response is ""toddphillips"", target is ""toddphillips"". Semantics exactly the same (same entity).
+- idx_1: response is ""shannonmurphy"", target is ""shannonmurphy"". Semantics exactly the same.
+- idx_2: response is ""jamesgray"", target is ""jamesgray"". Semantics exactly the same.
+- idx_3: response is ""noahbaumbach"", target is ""noahbaumbach"". Semantics exactly the same.
+- idx_4: response is ""stevensoderbergh"", target is ""stevensoderbergh"". Semantics exactly the same.
+
+All responses match their respective targets exactly, so all get full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",shannonmurphy,shannonmurphy,1.0,"Let's analyze each pair item by item according to the criteria:
+
+**Criterion recap:**
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content needs to be relevant; classification differences are allowed.
+
+---
+
+### idx_0
+- **Target:** drama/thriller/crime
+- **Response:** psychologicalthriller
+
+Analysis:
+- ""psychological thriller"" fits well within the thriller genre.
+- It roughly corresponds to ""thriller"" in the target.
+- Although it doesn't mention drama or crime, it sufficiently points to a core genre in the target.
+
+**Decision:** 1
+
+---
+
+### idx_1
+- **Target:** drama/comedy/romance
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" combines comedy and drama.
+- Both comedy and drama are present in the target.
+- Romance is not mentioned, but it's acceptable if approximate.
+  
+**Decision:** 1
+
+---
+
+### idx_2
+- **Target:** sciencefiction/adventure
+- **Response:** sci-fi
+
+Analysis:
+- ""sci-fi"" is synonymous with science fiction (sciencefiction).
+- Does not mention adventure, but approximate match on main genre.
+
+**Decision:** 1
+
+---
+
+### idx_3
+- **Target:** drama/romance
+- **Response:** drama
+
+Analysis:
+- ""drama"" is exactly one of the target genres.
+- Romance is missing but approximate coverage is allowed.
+
+**Decision:** 1
+
+---
+
+### idx_4
+- **Target:** comedy/drama/thriller/crime
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" directly maps to two of the target genres.
+- Thriller/crime missing, but approximate acceptance holds.
+
+**Decision:** 1
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",drama/comedy/romance,comedy-drama,1.0,"Let's analyze each pair item by item according to the criterion provided:
+
+Criterion summary:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word matching.
+
+Items to grade:  
+- Responses are numbers (assumed to be minutes) vs. targets which are numbers appended with ""min"".
+
+---
+
+**idx_0**  
+Response: ""122""  
+Target: ""118min""  
+Difference: 4 minutes off.   
+The response and target point to an approximate time but not the same semantically because 4 minutes is significant, and the criterion mentions approximate semantics are sufficient. Is 4 minutes difference acceptable? The criterion is vague about tolerance but indicates approximate meaning is okay. In terms of rounding or approximate answer, 122 vs 118 could be considered close enough to accept.
+
+Verdict: Since the difference is small and both denote a time value, this can be considered approximately the same entity (a time near 120 minutes). Score: 1
+
+---
+
+**idx_1**  
+Response: ""116""  
+Target: ""120min""  
+Difference: 4 minutes  
+Same reasoning as idx_0. Approximate time is close. Both refer to roughly two hours.
+
+Score: 1
+
+---
+
+**idx_2**  
+Response: ""135""  
+Target: ""124min""  
+Difference: 11 minutes  
+This is a bigger difference. Is 11 minutes still approximate? The criterion is not numeric but semantic equivalence or +/- tolerance isn't explicitly given. But semantic equivalence here concerns whether both point to the same entity (a duration). Both responses mention duration time. The difference is not trivial but still the same 'type' of answer.
+
+Since the criterion is ""approximate"" semantics or point to the same entity, and both are minutes, this counts as approximately the same. So 1.
+
+---
+
+**idx_3**  
+Response: ""135""  
+Target: ""135min""  
+Exact same number. Clearly score 1.
+
+---
+
+**idx_4**  
+Response: ""95""  
+Target: ""96min""  
+Difference: 1 minute, very close. Score 1.
+
+---
+
+**Summary:** All responses are within a range representing the same type of duration answer, with varying difference in minutes but all close values.
+
+Given the criterion indicates approximate semantics are sufficient, all should be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",120min,116,1.0,key_match
+,,adastra,Ad Astra,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The response content only needs to be a subset of the reference answer.  
+- Score is either 0 or 1.  
+
+---
+
+### idx_0  
+- Response: ""usa""  
+- Target: ""usa/canada""  
+Analysis: ""usa"" is contained within ""usa/canada"". Since the response is a subset or matches part of the reference and denotes the same entity, this is acceptable.  
+Score: 1
+
+### idx_1  
+- Response: ""australia""  
+- Target: ""australia""  
+Analysis: Responses exactly match, fully correct.  
+Score: 1
+
+### idx_2  
+- Response: ""usa""  
+- Target: ""usa/brazil/mainlandchina""  
+Analysis: ""usa"" is one of the entities in the target. Response is a subset of the target. Acceptable.  
+Score: 1
+
+### idx_3  
+- Response: ""usa""  
+- Target: ""uk/usa""  
+Analysis: ""usa"" is included in the reference set. The response is correct as a subset.  
+Score: 1
+
+### idx_4  
+- Response: ""usa""  
+- Target: ""usa""  
+Analysis: Exact match. Score is 1.
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",usa/brazil/mainlandchina,usa,1.0,"Let me analyze each pair step by step:
+
+- idx_0: response is ""toddphillips"", target is ""toddphillips"". Semantics exactly the same (same entity).
+- idx_1: response is ""shannonmurphy"", target is ""shannonmurphy"". Semantics exactly the same.
+- idx_2: response is ""jamesgray"", target is ""jamesgray"". Semantics exactly the same.
+- idx_3: response is ""noahbaumbach"", target is ""noahbaumbach"". Semantics exactly the same.
+- idx_4: response is ""stevensoderbergh"", target is ""stevensoderbergh"". Semantics exactly the same.
+
+All responses match their respective targets exactly, so all get full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",jamesgray,jamesgray,1.0,"Let's analyze each pair item by item according to the criteria:
+
+**Criterion recap:**
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content needs to be relevant; classification differences are allowed.
+
+---
+
+### idx_0
+- **Target:** drama/thriller/crime
+- **Response:** psychologicalthriller
+
+Analysis:
+- ""psychological thriller"" fits well within the thriller genre.
+- It roughly corresponds to ""thriller"" in the target.
+- Although it doesn't mention drama or crime, it sufficiently points to a core genre in the target.
+
+**Decision:** 1
+
+---
+
+### idx_1
+- **Target:** drama/comedy/romance
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" combines comedy and drama.
+- Both comedy and drama are present in the target.
+- Romance is not mentioned, but it's acceptable if approximate.
+  
+**Decision:** 1
+
+---
+
+### idx_2
+- **Target:** sciencefiction/adventure
+- **Response:** sci-fi
+
+Analysis:
+- ""sci-fi"" is synonymous with science fiction (sciencefiction).
+- Does not mention adventure, but approximate match on main genre.
+
+**Decision:** 1
+
+---
+
+### idx_3
+- **Target:** drama/romance
+- **Response:** drama
+
+Analysis:
+- ""drama"" is exactly one of the target genres.
+- Romance is missing but approximate coverage is allowed.
+
+**Decision:** 1
+
+---
+
+### idx_4
+- **Target:** comedy/drama/thriller/crime
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" directly maps to two of the target genres.
+- Thriller/crime missing, but approximate acceptance holds.
+
+**Decision:** 1
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",sciencefiction/adventure,sci-fi,1.0,"Let's analyze each pair item by item according to the criterion provided:
+
+Criterion summary:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word matching.
+
+Items to grade:  
+- Responses are numbers (assumed to be minutes) vs. targets which are numbers appended with ""min"".
+
+---
+
+**idx_0**  
+Response: ""122""  
+Target: ""118min""  
+Difference: 4 minutes off.   
+The response and target point to an approximate time but not the same semantically because 4 minutes is significant, and the criterion mentions approximate semantics are sufficient. Is 4 minutes difference acceptable? The criterion is vague about tolerance but indicates approximate meaning is okay. In terms of rounding or approximate answer, 122 vs 118 could be considered close enough to accept.
+
+Verdict: Since the difference is small and both denote a time value, this can be considered approximately the same entity (a time near 120 minutes). Score: 1
+
+---
+
+**idx_1**  
+Response: ""116""  
+Target: ""120min""  
+Difference: 4 minutes  
+Same reasoning as idx_0. Approximate time is close. Both refer to roughly two hours.
+
+Score: 1
+
+---
+
+**idx_2**  
+Response: ""135""  
+Target: ""124min""  
+Difference: 11 minutes  
+This is a bigger difference. Is 11 minutes still approximate? The criterion is not numeric but semantic equivalence or +/- tolerance isn't explicitly given. But semantic equivalence here concerns whether both point to the same entity (a duration). Both responses mention duration time. The difference is not trivial but still the same 'type' of answer.
+
+Since the criterion is ""approximate"" semantics or point to the same entity, and both are minutes, this counts as approximately the same. So 1.
+
+---
+
+**idx_3**  
+Response: ""135""  
+Target: ""135min""  
+Exact same number. Clearly score 1.
+
+---
+
+**idx_4**  
+Response: ""95""  
+Target: ""96min""  
+Difference: 1 minute, very close. Score 1.
+
+---
+
+**Summary:** All responses are within a range representing the same type of duration answer, with varying difference in minutes but all close values.
+
+Given the criterion indicates approximate semantics are sufficient, all should be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",124min,135,1.0,key_match
+,,marriagestory,Marriage Story,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The response content only needs to be a subset of the reference answer.  
+- Score is either 0 or 1.  
+
+---
+
+### idx_0  
+- Response: ""usa""  
+- Target: ""usa/canada""  
+Analysis: ""usa"" is contained within ""usa/canada"". Since the response is a subset or matches part of the reference and denotes the same entity, this is acceptable.  
+Score: 1
+
+### idx_1  
+- Response: ""australia""  
+- Target: ""australia""  
+Analysis: Responses exactly match, fully correct.  
+Score: 1
+
+### idx_2  
+- Response: ""usa""  
+- Target: ""usa/brazil/mainlandchina""  
+Analysis: ""usa"" is one of the entities in the target. Response is a subset of the target. Acceptable.  
+Score: 1
+
+### idx_3  
+- Response: ""usa""  
+- Target: ""uk/usa""  
+Analysis: ""usa"" is included in the reference set. The response is correct as a subset.  
+Score: 1
+
+### idx_4  
+- Response: ""usa""  
+- Target: ""usa""  
+Analysis: Exact match. Score is 1.
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",uk/usa,usa,1.0,"Let me analyze each pair step by step:
+
+- idx_0: response is ""toddphillips"", target is ""toddphillips"". Semantics exactly the same (same entity).
+- idx_1: response is ""shannonmurphy"", target is ""shannonmurphy"". Semantics exactly the same.
+- idx_2: response is ""jamesgray"", target is ""jamesgray"". Semantics exactly the same.
+- idx_3: response is ""noahbaumbach"", target is ""noahbaumbach"". Semantics exactly the same.
+- idx_4: response is ""stevensoderbergh"", target is ""stevensoderbergh"". Semantics exactly the same.
+
+All responses match their respective targets exactly, so all get full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",noahbaumbach,noahbaumbach,1.0,"Let's analyze each pair item by item according to the criteria:
+
+**Criterion recap:**
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content needs to be relevant; classification differences are allowed.
+
+---
+
+### idx_0
+- **Target:** drama/thriller/crime
+- **Response:** psychologicalthriller
+
+Analysis:
+- ""psychological thriller"" fits well within the thriller genre.
+- It roughly corresponds to ""thriller"" in the target.
+- Although it doesn't mention drama or crime, it sufficiently points to a core genre in the target.
+
+**Decision:** 1
+
+---
+
+### idx_1
+- **Target:** drama/comedy/romance
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" combines comedy and drama.
+- Both comedy and drama are present in the target.
+- Romance is not mentioned, but it's acceptable if approximate.
+  
+**Decision:** 1
+
+---
+
+### idx_2
+- **Target:** sciencefiction/adventure
+- **Response:** sci-fi
+
+Analysis:
+- ""sci-fi"" is synonymous with science fiction (sciencefiction).
+- Does not mention adventure, but approximate match on main genre.
+
+**Decision:** 1
+
+---
+
+### idx_3
+- **Target:** drama/romance
+- **Response:** drama
+
+Analysis:
+- ""drama"" is exactly one of the target genres.
+- Romance is missing but approximate coverage is allowed.
+
+**Decision:** 1
+
+---
+
+### idx_4
+- **Target:** comedy/drama/thriller/crime
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" directly maps to two of the target genres.
+- Thriller/crime missing, but approximate acceptance holds.
+
+**Decision:** 1
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",drama/romance,drama,1.0,"Let's analyze each pair item by item according to the criterion provided:
+
+Criterion summary:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word matching.
+
+Items to grade:  
+- Responses are numbers (assumed to be minutes) vs. targets which are numbers appended with ""min"".
+
+---
+
+**idx_0**  
+Response: ""122""  
+Target: ""118min""  
+Difference: 4 minutes off.   
+The response and target point to an approximate time but not the same semantically because 4 minutes is significant, and the criterion mentions approximate semantics are sufficient. Is 4 minutes difference acceptable? The criterion is vague about tolerance but indicates approximate meaning is okay. In terms of rounding or approximate answer, 122 vs 118 could be considered close enough to accept.
+
+Verdict: Since the difference is small and both denote a time value, this can be considered approximately the same entity (a time near 120 minutes). Score: 1
+
+---
+
+**idx_1**  
+Response: ""116""  
+Target: ""120min""  
+Difference: 4 minutes  
+Same reasoning as idx_0. Approximate time is close. Both refer to roughly two hours.
+
+Score: 1
+
+---
+
+**idx_2**  
+Response: ""135""  
+Target: ""124min""  
+Difference: 11 minutes  
+This is a bigger difference. Is 11 minutes still approximate? The criterion is not numeric but semantic equivalence or +/- tolerance isn't explicitly given. But semantic equivalence here concerns whether both point to the same entity (a duration). Both responses mention duration time. The difference is not trivial but still the same 'type' of answer.
+
+Since the criterion is ""approximate"" semantics or point to the same entity, and both are minutes, this counts as approximately the same. So 1.
+
+---
+
+**idx_3**  
+Response: ""135""  
+Target: ""135min""  
+Exact same number. Clearly score 1.
+
+---
+
+**idx_4**  
+Response: ""95""  
+Target: ""96min""  
+Difference: 1 minute, very close. Score 1.
+
+---
+
+**Summary:** All responses are within a range representing the same type of duration answer, with varying difference in minutes but all close values.
+
+Given the criterion indicates approximate semantics are sufficient, all should be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",135min,135,1.0,key_match
+,,thelaundromat,The Laundromat,1.0,"Let's analyze each item step-by-step according to the criterion:
+
+Criterion summary:  
+- Semantics approximately the same or pointing to the same entity is sufficient.  
+- The response content only needs to be a subset of the reference answer.  
+- Score is either 0 or 1.  
+
+---
+
+### idx_0  
+- Response: ""usa""  
+- Target: ""usa/canada""  
+Analysis: ""usa"" is contained within ""usa/canada"". Since the response is a subset or matches part of the reference and denotes the same entity, this is acceptable.  
+Score: 1
+
+### idx_1  
+- Response: ""australia""  
+- Target: ""australia""  
+Analysis: Responses exactly match, fully correct.  
+Score: 1
+
+### idx_2  
+- Response: ""usa""  
+- Target: ""usa/brazil/mainlandchina""  
+Analysis: ""usa"" is one of the entities in the target. Response is a subset of the target. Acceptable.  
+Score: 1
+
+### idx_3  
+- Response: ""usa""  
+- Target: ""uk/usa""  
+Analysis: ""usa"" is included in the reference set. The response is correct as a subset.  
+Score: 1
+
+### idx_4  
+- Response: ""usa""  
+- Target: ""usa""  
+Analysis: Exact match. Score is 1.
+
+---
+
+### Final Scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",usa,usa,1.0,"Let me analyze each pair step by step:
+
+- idx_0: response is ""toddphillips"", target is ""toddphillips"". Semantics exactly the same (same entity).
+- idx_1: response is ""shannonmurphy"", target is ""shannonmurphy"". Semantics exactly the same.
+- idx_2: response is ""jamesgray"", target is ""jamesgray"". Semantics exactly the same.
+- idx_3: response is ""noahbaumbach"", target is ""noahbaumbach"". Semantics exactly the same.
+- idx_4: response is ""stevensoderbergh"", target is ""stevensoderbergh"". Semantics exactly the same.
+
+All responses match their respective targets exactly, so all get full score 1.
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",stevensoderbergh,stevensoderbergh,1.0,"Let's analyze each pair item by item according to the criteria:
+
+**Criterion recap:**
+- Semantics approximately the same or pointing to the same entity is sufficient.
+- Content needs to be relevant; classification differences are allowed.
+
+---
+
+### idx_0
+- **Target:** drama/thriller/crime
+- **Response:** psychologicalthriller
+
+Analysis:
+- ""psychological thriller"" fits well within the thriller genre.
+- It roughly corresponds to ""thriller"" in the target.
+- Although it doesn't mention drama or crime, it sufficiently points to a core genre in the target.
+
+**Decision:** 1
+
+---
+
+### idx_1
+- **Target:** drama/comedy/romance
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" combines comedy and drama.
+- Both comedy and drama are present in the target.
+- Romance is not mentioned, but it's acceptable if approximate.
+  
+**Decision:** 1
+
+---
+
+### idx_2
+- **Target:** sciencefiction/adventure
+- **Response:** sci-fi
+
+Analysis:
+- ""sci-fi"" is synonymous with science fiction (sciencefiction).
+- Does not mention adventure, but approximate match on main genre.
+
+**Decision:** 1
+
+---
+
+### idx_3
+- **Target:** drama/romance
+- **Response:** drama
+
+Analysis:
+- ""drama"" is exactly one of the target genres.
+- Romance is missing but approximate coverage is allowed.
+
+**Decision:** 1
+
+---
+
+### idx_4
+- **Target:** comedy/drama/thriller/crime
+- **Response:** comedy-drama
+
+Analysis:
+- ""comedy-drama"" directly maps to two of the target genres.
+- Thriller/crime missing, but approximate acceptance holds.
+
+**Decision:** 1
+
+---
+
+### Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",comedy/drama/thriller/crime,comedy-drama,1.0,"Let's analyze each pair item by item according to the criterion provided:
+
+Criterion summary:  
+- The semantics must be approximately the same or point to the same entity.  
+- No need for word-for-word matching.
+
+Items to grade:  
+- Responses are numbers (assumed to be minutes) vs. targets which are numbers appended with ""min"".
+
+---
+
+**idx_0**  
+Response: ""122""  
+Target: ""118min""  
+Difference: 4 minutes off.   
+The response and target point to an approximate time but not the same semantically because 4 minutes is significant, and the criterion mentions approximate semantics are sufficient. Is 4 minutes difference acceptable? The criterion is vague about tolerance but indicates approximate meaning is okay. In terms of rounding or approximate answer, 122 vs 118 could be considered close enough to accept.
+
+Verdict: Since the difference is small and both denote a time value, this can be considered approximately the same entity (a time near 120 minutes). Score: 1
+
+---
+
+**idx_1**  
+Response: ""116""  
+Target: ""120min""  
+Difference: 4 minutes  
+Same reasoning as idx_0. Approximate time is close. Both refer to roughly two hours.
+
+Score: 1
+
+---
+
+**idx_2**  
+Response: ""135""  
+Target: ""124min""  
+Difference: 11 minutes  
+This is a bigger difference. Is 11 minutes still approximate? The criterion is not numeric but semantic equivalence or +/- tolerance isn't explicitly given. But semantic equivalence here concerns whether both point to the same entity (a duration). Both responses mention duration time. The difference is not trivial but still the same 'type' of answer.
+
+Since the criterion is ""approximate"" semantics or point to the same entity, and both are minutes, this counts as approximately the same. So 1.
+
+---
+
+**idx_3**  
+Response: ""135""  
+Target: ""135min""  
+Exact same number. Clearly score 1.
+
+---
+
+**idx_4**  
+Response: ""95""  
+Target: ""96min""  
+Difference: 1 minute, very close. Score 1.
+
+---
+
+**Summary:** All responses are within a range representing the same type of duration answer, with varying difference in minutes but all close values.
+
+Given the criterion indicates approximate semantics are sufficient, all should be scored 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",96min,95,1.0,key_match
+1.0,,aboutendlessness,,,,sweden/germany/norway,,,,royandersson,,,,drama,,,,76min,,,
+1.0,,anofficerandaspy,,,,france/italy,,,,romanpolanski,,,,drama,,,,132min,,,
+1.0,,ema,,,,chile,,,,pablolarraín,,,,drama/romance/music,,,,102min,,,
+1.0,,gloriamundi,,,,france/italy,,,,robertguédiguian,,,,drama,,,,107min,,,
+1.0,,guestofhonour,,,,canada,,,,atomegoyan,,,,drama,,,,104min,,,
+1.0,,martineden,,,,italy/france/germany,,,,pietromarcello,,,,drama,,,,129min,,,
+1.0,,no.7cherrylane,,,,"hongkongsar,china",,,,yonfan,,,,animation,,,,125min,,,
+1.0,,saturdayfiction,,,,china,,,,yelou,,,,"drama,thriller",,,,126min,,,
+1.0,,thedomain,,,,portugal/france,,,,tiagoguedes,,,,drama,,,,164min,,,
+1.0,,themafiaisnolongerwhatitusedtobe,,,,italy,,,,francomaresco,,,,documentary,,,,107min,,,
+1.0,,themayorofrionesanità,,,,italy,,,,mariomartone,,,,drama,,,,118min,,,
+1.0,,thepaintedbird,,,,czechrepublic/slovakia/ukraine,,,,václavmarhoul,,,,drama/war,,,,169min,,,
+1.0,,theperfectcandidate,,,,saudiarabia/germany,,,,haifaaalmansour,,,,drama,,,,101min,,,
+1.0,,thetruth,,,,france/japan,,,,hirokazukore-eda,,,,drama,,,,106min,,,
+1.0,,waitingforthebarbarians,,,,italy/usa,,,,ciroguerra,,,,drama,,,,112min,,,
+1.0,,waspnetwork,,,,france/spain/belgium/brazil,,,,olivierassayas,,,,thriller,,,,123min,,,

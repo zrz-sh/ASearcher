@@ -1,0 +1,526 @@
+exist_flag_gt,exist_flag_response,国家,国家_before_map,年份,年份_before_map,全球排名_exact_match,全球排名_exact_match_eval_msg,全球排名_query,全球排名_response,军费支出_number_near,军费支出_number_near_eval_msg,军费支出_query,军费支出_response,国家_exact_match,国家_exact_match_eval_msg,国防部长_llm_judge,国防部长_llm_judge_eval_msg,国防部长_query,国防部长_response,年份_exact_match,年份_exact_match_eval_msg,当年gdp_number_near,当年gdp_number_near_eval_msg,当年gdp_query,当年gdp_response,总统_llm_judge,总统_llm_judge_eval_msg,总统_query,总统_response
+,,美国,美国,2019,2019,1.0,"exact match, response: 1, target: 1",1,1,0.0,"number not near, response: 963.0, target: 7320.0",7320,963.0,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response should be semantically roughly the same as the target or refer to the same entity. Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Response: ""马蒂斯""  
+- Target: ""马克·埃斯柏""  
+Analysis: These are two different names referring to different individuals. No indication they point to the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""普里戈津""  
+- Target: ""谢尔盖·绍伊古""  
+Analysis: Different individuals, different entities. No equivalence.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""布兰德""  
+- Target: ""乌尔苏拉·冯德莱恩""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""拉杰纳特·辛格""  
+- Target: ""拉杰纳特·辛格""  
+Analysis: Exact same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: ""拉姆·查德里""  
+- Target: ""岩屋毅""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",马克·埃斯柏,马蒂斯,1.0,key_match,1.0,"number near in range 10.0%, response: 21.44, target: 20.5",20.50,21.44,0.0,"Let's analyze each pair according to the criterion:
+- Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  Translation: The response's meaning should be roughly the same as the standard answer or refer to the same entity. No need for exact match word by word.
+
+---
+
+**idx_0**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 特朗普 (Trump)  
+- Analysis: Completely different entities; not the same person or entity. So score should be 0.
+
+**idx_1**  
+- Response: 普京 (Putin)  
+- Target: 普京 (Putin)  
+- Analysis: Identical entity, exact match. Score 1.
+
+**idx_2**  
+- Response: 朔尔茨 (Scholz)  
+- Target: 默克尔 (Merkel)  
+- Analysis: Different individuals (both German leaders but different persons). Not the same entity, no equivalence. Score 0.
+
+**idx_3**  
+- Response: 梅拉尼娅·特朗普 (Melania Trump)  
+- Target: 莫迪 (Modi)  
+- Analysis: Different persons. Score 0.
+
+**idx_4**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 安倍晋三 (Abe Shinzo)  
+- Analysis: Different individuals. Score 0.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",特朗普,乔·拜登
+,,俄罗斯,俄罗斯,2019,2019,0.0,"exact not match, response: 3, target: 4",4,3,0.0,"number not near, response: 72.1, target: 651.0",651,72.1,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response should be semantically roughly the same as the target or refer to the same entity. Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Response: ""马蒂斯""  
+- Target: ""马克·埃斯柏""  
+Analysis: These are two different names referring to different individuals. No indication they point to the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""普里戈津""  
+- Target: ""谢尔盖·绍伊古""  
+Analysis: Different individuals, different entities. No equivalence.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""布兰德""  
+- Target: ""乌尔苏拉·冯德莱恩""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""拉杰纳特·辛格""  
+- Target: ""拉杰纳特·辛格""  
+Analysis: Exact same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: ""拉姆·查德里""  
+- Target: ""岩屋毅""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",谢尔盖·绍伊古,普里戈津,1.0,key_match,0.0,"number not near, response: 1.47, target: 1.65",1.65,1.47,1.0,"Let's analyze each pair according to the criterion:
+- Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  Translation: The response's meaning should be roughly the same as the standard answer or refer to the same entity. No need for exact match word by word.
+
+---
+
+**idx_0**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 特朗普 (Trump)  
+- Analysis: Completely different entities; not the same person or entity. So score should be 0.
+
+**idx_1**  
+- Response: 普京 (Putin)  
+- Target: 普京 (Putin)  
+- Analysis: Identical entity, exact match. Score 1.
+
+**idx_2**  
+- Response: 朔尔茨 (Scholz)  
+- Target: 默克尔 (Merkel)  
+- Analysis: Different individuals (both German leaders but different persons). Not the same entity, no equivalence. Score 0.
+
+**idx_3**  
+- Response: 梅拉尼娅·特朗普 (Melania Trump)  
+- Target: 莫迪 (Modi)  
+- Analysis: Different persons. Score 0.
+
+**idx_4**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 安倍晋三 (Abe Shinzo)  
+- Analysis: Different individuals. Score 0.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",普京,普京
+,,德国,德国,2019,2019,0.0,"exact not match, response: 4, target: 7",7,4,0.0,"number not near, response: 49.9, target: 493.0",493,49.9,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response should be semantically roughly the same as the target or refer to the same entity. Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Response: ""马蒂斯""  
+- Target: ""马克·埃斯柏""  
+Analysis: These are two different names referring to different individuals. No indication they point to the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""普里戈津""  
+- Target: ""谢尔盖·绍伊古""  
+Analysis: Different individuals, different entities. No equivalence.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""布兰德""  
+- Target: ""乌尔苏拉·冯德莱恩""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""拉杰纳特·辛格""  
+- Target: ""拉杰纳特·辛格""  
+Analysis: Exact same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: ""拉姆·查德里""  
+- Target: ""岩屋毅""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",乌尔苏拉·冯德莱恩,布兰德,1.0,key_match,1.0,"number near in range 10.0%, response: 3.84, target: 3.85",3.85,3.84,0.0,"Let's analyze each pair according to the criterion:
+- Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  Translation: The response's meaning should be roughly the same as the standard answer or refer to the same entity. No need for exact match word by word.
+
+---
+
+**idx_0**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 特朗普 (Trump)  
+- Analysis: Completely different entities; not the same person or entity. So score should be 0.
+
+**idx_1**  
+- Response: 普京 (Putin)  
+- Target: 普京 (Putin)  
+- Analysis: Identical entity, exact match. Score 1.
+
+**idx_2**  
+- Response: 朔尔茨 (Scholz)  
+- Target: 默克尔 (Merkel)  
+- Analysis: Different individuals (both German leaders but different persons). Not the same entity, no equivalence. Score 0.
+
+**idx_3**  
+- Response: 梅拉尼娅·特朗普 (Melania Trump)  
+- Target: 莫迪 (Modi)  
+- Analysis: Different persons. Score 0.
+
+**idx_4**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 安倍晋三 (Abe Shinzo)  
+- Analysis: Different individuals. Score 0.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",默克尔,朔尔茨
+,,印度,印度,2019,2019,0.0,"exact not match, response: 6, target: 3",3,6,0.0,"number not near, response: 69.7, target: 711.0",711,69.7,1.0,key_match,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response should be semantically roughly the same as the target or refer to the same entity. Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Response: ""马蒂斯""  
+- Target: ""马克·埃斯柏""  
+Analysis: These are two different names referring to different individuals. No indication they point to the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""普里戈津""  
+- Target: ""谢尔盖·绍伊古""  
+Analysis: Different individuals, different entities. No equivalence.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""布兰德""  
+- Target: ""乌尔苏拉·冯德莱恩""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""拉杰纳特·辛格""  
+- Target: ""拉杰纳特·辛格""  
+Analysis: Exact same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: ""拉姆·查德里""  
+- Target: ""岩屋毅""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",拉杰纳特·辛格,拉杰纳特·辛格,1.0,key_match,1.0,"number near in range 10.0%, response: 2.9, target: 2.83",2.83,2.9,0.0,"Let's analyze each pair according to the criterion:
+- Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  Translation: The response's meaning should be roughly the same as the standard answer or refer to the same entity. No need for exact match word by word.
+
+---
+
+**idx_0**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 特朗普 (Trump)  
+- Analysis: Completely different entities; not the same person or entity. So score should be 0.
+
+**idx_1**  
+- Response: 普京 (Putin)  
+- Target: 普京 (Putin)  
+- Analysis: Identical entity, exact match. Score 1.
+
+**idx_2**  
+- Response: 朔尔茨 (Scholz)  
+- Target: 默克尔 (Merkel)  
+- Analysis: Different individuals (both German leaders but different persons). Not the same entity, no equivalence. Score 0.
+
+**idx_3**  
+- Response: 梅拉尼娅·特朗普 (Melania Trump)  
+- Target: 莫迪 (Modi)  
+- Analysis: Different persons. Score 0.
+
+**idx_4**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 安倍晋三 (Abe Shinzo)  
+- Analysis: Different individuals. Score 0.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",莫迪,梅拉尼娅·特朗普
+,,日本,日本,2019,2019,1.0,"exact match, response: 9, target: 9",9,9,0.0,"number not near, response: 48.7, target: 476.0",476,48.7,1.0,key_match,0.0,"Let's analyze each pair according to the criterion:
+
+Criterion: The response should be semantically roughly the same as the target or refer to the same entity. Exact wording is not necessary.
+
+---
+
+**idx_0**  
+- Response: ""马蒂斯""  
+- Target: ""马克·埃斯柏""  
+Analysis: These are two different names referring to different individuals. No indication they point to the same entity.  
+Score: 0
+
+---
+
+**idx_1**  
+- Response: ""普里戈津""  
+- Target: ""谢尔盖·绍伊古""  
+Analysis: Different individuals, different entities. No equivalence.  
+Score: 0
+
+---
+
+**idx_2**  
+- Response: ""布兰德""  
+- Target: ""乌尔苏拉·冯德莱恩""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+**idx_3**  
+- Response: ""拉杰纳特·辛格""  
+- Target: ""拉杰纳特·辛格""  
+Analysis: Exact same entity.  
+Score: 1
+
+---
+
+**idx_4**  
+- Response: ""拉姆·查德里""  
+- Target: ""岩屋毅""  
+Analysis: Different persons, no equivalence.  
+Score: 0
+
+---
+
+Final scoring results:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 0
+}
+```",岩屋毅,拉姆·查德里,1.0,key_match,1.0,"number near in range 10.0%, response: 5.12, target: 5.12",5.12,5.12,0.0,"Let's analyze each pair according to the criterion:
+- Criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+  Translation: The response's meaning should be roughly the same as the standard answer or refer to the same entity. No need for exact match word by word.
+
+---
+
+**idx_0**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 特朗普 (Trump)  
+- Analysis: Completely different entities; not the same person or entity. So score should be 0.
+
+**idx_1**  
+- Response: 普京 (Putin)  
+- Target: 普京 (Putin)  
+- Analysis: Identical entity, exact match. Score 1.
+
+**idx_2**  
+- Response: 朔尔茨 (Scholz)  
+- Target: 默克尔 (Merkel)  
+- Analysis: Different individuals (both German leaders but different persons). Not the same entity, no equivalence. Score 0.
+
+**idx_3**  
+- Response: 梅拉尼娅·特朗普 (Melania Trump)  
+- Target: 莫迪 (Modi)  
+- Analysis: Different persons. Score 0.
+
+**idx_4**  
+- Response: 乔·拜登 (Joe Biden)  
+- Target: 安倍晋三 (Abe Shinzo)  
+- Analysis: Different individuals. Score 0.
+
+---
+
+### Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0
+}
+```",安倍晋三,乔·拜登
+1.0,,俄罗斯,,2020,,,,4,,,,617,,,,,,谢尔盖·绍伊古,,,,,,1.48,,,,普京,
+1.0,,印度,,2020,,,,3,,,,729,,,,,,拉杰纳特·辛格,,,,,,2.68,,,,莫迪,
+1.0,,德国,,2020,,,,7,,,,528,,,,,,安妮格雷特·克兰普-卡伦鲍尔,,,,,,3.94,,,,默克尔,
+1.0,,日本,,2020,,,,9,,,,491,,,,,,河野太郎,,,,,,5.06,,,,安倍晋三,
+1.0,,美国,,2020,,,,1,,,,7780,,,,,,马克·埃斯柏,,,,,,20.93,,,,特朗普,
+1.0,,俄罗斯,,2021,,,,5,,,,659,,,,,,谢尔盖·绍伊古,,,,,,1.84,,,,普京,
+1.0,,印度,,2021,,,,3,,,,766,,,,,,拉杰纳特·辛格,,,,,,3.16,,,,莫迪,
+1.0,,德国,,2021,,,,7,,,,560,,,,,,安妮格雷特·克兰普-卡伦鲍尔,,,,,,4.35,,,,默克尔,
+1.0,,日本,,2021,,,,9,,,,541,,,,,,岸信夫,,,,,,5.04,,,,菅义伟,
+1.0,,美国,,2021,,,,1,,,,8010,,,,,,劳埃德·奥斯汀,,,,,,23.04,,,,乔·拜登,
+1.0,,俄罗斯,,2022,,,,3,,,,864,,,,,,谢尔盖·绍伊古,,,,,,2.26,,,,普京,
+1.0,,印度,,2022,,,,4,,,,814,,,,,,拉杰纳特·辛格,,,,,,3.35,,,,莫迪,
+1.0,,德国,,2022,,,,7,,,,558,,,,,,克里斯汀·兰布雷希特,,,,,,4.16,,,,朔尔茨,
+1.0,,日本,,2022,,,,10,,,,460,,,,,,滨田靖一,,,,,,4.26,,,,岸田文雄,
+1.0,,美国,,2022,,,,1,,,,8770,,,,,,劳合·奥斯汀,,,,,,26.02,,,,乔·拜登,
+1.0,,俄罗斯,,2023,,,,3,,,,1090,,,,,,谢尔盖·绍伊古,,,,,,2.02,,,,普京,
+1.0,,印度,,2023,,,,4,,,,836,,,,,,拉杰纳特·辛格,,,,,,3.57,,,,莫迪,
+1.0,,德国,,2023,,,,7,,,,668,,,,,,鲍里斯·佩斯托瑞斯,,,,,,4.52,,,,朔尔茨,
+1.0,,日本,,2023,,,,10,,,,502,,,,,,滨田靖一,,,,,,4.20,,,,岸田文雄,
+1.0,,美国,,2023,,,,1,,,,9160,,,,,,劳埃德·奥斯汀,,,,,,27.6,,,,乔·拜登,
+1.0,,俄罗斯,,2024,,,,3,,,,1490,,,,,,安德烈·别洛乌索夫,,,,,,2.05,,,,普京,
+1.0,,印度,,2024,,,,5,,,,861,,,,,,拉杰纳特·辛格,,,,,,3.84,,,,莫迪,
+1.0,,德国,,2024,,,,4,,,,885,,,,,,鲍里斯·佩斯托瑞斯,,,,,,4.65,,,,朔尔茨,
+1.0,,日本,,2024,,,,10,,,,553,,,,,,木原稔,,,,,,4.1,,,,岸田文雄,
+1.0,,美国,,2024,,,,1,,,,9970,,,,,,劳埃德·奥斯汀,,,,,,29.20,,,,乔·拜登,

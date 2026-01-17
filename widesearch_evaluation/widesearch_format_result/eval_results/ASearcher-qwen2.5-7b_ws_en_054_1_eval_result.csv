@@ -1,0 +1,945 @@
+exist_flag_gt,exist_flag_response,project,project_before_map,completionyear_exact_match,completionyear_exact_match_eval_msg,completionyear_query,completionyear_response,finaltotalcost_number_near,finaltotalcost_number_near_eval_msg,finaltotalcost_query,finaltotalcost_response,project_exact_match,project_exact_match_eval_msg,startyear_llm_judge,startyear_llm_judge_eval_msg,startyear_query,startyear_response,state_llm_judge,state_llm_judge_eval_msg,state_query,state_response
+,,denverairportgateexpansionproject,Denver International Airport,0.0,"exact not match, response: 2024.0, target: 2022.0",2022.0,2024.0,0.0,"number not near, response: 1.57, target: 2.5",2.5,1.57,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2018,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",colorado,colorado
+,,louisarmstrongneworleansinternational-northterminal,Louis Armstrong New Orleans International Airport,0.0,"exact not match, response: 2024.0, target: 2019.0",2019.0,2024.0,1.0,"number near in range 10.0%, response: 1.3, target: 1.3",1.3,1.3,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2016,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",louisiana,louisiana
+,,kansascityinternational-single-terminalreplacement,Kansas City International Airport,0.0,"exact not match, response: 2024.0, target: 2023.0",2023.0,2024.0,0.0,"number not near, response: 1.0, target: 1.5",1.5,1,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2019,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",missouri,missouri
+,,newarklibertyinternationalairport–newterminala,Newark Liberty International Airport,0.0,"exact not match, response: 2024.0, target: 2023.0",2023.0,2024.0,0.0,"number not near, response: 45.0, target: 2.7",2.7,45,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2018,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",newjersey,newjersey
+,,jfkinternationalairportmasterplan,New York Kennedy Airport,0.0,"exact not match, response: 2027.0, target: nan",nan,2027.0,1.0,"number near in range 10.0%, response: 19.0, target: 19.0",19,19,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2017,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",newyork,newyork
+,,portlandinternationalairport-newterminal(pdxnext),Portland International Airport,1.0,"exact match, response: 2024.0, target: 2024.0",2024.0,2024.0,1.0,"number near in range 10.0%, response: 2.0, target: 2.15",2.15,2,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2020,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",oregon,oregon
+,,pittsburghinternationalairport-newterminal,Pittsburgh International Airport,0.0,"exact not match, response: 2028.0, target: nan",nan,2028.0,1.0,"number near in range 10.0%, response: 1.57, target: 1.6",1.6,1.57,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2021,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",pennsylvania,pennsylvania
+,,(nashvilleinternationalairport)bnavisionexpansion,Nashville International Airport,0.0,"exact not match, response: 2024.0, target: 2023.0",2023.0,2024.0,0.0,"number not near, response: 1.3, target: 1.5",1.5,1.3,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2017,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",tennessee,tennessee
+,,thenewsaltlakecityinternationalairport,New SLC,0.0,"exact not match, response: 2026.0, target: nan",nan,2026.0,1.0,"number near in range 10.0%, response: 5.1, target: 5.1",5.1,5.1,1.0,key_match,0.0,"Let's analyze each pair (response vs target) according to the criterion:
+
+Criterion summary:  
+- If the semantics are approximately the same or point to the same entity, it is correct.  
+- A one-year gap between the answer and the reference answer is allowed. (That means if |response - target| ≤ 1, score = 1 else 0)  
+- Since both response and target are years, we just need to check if the numerical difference ≤ 1.
+
+---
+
+**idx_0**: response = 2010, target = 2018  
+Difference = |2010 - 2018| = 8 → >1 → score = 0
+
+**idx_1**: response = 2010, target = 2016  
+Difference = 6 → score = 0
+
+**idx_2**: response = 2010, target = 2019  
+Difference = 9 → score = 0
+
+**idx_3**: response = 2010, target = 2018  
+Difference = 8 → score = 0
+
+**idx_4**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_5**: response = 2010, target = 2020  
+Difference = 10 → score = 0
+
+**idx_6**: response = 2010, target = 2021  
+Difference = 11 → score = 0
+
+**idx_7**: response = 2010, target = 2017  
+Difference = 7 → score = 0
+
+**idx_8**: response = 2010, target = 2014  
+Difference = 4 → score = 0
+
+---
+
+Final scoring results:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0
+}
+```",2014,2010,1.0,"Let's analyze each pair according to the criterion:
+
+Criterion:  
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.  
+- No need for word-for-word correspondence.
+
+Analysis for each pair:
+
+- idx_0: response ""colorado"" vs target ""colorado""  
+  Exact match → score 1
+
+- idx_1: response ""louisiana"" vs target ""louisiana""  
+  Exact match → score 1
+
+- idx_2: response ""missouri"" vs target ""missouri""  
+  Exact match → score 1
+
+- idx_3: response ""newjersey"" vs target ""newjersey""  
+  Same entity, although no space in response - still points to ""new jersey"" → score 1
+
+- idx_4: response ""newyork"" vs target ""newyork""  
+  Same entity, no space but clearly ""new york"" → score 1
+
+- idx_5: response ""oregon"" vs target ""oregon""  
+  Exact match → score 1
+
+- idx_6: response ""pennsylvania"" vs target ""pennsylvania""  
+  Exact match → score 1
+
+- idx_7: response ""tennessee"" vs target ""tennessee""  
+  Exact match → score 1
+
+- idx_8: response ""utah"" vs target ""utah""  
+  Exact match → score 1
+
+All responses correspond semantically with their targets.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 1
+}
+```",utah,utah
+1.0,,austin-bergstromintlairport-decade-longexpansionplan,,,,nan,,,,4,,,,,,2024,,,,texas,
+1.0,,dallas/fortworthairportterminalrenewal&improvementprogram,,,,2018.0,,,,3.1,,,,,,2010,,,,texas,
+1.0,,dallasfortworthinternationalairport(dfw)terminalfexpansionprogram,,,,nan,,,,1.6,,,,,,2024,,,,texas,
+1.0,,denverairportgreathallrenovation,,,,nan,,,,1.3,,,,,,2018,,,,colorado,
+1.0,,iahterminalredevelopmentprogram(itrp),,,,nan,,,,1.3,,,,,,2020,,,,texas,
+1.0,,laguardiareconstruction,,,,2022.0,,,,8,,,,,,2016,,,,newyork,
+1.0,,nashvilleinternationalairport-newhorizon,,,,nan,,,,3,,,,,,2022,,,,tennessee,
+,1.0,sanantoniointernationalairport,San Antonio International Airport,,,,2028.0,,,,2.5,,,,,,2010,,,,texas

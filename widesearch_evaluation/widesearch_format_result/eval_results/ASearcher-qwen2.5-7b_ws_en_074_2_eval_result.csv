@@ -1,0 +1,296 @@
+country,country_before_map,exist_flag_gt,exist_flag_response,party,party_before_map,year,year_before_map,country_exact_match,country_exact_match_eval_msg,party_exact_match,party_exact_match_eval_msg,partypresident_llm_judge,partypresident_llm_judge_eval_msg,partypresident_query,partypresident_response,popularvote_number_near,popularvote_number_near_eval_msg,popularvote_query,popularvote_response,voteshare(%)_number_near,voteshare(%)_number_near_eval_msg,voteshare(%)_query,voteshare(%)_response,winningparty/bloc_llm_judge,winningparty/bloc_llm_judge_eval_msg,winningparty/bloc_query,winningparty/bloc_response,year_exact_match,year_exact_match_eval_msg
+uk,United Kingdom,,,britishnationalparty,UK Independence Party,2010,2010,1.0,key_match,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the grading criteria:
+
+---
+
+**idx_0**  
+- Response: ""nigelfarage""  
+- Target: ""nickgriffin""  
+- Analysis: The target is ""nickgriffin,"" and the response is ""nigelfarage."" Although both are related to UK or European political figures, these are different individuals. The criterion states semantics should be approximately the same or point to the same entity. Here, the entities are clearly different.  
+- Judgment: Score 0
+
+---
+
+**idx_1**  
+- Response: ""marinelepen""  
+- Target: ""marinelepen""  
+- Analysis: Response exactly matches the target.  
+- Judgment: Score 1
+
+---
+
+**idx_2**  
+- Response: ""alexandergauland,fraukepetry""  
+- Target: ""alexandergauland&\naliceweidel""  
+- Analysis: Both have ""alexandergauland"" in common, which counts as partially correct. The second names differ: response is ""fraukepetry,"" target is ""aliceweidel.""  
+- The criterion states it is sufficient if the semantics are approximately the same or point to the same entity, but here the second names are different. It's a multi-entity case, and only one name matches. Since the question is about entities, partial match isn't enough to give full points; however, the scoring must be either 0 or 1. The response includes one correct entity from the target, and one incorrect.  
+- Judging if this counts as correct or incorrect depends on whether partial overlap suffices. The criterion says ""It is sufficient if semantics are approximately the same or point to the same entity,"" but not that partial overlap on multiple entities counts as full correctness. The question is ambiguous on whether multi-entity answers require all entities matching to get credit. Given the strict scoring (0 or 1), and that not all entities match, this response should be scored 0 (no full correctness).  
+
+---
+
+### Final scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0
+}
+```",nickgriffin,nigelfarage,0.0,"number not near, response: 3127155.0, target: 564331.0",564331,3127155,0.0,"number not near, response: 6.26, target: 1.9",1.9,6.26,1.0,"Let's analyze each item based on the criterion:
+
+Criterion summary: The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity. Word-for-word exactness is not required.
+
+---
+
+### idx_0
+- Target: ""conservative""
+- Response: ""conservatives/liberaldemocrats""
+
+Analysis:
+- ""conservatives"" is just the plural form of ""conservative"", so it's approximately the same semantics and points to the same entity.
+- ""liberaldemocrats"" is added here but extra info isn't penalized based on the criterion.
+- Because it contains ""conservatives,"" which matches the target concept, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+- Target: ""socialistparty""
+- Response: ""socialistparty/other""
+
+Analysis:
+- ""socialistparty"" matches exactly.
+- ""other"" is extra info but should not result in penalty if the main entity matches.
+- So semantics and entity match.
+
+Score: 1
+
+---
+
+### idx_2
+- Target: ""christiandemocraticunion""
+- Response: ""christiandemocraticunion/christiansocialunion""
+
+Analysis:
+- ""christiandemocraticunion"" matches exactly.
+- ""christiansocialunion"" is an additional related party but irrelevant for deduction.
+- The main entity matches.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",conservative,conservatives/liberaldemocrats,1.0,key_match
+france,France,,,nationalfront,National Front,2012,2012,1.0,key_match,1.0,key_match,1.0,"Let's analyze each pair step-by-step according to the grading criteria:
+
+---
+
+**idx_0**  
+- Response: ""nigelfarage""  
+- Target: ""nickgriffin""  
+- Analysis: The target is ""nickgriffin,"" and the response is ""nigelfarage."" Although both are related to UK or European political figures, these are different individuals. The criterion states semantics should be approximately the same or point to the same entity. Here, the entities are clearly different.  
+- Judgment: Score 0
+
+---
+
+**idx_1**  
+- Response: ""marinelepen""  
+- Target: ""marinelepen""  
+- Analysis: Response exactly matches the target.  
+- Judgment: Score 1
+
+---
+
+**idx_2**  
+- Response: ""alexandergauland,fraukepetry""  
+- Target: ""alexandergauland&\naliceweidel""  
+- Analysis: Both have ""alexandergauland"" in common, which counts as partially correct. The second names differ: response is ""fraukepetry,"" target is ""aliceweidel.""  
+- The criterion states it is sufficient if the semantics are approximately the same or point to the same entity, but here the second names are different. It's a multi-entity case, and only one name matches. Since the question is about entities, partial match isn't enough to give full points; however, the scoring must be either 0 or 1. The response includes one correct entity from the target, and one incorrect.  
+- Judging if this counts as correct or incorrect depends on whether partial overlap suffices. The criterion says ""It is sufficient if semantics are approximately the same or point to the same entity,"" but not that partial overlap on multiple entities counts as full correctness. The question is ambiguous on whether multi-entity answers require all entities matching to get credit. Given the strict scoring (0 or 1), and that not all entities match, this response should be scored 0 (no full correctness).  
+
+---
+
+### Final scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0
+}
+```",marinelepen,marinelepen,1.0,"number near in range 5.0%, response: 6497499.0, target: 6421426.0",6421426,6497499,1.0,"number near in range 5.0%, response: 17.9, target: 17.9",17.9,17.9,1.0,"Let's analyze each item based on the criterion:
+
+Criterion summary: The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity. Word-for-word exactness is not required.
+
+---
+
+### idx_0
+- Target: ""conservative""
+- Response: ""conservatives/liberaldemocrats""
+
+Analysis:
+- ""conservatives"" is just the plural form of ""conservative"", so it's approximately the same semantics and points to the same entity.
+- ""liberaldemocrats"" is added here but extra info isn't penalized based on the criterion.
+- Because it contains ""conservatives,"" which matches the target concept, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+- Target: ""socialistparty""
+- Response: ""socialistparty/other""
+
+Analysis:
+- ""socialistparty"" matches exactly.
+- ""other"" is extra info but should not result in penalty if the main entity matches.
+- So semantics and entity match.
+
+Score: 1
+
+---
+
+### idx_2
+- Target: ""christiandemocraticunion""
+- Response: ""christiandemocraticunion/christiansocialunion""
+
+Analysis:
+- ""christiandemocraticunion"" matches exactly.
+- ""christiansocialunion"" is an additional related party but irrelevant for deduction.
+- The main entity matches.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",socialistparty,socialistparty/other,1.0,key_match
+germany,Germany,,,alternativeforgermany,Alternative for Germany,2017,2017,1.0,key_match,1.0,key_match,0.0,"Let's analyze each pair step-by-step according to the grading criteria:
+
+---
+
+**idx_0**  
+- Response: ""nigelfarage""  
+- Target: ""nickgriffin""  
+- Analysis: The target is ""nickgriffin,"" and the response is ""nigelfarage."" Although both are related to UK or European political figures, these are different individuals. The criterion states semantics should be approximately the same or point to the same entity. Here, the entities are clearly different.  
+- Judgment: Score 0
+
+---
+
+**idx_1**  
+- Response: ""marinelepen""  
+- Target: ""marinelepen""  
+- Analysis: Response exactly matches the target.  
+- Judgment: Score 1
+
+---
+
+**idx_2**  
+- Response: ""alexandergauland,fraukepetry""  
+- Target: ""alexandergauland&\naliceweidel""  
+- Analysis: Both have ""alexandergauland"" in common, which counts as partially correct. The second names differ: response is ""fraukepetry,"" target is ""aliceweidel.""  
+- The criterion states it is sufficient if the semantics are approximately the same or point to the same entity, but here the second names are different. It's a multi-entity case, and only one name matches. Since the question is about entities, partial match isn't enough to give full points; however, the scoring must be either 0 or 1. The response includes one correct entity from the target, and one incorrect.  
+- Judging if this counts as correct or incorrect depends on whether partial overlap suffices. The criterion says ""It is sufficient if semantics are approximately the same or point to the same entity,"" but not that partial overlap on multiple entities counts as full correctness. The question is ambiguous on whether multi-entity answers require all entities matching to get credit. Given the strict scoring (0 or 1), and that not all entities match, this response should be scored 0 (no full correctness).  
+
+---
+
+### Final scores
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 0
+}
+```","alexandergauland&
+aliceweidel","alexandergauland,fraukepetry",0.0,"number not near, response: 4950170.0, target: 5878115.0",5878115,4950170,1.0,"number near in range 5.0%, response: 12.6, target: 12.64",12.64,12.6,1.0,"Let's analyze each item based on the criterion:
+
+Criterion summary: The response is correct if the semantics are approximately the same as the reference answer or if they point to the same entity. Word-for-word exactness is not required.
+
+---
+
+### idx_0
+- Target: ""conservative""
+- Response: ""conservatives/liberaldemocrats""
+
+Analysis:
+- ""conservatives"" is just the plural form of ""conservative"", so it's approximately the same semantics and points to the same entity.
+- ""liberaldemocrats"" is added here but extra info isn't penalized based on the criterion.
+- Because it contains ""conservatives,"" which matches the target concept, this is acceptable.
+
+Score: 1
+
+---
+
+### idx_1
+- Target: ""socialistparty""
+- Response: ""socialistparty/other""
+
+Analysis:
+- ""socialistparty"" matches exactly.
+- ""other"" is extra info but should not result in penalty if the main entity matches.
+- So semantics and entity match.
+
+Score: 1
+
+---
+
+### idx_2
+- Target: ""christiandemocraticunion""
+- Response: ""christiandemocraticunion/christiansocialunion""
+
+Analysis:
+- ""christiandemocraticunion"" matches exactly.
+- ""christiansocialunion"" is an additional related party but irrelevant for deduction.
+- The main entity matches.
+
+Score: 1
+
+---
+
+### Final scoring results:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1
+}
+```",christiandemocraticunion,christiandemocraticunion/christiansocialunion,1.0,key_match
+uk,,1.0,,nationalfront(uk),,2010,,,,,,,,ianedward,,,,10784,,,,0.0,,,,conservative,,,
+france,,1.0,,solidarityandprogress,,2012,,,,,,,,jacquescheminade,,,,89545,,,,0.25,,,,socialistparty,,,
+germany,,1.0,,alternativeforgermany,,2013,,,,,,,,berndlucke,,,,2056985,,,,4.7,,,,christiandemocraticunion,,,
+germany,,1.0,,nationaldemocraticpartyofgermany,,2013,,,,,,,,holgerapfel,,,,560828,,,,1.28,,,,christiandemocraticunion,,,
+germany,,1.0,,progermanycitizens'movement,,2013,,,,,,,,manfredrouhs,,,,73854,,,,0.17,,,,christiandemocraticunion,,,
+germany,,1.0,,therepublicans,,2013,,,,,,,,rolfschlierer,,,,91193,,,,0.21,,,,christiandemocraticunion,,,
+uk,,1.0,,britishdemocraticparty,,2015,,,,,,,,andrewbrons,,,,210,,,,0.0,,,,conservative,,,
+uk,,1.0,,britishnationalparty,,2015,,,,,,,,adamwalker,,,,1667,,,,0.0,,,,conservative,,,
+uk,,1.0,,nationalfront(uk),,2015,,,,,,,,kevinbryan,,,,1114,,,,0.0,,,,conservative,,,
+france,,1.0,,nationalfront,,2017,,,,,,,,marinelepen,,,,7678491,,,,21.3,,,,larépubliqueenmarche!,,,
+france,,1.0,,solidarityandprogress,,2017,,,,,,,,jacquescheminade,,,,65586,,,,0.18,,,,larépubliqueenmarche!,,,
+germany,,1.0,,nationaldemocraticpartyofgermany,,2017,,,,,,,,frankfranz,,,,176020,,,,0.38,,,,christiandemocraticunion,,,
+germany,,1.0,,theright,,2017,,,,,,,,christianworch,,,,2054,,,,0.0,,,,christiandemocraticunion,,,
+uk,,1.0,,britishnationalparty,,2017,,,,,,,,adamwalker,,,,4580,,,,0.0,,,,conservative,,,
+uk,,1.0,,britishnationalparty,,2019,,,,,,,,adamwalker,,,,510,,,,0.0,,,,conservative,,,
+germany,,1.0,,alternativeforgermany,,2021,,,,,,,,jörgmeuthen&tinochrupalla,,,,4809228,,,,10.39,,,,socialdemocraticparty,,,
+germany,,1.0,,nationaldemocraticpartyofgermany,,2021,,,,,,,,frankfranz,,,,64360,,,,0.14,,,,socialdemocraticparty,,,
+germany,,1.0,,thirdway,,2021,,,,,,,,matthiasfischer,,,,2054,,,,0.02,,,,socialdemocraticparty,,,
+france,,1.0,,nationalrally,,2022,,,,,,,,marinelepen,,,,8133828,,,,23.15,,,,larépubliqueenmarche!,,,
+france,,1.0,,reconquête,,2022,,,,,,,,ériczemmour,,,,2485226,,,,7.07,,,,larépubliqueenmarche!,,,
+uk,,1.0,,britishdemocraticparty,,2024,,,,,,,,andrewbrons,,,,1860,,,,0.0,,,,labour,,,

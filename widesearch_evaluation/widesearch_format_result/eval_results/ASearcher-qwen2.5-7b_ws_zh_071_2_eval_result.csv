@@ -1,0 +1,2093 @@
+exist_flag_gt,exist_flag_response,电影名,电影名_before_map,上映年份_llm_judge,上映年份_llm_judge_eval_msg,上映年份_query,上映年份_response,导演_llm_judge,导演_llm_judge_eval_msg,导演_query,导演_response,电影名_exact_match,电影名_exact_match_eval_msg,累积票房（十亿韩元）_number_near,累积票房（十亿韩元）_number_near_eval_msg,累积票房（十亿韩元）_query,累积票房（十亿韩元）_response,累积观影人次_number_near,累积观影人次_number_near_eval_msg,累积观影人次_query,累积观影人次_response,领衔主演_llm_judge,领衔主演_llm_judge_eval_msg,领衔主演_query,领衔主演_response,题材_llm_judge,题材_llm_judge_eval_msg,题材_query,题材_response
+,,孤胆特工（又译大叔）,The Man from Nowhere,1.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2010,2010,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",李桢凡,kimjee-woon,1.0,key_match,0.0,"number not near, response: 3.265, target: 48.0",48,3.265,0.0,"number not near, response: 5510000.0, target: 6282774.0",6282774,5510000,0.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",元斌、金赛纶,"yooseung-ho,yoonje-moon",1.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",动作,动作/犯罪
+,,义兄弟,"The Good, the Bad and the Weird",0.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2010,2012,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",张勋,imsang-soo,1.0,key_match,0.0,"number not near, response: 1.992, target: 40.0",40,1.992,0.0,"number not near, response: 3421000.0, target: 5507106.0",5507106,3421000,0.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",姜栋元、宋康昊,"leebyung-hun,kwakdo-won",0.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",动作,西部/奇幻
+,,最终兵器：弓,War of the Arrows,1.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2011,2011,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",金韩民,kimtae-yong,1.0,key_match,0.0,"number not near, response: 2.856, target: 56.0",56,2.856,0.0,"number not near, response: 4934000.0, target: 7459974.0",7459974,4934000,0.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",朴海日、文彩元、柳承龙,"songseung-heon,hansuk-kyu",1.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",古装动作,动作/战争
+,,观相,The Handmaiden,0.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2013,2017,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",韩在林,parkchan-wook,1.0,key_match,0.0,"number not near, response: 1.353, target: 66.0",66,1.353,0.0,"number not near, response: 2506000.0, target: 9134586.0",9134586,2506000,1.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",宋康昊、金惠秀、李政宰,"kimtae-ri,songkang-ho",1.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",历史剧情,剧情/犯罪
+,,鸣梁海战,The Admiral: Roaring Currents,0.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2014,2013,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",金汉珉,kimdae-woo,1.0,key_match,0.0,"number not near, response: 2.592, target: 135.0",135,2.592,0.0,"number not near, response: 4559000.0, target: 17616461.0",17616461,4559000,1.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",崔岷植、柳承龙、赵震雄、晋久、李贞贤,"songseung-heon,choimin-sik",1.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",古装战争,历史/战争
+,,暗杀,The Age of Shadows,0.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2015,2016,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",崔东勋,kimjee-woon,1.0,key_match,0.0,"number not near, response: 1.326, target: 98.0",98,1.326,0.0,"number not near, response: 2457000.0, target: 12705700.0",12705700,2457000,0.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",全智贤、李政宰、河正宇,"songkang-ho,kimtae-ri",0.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",动作,剧情/犯罪
+,,釜山行（又译尸速列车）,Train to Busan,0.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2016,2015,1.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",延相昊,yeonsang-ho,1.0,key_match,0.0,"number not near, response: 3.7, target: 93.0",93,3.700,0.0,"number not near, response: 6560000.0, target: 11565479.0",11565479,6560000,1.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",孔刘、郑有美、金秀安、金义城、马东锡、崔宇植,"kimeui-sung,songjoong-ki",0.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",灾难惊悚,动作/科幻
+,,从邪恶中拯救我,Secret Sunshine,0.0,"Step-by-step analysis according to the criterion:
+
+Criterion summary: The response needs to have the same or roughly the same semantics or point to the same entity as the target. It does not require word-for-word matching but must be semantically equivalent or consistent with the reference answer.
+
+We have pairs of year responses and target years:
+
+- idx_0: response ""2010"" vs target ""2010""
+  - Exactly the same, semantically identical → score 1
+
+- idx_1: response ""2012"" vs target ""2010""
+  - Different years, not semantically equivalent (the year changed)
+  - Does not point to same entity (the year differs)
+  → score 0
+
+- idx_2: response ""2011"" vs target ""2011""
+  - Exactly the same, semantically identical → score 1
+
+- idx_3: response ""2017"" vs target ""2013""
+  - Different years, no equivalence → score 0
+
+- idx_4: response ""2013"" vs target ""2014""
+  - Different years by 1, still different
+  - No indication of equivalence or same entity → score 0
+
+- idx_5: response ""2016"" vs target ""2015""
+  - Different years by 1, no equivalence → score 0
+
+- idx_6: response ""2015"" vs target ""2016""
+  - Different years by 1, no equivalence → score 0
+
+- idx_7: response ""2022"" vs target ""2020""
+  - Different years, no equivalence → score 0
+
+Final scores:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",2020,2022,0.0,"首先依据评分标准：“和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。全称和简称输出都可以”。
+
+下面逐条分析每个idx的response与target的对应情况：
+
+- idx_0: response是“kimjee-woon”，target是“李桢凡”  
+  两者为不同人名，两个名字毫无对应关系，明显不符。
+
+- idx_1: response是“imsang-soo”，target是“张勋”  
+  也明显不符，二者名字不同，且无任何相同实体指向。
+
+- idx_2: response是“kimtae-yong”，target是“金韩民”  
+  仍旧不同，名字指向明显不同。
+
+- idx_3: response是“parkchan-wook”，target是“韩在林”  
+  同样不相符。
+
+- idx_4: response是“kimdae-woo”，target是“金汉珉”  
+  也无对应关系。
+
+- idx_5: response是“kimjee-woon”，target是“崔东勋”  
+  不同人名。
+
+- idx_6: response是“yeonsang-ho”，target是“延相昊”  
+  这里“yeonsang-ho”和“延相昊”听起来为同一名字的韩语拼音和汉字形式，属于同一实体，符合规则。
+
+- idx_7: response是“bongjoon-ho”， target是“洪元灿”  
+  不是同一人名，名字不符。
+
+综合以上分析：
+唯一正确的是 idx_6，得1分，其余全为0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",洪元灿,bongjoon-ho,1.0,key_match,0.0,"number not near, response: 1.024, target: 39.0",39,1.024,0.0,"number not near, response: 1862000.0, target: 4357873.0",4357873,1862000,0.0,"首先根据评分标准进行分析：
+
+评分范围0-1，只给0或1分。  
+判断标准：语义相同大致或指向实体一致即可，答出参考答案的子集也可接受。电影名称不完全一致或不同翻译都接受。  
+
+本题考查的是演员名单的对答是否符合标准答案中的演员。
+
+各idx分析如下：
+
+---
+
+**idx_0**  
+response: ""yooseung-ho,yoonje-moon""  
+target: ""元斌、金赛纶""  
+对照演员，response中“yooseung-ho,yoonje-moon”是韩国艺人的音译，不对应“元斌、金赛纶”。  
+没有任何相同的演员出现。  
+得分：0  
+
+---
+
+**idx_1**  
+response: ""leebyung-hun,kwakdo-won""  
+target: ""姜栋元、宋康昊""  
+response给出的是“李秉宪、郭道元”（发音判断），target是“姜栋元、宋康昊”。  
+参考答案中有“宋康昊”，而这回答“kwakdo-won”不是宋康昊。 两个名字都不匹配。  
+得分：0  
+
+---
+
+**idx_2**  
+response: ""songseung-heon,hansuk-kyu""  
+target: ""朴海日、文彩元、柳承龙""  
+response给“宋承宪、韩石圭”，target是“朴海日、文彩元、柳承龙”，没有对应演员。  
+得分：0  
+
+---
+
+**idx_3**  
+response: ""kimtae-ri,songkang-ho""  
+target: ""宋康昊、金惠秀、李政宰""  
+response给“金泰梨、宋康昊”，target中有“宋康昊”，回答提到了其中一个正确演员。  
+答案是参考答案的子集，可以接受。  
+得分：1  
+
+---
+
+**idx_4**  
+response: ""songseung-heon,choimin-sik""  
+target: ""崔岷植、柳承龙、赵震雄、晋久、李贞贤""  
+response给“宋承宪、崔岷植”，target中有“崔岷植”，回答提到了其中一个正确演员。  
+属于子集，接受。  
+得分：1  
+
+---
+
+**idx_5**  
+response: ""songkang-ho,kimtae-ri""  
+target: ""全智贤、李政宰、河正宇""  
+response中“宋康昊、金泰梨”，target中“全智贤、李政宰、河正宇”，无交集  
+得分：0  
+
+---
+
+**idx_6**  
+response: ""kimeui-sung,songjoong-ki""  
+target: ""孔刘、郑有美、金秀安、金义城、马东锡、崔宇植""  
+response给“金义城、宋仲基”，target中有“金义城”，又多了“宋仲基”，没关系，只要有覆盖就可接受。  
+得分：1  
+
+---
+
+**idx_7**  
+response: ""hansuk-kyu,yoonje-moon""  
+target: ""黄政民、李政宰、朴正民、朴昭怡、崔嬉序""  
+response给“韩石圭、尹帝文”，target中没这几个演员，  
+得分：0  
+
+---
+
+最终评分汇总：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 1,
+    ""idx_4"": 1,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0
+}
+```",黄政民、李政宰、朴正民、朴昭怡、崔嬉序,"hansuk-kyu,yoonje-moon",0.0,"先来看每组的参考答案和对应的回答，根据评分标准：
+
+评分标准总结：  
+- 答案与参考答案语义基本相同或者指向实体一致即可判为正确。  
+- 答出参考答案的部分类型（子集）即可判为正确。  
+- 基于权威来源、官方依据的类型标注视为正确。  
+- 答出部分子集后其他类型合理也判为正确。  
+
+---
+
+分析每组：
+
+1. idx_0  
+- 参考答案：动作  
+- 回答：动作/犯罪  
+- 分析：回答包含了“动作”，为子集，且额外加入了“犯罪”也属于合理的类型，满足标准。  
+- 结论：正确，得1分。
+
+2. idx_1  
+- 参考答案：动作  
+- 回答：西部/奇幻  
+- 分析：回答与“动作”类型无关，西部和奇幻与动作类型没有包含关系，不是子集也没有语义接近。  
+- 结论：错误，得0分。
+
+3. idx_2  
+- 参考答案：古装动作  
+- 回答：动作/战争  
+- 分析：标准答案“古装动作”强调动作+古装；回答为“动作/战争”，只包含了“动作”部分，不包含“古装”元素，有部分重合（动作），额外带战争。由于答出参考答案（动作）的部分类型，且答出一部分子集即视为正确。  
+- 结论：正确，得1分。
+
+4. idx_3  
+- 参考答案：历史剧情  
+- 回答：剧情/犯罪  
+- 分析：参考答案包含“历史”和“剧情”，回答含“剧情”和“犯罪”。剧情是子集之一，历史缺失，替换为犯罪，但犯罪不在参考范围中，不过标准允许出现其他合理类型，且答出了其中一个子集（剧情）。  
+- 结论：正确，得1分。
+
+5. idx_4  
+- 参考答案：古装战争  
+- 回答：历史/战争  
+- 分析：参考答案“古装战争”；回答“历史/战争”。“古装”与“历史”是高度相关概念，均指时间背景，战争部分相同。  
+- 结论：答案实体指向大致相同，视为正确。得1分。
+
+6. idx_5  
+- 参考答案：动作  
+- 回答：剧情/犯罪  
+- 分析：回答未含“动作”，剧情和犯罪与动作不相关，不构成子集或相关类型。没有语义上的一致或包含。  
+- 结论：错误，得0分。
+
+7. idx_6  
+- 参考答案：灾难惊悚  
+- 回答：动作/科幻  
+- 分析：“动作/科幻”与“灾难惊悚”类型区别较大，没有语义对应或包含。  
+- 结论：错误，得0分。
+
+8. idx_7  
+- 参考答案：动作  
+- 回答：剧情/爱情  
+- 分析：“剧情/爱情”与“动作”没有重合或包含关系。  
+- 结论：错误，得0分。
+
+---
+
+最终评分结果：
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 1,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0
+}
+```",动作,剧情/爱情
+1.0,,7号房的礼物,,,,2013,,,,李焕庆,,,,,,91,,,,12812186,,,,柳承龙、葛素媛、郑进永、朴信惠,,,,剧情喜剧,
+,1.0,burning,Burning,,,,2018,,,,leechang-dong,,,,,,1.296,,,,2435000,,,,"songkang-ho,kimse-jeong",,,,剧情/悬疑
+,1.0,parasite,Parasite,,,,2019,,,,bongjoon-ho,,,,,,6.758,,,,11960000,,,,"songkang-ho,choyeo-jeong",,,,剧情/黑色幽默
+1.0,,sunny（又译阳光姐妹淘）,,,,2011,,,,姜炯哲,,,,,,54,,,,7375110,,,,沈恩京、姜素拉、金敏英、闵孝琳,,,,喜剧,
+,1.0,thecliffofdeception,The Cliff of Deception,,,,2020,,,,hwangdong-hyuk,,,,,,2.125,,,,3852000,,,,"hansuk-kyu,kimyoon-seok",,,,悬疑/剧情
+,1.0,thegirlwholeaptthroughtime,The Girl Who Leapt Through Time,,,,2023,,,,takashikondo,,,,,,NULL,,,,NULL,,,,-,,,,动画/剧情
+,1.0,themanfromnowhere2,The Man from Nowhere 2,,,,2021,,,,kimjee-woon,,,,,,1.583,,,,2839000,,,,"yooseung-ho,yoonje-moon",,,,动作/犯罪
+,1.0,theyellowsea,The Yellow Sea,,,,2014,,,,kimdae-woo,,,,,,1.485,,,,2697000,,,,"kimyoon-seok,hansuk-kyu",,,,剧情/战争
+,1.0,untitledfilm,Untitled Film,,,,2024,,,,-,,,,,,NULL,,,,NULL,,,,-,,,,-
+1.0,,与神同行2：因与缘,,,,2018,,,,金容华,,,,,,103,,,,12274996,,,,河正宇、朱智勋、金香奇、马东锡、金东旭、李政宰,,,,奇幻,
+1.0,,与神同行：罪与罚（或者与神同行）,,,,2017,,,,金容华,,,,,,68,,,,8539495,,,,河正宇、车太贤、朱智勋、金香奇,,,,奇幻,
+1.0,,光海，成为王的男人（又译双面君王）,,,,2012,,,,秋昌民,,,,,,87,,,,12319390,,,,李秉宪、柳承龙、韩孝珠,,,,古装,
+1.0,,共助,,,,2017,,,,金成勋,,,,,,64,,,,7817446,,,,玄彬、刘海镇、金柱赫、林允儿、李东辉,,,,动作,
+1.0,,冰雪奇缘,,,,2014,,,,克里斯·巴克、珍妮弗·李,,,,,,82,,,,10296101,,,,克里斯汀·贝尔、伊迪娜·门泽尔、乔纳森·格罗夫、乔什·盖德、圣蒂诺·方塔纳,,,,动画,
+1.0,,冰雪奇缘2,,,,2019,,,,克里斯·巴克、珍妮弗·李,,,,,,112,,,,13369064,,,,克里斯汀·贝尔、伊迪娜·门泽尔、乔纳森·格罗夫、乔什·盖德,,,,动画,
+1.0,,出租车司机,,,,2017,,,,张薰,,,,,,95,,,,12186327,,,,宋康昊、托马斯·克莱舒曼、柳海真、柳俊烈,,,,剧情,
+1.0,,南山的部长们,,,,2020,,,,禹民镐,,,,,,41,,,,4750917,,,,李秉宪、李星民、郭道元、李熙俊,,,,剧情,
+1.0,,变形金刚3,,,,2011,,,,迈克尔·贝,,,,,,74,,,,7790434,,,,希亚·拉博夫、乔什·杜哈明、约翰·特托罗、泰瑞斯·吉布森、罗茜·汉丁顿-惠特莉,,,,科幻动作,
+1.0,,壮志凌云2：独行侠（或者壮志凌云2）,,,,2022,,,,约瑟夫·科辛斯基,,,,,,87,,,,8239497,,,,汤姆·克鲁斯、詹妮弗·康纳利、迈尔斯·特勒、乔恩·哈姆、方·基默,,,,动作,
+1.0,,复仇者联盟,,,,2012,,,,乔斯·韦登,,,,,,59,,,,7087184,,,,小罗伯特·唐尼、克里斯·埃文斯、马克·鲁法洛、克里斯·海姆斯沃斯、斯嘉丽·约翰逊、杰瑞米·雷纳、汤姆·希德勒斯顿、塞缪尔·杰克逊、克拉克·格雷格、寇碧·史莫德斯,,,,科幻,
+1.0,,复仇者联盟2,,,,2015,,,,乔斯·韦登,,,,,,88,,,,10494499,,,,小罗伯特·唐尼、克里斯·海姆斯沃斯、马克·鲁法洛、克里斯·埃文斯、斯嘉丽·约翰逊、杰瑞米·雷纳,,,,科幻冒险,
+1.0,,复仇者联盟3：无限战争(或者复仇者联盟3),,,,2018,,,,安东尼·罗素、乔·罗素,,,,,,99,,,,11211880,,,,小罗伯特·唐尼、乔什·布洛林、克里斯·埃文斯,,,,科幻动作,
+1.0,,复仇者联盟4：终局之战,,,,2019,,,,安东尼·罗素和乔·罗素,,,,,,122,,,,13934592,,,,小罗伯特·唐尼、克里斯·埃文斯、克里斯·海姆斯沃斯、马克·鲁法洛、斯嘉丽·约翰逊、杰瑞米·雷纳、保罗·路德、布丽·拉尔森、唐·钱德尔、凯伦·吉兰、乔什·布洛林,,,,科幻,
+1.0,,头脑特工队2,,,,2024,,,,凯尔西·曼,,,,,,77,,,,8799611,,,,艾米·波勒、黛安·莲恩、菲利斯·史密斯、刘易斯·布莱克,,,,奇幻动画,
+1.0,,摩加迪沙,,,,2021,,,,柳昇完,,,,,,34,,,,3613984,,,,金允石、赵寅成,,,,动作,
+1.0,,星际穿越,,,,2014,,,,克里斯托弗·诺兰,,,,,,80,,,,10105249,,,,马修·麦康纳、安妮·海瑟薇、杰西卡·查斯坦,,,,科幻,
+1.0,,极限职业,,,,2019,,,,李炳宪,,,,,,139,,,,16265618,,,,柳承龙、李东辉、李哈妮、陈善奎、孔明,,,,喜剧,
+1.0,,检察官外传,,,,2016,,,,李日炯,,,,,,77,,,,9707158,,,,黄政民、姜栋元,,,,犯罪喜剧,
+1.0,,永恒族,,,,2021,,,,赵婷,,,,,,32,,,,3050132,,,,嘉玛·陈、理查德·麦登、安吉丽娜·朱莉、萨尔玛·海耶克、基特·哈灵顿、库梅尔·南贾尼、莉亚·麦克休、布莱恩·泰里·亨利、劳伦·利德洛夫、巴里·基奥汉、马东锡,,,,动作奇幻,
+1.0,,波西米亚狂想曲,,,,2018,,,,布莱恩·辛格,,,,,,80,,,,9224582,,,,皮特·摩根编剧，拉米·马雷克、露西·波顿、格林威廉·李、本·哈迪,,,,音乐传记,
+1.0,,犯罪都市2,,,,2022,,,,李相龙,,,,,,131,,,,12693415,,,,马东锡、孙锡求,,,,犯罪动作,
+1.0,,犯罪都市3,,,,2023,,,,李相龙,,,,,,106,,,,10682813,,,,马东锡、李浚赫、青木崇高,,,,犯罪动作,
+1.0,,犯罪都市4,,,,2024,,,,许明行,,,,,,115,,,,11502928,,,,马东锡、金武烈、李东辉、朴智焕,,,,犯罪,
+1.0,,疯狂元素城,,,,2023,,,,彼得·孙,,,,,,69,,,,7241486,,,,莉娅·刘易斯、马莫多·阿西,,,,动画,
+1.0,,盗梦空间,,,,2010,,,,克里斯托弗·诺兰,,,,,,43,,,,5872548,,,,莱昂纳多·迪卡普里奥、玛丽昂·歌迪亚、约瑟夫·高登-莱维特、艾利奥特·佩吉、汤姆·哈迪,,,,科幻动作,
+1.0,,盗贼同盟（又译夺宝联盟）,,,,2012,,,,崔东勋,,,,,,93,,,,12984701,,,,金允石、金惠秀、李政宰、全智贤、任达华、金海淑、吴达洙、金秀贤、曾国祥,,,,犯罪动作,
+1.0,,破墓,,,,2024,,,,张宰贤,,,,,,119,,,,11914784,,,,崔岷植、金高银、李到晛、柳海真、洪瑞俊,,,,惊悚,
+1.0,,美国队长3,,,,2016,,,,安东尼·罗素、乔·罗素,,,,,,72,,,,8677249,,,,克里斯·埃文斯、小罗伯特·唐尼、斯嘉丽·约翰逊、塞巴斯蒂安·斯坦、安东尼·麦凯,,,,科幻动作,
+1.0,,老手（又译辣手警探）,,,,2015,,,,柳承菀,,,,,,105,,,,13414009,,,,黄政民、刘亚仁、刘海镇、吴达庶,,,,动作,
+1.0,,蜘蛛侠：英雄无归,,,,2021,,,,乔·沃茨,,,,,,56,,,,5560940,,,,汤姆·赫兰德、赞达亚·科尔曼、本尼迪克特·康伯巴奇,,,,动作科幻,
+1.0,,釜山行2：半岛,,,,2020,,,,延相昊,,,,,,33,,,,3812954,,,,姜栋元、李贞贤,,,,动作类惊悚,
+1.0,,阿凡达：水之道,,,,2022,,,,詹姆斯·卡梅隆,,,,,,90,,,,7313149,,,,萨姆·沃辛顿、佐伊·索尔达娜、西格妮·韦弗,,,,科幻,
+1.0,,雪国列车,,,,2013,,,,奉俊昊,,,,,,67,,,,9341572,,,,克里斯·埃文斯、宋康昊、蒂尔达·斯文顿、杰米·贝尔、艾德·哈里斯,,,,动作科幻,
+1.0,,首尔之春,,,,2023,,,,金成洙,,,,,,115,,,,11854812,,,,黄政民、郑雨盛、李星民,,,,剧情,

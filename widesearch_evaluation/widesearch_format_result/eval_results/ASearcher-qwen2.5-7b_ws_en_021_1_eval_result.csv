@@ -1,0 +1,676 @@
+exist_flag_gt,exist_flag_response,restaurant,restaurant_before_map,address_llm_judge,address_llm_judge_eval_msg,address_query,address_response,maincuisinestyle_llm_judge,maincuisinestyle_llm_judge_eval_msg,maincuisinestyle_query,maincuisinestyle_response,restaurant_exact_match,restaurant_exact_match_eval_msg
+,,arpège,Arpège,0.0,"Let's analyze each pair according to the criterion: “It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.”
+
+---
+
+**idx_0**  
+- Response: ""27ruedevaugirard,75007paris""  
+- Target: ""84ruedevarenne,75007paris""  
+- Analysis: Different street numbers and street names (""vaugirard"" vs ""varenne""). The location is different although the postal code is same. They do not point to the same address or entity. Semantics are not approximately the same.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""9placedesvosges,75004paris""  
+- Target: ""9placedesvosges,75004paris""  
+- Analysis: Exactly the same address, fully matching semantics.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""42avenuegabriel,75008paris""  
+- Target: ""42av.gabriel,75008paris""  
+- Analysis: ""avenuegabriel"" and ""av.gabriel"" are variants of the same street name, same number and postal code, so semantics are the same.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""47ruedevaugirard,75007paris""  
+- Target: ""6ruebalzac,75008paris""  
+- Analysis: Both street name and number differ, postal code differs. Different locations/entities.  
+- Score: 0
+
+---
+
+**idx_4**  
+- Response: ""8quaidulouvre,75004paris""  
+- Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Analysis: Street number and street name are exactly the same (""8quaidulouvre""). The postal codes differ: response says 75004, target says 75001. The target also includes ""chevalblancparishotel"" (likely a place name), but that is extra info, not essential. The difference in postal code might be a minor error or a parsing difference, but since the street number and name match, and given the criterion about approximate semantics or pointing to the same entity, this is borderline.
+
+Is the postal code significant? Postal codes in Paris define the arrondissement and are important for locations — 75001 is the 1st arrondissement where Quai du Louvre is located, 75004 is 4th arrondissement. The postal code difference suggests the address is slightly off geographically, but the street address matches exactly.
+
+Given the criterion is ""semantics approximately the same"" or ""point to the same entity,"" since the address is the same street and number, probably the same entity, so despite the postal code mismatch, I would judge this as equivalent.
+
+- Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```","84ruedevarenne,75007paris","27ruedevaugirard,75007paris",1.0,"Let's analyze each pair item by item:
+
+---
+
+**idx_0**
+
+- Response: ""vegetarian""
+- Target: ""vegetable-forward，garden-inspiredfrench""
+
+Analysis:  
+The target describes a vegetable-forward, garden-inspired French cuisine, which is centered around vegetables but still French cuisine. The response ""vegetarian"" is related but more general and not explicitly stating the cuisine style or French influence. However, since ""vegetable-forward"" implies a focus on vegetables, and ""vegetarian"" indicates a diet excluding meat, these are close in content. The criterion says it suffices if semantics are approximately the same or pointing to the same entity. Here, ""vegetarian"" is approximate but somewhat less specific (vegetarian excludes meat whereas vegetable-forward may still contain meat but is vegetable-focused). Given the leniency in criterion, this can be accepted as sufficiently close.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""french""
+- Target: ""timelessfrenchhautecuisine""
+
+Analysis:  
+The target explicitly states ""French haute cuisine"". The response is simply ""french"". Since the criterion states approximate semantics or pointing to the same entity is sufficient, and ""french"" is the core entity, this fully matches the key information.
+
+Score: 1
+
+---
+
+**idx_2**
+
+- Response: ""french""
+- Target: ""frenchwithglobalinspirations""
+
+Analysis:  
+The target is French cuisine with global inspirations. The response is just ""french"". It doesn't explicitly mention the global aspect, but ""french"" points to the same main entity as the target. The criterion allows approximate semantics or aiming the same entity. This is acceptable.
+
+Score: 1
+
+---
+
+**idx_3**
+
+- Response: ""french""
+- Target: ""avant-gardefrench""
+
+Analysis:  
+Target: avant-garde French cuisine (progressive, innovative style). Response: only ""french"". The response is less specific, missing the avant-garde modifier, but it matches the main entity (""french""). Given the criterion's flexibility, this is acceptable.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""french""
+- Target: ""artisticfrenchwithsauce-centricdishes""
+
+Analysis:  
+Target describes artistic French cuisine focusing on sauces. Response is just ""french"". The core entity (""French"") is present, though response omits the modifiers. Given the criterion it suffices to be approximately the same or point to the same entity.
+
+Score: 1
+
+---
+
+**Final Scoring**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",vegetable-forward，garden-inspiredfrench,vegetarian,1.0,key_match
+,,l'ambroisie,L'Ambroisie,1.0,"Let's analyze each pair according to the criterion: “It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.”
+
+---
+
+**idx_0**  
+- Response: ""27ruedevaugirard,75007paris""  
+- Target: ""84ruedevarenne,75007paris""  
+- Analysis: Different street numbers and street names (""vaugirard"" vs ""varenne""). The location is different although the postal code is same. They do not point to the same address or entity. Semantics are not approximately the same.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""9placedesvosges,75004paris""  
+- Target: ""9placedesvosges,75004paris""  
+- Analysis: Exactly the same address, fully matching semantics.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""42avenuegabriel,75008paris""  
+- Target: ""42av.gabriel,75008paris""  
+- Analysis: ""avenuegabriel"" and ""av.gabriel"" are variants of the same street name, same number and postal code, so semantics are the same.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""47ruedevaugirard,75007paris""  
+- Target: ""6ruebalzac,75008paris""  
+- Analysis: Both street name and number differ, postal code differs. Different locations/entities.  
+- Score: 0
+
+---
+
+**idx_4**  
+- Response: ""8quaidulouvre,75004paris""  
+- Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Analysis: Street number and street name are exactly the same (""8quaidulouvre""). The postal codes differ: response says 75004, target says 75001. The target also includes ""chevalblancparishotel"" (likely a place name), but that is extra info, not essential. The difference in postal code might be a minor error or a parsing difference, but since the street number and name match, and given the criterion about approximate semantics or pointing to the same entity, this is borderline.
+
+Is the postal code significant? Postal codes in Paris define the arrondissement and are important for locations — 75001 is the 1st arrondissement where Quai du Louvre is located, 75004 is 4th arrondissement. The postal code difference suggests the address is slightly off geographically, but the street address matches exactly.
+
+Given the criterion is ""semantics approximately the same"" or ""point to the same entity,"" since the address is the same street and number, probably the same entity, so despite the postal code mismatch, I would judge this as equivalent.
+
+- Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```","9placedesvosges,75004paris","9placedesvosges,75004paris",1.0,"Let's analyze each pair item by item:
+
+---
+
+**idx_0**
+
+- Response: ""vegetarian""
+- Target: ""vegetable-forward，garden-inspiredfrench""
+
+Analysis:  
+The target describes a vegetable-forward, garden-inspired French cuisine, which is centered around vegetables but still French cuisine. The response ""vegetarian"" is related but more general and not explicitly stating the cuisine style or French influence. However, since ""vegetable-forward"" implies a focus on vegetables, and ""vegetarian"" indicates a diet excluding meat, these are close in content. The criterion says it suffices if semantics are approximately the same or pointing to the same entity. Here, ""vegetarian"" is approximate but somewhat less specific (vegetarian excludes meat whereas vegetable-forward may still contain meat but is vegetable-focused). Given the leniency in criterion, this can be accepted as sufficiently close.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""french""
+- Target: ""timelessfrenchhautecuisine""
+
+Analysis:  
+The target explicitly states ""French haute cuisine"". The response is simply ""french"". Since the criterion states approximate semantics or pointing to the same entity is sufficient, and ""french"" is the core entity, this fully matches the key information.
+
+Score: 1
+
+---
+
+**idx_2**
+
+- Response: ""french""
+- Target: ""frenchwithglobalinspirations""
+
+Analysis:  
+The target is French cuisine with global inspirations. The response is just ""french"". It doesn't explicitly mention the global aspect, but ""french"" points to the same main entity as the target. The criterion allows approximate semantics or aiming the same entity. This is acceptable.
+
+Score: 1
+
+---
+
+**idx_3**
+
+- Response: ""french""
+- Target: ""avant-gardefrench""
+
+Analysis:  
+Target: avant-garde French cuisine (progressive, innovative style). Response: only ""french"". The response is less specific, missing the avant-garde modifier, but it matches the main entity (""french""). Given the criterion's flexibility, this is acceptable.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""french""
+- Target: ""artisticfrenchwithsauce-centricdishes""
+
+Analysis:  
+Target describes artistic French cuisine focusing on sauces. Response is just ""french"". The core entity (""French"") is present, though response omits the modifiers. Given the criterion it suffices to be approximately the same or point to the same entity.
+
+Score: 1
+
+---
+
+**Final Scoring**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",timelessfrenchhautecuisine,french,1.0,key_match
+,,legabriel-lareserveparis,Le Gabriel - La Réserve Paris,1.0,"Let's analyze each pair according to the criterion: “It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.”
+
+---
+
+**idx_0**  
+- Response: ""27ruedevaugirard,75007paris""  
+- Target: ""84ruedevarenne,75007paris""  
+- Analysis: Different street numbers and street names (""vaugirard"" vs ""varenne""). The location is different although the postal code is same. They do not point to the same address or entity. Semantics are not approximately the same.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""9placedesvosges,75004paris""  
+- Target: ""9placedesvosges,75004paris""  
+- Analysis: Exactly the same address, fully matching semantics.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""42avenuegabriel,75008paris""  
+- Target: ""42av.gabriel,75008paris""  
+- Analysis: ""avenuegabriel"" and ""av.gabriel"" are variants of the same street name, same number and postal code, so semantics are the same.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""47ruedevaugirard,75007paris""  
+- Target: ""6ruebalzac,75008paris""  
+- Analysis: Both street name and number differ, postal code differs. Different locations/entities.  
+- Score: 0
+
+---
+
+**idx_4**  
+- Response: ""8quaidulouvre,75004paris""  
+- Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Analysis: Street number and street name are exactly the same (""8quaidulouvre""). The postal codes differ: response says 75004, target says 75001. The target also includes ""chevalblancparishotel"" (likely a place name), but that is extra info, not essential. The difference in postal code might be a minor error or a parsing difference, but since the street number and name match, and given the criterion about approximate semantics or pointing to the same entity, this is borderline.
+
+Is the postal code significant? Postal codes in Paris define the arrondissement and are important for locations — 75001 is the 1st arrondissement where Quai du Louvre is located, 75004 is 4th arrondissement. The postal code difference suggests the address is slightly off geographically, but the street address matches exactly.
+
+Given the criterion is ""semantics approximately the same"" or ""point to the same entity,"" since the address is the same street and number, probably the same entity, so despite the postal code mismatch, I would judge this as equivalent.
+
+- Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```","42av.gabriel,75008paris","42avenuegabriel,75008paris",1.0,"Let's analyze each pair item by item:
+
+---
+
+**idx_0**
+
+- Response: ""vegetarian""
+- Target: ""vegetable-forward，garden-inspiredfrench""
+
+Analysis:  
+The target describes a vegetable-forward, garden-inspired French cuisine, which is centered around vegetables but still French cuisine. The response ""vegetarian"" is related but more general and not explicitly stating the cuisine style or French influence. However, since ""vegetable-forward"" implies a focus on vegetables, and ""vegetarian"" indicates a diet excluding meat, these are close in content. The criterion says it suffices if semantics are approximately the same or pointing to the same entity. Here, ""vegetarian"" is approximate but somewhat less specific (vegetarian excludes meat whereas vegetable-forward may still contain meat but is vegetable-focused). Given the leniency in criterion, this can be accepted as sufficiently close.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""french""
+- Target: ""timelessfrenchhautecuisine""
+
+Analysis:  
+The target explicitly states ""French haute cuisine"". The response is simply ""french"". Since the criterion states approximate semantics or pointing to the same entity is sufficient, and ""french"" is the core entity, this fully matches the key information.
+
+Score: 1
+
+---
+
+**idx_2**
+
+- Response: ""french""
+- Target: ""frenchwithglobalinspirations""
+
+Analysis:  
+The target is French cuisine with global inspirations. The response is just ""french"". It doesn't explicitly mention the global aspect, but ""french"" points to the same main entity as the target. The criterion allows approximate semantics or aiming the same entity. This is acceptable.
+
+Score: 1
+
+---
+
+**idx_3**
+
+- Response: ""french""
+- Target: ""avant-gardefrench""
+
+Analysis:  
+Target: avant-garde French cuisine (progressive, innovative style). Response: only ""french"". The response is less specific, missing the avant-garde modifier, but it matches the main entity (""french""). Given the criterion's flexibility, this is acceptable.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""french""
+- Target: ""artisticfrenchwithsauce-centricdishes""
+
+Analysis:  
+Target describes artistic French cuisine focusing on sauces. Response is just ""french"". The core entity (""French"") is present, though response omits the modifiers. Given the criterion it suffices to be approximately the same or point to the same entity.
+
+Score: 1
+
+---
+
+**Final Scoring**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",frenchwithglobalinspirations,french,1.0,key_match
+,,pierregagnaire,Pierre Gagnaire,0.0,"Let's analyze each pair according to the criterion: “It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.”
+
+---
+
+**idx_0**  
+- Response: ""27ruedevaugirard,75007paris""  
+- Target: ""84ruedevarenne,75007paris""  
+- Analysis: Different street numbers and street names (""vaugirard"" vs ""varenne""). The location is different although the postal code is same. They do not point to the same address or entity. Semantics are not approximately the same.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""9placedesvosges,75004paris""  
+- Target: ""9placedesvosges,75004paris""  
+- Analysis: Exactly the same address, fully matching semantics.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""42avenuegabriel,75008paris""  
+- Target: ""42av.gabriel,75008paris""  
+- Analysis: ""avenuegabriel"" and ""av.gabriel"" are variants of the same street name, same number and postal code, so semantics are the same.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""47ruedevaugirard,75007paris""  
+- Target: ""6ruebalzac,75008paris""  
+- Analysis: Both street name and number differ, postal code differs. Different locations/entities.  
+- Score: 0
+
+---
+
+**idx_4**  
+- Response: ""8quaidulouvre,75004paris""  
+- Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Analysis: Street number and street name are exactly the same (""8quaidulouvre""). The postal codes differ: response says 75004, target says 75001. The target also includes ""chevalblancparishotel"" (likely a place name), but that is extra info, not essential. The difference in postal code might be a minor error or a parsing difference, but since the street number and name match, and given the criterion about approximate semantics or pointing to the same entity, this is borderline.
+
+Is the postal code significant? Postal codes in Paris define the arrondissement and are important for locations — 75001 is the 1st arrondissement where Quai du Louvre is located, 75004 is 4th arrondissement. The postal code difference suggests the address is slightly off geographically, but the street address matches exactly.
+
+Given the criterion is ""semantics approximately the same"" or ""point to the same entity,"" since the address is the same street and number, probably the same entity, so despite the postal code mismatch, I would judge this as equivalent.
+
+- Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```","6ruebalzac,75008paris","47ruedevaugirard,75007paris",1.0,"Let's analyze each pair item by item:
+
+---
+
+**idx_0**
+
+- Response: ""vegetarian""
+- Target: ""vegetable-forward，garden-inspiredfrench""
+
+Analysis:  
+The target describes a vegetable-forward, garden-inspired French cuisine, which is centered around vegetables but still French cuisine. The response ""vegetarian"" is related but more general and not explicitly stating the cuisine style or French influence. However, since ""vegetable-forward"" implies a focus on vegetables, and ""vegetarian"" indicates a diet excluding meat, these are close in content. The criterion says it suffices if semantics are approximately the same or pointing to the same entity. Here, ""vegetarian"" is approximate but somewhat less specific (vegetarian excludes meat whereas vegetable-forward may still contain meat but is vegetable-focused). Given the leniency in criterion, this can be accepted as sufficiently close.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""french""
+- Target: ""timelessfrenchhautecuisine""
+
+Analysis:  
+The target explicitly states ""French haute cuisine"". The response is simply ""french"". Since the criterion states approximate semantics or pointing to the same entity is sufficient, and ""french"" is the core entity, this fully matches the key information.
+
+Score: 1
+
+---
+
+**idx_2**
+
+- Response: ""french""
+- Target: ""frenchwithglobalinspirations""
+
+Analysis:  
+The target is French cuisine with global inspirations. The response is just ""french"". It doesn't explicitly mention the global aspect, but ""french"" points to the same main entity as the target. The criterion allows approximate semantics or aiming the same entity. This is acceptable.
+
+Score: 1
+
+---
+
+**idx_3**
+
+- Response: ""french""
+- Target: ""avant-gardefrench""
+
+Analysis:  
+Target: avant-garde French cuisine (progressive, innovative style). Response: only ""french"". The response is less specific, missing the avant-garde modifier, but it matches the main entity (""french""). Given the criterion's flexibility, this is acceptable.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""french""
+- Target: ""artisticfrenchwithsauce-centricdishes""
+
+Analysis:  
+Target describes artistic French cuisine focusing on sauces. Response is just ""french"". The core entity (""French"") is present, though response omits the modifiers. Given the criterion it suffices to be approximately the same or point to the same entity.
+
+Score: 1
+
+---
+
+**Final Scoring**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",avant-gardefrench,french,1.0,key_match
+,,plénitude,Plénitude - Cheval Blanc Paris,1.0,"Let's analyze each pair according to the criterion: “It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.”
+
+---
+
+**idx_0**  
+- Response: ""27ruedevaugirard,75007paris""  
+- Target: ""84ruedevarenne,75007paris""  
+- Analysis: Different street numbers and street names (""vaugirard"" vs ""varenne""). The location is different although the postal code is same. They do not point to the same address or entity. Semantics are not approximately the same.  
+- Score: 0
+
+---
+
+**idx_1**  
+- Response: ""9placedesvosges,75004paris""  
+- Target: ""9placedesvosges,75004paris""  
+- Analysis: Exactly the same address, fully matching semantics.  
+- Score: 1
+
+---
+
+**idx_2**  
+- Response: ""42avenuegabriel,75008paris""  
+- Target: ""42av.gabriel,75008paris""  
+- Analysis: ""avenuegabriel"" and ""av.gabriel"" are variants of the same street name, same number and postal code, so semantics are the same.  
+- Score: 1
+
+---
+
+**idx_3**  
+- Response: ""47ruedevaugirard,75007paris""  
+- Target: ""6ruebalzac,75008paris""  
+- Analysis: Both street name and number differ, postal code differs. Different locations/entities.  
+- Score: 0
+
+---
+
+**idx_4**  
+- Response: ""8quaidulouvre,75004paris""  
+- Target: ""8quaidulouvre,75001paris(chevalblancparishotel)""  
+- Analysis: Street number and street name are exactly the same (""8quaidulouvre""). The postal codes differ: response says 75004, target says 75001. The target also includes ""chevalblancparishotel"" (likely a place name), but that is extra info, not essential. The difference in postal code might be a minor error or a parsing difference, but since the street number and name match, and given the criterion about approximate semantics or pointing to the same entity, this is borderline.
+
+Is the postal code significant? Postal codes in Paris define the arrondissement and are important for locations — 75001 is the 1st arrondissement where Quai du Louvre is located, 75004 is 4th arrondissement. The postal code difference suggests the address is slightly off geographically, but the street address matches exactly.
+
+Given the criterion is ""semantics approximately the same"" or ""point to the same entity,"" since the address is the same street and number, probably the same entity, so despite the postal code mismatch, I would judge this as equivalent.
+
+- Score: 1
+
+---
+
+### Final scores:
+
+```json
+{
+  ""idx_0"": 0,
+  ""idx_1"": 1,
+  ""idx_2"": 1,
+  ""idx_3"": 0,
+  ""idx_4"": 1
+}
+```","8quaidulouvre,75001paris(chevalblancparishotel)","8quaidulouvre,75004paris",1.0,"Let's analyze each pair item by item:
+
+---
+
+**idx_0**
+
+- Response: ""vegetarian""
+- Target: ""vegetable-forward，garden-inspiredfrench""
+
+Analysis:  
+The target describes a vegetable-forward, garden-inspired French cuisine, which is centered around vegetables but still French cuisine. The response ""vegetarian"" is related but more general and not explicitly stating the cuisine style or French influence. However, since ""vegetable-forward"" implies a focus on vegetables, and ""vegetarian"" indicates a diet excluding meat, these are close in content. The criterion says it suffices if semantics are approximately the same or pointing to the same entity. Here, ""vegetarian"" is approximate but somewhat less specific (vegetarian excludes meat whereas vegetable-forward may still contain meat but is vegetable-focused). Given the leniency in criterion, this can be accepted as sufficiently close.
+
+Score: 1
+
+---
+
+**idx_1**
+
+- Response: ""french""
+- Target: ""timelessfrenchhautecuisine""
+
+Analysis:  
+The target explicitly states ""French haute cuisine"". The response is simply ""french"". Since the criterion states approximate semantics or pointing to the same entity is sufficient, and ""french"" is the core entity, this fully matches the key information.
+
+Score: 1
+
+---
+
+**idx_2**
+
+- Response: ""french""
+- Target: ""frenchwithglobalinspirations""
+
+Analysis:  
+The target is French cuisine with global inspirations. The response is just ""french"". It doesn't explicitly mention the global aspect, but ""french"" points to the same main entity as the target. The criterion allows approximate semantics or aiming the same entity. This is acceptable.
+
+Score: 1
+
+---
+
+**idx_3**
+
+- Response: ""french""
+- Target: ""avant-gardefrench""
+
+Analysis:  
+Target: avant-garde French cuisine (progressive, innovative style). Response: only ""french"". The response is less specific, missing the avant-garde modifier, but it matches the main entity (""french""). Given the criterion's flexibility, this is acceptable.
+
+Score: 1
+
+---
+
+**idx_4**
+
+- Response: ""french""
+- Target: ""artisticfrenchwithsauce-centricdishes""
+
+Analysis:  
+Target describes artistic French cuisine focusing on sauces. Response is just ""french"". The core entity (""French"") is present, though response omits the modifiers. Given the criterion it suffices to be approximately the same or point to the same entity.
+
+Score: 1
+
+---
+
+**Final Scoring**
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 1,
+    ""idx_4"": 1
+}
+```",artisticfrenchwithsauce-centricdishes,french,1.0,key_match
+1.0,,allénoparisaupavillonledoyen,,,,"8av.dutuit,75008paris",,,,refinedfrenchclassicwithmorderntechniques,,,
+1.0,,kei,,,,"5ruecoqhéron,75001paris",,,,franco-japanesefusion,,,
+1.0,,lecinq,,,,"31av.georgev,75008paris",,,,contemporaryfrench,,,
+1.0,,leprécatelan,,,,"routedesuresnes–boisdeboulogne,75016paris",,,,"creative,contemporary",,,
+1.0,,épicure,,,,"112ruedufaubourgsaint-honoré,75008paris",,,,hautefrench(traditionalwithinnovativetwists),,,

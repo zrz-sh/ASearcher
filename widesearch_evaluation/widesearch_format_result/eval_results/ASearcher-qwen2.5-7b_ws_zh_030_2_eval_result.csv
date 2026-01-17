@@ -1,0 +1,3498 @@
+exist_flag_gt,exist_flag_response,歌曲名称,歌曲名称_before_map,发行时间_exact_match,发行时间_exact_match_eval_msg,发行时间_query,发行时间_response,填词人_llm_judge,填词人_llm_judge_eval_msg,填词人_query,填词人_response,所属专辑_llm_judge,所属专辑_llm_judge_eval_msg,所属专辑_query,所属专辑_response,歌曲名称_exact_match,歌曲名称_exact_match_eval_msg,歌曲时长_llm_judge,歌曲时长_llm_judge_eval_msg,歌曲时长_query,歌曲时长_response,编曲人_llm_judge,编曲人_llm_judge_eval_msg,编曲人_query,编曲人_response
+,,外婆,外婆,0.0,"exact not match, response: 2004/01/01, target: 2004/08/03",2004/08/03,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",周杰伦,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,共同茉莉花,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分2秒,4:46,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",周杰伦,nan
+,,将军,将军,0.0,"exact not match, response: 2004/01/01, target: 2004/08/03",2004/08/03,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",黄俊郎,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,共同茉莉花,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",3分24秒,4:44,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",洪敬尧,nan
+,,搁浅,搁浅,0.0,"exact not match, response: 2004/01/01, target: 2004/08/03",2004/08/03,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",宋健彰,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,共同茉莉花,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",3分58秒,3:50,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,nan
+,,乱舞春秋,乱舞春秋,0.0,"exact not match, response: 2004/01/01, target: 2004/08/03",2004/08/03,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",方文山,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,共同茉莉花,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分37秒,4:05,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,nan
+,,止战之殇,止战之殇,0.0,"exact not match, response: 2004/01/01, target: 2004/08/03",2004/08/03,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",方文山,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",七里香,2004无与伦比演唱会,1.0,key_match,1.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分34秒,4:37,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",周杰伦,nan
+,,夜的第七章,夜的第七章,0.0,"exact not match, response: 2006/01/01, target: 2006/09/05",2006/09/05,2006/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",黄俊郎,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",依然范特西,依然范特西,1.0,key_match,1.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",3分48秒,3:48,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民、林迈可,nan
+,,听妈妈的话,听妈妈的话,0.0,"exact not match, response: 2004/01/01, target: 2006/09/05",2006/09/05,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",周杰伦,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",依然范特西,我很忙,1.0,key_match,1.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分26秒,4:25,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",林迈可、洪敬尧,nan
+,,千里之外,千里之外,0.0,"exact not match, response: 2004/01/01, target: 2006/09/05",2006/09/05,2004/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",方文山,nan,0.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",依然范特西,我很忙,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分16秒,4:23,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",林迈可,nan
+,,牛仔很忙,牛仔很忙,0.0,"exact not match, response: 2007/01/01, target: 2007/11/02",2007/11/02,2007/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",黄俊郎,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",我很忙,我很忙,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",2分48秒,4:45,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,nan
+,,彩虹,彩虹,0.0,"exact not match, response: 2007/01/01, target: 2007/11/02",2007/11/02,2007/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",周杰伦,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",我很忙,我很忙,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分21秒,4:42,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",林迈可,nan
+,,青花瓷,青花瓷,0.0,"exact not match, response: 2007/01/01, target: 2007/11/02",2007/11/02,2007/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",方文山,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",我很忙,我很忙,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",3分59秒,4:22,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,nan
+,,龙战骑士,龙战骑士,0.0,"exact not match, response: 2008/01/01, target: 2008/10/15",2008/10/15,2008/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",方文山,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",魔杰座,魔杰座,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分31秒,3:49,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",钟兴民,nan
+,,给我一首歌的时间,给我一首歌的时间,0.0,"exact not match, response: 2008/01/01, target: 2008/10/15",2008/10/15,2008/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",周杰伦,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",魔杰座,魔杰座,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分13秒,4:03,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",林迈可,nan
+,,蛇舞,蛇舞,0.0,"exact not match, response: 2008/01/01, target: 2008/10/15",2008/10/15,2008/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",黄俊郎,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",魔杰座,魔杰座,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",2分54秒,4:19,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",黄雨勋,nan
+,,免费教学录影带,免费教学录像带,0.0,"exact not match, response: 2010/01/01, target: 2010/05/18",2010/05/18,2010/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",黄俊郎,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",跨时代,跨时代,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",3分59秒,4:34,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",蔡科俊,nan
+,,烟花易冷,烟花易冷,0.0,"exact not match, response: 2010/01/01, target: 2010/05/18",2010/05/18,2010/01/01,0.0,"根据给定的评分标准：
+
+- 标准答案给出的实体是：周杰伦、黄俊郎、宋健彰、方文山等（具体见每条的target）。
+- 回答全部都是“nan”，这并非与任何标准答案语义相近或者指向同一实体的表现。
+- 按照标准答案的评分标准（语义或指向实体一致即可得分1），“nan”显然不是正确答案。
+- 因此，每条回答的得分均为0。
+
+最终得分结果：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```
+  
+全部回答均为无效答案，无法与标准答案匹配，得分均为0。",方文山,nan,1.0,"首先根据评分标准：""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+因此，只要回答的内容和目标项（target）语义相同或指向同一实体，即为正确得1分，否则得0分。
+
+逐项分析如下：
+
+- idx_0: response ""共同茉莉花"" vs target ""七里香""  
+  两者不同，指向不同实体，分数0。
+
+- idx_1: 同上，分数0。
+
+- idx_2: 同上，分数0。
+
+- idx_3: 同上，分数0。
+
+- idx_4: response ""2004无与伦比演唱会"" vs target ""七里香""  
+  不同实体，分数0。
+
+- idx_5: response ""依然范特西"" vs target ""依然范特西""  
+  完全相同，分数1。
+
+- idx_6: response ""我很忙"" vs target ""依然范特西""  
+  不同实体，分数0。
+
+- idx_7: 同上，分数0。
+
+- idx_8: response ""我很忙"" vs target ""我很忙""  
+  完全相同，分数1。
+
+- idx_9: 同上，分数1。
+
+- idx_10: 同上，分数1。
+
+- idx_11: response ""魔杰座"" vs target ""魔杰座""  
+  完全相同，分数1。
+
+- idx_12: 同上，分数1。
+
+- idx_13: 同上，分数1。
+
+- idx_14: response ""跨时代"" vs target ""跨时代""  
+  完全相同，分数1。
+
+- idx_15: 同上，分数1。
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 1,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 1,
+    ""idx_9"": 1,
+    ""idx_10"": 1,
+    ""idx_11"": 1,
+    ""idx_12"": 1,
+    ""idx_13"": 1,
+    ""idx_14"": 1,
+    ""idx_15"": 1
+}
+```",跨时代,跨时代,1.0,key_match,0.0,"首先，将每对response和target的时间统一转换成秒，再通过对比二者的差值判断是否在5秒以内，符合条件的得1分，否则得0分。
+
+计算如下：
+
+- idx_0: response 4:46 = 286秒；target 4分2秒 = 242秒；差44秒 → 0分
+- idx_1: response 4:44 = 284秒；target 3分24秒 = 204秒；差80秒 → 0分
+- idx_2: response 3:50 = 230秒；target 3分58秒 = 238秒；差8秒 → 0分
+- idx_3: response 4:05 = 245秒；target 4分37秒 = 277秒；差32秒 → 0分
+- idx_4: response 4:37 = 277秒；target 4分34秒 = 274秒；差3秒 → 1分
+- idx_5: response 3:48 = 228秒；target 3分48秒 = 228秒；差0秒 → 1分
+- idx_6: response 4:25 = 265秒；target 4分26秒 = 266秒；差1秒 → 1分
+- idx_7: response 4:23 = 263秒；target 4分16秒 = 256秒；差7秒 → 0分
+- idx_8: response 4:45 = 285秒；target 2分48秒 = 168秒；差117秒 → 0分
+- idx_9: response 4:42 = 282秒；target 4分21秒 = 261秒；差21秒 → 0分
+- idx_10: response 4:22 = 262秒；target 3分59秒 = 239秒；差23秒 → 0分
+- idx_11: response 3:49 = 229秒；target 4分31秒 = 271秒；差42秒 → 0分
+- idx_12: response 4:03 = 243秒；target 4分13秒 = 253秒；差10秒 → 0分
+- idx_13: response 4:19 = 259秒；target 2分54秒 = 174秒；差85秒 → 0分
+- idx_14: response 4:34 = 274秒；target 3分59秒 = 239秒；差35秒 → 0分
+- idx_15: response 4:46 = 286秒；target 4分23秒 = 263秒；差23秒 → 0分
+
+总结得分：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 1,
+    ""idx_5"": 1,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",4分23秒,4:46,0.0,"Below is the detailed analysis followed by the final scoring.
+
+---
+
+### Analysis:
+
+The criterion states:  
+""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""  
+Meaning: The response is correct if it roughly has the same meaning as the standard answer or points to the same entity.
+
+#### Given:
+
+Each response is `'nan'` for all idx, meaning no valid answer was provided. The target (standard answer) is a named entity (person names such as 周杰伦, 洪敬尧, 钟兴民, etc.).
+
+---
+
+**Item by item:**
+
+- idx_0: response = 'nan', target = '周杰伦'  
+  Response does not match the entity 周杰伦 → score 0
+
+- idx_1: response = 'nan', target = '洪敬尧'  
+  'nan' ≠ '洪敬尧' → 0
+
+- idx_2: response = 'nan', target = '钟兴民'  
+  'nan' ≠ '钟兴民' → 0
+
+- idx_3: response = 'nan', target = '钟兴民' → 0
+
+- idx_4: response = 'nan', target = '周杰伦' → 0
+
+- idx_5: response = 'nan', target = '钟兴民、林迈可'  
+  'nan' no match → 0
+
+- idx_6: response = 'nan', target = '林迈可、洪敬尧' → 0
+
+- idx_7: response = 'nan', target = '林迈可' → 0
+
+- idx_8: response = 'nan', target = '钟兴民' → 0
+
+- idx_9: response = 'nan', target = '林迈可' → 0
+
+- idx_10: response = 'nan', target = '钟兴民' → 0
+
+- idx_11: response = 'nan', target = '钟兴民' → 0
+
+- idx_12: response = 'nan', target = '林迈可' → 0
+
+- idx_13: response = 'nan', target = '黄雨勋' → 0
+
+- idx_14: response = 'nan', target = '蔡科俊' → 0
+
+- idx_15: response = 'nan', target = '黄雨勋' → 0
+
+---
+
+### Final scoring JSON:
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 0,
+    ""idx_7"": 0,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0
+}
+```",黄雨勋,nan
+1.0,,一路向北,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分54秒,,,,蔡科俊,
+1.0,,七里香,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分59秒,,,,钟兴民,
+1.0,,乔克叔叔,,,,2008/10/15,,,,黄俊郎,,,,魔杰座,,,,,,4分16秒,,,,黄雨勋,
+,1.0,以父之名,以父之名,,,,2004/01/01,,,,nan,,,,2004无与伦比演唱会,,,,,,5:59,,,,nan
+1.0,,借口,,,,2004/08/03,,,,周杰伦,,,,七里香,,,,,,4分18秒,,,,周杰伦,
+1.0,,兰亭序,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,4分13秒,,,,钟兴民,
+1.0,,发如雪,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,5分1秒,,,,林迈可,
+,1.0,可爱女人,可爱女人,,,,2009/01/01,,,,nan,,,,娘子,,,,,,3:56,,,,nan
+1.0,,嘻哈空姐,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,2分48秒,,,,林迈可,
+1.0,,四面楚歌,,,,2005/11/01,,,,周杰伦,,,,11月的萧邦,,,,,,4分8秒,,,,洪敬尧,
+1.0,,园游会,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分13秒,,,,洪敬尧,
+1.0,,困兽之斗,,,,2004/08/03,,,,刘畊宏,,,,七里香,,,,,,4分29秒,,,,蔡科俊,
+1.0,,夜曲,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,3分48秒,,,,林迈可,
+,1.0,她的睫毛,她的睫毛,,,,2004/01/01,,,,nan,,,,2004无与伦比演唱会,,,,,,3:50,,,,nan
+1.0,,好久不见,,,,2010/05/18,,,,周杰伦,,,,跨时代,,,,,,4分12秒,,,,蔡庭贵,
+,1.0,妮听得到,妮听得到,,,,2004/01/01,,,,nan,,,,2004无与伦比演唱会,,,,,,3:49,,,,nan
+,1.0,完美主义,完美主义,,,,2009/01/01,,,,nan,,,,娘子,,,,,,4:01,,,,nan
+1.0,,心雨,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分29秒,,,,林迈可,
+1.0,,我不配,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4分48秒,,,,林迈可,
+1.0,,我的地盘,,,,2004/08/03,,,,方文山,,,,七里香,,,,,,4分5秒,,,,洪敬尧,
+1.0,,我落泪情绪零碎,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4分17秒,,,,钟兴民,
+1.0,,扯,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3分30秒,,,,林迈可,
+1.0,,无双,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3分53秒,,,,钟兴民,
+1.0,,时光机,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,5分11秒,,,,黄雨勋,
+,1.0,星晴,星晴,,,,2009/01/01,,,,nan,,,,娘子,,,,,,4:16,,,,nan
+,1.0,晴天,晴天,,,,2004/01/01,,,,nan,,,,2004无与伦比演唱会,,,,,,4:58,,,,nan
+1.0,,最长的电影,,,,2007/11/02,,,,周杰伦,,,,我很忙,,,,,,3分55秒,,,,钟兴民,
+1.0,,本草纲目,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,3分29秒,,,,林迈可,
+1.0,,枫,,,,2005/11/01,,,,宋健彰,,,,11月的萧邦,,,,,,4分35秒,,,,钟兴民,
+1.0,,流浪诗人,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,2分49秒,,,,蔡科俊,
+1.0,,浪漫手机,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分0秒,,,,洪敬尧,
+1.0,,爱的飞行日记,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4分15秒,,,,蔡科俊,
+,1.0,父亲,父亲,,,,2004/01/01,,,,nan,,,,我很忙,,,,,,5:01,,,,nan
+1.0,,珊瑚海,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分15秒,,,,钟兴民,
+1.0,,甜甜的,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4分0秒,,,,林迈可,
+1.0,,白色风车,,,,2006/09/05,,,,周杰伦,,,,依然范特西,,,,,,4分32秒,,,,蔡科俊,
+1.0,,稻香,,,,2008/10/15,,,,周杰伦,,,,魔杰座,,,,,,3分43秒,,,,黄雨勋,
+1.0,,红模仿,,,,2006/09/05,,,,周杰伦,,,,依然范特西,,,,,,3分5秒,,,,林迈可,
+1.0,,自导自演,,,,2010/05/18,,,,周杰伦,,,,跨时代,,,,,,4分15秒,,,,黄雨勋,
+1.0,,花海,,,,2008/10/15,,,,古小力、黄淩嘉,,,,魔杰座,,,,,,4分24秒,,,,黄雨勋,
+1.0,,菊花台,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分53秒,,,,钟兴民,
+1.0,,蒲公英的约定,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,4分7秒,,,,林迈可,
+1.0,,蓝色风暴,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分47秒,,,,洪敬尧,
+1.0,,说了再见,,,,2010/05/18,,,,古小力、黄淩嘉,,,,跨时代,,,,,,4分42秒,,,,钟兴民,
+,1.0,说再见,说再见,,,,2010/01/01,,,,nan,,,,跨时代,,,,,,5:01,,,,nan
+1.0,,说好的幸福呢,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,4分16秒,,,,钟兴民,
+1.0,,超人不会飞,,,,2010/05/18,,,,周杰伦,,,,跨时代,,,,,,4分59秒,,,,林迈可,
+1.0,,跨时代,,,,2010/05/18,,,,黄俊郎,,,,跨时代,,,,,,3分14秒,,,,黄雨勋,
+1.0,,迷迭香,,,,2006/09/05,,,,方文山,,,,依然范特西,,,,,,4分11秒,,,,钟兴民,
+1.0,,退后,,,,2006/09/05,,,,宋健彰,,,,依然范特西,,,,,,4分21秒,,,,林迈可,
+1.0,,逆鳞,,,,2005/11/01,,,,黄俊郎,,,,11月的萧邦,,,,,,3分54秒,,,,钟兴民,
+1.0,,阳光宅男,,,,2007/11/02,,,,方文山,,,,我很忙,,,,,,3分42秒,,,,周杰伦,
+1.0,,雨下一整晚,,,,2010/05/18,,,,方文山,,,,跨时代,,,,,,4分16秒,,,,钟兴民,
+1.0,,飘移,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分4秒,,,,林迈可,
+1.0,,魔术先生,,,,2008/10/15,,,,方文山,,,,魔杰座,,,,,,3分47秒,,,,钟兴民,
+1.0,,麦芽糖,,,,2005/11/01,,,,方文山,,,,11月的萧邦,,,,,,4分20秒,,,,洪敬尧,
+1.0,,黑色毛衣,,,,2005/11/01,,,,周杰伦,,,,11月的萧邦,,,,,,4分11秒,,,,林迈可,

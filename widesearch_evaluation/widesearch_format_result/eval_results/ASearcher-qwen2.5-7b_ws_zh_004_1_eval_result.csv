@@ -1,0 +1,1267 @@
+exist_flag_gt,exist_flag_response,年度,年度_before_map,排名,排名_before_map,姓名（中文）_llm_judge,姓名（中文）_llm_judge_eval_msg,姓名（中文）_query,姓名（中文）_response,姓名（英文）_llm_judge,姓名（英文）_llm_judge_eval_msg,姓名（英文）_query,姓名（英文）_response,年度_exact_match,年度_exact_match_eval_msg,排名_exact_match,排名_exact_match_eval_msg,财富值（亿美元）_number_near,财富值（亿美元）_number_near_eval_msg,财富值（亿美元）_query,财富值（亿美元）_response,财富来源_llm_judge,财富来源_llm_judge_eval_msg,财富来源_query,财富来源_response
+,,2024,2024,2,2,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",埃隆·马斯克,比尔·盖茨,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",elonmusk,billgates,1.0,key_match,1.0,key_match,0.0,"number not near, response: 131.2, target: 1950.0",1950,131.2,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",特斯拉、spacex,微软
+,,2024,2024,3,3,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",杰夫·贝索斯,沃伦·巴菲特,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",jeffbezos,warrenbuffett,1.0,key_match,1.0,key_match,0.0,"number not near, response: 92.5, target: 1940.0",1940,92.5,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",亚马逊,投资
+,,2024,2024,4,4,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",马克·扎克伯格,拉里·埃隆,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",markzuckerberg,elonmusk,1.0,key_match,1.0,key_match,0.0,"number not near, response: 55.7, target: 1770.0",1770,55.7,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",meta,spacex
+,,2024,2024,5,5,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",拉里·埃里森,拉里·佩奇,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",larryellison,larrypage,1.0,key_match,1.0,key_match,0.0,"number not near, response: 52.8, target: 1410.0",1410,52.8,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",甲骨文,谷歌
+,,2024,2024,6,6,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",沃伦·巴菲特,马克·扎克伯格,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",warrenbuffett,markzuckerberg,1.0,key_match,1.0,key_match,0.0,"number not near, response: 51.2, target: 1330.0",1330,51.2,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",伯克希尔哈撒韦,facebook
+,,2024,2024,7,7,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",比尔·盖茨,伯纳德·阿尔诺,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",billgates,bernardarnault,1.0,key_match,1.0,key_match,0.0,"number not near, response: 50.9, target: 1280.0",1280,50.9,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",微软,lvmh
+,,2024,2024,8,8,1.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",史蒂夫·鲍尔默,斯蒂夫·鲍尔默,1.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",steveballmer,steveballmer,1.0,key_match,1.0,key_match,0.0,"number not near, response: 45.8, target: 1210.0",1210,45.8,1.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",微软,微软
+,,2024,2024,9,9,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",穆克什·安巴尼,安吉拉·雷蒙德-麦克唐纳,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",mukeshambani,angelaraymondemacdonald,1.0,key_match,1.0,key_match,0.0,"number not near, response: 45.3, target: 1160.0",1160,45.3,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",多元化经营,无
+,,2024,2024,10,10,0.0,"首先，根据给定的评分标准：
+
+- 只要语义相同或指向的实体一致，即可得分1分。
+- 中文姓名允许部分音译差异。
+- 不需要字字对应。
+
+逐条分析：
+
+idx_0: response是“比尔·盖茨”，target是“埃隆·马斯克”，两者是不同的人物，无论语义还是实体都不一致，得分0。
+
+idx_1: response“沃伦·巴菲特”，target“杰夫·贝索斯”，两者是两个不同人物，得分0。
+
+idx_2: response“拉里·埃隆”，target“马克·扎克伯格”，两者是不同的人物，得分0。
+
+idx_3: response“拉里·佩奇”，target“拉里·埃里森”，虽然同为“拉里”，但“佩奇”与“埃里森”完全不同，指向不同人物，得分0。
+
+idx_4: response“马克·扎克伯格”，target“沃伦·巴菲特”，两者不同，得分0。
+
+idx_5: response“伯纳德·阿尔诺”，target“比尔·盖茨”，不同，得分0。
+
+idx_6: response“斯蒂夫·鲍尔默”，target“史蒂夫·鲍尔默”，音译上的轻微差异（“斯蒂夫”/“史蒂夫”），视为指向同一实体，得分1。
+
+idx_7: response“安吉拉·雷蒙德-麦克唐纳”，target“穆克什·安巴尼”，不同人物，得分0。
+
+idx_8: response“玛丽·博莱克利”，target“拉里·佩奇”，不同，得分0。
+
+综上，只有idx_6得1分，其余均得0分。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",拉里·佩奇,玛丽·博莱克利,0.0,"首先，根据评分标准：
+- 只要答案与参考答案的语义相同大致或者指向的实体一致，即可得1分。
+- 换句话说，两者只要指的是同一个实体，就得1分。
+- 否则得0分。
+
+逐项分析：
+
+idx_0:
+- response: billgates
+- target: elonmusk
+- 两者是不同人物，不同指向实体，故得0分。
+
+idx_1:
+- response: warrenbuffett
+- target: jeffbezos
+- 两人不同，得0分。
+
+idx_2:
+- response: elonmusk
+- target: markzuckerberg
+- 两人不同，得0分。
+
+idx_3:
+- response: larrypage
+- target: larryellison
+- 两人不同，得0分。
+
+idx_4:
+- response: markzuckerberg
+- target: warrenbuffett
+- 不同，得0分。
+
+idx_5:
+- response: bernardarnault
+- target: billgates
+- 不同，得0分。
+
+idx_6:
+- response: steveballmer
+- target: steveballmer
+- 相同，得1分。
+
+idx_7:
+- response: angelaraymondemacdonald
+- target: mukeshambani
+- 不同，得0分。
+
+idx_8:
+- response: marybolleke
+- target: larrypage
+- 不同，得0分。
+
+最终评分结果为：
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",larrypage,marybolleke,1.0,key_match,1.0,key_match,0.0,"number not near, response: 45.2, target: 1140.0",1140,45.2,0.0,"首先，按照评分标准，只需判断回答和目标答案语义是否大致相同或者指向实体一致即可，且评分只能为0或1。
+
+逐条分析如下：
+
+- idx_0: response是“微软”，target是“特斯拉、spacex”。二者不同实体，不符语义相同或指向实体一致，得0分。
+- idx_1: response是“投资”，target是“亚马逊”。“投资”是动作或行为，“亚马逊”是公司名称，二者不符语义相同，得0分。
+- idx_2: response是“spacex”，target是“meta”。两者不同公司名，实体不一致，得0分。
+- idx_3: response是“谷歌”，target是“甲骨文”。两者不同公司，实体不一致，得0分。
+- idx_4: response是“facebook”，target是“伯克希尔哈撒韦”。不同公司，不一致，得0分。
+- idx_5: response是“lvmh”，target是“微软”。不同公司，不一致，得0分。
+- idx_6: response是“微软”，target是“微软”。完全相同，得1分。
+- idx_7: response是“无”，target是“多元化经营”。“无”指没有，与“多元化经营”意思相反或不符，得0分。
+- idx_8: response是“无”，target是“谷歌”。“无”与“谷歌”完全不一致，得0分。
+
+最终评分结果如下。
+
+```json
+{
+    ""idx_0"": 0,
+    ""idx_1"": 0,
+    ""idx_2"": 0,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 0,
+    ""idx_8"": 0
+}
+```",谷歌,无
+1.0,,2019,,1,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1310,,,,亚马逊,
+1.0,,2019,,10,,,,拉里·佩奇,,,,larrypage,,,,,,,,508,,,,谷歌,
+1.0,,2019,,2,,,,比尔·盖茨,,,,billgates,,,,,,,,965,,,,微软,
+1.0,,2019,,3,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,825,,,,伯克希尔哈撒韦,
+1.0,,2019,,4,,,,伯纳德·阿诺特,,,,bernardarnault,,,,,,,,760,,,,奢侈品,
+1.0,,2019,,5,,,,卡洛斯·斯利姆·埃卢,,,,carlosslimhelu,,,,,,,,640,,,,电信,
+1.0,,2019,,6,,,,阿曼西奥·奥特加,,,,amancioortega,,,,,,,,627,,,,zara,
+1.0,,2019,,7,,,,拉里·埃里森,,,,larryellison,,,,,,,,625,,,,软件,
+1.0,,2019,,8,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,623,,,,facebook,
+1.0,,2019,,9,,,,迈克尔·布隆伯格,,,,michaelbloomberg,,,,,,,,555,,,,彭博,
+1.0,,2020,,1,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1130,,,,亚马逊,
+1.0,,2020,,10,,,,罗伯·沃尔顿,,,,robwalton,,,,,,,,541,,,,沃尔玛,
+1.0,,2020,,2,,,,比尔·盖茨,,,,billgates,,,,,,,,980,,,,微软,
+1.0,,2020,,3,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,760,,,,lvmh,
+1.0,,2020,,4,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,675,,,,伯克希尔哈撒韦,
+1.0,,2020,,5,,,,拉里·埃里森,,,,larryellison,,,,,,,,590,,,,软件,
+1.0,,2020,,6,,,,阿曼西奥·奥特加,,,,amancioortega,,,,,,,,551,,,,zara,
+1.0,,2020,,7,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,547,,,,facebook,
+1.0,,2020,,8,,,,吉姆·沃尔顿,,,,jimwalton,,,,,,,,546,,,,沃尔玛,
+1.0,,2020,,9,,,,艾丽斯·沃尔顿,,,,alicewalton,,,,,,,,544,,,,沃尔玛,
+1.0,,2021,,1,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1770,,,,亚马逊,
+1.0,,2021,,10,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,845,,,,多元化经营,
+1.0,,2021,,2,,,,埃隆·马斯克,,,,elonmusk,,,,,,,,1510,,,,特斯拉、spacex,
+1.0,,2021,,3,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,1500,,,,lvmh,
+1.0,,2021,,4,,,,比尔·盖茨,,,,billgates,,,,,,,,1240,,,,微软,
+1.0,,2021,,5,,,,马克·扎克伯格,,,,markzuckerberg,,,,,,,,970,,,,facebook,
+1.0,,2021,,6,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,960,,,,伯克希尔哈撒韦,
+1.0,,2021,,7,,,,拉里·埃里森,,,,larryellison,,,,,,,,930,,,,软件,
+1.0,,2021,,8,,,,拉里·佩奇,,,,larrypage,,,,,,,,915,,,,谷歌,
+1.0,,2021,,9,,,,谢尔盖·布林,,,,sergeybrin,,,,,,,,890,,,,谷歌,
+1.0,,2022,,1,,,,埃隆·马斯克,,,,elonmusk,,,,,,,,2190,,,,特斯拉、spacex,
+1.0,,2022,,10,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,907,,,,多元化经营,
+1.0,,2022,,2,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1710,,,,亚马逊,
+1.0,,2022,,3,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,1580,,,,lvmh,
+1.0,,2022,,4,,,,比尔·盖茨,,,,billgates,,,,,,,,1290,,,,微软,
+1.0,,2022,,5,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,1180,,,,伯克希尔哈撒韦,
+1.0,,2022,,6,,,,拉里·佩奇,,,,larrypage,,,,,,,,1110,,,,谷歌,
+1.0,,2022,,7,,,,谢尔盖·布林,,,,sergeybrin,,,,,,,,1070,,,,谷歌,
+1.0,,2022,,8,,,,拉里·埃里森,,,,larryellison,,,,,,,,1060,,,,软件,
+1.0,,2022,,9,,,,史蒂夫·鲍尔默,,,,steveballmer,,,,,,,,914,,,,微软,
+1.0,,2023,,1,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,2110,,,,lvmh,
+1.0,,2023,,10,,,,史蒂夫·鲍尔默,,,,steveballmer,,,,,,,,807,,,,微软,
+1.0,,2023,,2,,,,埃隆·马斯克,,,,elonmusk,,,,,,,,1800,,,,特斯拉,
+1.0,,2023,,3,,,,杰夫·贝索斯,,,,jeffbezos,,,,,,,,1140,,,,亚马逊,
+1.0,,2023,,4,,,,拉里·埃里森,,,,larryellison,,,,,,,,1070,,,,甲骨文,
+1.0,,2023,,5,,,,沃伦·巴菲特,,,,warrenbuffett,,,,,,,,1060,,,,伯克希尔哈撒韦,
+1.0,,2023,,6,,,,比尔·盖茨,,,,billgates,,,,,,,,1040,,,,微软,
+1.0,,2023,,7,,,,迈克尔·布隆伯格,,,,michaelbloomberg,,,,,,,,945,,,,彭博公司,
+1.0,,2023,,8,,,,卡洛斯·斯利姆·埃卢及家族,,,,carlosslimhelufamily,,,,,,,,930,,,,电信,
+1.0,,2023,,9,,,,穆克什·安巴尼,,,,mukeshambani,,,,,,,,834,,,,多元化经营,
+1.0,,2024,,1,,,,伯纳德·阿尔诺及家族,,,,bernardarnault&family,,,,,,,,2330,,,,lvmh,

@@ -1,0 +1,6197 @@
+exist_flag_gt,exist_flag_response,highschool,highschool_before_map,apcourses_number_near,apcourses_number_near_eval_msg,apcourses_query,apcourses_response,highschool_exact_match,highschool_exact_match_eval_msg,nationalrankings_exact_match,nationalrankings_exact_match_eval_msg,nationalrankings_query,nationalrankings_response,servedgrades_llm_judge,servedgrades_llm_judge_eval_msg,servedgrades_query,servedgrades_response,staterankings_llm_judge,staterankings_llm_judge_eval_msg,staterankings_query,staterankings_response,states_llm_judge,states_llm_judge_eval_msg,states_query,states_response,stemhighschoolsranking_exact_match,stemhighschoolsranking_exact_match_eval_msg,stemhighschoolsranking_query,stemhighschoolsranking_response
+,,hightechnologyhighschool,High Technology High School,0.0,"number not near, response: 35.0, target: 6.0",6.0,35,1.0,key_match,0.0,"exact not match, response: 1, target: 24",24,1,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,1.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,1,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",newjersey,newjersey,1.0,"exact match, response: 1, target: 1",1,1
+,,basispeoria,BASIS Peoria,0.0,"number not near, response: 35.0, target: 21.0",21.0,35,1.0,key_match,0.0,"exact not match, response: 3, target: 1",1,3,0.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades5-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,3,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",arizona,arizona,0.0,"exact not match, response: 3, target: 2",2,3
+,,basischandler,BASIS Chandler,0.0,"number not near, response: 35.0, target: 31.0",31.0,35,1.0,key_match,0.0,"exact not match, response: 2, target: 84",84,2,0.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades5-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",11,2,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",arizona,arizona,0.0,"exact not match, response: 2, target: 3",3,2
+,,thomasjeffersonhighschoolforscienceandtechnology,Thomas Jefferson High School for Science and Mathematics,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 4, target: 14",14,4,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,4,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,illinois,0.0,"exact not match, response: 4, target: 5",5,4
+,,thomasjeffersonhighschoolforscienceandtechnology,North Carolina School of Science and Mathematics,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 6, target: 14",14,6,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,6,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,northcarolina,0.0,"exact not match, response: 6, target: 5",5,6
+,,thomasjeffersonhighschoolforscienceandtechnology,Montgomery Blair High School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 8, target: 14",14,8,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,8,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,maryland,0.0,"exact not match, response: 8, target: 5",5,8
+,,thomasjeffersonhighschoolforscienceandtechnology,McLean High School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 9, target: 14",14,9,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,9,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,virginia,0.0,"exact not match, response: 9, target: 5",5,9
+,,thomasjeffersonhighschoolforscienceandtechnology,Thomas Jefferson High School for Science and Technology,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 10, target: 14",14,10,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,10,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,virginia,0.0,"exact not match, response: 10, target: 5",5,10
+,,thomasjeffersonhighschoolforscienceandtechnology,North Hollywood High School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 11, target: 14",14,11,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,11,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,california,0.0,"exact not match, response: 11, target: 5",5,11
+,,thomasjeffersonhighschoolforscienceandtechnology,International Baccalaureate World School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 12, target: 14",14,12,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,12,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,california,0.0,"exact not match, response: 12, target: 5",5,12
+,,thomasjeffersonhighschoolforscienceandtechnology,The Tahoma School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,1.0,"exact match, response: 14, target: 14",14,14,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,14,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,california,0.0,"exact not match, response: 14, target: 5",5,14
+,,thomasjeffersonhighschoolforscienceandtechnology,South Carolina Governor's School for Science and Mathematics,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 15, target: 14",14,15,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,15,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,southcarolina,0.0,"exact not match, response: 15, target: 5",5,15
+,,thomasjeffersonhighschoolforscienceandtechnology,Academy of the Sacred Heart,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 16, target: 14",14,16,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,16,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,missouri,0.0,"exact not match, response: 16, target: 5",5,16
+,,thomasjeffersonhighschoolforscienceandtechnology,Montpelier High School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 17, target: 14",14,17,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,17,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,vermont,0.0,"exact not match, response: 17, target: 5",5,17
+,,thomasjeffersonhighschoolforscienceandtechnology,The Potter's House School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 18, target: 14",14,18,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,18,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,california,0.0,"exact not match, response: 18, target: 5",5,18
+,,thomasjeffersonhighschoolforscienceandtechnology,The Canterbury School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 19, target: 14",14,19,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,19,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,connecticut,0.0,"exact not match, response: 19, target: 5",5,19
+,,thomasjeffersonhighschoolforscienceandtechnology,The Harker School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 20, target: 14",14,20,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,20,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,california,0.0,"exact not match, response: 20, target: 5",5,20
+,,thomasjeffersonhighschoolforscienceandtechnology,The MacLaren School,0.0,"number not near, response: 35.0, target: 23.0",23.0,35,1.0,key_match,0.0,"exact not match, response: 21, target: 14",14,21,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",1,21,0.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",virginia,california,0.0,"exact not match, response: 21, target: 5",5,21
+,,montavistahighschool,Monta Vista High School,0.0,"number not near, response: 35.0, target: 19.0",19.0,35,1.0,key_match,0.0,"exact not match, response: 5, target: 113",113,5,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",13,5,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",california,california,0.0,"exact not match, response: 5, target: 19",19,5
+,,lexingtonhighschool,Lexington High School,0.0,"number not near, response: 35.0, target: 19.0",19.0,35,1.0,key_match,0.0,"exact not match, response: 7, target: 192",192,7,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",3,7,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",massachusetts,massachusetts,0.0,"exact not match, response: 7, target: 27",27,7
+,,poolesvillehighschool,Poolesville High School,0.0,"number not near, response: 35.0, target: 28.0",28.0,35,1.0,key_match,0.0,"exact not match, response: 13, target: 172",172,13,1.0,"Let's analyze each response-target pair according to the grading criterion:
+
+Criterion summary:
+- Semantics need to be approximately the same or point to the same entity.
+- No need for word-for-word match.
+
+-----
+
+### Analysis by index:
+
+- **idx_0**: response = ""9-12"", target = ""grades9-12""  
+  Semantically equivalent (grades 9 through 12). Score: 1
+
+- **idx_1**: response = ""9-12"", target = ""grades5-12""  
+  Response indicates grades 9-12 only; target includes grades 5-8 as well (5-12). Not equivalent range. Score: 0
+
+- **idx_2**: response = ""9-12"", target = ""grades5-12""  
+  Same as idx_1. Score: 0
+
+- **idx_3** through **idx_20**: response = ""9-12"", target = ""grades9-12""  
+  Same as idx_0. Score: 1
+
+-----
+
+### Summary:
+- idx_0: 1
+- idx_1: 0
+- idx_2: 0
+- idx_3 to idx_20: 1 each
+
+-----
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 1,
+  ""idx_4"": 1,
+  ""idx_5"": 1,
+  ""idx_6"": 1,
+  ""idx_7"": 1,
+  ""idx_8"": 1,
+  ""idx_9"": 1,
+  ""idx_10"": 1,
+  ""idx_11"": 1,
+  ""idx_12"": 1,
+  ""idx_13"": 1,
+  ""idx_14"": 1,
+  ""idx_15"": 1,
+  ""idx_16"": 1,
+  ""idx_17"": 1,
+  ""idx_18"": 1,
+  ""idx_19"": 1,
+  ""idx_20"": 1
+}
+```",grades9-12,9-12,0.0,"Let's analyze each pair according to the grading criterion:
+
+Criterion reminder:
+- It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.
+- No need for word-for-word correspondence.
+- Score can only be 0 or 1.
+
+The given data:
+
+Format for each idx:  
+`{ 'idx_xxx': {'response': 'X', 'target': 'Y'} }`
+
+We must compare `response` to the `target` answer.
+
+---
+
+### Step-by-step analysis:
+
+- idx_0: response = '1', target = '1'  
+  - Same entity (both '1').  
+  - Score: 1
+
+- idx_1: response = '3', target = '1'  
+  - Different entities. '3' ≠ '1'  
+  - No indication they mean the same entity.  
+  - Score: 0
+
+- idx_2: response = '2', target = '11'  
+  - Different entities '2' and '11'  
+  - No semantic equivalence given.  
+  - Score: 0
+
+- idx_3: response = '4', target = '1'  
+  - Different entities '4' vs '1'.  
+  - No equivalence.  
+  - Score: 0
+
+- idx_4: response = '6', target = '1'  
+  - Different entities '6' vs '1'  
+  - Score: 0
+
+- idx_5: response = '8', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_6: response = '9', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_7: response = '10', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_8: response = '11', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_9: response = '12', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_10: response = '14', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_11: response = '15', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_12: response = '16', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_13: response = '17', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_14: response = '18', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_15: response = '19', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_16: response = '20', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_17: response = '21', target = '1'  
+  - Different entities  
+  - Score: 0
+
+- idx_18: response = '5', target = '13'  
+  - Different entities, '5' vs '13'  
+  - Score: 0
+
+- idx_19: response = '7', target = '3'  
+  - Different entities '7' vs '3'  
+  - Score: 0
+
+- idx_20: response = '13', target = '3'  
+  - Different entities '13' vs '3'  
+  - Score: 0
+
+---
+
+### Summary of scoring:
+
+Only idx_0 has same response as target, thus scored 1. All others are zero.
+
+---
+
+### Final JSON result:
+
+```json
+{
+  ""idx_0"": 1,
+  ""idx_1"": 0,
+  ""idx_2"": 0,
+  ""idx_3"": 0,
+  ""idx_4"": 0,
+  ""idx_5"": 0,
+  ""idx_6"": 0,
+  ""idx_7"": 0,
+  ""idx_8"": 0,
+  ""idx_9"": 0,
+  ""idx_10"": 0,
+  ""idx_11"": 0,
+  ""idx_12"": 0,
+  ""idx_13"": 0,
+  ""idx_14"": 0,
+  ""idx_15"": 0,
+  ""idx_16"": 0,
+  ""idx_17"": 0,
+  ""idx_18"": 0,
+  ""idx_19"": 0,
+  ""idx_20"": 0
+}
+```",3,13,1.0,"Let's analyze each item by comparing the response and target according to the criterion:
+
+Criterion: ""It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity.""
+
+---
+
+**idx_0:** response = newjersey, target = newjersey  
+- Exact same entity → score = 1
+
+**idx_1:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_2:** response = arizona, target = arizona  
+- Exact same entity → score = 1
+
+**idx_3:** response = illinois, target = virginia  
+- Different entities → score = 0
+
+**idx_4:** response = northcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_5:** response = maryland, target = virginia  
+- Different entities → score = 0
+
+**idx_6:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_7:** response = virginia, target = virginia  
+- Exact same entity → score = 1
+
+**idx_8:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_9:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_10:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_11:** response = southcarolina, target = virginia  
+- Different entities → score = 0
+
+**idx_12:** response = missouri, target = virginia  
+- Different entities → score = 0
+
+**idx_13:** response = vermont, target = virginia  
+- Different entities → score = 0
+
+**idx_14:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_15:** response = connecticut, target = virginia  
+- Different entities → score = 0
+
+**idx_16:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_17:** response = california, target = virginia  
+- Different entities → score = 0
+
+**idx_18:** response = california, target = california  
+- Exact same entity → score = 1
+
+**idx_19:** response = massachusetts, target = massachusetts  
+- Exact same entity → score = 1
+
+**idx_20:** response = maryland, target = maryland  
+- Exact same entity → score = 1
+
+---
+
+Final scores:
+
+```json
+{
+    ""idx_0"": 1,
+    ""idx_1"": 1,
+    ""idx_2"": 1,
+    ""idx_3"": 0,
+    ""idx_4"": 0,
+    ""idx_5"": 0,
+    ""idx_6"": 1,
+    ""idx_7"": 1,
+    ""idx_8"": 0,
+    ""idx_9"": 0,
+    ""idx_10"": 0,
+    ""idx_11"": 0,
+    ""idx_12"": 0,
+    ""idx_13"": 0,
+    ""idx_14"": 0,
+    ""idx_15"": 0,
+    ""idx_16"": 0,
+    ""idx_17"": 0,
+    ""idx_18"": 1,
+    ""idx_19"": 1,
+    ""idx_20"": 1
+}
+```",maryland,maryland,0.0,"exact not match, response: 13, target: 32",32,13
+1.0,,academicmagnethighschool,,,,21.0,,,,,,7,,,,grades9-12,,,,1,,,,southcarolina,,,,16,
+1.0,,acton-boxboroughregionalhighschool,,,,14.0,,,,,,319,,,,grades9-12,,,,10,,,,massachusetts,,,,20,
+1.0,,amadorvalleyhighschool,,,,22.0,,,,,,443,,,,grades9-12,,,,60,,,,california,,,,40,
+1.0,,ashlandhighschool,,,,29.0,,,,,,1571,,,,grades9-12,,,,61,,,,massachusetts,,,,46,
+1.0,,basisahwatukee,,,,25.0,,,,,,34,,,,grades4-12,,,,5,,,,arizona,,,,44,
+1.0,,basismesa,,,,19.0,,,,,,56,,,,gradeskg-12,,,,7,,,,arizona,,,,17,
+1.0,,basisphoenix,,,,24.0,,,,,,45,,,,grades5-12,,,,6,,,,arizona,,,,25,
+1.0,,basisscottsdale,,,,31.0,,,,,,32,,,,grades4-12,,,,3,,,,arizona,,,,9,
+1.0,,basistucsonnorth,,,,28.0,,,,,,33,,,,grades5-12,,,,4,,,,arizona,,,,7,
+1.0,,bedfordhighschool,,,,10.0,,,,,,1679,,,,grades9-12,,,,64,,,,massachusetts,,,,30,
+1.0,,belmonthighschool,,,,21.0,,,,,,383,,,,grades9-12,,,,16,,,,massachusetts,,,,29,
+1.0,,bergencountyacademies,,,,14.0,,,,,,62,,,,grades9-12,,,,4,,,,newjersey,,,,18,
+1.0,,biotechnologyhighschool,,,,3.0,,,,,,72,,,,grades9-12,,,,5,,,,newjersey,,,,15,
+1.0,,bronxhighschoolofscience,,,,20.0,,,,,,37,,,,grades9-12,,,,4,,,,newyork,,,,24,
+1.0,,brooklinehighschool,,,,19.0,,,,,,884,,,,grades9-12,,,,38,,,,massachusetts,,,,50,
+1.0,,canyoncrestacademy,,,,25.0,,,,,,140,,,,grades9-12,,,,15,,,,california,,,,28,
+1.0,,concordcarlislehighschool,,,,37.0,,,,,,539,,,,grades9-12,,,,20,,,,massachusetts,,,,13,
+1.0,,d'evelynjunior/seniorhighschool,,,,18.0,,,,,,59,,,,grades6-12,,,,1,,,,colorado,,,,48,
+1.0,,delnortehighschool,,,,21.0,,,,,,329,,,,grades9-12,,,,42,,,,california,,,,36,
+1.0,,dover-sherbornregionalhighschool,,,,19.0,,,,,,288,,,,grades9-12,,,,8,,,,massachusetts,,,,45,
+1.0,,edgemontjunior-seniorhighschool,,,,14.0,,,,,,128,,,,grades7-12,,,,14,,,,newyork,,,,35,
+1.0,,edisonacademymagnetschool,,,,4.0,,,,,,42,,,,grades9-12,,,,2,,,,newjersey,,,,6,
+1.0,,"gwinnettschoolofmathematics,scienceandtechnology",,,,22.0,,,,,,9,,,,grades9-12,,,,1,,,,georgia,,,,11,
+1.0,,henrym.gunnhighschool,,,,26.0,,,,,,135,,,,grades9-12,,,,14,,,,california,,,,38,
+1.0,,lynbrookhighschool,,,,17.0,,,,,,82,,,,grades9-12,,,,9,,,,california,,,,12,
+1.0,,missionsanjosehighschool,,,,20.0,,,,,,93,,,,grades9-12,,,,11,,,,california,,,,34,
+1.0,,okemoshighschool,,,,15.0,,,,,,1087,,,,grades9-12,,,,28,,,,michigan,,,,31,
+1.0,,paloaltohighschool(paly),,,,26.0,,,,,,183,,,,grades9-12,,,,22,,,,california,,,,26,
+1.0,,paytoncollegepreparatoryhighschool,,,,24.0,,,,,,5,,,,grades9-12,,,,1,,,,illinois,,,,41,
+1.0,,pineviewschool,,,,34.0,,,,,,18,,,,grades2-12,,,,1,,,,florida,,,,23,
+1.0,,raleighcharterhighschool,,,,20.0,,,,,,156,,,,grades9-12,,,,4,,,,northcarolina,,,,47,
+1.0,,saratogahighschool,,,,23.0,,,,,,141,,,,grades9-12,,,,16,,,,california,,,,22,
+1.0,,scarsdaleseniorhighschool,,,,NULL,,,,,,533,,,,grades9-12,,,,64,,,,newyork,,,,33,
+1.0,,scienceandengineeringmagnetschool(sem),,,,31.0,,,,,,29,,,,grades9-12,,,,3,,,,texas,,,,37,
+1.0,,stuyvesanthighschool,,,,31.0,,,,,,26,,,,grades9-12,,,,2,,,,newyork,,,,14,
+1.0,,teslastemhighschool,,,,12.0,,,,,,3,,,,grades9-12,,,,1,,,,washington,,,,10,
+1.0,,theearlycollegeatguilford,,,,8.0,,,,,,16,,,,grades9-12,,,,1,,,,northcarolina,,,,4,
+1.0,,theschoolforthetalentedandgifted(tag),,,,28.0,,,,,,6,,,,grades9-12,,,,1,,,,texas,,,,21,
+1.0,,universityhighschool(irvine),,,,23.0,,,,,,356,,,,grades9-12,,,,48,,,,california,,,,43,
+1.0,,waylandhighschool,,,,17.0,,,,,,321,,,,grades9-12,,,,11,,,,massachusetts,,,,49,
+1.0,,westonhighschool,,,,17.0,,,,,,226,,,,grades9-12,,,,4,,,,connecticut,,,,42,
+1.0,,whitneyhighschool,,,,18.0,,,,,,11,,,,grades7-12,,,,2,,,,california,,,,8,
+1.0,,winchesterhighschool,,,,17.0,,,,,,610,,,,grades9-12,,,,23,,,,massachusetts,,,,39,

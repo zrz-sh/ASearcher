@@ -1,0 +1,173 @@
+exist_flag_gt,exist_flag_response,发布日期,发布日期_before_map,cpu制造工艺_exact_match,cpu制造工艺_exact_match_eval_msg,cpu制造工艺_query,cpu制造工艺_response,cpu核心数_exact_match,cpu核心数_exact_match_eval_msg,cpu核心数_query,cpu核心数_response,出厂搭载系统_llm_judge,出厂搭载系统_llm_judge_eval_msg,出厂搭载系统_query,出厂搭载系统_response,分辨率_llm_judge,分辨率_llm_judge_eval_msg,分辨率_query,分辨率_response,发布日期_exact_match,发布日期_exact_match_eval_msg,发布时的售价_exact_match,发布时的售价_exact_match_eval_msg,发布时的售价_query,发布时的售价_response,存储空间大小_exact_match,存储空间大小_exact_match_eval_msg,存储空间大小_query,存储空间大小_response,屏幕尺寸_llm_judge,屏幕尺寸_llm_judge_eval_msg,屏幕尺寸_query,屏幕尺寸_response,手机cpu型号_llm_judge,手机cpu型号_llm_judge_eval_msg,手机cpu型号_query,手机cpu型号_response,手机型号_llm_judge,手机型号_llm_judge_eval_msg,手机型号_query,手机型号_response,手机处理器品牌_llm_judge,手机处理器品牌_llm_judge_eval_msg,手机处理器品牌_query,手机处理器品牌_response,最高像素_llm_judge,最高像素_llm_judge_eval_msg,最高像素_query,最高像素_response,电池容量_llm_judge,电池容量_llm_judge_eval_msg,电池容量_query,电池容量_response,运行内存大小_exact_match,运行内存大小_exact_match_eval_msg,运行内存大小_query,运行内存大小_response
+,,2019-05-28,2019-05-28,0.0,"exact not match, response: 7nm, target: 8nm",8nm,7nm,1.0,"exact match, response: 8核, target: 8核",8核,8核,0.0,"Let's analyze the response according to the criterion and the provided standard answer:
+
+- Standard answer (target): ""miui10""
+- Response: ""android9.0,uptoandroid10,miui12""
+
+The criterion states that the answer should be semantically roughly the same or refer to the same entity. It doesn't need to be word-for-word identical.
+
+Analysis:
+- The target is ""miui10"" (a specific version of Xiaomi's MIUI OS).
+- The response mentions ""android9.0"", ""uptoandroid10"" and ""miui12"".
+- ""miui12"" is mentioned, which is a newer version than ""miui10"", but the question likely asks for the MIUI version, and the response gives a different version (miui12) than miui10.
+- The response doesn't mention ""miui10"" at all.
+- It mentions the Android version (android9.0, uptoandroid10), which is not the expected specific MIUI version.
+- Since a different MIUI version is reported, and no mention of miui10, it's not semantically equivalent.
+- According to the criterion: ""和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。""
+- Here, the entity ""miui10"" is not matched; mention of ""miui12"" points to a different MIUI version.
+- So the response is not considered correct or semantically equivalent.
+
+Final decision: score = 0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",miui10,"android9.0,uptoandroid10,miui12",0.0,"Analysis for idx_0:
+
+- Standard answer: ""2340x1080""
+- Response: ""1080x2340""
+- Criterion: The response should have the same or roughly similar semantic meaning, or point to the same entity; exact word-for-word matching is not required.
+
+Here the two values are the same numbers but swapped in order. Usually ""2340x1080"" represents resolution width x height (or height x width depending on the convention), so swapping the order changes the aspect orientation. The semantic meaning differs because these are dimensions and swapping them changes whether it's portrait or landscape.
+
+Since the criterion allows rough equivalence or the same entity, if the numbers are just reversed but refer to a resolution, that can be considered as different dimension ordering, which typically implies a different resolution.
+
+Given this, the response does not preserve the entity meaning because the dimension order changes.
+
+Therefore, score = 0.
+
+```json
+{
+    ""idx_0"": 0
+}
+```",2340x1080,1080x2340,1.0,key_match,0.0,"exact not match, response: ¥2499, target: 1999元",1999元,¥2499,0.0,"exact not match, response: 128gb, target: 64gb",64gb,128gb,1.0,"Step-by-step analysis:
+
+- Standard answer (`target`): ""6.39英寸""
+- Response: ""6.39英寸""
+- According to the criterion: The response should be semantically equivalent or point to the same entity. Here, the response matches exactly the standard answer.
+- Therefore, the response is completely correct.
+
+Final scoring:
+
+```json
+{
+    ""idx_0"": 1
+}
+```",6.39英寸,6.39英寸,0.0,"分析过程：
+
+- 标准答案：骁龙730
+- 回答：snapdragon855
+
+判断依据：  
+- 参考答案为一种具体型号的处理器“骁龙730”。
+- 回答提供的是另一型号的处理器“snapdragon855”，虽然均为高通骁龙系列处理器，但型号不同，明确指向的实体不一致。
+- 评分标准中指出“和参考答案语义相同大致、或者指向的实体一致即可”，此处指向的实体不一致，因此不能得分。
+
+最终评分：0
+
+```json
+{
+    ""idx_0"": 0
+}
+```",骁龙730,snapdragon855,1.0,"Let's analyze the given item step by step:
+
+**Given:**
+
+- idx_0
+- Response: ""xiaomiredmik20pro""
+- Target (standard answer): ""redmik20""
+
+**Step 1: Check semantic equivalence or entity consistency**
+
+- The response is ""xiaomiredmik20pro,"" which refers to a Xiaomi Redmi K20 Pro phone.
+- The standard answer is ""redmik20,"" which likely means ""Redmi K20"" (note the typo ""redmik20"" instead of ""redmi20,"" but understood as Redmi 20).
+- Both are phones in the Redmi K20 series.
+- The response adds more detail: ""xiaomi"" (brand) and ""pro"" (higher version).
+- According to the criteria, differences in mentioning 5G or not do not lead to deductions.
+- The response and the target refer broadly to the same product line, with the response being more specific.
+- The criterion says ""semantically the same or pointing to the same entity is sufficient.""
+
+**Step 2: Conclusion**
+
+- The response and target refer to related devices in the same series, with response being more detailed but referring to the same device line.
+- So according to the criterion, this should be scored as 1.
+
+---
+
+```json
+{
+    ""idx_0"": 1
+}
+```",redmik20,xiaomiredmik20pro,1.0,"Let's analyze the given pair step by step:
+
+- Target answer: ""高通"" (which translates to ""Qualcomm"").
+- Response: ""qualcomm""
+- Criterion: Semantically the same or entities pointed are considered correct, no need for exact character match.
+
+Analysis:
+
+- The response ""qualcomm"" is the English spelling of ""高通"".
+- Both refer to the same entity (Qualcomm).
+- According to the criterion, this is acceptable as they have the same meaning/entity.
+
+Therefore, the response should get full score (1).
+
+```json
+{
+    ""idx_0"": 1
+}
+```
+",高通,qualcomm,1.0,"分析过程：
+
+标准答案（idx_0）：""4800万像素""
+
+待评分回答（idx_0）：""4800万像素""
+
+依据评分标准：  
+- 和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。  
+- 这里回答与标准答案完全相同，语义完全吻合。  
+
+因此，评分为1分。
+
+```json
+{
+    ""idx_0"": 1
+}
+```",4800万像素,4800万像素,1.0,"The standard answer for idx_0 is:  
+""4000mah（typ）/3900mah（min）""
+
+The response is:  
+""4000mah""
+
+Analysis according to the criterion:  
+- The response ""4000mah"" and the standard ""4000mah（typ）/3900mah（min）"" have the same main entity: the battery capacity measured in mAh.  
+- The response mentions the typical capacity ""4000mah"" and omits the minimum capacity ""3900mah"". According to the criterion, the response does not need to be exactly the same but should be semantically close or point to the same entity.  
+- Since ""4000mah"" == ""4000mah (typ)"" is essentially the same typical capacity and clearly refers to the same concept, the response is sufficiently correct.  
+- Omitting the min capacity is acceptable under the criterion as it still points to the correct approximate battery capacity.
+
+Final score: 1
+
+```json
+{
+    ""idx_0"": 1
+}
+```",4000mah（typ）/3900mah（min）,4000mah,0.0,"exact not match, response: 8gb, target: 6gb",6gb,8gb
+1.0,,2015-08-13,,,,28nm,,,,8核,,,,miui7,,,,1920x1080,,,,,,799元,,,,16gb,,,,5.5英寸,,,,heliox10,,,,红米note2,,,,联发科,,,,1300万像素,,,,3060mah,,,,2gb,
+1.0,,2015-11-24,,,,28nm,,,,8核,,,,miui7,,,,1920x1080,,,,,,899元,,,,16gb,,,,5.5英寸,,,,heliox10,,,,红米note3,,,,联发科,,,,1300万像素,,,,4000mah/4050mah(typ),,,,2gb,
+1.0,,2016-08-25,,,,20nm,,,,10核,,,,miui8,,,,1920x1080,,,,,,899元,,,,16gb,,,,5.5英寸,,,,heliox20,,,,红米note4,,,,联发科,,,,1300万像素,,,,4100mah(typ),,,,2gb,
+1.0,,2018-03-16,,,,14nm,,,,8核,,,,miui9,,,,2160x1080,,,,,,1099元,,,,32gb,,,,5.99英寸,,,,骁龙636,,,,红米note5,,,,高通,,,,1300万像素,,,,4000mah（typ）/3900mah（min）,,,,3gb,
+1.0,,2019-01-10,,,,14nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,999元,,,,32gb,,,,6.3英寸,,,,骁龙660,,,,红米note7,,,,高通,,,,4800万像素,,,,4000mah（typ）/3900mah（min）,,,,3gb,
+1.0,,2019-08-29,,,,11nm,,,,8核,,,,miui10,,,,2340x1080,,,,,,999元,,,,64gb,,,,6.3英寸,,,,骁龙665,,,,redminote8,,,,高通,,,,4800万像素,,,,4000mah(typ)/3900mah(min),,,,4gb,
+1.0,,2019-12-10,,,,7nm,,,,8核,,,,miui11,,,,2400x1080,,,,,,1999元,,,,64gb,,,,6.67英寸,,,,骁龙765g,,,,redmik305g,,,,高通,,,,6400万像素,,,,4500mah（typ）,,,,6gb,
+1.0,,2020-11-26,,,,7nm,,,,8核,,,,miui12,,,,2340x1080,,,,,,1299元,,,,128gb,,,,6.53英寸,,,,天玑800u,,,,redminote95g,,,,联发科,,,,4800万像素,,,,5000mah,,,,6gb,
+1.0,,2021-02-25,,,,7nm,,,,8核,,,,miui12,,,,2400x1080,,,,,,1999元,,,,128gb,,,,6.67英寸,,,,骁龙870,,,,redmik40,,,,高通,,,,4800万像素,,,,4520mah（typ）,,,,6gb,
+1.0,,2021-05-26,,,,7nm,,,,8核,,,,miui12,,,,2400x1080,,,,,,1099元,,,,128gb,,,,6.5英寸,,,,天玑700,,,,redminote10,,,,联发科,,,,4800万像素,,,,5000mah（典型值）,,,,4gb,
+1.0,,2021-10-28,,,,6nm,,,,8核,,,,miui12.5,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.6英寸,,,,天玑810,,,,redminote115g,,,,联发科,,,,5000万像素,,,,5000mah电池（典型值）,,,,4gb,
+1.0,,2022-03-17,,,,5nm,,,,8核,,,,miui13,,,,3200x1440,,,,,,2399元,,,,128gb,,,,6.67英寸,,,,天玑8100,,,,redmik50,,,,联发科,,,,4800万像素,,,,5500mah（typ）,,,,8gb,
+1.0,,2022-10-27,,,,6nm,,,,8核,,,,miui13,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.67英寸,,,,骁龙4gen1,,,,redminote12,,,,高通,,,,4800万像素,,,,5000mah电池（典型值）,,,,4gb,
+1.0,,2022-12-27,,,,4nm,,,,8核,,,,miui14,,,,3200x1440,,,,,,2499元,,,,128gb,,,,6.67英寸,,,,骁龙8+gen1,,,,redmik60,,,,高通,,,,6400万像素,,,,5500mah（typ）,,,,8gb,
+1.0,,2023-09-11,,,,6nm,,,,8核,,,,miui14,,,,2400x1080,,,,,,1099元,,,,128gb,,,,6.67英寸,,,,天玑6080,,,,redminote13,,,,联发科,,,,1亿像素,,,,5000mah,,,,6gb,
+1.0,,2023-11-29,,,,4nm,,,,8核,,,,小米澎湃os,,,,3200x1440,,,,,,2499元,,,,256gb,,,,6.67英寸,,,,骁龙8gen2,,,,redmik70,,,,高通,,,,5000万像素,,,,5000mah（typ）,,,,12gb,
+1.0,,2024-09-26,,,,6nm,,,,8核,,,,小米澎湃os,,,,2400x1080,,,,,,1199元,,,,128gb,,,,6.67英寸,,,,天玑7025-ultra,,,,redminote145g,,,,联发科,,,,5000万像素,,,,5110mah（typ）/5010mah（min）,,,,6gb,
+1.0,,2024-11-27,,,,4nm,,,,8核,,,,xiaomihyperos2,,,,3200x1440,,,,,,2499元,,,,256gb,,,,6.67英寸,,,,骁龙8gen3,,,,redmik80,,,,高通,,,,5000万像素,,,,6550mah（typ）/6410mah（min）,,,,12gb,
