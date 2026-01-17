@@ -22,6 +22,5 @@ python3 widesearch_eval.py \
     --search-client-type ${SEARCH_CLIENT_TYPE} \
     --tensor_parallel_size 1 \
     --temperature 0.6 \
-    --seed 0 \
+    --seed 3 \
     --use-jina \
-    --num_test_sample 2
